@@ -17,7 +17,15 @@ export async function POST(request: Request) {
 
     const uploadResponse = await new Promise((resolve, reject) => {
       const uploadStream = cloudinary.uploader.upload_stream(
-        { folder: 'vyop_blog' },
+        { 
+          folder: 'vyop_blog',
+          // Automatically compress the image during upload to save storage space
+          // without losing visible quality, and prevent massive 4K+ uploads.
+          transformation: [
+            { width: 1920, crop: 'limit' },
+            { quality: 'auto', fetch_format: 'auto' }
+          ]
+        },
         (error, result) => {
           if (error) reject(error);
           else resolve(result);

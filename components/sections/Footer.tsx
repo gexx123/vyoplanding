@@ -4,16 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 const footerLinks = {
-  Product: [
-    "Voice Billing",
-    "Ledger/Credit",
-    "Reports",
-    "Inventory",
-    "Credit",
-  ],
-  Company: ["About Us", "Careers", "Blog", "Press", "Affiliate"],
+  Company: ["About Us", "Careers", "Blog"],
   Support: ["Help Center", "Contact Us", "WhatsApp Chat", "Community"],
-  Legal: ["Privacy Policy", "Terms of Service", "Refund Policy", "Cookie Policy"],
+  Legal: ["Privacy Policy", "Terms of Service", "Cookie Policy"],
 };
 
 const socialIcons = [

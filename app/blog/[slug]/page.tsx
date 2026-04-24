@@ -63,7 +63,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       authors: [blog.author || 'Vyop Team'],
       images: [
         {
-          url: blog.image ? `https://vyop.in${blog.image}` : 'https://vyop.in/og-image.png',
+          url: blog.image ? (blog.image.startsWith('http') ? blog.image : `https://vyop.in${blog.image}`) : 'https://vyop.in/og-image.png',
           width: 1200,
           height: 630,
           alt: blog.imageAltText || blog.title,
@@ -74,7 +74,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       card: 'summary_large_image',
       title: blog.metaTitle || blog.title,
       description: blog.metaDescription || blog.excerpt,
-      images: [blog.image ? `https://vyop.in${blog.image}` : 'https://vyop.in/og-image.png'],
+      images: [blog.image ? (blog.image.startsWith('http') ? blog.image : `https://vyop.in${blog.image}`) : 'https://vyop.in/og-image.png'],
       creator: '@vyop_ai',
     },
   };

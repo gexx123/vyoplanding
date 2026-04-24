@@ -69,9 +69,9 @@ export default function Hero() {
               Vyop
             </span>
             <span
-              className="gradient-text leading-[1.1] text-4xl md:text-6xl lg:text-7xl break-words"
+              className="gradient-text leading-[1.1] text-4xl md:text-6xl lg:text-7xl"
             >
-              World&apos;s First AI Accountant
+              World&apos;s First AI&nbsp;Accountant
             </span>
           </motion.h1>
 

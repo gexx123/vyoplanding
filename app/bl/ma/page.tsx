@@ -51,6 +51,12 @@ export default function BlogManagement() {
   const handleDelete = async (id: string) => {
     if (!confirm("Are you sure you want to delete this post?")) return;
 
+    const password = prompt("Enter password to delete:");
+    if (password !== "Htverm@s7121") {
+      alert("Incorrect password. Deletion cancelled.");
+      return;
+    }
+
     try {
       const res = await fetch(`/api/blogs?id=${id}`, { method: "DELETE" });
       if (res.ok) {

@@ -10,12 +10,17 @@ export default function CreateBlog() {
   const [imagePreview, setImagePreview] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     title: "",
-    category: "Business Tips",
-    author: "Vyop Team",
+    category: "Voice Billing",
+    author: "Himanshu",
+    authorTitle: "Founder, Vyop",
     excerpt: "",
     content: "",
+    focusKeyword: "",
+    secondaryKeywords: "",
     metaTitle: "",
     metaDescription: "",
+    imageAltText: "",
+    status: "Published",
     image: null as File | null,
   });
   const router = useRouter();
@@ -40,10 +45,15 @@ export default function CreateBlog() {
     data.append("title", formData.title);
     data.append("category", formData.category);
     data.append("author", formData.author);
+    data.append("authorTitle", formData.authorTitle);
+    data.append("focusKeyword", formData.focusKeyword);
+    data.append("secondaryKeywords", formData.secondaryKeywords);
     data.append("excerpt", formData.excerpt);
     data.append("content", formData.content);
     data.append("metaTitle", formData.metaTitle);
     data.append("metaDescription", formData.metaDescription);
+    data.append("imageAltText", formData.imageAltText);
+    data.append("status", formData.status);
     if (formData.image) {
       data.append("image", formData.image);
     }
@@ -62,6 +72,14 @@ export default function CreateBlog() {
     } finally {
       setLoading(false);
     }
+  };
+
+  // SEO Checklist Logic
+  const seoChecklist = {
+    title: formData.focusKeyword && formData.title.toLowerCase().includes(formData.focusKeyword.toLowerCase()),
+    firstPara: formData.focusKeyword && formData.content.split('\n')[0].toLowerCase().includes(formData.focusKeyword.toLowerCase()),
+    h2: formData.focusKeyword && formData.content.toLowerCase().includes(`<h2`) && formData.content.toLowerCase().includes(formData.focusKeyword.toLowerCase()),
+    length: formData.content.split(' ').length > 300
   };
 
   return (
@@ -90,30 +108,21 @@ export default function CreateBlog() {
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-bold mb-2 text-gray-700">Blog Title</label>
+                  <label className="block text-sm font-bold mb-2 text-gray-700 flex justify-between">
+                    Blog Title
+                    <span className={`text-[10px] ${formData.title.length > 60 ? 'text-red-500' : 'text-gray-400'}`}>
+                      {formData.title.length}/60
+                    </span>
+                  </label>
                   <input
                     required
                     type="text"
-                    placeholder="Enter a catchy title..."
+                    placeholder="e.g. How to use Voice Billing..."
                     className="w-full px-5 py-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-[var(--brand-primary)] transition-all"
                     value={formData.title}
                     onChange={(e) => setFormData({ ...formData, title: e.target.value })}
                   />
                 </div>
-                <div>
-                  <label className="block text-sm font-bold mb-2 text-gray-700">Author</label>
-                  <input
-                    required
-                    type="text"
-                    placeholder="Author name..."
-                    className="w-full px-5 py-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-[var(--brand-primary)] transition-all"
-                    value={formData.author}
-                    onChange={(e) => setFormData({ ...formData, author: e.target.value })}
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-bold mb-2 text-gray-700">Category</label>
                   <select
@@ -121,12 +130,38 @@ export default function CreateBlog() {
                     value={formData.category}
                     onChange={(e) => setFormData({ ...formData, category: e.target.value })}
                   >
-                    <option>Business Tips</option>
-                    <option>Product Updates</option>
+                    <option>Voice Billing</option>
                     <option>AI Accounting</option>
-                    <option>Success Stories</option>
+                    <option>Kirana Tips</option>
+                    <option>Product Updates</option>
                   </select>
                 </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-sm font-bold mb-2 text-gray-700">Author Name</label>
+                  <input
+                    required
+                    type="text"
+                    className="w-full px-5 py-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-[var(--brand-primary)] transition-all"
+                    value={formData.author}
+                    onChange={(e) => setFormData({ ...formData, author: e.target.value })}
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-bold mb-2 text-gray-700">Author Title</label>
+                  <input
+                    required
+                    type="text"
+                    placeholder="e.g. Founder, Vyop"
+                    className="w-full px-5 py-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-[var(--brand-primary)] transition-all"
+                    value={formData.authorTitle}
+                    onChange={(e) => setFormData({ ...formData, authorTitle: e.target.value })}
+                  />
+                </div>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-bold mb-2 text-gray-700">Feature Image</label>
                   <div className="relative">
@@ -151,13 +186,24 @@ export default function CreateBlog() {
                       </svg>
                     </label>
                   </div>
-                  {imagePreview && (
-                    <div className="mt-4 relative aspect-[16/6] rounded-2xl overflow-hidden border">
-                      <img src={imagePreview} alt="Preview" className="w-full h-full object-cover" />
-                    </div>
-                  )}
+                </div>
+                <div>
+                  <label className="block text-sm font-bold mb-2 text-gray-700 text-right">Alt Text (SEO)</label>
+                  <input
+                    type="text"
+                    placeholder="Describe the image..."
+                    className="w-full px-5 py-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-[var(--brand-primary)] transition-all"
+                    value={formData.imageAltText}
+                    onChange={(e) => setFormData({ ...formData, imageAltText: e.target.value })}
+                  />
                 </div>
               </div>
+
+              {imagePreview && (
+                <div className="relative aspect-[16/6] rounded-2xl overflow-hidden border">
+                  <img src={imagePreview} alt="Preview" className="w-full h-full object-cover" />
+                </div>
+              )}
 
               <div>
                 <label className="block text-sm font-bold mb-2 text-gray-700">Excerpt (Summary)</label>
@@ -187,33 +233,99 @@ export default function CreateBlog() {
               </div>
             </div>
 
+            {/* SEO Analysis */}
+            <div className="bg-gray-50 rounded-3xl p-6 border border-gray-100 flex flex-col md:flex-row gap-8">
+              <div className="flex-1 space-y-4">
+                <h3 className="font-bold text-gray-800 flex items-center gap-2">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-500"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                  SEO Checklist
+                </h3>
+                <ul className="space-y-2 text-sm">
+                  <li className="flex items-center gap-2">
+                    <span className={seoChecklist.title ? "text-green-500" : "text-gray-300"}>●</span>
+                    Keyword in Title
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className={seoChecklist.firstPara ? "text-green-500" : "text-gray-300"}>●</span>
+                    Keyword in first paragraph
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className={seoChecklist.h2 ? "text-green-500" : "text-gray-300"}>●</span>
+                    Keyword in at least one H2
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className={seoChecklist.length ? "text-green-500" : "text-gray-300"}>●</span>
+                    300+ words
+                  </li>
+                </ul>
+              </div>
+              
+              <div className="flex-[2] space-y-4 border-t md:border-t-0 md:border-l pt-4 md:pt-0 md:pl-8">
+                <div>
+                  <label className="block text-sm font-bold mb-2 text-gray-700">Focus Keyword *</label>
+                  <input
+                    type="text"
+                    placeholder="e.g. voice billing"
+                    className="w-full px-5 py-4 rounded-2xl bg-white border border-gray-200 focus:ring-2 focus:ring-[var(--brand-primary)] transition-all"
+                    value={formData.focusKeyword}
+                    onChange={(e) => setFormData({ ...formData, focusKeyword: e.target.value })}
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-bold mb-2 text-gray-700">Secondary Keywords</label>
+                  <input
+                    type="text"
+                    placeholder="comma, separated, keywords"
+                    className="w-full px-5 py-4 rounded-2xl bg-white border border-gray-200 focus:ring-2 focus:ring-[var(--brand-primary)] transition-all"
+                    value={formData.secondaryKeywords}
+                    onChange={(e) => setFormData({ ...formData, secondaryKeywords: e.target.value })}
+                  />
+                </div>
+              </div>
+            </div>
+
             {/* SEO Settings */}
             <div className="space-y-6">
               <h2 className="text-xl font-bold text-gray-800 border-b pb-2 flex items-center gap-2">
-                SEO Settings
-                <span className="text-[10px] bg-green-100 text-green-700 px-2 py-0.5 rounded-full uppercase tracking-wider">Recommended</span>
+                Search Preview Settings
               </h2>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-bold mb-2 text-gray-700">Meta Title</label>
+                  <label className="block text-sm font-bold mb-2 text-gray-700 flex justify-between">
+                    Meta Title (Override)
+                    <span className={`text-[10px] ${formData.metaTitle.length > 60 ? 'text-red-500' : 'text-gray-400'}`}>
+                      {formData.metaTitle.length}/60
+                    </span>
+                  </label>
                   <input
                     type="text"
-                    placeholder="Enter meta title for Google..."
+                    placeholder="Defaults to Title..."
                     className="w-full px-5 py-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-[var(--brand-primary)] transition-all"
                     value={formData.metaTitle}
                     onChange={(e) => setFormData({ ...formData, metaTitle: e.target.value })}
                   />
-                  <p className="mt-1 text-[10px] text-gray-400">Keep it under 60 characters for best results.</p>
                 </div>
                 <div>
-                  <label className="block text-sm font-bold mb-2 text-gray-700">Meta Description</label>
+                  <label className="block text-sm font-bold mb-2 text-gray-700 flex justify-between">
+                    Meta Description / Excerpt *
+                    <span className={`text-[10px] ${formData.metaDescription.length > 160 ? 'text-red-500' : 'text-gray-400'}`}>
+                      {formData.metaDescription.length}/160
+                    </span>
+                  </label>
                   <input
+                    required
                     type="text"
-                    placeholder="Enter meta description..."
+                    placeholder="Summary for Google and Social..."
                     className="w-full px-5 py-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-[var(--brand-primary)] transition-all"
                     value={formData.metaDescription}
-                    onChange={(e) => setFormData({ ...formData, metaDescription: e.target.value })}
+                    onChange={(e) => {
+                      setFormData({ 
+                        ...formData, 
+                        metaDescription: e.target.value,
+                        excerpt: e.target.value // Keep both in sync for now
+                      });
+                    }}
                   />
                 </div>
               </div>

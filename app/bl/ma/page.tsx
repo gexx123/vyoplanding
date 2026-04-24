@@ -11,11 +11,26 @@ interface BlogPost {
   category: string;
   date: string;
   image: string;
+  slug: string;
+  excerpt: string;
+  content: string;
+  author: string;
+  authorTitle: string;
+  focusKeyword: string;
+  secondaryKeywords: string;
+  metaTitle: string;
+  metaDescription: string;
+  imageAltText: string;
+  status: string;
 }
 
 export default function BlogManagement() {
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
+  const [editingPost, setEditingPost] = useState<BlogPost | null>(null);
+  const [isUpdating, setIsUpdating] = useState(false);
+  const [editImagePreview, setEditImagePreview] = useState<string | null>(null);
+  const [newImage, setNewImage] = useState<File | null>(null);
 
   useEffect(() => {
     fetchPosts();
@@ -43,6 +58,54 @@ export default function BlogManagement() {
       }
     } catch (err) {
       console.error("Error deleting post:", err);
+    }
+  };
+
+  const handleEditClick = (post: BlogPost) => {
+    setEditingPost({ ...post });
+    setEditImagePreview(post.image);
+    setNewImage(null);
+  };
+
+  const handleUpdate = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!editingPost) return;
+
+    setIsUpdating(true);
+    const data = new FormData();
+    data.append("id", editingPost.id.toString());
+    data.append("title", editingPost.title);
+    data.append("category", editingPost.category);
+    data.append("author", editingPost.author);
+    data.append("authorTitle", editingPost.authorTitle || "");
+    data.append("focusKeyword", editingPost.focusKeyword || "");
+    data.append("secondaryKeywords", editingPost.secondaryKeywords || "");
+    data.append("excerpt", editingPost.excerpt);
+    data.append("content", editingPost.content);
+    data.append("metaTitle", editingPost.metaTitle || "");
+    data.append("metaDescription", editingPost.metaDescription || "");
+    data.append("imageAltText", editingPost.imageAltText || "");
+    data.append("status", editingPost.status || "Published");
+    
+    if (newImage) {
+      data.append("image", newImage);
+    }
+
+    try {
+      const res = await fetch("/api/blogs", {
+        method: "PUT",
+        body: data,
+      });
+
+      if (res.ok) {
+        const updated = await res.json();
+        setPosts(posts.map((p) => (p.id === updated.id ? updated : p)));
+        setEditingPost(null);
+      }
+    } catch (err) {
+      console.error("Error updating post:", err);
+    } finally {
+      setIsUpdating(false);
     }
   };
 
@@ -94,6 +157,7 @@ export default function BlogManagement() {
                   <th className="px-8 py-5 text-sm font-bold text-gray-400 uppercase tracking-wider">Post Details</th>
                   <th className="px-8 py-5 text-sm font-bold text-gray-400 uppercase tracking-wider">Category</th>
                   <th className="px-8 py-5 text-sm font-bold text-gray-400 uppercase tracking-wider">Date</th>
+                  <th className="px-8 py-5 text-sm font-bold text-gray-400 uppercase tracking-wider">Status</th>
                   <th className="px-8 py-5 text-sm font-bold text-gray-400 uppercase tracking-wider text-right">Actions</th>
                 </tr>
               </thead>
@@ -120,12 +184,17 @@ export default function BlogManagement() {
                           {post.category}
                         </span>
                       </td>
-                      <td className="px-8 py-6 text-sm text-gray-500">{post.date}</td>
+                      <td className="px-8 py-6 text-sm text-gray-500">{new Date(post.date).toLocaleDateString()}</td>
+                      <td className="px-8 py-6">
+                        <span className={`px-2 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider ${post.status === 'Draft' ? 'bg-amber-100 text-amber-700' : 'bg-green-100 text-green-700'}`}>
+                          {post.status || 'Published'}
+                        </span>
+                      </td>
                       <td className="px-8 py-6 text-right">
                         <div className="flex items-center justify-end gap-3">
                           <button 
                             className="p-2.5 rounded-xl bg-gray-50 text-gray-500 hover:bg-[var(--brand-primary)] hover:text-white transition-all"
-                            onClick={() => alert("Edit feature coming next!")}
+                            onClick={() => handleEditClick(post)}
                           >
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                               <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z" />
@@ -154,6 +223,141 @@ export default function BlogManagement() {
           </div>
         )}
       </div>
+
+      {/* Edit Modal */}
+      <AnimatePresence>
+        {editingPost && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-black/40 backdrop-blur-sm">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              className="bg-white w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-[32px] p-8 md:p-10 shadow-2xl relative"
+            >
+              <button 
+                onClick={() => setEditingPost(null)}
+                className="absolute top-8 right-8 p-2 rounded-full hover:bg-gray-100 transition-colors"
+              >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M18 6 6 18M6 6l12 12"/>
+                </svg>
+              </button>
+
+              <h2 className="text-2xl font-bold mb-8 flex items-center gap-3">
+                <span className="w-8 h-8 rounded-lg bg-[var(--brand-primary)]/10 text-[var(--brand-primary)] flex items-center justify-center">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z" />
+                    <path d="m15 5 4 4" />
+                  </svg>
+                </span>
+                Edit Blog Post
+              </h2>
+
+              <form onSubmit={handleUpdate} className="space-y-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Title</label>
+                    <input
+                      required
+                      type="text"
+                      className="w-full px-5 py-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-[var(--brand-primary)] transition-all"
+                      value={editingPost.title}
+                      onChange={(e) => setEditingPost({ ...editingPost, title: e.target.value })}
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Category</label>
+                    <select
+                      className="w-full px-5 py-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-[var(--brand-primary)] transition-all"
+                      value={editingPost.category}
+                      onChange={(e) => setEditingPost({ ...editingPost, category: e.target.value })}
+                    >
+                      <option>Voice Billing</option>
+                      <option>AI Accounting</option>
+                      <option>Kirana Tips</option>
+                      <option>Product Updates</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Author Name</label>
+                    <input
+                      required
+                      type="text"
+                      className="w-full px-5 py-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-[var(--brand-primary)] transition-all"
+                      value={editingPost.author}
+                      onChange={(e) => setEditingPost({ ...editingPost, author: e.target.value })}
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Author Title</label>
+                    <input
+                      type="text"
+                      className="w-full px-5 py-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-[var(--brand-primary)] transition-all"
+                      value={editingPost.authorTitle}
+                      onChange={(e) => setEditingPost({ ...editingPost, authorTitle: e.target.value })}
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Focus Keyword</label>
+                    <input
+                      type="text"
+                      className="w-full px-5 py-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-[var(--brand-primary)] transition-all"
+                      value={editingPost.focusKeyword}
+                      onChange={(e) => setEditingPost({ ...editingPost, focusKeyword: e.target.value })}
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Status</label>
+                    <select
+                      className="w-full px-5 py-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-[var(--brand-primary)] transition-all"
+                      value={editingPost.status}
+                      onChange={(e) => setEditingPost({ ...editingPost, status: e.target.value })}
+                    >
+                      <option>Published</option>
+                      <option>Draft</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Full Content (HTML)</label>
+                  <textarea
+                    required
+                    rows={8}
+                    className="w-full px-5 py-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-[var(--brand-primary)] transition-all font-mono text-sm"
+                    value={editingPost.content}
+                    onChange={(e) => setEditingPost({ ...editingPost, content: e.target.value })}
+                  />
+                </div>
+
+                <div className="flex justify-end gap-4 pt-6">
+                  <button
+                    type="button"
+                    onClick={() => setEditingPost(null)}
+                    className="px-8 py-4 rounded-2xl font-bold text-gray-500 hover:bg-gray-100 transition-all"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    disabled={isUpdating}
+                    type="submit"
+                    className="px-10 py-4 rounded-2xl text-white font-bold transition-all hover:scale-[1.03] disabled:opacity-50"
+                    style={{ background: "var(--gradient-brand)", boxShadow: "var(--shadow-gold)" }}
+                  >
+                    {isUpdating ? "Saving..." : "Save Changes"}
+                  </button>
+                </div>
+              </form>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </main>
   );
 }

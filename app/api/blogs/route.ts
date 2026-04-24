@@ -21,12 +21,17 @@ export async function POST(request: Request) {
     const formData = await request.formData();
     
     const title = formData.get('title') as string;
-    const category = formData.get('category') as string;
+    const category = formData.get('category') as string || 'Business Tips';
     const excerpt = formData.get('excerpt') as string;
     const content = formData.get('content') as string || '';
     const author = formData.get('author') as string || 'Vyop Team';
+    const authorTitle = formData.get('authorTitle') as string || 'Founder, Vyop';
+    const focusKeyword = formData.get('focusKeyword') as string || '';
+    const secondaryKeywords = formData.get('secondaryKeywords') as string || '';
     const metaTitle = formData.get('metaTitle') as string;
     const metaDescription = formData.get('metaDescription') as string;
+    const imageAltText = formData.get('imageAltText') as string || title;
+    const status = formData.get('status') as string || 'Published';
     const imageFile = formData.get('image') as File | null;
     
     let imageUrl = '';
@@ -60,10 +65,15 @@ export async function POST(request: Request) {
       excerpt,
       content,
       author,
-      metaTitle,
-      metaDescription,
+      authorTitle,
+      focusKeyword,
+      secondaryKeywords,
+      metaTitle: metaTitle || title,
+      metaDescription: metaDescription || excerpt,
       image: imageUrl,
-      date: new Date().toISOString(), // Use ISO string for accurate SEO lastmod parsing
+      imageAltText,
+      status,
+      date: new Date().toISOString(),
     };
     
     blogs.unshift(blogWithId);
@@ -124,13 +134,18 @@ export async function PUT(request: Request) {
     blogs[index] = {
       ...blogs[index],
       title: formData.get('title') as string,
-      category: formData.get('category') as string,
+      category: formData.get('category') as string || blogs[index].category,
       excerpt: formData.get('excerpt') as string,
       content: formData.get('content') as string || blogs[index].content,
       author: formData.get('author') as string || blogs[index].author,
-      metaTitle: formData.get('metaTitle') as string,
-      metaDescription: formData.get('metaDescription') as string,
+      authorTitle: formData.get('authorTitle') as string || blogs[index].authorTitle,
+      focusKeyword: formData.get('focusKeyword') as string || blogs[index].focusKeyword,
+      secondaryKeywords: formData.get('secondaryKeywords') as string || blogs[index].secondaryKeywords,
+      metaTitle: formData.get('metaTitle') as string || blogs[index].metaTitle,
+      metaDescription: formData.get('metaDescription') as string || blogs[index].metaDescription,
       image: imageUrl,
+      imageAltText: formData.get('imageAltText') as string || blogs[index].imageAltText,
+      status: formData.get('status') as string || blogs[index].status,
     };
 
     await fs.writeFile(DATA_PATH, JSON.stringify(blogs, null, 2));

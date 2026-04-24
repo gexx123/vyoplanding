@@ -86,7 +86,7 @@ export default function LaunchAnnouncement() {
           >
             <span className="flex h-2 w-2 rounded-full bg-green-500 animate-pulse" />
             <span className="text-sm">
-              Join <span className="text-[var(--brand-primary)] font-bold"><AnimatedCounter value={visitorCount} /></span> people who visited Vyop today
+              <span className="text-[var(--brand-primary)] font-bold"><AnimatedCounter value={visitorCount} /></span> visitors till now
             </span>
           </motion.div>
         )}

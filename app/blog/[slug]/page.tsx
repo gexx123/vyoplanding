@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 import Navbar from '@/components/sections/Navbar';
 import Footer from '@/components/sections/Footer';
 import Image from 'next/image';
+import ShareButtons from '@/components/blog/ShareButtons';
 
 export const dynamic = 'force-dynamic';
 
@@ -188,6 +189,8 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
           className="prose prose-lg md:prose-xl max-w-none prose-headings:font-display prose-headings:font-bold prose-a:text-[var(--brand-primary)] prose-img:rounded-2xl"
           dangerouslySetInnerHTML={{ __html: blog.content || blog.excerpt }}
         />
+
+        <ShareButtons url={`https://vyop.in/blog/${blog.slug}`} title={blog.title} />
       </article>
 
       <Footer />

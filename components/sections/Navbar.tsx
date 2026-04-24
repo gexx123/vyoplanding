@@ -3,13 +3,14 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 const navLinks = [
-  { label: "Features", href: "#features" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "How It Works", href: "#how-it-works" },
+  { label: "Features", href: "/#features" },
+  { label: "Pricing", href: "/#pricing" },
+  { label: "How It Works", href: "/#how-it-works" },
   { label: "Blog", href: "/blog" },
-  { label: "For Business", href: "#business" },
+  { label: "For Business", href: "/#business" },
 ];
 
 export default function Navbar() {
@@ -39,9 +40,8 @@ export default function Navbar() {
 
   return (
     <nav
-      className="fixed top-0 left-0 w-full z-[100] transition-all duration-300 overflow-x-hidden"
+      className="fixed top-0 left-0 w-full z-[100] transition-all duration-300"
       style={{
-        height: "68px",
         transform: hidden ? "translateY(-100%)" : "translateY(0)",
         background: scrolled ? "rgba(255,255,255,0.92)" : "rgba(255,255,255,0.8)",
         backdropFilter: "blur(16px)",
@@ -52,9 +52,9 @@ export default function Navbar() {
         boxShadow: scrolled ? "var(--shadow-sm)" : "none",
       }}
     >
-      <div className="max-w-7xl mx-auto px-6 h-full flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 h-[68px] flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2.5 group">
+        <Link href="/" className="flex items-center gap-2.5 group">
           <Image
             src="/logo.svg"
             alt="Vyop Logo"
@@ -72,12 +72,12 @@ export default function Navbar() {
           >
             Vyop
           </span>
-        </a>
+        </Link>
 
         {/* Desktop Nav Links */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.label}
               href={link.href}
               className="transition-colors duration-200 hover:text-[var(--brand-primary)]"
@@ -88,7 +88,7 @@ export default function Navbar() {
               }}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </div>
 
@@ -150,7 +150,7 @@ export default function Navbar() {
           >
             <div className="px-6 py-6 flex flex-col gap-4">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.label}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
@@ -161,7 +161,7 @@ export default function Navbar() {
                   }}
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
               <a
                 href="https://vyop.shop/"

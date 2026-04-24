@@ -6,6 +6,8 @@ import Navbar from '@/components/sections/Navbar';
 import Footer from '@/components/sections/Footer';
 import Image from 'next/image';
 
+export const dynamic = 'force-dynamic';
+
 async function getBlog(slug: string) {
   try {
     const blogsRef = collection(db, 'blogs');

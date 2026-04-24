@@ -5,6 +5,8 @@ import Link from 'next/link';
 import Navbar from '@/components/sections/Navbar';
 import Footer from '@/components/sections/Footer';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = {
   title: 'Blog | Vyop — Insights on Voice Accounting & Business',
   description: 'Read the latest updates, tips, and success stories from Vyop, the world\'s first AI voice accountant.',

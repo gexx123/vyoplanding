@@ -37,7 +37,7 @@ export default function BlogManagement() {
 
   const fetchPosts = async () => {
     try {
-      const res = await fetch("/api/blogs");
+      const res = await fetch("/api/blogs", { cache: "no-store" });
       const data = await res.json();
       setPosts(data);
     } catch (err) {

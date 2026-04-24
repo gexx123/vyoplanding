@@ -3,6 +3,8 @@ import { db } from '@/lib/firebase';
 import { collection, getDocs, addDoc, updateDoc, deleteDoc, doc, query, orderBy, getDoc } from 'firebase/firestore';
 import slugify from 'slugify';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET() {
   try {
     const blogsRef = collection(db, 'blogs');

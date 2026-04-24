@@ -126,7 +126,7 @@ export default function PrivacyPolicy() {
 
             <h3>Option 2: Email Request</h3>
             <ul>
-              <li>Send an email to <a href="mailto:tunwalhimanshu13@gmail.com">tunwalhimanshu13@gmail.com</a> from the email address associated with your account.</li>
+              <li>Send an email to <a href="mailto:vyop4shop@gmail.com">vyop4shop@gmail.com</a> from the email address associated with your account.</li>
               <li>Use the subject line "Account Deletion Request".</li>
               <li>We will process your request and delete all associated data within 30 days.</li>
             </ul>
@@ -146,7 +146,7 @@ export default function PrivacyPolicy() {
 
             <h2>12. Contact Us</h2>
             <p>If you have questions about this Privacy Policy or your data, contact us at:</p>
-            <p>Email: <a href="mailto:tunwalhimanshu13@gmail.com">tunwalhimanshu13@gmail.com</a></p>
+            <p>Email: <a href="mailto:vyop4shop@gmail.com">vyop4shop@gmail.com</a></p>
           </div>
         </div>
       </section>

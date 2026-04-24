@@ -131,7 +131,7 @@ export default function TermsOfService() {
 
             <h2>14. Contact Us</h2>
             <p>If you have questions about these Terms of Service, please contact us at:</p>
-            <p>Email: <a href="mailto:tunwalhimanshu13@gmail.com">tunwalhimanshu13@gmail.com</a></p>
+            <p>Email: <a href="mailto:vyop4shop@gmail.com">vyop4shop@gmail.com</a></p>
           </div>
         </div>
       </section>

@@ -96,24 +96,6 @@ export default function RootLayout({
           href="https://fonts.gstatic.com"
           crossOrigin="anonymous"
         />
-        {/* Structured Data for SEO/AEO */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              "name": "Vyop",
-              "url": "https://vyop.in",
-              "logo": "https://vyop.in/logo.png",
-              "description": "Revolutionize your business with Vyop, the voice-first AI accounting app.",
-              "sameAs": [
-                "https://twitter.com/vyop_ai",
-                "https://linkedin.com/company/vyop"
-              ]
-            })
-          }}
-        />
       </head>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>

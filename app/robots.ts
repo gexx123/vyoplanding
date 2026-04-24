@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/bl/ma', '/bl/cr'], // Private admin pages
     },
-    sitemap: 'https://vyop.ai/sitemap.xml',
+    sitemap: 'https://vyop.in/sitemap.xml',
   };
 }

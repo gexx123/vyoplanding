@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   title: "Vyop — World's First AI Accountant for Business",
   description:
     "Revolutionize your business with Vyop, the voice-first AI accounting app. Create bills, manage inventory, and track digital ledgers instantly just by speaking. Built for the future of retail.",
-  metadataBase: new URL('https://vyop.ai'),
+  metadataBase: new URL('https://vyop.in'),
   alternates: {
     canonical: '/',
   },
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     title: "Vyop — Just Speak, Your Bill is Ready",
     description:
       "The intelligent accounting app that understands your voice. GST billing, khata management, and stock alerts — all controlled by voice.",
-    url: 'https://vyop.ai',
+    url: 'https://vyop.in',
     siteName: 'Vyop',
     images: [
       {
@@ -104,8 +104,8 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               "name": "Vyop",
-              "url": "https://vyop.ai",
-              "logo": "https://vyop.ai/logo.png",
+              "url": "https://vyop.in",
+              "logo": "https://vyop.in/logo.png",
               "description": "Revolutionize your business with Vyop, the voice-first AI accounting app.",
               "sameAs": [
                 "https://twitter.com/vyop_ai",

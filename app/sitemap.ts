@@ -3,7 +3,7 @@ import fs from 'fs/promises';
 import path from 'path';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://vyop.ai';
+  const baseUrl = 'https://vyop.in';
   
   // Fetch blogs to include in sitemap
   let blogUrls: any[] = [];

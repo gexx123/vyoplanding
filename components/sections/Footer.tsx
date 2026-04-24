@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 const footerLinks = {
   Product: [
@@ -135,8 +136,8 @@ export default function Footer() {
               <ul className="space-y-2.5">
                 {links.map((link) => (
                   <li key={link}>
-                    <a
-                      href={link === "Blog" ? "/blog" : "#"}
+                    <Link
+                      href={link === "Blog" ? "/blog" : link === "Careers" ? "/careers" : "#"}
                       className="text-sm transition-colors duration-200 hover:text-[var(--brand-primary)]"
                       style={{
                         color: "var(--text-secondary)",
@@ -144,7 +145,7 @@ export default function Footer() {
                       }}
                     >
                       {link}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>

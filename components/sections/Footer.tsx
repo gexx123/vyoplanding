@@ -6,7 +6,7 @@ import Link from "next/link";
 const footerLinks = {
   Company: ["About Us", "Careers", "Blog"],
   Support: ["Help Center", "Contact Us", "WhatsApp Chat", "Community"],
-  Legal: ["Privacy Policy", "Terms of Service", "Cookie Policy"],
+  Legal: ["Privacy Policy", "Terms of Service"],
 };
 
 const linkPaths: Record<string, string> = {
@@ -191,7 +191,7 @@ export default function Footer() {
               fontFamily: "var(--font-body)",
             }}
           >
-            © 2024 Vyop Technologies Pvt. Ltd. All rights reserved.
+            © 2026 Vyop Technologies Pvt. Ltd. All rights reserved.
           </p>
 
         </div>

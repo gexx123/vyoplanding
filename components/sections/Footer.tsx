@@ -9,6 +9,19 @@ const footerLinks = {
   Legal: ["Privacy Policy", "Terms of Service", "Cookie Policy"],
 };
 
+const linkPaths: Record<string, string> = {
+  "About Us": "/about",
+  "Careers": "/careers",
+  "Blog": "/blog",
+  "Help Center": "/help",
+  "Contact Us": "/contact",
+  "WhatsApp Chat": "https://wa.me/919649059592",
+  "Community": "/community",
+  "Privacy Policy": "/privacy",
+  "Terms of Service": "/terms",
+  "Cookie Policy": "/cookie",
+};
+
 const socialIcons = [
   {
     name: "Twitter",
@@ -127,20 +140,40 @@ export default function Footer() {
                 {title}
               </h4>
               <ul className="space-y-2.5">
-                {links.map((link) => (
-                  <li key={link}>
-                    <Link
-                      href={link === "Blog" ? "/blog" : link === "Careers" ? "/careers" : "#"}
-                      className="text-sm transition-colors duration-200 hover:text-[var(--brand-primary)]"
-                      style={{
-                        color: "var(--text-secondary)",
-                        fontFamily: "var(--font-body)",
-                      }}
-                    >
-                      {link}
-                    </Link>
-                  </li>
-                ))}
+                {links.map((link) => {
+                  const path = linkPaths[link] || "#";
+                  const isExternal = path.startsWith("http");
+
+                  return (
+                    <li key={link}>
+                      {isExternal ? (
+                        <a
+                          href={path}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-sm transition-colors duration-200 hover:text-[var(--brand-primary)]"
+                          style={{
+                            color: "var(--text-secondary)",
+                            fontFamily: "var(--font-body)",
+                          }}
+                        >
+                          {link}
+                        </a>
+                      ) : (
+                        <Link
+                          href={path}
+                          className="text-sm transition-colors duration-200 hover:text-[var(--brand-primary)]"
+                          style={{
+                            color: "var(--text-secondary)",
+                            fontFamily: "var(--font-body)",
+                          }}
+                        >
+                          {link}
+                        </Link>
+                      )}
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           ))}

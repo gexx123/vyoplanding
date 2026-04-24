@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import fs from 'fs/promises';
 import path from 'path';
+import slugify from 'slugify';
 
 const DATA_PATH = path.join(process.cwd(), 'data', 'blogs.json');
 const UPLOAD_DIR = path.join(process.cwd(), 'public', 'uploads');
@@ -22,6 +23,8 @@ export async function POST(request: Request) {
     const title = formData.get('title') as string;
     const category = formData.get('category') as string;
     const excerpt = formData.get('excerpt') as string;
+    const content = formData.get('content') as string || '';
+    const author = formData.get('author') as string || 'Vyop Team';
     const metaTitle = formData.get('metaTitle') as string;
     const metaDescription = formData.get('metaDescription') as string;
     const imageFile = formData.get('image') as File | null;
@@ -40,19 +43,27 @@ export async function POST(request: Request) {
     const data = await fs.readFile(DATA_PATH, 'utf8');
     const blogs = JSON.parse(data);
     
+    // Generate robust SEO slug
+    let baseSlug = slugify(title, { lower: true, strict: true, remove: /[*+~.()'"!:@]/g });
+    let slug = baseSlug;
+    let counter = 1;
+    while (blogs.some((b: any) => b.slug === slug)) {
+      slug = `${baseSlug}-${counter}`;
+      counter++;
+    }
+    
     const blogWithId = {
       id: Date.now(),
+      slug,
       title,
       category,
       excerpt,
+      content,
+      author,
       metaTitle,
       metaDescription,
       image: imageUrl,
-      date: new Date().toLocaleDateString('en-US', {
-        month: 'long',
-        day: 'numeric',
-        year: 'numeric',
-      }),
+      date: new Date().toISOString(), // Use ISO string for accurate SEO lastmod parsing
     };
     
     blogs.unshift(blogWithId);
@@ -107,11 +118,16 @@ export async function PUT(request: Request) {
       imageUrl = `/uploads/${filename}`;
     }
 
+    // If title changed, we don't necessarily want to change the slug as it breaks SEO.
+    // For now, keep the existing slug. If needed, we can add a 'custom slug' field later.
+
     blogs[index] = {
       ...blogs[index],
       title: formData.get('title') as string,
       category: formData.get('category') as string,
       excerpt: formData.get('excerpt') as string,
+      content: formData.get('content') as string || blogs[index].content,
+      author: formData.get('author') as string || blogs[index].author,
       metaTitle: formData.get('metaTitle') as string,
       metaDescription: formData.get('metaDescription') as string,
       image: imageUrl,

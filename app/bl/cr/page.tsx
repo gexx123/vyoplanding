@@ -11,7 +11,9 @@ export default function CreateBlog() {
   const [formData, setFormData] = useState({
     title: "",
     category: "Business Tips",
+    author: "Vyop Team",
     excerpt: "",
+    content: "",
     metaTitle: "",
     metaDescription: "",
     image: null as File | null,
@@ -37,7 +39,9 @@ export default function CreateBlog() {
     const data = new FormData();
     data.append("title", formData.title);
     data.append("category", formData.category);
+    data.append("author", formData.author);
     data.append("excerpt", formData.excerpt);
+    data.append("content", formData.content);
     data.append("metaTitle", formData.metaTitle);
     data.append("metaDescription", formData.metaDescription);
     if (formData.image) {
@@ -84,16 +88,29 @@ export default function CreateBlog() {
             <div className="space-y-6">
               <h2 className="text-xl font-bold text-gray-800 border-b pb-2">General Content</h2>
               
-              <div>
-                <label className="block text-sm font-bold mb-2 text-gray-700">Blog Title</label>
-                <input
-                  required
-                  type="text"
-                  placeholder="Enter a catchy title..."
-                  className="w-full px-5 py-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-[var(--brand-primary)] transition-all"
-                  value={formData.title}
-                  onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-sm font-bold mb-2 text-gray-700">Blog Title</label>
+                  <input
+                    required
+                    type="text"
+                    placeholder="Enter a catchy title..."
+                    className="w-full px-5 py-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-[var(--brand-primary)] transition-all"
+                    value={formData.title}
+                    onChange={(e) => setFormData({ ...formData, title: e.target.value })}
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-bold mb-2 text-gray-700">Author</label>
+                  <input
+                    required
+                    type="text"
+                    placeholder="Author name..."
+                    className="w-full px-5 py-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-[var(--brand-primary)] transition-all"
+                    value={formData.author}
+                    onChange={(e) => setFormData({ ...formData, author: e.target.value })}
+                  />
+                </div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -151,6 +168,21 @@ export default function CreateBlog() {
                   className="w-full px-5 py-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-[var(--brand-primary)] transition-all resize-none"
                   value={formData.excerpt}
                   onChange={(e) => setFormData({ ...formData, excerpt: e.target.value })}
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-bold mb-2 text-gray-700 flex justify-between items-center">
+                  Full Content
+                  <span className="text-xs font-normal text-gray-500">Supports HTML</span>
+                </label>
+                <textarea
+                  required
+                  rows={15}
+                  placeholder="Write the full blog post content here. You can use standard HTML tags like <h2>, <p>, <strong>, etc."
+                  className="w-full px-5 py-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-[var(--brand-primary)] transition-all font-mono text-sm"
+                  value={formData.content}
+                  onChange={(e) => setFormData({ ...formData, content: e.target.value })}
                 />
               </div>
             </div>

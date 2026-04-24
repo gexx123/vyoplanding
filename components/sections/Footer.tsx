@@ -136,7 +136,7 @@ export default function Footer() {
                 {links.map((link) => (
                   <li key={link}>
                     <a
-                      href="#"
+                      href={link === "Blog" ? "/blog" : "#"}
                       className="text-sm transition-colors duration-200 hover:text-[var(--brand-primary)]"
                       style={{
                         color: "var(--text-secondary)",

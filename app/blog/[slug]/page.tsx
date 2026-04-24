@@ -1,0 +1,154 @@
+import { Metadata } from 'next';
+import fs from 'fs/promises';
+import path from 'path';
+import { notFound } from 'next/navigation';
+import Navbar from '@/components/sections/Navbar';
+import Footer from '@/components/sections/Footer';
+import Image from 'next/image';
+
+const DATA_PATH = path.join(process.cwd(), 'data', 'blogs.json');
+
+async function getBlog(slug: string) {
+  try {
+    const data = await fs.readFile(DATA_PATH, 'utf8');
+    const blogs = JSON.parse(data);
+    return blogs.find((b: any) => b.slug === slug || b.id.toString() === slug);
+  } catch (error) {
+    return null;
+  }
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const blog = await getBlog(slug);
+  
+  if (!blog) {
+    return { title: 'Post Not Found | Vyop' };
+  }
+
+  const url = `https://vyop.in/blog/${blog.slug}`;
+
+  return {
+    title: `${blog.metaTitle || blog.title} | Vyop`,
+    description: blog.metaDescription || blog.excerpt,
+    alternates: {
+      canonical: url,
+    },
+    openGraph: {
+      title: blog.metaTitle || blog.title,
+      description: blog.metaDescription || blog.excerpt,
+      url: url,
+      type: 'article',
+      publishedTime: blog.date,
+      authors: [blog.author || 'Vyop Team'],
+      images: [
+        {
+          url: blog.image ? `https://vyop.in${blog.image}` : 'https://vyop.in/og-image.png',
+          width: 1200,
+          height: 630,
+          alt: blog.title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: blog.metaTitle || blog.title,
+      description: blog.metaDescription || blog.excerpt,
+      images: [blog.image ? `https://vyop.in${blog.image}` : 'https://vyop.in/og-image.png'],
+    },
+  };
+}
+
+export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  console.log('Fetching blog with slug:', slug);
+  const blog = await getBlog(slug);
+
+  if (!blog) {
+    notFound();
+  }
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: blog.title,
+    description: blog.metaDescription || blog.excerpt,
+    image: blog.image ? `https://vyop.in${blog.image}` : 'https://vyop.in/og-image.png',
+    datePublished: blog.date,
+    dateModified: blog.date,
+    author: {
+      '@type': 'Person',
+      name: blog.author || 'Vyop Team',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Vyop',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://vyop.in/logo.png',
+      },
+    },
+  };
+
+  // Convert ISO date back to readable format if needed, or use the stored ISO date directly.
+  const readableDate = new Date(blog.date).toLocaleDateString('en-US', {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+  });
+
+  return (
+    <main className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <Navbar />
+
+      <article className="pt-32 pb-20 px-6 max-w-4xl mx-auto">
+        <header className="mb-12 text-center md:text-left">
+          <div className="flex items-center justify-center md:justify-start gap-4 mb-6">
+            <span className="px-4 py-1.5 rounded-full bg-gray-100 text-gray-700 text-sm font-bold tracking-wide uppercase">
+              {blog.category}
+            </span>
+            <span className="text-gray-500 text-sm font-medium">{readableDate}</span>
+          </div>
+          
+          <h1 
+            className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[var(--text-primary)] mb-6 leading-tight"
+            style={{ fontFamily: 'var(--font-display)' }}
+          >
+            {blog.title}
+          </h1>
+          
+          <div className="flex items-center justify-center md:justify-start gap-3 mt-8">
+            <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-[var(--brand-primary)] to-[var(--brand-secondary)] flex items-center justify-center text-white font-bold text-sm">
+              {blog.author ? blog.author[0].toUpperCase() : 'V'}
+            </div>
+            <div className="text-left">
+              <p className="font-bold text-gray-900">{blog.author || 'Vyop Team'}</p>
+              <p className="text-xs text-gray-500">Author</p>
+            </div>
+          </div>
+        </header>
+
+        {blog.image && (
+          <div className="relative w-full aspect-[2/1] rounded-3xl overflow-hidden mb-12 shadow-lg">
+            <img 
+              src={blog.image} 
+              alt={blog.title}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        )}
+
+        <div 
+          className="prose prose-lg md:prose-xl max-w-none prose-headings:font-display prose-headings:font-bold prose-a:text-[var(--brand-primary)] prose-img:rounded-2xl"
+          dangerouslySetInnerHTML={{ __html: blog.content || blog.excerpt }}
+        />
+      </article>
+
+      <Footer />
+    </main>
+  );
+}

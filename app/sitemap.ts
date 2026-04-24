@@ -25,6 +25,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     console.error('Sitemap blog fetch error:', error);
   }
 
+  const staticPages = [
+    { url: `${baseUrl}/blog`, priority: 0.8, changeFrequency: 'daily' },
+    { url: `${baseUrl}/about`, priority: 0.8, changeFrequency: 'monthly' },
+    { url: `${baseUrl}/careers`, priority: 0.8, changeFrequency: 'weekly' },
+    { url: `${baseUrl}/help`, priority: 0.7, changeFrequency: 'monthly' },
+    { url: `${baseUrl}/contact`, priority: 0.7, changeFrequency: 'monthly' },
+    { url: `${baseUrl}/community`, priority: 0.9, changeFrequency: 'always' },
+    { url: `${baseUrl}/privacy`, priority: 0.3, changeFrequency: 'monthly' },
+    { url: `${baseUrl}/terms`, priority: 0.3, changeFrequency: 'monthly' },
+  ].map(page => ({
+    ...page,
+    url: page.url,
+    lastModified: new Date(),
+    changeFrequency: page.changeFrequency as any,
+  }));
+
   return [
     {
       url: baseUrl,
@@ -32,6 +48,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'daily',
       priority: 1.0,
     },
+    ...staticPages,
     ...blogUrls,
   ];
 }

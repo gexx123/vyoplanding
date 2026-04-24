@@ -37,6 +37,15 @@ function calculateReadingTime(content: string) {
   return Math.ceil(wordCount / wordsPerMinute);
 }
 
+function getOptimizedOgImage(rawUrl: string | undefined): string {
+  if (!rawUrl) return 'https://vyop.in/og-image.png';
+  if (rawUrl.includes('res.cloudinary.com')) {
+    // Inject Cloudinary transformations for WhatsApp OG limits: 1200x630, low quality JPEG, < 300KB
+    return rawUrl.replace('/upload/', '/upload/c_fill,w_1200,h_630,q_60,f_jpg/');
+  }
+  return rawUrl.startsWith('http') ? rawUrl : `https://vyop.in${rawUrl}`;
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const blog = await getBlog(slug);
@@ -64,7 +73,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       authors: [blog.author || 'Vyop Team'],
       images: [
         {
-          url: blog.image ? (blog.image.startsWith('http') ? blog.image : `https://vyop.in${blog.image}`) : 'https://vyop.in/og-image.png',
+          url: getOptimizedOgImage(blog.image),
           width: 1200,
           height: 630,
           alt: blog.imageAltText || blog.title,
@@ -75,7 +84,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       card: 'summary_large_image',
       title: blog.metaTitle || blog.title,
       description: blog.metaDescription || blog.excerpt,
-      images: [blog.image ? (blog.image.startsWith('http') ? blog.image : `https://vyop.in${blog.image}`) : 'https://vyop.in/og-image.png'],
+      images: [getOptimizedOgImage(blog.image)],
       creator: '@vyop_ai',
     },
   };
@@ -105,7 +114,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
     '@type': 'Article',
     headline: blog.title,
     description: blog.metaDescription || blog.excerpt,
-    image: blog.image ? `https://vyop.in${blog.image}` : 'https://vyop.in/og-image.png',
+    image: getOptimizedOgImage(blog.image),
     datePublished: blog.date,
     dateModified: blog.date,
     author: {

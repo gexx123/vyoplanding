@@ -82,7 +82,7 @@ export default function StickyFeatureSection() {
       <div className="max-w-7xl mx-auto px-6 relative flex flex-col lg:flex-row items-start">
         
         {/* Left Column: Scrolling Text */}
-        <div className="w-full lg:w-1/2 py-[10vh] lg:py-[15vh]">
+        <div className="w-full lg:w-1/2 py-12 md:py-20 lg:py-[15vh]">
           {features.map((feature, i) => {
             if (feature.chips) {
               const sectionHeight = 60; // 60vh per chip scroll area
@@ -90,19 +90,18 @@ export default function StickyFeatureSection() {
                 <div
                   key={i}
                   className="relative pr-0 lg:pr-12"
-                  style={{ height: `${feature.chips.length * sectionHeight}vh` }}
+                  style={{ height: `${feature.chips.length * 100}vh` }} // 100vh of scroll per chip
                 >
-                  {/* Sticky Text Block */}
-                  <div className="sticky top-[25vh] py-10">
-                    <div className="mb-6">
+                  {/* Sticky Pinned Content (Stays fixed while scrolling) */}
+                  <div className="sticky top-0 h-screen flex flex-col justify-center py-10 overflow-hidden">
+                    <div className="mb-4">
                       <SectionLabel>{feature.label}</SectionLabel>
                     </div>
 
                     <h2
-                      className="font-bold mb-6"
+                      className="font-bold mb-4 text-3xl md:text-4xl lg:text-5xl"
                       style={{
                         fontFamily: "var(--font-display)",
-                        fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
                         color: "var(--text-primary)",
                         lineHeight: 1.15,
                       }}
@@ -111,20 +110,34 @@ export default function StickyFeatureSection() {
                     </h2>
 
                     <p
-                      className="mb-8"
+                      className="mb-6 text-sm md:text-lg"
                       style={{
                         fontFamily: "var(--font-body)",
-                        fontSize: "var(--text-body)",
                         color: "var(--text-secondary)",
-                        lineHeight: 1.7,
+                        lineHeight: 1.6,
                         maxWidth: "480px",
                       }}
                     >
                       {feature.body}
                     </p>
 
+                    {/* Phone Mockup (Sticky on all screens) */}
+                    <div className="lg:hidden mb-6 relative aspect-[9/18] max-h-[45vh] mx-auto rounded-[1.5rem] border-[6px] border-black overflow-hidden shadow-xl bg-white">
+                       <AnimatePresence mode="wait">
+                        <motion.img
+                          key={activeIndex === i ? activeChipIndex : 'idle'}
+                          src={activeIndex === i ? feature.chips[activeChipIndex].image : feature.chips[0].image}
+                          className="w-full h-full object-cover object-top"
+                          initial={{ opacity: 0, scale: 0.95 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          exit={{ opacity: 0, scale: 1.05 }}
+                          transition={{ duration: 0.4 }}
+                        />
+                       </AnimatePresence>
+                    </div>
+
                     {/* Choice Chips UI */}
-                    <div className="flex flex-wrap gap-3 mt-8">
+                    <div className="flex flex-wrap gap-2 mt-4">
                       {feature.chips.map((chip, chipIdx) => {
                         const isActive = activeIndex === i && activeChipIndex === chipIdx;
                         return (
@@ -134,7 +147,7 @@ export default function StickyFeatureSection() {
                               setActiveIndex(i);
                               setActiveChipIndex(chipIdx);
                             }}
-                            className="px-5 py-2.5 rounded-full text-sm font-bold transition-all duration-200 border"
+                            className="px-4 py-2 rounded-full text-xs font-bold transition-all duration-200 border"
                             style={{
                               fontFamily: "var(--font-display)",
                               backgroundColor: isActive ? "var(--brand-primary)" : "#FFFFFF",
@@ -150,22 +163,23 @@ export default function StickyFeatureSection() {
                     </div>
                   </div>
 
-                  {/* Invisible Scroll Triggers */}
-                  {feature.chips.map((_, chipIdx) => (
-                    <motion.div
-                      key={chipIdx}
-                      className="absolute w-full pointer-events-none"
-                      style={{
-                        height: `${sectionHeight}vh`,
-                        top: `${chipIdx * sectionHeight}vh`,
-                      }}
-                      onViewportEnter={() => {
-                        setActiveIndex(i);
-                        setActiveChipIndex(chipIdx);
-                      }}
-                      viewport={{ amount: 0.4, margin: "-20% 0px -20% 0px" }}
-                    />
-                  ))}
+                  {/* Scroll Triggers (One per screen height) */}
+                  <div className="absolute inset-0 pointer-events-none">
+                    {feature.chips.map((_, chipIdx) => (
+                      <motion.div
+                        key={chipIdx}
+                        className="w-full"
+                        style={{
+                          height: `100vh`,
+                        }}
+                        onViewportEnter={() => {
+                          setActiveIndex(i);
+                          setActiveChipIndex(chipIdx);
+                        }}
+                        viewport={{ amount: 0.5 }}
+                      />
+                    ))}
+                  </div>
                 </div>
               );
             }
@@ -174,10 +188,10 @@ export default function StickyFeatureSection() {
             return (
               <motion.div
                 key={i}
-                className="py-16 lg:py-24 pr-0 lg:pr-12"
+                className="py-12 md:py-20 lg:py-24 pr-0 lg:pr-12"
                 onViewportEnter={() => {
                   setActiveIndex(i);
-                  setActiveChipIndex(0); // Reset chip selection when scrolling to a new feature
+                  setActiveChipIndex(0);
                 }}
                 viewport={{ amount: 0.4, margin: "-20% 0px -20% 0px" }}
               >
@@ -186,10 +200,9 @@ export default function StickyFeatureSection() {
                 </div>
 
                 <h2
-                  className="font-bold mb-6"
+                  className="font-bold mb-6 text-3xl md:text-4xl lg:text-5xl"
                   style={{
                     fontFamily: "var(--font-display)",
-                    fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
                     color: "var(--text-primary)",
                     lineHeight: 1.15,
                   }}
@@ -198,10 +211,9 @@ export default function StickyFeatureSection() {
                 </h2>
 
                 <p
-                  className="mb-8"
+                  className="mb-8 text-base md:text-lg"
                   style={{
                     fontFamily: "var(--font-body)",
-                    fontSize: "var(--text-body)",
                     color: "var(--text-secondary)",
                     lineHeight: 1.7,
                     maxWidth: "480px",
@@ -209,6 +221,15 @@ export default function StickyFeatureSection() {
                 >
                   {feature.body}
                 </p>
+
+                {/* Inline Image for Mobile/Tablet */}
+                <div className="lg:hidden mb-10 relative aspect-[9/16] max-w-[300px] mx-auto rounded-[2rem] border-[8px] border-black overflow-hidden shadow-xl">
+                    <img
+                      src={feature.image}
+                      className="w-full h-full object-cover"
+                      alt={feature.title}
+                    />
+                </div>
 
                 <div className="space-y-3">
                   {feature.bullets?.map((bullet, idx) => (
@@ -220,7 +241,7 @@ export default function StickyFeatureSection() {
                         ✓
                       </span>
                       <span
-                        className="text-sm font-medium"
+                        className="text-sm md:text-base font-medium"
                         style={{
                           color: "var(--text-primary)",
                           fontFamily: "var(--font-body)",
@@ -236,41 +257,28 @@ export default function StickyFeatureSection() {
           })}
         </div>
 
-        {/* Right Column: Sticky Phone Mockup */}
-        <div className="w-full lg:w-1/2 sticky top-0 h-screen hidden lg:flex flex-col items-center justify-center pointer-events-none overflow-hidden">
-          {/* We use a container that scales to viewport height to ensure it's never cut off */}
+        {/* Right Column: Sticky Phone Mockup (Desktop Only) */}
+        <div className="hidden lg:flex w-full lg:w-1/2 sticky top-0 h-screen flex-col items-center justify-center pointer-events-none overflow-hidden">
           <motion.div 
             initial={{ y: 100, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: false, margin: "-100px" }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="relative h-[95vh] max-h-[1200px] aspect-[9/19.5] rounded-[2.5rem] md:rounded-[3rem] border-[10px] md:border-[14px] border-black bg-white overflow-hidden shrink-0 mt-[5vh]"
+            className="relative h-[90vh] max-h-[1100px] aspect-[9/19.5] rounded-[2.5rem] md:rounded-[3rem] border-[10px] md:border-[14px] border-black bg-white overflow-hidden shrink-0 mt-[5vh]"
             style={{ boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)" }}
           >
-            <AnimatePresence>
+            <AnimatePresence mode="wait">
               <motion.img
                 key={displayImage}
                 src={displayImage}
                 alt="Feature Preview"
                 className="absolute inset-0 w-full h-full object-cover object-top bg-gray-50"
-                initial={{ opacity: 0, x: 60 }}
+                initial={{ opacity: 0, x: 40 }}
                 animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -60 }}
-                transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                onError={(e) => {
-                  // Fallback for missing images to show a nice placeholder
-                  (e.target as HTMLImageElement).style.display = "none";
-                  (e.target as HTMLImageElement).parentElement?.classList.add("fallback-bg");
-                }}
+                exit={{ opacity: 0, x: -40 }}
+                transition={{ duration: 0.2 }}
               />
             </AnimatePresence>
-
-            {/* Fallback text when image is broken/missing */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center z-[-1] opacity-50">
-               <span className="text-3xl mb-2">📱</span>
-               <span className="font-bold mb-1">Upload Image</span>
-               <span className="text-xs">Save as <br/><code>{displayImage.replace('/', '')}</code></span>
-            </div>
           </motion.div>
         </div>
 

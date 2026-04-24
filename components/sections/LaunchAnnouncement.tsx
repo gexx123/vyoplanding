@@ -38,32 +38,9 @@ export default function LaunchAnnouncement() {
             lineHeight: 1.1
           }}
         >
-          Launching on <span className="gradient-text">May 4, 2026</span>
+          Launched on <span className="gradient-text">May 4, 2026</span>
         </h2>
         
-        <p 
-          className="text-lg md:text-xl mb-12 max-w-2xl mx-auto"
-          style={{ 
-            fontFamily: "var(--font-body)",
-            color: "var(--text-secondary)",
-            lineHeight: 1.6
-          }}
-        >
-          Be part of the revolution. Join our exclusive launch party and be the first to experience the world&apos;s first AI accountant.
-        </p>
-        
-        <motion.button
-          whileHover={{ scale: 1.05, translateY: -4 }}
-          whileTap={{ scale: 0.98 }}
-          className="inline-flex items-center justify-center px-10 py-5 rounded-[20px] text-white font-bold text-lg transition-all duration-300"
-          style={{
-            background: "var(--gradient-brand)",
-            fontFamily: "var(--font-display)",
-            boxShadow: "var(--shadow-gold)",
-          }}
-        >
-          Join Launch Party
-        </motion.button>
       </motion.div>
 
       {/* Decorative Elements */}

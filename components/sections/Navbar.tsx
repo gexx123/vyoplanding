@@ -39,7 +39,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-[100] transition-all duration-300"
+      className="fixed top-0 left-0 w-full z-[100] transition-all duration-300 overflow-x-hidden"
       style={{
         height: "68px",
         transform: hidden ? "translateY(-100%)" : "translateY(0)",
@@ -94,7 +94,7 @@ export default function Navbar() {
 
         {/* Desktop CTA */}
         <a
-          href="#download"
+          href="https://vyop.shop/"
           className="hidden md:inline-flex items-center px-5 py-2.5 rounded-full text-white text-sm font-medium transition-all duration-200 hover:scale-[1.03]"
           style={{
             background: "var(--gradient-brand)",
@@ -164,7 +164,7 @@ export default function Navbar() {
                 </a>
               ))}
               <a
-                href="#download"
+                href="https://vyop.shop/"
                 className="mt-2 inline-flex items-center justify-center px-5 py-3 rounded-full text-white text-sm font-medium"
                 style={{
                   background: "var(--gradient-brand)",

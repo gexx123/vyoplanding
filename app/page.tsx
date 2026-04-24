@@ -7,7 +7,6 @@ import LaunchAnnouncement from "@/components/sections/LaunchAnnouncement";
 import Testimonials from "@/components/sections/Testimonials";
 import FAQ from "@/components/sections/FAQ";
 import Blog from "@/components/sections/Blog";
-import FooterCTA from "@/components/sections/FooterCTA";
 import Footer from "@/components/sections/Footer";
 
 export default function Home() {
@@ -24,7 +23,6 @@ export default function Home() {
       <Testimonials />
       <FAQ />
       <Blog />
-      <FooterCTA />
       <Footer />
     </main>
   );

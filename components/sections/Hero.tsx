@@ -36,18 +36,18 @@ export default function Hero() {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-[80vh] lg:min-h-screen flex items-center justify-center overflow-x-hidden"
       style={{ backgroundColor: "#ffffff" }}
     >
 
       {/* Content Wrapper */}
       <motion.div 
         style={{ opacity, scale, y }}
-        className="relative z-10 w-full max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center"
+        className="relative z-10 w-full max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center lg:items-center"
       >
         {/* Left Column: Text */}
         <motion.div
-          className="text-left flex flex-col items-start pt-32 pb-12 lg:py-0 w-full lg:w-[55%] z-20"
+          className="text-center lg:text-left flex flex-col items-center lg:items-start pt-20 pb-10 lg:py-0 w-full lg:w-[55%] z-20"
           variants={staggerContainer}
           initial="hidden"
           animate="visible"
@@ -55,37 +55,32 @@ export default function Hero() {
           {/* H1 */}
           <motion.h1
             variants={fadeUpVariants}
-            className="font-extrabold mb-6 tracking-tight flex flex-col gap-2 md:gap-3"
+            className="font-extrabold mb-6 tracking-tight flex flex-col gap-2 md:gap-3 w-full"
             style={{
               fontFamily: "var(--font-display)",
-              maxWidth: "600px",
             }}
           >
             <span
+              className="text-2xl md:text-3xl lg:text-4xl"
               style={{
-                fontSize: "clamp(1.5rem, 3vw, 2.5rem)",
                 color: "var(--text-primary)",
               }}
             >
               Vyop
             </span>
             <span
-              className="gradient-text leading-[1.1]"
-              style={{
-                fontSize: "clamp(2.5rem, 5.5vw, 4.5rem)",
-              }}
+              className="gradient-text leading-[1.1] text-4xl md:text-6xl lg:text-7xl break-words"
             >
-              World's First AI Accountant
+              World&apos;s First AI Accountant
             </span>
           </motion.h1>
 
           {/* Sub-headline */}
           <motion.p
             variants={fadeUpVariants}
-            className="mb-10"
+            className="mb-10 text-base md:text-lg lg:text-xl px-2 lg:px-0"
             style={{
               fontFamily: "var(--font-body)",
-              fontSize: "clamp(16px, 1.8vw, 20px)",
               color: "var(--text-secondary)",
               maxWidth: "500px",
               lineHeight: 1.7,
@@ -97,10 +92,10 @@ export default function Hero() {
           {/* CTA buttons */}
           <motion.div
             variants={fadeUpVariants}
-            className="flex flex-col sm:flex-row gap-4"
+            className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto px-4 sm:px-0"
           >
             <a
-              href="#download"
+              href="https://vyop.shop/"
               className="inline-flex items-center justify-center px-8 py-4 rounded-[14px] text-white font-semibold transition-all duration-200 hover:-translate-y-0.5"
               style={{
                 background: "var(--gradient-brand)",
@@ -130,10 +125,10 @@ export default function Hero() {
         </motion.div>
       </motion.div>
 
-      {/* Right Column: Image Bleeding to Right Edge */}
+      {/* Right Column: Image Bleeding to Right Edge (HIDDEN ON MOBILE) */}
       <motion.div 
         style={{ opacity, scale }}
-        className="relative lg:absolute lg:inset-y-0 lg:right-0 w-full lg:w-[50vw] h-[50vh] lg:h-full z-0 mt-8 lg:mt-0"
+        className="hidden lg:block absolute inset-y-0 right-0 w-[50vw] h-full z-0"
       >
         <div className="relative w-full h-full">
           {/* Image */}
@@ -143,29 +138,6 @@ export default function Hero() {
             className="relative z-20 w-full h-full object-cover object-right"
           />
         </div>
-      </motion.div>
-
-      {/* Scroll-down indicator */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
-        style={{ opacity }}
-        animate={{ y: [0, 8, 0] }}
-        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-      >
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          style={{ color: "var(--text-muted)", opacity: 0.5 }}
-        >
-          <path d="M7 13l5 5 5-5" />
-          <path d="M7 6l5 5 5-5" />
-        </svg>
       </motion.div>
     </section>
   );

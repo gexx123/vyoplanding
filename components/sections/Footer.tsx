@@ -6,7 +6,6 @@ const footerLinks = {
   Product: [
     "Voice Billing",
     "Ledger/Credit",
-    "GST Bills",
     "Reports",
     "Inventory",
     "Credit",
@@ -167,15 +166,7 @@ export default function Footer() {
           >
             © 2024 Vyop Technologies Pvt. Ltd. All rights reserved.
           </p>
-          <p
-            className="text-xs font-medium"
-            style={{
-              color: "var(--text-muted)",
-              fontFamily: "var(--font-body)",
-            }}
-          >
-            Made with ❤️ for Bharat 🇮🇳
-          </p>
+
         </div>
       </div>
     </footer>

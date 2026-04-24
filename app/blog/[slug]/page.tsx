@@ -1,19 +1,29 @@
 import { Metadata } from 'next';
-import fs from 'fs/promises';
-import path from 'path';
+import { db } from '@/lib/firebase';
+import { collection, getDocs, query, where, limit, doc, getDoc } from 'firebase/firestore';
 import { notFound } from 'next/navigation';
 import Navbar from '@/components/sections/Navbar';
 import Footer from '@/components/sections/Footer';
 import Image from 'next/image';
 
-const DATA_PATH = path.join(process.cwd(), 'data', 'blogs.json');
-
 async function getBlog(slug: string) {
   try {
-    const data = await fs.readFile(DATA_PATH, 'utf8');
-    const blogs = JSON.parse(data);
-    return blogs.find((b: any) => b.slug === slug || b.id.toString() === slug);
+    const blogsRef = collection(db, 'blogs');
+    const q = query(blogsRef, where('slug', '==', slug), limit(1));
+    const snapshot = await getDocs(q);
+    
+    if (snapshot.empty) {
+      const docRef = doc(db, 'blogs', slug);
+      const docSnap = await getDoc(docRef);
+      if (docSnap.exists()) {
+         return { id: docSnap.id, ...docSnap.data() } as any;
+      }
+      return null;
+    }
+    
+    return { id: snapshot.docs[0].id, ...snapshot.docs[0].data() } as any;
   } catch (error) {
+    console.error("Error fetching blog from Firestore:", error);
     return null;
   }
 }

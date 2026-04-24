@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
-import fs from 'fs/promises';
-import path from 'path';
+import { db } from '@/lib/firebase';
+import { collection, getDocs, query, orderBy } from 'firebase/firestore';
 import Link from 'next/link';
 import Navbar from '@/components/sections/Navbar';
 import Footer from '@/components/sections/Footer';
@@ -13,13 +13,15 @@ export const metadata: Metadata = {
   },
 };
 
-const DATA_PATH = path.join(process.cwd(), 'data', 'blogs.json');
-
 async function getBlogs() {
   try {
-    const data = await fs.readFile(DATA_PATH, 'utf8');
-    return JSON.parse(data);
+    const blogsRef = collection(db, 'blogs');
+    const q = query(blogsRef, orderBy('date', 'desc'));
+    const snapshot = await getDocs(q);
+    const allBlogs = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+    return allBlogs.filter((blog: any) => blog.status !== 'Draft');
   } catch (error) {
+    console.error("Error fetching blogs from Firestore:", error);
     return [];
   }
 }

@@ -21,47 +21,35 @@ export default function CreateBlog() {
     metaDescription: "",
     imageAltText: "",
     status: "Published",
-    image: null as File | null,
+    image: "",
   });
   const router = useRouter();
-
-  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      setFormData({ ...formData, image: file });
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setImagePreview(reader.result as string);
-      };
-      reader.readAsDataURL(file);
-    }
-  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
 
-    const data = new FormData();
-    data.append("title", formData.title);
-    data.append("category", formData.category);
-    data.append("author", formData.author);
-    data.append("authorTitle", formData.authorTitle);
-    data.append("focusKeyword", formData.focusKeyword);
-    data.append("secondaryKeywords", formData.secondaryKeywords);
-    data.append("excerpt", formData.excerpt);
-    data.append("content", formData.content);
-    data.append("metaTitle", formData.metaTitle);
-    data.append("metaDescription", formData.metaDescription);
-    data.append("imageAltText", formData.imageAltText);
-    data.append("status", formData.status);
-    if (formData.image) {
-      data.append("image", formData.image);
-    }
-
     try {
+      const payload = {
+        title: formData.title,
+        category: formData.category,
+        author: formData.author,
+        authorTitle: formData.authorTitle,
+        focusKeyword: formData.focusKeyword,
+        secondaryKeywords: formData.secondaryKeywords,
+        excerpt: formData.excerpt,
+        content: formData.content,
+        metaTitle: formData.metaTitle,
+        metaDescription: formData.metaDescription,
+        imageAltText: formData.imageAltText,
+        status: formData.status,
+        image: formData.image,
+      };
+
       const res = await fetch("/api/blogs", {
         method: "POST",
-        body: data,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
       });
 
       if (res.ok) {
@@ -163,29 +151,17 @@ export default function CreateBlog() {
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-bold mb-2 text-gray-700">Feature Image</label>
-                  <div className="relative">
-                    <input
-                      type="file"
-                      accept="image/*"
-                      onChange={handleImageChange}
-                      className="hidden"
-                      id="image-upload"
-                    />
-                    <label 
-                      htmlFor="image-upload"
-                      className="w-full px-5 py-4 rounded-2xl bg-gray-50 flex items-center justify-between cursor-pointer hover:bg-gray-100 transition-colors"
-                    >
-                      <span className="text-gray-500 truncate">
-                        {formData.image ? formData.image.name : "Select an image..."}
-                      </span>
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[var(--brand-primary)]">
-                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                        <polyline points="17 8 12 3 7 8" />
-                        <line x1="12" y1="3" x2="12" y2="15" />
-                      </svg>
-                    </label>
-                  </div>
+                  <label className="block text-sm font-bold mb-2 text-gray-700">Image URL</label>
+                  <input
+                    type="url"
+                    placeholder="https://... or /images/..."
+                    className="w-full px-5 py-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-[var(--brand-primary)] transition-all"
+                    value={formData.image}
+                    onChange={(e) => {
+                      setFormData({ ...formData, image: e.target.value });
+                      setImagePreview(e.target.value);
+                    }}
+                  />
                 </div>
                 <div>
                   <label className="block text-sm font-bold mb-2 text-gray-700 text-right">Alt Text (SEO)</label>
@@ -319,13 +295,7 @@ export default function CreateBlog() {
                     placeholder="Summary for Google and Social..."
                     className="w-full px-5 py-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-[var(--brand-primary)] transition-all"
                     value={formData.metaDescription}
-                    onChange={(e) => {
-                      setFormData({ 
-                        ...formData, 
-                        metaDescription: e.target.value,
-                        excerpt: e.target.value // Keep both in sync for now
-                      });
-                    }}
+                    onChange={(e) => setFormData({ ...formData, metaDescription: e.target.value })}
                   />
                 </div>
               </div>

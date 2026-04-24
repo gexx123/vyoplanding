@@ -1,15 +1,20 @@
 import { NextResponse } from 'next/server';
-import fs from 'fs/promises';
-import path from 'path';
+import { db } from '@/lib/firebase';
+import { collection, getDocs, addDoc, updateDoc, deleteDoc, doc, query, orderBy, getDoc } from 'firebase/firestore';
 import slugify from 'slugify';
-
-const DATA_PATH = path.join(process.cwd(), 'data', 'blogs.json');
-const UPLOAD_DIR = path.join(process.cwd(), 'public', 'uploads');
 
 export async function GET() {
   try {
-    const data = await fs.readFile(DATA_PATH, 'utf8');
-    return NextResponse.json(JSON.parse(data));
+    const blogsRef = collection(db, 'blogs');
+    const q = query(blogsRef, orderBy('date', 'desc'));
+    const snapshot = await getDocs(q);
+    
+    const blogs = snapshot.docs.map(doc => ({
+      id: doc.id,
+      ...doc.data()
+    }));
+    
+    return NextResponse.json(blogs);
   } catch (error) {
     console.error('Error reading blogs:', error);
     return NextResponse.json([], { status: 500 });
@@ -18,68 +23,44 @@ export async function GET() {
 
 export async function POST(request: Request) {
   try {
-    const formData = await request.formData();
-    
-    const title = formData.get('title') as string;
-    const category = formData.get('category') as string || 'Business Tips';
-    const excerpt = formData.get('excerpt') as string;
-    const content = formData.get('content') as string || '';
-    const author = formData.get('author') as string || 'Vyop Team';
-    const authorTitle = formData.get('authorTitle') as string || 'Founder, Vyop';
-    const focusKeyword = formData.get('focusKeyword') as string || '';
-    const secondaryKeywords = formData.get('secondaryKeywords') as string || '';
-    const metaTitle = formData.get('metaTitle') as string;
-    const metaDescription = formData.get('metaDescription') as string;
-    const imageAltText = formData.get('imageAltText') as string || title;
-    const status = formData.get('status') as string || 'Published';
-    const imageFile = formData.get('image') as File | null;
-    
-    let imageUrl = '';
-    
-    if (imageFile && imageFile.size > 0) {
-      const bytes = await imageFile.arrayBuffer();
-      const buffer = Buffer.from(bytes);
-      const filename = `${Date.now()}-${imageFile.name.replace(/\s+/g, '-')}`;
-      const filepath = path.join(UPLOAD_DIR, filename);
-      await fs.writeFile(filepath, buffer);
-      imageUrl = `/uploads/${filename}`;
-    }
-
-    const data = await fs.readFile(DATA_PATH, 'utf8');
-    const blogs = JSON.parse(data);
+    const body = await request.json();
     
     // Generate robust SEO slug
-    let baseSlug = slugify(title, { lower: true, strict: true, remove: /[*+~.()'"!:@]/g });
+    let baseSlug = slugify(body.title, { lower: true, strict: true, remove: /[*+~.()'"!:@]/g });
     let slug = baseSlug;
+    
+    // Check for duplicate slugs
+    const blogsRef = collection(db, 'blogs');
+    const snapshot = await getDocs(blogsRef);
+    const existingSlugs = snapshot.docs.map(d => d.data().slug);
+    
     let counter = 1;
-    while (blogs.some((b: any) => b.slug === slug)) {
+    while (existingSlugs.includes(slug)) {
       slug = `${baseSlug}-${counter}`;
       counter++;
     }
     
-    const blogWithId = {
-      id: Date.now(),
+    const newBlog = {
       slug,
-      title,
-      category,
-      excerpt,
-      content,
-      author,
-      authorTitle,
-      focusKeyword,
-      secondaryKeywords,
-      metaTitle: metaTitle || title,
-      metaDescription: metaDescription || excerpt,
-      image: imageUrl,
-      imageAltText,
-      status,
+      title: body.title,
+      category: body.category || 'Business Tips',
+      excerpt: body.excerpt || '',
+      content: body.content || '',
+      author: body.author || 'Vyop Team',
+      authorTitle: body.authorTitle || 'Founder, Vyop',
+      focusKeyword: body.focusKeyword || '',
+      secondaryKeywords: body.secondaryKeywords || '',
+      metaTitle: body.metaTitle || body.title,
+      metaDescription: body.metaDescription || body.excerpt,
+      image: body.image || '',
+      imageAltText: body.imageAltText || body.title,
+      status: body.status || 'Published',
       date: new Date().toISOString(),
     };
     
-    blogs.unshift(blogWithId);
-    await fs.writeFile(DATA_PATH, JSON.stringify(blogs, null, 2));
+    const docRef = await addDoc(blogsRef, newBlog);
     
-    return NextResponse.json(blogWithId);
+    return NextResponse.json({ id: docRef.id, ...newBlog });
   } catch (error) {
     console.error('Error saving blog:', error);
     return NextResponse.json({ error: 'Failed to save blog' }, { status: 500 });
@@ -93,11 +74,8 @@ export async function DELETE(request: Request) {
     
     if (!id) return NextResponse.json({ error: 'ID is required' }, { status: 400 });
 
-    const data = await fs.readFile(DATA_PATH, 'utf8');
-    let blogs = JSON.parse(data);
-    
-    blogs = blogs.filter((b: any) => b.id !== parseInt(id));
-    await fs.writeFile(DATA_PATH, JSON.stringify(blogs, null, 2));
+    const docRef = doc(db, 'blogs', id);
+    await deleteDoc(docRef);
     
     return NextResponse.json({ success: true });
   } catch (error) {
@@ -107,50 +85,41 @@ export async function DELETE(request: Request) {
 
 export async function PUT(request: Request) {
   try {
-    const formData = await request.formData();
-    const id = formData.get('id') as string;
+    const body = await request.json();
+    const id = body.id;
     
-    const data = await fs.readFile(DATA_PATH, 'utf8');
-    let blogs = JSON.parse(data);
-    const index = blogs.findIndex((b: any) => b.id === parseInt(id));
+    if (!id) return NextResponse.json({ error: 'ID is required' }, { status: 400 });
+
+    const docRef = doc(db, 'blogs', id);
+    const docSnap = await getDoc(docRef);
     
-    if (index === -1) return NextResponse.json({ error: 'Not found' }, { status: 404 });
-
-    const imageFile = formData.get('image') as File | null;
-    let imageUrl = blogs[index].image;
-
-    if (imageFile && imageFile.size > 0) {
-      const bytes = await imageFile.arrayBuffer();
-      const buffer = Buffer.from(bytes);
-      const filename = `${Date.now()}-${imageFile.name.replace(/\s+/g, '-')}`;
-      const filepath = path.join(UPLOAD_DIR, filename);
-      await fs.writeFile(filepath, buffer);
-      imageUrl = `/uploads/${filename}`;
+    if (!docSnap.exists()) {
+      return NextResponse.json({ error: 'Not found' }, { status: 404 });
     }
 
-    // If title changed, we don't necessarily want to change the slug as it breaks SEO.
-    // For now, keep the existing slug. If needed, we can add a 'custom slug' field later.
+    const existingData = docSnap.data();
 
-    blogs[index] = {
-      ...blogs[index],
-      title: formData.get('title') as string,
-      category: formData.get('category') as string || blogs[index].category,
-      excerpt: formData.get('excerpt') as string,
-      content: formData.get('content') as string || blogs[index].content,
-      author: formData.get('author') as string || blogs[index].author,
-      authorTitle: formData.get('authorTitle') as string || blogs[index].authorTitle,
-      focusKeyword: formData.get('focusKeyword') as string || blogs[index].focusKeyword,
-      secondaryKeywords: formData.get('secondaryKeywords') as string || blogs[index].secondaryKeywords,
-      metaTitle: formData.get('metaTitle') as string || blogs[index].metaTitle,
-      metaDescription: formData.get('metaDescription') as string || blogs[index].metaDescription,
-      image: imageUrl,
-      imageAltText: formData.get('imageAltText') as string || blogs[index].imageAltText,
-      status: formData.get('status') as string || blogs[index].status,
+    const updatedBlog = {
+      title: body.title !== undefined ? body.title : existingData.title,
+      category: body.category !== undefined ? body.category : existingData.category,
+      excerpt: body.excerpt !== undefined ? body.excerpt : existingData.excerpt,
+      content: body.content !== undefined ? body.content : existingData.content,
+      author: body.author !== undefined ? body.author : existingData.author,
+      authorTitle: body.authorTitle !== undefined ? body.authorTitle : existingData.authorTitle,
+      focusKeyword: body.focusKeyword !== undefined ? body.focusKeyword : existingData.focusKeyword,
+      secondaryKeywords: body.secondaryKeywords !== undefined ? body.secondaryKeywords : existingData.secondaryKeywords,
+      metaTitle: body.metaTitle !== undefined ? body.metaTitle : existingData.metaTitle,
+      metaDescription: body.metaDescription !== undefined ? body.metaDescription : existingData.metaDescription,
+      image: body.image !== undefined ? body.image : existingData.image,
+      imageAltText: body.imageAltText !== undefined ? body.imageAltText : existingData.imageAltText,
+      status: body.status !== undefined ? body.status : existingData.status,
     };
 
-    await fs.writeFile(DATA_PATH, JSON.stringify(blogs, null, 2));
-    return NextResponse.json(blogs[index]);
+    await updateDoc(docRef, updatedBlog);
+    
+    return NextResponse.json({ id, ...existingData, ...updatedBlog });
   } catch (error) {
+    console.error('Error updating blog:', error);
     return NextResponse.json({ error: 'Failed to update' }, { status: 500 });
   }
 }

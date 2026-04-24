@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next';
-import fs from 'fs/promises';
-import path from 'path';
+import { db } from '@/lib/firebase';
+import { collection, getDocs, query, where } from 'firebase/firestore';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://vyop.in';
@@ -8,16 +8,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Fetch blogs to include in sitemap
   let blogUrls: any[] = [];
   try {
-    const DATA_PATH = path.join(process.cwd(), 'data', 'blogs.json');
-    const data = await fs.readFile(DATA_PATH, 'utf8');
-    const blogs = JSON.parse(data);
+    const blogsRef = collection(db, 'blogs');
+    const q = query(blogsRef, where('status', '==', 'Published'));
+    const snapshot = await getDocs(q);
     
-    blogUrls = blogs.map((post: any) => ({
-      url: `${baseUrl}/blog/${post.slug || post.id}`,
+    blogUrls = snapshot.docs.map((doc: any) => {
+      const post = doc.data();
+      return {
+        url: `${baseUrl}/blog/${post.slug || doc.id}`,
       lastModified: new Date(post.date || Date.now()),
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    }));
+        changeFrequency: 'weekly',
+        priority: 0.7,
+      };
+    });
   } catch (error) {
     console.error('Sitemap blog fetch error:', error);
   }

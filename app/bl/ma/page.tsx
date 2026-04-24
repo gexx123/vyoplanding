@@ -6,7 +6,7 @@ import Navbar from "@/components/sections/Navbar";
 import Link from "next/link";
 
 interface BlogPost {
-  id: number;
+  id: string;
   title: string;
   category: string;
   date: string;
@@ -30,7 +30,6 @@ export default function BlogManagement() {
   const [editingPost, setEditingPost] = useState<BlogPost | null>(null);
   const [isUpdating, setIsUpdating] = useState(false);
   const [editImagePreview, setEditImagePreview] = useState<string | null>(null);
-  const [newImage, setNewImage] = useState<File | null>(null);
 
   useEffect(() => {
     fetchPosts();
@@ -48,7 +47,7 @@ export default function BlogManagement() {
     }
   };
 
-  const handleDelete = async (id: number) => {
+  const handleDelete = async (id: string) => {
     if (!confirm("Are you sure you want to delete this post?")) return;
 
     try {
@@ -64,7 +63,6 @@ export default function BlogManagement() {
   const handleEditClick = (post: BlogPost) => {
     setEditingPost({ ...post });
     setEditImagePreview(post.image);
-    setNewImage(null);
   };
 
   const handleUpdate = async (e: React.FormEvent) => {
@@ -72,29 +70,30 @@ export default function BlogManagement() {
     if (!editingPost) return;
 
     setIsUpdating(true);
-    const data = new FormData();
-    data.append("id", editingPost.id.toString());
-    data.append("title", editingPost.title);
-    data.append("category", editingPost.category);
-    data.append("author", editingPost.author);
-    data.append("authorTitle", editingPost.authorTitle || "");
-    data.append("focusKeyword", editingPost.focusKeyword || "");
-    data.append("secondaryKeywords", editingPost.secondaryKeywords || "");
-    data.append("excerpt", editingPost.excerpt);
-    data.append("content", editingPost.content);
-    data.append("metaTitle", editingPost.metaTitle || "");
-    data.append("metaDescription", editingPost.metaDescription || "");
-    data.append("imageAltText", editingPost.imageAltText || "");
-    data.append("status", editingPost.status || "Published");
-    
-    if (newImage) {
-      data.append("image", newImage);
-    }
 
     try {
+
+      const payload = {
+        id: editingPost.id,
+        title: editingPost.title,
+        category: editingPost.category,
+        author: editingPost.author,
+        authorTitle: editingPost.authorTitle || "",
+        focusKeyword: editingPost.focusKeyword || "",
+        secondaryKeywords: editingPost.secondaryKeywords || "",
+        excerpt: editingPost.excerpt,
+        content: editingPost.content,
+        metaTitle: editingPost.metaTitle || "",
+        metaDescription: editingPost.metaDescription || "",
+        imageAltText: editingPost.imageAltText || "",
+        status: editingPost.status || "Published",
+        image: editingPost.image,
+      };
+
       const res = await fetch("/api/blogs", {
         method: "PUT",
-        body: data,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
       });
 
       if (res.ok) {
@@ -301,6 +300,37 @@ export default function BlogManagement() {
                     />
                   </div>
                 </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Image URL</label>
+                    <input
+                      type="url"
+                      placeholder="https://... or /images/..."
+                      className="w-full px-5 py-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-[var(--brand-primary)] transition-all"
+                      value={editingPost.image}
+                      onChange={(e) => {
+                        setEditingPost({ ...editingPost, image: e.target.value });
+                        setEditImagePreview(e.target.value);
+                      }}
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Image Alt Text (SEO)</label>
+                    <input
+                      type="text"
+                      className="w-full px-5 py-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-[var(--brand-primary)] transition-all"
+                      value={editingPost.imageAltText}
+                      onChange={(e) => setEditingPost({ ...editingPost, imageAltText: e.target.value })}
+                    />
+                  </div>
+                </div>
+
+                {editImagePreview && (
+                  <div className="relative aspect-[16/6] rounded-2xl overflow-hidden border">
+                    <img src={editImagePreview} alt="Preview" className="w-full h-full object-cover" />
+                  </div>
+                )}
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>

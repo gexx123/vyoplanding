@@ -1,8 +1,45 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import AnimatedCounter from "@/components/ui/AnimatedCounter";
 
 export default function LaunchAnnouncement() {
+  const [visitorCount, setVisitorCount] = useState<number | null>(null);
+
+  useEffect(() => {
+    const trackVisit = async () => {
+      try {
+        // Only increment once per session
+        const hasVisited = sessionStorage.getItem("vyop_visited");
+        const method = hasVisited ? "GET" : "POST";
+        
+        const res = await fetch("/api/stats/visitors", { method });
+        const data = await res.json();
+        
+        if (data.count) {
+          setVisitorCount(data.count);
+          if (!hasVisited) sessionStorage.setItem("vyop_visited", "true");
+        }
+      } catch (err) {
+        console.error("Failed to track visit:", err);
+      }
+    };
+
+    trackVisit();
+    
+    // Refresh count every 30 seconds for "live" feel
+    const interval = setInterval(async () => {
+      try {
+        const res = await fetch("/api/stats/visitors");
+        const data = await res.json();
+        if (data.count) setVisitorCount(data.count);
+      } catch (e) {}
+    }, 30000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section
       className="py-24 relative overflow-hidden"
@@ -40,6 +77,19 @@ export default function LaunchAnnouncement() {
         >
           Launched on <span className="gradient-text">May 4, 2026</span>
         </h2>
+
+        {visitorCount !== null && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="flex items-center justify-center gap-2 text-gray-500 font-medium"
+          >
+            <span className="flex h-2 w-2 rounded-full bg-green-500 animate-pulse" />
+            <span className="text-sm">
+              Join <span className="text-[var(--brand-primary)] font-bold"><AnimatedCounter value={visitorCount} /></span> people who visited Vyop today
+            </span>
+          </motion.div>
+        )}
         
       </motion.div>
 

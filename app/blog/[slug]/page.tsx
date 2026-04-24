@@ -6,6 +6,7 @@ import Navbar from '@/components/sections/Navbar';
 import Footer from '@/components/sections/Footer';
 import Image from 'next/image';
 import ShareButtons from '@/components/blog/ShareButtons';
+import BlogViewTracker from '@/components/blog/BlogViewTracker';
 
 export const dynamic = 'force-dynamic';
 
@@ -135,6 +136,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
   };
 
   const readingTime = calculateReadingTime(blog.content || '');
+  const views = blog.views || 0;
   
   const readableDate = new Date(blog.date).toLocaleDateString('en-US', {
     month: 'long',
@@ -144,6 +146,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
 
   return (
     <main className="min-h-screen bg-white">
+      <BlogViewTracker id={blog.id} slug={slug} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }}
@@ -156,7 +159,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
 
       <article className="pt-32 pb-20 px-6 max-w-4xl mx-auto">
         <header className="mb-12 text-center md:text-left">
-          <div className="flex items-center justify-center md:justify-start gap-4 mb-6">
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-x-4 gap-y-2 mb-6">
             <span className="px-4 py-1.5 rounded-full bg-gray-100 text-gray-700 text-sm font-bold tracking-wide uppercase">
               {blog.category}
             </span>
@@ -164,6 +167,14 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
             <span className="text-gray-500 text-sm font-medium">{readableDate}</span>
             <span className="text-gray-400 text-sm font-medium">•</span>
             <span className="text-gray-500 text-sm font-medium">{readingTime} min read</span>
+            <span className="text-gray-400 text-sm font-medium">•</span>
+            <span className="flex items-center gap-1.5 text-gray-500 text-sm font-medium">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-400">
+                <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                <circle cx="12" cy="12" r="3" />
+              </svg>
+              {views.toLocaleString()} views
+            </span>
           </div>
           
           <h1 

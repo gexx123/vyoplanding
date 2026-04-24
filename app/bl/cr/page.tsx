@@ -21,15 +21,43 @@ export default function CreateBlog() {
     metaDescription: "",
     imageAltText: "",
     status: "Published",
-    image: "",
+    image: null as File | null,
   });
   const router = useRouter();
+
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      setFormData({ ...formData, image: file });
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setImagePreview(reader.result as string);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
 
+    let imageUrl = "";
+
     try {
+      if (formData.image) {
+        const imageFormData = new FormData();
+        imageFormData.append("file", formData.image);
+        
+        const uploadRes = await fetch("/api/upload", {
+          method: "POST",
+          body: imageFormData,
+        });
+        
+        if (!uploadRes.ok) throw new Error("Image upload failed");
+        const uploadData = await uploadRes.json();
+        imageUrl = uploadData.url;
+      }
+
       const payload = {
         title: formData.title,
         category: formData.category,
@@ -43,7 +71,7 @@ export default function CreateBlog() {
         metaDescription: formData.metaDescription,
         imageAltText: formData.imageAltText,
         status: formData.status,
-        image: formData.image,
+        image: imageUrl,
       };
 
       const res = await fetch("/api/blogs", {
@@ -151,17 +179,29 @@ export default function CreateBlog() {
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-bold mb-2 text-gray-700">Image URL</label>
-                  <input
-                    type="url"
-                    placeholder="https://... or /images/..."
-                    className="w-full px-5 py-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-[var(--brand-primary)] transition-all"
-                    value={formData.image}
-                    onChange={(e) => {
-                      setFormData({ ...formData, image: e.target.value });
-                      setImagePreview(e.target.value);
-                    }}
-                  />
+                  <label className="block text-sm font-bold mb-2 text-gray-700">Feature Image</label>
+                  <div className="relative">
+                    <input
+                      type="file"
+                      accept="image/*"
+                      onChange={handleImageChange}
+                      className="hidden"
+                      id="image-upload"
+                    />
+                    <label 
+                      htmlFor="image-upload"
+                      className="w-full px-5 py-4 rounded-2xl bg-gray-50 flex items-center justify-between cursor-pointer hover:bg-gray-100 transition-colors"
+                    >
+                      <span className="text-gray-500 truncate">
+                        {formData.image ? formData.image.name : "Select an image..."}
+                      </span>
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[var(--brand-primary)]">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                        <polyline points="17 8 12 3 7 8" />
+                        <line x1="12" y1="3" x2="12" y2="15" />
+                      </svg>
+                    </label>
+                  </div>
                 </div>
                 <div>
                   <label className="block text-sm font-bold mb-2 text-gray-700 text-right">Alt Text (SEO)</label>

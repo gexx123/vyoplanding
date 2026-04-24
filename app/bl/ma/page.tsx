@@ -30,6 +30,7 @@ export default function BlogManagement() {
   const [editingPost, setEditingPost] = useState<BlogPost | null>(null);
   const [isUpdating, setIsUpdating] = useState(false);
   const [editImagePreview, setEditImagePreview] = useState<string | null>(null);
+  const [newImage, setNewImage] = useState<File | null>(null);
 
   useEffect(() => {
     fetchPosts();
@@ -63,6 +64,19 @@ export default function BlogManagement() {
   const handleEditClick = (post: BlogPost) => {
     setEditingPost({ ...post });
     setEditImagePreview(post.image);
+    setNewImage(null);
+  };
+
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      setNewImage(file);
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setEditImagePreview(reader.result as string);
+      };
+      reader.readAsDataURL(file);
+    }
   };
 
   const handleUpdate = async (e: React.FormEvent) => {
@@ -70,8 +84,22 @@ export default function BlogManagement() {
     if (!editingPost) return;
 
     setIsUpdating(true);
+    let imageUrl = editingPost.image; // Default to existing image
 
     try {
+      if (newImage) {
+        const imageFormData = new FormData();
+        imageFormData.append("file", newImage);
+        
+        const uploadRes = await fetch("/api/upload", {
+          method: "POST",
+          body: imageFormData,
+        });
+        
+        if (!uploadRes.ok) throw new Error("Image upload failed");
+        const uploadData = await uploadRes.json();
+        imageUrl = uploadData.url;
+      }
 
       const payload = {
         id: editingPost.id,
@@ -87,7 +115,7 @@ export default function BlogManagement() {
         metaDescription: editingPost.metaDescription || "",
         imageAltText: editingPost.imageAltText || "",
         status: editingPost.status || "Published",
-        image: editingPost.image,
+        image: imageUrl,
       };
 
       const res = await fetch("/api/blogs", {
@@ -303,17 +331,29 @@ export default function BlogManagement() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Image URL</label>
-                    <input
-                      type="url"
-                      placeholder="https://... or /images/..."
-                      className="w-full px-5 py-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-[var(--brand-primary)] transition-all"
-                      value={editingPost.image}
-                      onChange={(e) => {
-                        setEditingPost({ ...editingPost, image: e.target.value });
-                        setEditImagePreview(e.target.value);
-                      }}
-                    />
+                    <label className="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Feature Image</label>
+                    <div className="relative">
+                      <input
+                        type="file"
+                        accept="image/*"
+                        onChange={handleImageChange}
+                        className="hidden"
+                        id="edit-image-upload"
+                      />
+                      <label 
+                        htmlFor="edit-image-upload"
+                        className="w-full px-5 py-4 rounded-2xl bg-gray-50 flex items-center justify-between cursor-pointer hover:bg-gray-100 transition-colors"
+                      >
+                        <span className="text-gray-500 truncate">
+                          {newImage ? newImage.name : "Select new image..."}
+                        </span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[var(--brand-primary)]">
+                          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                          <polyline points="17 8 12 3 7 8" />
+                          <line x1="12" y1="3" x2="12" y2="15" />
+                        </svg>
+                      </label>
+                    </div>
                   </div>
                   <div>
                     <label className="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Image Alt Text (SEO)</label>

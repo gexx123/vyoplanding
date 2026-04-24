@@ -134,7 +134,7 @@ export default function Hero() {
           {/* Image */}
           <img 
             src="/hero-image.png" 
-            alt="Vyop Hero" 
+            alt="Vyop AI Accountant App Dashboard showing voice-powered billing and inventory" 
             className="relative z-20 w-full h-full object-cover object-right"
           />
         </div>

@@ -83,7 +83,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="hi"
+      lang="en"
       className={`${sora.variable} ${dmSans.variable} h-full antialiased`}
     >
       <head>
@@ -92,6 +92,24 @@ export default function RootLayout({
           rel="preconnect"
           href="https://fonts.gstatic.com"
           crossOrigin="anonymous"
+        />
+        {/* Structured Data for SEO/AEO */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Vyop",
+              "url": "https://vyop.ai",
+              "logo": "https://vyop.ai/logo.png",
+              "description": "Revolutionize your business with Vyop, the voice-first AI accounting app.",
+              "sameAs": [
+                "https://twitter.com/vyop_ai",
+                "https://linkedin.com/company/vyop"
+              ]
+            })
+          }}
         />
       </head>
       <body className="min-h-full flex flex-col">{children}</body>

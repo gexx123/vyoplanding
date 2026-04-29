@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import AnimatedCounter from "@/components/ui/AnimatedCounter";
+import { db } from "@/lib/firebase";
+import { doc, onSnapshot } from "firebase/firestore";
 
 export default function LaunchAnnouncement() {
   const [visitorCount, setVisitorCount] = useState<number | null>(null);
@@ -10,16 +12,15 @@ export default function LaunchAnnouncement() {
   useEffect(() => {
     const trackVisit = async () => {
       try {
-        // Only increment once per session
-        const hasVisited = sessionStorage.getItem("vyop_visited");
-        const method = hasVisited ? "GET" : "POST";
+        // Only increment once per device/browser
+        const hasVisited = localStorage.getItem("vyop_visited");
         
-        const res = await fetch("/api/stats/visitors", { method });
-        const data = await res.json();
-        
-        if (data.count) {
-          setVisitorCount(data.count);
-          if (!hasVisited) sessionStorage.setItem("vyop_visited", "true");
+        if (!hasVisited) {
+          const res = await fetch("/api/stats/visitors", { method: "POST" });
+          const data = await res.json();
+          if (data.count) {
+            localStorage.setItem("vyop_visited", "true");
+          }
         }
       } catch (err) {
         console.error("Failed to track visit:", err);
@@ -28,16 +29,15 @@ export default function LaunchAnnouncement() {
 
     trackVisit();
     
-    // Refresh count every 30 seconds for "live" feel
-    const interval = setInterval(async () => {
-      try {
-        const res = await fetch("/api/stats/visitors");
-        const data = await res.json();
-        if (data.count) setVisitorCount(data.count);
-      } catch (e) {}
-    }, 30000);
+    // Real-time listener for the counter
+    const statsRef = doc(db, 'stats', 'visitors');
+    const unsubscribe = onSnapshot(statsRef, (docSnap) => {
+      if (docSnap.exists()) {
+        setVisitorCount(docSnap.data().count);
+      }
+    });
 
-    return () => clearInterval(interval);
+    return () => unsubscribe();
   }, []);
 
   return (

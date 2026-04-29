@@ -7,7 +7,7 @@ export default function BlogViewTracker({ id, slug }: { id?: string; slug?: stri
     const trackView = async () => {
       try {
         const key = `vyop_blog_viewed_${id || slug}`;
-        const hasViewed = sessionStorage.getItem(key);
+        const hasViewed = localStorage.getItem(key);
         
         if (!hasViewed) {
           await fetch("/api/blogs/view", {
@@ -15,7 +15,7 @@ export default function BlogViewTracker({ id, slug }: { id?: string; slug?: stri
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ id, slug }),
           });
-          sessionStorage.setItem(key, "true");
+          localStorage.setItem(key, "true");
         }
       } catch (err) {
         console.error("Failed to track blog view:", err);

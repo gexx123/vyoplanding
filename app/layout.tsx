@@ -21,9 +21,6 @@ export const metadata: Metadata = {
   description:
     "Revolutionize your business with Vyop, the voice-first AI accounting app. Create bills, manage inventory, and track digital ledgers instantly just by speaking. Built for the future of retail.",
   metadataBase: new URL('https://vyop.in'),
-  alternates: {
-    canonical: '/',
-  },
   openGraph: {
     title: "Vyop — Just Speak, Your Bill is Ready",
     description:

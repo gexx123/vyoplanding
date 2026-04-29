@@ -132,10 +132,12 @@ export default function Hero() {
       >
         <div className="relative w-full h-full">
           {/* Image */}
-          <img 
+          <Image 
             src="/hero-image.png" 
             alt="Vyop AI Accountant App Dashboard showing voice-powered billing and inventory" 
-            className="relative z-20 w-full h-full object-cover object-right"
+            fill
+            priority
+            className="relative z-20 object-cover object-right"
           />
         </div>
       </motion.div>

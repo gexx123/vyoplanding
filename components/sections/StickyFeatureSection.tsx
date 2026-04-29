@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import SectionLabel from "@/components/ui/SectionLabel";
 
 const features = [
@@ -124,15 +125,21 @@ export default function StickyFeatureSection() {
                     {/* Phone Mockup (Sticky on all screens) */}
                     <div className="lg:hidden mb-6 relative aspect-[9/18] max-h-[45vh] mx-auto rounded-[1.5rem] border-[6px] border-black overflow-hidden shadow-xl bg-white">
                        <AnimatePresence mode="wait">
-                        <motion.img
+                        <motion.div
                           key={activeIndex === i ? activeChipIndex : 'idle'}
-                          src={activeIndex === i ? feature.chips[activeChipIndex].image : feature.chips[0].image}
-                          className="w-full h-full object-cover object-top"
                           initial={{ opacity: 0, scale: 0.95 }}
                           animate={{ opacity: 1, scale: 1 }}
                           exit={{ opacity: 0, scale: 1.05 }}
                           transition={{ duration: 0.4 }}
-                        />
+                          className="absolute inset-0"
+                        >
+                          <Image
+                            src={activeIndex === i ? feature.chips[activeChipIndex].image : feature.chips[0].image}
+                            alt="Feature screen"
+                            fill
+                            className="object-cover object-top"
+                          />
+                        </motion.div>
                        </AnimatePresence>
                     </div>
 
@@ -224,10 +231,11 @@ export default function StickyFeatureSection() {
 
                 {/* Inline Image for Mobile/Tablet */}
                 <div className="lg:hidden mb-10 relative aspect-[9/16] max-w-[300px] mx-auto rounded-[2rem] border-[8px] border-black overflow-hidden shadow-xl">
-                    <img
-                      src={feature.image}
-                      className="w-full h-full object-cover"
+                    <Image
+                      src={feature.image || ""}
+                      className="object-cover"
                       alt={feature.title}
+                      fill
                     />
                 </div>
 
@@ -268,16 +276,21 @@ export default function StickyFeatureSection() {
             style={{ boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)" }}
           >
             <AnimatePresence mode="wait">
-              <motion.img
+              <motion.div
                 key={displayImage}
-                src={displayImage}
-                alt="Feature Preview"
-                className="absolute inset-0 w-full h-full object-cover object-top bg-gray-50"
+                className="absolute inset-0 bg-gray-50"
                 initial={{ opacity: 0, x: 40 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -40 }}
                 transition={{ duration: 0.2 }}
-              />
+              >
+                <Image
+                  src={displayImage}
+                  alt="Feature Preview"
+                  fill
+                  className="object-cover object-top"
+                />
+              </motion.div>
             </AnimatePresence>
           </motion.div>
         </div>

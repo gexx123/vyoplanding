@@ -10,7 +10,8 @@ export default function CreateBlog() {
   const [imagePreview, setImagePreview] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     title: "",
-    category: "Voice Billing",
+    slug: "",
+    category: "Shop Growth",
     author: "Himanshu",
     authorTitle: "Founder, Vyop",
     excerpt: "",
@@ -60,6 +61,7 @@ export default function CreateBlog() {
 
       const payload = {
         title: formData.title,
+        slug: formData.slug,
         category: formData.category,
         author: formData.author,
         authorTitle: formData.authorTitle,
@@ -140,21 +142,34 @@ export default function CreateBlog() {
                   />
                 </div>
                 <div>
+                  <label className="block text-sm font-bold mb-2 text-gray-700 flex justify-between">
+                    URL Slug (SEO)
+                    <span className="text-[10px] text-gray-400">Leave empty to auto-generate</span>
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="e.g. my-awesome-post"
+                    className="w-full px-5 py-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-[var(--brand-primary)] transition-all"
+                    value={formData.slug}
+                    onChange={(e) => setFormData({ ...formData, slug: e.target.value })}
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
                   <label className="block text-sm font-bold mb-2 text-gray-700">Category</label>
                   <select
                     className="w-full px-5 py-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-[var(--brand-primary)] transition-all appearance-none"
                     value={formData.category}
                     onChange={(e) => setFormData({ ...formData, category: e.target.value })}
                   >
-                    <option>Voice Billing</option>
-                    <option>AI Accounting</option>
-                    <option>Kirana Tips</option>
-                    <option>Product Updates</option>
+                    <option>Shop Growth</option>
+                    <option>Udhar Management</option>
+                    <option>Competitor Comparisons</option>
+                    <option>App Walkthroughs</option>
                   </select>
                 </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-bold mb-2 text-gray-700">Author Name</label>
                   <input

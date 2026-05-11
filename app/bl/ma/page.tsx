@@ -110,6 +110,7 @@ export default function BlogManagement() {
       const payload = {
         id: editingPost.id,
         title: editingPost.title,
+        slug: editingPost.slug,
         category: editingPost.category,
         author: editingPost.author,
         authorTitle: editingPost.authorTitle || "",
@@ -305,15 +306,25 @@ export default function BlogManagement() {
                       value={editingPost.category}
                       onChange={(e) => setEditingPost({ ...editingPost, category: e.target.value })}
                     >
-                      <option>Voice Billing</option>
-                      <option>AI Accounting</option>
-                      <option>Kirana Tips</option>
-                      <option>Product Updates</option>
+                      <option>Shop Growth</option>
+                      <option>Udhar Management</option>
+                      <option>Competitor Comparisons</option>
+                      <option>App Walkthroughs</option>
                     </select>
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">URL Slug (SEO)</label>
+                    <input
+                      required
+                      type="text"
+                      className="w-full px-5 py-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-[var(--brand-primary)] transition-all"
+                      value={editingPost.slug || ""}
+                      onChange={(e) => setEditingPost({ ...editingPost, slug: e.target.value })}
+                    />
+                  </div>
                   <div>
                     <label className="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Author Name</label>
                     <input
@@ -324,6 +335,9 @@ export default function BlogManagement() {
                       onChange={(e) => setEditingPost({ ...editingPost, author: e.target.value })}
                     />
                   </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Author Title</label>
                     <input
@@ -333,9 +347,6 @@ export default function BlogManagement() {
                       onChange={(e) => setEditingPost({ ...editingPost, authorTitle: e.target.value })}
                     />
                   </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Feature Image</label>
                     <div className="relative">

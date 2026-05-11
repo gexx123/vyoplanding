@@ -27,8 +27,10 @@ export async function POST(request: Request) {
   try {
     const body = await request.json();
     
-    // Generate robust SEO slug
-    let baseSlug = slugify(body.title, { lower: true, strict: true, remove: /[*+~.()'"!:@]/g });
+    // Use provided slug or generate robust SEO slug from title
+    let baseSlug = body.slug 
+      ? slugify(body.slug, { lower: true, strict: true, remove: /[*+~.()'"!:@]/g })
+      : slugify(body.title, { lower: true, strict: true, remove: /[*+~.()'"!:@]/g });
     let slug = baseSlug;
     
     // Check for duplicate slugs
@@ -103,6 +105,7 @@ export async function PUT(request: Request) {
 
     const updatedBlog = {
       title: body.title !== undefined ? body.title : existingData.title,
+      slug: body.slug !== undefined ? body.slug : existingData.slug,
       category: body.category !== undefined ? body.category : existingData.category,
       excerpt: body.excerpt !== undefined ? body.excerpt : existingData.excerpt,
       content: body.content !== undefined ? body.content : existingData.content,

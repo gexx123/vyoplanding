@@ -6,17 +6,19 @@ import Link from "next/link";
 import SectionLabel from "@/components/ui/SectionLabel";
 
 interface BlogPost {
-  id: number;
+  id: string;
   category: string;
   title: string;
   excerpt: string;
   date: string;
   image: string;
+  slug?: string;
 }
 
 export default function Blog() {
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
+  const [activeCategory, setActiveCategory] = useState("All");
 
   useEffect(() => {
     fetch("/api/blogs")
@@ -33,9 +35,15 @@ export default function Blog() {
 
   if (loading) return null;
 
-  const displayPosts = posts.slice(0, 3);
+  const categories = ["All", ...Array.from(new Set(posts.map((p) => p.category)))];
+  
+  const filteredPosts = activeCategory === "All" 
+    ? posts 
+    : posts.filter((p) => p.category === activeCategory);
 
-  if (displayPosts.length === 0) return null;
+  const displayPosts = filteredPosts.slice(0, 3);
+
+  if (posts.length === 0) return null;
 
   return (
     <section className="py-24 bg-white" id="blog">
@@ -56,9 +64,25 @@ export default function Blog() {
           </p>
         </div>
 
+        <div className="flex flex-wrap items-center justify-center gap-3 mb-12 animate-fade-up" style={{ animationDelay: "100ms" }}>
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setActiveCategory(cat)}
+              className={`px-6 py-2.5 rounded-full text-sm font-bold transition-all ${
+                activeCategory === cat
+                  ? "bg-[var(--brand-primary)] text-white shadow-md shadow-[var(--brand-primary)]/20"
+                  : "bg-gray-50 text-gray-600 hover:bg-gray-100 border border-gray-100"
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {displayPosts.map((post, i) => (
-            <Link key={post.id} href={`/blog/${post.id}`}>
+            <Link key={post.id} href={`/blog/${post.slug || post.id}`}>
               <motion.article
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -112,12 +136,13 @@ export default function Blog() {
         </div>
 
         <div className="mt-16 text-center">
-          <button 
-            className="px-8 py-3 rounded-full border border-gray-200 font-bold text-[var(--text-primary)] hover:border-[var(--brand-primary)] hover:text-[var(--brand-primary)] transition-all"
+          <Link 
+            href="/blog"
+            className="inline-block px-8 py-3 rounded-full border border-gray-200 font-bold text-[var(--text-primary)] hover:border-[var(--brand-primary)] hover:text-[var(--brand-primary)] transition-all"
             style={{ fontFamily: "var(--font-display)" }}
           >
             View All Posts
-          </button>
+          </Link>
         </div>
       </div>
     </section>

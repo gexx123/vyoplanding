@@ -4,6 +4,8 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import Navbar from "@/components/sections/Navbar";
+import { storage } from "@/lib/firebase";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 export default function CreateBlog() {
   const [loading, setLoading] = useState(false);
@@ -46,17 +48,12 @@ export default function CreateBlog() {
 
     try {
       if (formData.image) {
-        const imageFormData = new FormData();
-        imageFormData.append("file", formData.image);
+        const fileExt = formData.image.name.split('.').pop();
+        const fileName = `blog_${Date.now()}.${fileExt}`;
+        const storageRef = ref(storage, `blogs/${fileName}`);
         
-        const uploadRes = await fetch("/api/upload", {
-          method: "POST",
-          body: imageFormData,
-        });
-        
-        if (!uploadRes.ok) throw new Error("Image upload failed");
-        const uploadData = await uploadRes.json();
-        imageUrl = uploadData.url;
+        const snapshot = await uploadBytes(storageRef, formData.image);
+        imageUrl = await getDownloadURL(snapshot.ref);
       }
 
       const payload = {

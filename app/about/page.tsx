@@ -45,6 +45,13 @@ export default function About() {
             </p>
           </div>
 
+          <div className="bg-gradient-to-br from-[var(--brand-primary)] to-[#1a1a2e] p-8 rounded-2xl shadow-lg my-10 text-white">
+            <h3 className="mt-0 text-white">Meet the Founder</h3>
+            <p className="mb-0 text-white/90">
+              <strong>Himanshu Tunwal</strong> is the founder of Vyop AI. Driven by a deep understanding of the challenges faced by Indian shopkeepers, Himanshu set out to build an AI assistant that speaks their language—literally. His vision is to make powerful business tools accessible to every shop owner, regardless of their technical background.
+            </p>
+          </div>
+
           <h2>More Than Just Billing</h2>
           <p>
             Vyop is designed to be your business partner. Need to know if you made a profit today? Just ask. Need to add a ₹50 chai expense? Just tell it. We are removing the friction between you and your business data.

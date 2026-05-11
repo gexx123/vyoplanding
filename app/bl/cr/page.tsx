@@ -46,16 +46,38 @@ export default function CreateBlog() {
 
     try {
       if (formData.image) {
-        const reader = new FileReader();
-        const base64 = await new Promise<string>((resolve) => {
-          reader.onloadend = () => resolve(reader.result as string);
+        const compressedBase64 = await new Promise<string>((resolve) => {
+          const reader = new FileReader();
+          reader.onload = (event) => {
+            const img = new window.Image();
+            img.onload = () => {
+              const canvas = document.createElement("canvas");
+              const MAX_WIDTH = 1200;
+              let width = img.width;
+              let height = img.height;
+
+              if (width > MAX_WIDTH) {
+                height = Math.round((height * MAX_WIDTH) / width);
+                width = MAX_WIDTH;
+              }
+
+              canvas.width = width;
+              canvas.height = height;
+
+              const ctx = canvas.getContext("2d");
+              ctx?.drawImage(img, 0, 0, width, height);
+              
+              resolve(canvas.toDataURL("image/jpeg", 0.8));
+            };
+            img.src = event.target?.result as string;
+          };
           reader.readAsDataURL(formData.image!);
         });
 
         const uploadRes = await fetch("/api/upload", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ file: base64 }),
+          body: JSON.stringify({ file: compressedBase64 }),
         });
         
         if (!uploadRes.ok) throw new Error("Image upload failed");

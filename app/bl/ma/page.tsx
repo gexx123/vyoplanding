@@ -4,8 +4,6 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "@/components/sections/Navbar";
 import Link from "next/link";
-import { storage } from "@/lib/firebase";
-import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 interface BlogPost {
   id: string;
@@ -96,12 +94,21 @@ export default function BlogManagement() {
 
     try {
       if (newImage) {
-        const fileExt = newImage.name.split('.').pop();
-        const fileName = `blog_${Date.now()}.${fileExt}`;
-        const storageRef = ref(storage, `blogs/${fileName}`);
+        const reader = new FileReader();
+        const base64 = await new Promise<string>((resolve) => {
+          reader.onloadend = () => resolve(reader.result as string);
+          reader.readAsDataURL(newImage);
+        });
+
+        const uploadRes = await fetch("/api/upload", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ file: base64 }),
+        });
         
-        const snapshot = await uploadBytes(storageRef, newImage);
-        imageUrl = await getDownloadURL(snapshot.ref);
+        if (!uploadRes.ok) throw new Error("Image upload failed");
+        const uploadData = await uploadRes.json();
+        imageUrl = uploadData.url;
       }
 
       const payload = {

@@ -16,7 +16,7 @@ const navLinks = [
 ];
 
 export default function Navbar() {
-  const { user, userData, loading } = useAuth();
+  const { user, userData, loading, logout } = useAuth();
   const [scrolled, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -94,30 +94,65 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-          {isMarketer && (
+        </div>
+
+        {/* Desktop Actions */}
+        <div className="hidden md:flex items-center gap-4">
+          {!loading && user && (
+            <>
+              <Link
+                href="/marketer"
+                className="inline-flex items-center px-6 py-2.5 rounded-full text-white text-sm font-bold transition-all duration-200 hover:scale-[1.03]"
+                style={{
+                  background: "var(--gradient-brand)",
+                  fontFamily: "var(--font-display)",
+                  boxShadow: "var(--shadow-gold)",
+                }}
+              >
+                Marketer Panel
+              </Link>
+              
+              <button
+                onClick={() => {
+                  if (window.confirm("Are you sure you want to log out?")) {
+                    logout();
+                  }
+                }}
+                className="relative group w-10 h-10 rounded-full overflow-hidden border-2 border-[var(--brand-primary)] focus:outline-none transition-transform hover:scale-105"
+                title="Logout"
+              >
+                {user.photoURL ? (
+                  <img src={user.photoURL} alt="Profile" className="w-full h-full object-cover" />
+                ) : (
+                  <div className="w-full h-full bg-[var(--brand-glow)] flex items-center justify-center text-[var(--brand-primary)] font-bold">
+                    {user.displayName?.charAt(0) || user.email?.charAt(0) || "M"}
+                  </div>
+                )}
+                <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                    <polyline points="16 17 21 12 16 7"></polyline>
+                    <line x1="21" y1="12" x2="9" y2="12"></line>
+                  </svg>
+                </div>
+              </button>
+            </>
+          )}
+
+          {!loading && !user && (
             <Link
-              href="/marketer"
-              className="px-4 py-1.5 rounded-full bg-[var(--brand-glow)] text-[var(--brand-primary)] font-bold text-xs uppercase tracking-wider hover:bg-[var(--brand-primary)] hover:text-white transition-all"
+              href="/billing"
+              className="inline-flex items-center px-6 py-2.5 rounded-full text-white text-sm font-bold transition-all duration-200 hover:scale-[1.03]"
+              style={{
+                background: "var(--gradient-brand)",
+                fontFamily: "var(--font-display)",
+                boxShadow: "var(--shadow-gold)",
+              }}
             >
-              Marketer Panel
+              View Pricing
             </Link>
           )}
         </div>
-
-        {/* Desktop CTA */}
-        {!loading && (
-          <Link
-            href={user ? "/marketer" : "/billing"}
-            className="hidden md:inline-flex items-center px-6 py-2.5 rounded-full text-white text-sm font-bold transition-all duration-200 hover:scale-[1.03]"
-            style={{
-              background: "var(--gradient-brand)",
-              fontFamily: "var(--font-display)",
-              boxShadow: "var(--shadow-gold)",
-            }}
-          >
-            {user ? "Marketer Panel" : "View Pricing"}
-          </Link>
-        )}
 
         {/* Mobile Hamburger */}
         <button

@@ -5,15 +5,18 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
+import { useAuth } from "@/lib/AuthContext";
+
 const navLinks = [
   { label: "Features", href: "/#features" },
   { label: "Pricing", href: "/#pricing" },
-  { label: "How It Works", href: "/#how-it-works" },
   { label: "Blog", href: "/blog" },
   { label: "Careers", href: "/careers" },
+  { label: "Billing", href: "/billing" },
 ];
 
 export default function Navbar() {
+  const { user, userData, loading } = useAuth();
   const [scrolled, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -37,6 +40,9 @@ export default function Navbar() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const isMarketer = userData?.role === "marketer" || userData?.role === "admin";
+  const isAdmin = userData?.role === "admin";
 
   return (
     <nav
@@ -80,32 +86,47 @@ export default function Navbar() {
             <Link
               key={link.label}
               href={link.href}
-              className="transition-colors duration-200 hover:text-[var(--brand-primary)]"
+              className="transition-colors duration-200 hover:text-[var(--brand-primary)] text-[14px]"
               style={{
                 fontFamily: "var(--font-body)",
-                fontSize: "15px",
                 color: "var(--text-secondary)",
               }}
             >
               {link.label}
             </Link>
           ))}
+          {isAdmin && (
+            <Link
+              href="/admin/transactions"
+              className="px-4 py-1.5 rounded-full bg-red-50 text-red-600 font-bold text-xs uppercase tracking-wider hover:bg-red-500 hover:text-white transition-all"
+            >
+              Admin Panel
+            </Link>
+          )}
+          {isMarketer && !isAdmin && (
+            <Link
+              href="/marketer"
+              className="px-4 py-1.5 rounded-full bg-[var(--brand-glow)] text-[var(--brand-primary)] font-bold text-xs uppercase tracking-wider hover:bg-[var(--brand-primary)] hover:text-white transition-all"
+            >
+              Marketer Panel
+            </Link>
+          )}
         </div>
 
         {/* Desktop CTA */}
-        <a
-          href="https://vyop.shop/"
-          className="hidden md:inline-flex items-center px-5 py-2.5 rounded-full text-white text-sm font-medium transition-all duration-200 hover:scale-[1.03]"
-          style={{
-            background: "var(--gradient-brand)",
-            fontFamily: "var(--font-display)",
-            fontSize: "14px",
-            fontWeight: 500,
-            boxShadow: "var(--shadow-gold)",
-          }}
-        >
-          Download App
-        </a>
+        {!loading && (
+          <Link
+            href={user ? "/billing" : "/billing"}
+            className="hidden md:inline-flex items-center px-6 py-2.5 rounded-full text-white text-sm font-bold transition-all duration-200 hover:scale-[1.03]"
+            style={{
+              background: "var(--gradient-brand)",
+              fontFamily: "var(--font-display)",
+              boxShadow: "var(--shadow-gold)",
+            }}
+          >
+            {user ? "My Account" : "Get Premium"}
+          </Link>
+        )}
 
         {/* Mobile Hamburger */}
         <button

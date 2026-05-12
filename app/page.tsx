@@ -7,6 +7,7 @@ import LaunchAnnouncement from "@/components/sections/LaunchAnnouncement";
 import Testimonials from "@/components/sections/Testimonials";
 import FAQ from "@/components/sections/FAQ";
 import Blog from "@/components/sections/Blog";
+import Pricing from "@/components/sections/Pricing";
 import Footer from "@/components/sections/Footer";
 
 export default function Home() {
@@ -68,6 +69,7 @@ export default function Home() {
       <BenefitsMarquee />
       <Testimonials />
       <FAQ />
+      <Pricing />
       <Blog />
       <Footer />
     </main>

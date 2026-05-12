@@ -17,6 +17,7 @@ export default function MarketerPanel() {
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
   const [receiptNumber, setReceiptNumber] = useState("");
+  const [selectedPlan, setSelectedPlan] = useState<49 | 499 | 799>(499);
 
   const isMarketer = userData?.role === "marketer";
 
@@ -29,6 +30,7 @@ export default function MarketerPanel() {
     setFoundUser(null);
     setErrorMessage("");
     setReceiptNumber(""); // Reset receipt number on new search
+    setSelectedPlan(499); // Reset to default plan
 
     try {
       const q = query(collection(db, "users"), where("email", "==", searchEmail.toLowerCase()));
@@ -52,7 +54,7 @@ export default function MarketerPanel() {
 
   const handleActivate = async () => {
     if (!foundUser || !receiptNumber) {
-      setErrorMessage("Please enter a receipt number.");
+      setErrorMessage("Please enter the Vyop Bill Number.");
       setStatus("error");
       return;
     }
@@ -61,26 +63,50 @@ export default function MarketerPanel() {
     try {
       const startDate = new Date();
       const endDate = new Date();
-      endDate.setFullYear(startDate.getFullYear() + 1);
+      
+      let planName = "yearly";
+      if (selectedPlan === 49) {
+        endDate.setMonth(startDate.getMonth() + 1);
+        planName = "monthly";
+      } else if (selectedPlan === 499) {
+        endDate.setFullYear(startDate.getFullYear() + 1);
+        planName = "yearly";
+      } else if (selectedPlan === 799) {
+        endDate.setFullYear(startDate.getFullYear() + 2);
+        planName = "biennial";
+      }
 
       const batch = writeBatch(db);
 
+      // 1. Update User Document (keep it clean)
       const userRef = doc(db, "users", foundUser.id);
       batch.update(userRef, {
-        subscription: "premium",
-        subscriptionStartDate: Timestamp.fromDate(startDate),
-        subscriptionEndDate: Timestamp.fromDate(endDate),
-        activatedBy: userData.email,
-        activatedByUid: user?.uid, // Using user from useAuth
-        receiptNumber: receiptNumber,
-        activatedAt: Timestamp.now(),
+        plan: "pro",
       });
 
+      // 2. Create Subscription Document
+      const subRef = doc(db, "subscriptions", foundUser.id);
+      batch.set(subRef, {
+        userId: foundUser.id,
+        userEmail: foundUser.email,
+        status: "active",
+        plan: "pro",
+        startDate: Timestamp.fromDate(startDate),
+        endDate: Timestamp.fromDate(endDate),
+        activatedBy: userData.email,
+        activatedByUid: user?.uid,
+        receiptNumber: receiptNumber,
+        activatedAt: Timestamp.now(),
+        planTier: selectedPlan,
+      });
+
+      // 3. Create Transaction Log
       const txRef = doc(collection(db, "transactions"));
       batch.set(txRef, {
         userId: foundUser.id,
         userEmail: foundUser.email,
-        amount: 499,
+        amount: selectedPlan,
+        planDuration: planName,
         method: "cash_marketer",
         receiptNumber: receiptNumber,
         marketerEmail: userData.email,
@@ -91,7 +117,7 @@ export default function MarketerPanel() {
 
       await batch.commit();
 
-      setFoundUser({ ...foundUser, subscription: "premium", subscriptionEndDate: Timestamp.fromDate(endDate) });
+      setFoundUser({ ...foundUser, plan: "pro", subscriptionEndDate: Timestamp.fromDate(endDate) });
       setStatus("success");
     } catch (error) {
       console.error(error);
@@ -173,30 +199,57 @@ export default function MarketerPanel() {
                   <p className="text-gray-500">{foundUser.email}</p>
                 </div>
                 <div className={`px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest ${
-                  foundUser.subscription === "premium" ? "bg-green-100 text-green-700" : "bg-gray-200 text-gray-600"
+                  foundUser.plan === "pro" ? "bg-green-100 text-green-700" : "bg-gray-200 text-gray-600"
                 }`}>
-                  {foundUser.subscription === "premium" ? "Premium Active" : "Free User"}
+                  {foundUser.plan === "pro" ? "Premium Active" : "Free User"}
                 </div>
               </div>
 
-              {foundUser.subscription !== "premium" ? (
+              {foundUser.plan !== "pro" ? (
                 <div className="space-y-6">
-                  <div className="grid sm:grid-cols-2 gap-6">
-                    <div className="p-4 rounded-2xl bg-white border border-gray-100">
-                      <p className="text-xs text-gray-400 font-bold mb-2 uppercase">Collect Payment</p>
-                      <p className="text-2xl font-bold text-[var(--text-primary)]">₹499.00 <span className="text-sm font-normal text-gray-500">Cash</span></p>
+                  
+                  {/* Plan Selection */}
+                  <div className="p-4 rounded-2xl bg-white border border-gray-100">
+                    <p className="text-xs text-gray-400 font-bold mb-3 uppercase tracking-wider">Select Plan Duration</p>
+                    <div className="grid grid-cols-3 gap-3">
+                      {[
+                        { price: 49, label: "1 Month" },
+                        { price: 499, label: "1 Year" },
+                        { price: 799, label: "2 Years" },
+                      ].map((plan) => (
+                        <button
+                          key={plan.price}
+                          type="button"
+                          onClick={() => setSelectedPlan(plan.price as 49 | 499 | 799)}
+                          className={`py-3 rounded-xl border-2 transition-all font-bold ${
+                            selectedPlan === plan.price
+                              ? "border-[var(--brand-primary)] bg-[var(--brand-glow)] text-[var(--brand-primary)] shadow-sm"
+                              : "border-gray-100 text-gray-500 hover:border-gray-200 bg-gray-50"
+                          }`}
+                        >
+                          ₹{plan.price}
+                          <span className="block text-xs font-normal opacity-80 mt-1">{plan.label}</span>
+                        </button>
+                      ))}
                     </div>
-                    <div className="p-4 rounded-2xl bg-white border border-gray-100">
-                      <p className="text-xs text-gray-400 font-bold mb-2 uppercase">Receipt Number</p>
-                      <input 
-                        type="text"
-                        placeholder="REC-12345"
-                        required
-                        className="w-full bg-transparent border-none p-0 focus:ring-0 font-bold text-lg text-[var(--brand-primary)] placeholder:text-gray-300"
-                        value={receiptNumber}
-                        onChange={(e) => setReceiptNumber(e.target.value)}
-                      />
+                  </div>
+
+                  <div className="p-4 rounded-2xl bg-white border border-gray-100">
+                    <div className="flex justify-between items-center mb-2">
+                      <p className="text-xs text-gray-400 font-bold uppercase tracking-wider">Vyop Bill Number</p>
+                      <a href="https://vyop.shop" target="_blank" className="text-[10px] font-bold text-[var(--brand-primary)] hover:underline">Create Bill in App ↗</a>
                     </div>
+                    <input 
+                      type="text"
+                      placeholder="e.g. BILL-1024"
+                      required
+                      className="w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-3 focus:ring-2 focus:ring-[var(--brand-primary)] font-bold text-lg text-[var(--brand-primary)] placeholder:text-gray-300 transition-all uppercase"
+                      value={receiptNumber}
+                      onChange={(e) => setReceiptNumber(e.target.value.toUpperCase())}
+                    />
+                    <p className="text-[11px] text-gray-500 mt-2">
+                      First, create a cash bill for ₹{selectedPlan} in your own Vyop account, then type the Bill Number here to prove payment was collected.
+                    </p>
                   </div>
                   
                   <button
@@ -213,7 +266,11 @@ export default function MarketerPanel() {
                     <CheckCircle className="w-8 h-8 text-green-600" />
                   </div>
                   <h4 className="text-lg font-bold text-green-700">Already Premium</h4>
-                  <p className="text-sm text-gray-500">Subscription is active until {new Date(new Date().setFullYear(new Date().getFullYear() + 1)).toLocaleDateString()}.</p>
+                  {foundUser.subscriptionEndDate && (
+                    <p className="text-sm text-gray-500 mt-2">
+                      Subscription is active until <strong>{foundUser.subscriptionEndDate?.toDate ? foundUser.subscriptionEndDate.toDate().toLocaleDateString() : new Date(foundUser.subscriptionEndDate).toLocaleDateString()}</strong>.
+                    </p>
+                  )}
                 </div>
               )}
             </motion.div>

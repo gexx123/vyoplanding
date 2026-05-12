@@ -4,7 +4,7 @@ import { useAuth } from "@/lib/AuthContext";
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
 import { useState } from "react";
-import { db } from "@/lib/firebase";
+import { shopDb as db } from "@/lib/firebase";
 import { collection, query, where, getDocs, doc, writeBatch, Timestamp } from "firebase/firestore";
 import { motion } from "framer-motion";
 import { Search, UserPlus, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
@@ -16,10 +16,9 @@ export default function MarketerPanel() {
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
-
   const [receiptNumber, setReceiptNumber] = useState("");
 
-  const isMarketer = userData?.role === "marketer" || userData?.role === "admin";
+  const isMarketer = userData?.role === "marketer";
 
   const handleSearch = async (e: React.FormEvent) => {
     e.preventDefault();

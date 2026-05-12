@@ -41,8 +41,7 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const isMarketer = userData?.role === "marketer" || userData?.role === "admin";
-  const isAdmin = userData?.role === "admin";
+  const isMarketer = userData?.role === "marketer";
 
   return (
     <nav
@@ -95,15 +94,7 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-          {isAdmin && (
-            <Link
-              href="/admin/transactions"
-              className="px-4 py-1.5 rounded-full bg-red-50 text-red-600 font-bold text-xs uppercase tracking-wider hover:bg-red-500 hover:text-white transition-all"
-            >
-              Admin Panel
-            </Link>
-          )}
-          {isMarketer && !isAdmin && (
+          {isMarketer && (
             <Link
               href="/marketer"
               className="px-4 py-1.5 rounded-full bg-[var(--brand-glow)] text-[var(--brand-primary)] font-bold text-xs uppercase tracking-wider hover:bg-[var(--brand-primary)] hover:text-white transition-all"

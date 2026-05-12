@@ -23,16 +23,19 @@ const shopFirebaseConfig = {
   measurementId: process.env.NEXT_PUBLIC_SHOP_FIREBASE_MEASUREMENT_ID
 };
 
-// Initialize Primary Firebase
-const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
+// Initialize Primary Firebase (guard against missing config during build)
+const app = getApps().length ? getApp() : 
+  (process.env.NEXT_PUBLIC_FIREBASE_API_KEY ? initializeApp(firebaseConfig) : null as any);
 
-export const db = getFirestore(app);
-export const storage = getStorage(app);
-export const auth = getAuth(app);
+export const db = app ? getFirestore(app) : null as any;
+export const storage = app ? getStorage(app) : null as any;
+export const auth = app ? getAuth(app) : null as any;
 export const googleProvider = new GoogleAuthProvider();
 
-// Initialize Secondary Firebase (Shop App)
+// Initialize Secondary Firebase (Shop App) (guard against missing config during build)
 const allApps = getApps();
-export const shopApp = allApps.find((a) => a.name === "shopApp") || initializeApp(shopFirebaseConfig, "shopApp");
-export const shopDb = getFirestore(shopApp);
-export const shopAuth = getAuth(shopApp);
+export const shopApp = allApps.find((a) => a.name === "shopApp") || 
+  (process.env.NEXT_PUBLIC_SHOP_FIREBASE_API_KEY ? initializeApp(shopFirebaseConfig, "shopApp") : null as any);
+
+export const shopDb = shopApp ? getFirestore(shopApp) : null as any;
+export const shopAuth = shopApp ? getAuth(shopApp) : null as any;

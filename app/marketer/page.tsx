@@ -3,14 +3,14 @@
 import { useAuth } from "@/lib/AuthContext";
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { shopDb as db } from "@/lib/firebase";
 import { collection, query, where, getDocs, doc, writeBatch, Timestamp } from "firebase/firestore";
 import { motion } from "framer-motion";
 import { Search, UserPlus, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 
 export default function MarketerPanel() {
-  const { userData, loading: authLoading } = useAuth();
+  const { user, userData, loading: authLoading } = useAuth();
   const [searchEmail, setSearchEmail] = useState("");
   const [foundUser, setFoundUser] = useState<any>(null);
   const [loading, setLoading] = useState(false);
@@ -18,8 +18,43 @@ export default function MarketerPanel() {
   const [errorMessage, setErrorMessage] = useState("");
   const [receiptNumber, setReceiptNumber] = useState("");
   const [selectedPlan, setSelectedPlan] = useState<49 | 499 | 799>(499);
+  
+  const [stats, setStats] = useState({ totalUsers: 0, totalProfit: 0 });
+  const [loadingStats, setLoadingStats] = useState(true);
 
   const isMarketer = userData?.role === "marketer";
+
+  useEffect(() => {
+    const fetchStats = async () => {
+      if (!user?.uid || !isMarketer) {
+        setLoadingStats(false);
+        return;
+      }
+      try {
+        const q = query(collection(db, "transactions"), where("marketerUid", "==", user.uid));
+        const querySnapshot = await getDocs(q);
+        
+        let profit = 0;
+        let count = 0;
+
+        querySnapshot.forEach((doc) => {
+          const data = doc.data();
+          count++;
+          if (data.amount === 49) profit += 5;
+          else if (data.amount === 499) profit += 249;
+          else if (data.amount === 799) profit += 400;
+        });
+
+        setStats({ totalUsers: count, totalProfit: profit });
+      } catch (error) {
+        console.error("Error fetching stats:", error);
+      } finally {
+        setLoadingStats(false);
+      }
+    };
+
+    fetchStats();
+  }, [user?.uid, isMarketer]);
 
   const handleSearch = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -117,6 +152,15 @@ export default function MarketerPanel() {
 
       await batch.commit();
 
+      // Update local stats so they don't have to refresh
+      setStats(prev => {
+        let newProfit = prev.totalProfit;
+        if (selectedPlan === 49) newProfit += 5;
+        else if (selectedPlan === 499) newProfit += 249;
+        else if (selectedPlan === 799) newProfit += 400;
+        return { totalUsers: prev.totalUsers + 1, totalProfit: newProfit };
+      });
+
       setFoundUser({ ...foundUser, plan: "pro", subscriptionEndDate: Timestamp.fromDate(endDate) });
       setStatus("success");
     } catch (error) {
@@ -129,7 +173,6 @@ export default function MarketerPanel() {
   };
 
   if (authLoading) return <div className="min-h-screen bg-[var(--bg-hero)]" />;
-  const { user } = useAuth();
 
   if (!isMarketer) {
     return (
@@ -179,6 +222,24 @@ export default function MarketerPanel() {
               {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : "Search"}
             </button>
           </form>
+
+          {/* Dashboard Stats */}
+          {!loadingStats && !foundUser && status === "idle" && (
+            <motion.div 
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="grid grid-cols-2 gap-4 mb-10"
+            >
+              <div className="bg-[var(--bg-hero)] border border-[var(--border-subtle)] rounded-2xl p-6 text-center">
+                <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Total Activations</p>
+                <p className="text-4xl font-extrabold text-[var(--text-primary)]">{stats.totalUsers}</p>
+              </div>
+              <div className="bg-[var(--brand-glow)] border border-[var(--brand-primary)] rounded-2xl p-6 text-center">
+                <p className="text-xs font-bold text-[var(--brand-primary)] uppercase tracking-widest mb-2">Total Profit</p>
+                <p className="text-4xl font-extrabold text-[var(--brand-primary)]">₹{stats.totalProfit}</p>
+              </div>
+            </motion.div>
+          )}
 
           {status === "error" && (
             <div className="p-4 rounded-xl bg-red-50 text-red-600 flex items-center gap-3 mb-8">

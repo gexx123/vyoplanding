@@ -107,7 +107,7 @@ export default function Navbar() {
         {/* Desktop CTA */}
         {!loading && (
           <Link
-            href={user ? "/billing" : "/billing"}
+            href={user ? "/marketer" : "/billing"}
             className="hidden md:inline-flex items-center px-6 py-2.5 rounded-full text-white text-sm font-bold transition-all duration-200 hover:scale-[1.03]"
             style={{
               background: "var(--gradient-brand)",
@@ -115,7 +115,7 @@ export default function Navbar() {
               boxShadow: "var(--shadow-gold)",
             }}
           >
-            {user ? "My Account" : "Get Premium"}
+            {user ? "Marketer Panel" : "View Pricing"}
           </Link>
         )}
 

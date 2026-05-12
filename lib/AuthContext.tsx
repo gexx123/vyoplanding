@@ -38,7 +38,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
           const newData = {
             email: user.email,
             displayName: user.displayName,
-            role: "customer",
+            role: "marketer",
             subscription: "free",
             createdAt: new Date().toISOString(),
           };

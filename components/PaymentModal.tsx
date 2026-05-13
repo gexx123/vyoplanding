@@ -16,7 +16,7 @@ export default function PaymentModal({ isOpen, onClose, planName, amount, userEm
 
   const whatsappNumber = "919649059592";
   const whatsappMessage = encodeURIComponent(
-    `Hi Vyop Team! My email is ${userEmail || '[Enter Email]'} and I just paid ₹${amount} for the ${planName} plan. Here is my payment screenshot:`
+    `Hi Vyop Team! My account detail is: ${userEmail}. I just paid ₹${amount} for the ${planName} plan. Here is my payment screenshot:`
   );
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 

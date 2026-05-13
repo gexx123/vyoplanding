@@ -34,7 +34,15 @@ export default function BillingPage() {
           
           {/* Pricing Component & Payment Modal */}
           <div className="md:col-span-3">
-            <Pricing onUpgradeClick={(plan, amount) => {
+            <Pricing onUpgradeClick={async (plan, amount) => {
+              if (!user) {
+                try {
+                  await signInWithGoogle();
+                } catch (error) {
+                  console.error("Login failed:", error);
+                  return;
+                }
+              }
               setSelectedPlan({ name: plan, amount });
               setIsModalOpen(true);
             }} />

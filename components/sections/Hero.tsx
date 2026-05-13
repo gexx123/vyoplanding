@@ -46,15 +46,11 @@ export default function Hero() {
         className="relative z-10 w-full max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center lg:items-center"
       >
         {/* Left Column: Text */}
-        <motion.div
+        <div
           className="text-center lg:text-left flex flex-col items-center lg:items-start pt-20 pb-10 lg:py-0 w-full lg:w-[55%] z-20"
-          variants={staggerContainer}
-          initial="hidden"
-          animate="visible"
         >
           {/* H1 */}
-          <motion.h1
-            variants={fadeUpVariants}
+          <h1
             className="font-extrabold mb-6 tracking-tight flex flex-col gap-2 md:gap-3 w-full"
             style={{
               fontFamily: "var(--font-display)",
@@ -73,7 +69,7 @@ export default function Hero() {
             >
               World&apos;s First AI&nbsp;Accountant
             </span>
-          </motion.h1>
+          </h1>
 
           {/* Sub-headline */}
           <motion.p
@@ -122,7 +118,7 @@ export default function Hero() {
               Watch Demo →
             </a>
           </motion.div>
-        </motion.div>
+        </div>
       </motion.div>
 
       {/* Right Column: Image Bleeding to Right Edge (HIDDEN ON MOBILE) */}

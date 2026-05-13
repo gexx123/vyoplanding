@@ -65,6 +65,7 @@ export default function Navbar() {
             alt="Vyop Logo"
             width={36}
             height={36}
+            priority
             className="rounded-xl transition-transform group-hover:scale-105"
           />
           <span

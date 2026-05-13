@@ -1,9 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useEffect, useState } from "react";
-import { onAuthStateChanged, User, signInWithPopup, signOut } from "firebase/auth";
-import { shopAuth as auth, googleProvider, shopDb as db } from "@/lib/firebase";
-import { doc, getDoc, setDoc } from "firebase/firestore";
+import type { User } from "firebase/auth";
 
 interface AuthContextType {
   user: User | null;
@@ -21,55 +19,70 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (!auth) {
-      setLoading(false);
-      return;
-    }
+    const initAuth = async () => {
+      try {
+        const { onAuthStateChanged } = await import("firebase/auth");
+        const { doc, getDoc, setDoc } = await import("firebase/firestore");
+        const { shopAuth, shopDb } = await import("@/lib/firebase");
 
-    const unsubscribe = onAuthStateChanged(auth, async (user) => {
-      setUser(user);
-      if (user) {
-        // Fetch additional user data from Firestore
-        const userDoc = await getDoc(doc(db, "users", user.uid));
-        if (userDoc.exists()) {
-          setUserData(userDoc.data());
-        } else {
-          // Create new user profile
-          const newData = {
-            email: user.email,
-            displayName: user.displayName,
-            role: "marketer",
-            subscription: "free",
-            createdAt: new Date().toISOString(),
-          };
-          await setDoc(doc(db, "users", user.uid), newData);
-          setUserData(newData);
+        if (!shopAuth || !shopDb) {
+          setLoading(false);
+          return;
         }
-      } else {
-        setUserData(null);
-      }
-      setLoading(false);
-    });
 
-    return () => unsubscribe();
+        const unsubscribe = onAuthStateChanged(shopAuth, async (user) => {
+          setUser(user);
+          if (user) {
+            const userDoc = await getDoc(doc(shopDb, "users", user.uid));
+            if (userDoc.exists()) {
+              setUserData(userDoc.data());
+            } else {
+              const newData = {
+                email: user.email,
+                displayName: user.displayName,
+                role: "marketer",
+                subscription: "free",
+                createdAt: new Date().toISOString(),
+              };
+              await setDoc(doc(shopDb, "users", user.uid), newData);
+              setUserData(newData);
+            }
+          } else {
+            setUserData(null);
+          }
+          setLoading(false);
+        });
+
+        return unsubscribe;
+      } catch (error) {
+        console.error("Auth init error:", error);
+        setLoading(false);
+      }
+    };
+
+    const unsubscribePromise = initAuth();
+    return () => {
+      unsubscribePromise.then(unsubscribe => unsubscribe && unsubscribe());
+    };
   }, []);
 
   const signInWithGoogle = async () => {
-    if (!auth) {
-      console.error("Firebase auth is not initialized. Please check your environment variables.");
-      return;
-    }
     try {
-      await signInWithPopup(auth, googleProvider);
+      const { signInWithPopup, GoogleAuthProvider } = await import("firebase/auth");
+      const { shopAuth } = await import("@/lib/firebase");
+      if (!shopAuth) return;
+      await signInWithPopup(shopAuth, new GoogleAuthProvider());
     } catch (error) {
       console.error("Error signing in with Google", error);
     }
   };
 
   const logout = async () => {
-    if (!auth) return;
     try {
-      await signOut(auth);
+      const { signOut } = await import("firebase/auth");
+      const { shopAuth } = await import("@/lib/firebase");
+      if (!shopAuth) return;
+      await signOut(shopAuth);
     } catch (error) {
       console.error("Error signing out", error);
     }

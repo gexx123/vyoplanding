@@ -1,174 +1,140 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Check, ArrowRight, ShieldCheck, Zap, Globe } from "lucide-react";
+import { Users } from "lucide-react";
 import Link from "next/link";
-
-const plans = [
-  {
-    name: "Free",
-    price: "0",
-    description: "Perfect for getting started with voice-powered billing.",
-    features: [
-      "Voice-to-Bill (Hindi & English)",
-      "Local Data Storage (Phone)",
-      "Daily Sales Reports",
-      "Customer Directory",
-      "GST Ready Invoices"
-    ],
-    buttonText: "Get Started",
-    buttonLink: "/download",
-    popular: false,
-  },
-  {
-    name: "Premium",
-    price: "499",
-    period: "/ year",
-    description: "The ultimate business companion for growth and security.",
-    features: [
-      "Everything in Free",
-      "Sync to Cloud (Safe Backup)",
-      "Multi-device Sync",
-      "Voice-to-Expense Tracking",
-      "Advanced AI Insights",
-      "Priority WhatsApp Support"
-    ],
-    buttonText: "Upgrade Now",
-    buttonLink: "/billing",
-    popular: true,
-  }
-];
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="py-24 px-6 relative overflow-hidden bg-white grain-texture">
-      {/* Background Decor */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none">
-        <div className="absolute top-[-10%] right-[-10%] w-[40%] h-[40%] bg-[var(--brand-glow)] blur-[120px] rounded-full opacity-50" />
-        <div className="absolute bottom-[-10%] left-[-10%] w-[30%] h-[30%] bg-[var(--brand-glow)] blur-[100px] rounded-full opacity-30" />
-      </div>
-
-      <div className="max-w-6xl mx-auto relative z-10">
+    <section id="pricing" className="py-24 px-6 relative bg-white">
+      <div className="max-w-5xl mx-auto relative z-10">
+        
+        {/* Header Section */}
         <div className="text-center mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-block px-4 py-1.5 rounded-full bg-[var(--brand-glow)] border border-[var(--border-accent)] mb-6"
-          >
-            <span className="text-[var(--brand-primary)] text-sm font-bold tracking-wide uppercase">Simple Pricing</span>
-          </motion.div>
-          
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
             className="text-4xl md:text-5xl font-extrabold text-[var(--text-primary)] mb-6 leading-tight"
             style={{ fontFamily: "var(--font-display)" }}
           >
-            Invest in your business <br />
-            <span className="gradient-text">for less than ₹2 / day</span>
+            Invest in your business <br className="hidden md:block" />
+            <span className="text-[var(--brand-primary)]">for less than ₹2 / day</span>
           </motion.h2>
           
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
+            transition={{ delay: 0.1 }}
             className="text-lg text-[var(--text-secondary)] max-w-2xl mx-auto"
           >
             Start for free and upgrade when you're ready to sync your data securely to the cloud.
           </motion.p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {plans.map((plan, index) => (
-            <motion.div
-              key={plan.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className={`relative rounded-3xl p-8 md:p-10 ${
-                plan.popular 
-                  ? "bg-[var(--brand-secondary)] text-white shadow-2xl scale-105 z-20 border-2 border-[var(--brand-primary)]" 
-                  : "bg-white border border-[var(--border-subtle)] shadow-lg"
-              }`}
-            >
-              {plan.popular && (
-                <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-[var(--gradient-brand)] text-white px-6 py-1.5 rounded-full text-sm font-bold shadow-lg">
-                  Most Recommended
-                </div>
-              )}
+        {/* Pricing Cards Grid */}
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-8 max-w-4xl mx-auto mb-12">
+          
+          {/* Monthly Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="w-full lg:w-1/3 bg-[#F9FAFB] border border-gray-100 rounded-[32px] p-8 text-center"
+          >
+            <h3 className="text-xl font-bold text-gray-900 mb-4 font-display">Monthly</h3>
+            <div className="flex items-baseline justify-center gap-1 mb-8">
+              <span className="text-4xl font-extrabold text-gray-900">₹49</span>
+              <span className="text-gray-500 font-medium">/mo</span>
+            </div>
+            
+            {/* Empty spacer to align with 'Save X%' in other cards */}
+            <div className="h-6 mb-8"></div>
 
-              <div className="mb-8">
-                <h3 className={`text-2xl font-bold mb-2 ${plan.popular ? "text-white" : "text-[var(--text-primary)]"}`}>
-                  {plan.name}
-                </h3>
-                <p className={`text-sm mb-6 ${plan.popular ? "text-gray-300" : "text-[var(--text-secondary)]"}`}>
-                  {plan.description}
-                </p>
-                <div className="flex items-baseline gap-1">
-                  <span className="text-4xl font-extrabold">₹{plan.price}</span>
-                  {plan.period && (
-                    <span className={`text-lg ${plan.popular ? "text-gray-400" : "text-[var(--text-muted)]"}`}>
-                      {plan.period}
-                    </span>
-                  )}
-                </div>
-              </div>
+            <Link href="/billing">
+              <button className="w-full py-4 rounded-2xl font-bold text-[#D4AF37] bg-[#FDF9E6] hover:bg-[#FBEFC2] transition-colors">
+                Upgrade Now
+              </button>
+            </Link>
+          </motion.div>
 
-              <div className="space-y-4 mb-10">
-                {plan.features.map((feature) => (
-                  <div key={feature} className="flex items-start gap-3">
-                    <div className={`mt-1 p-0.5 rounded-full ${plan.popular ? "bg-[var(--brand-primary)]" : "bg-[var(--brand-glow)]"}`}>
-                      <Check className={`w-3.5 h-3.5 ${plan.popular ? "text-white" : "text-[var(--brand-primary)]"}`} strokeWidth={3} />
-                    </div>
-                    <span className={`text-sm ${plan.popular ? "text-gray-200" : "text-[var(--text-secondary)]"}`}>
-                      {feature}
-                    </span>
-                  </div>
-                ))}
-              </div>
+          {/* Yearly Card (Most Popular) */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, y: 30 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="w-full lg:w-[40%] bg-white border-2 border-[#D4AF37] rounded-[32px] p-10 text-center relative shadow-[0_20px_50px_-12px_rgba(212,175,55,0.25)] z-10"
+          >
+            <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#D4AF37] text-white px-5 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase shadow-md">
+              Most Popular
+            </div>
 
-              <Link href={plan.buttonLink} className="block">
-                <button
-                  className={`w-full py-4 rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 group ${
-                    plan.popular
-                      ? "bg-[var(--gradient-brand)] text-white shadow-[var(--shadow-gold)] hover:scale-[1.02]"
-                      : "bg-gray-100 text-[var(--text-primary)] hover:bg-gray-200"
-                  }`}
-                >
-                  {plan.buttonText}
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </button>
-              </Link>
-            </motion.div>
-          ))}
+            <h3 className="text-xl font-bold text-[#D4AF37] mb-4 font-display">Yearly</h3>
+            <div className="flex items-baseline justify-center gap-1 mb-4">
+              <span className="text-5xl font-extrabold text-gray-900">₹499</span>
+              <span className="text-gray-500 font-medium">/yr</span>
+            </div>
+            
+            <div className="text-green-600 font-bold text-sm mb-8">
+              Save 15%
+            </div>
+
+            <Link href="/billing">
+              <button className="w-full py-4 rounded-2xl font-bold text-white bg-gradient-to-r from-[#D4AF37] to-[#F1C40F] hover:shadow-[0_8px_20px_-6px_rgba(212,175,55,0.6)] hover:-translate-y-0.5 transition-all">
+                Upgrade Now
+              </button>
+            </Link>
+          </motion.div>
+
+          {/* 2 Years Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            className="w-full lg:w-1/3 bg-[#F9FAFB] border border-gray-100 rounded-[32px] p-8 text-center"
+          >
+            <h3 className="text-xl font-bold text-gray-900 mb-4 font-display">2 Years</h3>
+            <div className="flex items-baseline justify-center gap-1 mb-4">
+              <span className="text-4xl font-extrabold text-gray-900">₹799</span>
+              <span className="text-gray-500 font-medium">/2yr</span>
+            </div>
+            
+            <div className="text-green-600 font-bold text-sm mb-8">
+              Save 32%
+            </div>
+
+            <Link href="/billing">
+              <button className="w-full py-4 rounded-2xl font-bold text-[#D4AF37] bg-[#FDF9E6] hover:bg-[#FBEFC2] transition-colors">
+                Upgrade Now
+              </button>
+            </Link>
+          </motion.div>
+
         </div>
 
-        {/* Security Badges */}
+        {/* Offline Cash Payment Banner */}
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
-          className="mt-16 flex flex-wrap justify-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all"
+          className="max-w-3xl mx-auto border border-dashed border-gray-300 rounded-[32px] p-8 md:p-10 text-center bg-gray-50/50"
         >
-          <div className="flex items-center gap-2">
-            <ShieldCheck className="w-6 h-6 text-[var(--brand-primary)]" />
-            <span className="text-sm font-bold">100% Secure Payments</span>
+          <div className="flex justify-center mb-4 text-gray-400">
+            <Users className="w-8 h-8" />
           </div>
-          <div className="flex items-center gap-2">
-            <Globe className="w-6 h-6 text-[var(--brand-primary)]" />
-            <span className="text-sm font-bold">Cloud Sync Enabled</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Zap className="w-6 h-6 text-[var(--brand-primary)]" />
-            <span className="text-sm font-bold">Instant Activation</span>
-          </div>
+          <h4 className="text-xl font-bold text-gray-900 mb-2 font-display">
+            Prefer to pay in cash?
+          </h4>
+          <p className="text-gray-500 max-w-lg mx-auto text-sm md:text-base leading-relaxed">
+            Pay via an authorized Vyop Marketer in your area for instant offline activation.
+          </p>
         </motion.div>
+
       </div>
     </section>
   );

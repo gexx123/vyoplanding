@@ -5,6 +5,8 @@ import Link from "next/link";
 
 const footerLinks = {
   Company: ["About Us", "Careers", "Blog"],
+  Alternatives: ["Vyop vs Khatabook", "Vyop vs Vyapar", "Hindi Landing Page"],
+  "Top Cities": ["Jaipur", "Mumbai", "Delhi", "Surat", "Bangalore"],
   Support: ["Help Center", "Contact Us", "WhatsApp Chat", "Community"],
   Legal: ["Privacy Policy", "Terms of Service"],
 };
@@ -13,6 +15,14 @@ const linkPaths: Record<string, string> = {
   "About Us": "/about",
   "Careers": "/careers",
   "Blog": "/blog",
+  "Vyop vs Khatabook": "/vyop-vs-khatabook",
+  "Vyop vs Vyapar": "/vyop-vs-vyapar",
+  "Hindi Landing Page": "/hi",
+  "Jaipur": "/billing-software/jaipur",
+  "Mumbai": "/billing-software/mumbai",
+  "Delhi": "/billing-software/delhi",
+  "Surat": "/billing-software/surat",
+  "Bangalore": "/billing-software/bangalore",
   "Help Center": "/help",
   "Contact Us": "/contact",
   "WhatsApp Chat": "https://wa.me/919649059592",

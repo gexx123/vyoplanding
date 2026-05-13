@@ -17,17 +17,21 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Vyop — The World's First AI Accountant for Your Business",
+  title: "Vyop — Voice Billing App | GST, Inventory & Khata for India",
   description:
-    "Vyop is the world's first voice-first AI accounting app. Create bills, manage inventory, and track digital ledgers instantly by speaking. Built for retail.",
+    "Revolutionize your retail business with Vyop, the best voice-powered GST billing and khata app for kirana stores in India. Manage inventory and ledgers instantly.",
   metadataBase: new URL('https://vyop.in'),
   alternates: {
     canonical: '/',
+    languages: {
+      'en': '/',
+      'hi': '/hi',
+    },
   },
   openGraph: {
-    title: "Vyop — Just Speak, Your Bill is Ready",
+    title: "Vyop — Voice Billing App | GST, Inventory & Khata for India",
     description:
-      "The intelligent accounting app that understands your voice. GST billing, khata management, and stock alerts — all controlled by voice.",
+      "The world's first AI accounting app that understands your voice. GST billing, khata management, and stock alerts — all controlled by voice.",
     url: 'https://vyop.in',
     siteName: 'Vyop',
     images: [
@@ -43,21 +47,21 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Vyop — World's First AI Accountant",
+    title: "Vyop — Voice Billing App | GST, Inventory & Khata for India",
     description: "Voice-powered billing and inventory management for modern businesses.",
     images: ['/og-image.png'],
     creator: '@vyop_ai',
   },
   keywords: [
-    "AI accountant",
+    "GST billing app",
+    "kirana store billing",
+    "udhar khata",
+    "billing software India",
+    "free billing app",
     "voice billing app",
     "digital ledger",
-    "kirana billing software",
-    "inventory management AI",
+    "AI accountant",
     "Vyop accounting",
-    "voice-first business app",
-    "smart billing India",
-    "automated bookkeeping",
   ],
   robots: {
     index: true,

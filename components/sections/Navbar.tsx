@@ -101,17 +101,29 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-4">
           {!loading && user && (
             <>
-              <Link
-                href="/marketer"
-                className="inline-flex items-center px-6 py-2.5 rounded-full text-white text-sm font-bold transition-all duration-200 hover:scale-[1.03]"
-                style={{
-                  background: "var(--gradient-brand)",
-                  fontFamily: "var(--font-display)",
-                  boxShadow: "var(--shadow-gold)",
-                }}
-              >
-                Marketer Panel
-              </Link>
+              {userData?.role === 'marketer' ? (
+                <Link
+                  href="/marketer"
+                  className="inline-flex items-center px-6 py-2.5 rounded-full text-white text-sm font-bold transition-all duration-200 hover:scale-[1.03]"
+                  style={{
+                    background: "var(--gradient-brand)",
+                    fontFamily: "var(--font-display)",
+                    boxShadow: "var(--shadow-gold)",
+                  }}
+                >
+                  Marketer Panel
+                </Link>
+              ) : (
+                <Link
+                  href="/account"
+                  className="inline-flex items-center px-6 py-2.5 rounded-full text-white text-sm font-bold transition-all duration-200 hover:scale-[1.03] bg-gray-900 shadow-md"
+                  style={{
+                    fontFamily: "var(--font-display)",
+                  }}
+                >
+                  Your Vyop
+                </Link>
+              )}
               
               <button
                 onClick={() => {
@@ -211,17 +223,36 @@ export default function Navbar() {
                   {link.label}
                 </Link>
               ))}
-              <a
-                href="https://vyop.shop/"
-                className="mt-2 inline-flex items-center justify-center px-5 py-3 rounded-full text-white text-sm font-medium"
-                style={{
-                  background: "var(--gradient-brand)",
-                  fontFamily: "var(--font-display)",
-                  boxShadow: "var(--shadow-gold)",
-                }}
-              >
-                Download App
-              </a>
+              {user && userData?.role === 'marketer' ? (
+                <Link
+                  href="/marketer"
+                  onClick={() => setMobileOpen(false)}
+                  className="mt-2 text-center w-full inline-flex items-center justify-center px-5 py-3 rounded-xl text-white text-base font-bold shadow-lg"
+                  style={{ background: "var(--gradient-brand)" }}
+                >
+                  Marketer Panel
+                </Link>
+              ) : user ? (
+                <Link
+                  href="/account"
+                  onClick={() => setMobileOpen(false)}
+                  className="mt-2 text-center w-full inline-flex items-center justify-center px-5 py-3 rounded-xl text-white text-base font-bold bg-gray-900 shadow-lg"
+                >
+                  Your Vyop
+                </Link>
+              ) : (
+                <a
+                  href="https://vyop.shop/"
+                  className="mt-2 inline-flex items-center justify-center px-5 py-3 rounded-full text-white text-sm font-medium"
+                  style={{
+                    background: "var(--gradient-brand)",
+                    fontFamily: "var(--font-display)",
+                    boxShadow: "var(--shadow-gold)",
+                  }}
+                >
+                  Download App
+                </a>
+              )}
             </div>
           </motion.div>
         )}

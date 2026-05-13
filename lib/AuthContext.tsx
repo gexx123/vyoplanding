@@ -40,7 +40,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
               const newData = {
                 email: user.email,
                 displayName: user.displayName,
-                role: "marketer",
+                role: "shopkeeper",
                 subscription: "free",
                 createdAt: new Date().toISOString(),
               };

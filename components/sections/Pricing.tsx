@@ -10,7 +10,7 @@ interface PricingProps {
 
 export default function Pricing({ onUpgradeClick }: PricingProps) {
   return (
-    <section id="pricing" className="py-24 px-6 relative bg-white">
+    <section id="pricing" className="py-16 md:py-24 px-4 md:px-6 relative bg-white">
       <div className="max-w-5xl mx-auto relative z-10">
         
         {/* Header Section */}
@@ -46,7 +46,7 @@ export default function Pricing({ onUpgradeClick }: PricingProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="w-full lg:w-1/3 bg-[#F9FAFB] border border-gray-100 rounded-[32px] p-8 text-center"
+            className="w-full lg:w-1/3 bg-[#F9FAFB] border border-gray-100 rounded-[32px] p-6 md:p-8 text-center"
           >
             <h3 className="text-xl font-bold text-gray-900 mb-4 font-display">Monthly</h3>
             <div className="flex items-baseline justify-center gap-1 mb-8">
@@ -79,7 +79,7 @@ export default function Pricing({ onUpgradeClick }: PricingProps) {
             whileInView={{ opacity: 1, scale: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="w-full lg:w-[40%] bg-white border-2 border-[#D4AF37] rounded-[32px] p-10 text-center relative shadow-[0_20px_50px_-12px_rgba(212,175,55,0.25)] z-10"
+            className="w-full lg:w-[40%] bg-white border-2 border-[#D4AF37] rounded-[32px] p-8 md:p-10 text-center relative shadow-[0_20px_50px_-12px_rgba(212,175,55,0.25)] z-10"
           >
             <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#D4AF37] text-white px-5 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase shadow-md">
               Most Popular
@@ -117,7 +117,7 @@ export default function Pricing({ onUpgradeClick }: PricingProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="w-full lg:w-1/3 bg-[#F9FAFB] border border-gray-100 rounded-[32px] p-8 text-center"
+            className="w-full lg:w-1/3 bg-[#F9FAFB] border border-gray-100 rounded-[32px] p-6 md:p-8 text-center"
           >
             <h3 className="text-xl font-bold text-gray-900 mb-4 font-display">2 Years</h3>
             <div className="flex items-baseline justify-center gap-1 mb-4">
@@ -153,7 +153,7 @@ export default function Pricing({ onUpgradeClick }: PricingProps) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
-          className="max-w-3xl mx-auto border border-dashed border-gray-300 rounded-[32px] p-8 md:p-10 text-center bg-gray-50/50"
+          className="max-w-3xl mx-auto border border-dashed border-gray-300 rounded-[32px] p-6 md:p-10 text-center bg-gray-50/50"
         >
           <div className="flex justify-center mb-4 text-gray-400">
             <Users className="w-8 h-8" />

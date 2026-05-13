@@ -21,11 +21,11 @@ export default function PaymentModal({ isOpen, onClose, planName, amount, userEm
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
-      <div className="bg-white rounded-[32px] max-w-md w-full overflow-hidden shadow-2xl relative">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 sm:p-6 overflow-y-auto">
+      <div className="bg-white rounded-[32px] max-w-md w-full shadow-2xl relative my-auto shrink-0 flex flex-col max-h-[95vh] sm:max-h-[90vh]">
         
         {/* Header */}
-        <div className="flex justify-between items-center p-6 border-b border-gray-100">
+        <div className="flex justify-between items-center p-5 border-b border-gray-100 shrink-0">
           <h3 className="text-xl font-bold font-display text-gray-900">Upgrade to {planName}</h3>
           <button 
             onClick={onClose}
@@ -35,20 +35,20 @@ export default function PaymentModal({ isOpen, onClose, planName, amount, userEm
           </button>
         </div>
 
-        <div className="p-8 text-center bg-gray-50/50">
-          <p className="text-gray-500 text-sm mb-6">Scan the QR code below using any UPI app (Paytm, PhonePe, GPay) to pay <strong className="text-gray-900 text-lg">₹{amount}</strong></p>
+        <div className="p-6 text-center bg-gray-50/50 overflow-y-auto flex-grow">
+          <p className="text-gray-500 text-sm mb-4">Scan the QR code below using any UPI app (Paytm, PhonePe, GPay) to pay <strong className="text-gray-900 text-lg">₹{amount}</strong></p>
           
-          <div className="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 inline-block mb-6">
+          <div className="bg-white p-3 rounded-2xl shadow-sm border border-gray-100 inline-block mb-4">
             <Image 
               src="/barcode.jpg" 
               alt="Paytm QR Code" 
-              width={250} 
-              height={250} 
-              className="rounded-xl"
+              width={200} 
+              height={200} 
+              className="rounded-xl w-40 h-40 md:w-52 md:h-52 object-contain mx-auto"
             />
           </div>
 
-          <p className="text-sm font-bold text-gray-700 mb-2">UPI ID: 9649059592@ptsbi</p>
+          <p className="text-sm font-bold text-gray-700 mb-1">UPI ID: 9649059592@ptsbi</p>
           <p className="text-xs text-gray-400 mb-8">Verified Name: Himanshu Tunwal</p>
 
           <a 

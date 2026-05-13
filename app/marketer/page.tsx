@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 import { shopDb as db } from "@/lib/firebase";
 import { collection, query, where, getDocs, doc, writeBatch, Timestamp } from "firebase/firestore";
 import { motion } from "framer-motion";
-import { Search, UserPlus, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
+import { Search, UserPlus, CheckCircle, AlertCircle, Loader2, Copy, Share2, Globe, TrendingUp } from "lucide-react";
 
 export default function MarketerPanel() {
   const { user, userData, loading: authLoading } = useAuth();
@@ -18,6 +18,7 @@ export default function MarketerPanel() {
   const [errorMessage, setErrorMessage] = useState("");
   const [receiptNumber, setReceiptNumber] = useState("");
   const [selectedPlan, setSelectedPlan] = useState<49 | 499 | 799>(499);
+  const [copySuccess, setCopySuccess] = useState(false);
   
   const [stats, setStats] = useState({ totalUsers: 0, totalProfit: 0 });
   const [loadingStats, setLoadingStats] = useState(true);
@@ -172,6 +173,13 @@ export default function MarketerPanel() {
     }
   };
 
+  const handleCopyLink = () => {
+    const link = `https://vyop.in?ref=${user?.uid}`;
+    navigator.clipboard.writeText(link);
+    setCopySuccess(true);
+    setTimeout(() => setCopySuccess(false), 2000);
+  };
+
   if (authLoading) return <div className="min-h-screen bg-[var(--bg-hero)]" />;
 
   if (!isMarketer) {
@@ -238,6 +246,67 @@ export default function MarketerPanel() {
                 <p className="text-xs font-bold text-[var(--brand-primary)] uppercase tracking-widest mb-2">Total Profit</p>
                 <p className="text-4xl font-extrabold text-[var(--brand-primary)]">₹{stats.totalProfit}</p>
               </div>
+            </motion.div>
+          )}
+
+          {/* Referral Link Building Strategy Section */}
+          {!foundUser && status === "idle" && (
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="mt-6 p-8 rounded-3xl bg-[var(--brand-primary)] text-white overflow-hidden relative"
+            >
+              <div className="relative z-10">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="p-2 bg-white/20 rounded-lg">
+                    <Share2 className="w-5 h-5 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold">Referral Link Strategy</h3>
+                </div>
+                
+                <p className="text-white/80 mb-6 text-sm leading-relaxed">
+                  Execute your link-building strategy by sharing your unique referral link. 
+                  When users sign up via this link, they are automatically tagged to your panel for future activations.
+                </p>
+
+                <div className="flex flex-col md:flex-row gap-3">
+                  <div className="flex-grow bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-4 py-3 flex items-center justify-between">
+                    <span className="text-xs font-mono truncate mr-4">vyop.in?ref={user?.uid?.substring(0, 8)}...</span>
+                    <button 
+                      onClick={handleCopyLink}
+                      className="shrink-0 flex items-center gap-2 text-xs font-bold bg-white text-[var(--brand-primary)] px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors"
+                    >
+                      {copySuccess ? <CheckCircle className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
+                      {copySuccess ? "Copied!" : "Copy Link"}
+                    </button>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8 pt-6 border-t border-white/10">
+                  <div className="flex gap-3">
+                    <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                      <Globe className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold">Wider Reach</p>
+                      <p className="text-[10px] text-white/60">Post on social media to build inbound traffic.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                      <TrendingUp className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold">Direct Tracking</p>
+                      <p className="text-[10px] text-white/60">See your network grow in real-time.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Decorative background circle */}
+              <div className="absolute -bottom-12 -right-12 w-64 h-64 bg-white/5 rounded-full blur-3xl pointer-events-none" />
             </motion.div>
           )}
 

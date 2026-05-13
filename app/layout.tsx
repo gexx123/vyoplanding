@@ -17,10 +17,13 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Vyop — World's First AI Accountant for Business",
+  title: "Vyop — The World's First AI Accountant for Your Business",
   description:
-    "Revolutionize your business with Vyop, the voice-first AI accounting app. Create bills, manage inventory, and track digital ledgers instantly just by speaking. Built for the future of retail.",
+    "Vyop is the world's first voice-first AI accounting app. Create bills, manage inventory, and track digital ledgers instantly by speaking. Built for retail.",
   metadataBase: new URL('https://vyop.in'),
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     title: "Vyop — Just Speak, Your Bill is Ready",
     description:
@@ -77,6 +80,8 @@ export const metadata: Metadata = {
 };
 
 import { AuthProvider } from "@/lib/AuthContext";
+import ReferralTracker from "@/components/ReferralTracker";
+import { Suspense } from "react";
 
 export default function RootLayout({
   children,
@@ -91,6 +96,9 @@ export default function RootLayout({
       <head />
       <body className="min-h-full flex flex-col">
         <AuthProvider>
+          <Suspense fallback={null}>
+            <ReferralTracker />
+          </Suspense>
           {children}
         </AuthProvider>
       </body>

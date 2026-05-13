@@ -111,17 +111,25 @@ export default function Footer() {
             </p>
             {/* Social icons */}
             <div className="flex gap-2.5">
-              {socialIcons.map((social) => (
+              {[
+                { name: "Twitter", href: "https://x.com/vyop_ai" },
+                { name: "Instagram", href: "https://instagram.com/vyop.in" },
+                { name: "YouTube", href: "https://youtube.com/@vyop" },
+                { name: "WhatsApp", href: "https://wa.me/919649059592" },
+                { name: "LinkedIn", href: "https://linkedin.com/company/vyop" },
+              ].map((social) => (
                 <a
                   key={social.name}
-                  href="#"
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-200 hover:text-[var(--brand-primary)] bg-white border border-[rgba(0,0,0,0.06)] shadow-sm hover:shadow-md"
                   style={{
                     color: "var(--text-secondary)",
                   }}
                   aria-label={social.name}
                 >
-                  {social.svg}
+                  {socialIcons.find(s => s.name === social.name)?.svg}
                 </a>
               ))}
             </div>

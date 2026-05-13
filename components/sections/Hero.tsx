@@ -137,6 +137,8 @@ export default function Hero() {
             alt="Vyop AI Accountant App Dashboard showing voice-powered billing and inventory" 
             fill
             priority
+            sizes="(max-width: 1024px) 1vw, 50vw"
+            quality={85}
             className="relative z-20 object-cover object-right"
           />
         </div>

@@ -156,6 +156,8 @@ export default function StickyFeatureSection() {
                             src={activeIndex === i ? feature.chips[activeChipIndex].image : feature.chips[0].image}
                             alt="Feature screen"
                             fill
+                            sizes="(max-width: 1024px) 340px, 0vw"
+                            quality={80}
                             className="object-cover object-top"
                           />
                         </motion.div>
@@ -254,6 +256,8 @@ export default function StickyFeatureSection() {
                       className="object-cover"
                       alt={feature.title}
                       fill
+                      sizes="(max-width: 1024px) 280px, 0vw"
+                      quality={80}
                     />
                 </div>
 
@@ -306,6 +310,8 @@ export default function StickyFeatureSection() {
                   src={displayImage}
                   alt="Feature Preview"
                   fill
+                  sizes="(min-width: 1024px) 50vw, 0vw"
+                  quality={85}
                   className="object-cover object-top"
                 />
               </motion.div>

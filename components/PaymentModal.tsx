@@ -1,6 +1,6 @@
 "use client";
 
-import { X, Loader2 } from "lucide-react";
+import { X, Loader2, Download } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 import { shopDb } from "@/lib/firebase";
@@ -72,7 +72,7 @@ export default function PaymentModal({ isOpen, onClose, planName, amount, user }
         <div className="p-6 text-center bg-gray-50/50 overflow-y-auto flex-grow">
           <p className="text-gray-500 text-sm mb-4">Scan the QR code below using any UPI app (Paytm, PhonePe, GPay) to pay <strong className="text-gray-900 text-lg">₹{amount}</strong></p>
           
-          <div className="bg-white p-3 rounded-2xl shadow-sm border border-gray-100 inline-block mb-4">
+          <div className="bg-white p-3 rounded-2xl shadow-sm border border-gray-100 inline-block mb-2">
             <Image 
               src="/barcode.jpg" 
               alt="Paytm QR Code" 
@@ -80,6 +80,17 @@ export default function PaymentModal({ isOpen, onClose, planName, amount, user }
               height={200} 
               className="rounded-xl w-40 h-40 md:w-52 md:h-52 object-contain mx-auto"
             />
+          </div>
+
+          <div className="mb-6">
+            <a 
+              href="/barcode.jpg" 
+              download="vyop-payment-qr.jpg"
+              className="inline-flex items-center gap-2 text-sm font-bold text-[var(--brand-primary)] hover:text-opacity-80 transition-colors bg-[var(--brand-glow)] px-4 py-2 rounded-full"
+            >
+              <Download className="w-4 h-4" />
+              Download QR
+            </a>
           </div>
 
           <p className="text-sm font-bold text-gray-700 mb-1">UPI ID: 9649059592@ptsbi</p>

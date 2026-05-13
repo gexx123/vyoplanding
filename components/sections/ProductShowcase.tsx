@@ -142,6 +142,7 @@ export default function ProductShowcase() {
                   key={activeTab}
                   src={activeTab === "bill" ? "/showcase-bill.png" : "/showcase-khata.png"}
                   alt={activeTab}
+                  loading="lazy"
                   className="absolute inset-0 w-full h-full object-cover object-top bg-gray-50"
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}

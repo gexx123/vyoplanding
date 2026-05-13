@@ -133,7 +133,7 @@ export default function Hero() {
         <div className="relative w-full h-full">
           {/* Image */}
           <Image 
-            src="/hero-image.png" 
+            src="/hero-image.webp" 
             alt="Vyop AI Accountant App Dashboard showing voice-powered billing and inventory" 
             fill
             priority

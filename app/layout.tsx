@@ -88,14 +88,7 @@ export default function RootLayout({
       lang="en"
       className={`${sora.variable} ${dmSans.variable} h-full antialiased`}
     >
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-      </head>
+      <head />
       <body className="min-h-full flex flex-col">
         <AuthProvider>
           {children}

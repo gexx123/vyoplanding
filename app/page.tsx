@@ -1,14 +1,16 @@
+import dynamic from "next/dynamic";
 import Navbar from "@/components/sections/Navbar";
 import Hero from "@/components/sections/Hero";
-import BenefitsMarquee from "@/components/sections/BenefitsMarquee";
-import ProductShowcase from "@/components/sections/ProductShowcase";
-import StickyFeatureSection from "@/components/sections/StickyFeatureSection";
-import LaunchAnnouncement from "@/components/sections/LaunchAnnouncement";
-import Testimonials from "@/components/sections/Testimonials";
-import FAQ from "@/components/sections/FAQ";
-import Blog from "@/components/sections/Blog";
-import Pricing from "@/components/sections/Pricing";
-import Footer from "@/components/sections/Footer";
+
+// Lazy load below-the-fold components to improve performance
+const StickyFeatureSection = dynamic(() => import("@/components/sections/StickyFeatureSection"));
+const LaunchAnnouncement = dynamic(() => import("@/components/sections/LaunchAnnouncement"));
+const BenefitsMarquee = dynamic(() => import("@/components/sections/BenefitsMarquee"));
+const Testimonials = dynamic(() => import("@/components/sections/Testimonials"));
+const FAQ = dynamic(() => import("@/components/sections/FAQ"));
+const Pricing = dynamic(() => import("@/components/sections/Pricing"));
+const Blog = dynamic(() => import("@/components/sections/Blog"));
+const Footer = dynamic(() => import("@/components/sections/Footer"));
 
 export default function Home() {
   return (

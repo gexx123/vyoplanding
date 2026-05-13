@@ -4,7 +4,11 @@ import { motion } from "framer-motion";
 import { Users } from "lucide-react";
 import Link from "next/link";
 
-export default function Pricing() {
+interface PricingProps {
+  onUpgradeClick?: (plan: string, amount: string) => void;
+}
+
+export default function Pricing({ onUpgradeClick }: PricingProps) {
   return (
     <section id="pricing" className="py-24 px-6 relative bg-white">
       <div className="max-w-5xl mx-auto relative z-10">
@@ -53,11 +57,20 @@ export default function Pricing() {
             {/* Empty spacer to align with 'Save X%' in other cards */}
             <div className="h-6 mb-8"></div>
 
-            <Link href="/billing">
-              <button className="w-full py-4 rounded-2xl font-bold text-[#D4AF37] bg-[#FDF9E6] hover:bg-[#FBEFC2] transition-colors">
+            {onUpgradeClick ? (
+              <button 
+                onClick={() => onUpgradeClick("Monthly", "49")}
+                className="w-full py-4 rounded-2xl font-bold text-[#D4AF37] bg-[#FDF9E6] hover:bg-[#FBEFC2] transition-colors"
+              >
                 Upgrade Now
               </button>
-            </Link>
+            ) : (
+              <Link href="/billing">
+                <button className="w-full py-4 rounded-2xl font-bold text-[#D4AF37] bg-[#FDF9E6] hover:bg-[#FBEFC2] transition-colors">
+                  Upgrade Now
+                </button>
+              </Link>
+            )}
           </motion.div>
 
           {/* Yearly Card (Most Popular) */}
@@ -82,11 +95,20 @@ export default function Pricing() {
               Save 15%
             </div>
 
-            <Link href="/billing">
-              <button className="w-full py-4 rounded-2xl font-bold text-white bg-gradient-to-r from-[#D4AF37] to-[#F1C40F] hover:shadow-[0_8px_20px_-6px_rgba(212,175,55,0.6)] hover:-translate-y-0.5 transition-all">
+            {onUpgradeClick ? (
+              <button 
+                onClick={() => onUpgradeClick("Yearly", "499")}
+                className="w-full py-4 rounded-2xl font-bold text-white bg-gradient-to-r from-[#D4AF37] to-[#F1C40F] hover:shadow-[0_8px_20px_-6px_rgba(212,175,55,0.6)] hover:-translate-y-0.5 transition-all"
+              >
                 Upgrade Now
               </button>
-            </Link>
+            ) : (
+              <Link href="/billing">
+                <button className="w-full py-4 rounded-2xl font-bold text-white bg-gradient-to-r from-[#D4AF37] to-[#F1C40F] hover:shadow-[0_8px_20px_-6px_rgba(212,175,55,0.6)] hover:-translate-y-0.5 transition-all">
+                  Upgrade Now
+                </button>
+              </Link>
+            )}
           </motion.div>
 
           {/* 2 Years Card */}
@@ -107,11 +129,20 @@ export default function Pricing() {
               Save 32%
             </div>
 
-            <Link href="/billing">
-              <button className="w-full py-4 rounded-2xl font-bold text-[#D4AF37] bg-[#FDF9E6] hover:bg-[#FBEFC2] transition-colors">
+            {onUpgradeClick ? (
+              <button 
+                onClick={() => onUpgradeClick("2 Years", "799")}
+                className="w-full py-4 rounded-2xl font-bold text-[#D4AF37] bg-[#FDF9E6] hover:bg-[#FBEFC2] transition-colors"
+              >
                 Upgrade Now
               </button>
-            </Link>
+            ) : (
+              <Link href="/billing">
+                <button className="w-full py-4 rounded-2xl font-bold text-[#D4AF37] bg-[#FDF9E6] hover:bg-[#FBEFC2] transition-colors">
+                  Upgrade Now
+                </button>
+              </Link>
+            )}
           </motion.div>
 
         </div>

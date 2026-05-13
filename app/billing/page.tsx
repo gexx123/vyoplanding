@@ -62,7 +62,7 @@ export default function BillingPage() {
         onClose={() => setIsModalOpen(false)}
         planName={selectedPlan.name}
         amount={selectedPlan.amount}
-        userEmail={user?.email || undefined}
+        user={user}
       />
 
       <Footer />

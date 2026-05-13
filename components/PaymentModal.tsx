@@ -1,24 +1,58 @@
 "use client";
 
-import { X } from "lucide-react";
+import { X, Loader2 } from "lucide-react";
 import Image from "next/image";
+import { useState } from "react";
+import { shopDb } from "@/lib/firebase";
+import { collection, addDoc } from "firebase/firestore";
 
 interface PaymentModalProps {
   isOpen: boolean;
   onClose: () => void;
   planName: string;
   amount: string;
-  userEmail?: string;
+  user: any;
 }
 
-export default function PaymentModal({ isOpen, onClose, planName, amount, userEmail }: PaymentModalProps) {
+export default function PaymentModal({ isOpen, onClose, planName, amount, user }: PaymentModalProps) {
+  const [isSaving, setIsSaving] = useState(false);
+
   if (!isOpen) return null;
 
   const whatsappNumber = "919649059592";
   const whatsappMessage = encodeURIComponent(
-    `Hi Vyop Team! My account detail is: ${userEmail}. I just paid ₹${amount} for the ${planName} plan. Here is my payment screenshot:`
+    `Hi Vyop Team! My account detail is: ${user?.email}. I just paid ₹${amount} for the ${planName} plan. Here is my payment screenshot:`
   );
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+
+  const handlePaymentConfirm = async () => {
+    if (!user || isSaving) return;
+    
+    setIsSaving(true);
+    try {
+      if (shopDb) {
+        await addDoc(collection(shopDb, "payments"), {
+          userId: user.uid,
+          userEmail: user.email,
+          userName: user.displayName || "Unknown",
+          planName,
+          amount,
+          status: "pending",
+          createdAt: new Date().toISOString()
+        });
+      }
+      
+      // Redirect to WhatsApp
+      window.open(whatsappLink, "_blank");
+      onClose(); // Optional: close modal after they click
+    } catch (error) {
+      console.error("Error saving payment intent:", error);
+      // Fallback: still open whatsapp even if analytics/db fails
+      window.open(whatsappLink, "_blank");
+    } finally {
+      setIsSaving(false);
+    }
+  };
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 sm:p-6 overflow-y-auto">
@@ -51,14 +85,13 @@ export default function PaymentModal({ isOpen, onClose, planName, amount, userEm
           <p className="text-sm font-bold text-gray-700 mb-1">UPI ID: 9649059592@ptsbi</p>
           <p className="text-xs text-gray-400 mb-8">Verified Name: Himanshu Tunwal</p>
 
-          <a 
-            href={whatsappLink} 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="w-full flex items-center justify-center gap-2 py-4 rounded-2xl font-bold text-white bg-[#25D366] hover:bg-[#20bd5a] hover:-translate-y-1 transition-all shadow-[0_10px_20px_-10px_rgba(37,211,102,0.5)]"
+          <button 
+            onClick={handlePaymentConfirm}
+            disabled={isSaving}
+            className="w-full flex items-center justify-center gap-2 py-4 rounded-2xl font-bold text-white bg-[#25D366] hover:bg-[#20bd5a] hover:-translate-y-1 transition-all shadow-[0_10px_20px_-10px_rgba(37,211,102,0.5)] disabled:opacity-70 disabled:hover:translate-y-0"
           >
-            I have paid — Send Screenshot
-          </a>
+            {isSaving ? <Loader2 className="w-5 h-5 animate-spin" /> : "I have paid — Send Screenshot"}
+          </button>
         </div>
 
       </div>

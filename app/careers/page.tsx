@@ -3,12 +3,8 @@
 import { useState } from "react";
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
-import { useAuth } from "@/lib/AuthContext";
-import { useRouter } from "next/navigation";
 
 export default function Careers() {
-  const { user, signInWithGoogle } = useAuth();
-  const router = useRouter();
   const [formData, setFormData] = useState({
     name: "",
     role: "",
@@ -18,11 +14,6 @@ export default function Careers() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
   const roles = ["Sales", "Digital Media"];
-
-  // If logged in, automatically redirect to marketer panel
-  if (user) {
-    router.push("/marketer");
-  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -63,24 +54,6 @@ export default function Careers() {
           <p className="text-lg text-[var(--text-secondary)]">
             Join the team building India's first voice-powered AI accountant. We are looking for passionate individuals to help us scale Vyop across the country.
           </p>
-        </div>
-
-        {/* Existing Marketers Login */}
-        <div className="mb-12 bg-[var(--brand-secondary)] rounded-3xl shadow-xl p-8 md:p-10 animate-fade-up text-white text-center">
-          <h3 className="text-2xl font-bold mb-3">Already a Vyop Marketer?</h3>
-          <p className="text-sm text-gray-300 mb-6 max-w-md mx-auto">Log in to your dashboard to activate customer subscriptions and track your performance.</p>
-          <button 
-            onClick={signInWithGoogle}
-            className="px-8 py-3 bg-white text-[var(--brand-secondary)] rounded-xl font-bold hover:scale-[1.02] transition-all shadow-lg"
-          >
-            Log in with Google
-          </button>
-        </div>
-
-        <div className="text-center mb-8 flex items-center justify-center gap-4">
-          <div className="h-px bg-gray-300 flex-1"></div>
-          <span className="text-gray-500 font-bold uppercase tracking-widest text-xs">Or Apply Now</span>
-          <div className="h-px bg-gray-300 flex-1"></div>
         </div>
 
         <div className="bg-white rounded-3xl shadow-[var(--shadow-md)] p-8 md:p-12 border border-[var(--border-subtle)] animate-fade-up" style={{ animationDelay: "100ms" }}>

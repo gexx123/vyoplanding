@@ -83,7 +83,6 @@ export const metadata: Metadata = {
   },
 };
 
-import { AuthProvider } from "@/lib/AuthContext";
 import ReferralTracker from "@/components/ReferralTracker";
 import { Suspense } from "react";
 
@@ -99,12 +98,10 @@ export default function RootLayout({
     >
       <head />
       <body className="min-h-full flex flex-col">
-        <AuthProvider>
-          <Suspense fallback={null}>
-            <ReferralTracker />
-          </Suspense>
-          {children}
-        </AuthProvider>
+        <Suspense fallback={null}>
+          <ReferralTracker />
+        </Suspense>
+        {children}
       </body>
     </html>
   );

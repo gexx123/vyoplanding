@@ -1,29 +1,14 @@
 "use client";
 
-import { useAuth } from "@/lib/AuthContext";
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
-import { motion } from "framer-motion";
-import { ShieldCheck, CreditCard, Users, CheckCircle2, Lock, ArrowRight } from "lucide-react";
-import Link from "next/link";
 import { useState } from "react";
 import Pricing from "@/components/sections/Pricing";
 import PaymentModal from "@/components/PaymentModal";
 
 export default function BillingPage() {
-  const { user, userData, loading, signInWithGoogle, logout } = useAuth();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState({ name: "Yearly", amount: "499" });
-
-  const isPremium = userData?.subscription === "premium";
-
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-[var(--bg-hero)]">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[var(--brand-primary)]"></div>
-      </div>
-    );
-  }
 
   return (
     <main className="min-h-screen bg-[var(--bg-hero)]">
@@ -35,14 +20,6 @@ export default function BillingPage() {
           {/* Pricing Component & Payment Modal */}
           <div className="md:col-span-3">
             <Pricing onUpgradeClick={async (plan, amount) => {
-              if (!user) {
-                try {
-                  await signInWithGoogle();
-                } catch (error) {
-                  console.error("Login failed:", error);
-                  return;
-                }
-              }
               setSelectedPlan({ name: plan, amount });
               setIsModalOpen(true);
             }} />
@@ -62,7 +39,6 @@ export default function BillingPage() {
         onClose={() => setIsModalOpen(false)}
         planName={selectedPlan.name}
         amount={selectedPlan.amount}
-        user={user}
       />
 
       <Footer />

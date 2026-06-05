@@ -1,5 +1,6 @@
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
+import LegalDocument from "@/components/legal/LegalDocument";
 
 const termsOfService = `Vyop — Terms of Service
 Last updated: June 5, 2026
@@ -185,17 +186,9 @@ Website: https://vyop.in`;
 
 export default function TermsOfService() {
   return (
-    <main className="min-h-screen bg-[var(--bg-hero)]">
+    <main className="min-h-screen bg-white">
       <Navbar />
-
-      <section className="pt-40 pb-20 px-6 max-w-4xl mx-auto">
-        <div className="bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-[var(--border-subtle)] animate-fade-up">
-          <pre className="whitespace-pre-wrap break-words font-sans text-base md:text-lg leading-8 text-gray-700">
-            {termsOfService}
-          </pre>
-        </div>
-      </section>
-
+      <LegalDocument text={termsOfService} />
       <Footer />
     </main>
   );

@@ -25,9 +25,11 @@ export default function Home() {
                 "@type": "SoftwareApplication",
                 "@id": "https://vyop.in/#application",
                 "name": "Vyop",
-                "operatingSystem": "Android, iOS",
+                "operatingSystem": "Android",
                 "applicationCategory": "BusinessApplication",
                 "description": "India's first voice-powered AI billing and accounting app designed specifically for kirana stores and small retailers.",
+                "url": "https://vyop.in",
+                "installUrl": "https://play.google.com/store/apps/details?id=com.vyop.app",
                 "offers": {
                   "@type": "Offer",
                   "price": "0",

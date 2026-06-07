@@ -22,11 +22,11 @@ export default function Home() {
             "@context": "https://schema.org",
             "@graph": [
               {
-                "@type": "FinanceApplication",
+                "@type": "SoftwareApplication",
                 "@id": "https://vyop.in/#application",
                 "name": "Vyop",
                 "operatingSystem": "Android, iOS",
-                "applicationCategory": "FinanceApplication",
+                "applicationCategory": "BusinessApplication",
                 "description": "India's first voice-powered AI billing and accounting app designed specifically for kirana stores and small retailers.",
                 "offers": {
                   "@type": "Offer",
@@ -45,7 +45,6 @@ export default function Home() {
                     "@type": "Review",
                     "author": { "@type": "Person", "name": "Rajesh Gupta" },
                     "datePublished": "2026-05-01",
-                    "itemReviewed": { "@id": "https://vyop.in/#application" },
                     "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" },
                     "reviewBody": "Pehle bill likhne mein 2-3 minute lagte the, ab 10 second mein ho jaata hai bolke."
                   },
@@ -53,7 +52,6 @@ export default function Home() {
                     "@type": "Review",
                     "author": { "@type": "Person", "name": "Suresh Yadav" },
                     "datePublished": "2026-05-10",
-                    "itemReviewed": { "@id": "https://vyop.in/#application" },
                     "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" },
                     "reviewBody": "Hindi mein bolta hoon, bill ban jaata hai. Bahut badiya cheez banai hai."
                   }

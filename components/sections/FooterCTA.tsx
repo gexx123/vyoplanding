@@ -110,13 +110,25 @@ export default function FooterCTA() {
           Fast. Simple. Reliable.
         </motion.p>
 
-        {/* App store buttons */}
+        {/* Call to Actions */}
         <motion.div
           variants={fadeUpVariants}
           className="flex flex-col sm:flex-row gap-4 justify-center mb-8"
         >
-          {/* App Store */}
-          <div className="flex items-center gap-3 px-6 py-3.5 bg-white/10 hover:bg-white/20 border border-white/20 rounded-2xl transition-all duration-200 cursor-pointer backdrop-blur-md">
+          {/* Desktop: Get Started Button */}
+          <a 
+            href="https://vyop.shop" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden md:inline-flex items-center justify-center px-10 py-4 rounded-full bg-white text-[var(--bg-navy)] font-bold text-xl hover:scale-[1.02] transition-all shadow-lg"
+          >
+            Get Started
+          </a>
+
+          {/* Mobile: App Store & Play Store Buttons */}
+          <div className="flex md:hidden flex-col gap-4 w-full max-w-[280px] mx-auto">
+            {/* App Store */}
+            <a href="#" className="flex items-center gap-3 px-6 py-3.5 bg-white/10 hover:bg-white/20 border border-white/20 rounded-2xl transition-all duration-200 cursor-pointer backdrop-blur-md">
             <svg
               width="24"
               height="24"
@@ -145,10 +157,10 @@ export default function FooterCTA() {
                 App Store
               </div>
             </div>
-          </div>
+          </a>
 
           {/* Play Store */}
-          <div className="flex items-center gap-3 px-6 py-3.5 bg-white/10 hover:bg-white/20 border border-white/20 rounded-2xl transition-all duration-200 cursor-pointer backdrop-blur-md">
+          <a href="https://play.google.com/store/apps/details?id=com.vyop.app" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 px-6 py-3.5 bg-white/10 hover:bg-white/20 border border-white/20 rounded-2xl transition-all duration-200 cursor-pointer backdrop-blur-md">
             <svg
               width="22"
               height="24"
@@ -185,6 +197,7 @@ export default function FooterCTA() {
                 Google Play
               </div>
             </div>
+          </a>
           </div>
         </motion.div>
 

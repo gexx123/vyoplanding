@@ -59,12 +59,41 @@ export default async function CityLandingPage({ params }: { params: Promise<{ ci
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link 
+          {/* Desktop: Get Started Button */}
+          <a 
             href="https://vyop.shop" 
-            className="w-full sm:w-auto px-10 py-5 rounded-2xl bg-[var(--brand-secondary)] text-white font-bold text-xl hover:scale-[1.02] transition-all shadow-[var(--shadow-gold)]"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden md:inline-flex w-full sm:w-auto px-10 py-5 rounded-2xl bg-[var(--brand-secondary)] text-white font-bold text-xl hover:scale-[1.02] transition-all shadow-[var(--shadow-gold)] items-center justify-center"
           >
-            Download Free App
-          </Link>
+            Get Started
+          </a>
+          
+          {/* Mobile: Google Play Badge */}
+          <a 
+            href="https://play.google.com/store/apps/details?id=com.vyop.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex md:hidden items-center justify-center gap-3 px-8 py-[18px] rounded-2xl bg-black text-white transition-all duration-200 hover:scale-[1.02] w-full sm:w-auto"
+            style={{
+              boxShadow: "0 4px 14px rgba(0,0,0,0.2)",
+            }}
+          >
+            <svg width="26" height="28" viewBox="0 0 22 24" fill="none">
+              <path d="M1 1l10 11L1 23V1z" fill="#4285F4" stroke="#4285F4" strokeWidth="0.5" />
+              <path d="M1 1l14 8-4 4L1 1z" fill="#34A853" />
+              <path d="M1 23l10-12 4 4-14 8z" fill="#EA4335" />
+              <path d="M15 9l5 3-5 3-4-3 4-3z" fill="#FBBC05" />
+            </svg>
+            <div className="text-left flex flex-col justify-center">
+              <div className="text-[11px] leading-[1.1] font-medium" style={{ color: "rgba(255,255,255,0.8)", fontFamily: "var(--font-body)", letterSpacing: "0.5px" }}>
+                GET IT ON
+              </div>
+              <div className="text-[20px] font-semibold leading-[1.1]" style={{ fontFamily: "var(--font-display)" }}>
+                Google Play
+              </div>
+            </div>
+          </a>
           <a 
             href="#features" 
             className="w-full sm:w-auto px-10 py-5 rounded-2xl bg-white border border-[var(--border-medium)] text-[var(--text-secondary)] font-bold text-xl hover:bg-gray-50 transition-all"

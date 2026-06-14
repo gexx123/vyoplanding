@@ -87,17 +87,16 @@ export default function Pricing({ onUpgradeClick }: PricingProps) {
 
             <h3 className="text-xl font-bold text-[#D4AF37] mb-4 font-display">Yearly</h3>
             <div className="flex items-baseline justify-center gap-1 mb-4">
-              <span className="text-5xl font-extrabold text-gray-900">₹499</span>
+              <span className="text-5xl font-extrabold text-gray-900">₹999</span>
               <span className="text-gray-500 font-medium">/yr</span>
             </div>
             
-            <div className="text-green-600 font-bold text-sm mb-8">
-              Save 15%
-            </div>
+            {/* Spacer to maintain alignment */}
+            <div className="h-6 mb-8"></div>
 
             {onUpgradeClick ? (
               <button 
-                onClick={() => onUpgradeClick("Yearly", "499")}
+                onClick={() => onUpgradeClick("Yearly", "999")}
                 className="w-full py-4 rounded-2xl font-bold text-white bg-gradient-to-r from-[#D4AF37] to-[#F1C40F] hover:shadow-[0_8px_20px_-6px_rgba(212,175,55,0.6)] hover:-translate-y-0.5 transition-all"
               >
                 Upgrade Now
@@ -111,7 +110,7 @@ export default function Pricing({ onUpgradeClick }: PricingProps) {
             )}
           </motion.div>
 
-          {/* 2 Years Card */}
+          {/* 3 Years Card */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -119,19 +118,18 @@ export default function Pricing({ onUpgradeClick }: PricingProps) {
             transition={{ delay: 0.3 }}
             className="w-full lg:w-1/3 bg-[#F9FAFB] border border-gray-100 rounded-[32px] p-6 md:p-8 text-center"
           >
-            <h3 className="text-xl font-bold text-gray-900 mb-4 font-display">2 Years</h3>
+            <h3 className="text-xl font-bold text-gray-900 mb-4 font-display">3 Years</h3>
             <div className="flex items-baseline justify-center gap-1 mb-4">
-              <span className="text-4xl font-extrabold text-gray-900">₹799</span>
-              <span className="text-gray-500 font-medium">/2yr</span>
+              <span className="text-4xl font-extrabold text-gray-900">₹1999</span>
+              <span className="text-gray-500 font-medium">/3yr</span>
             </div>
             
-            <div className="text-green-600 font-bold text-sm mb-8">
-              Save 32%
-            </div>
+            {/* Spacer to maintain alignment */}
+            <div className="h-6 mb-8"></div>
 
             {onUpgradeClick ? (
               <button 
-                onClick={() => onUpgradeClick("2 Years", "799")}
+                onClick={() => onUpgradeClick("3 Years", "1999")}
                 className="w-full py-4 rounded-2xl font-bold text-[#D4AF37] bg-[#FDF9E6] hover:bg-[#FBEFC2] transition-colors"
               >
                 Upgrade Now

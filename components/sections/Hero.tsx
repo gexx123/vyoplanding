@@ -82,11 +82,11 @@ export default function Hero() {
             style={{
               fontFamily: "var(--font-body)",
               color: "var(--text-secondary)",
-              maxWidth: "540px",
+              maxWidth: "580px",
               lineHeight: 1.7,
             }}
           >
-            The intelligent accounting app that understands your voice and scans barcodes like a mall POS scanner. Create bills, manage inventory, and track payments instantly.
+            The intelligent accounting app that understands your voice, scans barcodes using your phone camera like a supermarket POS scanner, and launches your 0% commission online storefront in 60 seconds.
           </motion.p>
 
           {/* CTA buttons */}

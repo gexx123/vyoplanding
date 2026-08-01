@@ -50,7 +50,7 @@ export default function LaunchAnnouncement() {
       }}
     >
       <motion.div
-        className="max-w-5xl mx-auto px-6 text-center"
+        className="relative max-w-5xl mx-auto px-6 text-center"
         initial={{ opacity: 0, y: 32 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}

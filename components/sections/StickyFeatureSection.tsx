@@ -8,13 +8,97 @@ import SectionLabel from "@/components/ui/SectionLabel";
 const features = [
   {
     label: "Frictionless Entry",
-    title: "Multiple Ways to Add Items",
-    body: "Vyop adapts to your workflow. Whether you prefer speaking naturally, sending a quick chat message, or simply scanning a physical invoice, adding items to your bill is instant and effortless.",
+    title: "10 Ways to Add Items",
+    body: "Vyop adapts seamlessly to your store workflow. Choose from 10 fast ways to add inventory — speak, scan, type, or upload.",
     bullets: [],
     chips: [
-      { label: "Speak", image: "/feature-add-speak.png" },
-      { label: "Chat", image: "/feature-add-chat.png" },
-      { label: "Scan Invoice", image: "/feature-add-scan.png" },
+      {
+        label: "Scan Barcode",
+        description: "Scan any barcode or click an image of any product to turn it into a custom scannable barcode.",
+        image: "/feature-scan-barcode.png",
+      },
+      {
+        label: "Scan Invoice",
+        description: "Import products automatically from physical paper or digital PDF invoices.",
+        image: "/feature-add-scan.png",
+      },
+      {
+        label: "Add Manually",
+        description: "Enter product details, pricing, units, and custom categories manually.",
+        image: "/feature-add-chat.png",
+      },
+      {
+        label: "Add with AI",
+        description: "Generate Kirana product details and categories automatically using AI.",
+        image: "/feature-add-with-ai.png",
+      },
+      {
+        label: "Add with Image",
+        description: "Capture an image of the product and let AI handle detail extraction.",
+        image: "/feature-add-with-image.png",
+      },
+      {
+        label: "Print Barcodes",
+        description: "Generate and print custom barcode stickers directly for your store products.",
+        image: "/feature-print-barcode.png",
+      },
+      {
+        label: "Voice in Orb",
+        description: "Speak product details directly into the glowing AI orb in natural Hindi or English.",
+        image: "/feature-add-speak.png",
+      },
+      {
+        label: "Type in Orb",
+        description: "Type natural text prompts into the AI orb to add products and quantities on the fly.",
+        image: "/feature-add-chat.png",
+      },
+      {
+        label: "Upload Catalogue",
+        description: "Upload photos of physical price lists or menu catalogues for bulk creation.",
+        image: "/feature-add-catalogue.png",
+      },
+      {
+        label: "Add by Menu",
+        description: "Select and add products directly from pre-built item catalogues.",
+        image: "/feature-add-menu.png",
+      },
+    ],
+  },
+  {
+    label: "Digital Storefront",
+    title: "Build & Manage Your Online Store in Minutes",
+    body: "Turn your retail shop into an online store in minutes. Answer customer orders directly with 0% delivery commission.",
+    isIllustration: true,
+    bullets: [
+      "Can I make an app or website for my store? Yes! Setup takes under 60s.",
+      "0% middleman delivery charges — keep 100% of your earnings.",
+      "Custom discount banners & Spin-The-Wheel rewards for repeat sales.",
+    ],
+    chips: [
+      {
+        label: "1-Min Store",
+        question: "Can I make an app or website for my shop?",
+        description: "Yes! Vyop lets any retail store owner create and launch a professional online storefront & digital catalog in under 60 seconds with no coding or technical skills required.",
+        image: "/storefront-1min.png",
+      },
+      {
+        label: "Zero Commission",
+        question: "How to sell online without paying 20-30% delivery commission?",
+        description: "Share your direct store link via WhatsApp. Customers browse your real-time inventory and place direct orders straight to your phone with 0% delivery commission cut.",
+        image: "/storefront-commission.png",
+      },
+      {
+        label: "Offers & Discounts",
+        question: "How to create promotional offers & banners for my store?",
+        description: "Publish custom discount banners, buy-1-get-1 offers, and festival sale coupons instantly on your store website to boost repeat customer orders.",
+        image: "/storefront-offers.png",
+      },
+      {
+        label: "Spin Wheel",
+        question: "How to attract more local customers & boost sales?",
+        description: "Engage local customers with interactive Spin-The-Wheel rewards games where shoppers win discount vouchers on every purchase.",
+        image: "/storefront-spin.png",
+      },
     ],
   },
   {
@@ -121,17 +205,37 @@ export default function StickyFeatureSection() {
                         {feature.title}
                       </h2>
 
-                      <p
-                        className="mb-6 text-sm md:text-lg"
-                        style={{
-                          fontFamily: "var(--font-body)",
-                          color: "var(--text-secondary)",
-                          lineHeight: 1.6,
-                          maxWidth: "480px",
-                        }}
-                      >
-                        {feature.body}
-                      </p>
+                      <div className="min-h-[5rem] mb-6">
+                        <AnimatePresence mode="wait">
+                          <motion.div
+                            key={activeIndex === i ? activeChipIndex : 'default'}
+                            initial={{ opacity: 0, y: 6 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -6 }}
+                            transition={{ duration: 0.2 }}
+                            className="flex flex-col gap-2"
+                          >
+                            {feature.chips && activeIndex === i && (feature.chips[activeChipIndex] as any)?.question && (
+                              <h4 className="text-base md:text-lg font-extrabold text-amber-700 font-display mb-1">
+                                {(feature.chips[activeChipIndex] as any).question}
+                              </h4>
+                            )}
+                            <p
+                              className="text-sm md:text-lg"
+                              style={{
+                                fontFamily: "var(--font-body)",
+                                color: "var(--text-secondary)",
+                                lineHeight: 1.6,
+                                maxWidth: "620px",
+                              }}
+                            >
+                              {feature.chips && activeIndex === i && (feature.chips[activeChipIndex] as any)?.description
+                                ? (feature.chips[activeChipIndex] as any).description
+                                : feature.body}
+                            </p>
+                          </motion.div>
+                        </AnimatePresence>
+                      </div>
                     </motion.div>
 
                     {/* Phone Mockup (Sticky on all screens) */}
@@ -195,7 +299,7 @@ export default function StickyFeatureSection() {
                     {feature.chips.map((_, chipIdx) => (
                       <motion.div
                         key={chipIdx}
-                        className="w-full snap-center"
+                        className="relative w-full snap-center"
                         style={{
                           height: `80vh`,
                         }}
@@ -287,36 +391,68 @@ export default function StickyFeatureSection() {
           })}
         </div>
 
-        {/* Right Column: Sticky Phone Mockup (Desktop Only) */}
+        {/* Right Column: Sticky Mockup / Illustration (Desktop Only) */}
         <div className="hidden lg:flex w-full lg:w-1/2 sticky top-0 h-screen flex-col items-center justify-center pointer-events-none overflow-hidden">
-          <motion.div 
-            initial={{ y: 100, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: false, margin: "-100px" }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="relative h-[90vh] max-h-[1100px] aspect-[9/19.5] rounded-[2.5rem] md:rounded-[3rem] border-[10px] md:border-[14px] border-black bg-white overflow-hidden shrink-0 mt-[5vh]"
-            style={{ boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)" }}
-          >
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={displayImage}
-                className="absolute inset-0 bg-gray-50"
-                initial={{ opacity: 0, x: 40 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -40 }}
-                transition={{ duration: 0.2 }}
-              >
-                <Image
-                  src={displayImage}
-                  alt="Feature Preview"
-                  fill
-                  sizes="(min-width: 1024px) 50vw, 0vw"
-                  quality={85}
-                  className="object-cover object-top"
-                />
-              </motion.div>
-            </AnimatePresence>
-          </motion.div>
+          {features[activeIndex]?.isIllustration ? (
+            <motion.div
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              className="relative w-full max-w-[580px] aspect-square rounded-[2.5rem] border border-amber-200/80 bg-white overflow-hidden shrink-0 shadow-2xl p-2"
+            >
+              <div className="relative w-full h-full rounded-[2rem] overflow-hidden bg-white flex items-center justify-center">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={displayImage}
+                    className="absolute inset-0 p-4"
+                    initial={{ opacity: 0, scale: 0.96 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 1.04 }}
+                    transition={{ duration: 0.25 }}
+                  >
+                    <Image
+                      src={displayImage}
+                      alt="Storefront Illustration"
+                      fill
+                      sizes="(min-width: 1024px) 50vw, 0vw"
+                      quality={95}
+                      className="object-contain"
+                    />
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+            </motion.div>
+          ) : (
+            <motion.div 
+              initial={{ y: 100, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: false, margin: "-100px" }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              className="relative h-[90vh] max-h-[1100px] aspect-[9/19.5] rounded-[2.5rem] md:rounded-[3rem] border-[10px] md:border-[14px] border-black bg-white overflow-hidden shrink-0 mt-[5vh]"
+              style={{ boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)" }}
+            >
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={displayImage}
+                  className="absolute inset-0 bg-gray-50"
+                  initial={{ opacity: 0, x: 40 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -40 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <Image
+                    src={displayImage}
+                    alt="Feature Preview"
+                    fill
+                    sizes="(min-width: 1024px) 50vw, 0vw"
+                    quality={85}
+                    priority
+                    className="object-cover object-top"
+                  />
+                </motion.div>
+              </AnimatePresence>
+            </motion.div>
+          )}
         </div>
 
       </div>

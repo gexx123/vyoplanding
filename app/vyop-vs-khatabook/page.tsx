@@ -11,12 +11,15 @@ export const metadata: Metadata = {
 };
 
 const comparisonData = [
-  { feature: "Billing Method", vyop: "Voice AI (Speak to Bill)", khatabook: "Manual Typing", better: "vyop" },
-  { feature: "Time to Create Bill", vyop: "~10 Seconds", khatabook: "~2 Minutes", better: "vyop" },
-  { feature: "Learning Curve", vyop: "Zero (Just speak)", khatabook: "Medium (Requires typing)", better: "vyop" },
-  { feature: "Inventory Management", vyop: "Auto-sync with voice", khatabook: "Manual entry", better: "vyop" },
-  { feature: "Digital Ledger (Khata)", vyop: "Built-in", khatabook: "Built-in", better: "draw" },
-  { feature: "Multi-lingual Support", vyop: "7+ Indian Languages", khatabook: "Multiple Languages", better: "draw" },
+  { feature: "Billing Method", vyop: "Voice AI + Camera POS Scanner", khatabook: "Manual Typing", better: "vyop" },
+  { feature: "Smartphone Barcode Scanner", vyop: "Built-in (Scan & Create Barcodes)", khatabook: "Not Supported", better: "vyop" },
+  { feature: "Ways to Add Items", vyop: "10 Instant Ways (AI, Invoice, Barcode, Voice)", khatabook: "1 Manual Way", better: "vyop" },
+  { feature: "Direct Online Storefront", vyop: "0% Commission Link + Spin Wheel", khatabook: "Basic Ledger Link", better: "vyop" },
+  { feature: "Time to Create Bill", vyop: "~5-10 Seconds", khatabook: "~2 Minutes", better: "vyop" },
+  { feature: "Learning Curve", vyop: "Zero (Speak or Scan)", khatabook: "Medium (Requires typing)", better: "vyop" },
+  { feature: "Inventory Management", vyop: "Auto stock deduction & Barcode Print", khatabook: "Manual text tracking", better: "vyop" },
+  { feature: "Digital Ledger (Khata)", vyop: "Built-in Auto Reminders", khatabook: "Built-in", better: "draw" },
+  { feature: "Multi-lingual Support", vyop: "Hindi, English, Hinglish & Regional", khatabook: "Multiple Languages", better: "draw" },
 ];
 
 export default function ComparisonPage() {

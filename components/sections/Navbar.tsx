@@ -7,9 +7,9 @@ import Link from "next/link";
 
 const navLinks = [
   { label: "Features", href: "/#features" },
+  { label: "FAQ", href: "/#faq" },
   { label: "Pricing", href: "/#pricing" },
   { label: "Blog", href: "/blog" },
-  { label: "Careers", href: "/careers" },
 ];
 
 export default function Navbar() {
@@ -36,6 +36,18 @@ export default function Navbar() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith("/#")) {
+      const targetId = href.replace("/#", "");
+      const elem = document.getElementById(targetId);
+      if (elem) {
+        e.preventDefault();
+        elem.scrollIntoView({ behavior: "smooth" });
+        setMobileOpen(false);
+      }
+    }
+  };
 
   return (
     <nav
@@ -80,6 +92,7 @@ export default function Navbar() {
             <Link
               key={link.label}
               href={link.href}
+              onClick={(e) => handleNavClick(e, link.href)}
               className="transition-colors duration-200 hover:text-[var(--brand-primary)] text-[14px]"
               style={{
                 fontFamily: "var(--font-body)",
@@ -154,7 +167,7 @@ export default function Navbar() {
                 <Link
                   key={link.label}
                   href={link.href}
-                  onClick={() => setMobileOpen(false)}
+                  onClick={(e) => handleNavClick(e, link.href)}
                   className="text-base transition-colors duration-200"
                   style={{
                     fontFamily: "var(--font-body)",

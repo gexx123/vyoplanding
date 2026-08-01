@@ -5,16 +5,20 @@ import Link from "next/link";
 
 const footerLinks = {
   Company: ["About Us", "Careers", "Blog"],
+  "Free Tools": ["Free Barcode Generator", "Software Comparison Hub", "Smartphone POS", "0% Commission Store"],
   Alternatives: ["Vyop vs Khatabook", "Vyop vs Vyapar", "Hindi Landing Page"],
   "Top Cities": ["Jaipur", "Mumbai", "Delhi", "Surat", "Bangalore"],
   Support: ["Help Center", "Contact Us", "WhatsApp Chat", "Community"],
-  Legal: ["Privacy Policy", "Terms of Service"],
 };
 
 const linkPaths: Record<string, string> = {
   "About Us": "/about",
   "Careers": "/careers",
   "Blog": "/blog",
+  "Free Barcode Generator": "/tools/barcode-generator",
+  "Software Comparison Hub": "/compare",
+  "Smartphone POS": "/features/barcode-scanner",
+  "0% Commission Store": "/features/online-storefront",
   "Vyop vs Khatabook": "/vyop-vs-khatabook",
   "Vyop vs Vyapar": "/vyop-vs-vyapar",
   "Hindi Landing Page": "/hi",

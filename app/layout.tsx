@@ -17,9 +17,9 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Vyop — Voice Billing App | GST, Inventory & Khata for India",
+  title: "Vyop — Smartphone Barcode POS, Voice AI Billing & Kirana App",
   description:
-    "Revolutionize your retail business with Vyop, the best voice-powered GST billing and khata app for kirana stores in India. Manage inventory and ledgers instantly.",
+    "Turn your phone into a supermarket barcode scanner POS. Create GST bills by voice, add items in 10 ways, and set up a zero-commission online store for Kirana retailers.",
   metadataBase: new URL('https://vyop.in'),
   alternates: {
     canonical: '/',
@@ -29,9 +29,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Vyop — Voice Billing App | GST, Inventory & Khata for India",
+    title: "Vyop — Smartphone Barcode POS, Voice AI Billing & Kirana App",
     description:
-      "The world's first AI accounting app that understands your voice. GST billing, khata management, and stock alerts — all controlled by voice.",
+      "Turn your phone into a mall barcode scanner. Voice-powered GST billing, 10 ways to add items, zero-commission customer storefront, and digital udhar khata.",
     url: 'https://vyop.in',
     siteName: 'Vyop',
     images: [
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Vyop — AI Accountant Dashboard',
+        alt: 'Vyop — AI Accountant & Smartphone Barcode POS',
       },
     ],
     locale: 'en_US',
@@ -47,21 +47,25 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Vyop — Voice Billing App | GST, Inventory & Khata for India",
-    description: "Voice-powered billing and inventory management for modern businesses.",
+    title: "Vyop — Smartphone Barcode POS & Voice AI Billing App",
+    description: "Turn your smartphone into a supermarket barcode scanner & AI accountant.",
     images: ['/og-image.png'],
     creator: '@vyop_ai',
   },
   keywords: [
-    "GST billing app",
-    "kirana store billing",
-    "udhar khata",
-    "billing software India",
-    "free billing app",
-    "voice billing app",
-    "digital ledger",
-    "AI accountant",
-    "Vyop accounting",
+    "smartphone barcode scanner POS",
+    "voice AI billing software India",
+    "best billing app for retail Kirana clothing restaurant",
+    "zero commission online store builder",
+    "10 ways to add inventory items",
+    "restaurant KOT billing app",
+    "clothing store barcode tag printer",
+    "pharmacy batch expiry billing software",
+    "hardware store voice billing app",
+    "Tally alternative mobile phone",
+    "Khatabook alternative voice AI",
+    "Vyapar alternative free billing app",
+    "Vyop AI Accountant",
   ],
   robots: {
     index: true,

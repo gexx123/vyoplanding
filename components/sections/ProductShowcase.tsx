@@ -39,7 +39,7 @@ export default function ProductShowcase() {
       />
 
       <motion.div
-        className="max-w-7xl mx-auto px-6"
+        className="relative max-w-7xl mx-auto px-6"
         variants={staggerContainer}
         initial="hidden"
         whileInView="visible"

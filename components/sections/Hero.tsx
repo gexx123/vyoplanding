@@ -22,11 +22,7 @@ const staggerContainer = {
 };
 
 export default function Hero() {
-  const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end start"],
-  });
+  const { scrollYProgress } = useScroll();
 
   // Fade out and scale down as user scrolls
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
@@ -35,7 +31,6 @@ export default function Hero() {
 
   return (
     <section
-      ref={containerRef}
       className="relative min-h-[80vh] lg:min-h-screen flex items-center justify-center overflow-x-hidden"
       style={{ backgroundColor: "#ffffff" }}
     >
@@ -43,12 +38,18 @@ export default function Hero() {
       {/* Content Wrapper */}
       <motion.div 
         style={{ opacity, scale, y }}
-        className="relative z-10 w-full max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center lg:items-center"
+        className="relative z-10 w-full flex flex-col lg:flex-row items-center justify-between"
       >
         {/* Left Column: Text */}
         <div
-          className="text-center lg:text-left flex flex-col items-center lg:items-start pt-20 pb-10 lg:py-0 w-full lg:w-[55%] z-20"
+          className="text-center lg:text-left flex flex-col items-center lg:items-start pt-24 pb-12 lg:py-0 w-full lg:w-1/2 px-6 sm:px-12 lg:px-12 xl:px-16 z-20"
         >
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-50 border border-amber-200/80 text-amber-800 text-xs md:text-sm font-semibold mb-6">
+            <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
+            Supermarket Barcode POS Scanner + AI Accountant
+          </div>
+
           {/* H1 */}
           <h1
             className="font-extrabold mb-6 tracking-tight flex flex-col gap-2 md:gap-3 w-full"
@@ -65,9 +66,12 @@ export default function Hero() {
               Vyop
             </span>
             <span
-              className="gradient-text leading-[1.1] text-4xl md:text-6xl lg:text-7xl"
+              className="gradient-text leading-[1.1] text-4xl md:text-5xl lg:text-6xl"
             >
               World&apos;s First AI&nbsp;Accountant
+            </span>
+            <span className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 tracking-normal mt-1">
+              &amp; Turn Your Phone Into a Barcode Scanner
             </span>
           </h1>
 
@@ -78,11 +82,11 @@ export default function Hero() {
             style={{
               fontFamily: "var(--font-body)",
               color: "var(--text-secondary)",
-              maxWidth: "500px",
+              maxWidth: "540px",
               lineHeight: 1.7,
             }}
           >
-            The intelligent accounting app that understands your voice. Create bills, manage inventory, and track payments instantly — just by speaking.
+            The intelligent accounting app that understands your voice and scans barcodes like a mall POS scanner. Create bills, manage inventory, and track payments instantly.
           </motion.p>
 
           {/* CTA buttons */}
@@ -163,8 +167,8 @@ export default function Hero() {
             fill
             priority
             sizes="(max-width: 1024px) 1vw, 50vw"
-            quality={85}
-            className="relative z-20 object-cover object-right"
+            quality={90}
+            className="relative z-20 object-cover object-center"
           />
         </div>
       </motion.div>

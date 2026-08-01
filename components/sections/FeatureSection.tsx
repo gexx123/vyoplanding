@@ -64,7 +64,7 @@ export default function FeatureSection({
 
   const textBlock = (
     <motion.div variants={textVariants}>
-      <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }}>
+      <motion.div className="relative" variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }}>
         <motion.div variants={fadeUpVariants}>
           <SectionLabel className="mb-6">{label}</SectionLabel>
         </motion.div>

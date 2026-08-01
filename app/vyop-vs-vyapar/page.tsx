@@ -11,12 +11,13 @@ export const metadata: Metadata = {
 };
 
 const comparisonData = [
-  { feature: "Billing Speed", vyop: "Ultra-Fast (Voice)", vyapar: "Manual (Keyboard/Touch)", better: "vyop" },
-  { feature: "Ease of Use", vyop: "Extremely Simple", vyapar: "Requires Learning", better: "vyop" },
-  { feature: "Hardware Needed", vyop: "Any Mobile Phone", vyapar: "Best on Desktop/Laptop", better: "vyop" },
-  { feature: "GST Support", vyop: "Fully Supported", vyapar: "Fully Supported", better: "draw" },
-  { feature: "Offline Mode", vyop: "Yes", vyapar: "Yes", better: "draw" },
-  { feature: "AI Insights", vyop: "Automatic (Voice analysis)", vyapar: "Manual Reports", better: "vyop" },
+  { feature: "Billing Speed & Method", vyop: "Ultra-Fast (Voice AI + Camera Barcode POS)", vyapar: "Manual (Keyboard/Touch)", better: "vyop" },
+  { feature: "Smartphone Barcode Scanner", vyop: "Built-in Camera Scanner & Barcode Generator", vyapar: "Requires External Hardware Scanner", better: "vyop" },
+  { feature: "Ways to Add Products", vyop: "10 Instant Ways (AI, Invoice, Barcode, Voice)", vyapar: "Manual Form Entry", better: "vyop" },
+  { feature: "Direct Online Storefront", vyop: "0% Commission Link + Spin Wheel Rewards", vyapar: "Basic Catalog PDF Link", better: "vyop" },
+  { feature: "Ease of Use", vyop: "Extremely Simple (Speak or Scan)", vyapar: "Requires Learning & Setup", better: "vyop" },
+  { feature: "Hardware Needed", vyop: "Any Android Smartphone", vyapar: "Best on PC / Desktop", better: "vyop" },
+  { feature: "GST Billing & Offline Mode", vyop: "Fully Supported (Offline & Cloud Sync)", vyapar: "Fully Supported", better: "draw" },
 ];
 
 export default function ComparisonPage() {

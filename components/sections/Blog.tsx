@@ -88,7 +88,7 @@ export default function Blog() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1, duration: 0.5 }}
-                className="group cursor-pointer h-full flex flex-col"
+                className="relative group cursor-pointer h-full flex flex-col"
               >
                 <div className="relative aspect-[16/10] overflow-hidden rounded-2xl mb-6 bg-gray-100">
                   <img 

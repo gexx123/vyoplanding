@@ -14,7 +14,7 @@ export default function Pricing({ onUpgradeClick }: PricingProps) {
       <div className="max-w-5xl mx-auto relative z-10">
         
         {/* Header Section */}
-        <div className="text-center mb-16">
+        <div className="relative text-center mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -46,7 +46,7 @@ export default function Pricing({ onUpgradeClick }: PricingProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="w-full lg:w-1/3 bg-[#F9FAFB] border border-gray-100 rounded-[32px] p-6 md:p-8 text-center"
+            className="relative w-full lg:w-1/3 bg-[#F9FAFB] border border-gray-100 rounded-[32px] p-6 md:p-8 text-center"
           >
             <h3 className="text-xl font-bold text-gray-900 mb-4 font-display">Monthly</h3>
             <div className="flex items-baseline justify-center gap-1 mb-8">

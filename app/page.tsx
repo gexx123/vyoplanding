@@ -4,9 +4,12 @@ import Hero from "@/components/sections/Hero";
 
 // Lazy load below-the-fold components to improve performance
 const StickyFeatureSection = dynamic(() => import("@/components/sections/StickyFeatureSection"));
+const TenWaysToAddSection = dynamic(() => import("@/components/sections/TenWaysToAddSection"));
+const FreeToolsSection = dynamic(() => import("@/components/sections/FreeToolsSection"));
 const LaunchAnnouncement = dynamic(() => import("@/components/sections/LaunchAnnouncement"));
 const BenefitsMarquee = dynamic(() => import("@/components/sections/BenefitsMarquee"));
 const Testimonials = dynamic(() => import("@/components/sections/Testimonials"));
+const AEOKnowledgeHub = dynamic(() => import("@/components/sections/AEOKnowledgeHub"));
 const FAQ = dynamic(() => import("@/components/sections/FAQ"));
 const Pricing = dynamic(() => import("@/components/sections/Pricing"));
 const Blog = dynamic(() => import("@/components/sections/Blog"));
@@ -27,9 +30,18 @@ export default function Home() {
                 "name": "Vyop",
                 "operatingSystem": "Android",
                 "applicationCategory": "BusinessApplication",
-                "description": "India's first voice-powered AI billing and accounting app designed specifically for kirana stores and small retailers.",
+                "description": "World's First AI Accountant & Smartphone Barcode POS Scanner. Create GST bills by voice, add items in 10 ways, and set up a zero-commission online store for Kirana retailers.",
                 "url": "https://vyop.in",
                 "installUrl": "https://play.google.com/store/apps/details?id=com.vyop.app",
+                "featureList": [
+                  "Smartphone Supermarket Barcode POS Scanner",
+                  "Voice AI GST Billing in Hindi and English",
+                  "10 Lightning-Fast Ways to Add Products & Items",
+                  "Zero-Commission Live Customer Online Storefront Link",
+                  "Custom Discount Banners & Spin-The-Wheel Customer Rewards",
+                  "Voice Expense Logging & Automated Udhar Khata Reminders",
+                  "Barcode Label Printing & Low Stock Alerts"
+                ],
                 "offers": {
                   "@type": "Offer",
                   "price": "0",
@@ -48,16 +60,26 @@ export default function Home() {
                     "author": { "@type": "Person", "name": "Rajesh Gupta" },
                     "datePublished": "2026-05-01",
                     "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" },
-                    "reviewBody": "Pehle bill likhne mein 2-3 minute lagte the, ab 10 second mein ho jaata hai bolke."
+                    "reviewBody": "Pehle bill likhne mein 2-3 minute lagte the, ab 10 second mein ho jaata hai bolke ya scan karke."
                   },
                   {
                     "@type": "Review",
                     "author": { "@type": "Person", "name": "Suresh Yadav" },
                     "datePublished": "2026-05-10",
                     "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" },
-                    "reviewBody": "Hindi mein bolta hoon, bill ban jaata hai. Bahut badiya cheez banai hai."
+                    "reviewBody": "Barcode scan karke bill ban jaata hai aur customer ko zero commission link bhej deta hoon."
                   }
                 ]
+              },
+              {
+                "@type": "WebSite",
+                "@id": "https://vyop.in/#website",
+                "url": "https://vyop.in",
+                "name": "Vyop",
+                "description": "World's First AI Accountant & Smartphone Barcode POS Scanner for Retailers in India.",
+                "publisher": {
+                  "@id": "https://vyop.in/#organization"
+                }
               },
               {
                 "@type": "FAQPage",
@@ -65,34 +87,130 @@ export default function Home() {
                 "mainEntity": [
                   {
                     "@type": "Question",
-                    "name": "Do I need internet to use Vyop?",
+                    "name": "Which is the best billing and inventory app for Kirana, clothing, and restaurants in India?",
                     "acceptedAnswer": {
                       "@type": "Answer",
-                      "text": "No, you do not need an active internet connection to use Vyop. Our app works completely offline, allowing you to create bills continuously. All your data is securely saved locally on your device and will automatically sync to the cloud once you reconnect to the internet."
+                      "text": "Vyop is the top-rated AI billing and inventory software built for all Indian retail businesses — including Kirana stores, clothing boutiques, restaurants, cafes, hardware, electronic shops, and pharmacies."
                     }
                   },
                   {
                     "@type": "Question",
-                    "name": "Is this better than Tally?",
+                    "name": "Can I use Vyop for a Restaurant, Cafe, or Hotel billing?",
                     "acceptedAnswer": {
                       "@type": "Answer",
-                      "text": "Yes, for small retail businesses, Vyop is much faster and simpler than Tally. While traditional software requires typing skills and accounting knowledge, Vyop operates entirely on your natural voice. This makes generating a GST bill effortless for shop owners."
+                      "text": "Yes! Vyop supports restaurant and hotel billing with Kitchen Order Tickets (KOT), table management, instant voice ordering ('2 Butter Naan, 1 Paneer Butter Masala'), and QR digital menu ordering."
                     }
                   },
                   {
                     "@type": "Question",
-                    "name": "Is my data safe?",
+                    "name": "How does Vyop help Clothing, Apparel & Footwear stores?",
                     "acceptedAnswer": {
                       "@type": "Answer",
-                      "text": "Absolutely. We protect your business data using enterprise-grade, bank-level encryption standards. Your customer information and ledgers are completely secure, private, and accessible only by you through your authorized device."
+                      "text": "For clothing and footwear boutiques, Vyop manages size/color matrix inventory, scans garment barcodes, prints custom barcode price tags, and sends WhatsApp bill receipts directly to shoppers."
                     }
                   },
                   {
                     "@type": "Question",
-                    "name": "Is the app free?",
+                    "name": "Can Hardware, Electrical & Sanitary stores use Vyop for fast billing?",
                     "acceptedAnswer": {
                       "@type": "Answer",
-                      "text": "Yes, all the core billing and khata features in Vyop are completely free to use forever. We also offer an affordable premium plan for businesses that need advanced inventory analytics and automated marketing tools."
+                      "text": "Yes! Hardware and electrical shops handle thousands of loose items. Vyop's voice search ('1/2 inch PVC pipe 10 meters') and instant image search make finding items 10x faster than typing."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Can Chemist and Pharmacy shops track batch numbers and expiry dates in Vyop?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Yes! Pharmacies can scan medicine barcodes, track batch numbers, monitor expiry dates, and issue compliant GST bills with automatic low-stock alerts."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Can I turn my smartphone into a supermarket-grade barcode scanner for any store?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Yes! Vyop turns any smartphone camera into a supermarket-grade barcode scanner. It scans manufacturer barcodes (EAN/UPC), creates custom barcodes from product photos, and prints barcode stickers."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "How can any shop owner make a free online store website in 60 seconds?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Vyop allows Kirana, fashion, bakery, and electronic store owners to launch a live digital storefront catalog in under 60 seconds with a shareable WhatsApp link and 0% delivery middleman commission."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "How to sell products online directly to local customers with zero delivery commission?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Share your Vyop live store link via WhatsApp or Instagram. Local customers view real-time inventory and place direct orders straight to your phone with 0% commission cut taken by third parties."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "What are the 10 ways to add items to inventory in Vyop?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Vyop offers 10 instant item creation methods: 1. Scan Barcode, 2. Scan Invoice photo/PDF, 3. Add Manually, 4. Add with AI, 5. Add with Image, 6. Print Barcodes, 7. Voice in AI Orb, 8. Type in AI Orb, 9. Upload Catalogue Photo, and 10. Add by Menu."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "How to create GST and non-GST bills on mobile by voice command in Hindi or English?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Simply speak into Vyop's AI Orb in Hindi, English, or Hinglish (e.g., 'Teen Maggi aur do Chai' or '2 Men Shirts XL'). Vyop's voice AI generates accurate GST and non-GST bills in under 5 seconds."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "How to import stock automatically from paper bills and supplier invoices?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Snap a photo of any printed or digital supplier invoice using Vyop's AI Invoice Scanner. The app automatically extracts product names, quantities, MRP, and purchase rates into your inventory."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "How to manage Udhar Khata debt and send automatic WhatsApp payment reminders?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Vyop includes a secure Digital Ledger (Khata). Record customer balances with one tap and send automated WhatsApp/SMS payment reminders with direct UPI payment links."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "How to attract more local customers with Spin-The-Wheel rewards and discount offer banners?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Vyop provides built-in retail marketing tools including customizable discount banners, festival coupon codes, and interactive Spin-The-Wheel customer rewards games to drive repeat store visits."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Does Vyop work offline without internet connection?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Yes! Vyop works 100% offline. All bills and ledgers are saved securely on your device and automatically sync to the cloud when internet reconnects."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Is Vyop better and faster than Tally, Khatabook, or Vyapar?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Yes! Unlike traditional software (Tally, Vyapar) that requires computers and manual typing, Vyop operates via voice AI and smartphone barcode scanning, creating bills 10x faster with zero learning curve."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Is Vyop free to use for small shopkeepers?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Yes! Vyop is completely free to download and use for basic billing, inventory, and online storefront creation on Android smartphones."
                     }
                   }
                 ]
@@ -124,12 +242,15 @@ export default function Home() {
       <Hero />
 
       <StickyFeatureSection />
+      <TenWaysToAddSection />
+      <FreeToolsSection />
 
       <LaunchAnnouncement />
       <BenefitsMarquee />
       <Blog />
       <Pricing />
       <Testimonials />
+      <AEOKnowledgeHub />
       <FAQ />
       <Footer />
     </main>

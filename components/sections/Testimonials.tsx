@@ -113,6 +113,7 @@ export default function Testimonials() {
   return (
     <section className="py-24 overflow-hidden" style={{ background: "var(--bg-surface)" }}>
       <motion.div
+        className="relative"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-80px" }}

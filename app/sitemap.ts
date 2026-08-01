@@ -29,6 +29,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticPages = [
     { url: `${baseUrl}/blog`, priority: 0.8, changeFrequency: 'daily' },
     { url: `${baseUrl}/billing`, priority: 0.9, changeFrequency: 'daily' },
+    { url: `${baseUrl}/tools/barcode-generator`, priority: 0.95, changeFrequency: 'weekly' },
+    { url: `${baseUrl}/compare`, priority: 0.95, changeFrequency: 'weekly' },
+    { url: `${baseUrl}/features/barcode-scanner`, priority: 0.95, changeFrequency: 'weekly' },
+    { url: `${baseUrl}/features/online-storefront`, priority: 0.95, changeFrequency: 'weekly' },
+    { url: `${baseUrl}/features/ten-ways-to-add-items`, priority: 0.95, changeFrequency: 'weekly' },
     { url: `${baseUrl}/hi`, priority: 0.9, changeFrequency: 'daily' },
     { url: `${baseUrl}/vyop-vs-khatabook`, priority: 0.9, changeFrequency: 'weekly' },
     { url: `${baseUrl}/vyop-vs-vyapar`, priority: 0.9, changeFrequency: 'weekly' },

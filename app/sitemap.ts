@@ -17,7 +17,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       const post = doc.data();
       return {
         url: `${baseUrl}/blog/${post.slug || doc.id}`,
-      lastModified: new Date(post.date || Date.now()),
+        lastModified: new Date(post.date || Date.now()),
         changeFrequency: 'weekly',
         priority: 0.7,
       };
@@ -38,6 +38,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${baseUrl}/vyop-vs-khatabook`, priority: 0.9, changeFrequency: 'weekly' },
     { url: `${baseUrl}/vyop-vs-vyapar`, priority: 0.9, changeFrequency: 'weekly' },
     { url: `${baseUrl}/about`, priority: 0.8, changeFrequency: 'monthly' },
+    { url: `${baseUrl}/work-with-us`, priority: 0.85, changeFrequency: 'weekly' },
+    { url: `${baseUrl}/internship`, priority: 0.85, changeFrequency: 'weekly' },
+    { url: `${baseUrl}/internship/verify`, priority: 0.8, changeFrequency: 'weekly' },
     { url: `${baseUrl}/careers`, priority: 0.8, changeFrequency: 'weekly' },
     { url: `${baseUrl}/help`, priority: 0.7, changeFrequency: 'monthly' },
     { url: `${baseUrl}/contact`, priority: 0.7, changeFrequency: 'monthly' },

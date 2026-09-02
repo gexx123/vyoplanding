@@ -7,8 +7,10 @@ import Link from "next/link";
 
 const navLinks = [
   { label: "Features", href: "/#features" },
-  { label: "FAQ", href: "/#faq" },
   { label: "Pricing", href: "/#pricing" },
+  { label: "Internship", href: "/internship" },
+  { label: "Work With Us", href: "/work-with-us" },
+  { label: "FAQ", href: "/#faq" },
   { label: "Blog", href: "/blog" },
 ];
 
@@ -46,6 +48,8 @@ export default function Navbar() {
         elem.scrollIntoView({ behavior: "smooth" });
         setMobileOpen(false);
       }
+    } else {
+      setMobileOpen(false);
     }
   };
 
@@ -54,7 +58,7 @@ export default function Navbar() {
       className="fixed top-0 left-0 w-full z-[100] transition-all duration-300"
       style={{
         transform: hidden ? "translateY(-100%)" : "translateY(0)",
-        background: scrolled ? "rgba(255,255,255,0.92)" : "rgba(255,255,255,0.8)",
+        background: scrolled ? "rgba(255,255,255,0.95)" : "rgba(255,255,255,0.85)",
         backdropFilter: "blur(16px)",
         WebkitBackdropFilter: "blur(16px)",
         borderBottom: scrolled
@@ -87,13 +91,13 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Nav Links */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-7">
           {navLinks.map((link) => (
             <Link
               key={link.label}
               href={link.href}
               onClick={(e) => handleNavClick(e, link.href)}
-              className="transition-colors duration-200 hover:text-[var(--brand-primary)] text-[14px]"
+              className="transition-colors duration-200 hover:text-[var(--brand-primary)] text-[14px] font-medium"
               style={{
                 fontFamily: "var(--font-body)",
                 color: "var(--text-secondary)",
@@ -105,12 +109,19 @@ export default function Navbar() {
         </div>
 
         {/* Desktop Actions */}
-        <div className="hidden md:flex items-center gap-4">
+        <div className="hidden md:flex items-center gap-3">
+          <Link
+            href="/internship#verify"
+            className="inline-flex items-center px-4 py-2 rounded-full text-xs font-bold border border-emerald-300 bg-emerald-50 text-emerald-800 hover:bg-emerald-100 transition-colors"
+          >
+            Verify Certificate
+          </Link>
+
           <a
             href="https://vyop.shop/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-6 py-2.5 rounded-full text-white text-sm font-bold transition-all duration-200 hover:scale-[1.03]"
+            className="inline-flex items-center px-5 py-2.5 rounded-full text-white text-sm font-bold transition-all duration-200 hover:scale-[1.03]"
             style={{
               background: "var(--gradient-brand)",
               fontFamily: "var(--font-display)",
@@ -123,7 +134,7 @@ export default function Navbar() {
 
         {/* Mobile Hamburger */}
         <button
-          className="md:hidden relative w-8 h-8 flex flex-col items-center justify-center gap-1.5"
+          className="lg:hidden relative w-8 h-8 flex flex-col items-center justify-center gap-1.5"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >
@@ -155,7 +166,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden overflow-hidden"
+            className="lg:hidden overflow-hidden"
             style={{
               background: "rgba(255,255,255,0.98)",
               borderBottom: "1px solid var(--border-subtle)",
@@ -168,7 +179,7 @@ export default function Navbar() {
                   key={link.label}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className="text-base transition-colors duration-200"
+                  className="text-base font-medium transition-colors duration-200"
                   style={{
                     fontFamily: "var(--font-body)",
                     color: "var(--text-secondary)",
@@ -177,11 +188,21 @@ export default function Navbar() {
                   {link.label}
                 </Link>
               ))}
+
+              <Link
+                href="/internship#verify"
+                onClick={() => setMobileOpen(false)}
+                className="text-sm font-bold text-emerald-700 py-2 border-y border-gray-100 flex items-center justify-between"
+              >
+                <span>Verify Internship Certificate</span>
+                <span className="text-xs bg-emerald-100 px-2 py-0.5 rounded-full">Official</span>
+              </Link>
+
               <a
                 href="https://play.google.com/store/apps/details?id=com.vyop.app"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-4 inline-flex items-center justify-center gap-2.5 px-6 py-3 rounded-[12px] bg-black text-white transition-all duration-200 hover:scale-[1.03] self-center"
+                className="mt-2 inline-flex items-center justify-center gap-2.5 px-6 py-3 rounded-[12px] bg-black text-white transition-all duration-200 hover:scale-[1.03] self-center w-full"
                 style={{
                   boxShadow: "0 4px 14px rgba(0,0,0,0.15)",
                 }}

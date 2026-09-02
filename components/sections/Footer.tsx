@@ -4,15 +4,17 @@ import Image from "next/image";
 import Link from "next/link";
 
 const footerLinks = {
-  Company: ["About Us", "Careers", "Blog"],
+  Company: ["About Us", "Work With Us", "Internship", "Careers", "Blog"],
   "Free Tools": ["Free Barcode Generator", "Software Comparison Hub", "Smartphone POS", "0% Commission Store"],
   Alternatives: ["Vyop vs Khatabook", "Vyop vs Vyapar", "Hindi Landing Page"],
   "Top Cities": ["Jaipur", "Mumbai", "Delhi", "Surat", "Bangalore"],
-  Support: ["Help Center", "Contact Us", "WhatsApp Chat", "Community"],
+  Support: ["Verify Certificate", "Help Center", "Contact Us", "WhatsApp Chat", "Community"],
 };
 
 const linkPaths: Record<string, string> = {
   "About Us": "/about",
+  "Work With Us": "/work-with-us",
+  "Internship": "/internship",
   "Careers": "/careers",
   "Blog": "/blog",
   "Free Barcode Generator": "/tools/barcode-generator",
@@ -27,6 +29,7 @@ const linkPaths: Record<string, string> = {
   "Delhi": "/billing-software/delhi",
   "Surat": "/billing-software/surat",
   "Bangalore": "/billing-software/bangalore",
+  "Verify Certificate": "/internship/verify",
   "Help Center": "/help",
   "Contact Us": "/contact",
   "WhatsApp Chat": "https://wa.me/919649059592",
@@ -213,9 +216,14 @@ export default function Footer() {
               fontFamily: "var(--font-body)",
             }}
           >
-            © 2026 Vyop Technologies Pvt. Ltd. All rights reserved.
+            © 2026 Vyop AI. All rights reserved.
           </p>
 
+          <div className="flex gap-6 text-xs text-[var(--text-muted)]">
+            <Link href="/privacy" className="hover:text-[var(--text-primary)] transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-[var(--text-primary)] transition-colors">Terms of Service</Link>
+            <Link href="/internship/verify" className="hover:text-[var(--text-primary)] transition-colors">Certificate Verification</Link>
+          </div>
         </div>
       </div>
     </footer>

@@ -17,14 +17,14 @@ export async function generateMetadata({ params }: { params: Promise<{ city: str
   if (!city) return {};
 
   return {
-    title: `Best Billing Software in ${city.name} | Free GST & Khata App`,
-    description: `Looking for billing software in ${city.name}? Vyop is a free voice-powered GST billing and khata app built for ${city.hubFocus} businesses in ${city.state}.`,
+    title: `Free GST Billing Software in ${city.name} — Download & Instant Setup | Vyop`,
+    description: `Looking for billing software in ${city.name}? Vyop is a 100% free voice-powered GST billing & barcode POS app for ${city.hubFocus} shops in ${city.state}. Skip expensive dealer fees!`,
     alternates: {
       canonical: `/billing-software/${city.slug}`,
     },
     openGraph: {
-      title: `Best Billing Software in ${city.name} | Vyop`,
-      description: `The best voice-powered GST billing and khata app for ${city.name} businesses.`,
+      title: `Free GST Billing Software in ${city.name} | Vyop`,
+      description: `Free voice-powered GST billing, barcode POS & khata app for ${city.name} businesses. Skip dealer fees and download on mobile.`,
       url: `https://vyop.in/billing-software/${city.slug}`,
     },
   };
@@ -49,13 +49,13 @@ export default async function CityLandingPage({ params }: { params: Promise<{ ci
         </div>
         
         <h1 className="text-4xl md:text-6xl font-extrabold mb-6" style={{ fontFamily: "var(--font-display)" }}>
-          The Best Billing Software for <br className="hidden md:block" />
+          Free GST Billing Software for <br className="hidden md:block" />
           <span className="gradient-text">{city.name} Businesses</span>
         </h1>
         
         <p className="text-xl text-[var(--text-secondary)] max-w-3xl mx-auto mb-10">
-          Whether you run a kirana shop or a wholesale business in {city.name}&apos;s bustling {city.hubFocus} markets, Vyop is the ultimate voice-powered AI accountant. 
-          Create GST bills, manage inventory, and track udhar khata instantly—just by speaking.
+          Whether you run a kirana store, textile shop, or wholesale business in {city.name}&apos;s bustling {city.hubFocus} markets, Vyop is the ultimate voice-powered AI accountant. 
+          Create GST bills, scan barcodes on phone, and track udhar khata instantly—just by speaking.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -66,7 +66,7 @@ export default async function CityLandingPage({ params }: { params: Promise<{ ci
             rel="noopener noreferrer"
             className="hidden md:inline-flex w-full sm:w-auto px-10 py-5 rounded-2xl bg-[var(--brand-secondary)] text-white font-bold text-xl hover:scale-[1.02] transition-all shadow-[var(--shadow-gold)] items-center justify-center"
           >
-            Get Started
+            Get Started Free
           </a>
           
           {/* Mobile: Google Play Badge */}
@@ -95,11 +95,86 @@ export default async function CityLandingPage({ params }: { params: Promise<{ ci
             </div>
           </a>
           <a 
-            href="#features" 
+            href="#dealers" 
             className="w-full sm:w-auto px-10 py-5 rounded-2xl bg-white border border-[var(--border-medium)] text-[var(--text-secondary)] font-bold text-xl hover:bg-gray-50 transition-all"
           >
-            See How It Works
+            Why Skip Local Dealers?
           </a>
+        </div>
+      </section>
+
+      {/* Dealer vs Cloud Comparison Section - Captures "billing software dealers in [city]" queries */}
+      <section id="dealers" className="py-20 bg-amber-50/50 border-y border-amber-100/60">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <span className="inline-block px-4 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-bold uppercase tracking-wider mb-3">
+              Direct Mobile App vs Legacy Dealers
+            </span>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4" style={{ fontFamily: "var(--font-display)" }}>
+              Looking for Billing Software Dealers in {city.name}?
+            </h2>
+            <p className="text-lg text-[var(--text-secondary)]">
+              Traditional ERP & billing software dealers in {city.name} charge ₹10,000 to ₹25,000 for complex desktop installations and annual maintenance fees. 
+              <span className="font-semibold text-gray-900"> Vyop gives you a supermarket-grade POS in your pocket for ₹0.</span>
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 items-stretch">
+            {/* Old Dealer Model */}
+            <div className="bg-white p-8 rounded-3xl border border-red-100 shadow-sm relative">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="w-10 h-10 rounded-2xl bg-red-100 text-red-600 flex items-center justify-center font-bold text-lg">✕</span>
+                <h3 className="text-xl font-bold text-gray-900">Traditional Local Dealers</h3>
+              </div>
+              <ul className="space-y-3.5 text-[var(--text-secondary)] text-sm md:text-base">
+                <li className="flex items-start gap-2.5">
+                  <span className="text-red-500 font-bold mt-0.5">•</span>
+                  <span><strong>₹12,000–₹25,000 upfront cost</strong> + high annual AMC fees</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <span className="text-red-500 font-bold mt-0.5">•</span>
+                  <span>Requires heavy desktop PC, expensive barcode guns, and UPS</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <span className="text-red-500 font-bold mt-0.5">•</span>
+                  <span>Must wait days for a local dealer to visit for setup or repairs</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <span className="text-red-500 font-bold mt-0.5">•</span>
+                  <span>Manual typing required for every single item and bill</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Vyop Smart Model */}
+            <div className="bg-white p-8 rounded-3xl border-2 border-emerald-500 shadow-md relative">
+              <div className="absolute -top-3.5 right-6 px-3.5 py-1 bg-emerald-600 text-white rounded-full text-xs font-bold uppercase tracking-wider">
+                Smart Choice
+              </div>
+              <div className="flex items-center gap-3 mb-4">
+                <span className="w-10 h-10 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-lg">✓</span>
+                <h3 className="text-xl font-bold text-gray-900">Vyop Mobile App ({city.name})</h3>
+              </div>
+              <ul className="space-y-3.5 text-[var(--text-secondary)] text-sm md:text-base">
+                <li className="flex items-start gap-2.5">
+                  <span className="text-emerald-600 font-bold mt-0.5">✓</span>
+                  <span><strong>100% Free to download</strong> — no dealer markup or commission</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <span className="text-emerald-600 font-bold mt-0.5">✓</span>
+                  <span>Works on any Android phone — camera acts as supermarket barcode POS</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <span className="text-emerald-600 font-bold mt-0.5">✓</span>
+                  <span>Connects wirelessly with all 2-inch & 3-inch Bluetooth thermal printers</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <span className="text-emerald-600 font-bold mt-0.5">✓</span>
+                  <span>Voice AI billing in Hindi & English — create bills in 5 seconds</span>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -115,7 +190,7 @@ export default async function CityLandingPage({ params }: { params: Promise<{ ci
               <div className="text-4xl mb-6">🗣️</div>
               <h3 className="text-2xl font-bold mb-4">Voice-Fast Billing</h3>
               <p className="text-[var(--text-secondary)]">
-                Skip the typing. Handle the rush hours in {city.name} by simply speaking items to generate instant GST or non-GST bills.
+                Skip typing during rush hours in {city.name}. Simply speak items to generate instant GST or non-GST bills.
               </p>
             </div>
             
@@ -123,7 +198,7 @@ export default async function CityLandingPage({ params }: { params: Promise<{ ci
               <div className="text-4xl mb-6">📔</div>
               <h3 className="text-2xl font-bold mb-4">Digital Udhar Khata</h3>
               <p className="text-[var(--text-secondary)]">
-                Keep your customer ledgers organized. Automatically send payment reminders on WhatsApp to local customers.
+                Keep customer ledgers organized. Automatically send payment reminders on WhatsApp with direct UPI links.
               </p>
             </div>
 
@@ -131,7 +206,7 @@ export default async function CityLandingPage({ params }: { params: Promise<{ ci
               <div className="text-4xl mb-6">📦</div>
               <h3 className="text-2xl font-bold mb-4">Smart Inventory</h3>
               <p className="text-[var(--text-secondary)]">
-                Never run out of stock in your {city.hubFocus} business. Get instant low-stock alerts before your shelves are empty.
+                Never run out of stock in your {city.hubFocus} store. Low-stock alerts notify you before shelves are empty.
               </p>
             </div>
           </div>
@@ -151,15 +226,23 @@ export default async function CityLandingPage({ params }: { params: Promise<{ ci
                 "name": `Is Vyop billing software available in ${city.name}?`,
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": `Yes! Vyop is a cloud-based mobile app available for all businesses in ${city.name} and across India. You can download it directly from the Google Play Store.`
+                  "text": `Yes! Vyop is a cloud-based mobile app available for all retail and wholesale businesses in ${city.name} and across ${city.state}. You can download it directly from Google Play Store.`
                 }
               },
               {
                 "@type": "Question",
-                "name": "Can it handle GST billing?",
+                "name": `Where can I find billing software dealers in ${city.name}?`,
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Absolutely. Vyop supports both GST and non-GST billing, making it perfect for small retail and wholesale businesses."
+                  "text": `You do not need a physical dealer or distributor in ${city.name}! Traditional dealers charge ₹15,000+ for setup. Vyop installs free on any Android smartphone in under 30 seconds with 24/7 online support.`
+                }
+              },
+              {
+                "@type": "Question",
+                "name": `Can Vyop handle GST billing and thermal receipt printing in ${city.name}?`,
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Absolutely. Vyop supports both GST and non-GST billing, wireless 2-inch and 3-inch Bluetooth thermal printers, and instant WhatsApp bill sharing."
                 }
               }
             ]

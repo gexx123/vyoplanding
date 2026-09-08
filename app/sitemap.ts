@@ -2,6 +2,7 @@ import { MetadataRoute } from 'next';
 import { db } from '@/lib/firebase';
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import { cities } from '@/lib/cityData';
+import { industries } from '@/lib/industryData';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://vyop.in';
@@ -29,14 +30,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticPages = [
     { url: `${baseUrl}/blog`, priority: 0.8, changeFrequency: 'daily' },
     { url: `${baseUrl}/billing`, priority: 0.9, changeFrequency: 'daily' },
+    { url: `${baseUrl}/tools/gst-calculator`, priority: 0.95, changeFrequency: 'weekly' },
     { url: `${baseUrl}/tools/barcode-generator`, priority: 0.95, changeFrequency: 'weekly' },
     { url: `${baseUrl}/compare`, priority: 0.95, changeFrequency: 'weekly' },
+    { url: `${baseUrl}/vyop-vs-tally`, priority: 0.9, changeFrequency: 'weekly' },
+    { url: `${baseUrl}/vyop-vs-mybillbook`, priority: 0.9, changeFrequency: 'weekly' },
+    { url: `${baseUrl}/vyop-vs-khatabook`, priority: 0.9, changeFrequency: 'weekly' },
+    { url: `${baseUrl}/vyop-vs-vyapar`, priority: 0.9, changeFrequency: 'weekly' },
     { url: `${baseUrl}/features/barcode-scanner`, priority: 0.95, changeFrequency: 'weekly' },
     { url: `${baseUrl}/features/online-storefront`, priority: 0.95, changeFrequency: 'weekly' },
     { url: `${baseUrl}/features/ten-ways-to-add-items`, priority: 0.95, changeFrequency: 'weekly' },
     { url: `${baseUrl}/hi`, priority: 0.9, changeFrequency: 'daily' },
-    { url: `${baseUrl}/vyop-vs-khatabook`, priority: 0.9, changeFrequency: 'weekly' },
-    { url: `${baseUrl}/vyop-vs-vyapar`, priority: 0.9, changeFrequency: 'weekly' },
     { url: `${baseUrl}/about`, priority: 0.8, changeFrequency: 'monthly' },
     { url: `${baseUrl}/work-with-us`, priority: 0.85, changeFrequency: 'weekly' },
     { url: `${baseUrl}/internship`, priority: 0.85, changeFrequency: 'weekly' },
@@ -63,6 +67,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     ...staticPages,
     ...blogUrls,
+    ...industries.map((ind) => ({
+      url: `${baseUrl}/solutions/${ind.slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as any,
+      priority: 0.9,
+    })),
     ...cities.map((city) => ({
       url: `${baseUrl}/billing-software/${city.slug}`,
       lastModified: new Date(),

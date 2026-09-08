@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.vyop.app",
+      "sha256_cert_fingerprints": [
+        "8C:83:CF:30:70:4A:EC:F7:15:6E:6A:91:0F:49:87:7E:92:BF:18:E9:63:38:A1:E0:00:E7:2E:1D:55:19:81:B0"
+      ]
+    }
+  }
+]

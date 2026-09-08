@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { useRef } from "react";
 import SectionLabel from "@/components/ui/SectionLabel";
 
@@ -150,6 +151,44 @@ export default function Hero() {
             >
               Watch Demo →
             </a>
+          </motion.div>
+
+          {/* Quick industry links */}
+          <motion.div
+            variants={fadeUpVariants}
+            className="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-2 text-xs text-gray-500"
+          >
+            <span className="font-semibold text-gray-700">Built for:</span>
+            <Link
+              href="/solutions/kirana-grocery"
+              className="px-3 py-1 rounded-full bg-amber-50/80 border border-amber-200/80 text-amber-900 hover:bg-amber-100 transition-colors font-medium"
+            >
+              🛒 Kirana
+            </Link>
+            <Link
+              href="/solutions/restaurant-cafe"
+              className="px-3 py-1 rounded-full bg-amber-50/80 border border-amber-200/80 text-amber-900 hover:bg-amber-100 transition-colors font-medium"
+            >
+              🍽️ Restaurant KOT
+            </Link>
+            <Link
+              href="/solutions/clothing-apparel"
+              className="px-3 py-1 rounded-full bg-amber-50/80 border border-amber-200/80 text-amber-900 hover:bg-amber-100 transition-colors font-medium"
+            >
+              👗 Clothing
+            </Link>
+            <Link
+              href="/solutions/pharmacy-chemist"
+              className="px-3 py-1 rounded-full bg-amber-50/80 border border-amber-200/80 text-amber-900 hover:bg-amber-100 transition-colors font-medium"
+            >
+              💊 Pharmacy
+            </Link>
+            <Link
+              href="/solutions/hardware-sanitary"
+              className="px-3 py-1 rounded-full bg-amber-50/80 border border-amber-200/80 text-amber-900 hover:bg-amber-100 transition-colors font-medium"
+            >
+              🔧 Hardware
+            </Link>
           </motion.div>
         </div>
       </motion.div>

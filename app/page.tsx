@@ -5,6 +5,7 @@ import Hero from "@/components/sections/Hero";
 // Lazy load below-the-fold components to improve performance
 const StickyFeatureSection = dynamic(() => import("@/components/sections/StickyFeatureSection"));
 const TenWaysToAddSection = dynamic(() => import("@/components/sections/TenWaysToAddSection"));
+const IndustrySolutionsSection = dynamic(() => import("@/components/sections/IndustrySolutionsSection"));
 const FreeToolsSection = dynamic(() => import("@/components/sections/FreeToolsSection"));
 const LaunchAnnouncement = dynamic(() => import("@/components/sections/LaunchAnnouncement"));
 const BenefitsMarquee = dynamic(() => import("@/components/sections/BenefitsMarquee"));
@@ -28,24 +29,29 @@ export default function Home() {
                 "@type": "SoftwareApplication",
                 "@id": "https://vyop.in/#application",
                 "name": "Vyop",
-                "operatingSystem": "Android",
+                "operatingSystem": "Android, Web",
                 "applicationCategory": "BusinessApplication",
-                "description": "World's First AI Accountant & Smartphone Barcode POS Scanner. Create GST bills by voice, add items in 10 ways, and set up a zero-commission online store for Kirana retailers.",
+                "applicationSubCategory": "AccountingSoftware, BillingSoftware",
+                "description": "Free GST Billing Software, Voice AI Invoicing & Smartphone Barcode POS Scanner. Create GST bills by voice, scan barcodes, and manage kirana retail inventory.",
                 "url": "https://vyop.in",
                 "installUrl": "https://play.google.com/store/apps/details?id=com.vyop.app",
+                "downloadUrl": "https://play.google.com/store/apps/details?id=com.vyop.app",
                 "featureList": [
+                  "Free GST and Non-GST Billing App",
                   "Smartphone Supermarket Barcode POS Scanner",
-                  "Voice AI GST Billing in Hindi and English",
+                  "Voice AI GST Billing in Hindi, Hinglish and English",
                   "10 Lightning-Fast Ways to Add Products & Items",
                   "Zero-Commission Live Customer Online Storefront Link",
                   "Custom Discount Banners & Spin-The-Wheel Customer Rewards",
                   "Voice Expense Logging & Automated Udhar Khata Reminders",
-                  "Barcode Label Printing & Low Stock Alerts"
+                  "Barcode Label Printing & Low Stock Alerts",
+                  "Thermal Printer & Bluetooth Bill Printing Support"
                 ],
                 "offers": {
                   "@type": "Offer",
                   "price": "0",
-                  "priceCurrency": "INR"
+                  "priceCurrency": "INR",
+                  "availability": "https://schema.org/InStock"
                 },
                 "aggregateRating": {
                   "@type": "AggregateRating",
@@ -243,6 +249,7 @@ export default function Home() {
 
       <StickyFeatureSection />
       <TenWaysToAddSection />
+      <IndustrySolutionsSection />
       <FreeToolsSection />
 
       <LaunchAnnouncement />

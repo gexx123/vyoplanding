@@ -17,9 +17,9 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Vyop — Smartphone Barcode POS, Voice AI Billing & Kirana App",
+  title: "Vyop — Free GST Billing Software, Voice Invoicing & Barcode POS App",
   description:
-    "Turn your phone into a supermarket barcode scanner POS. Create GST bills by voice, add items in 10 ways, and set up a zero-commission online store for Kirana retailers.",
+    "Free GST billing software & fast voice invoicing app for retail stores, kirana & wholesale in India. Barcode POS scanner, inventory, thermal printing & ledger. Get started free!",
   metadataBase: new URL('https://vyop.in'),
   alternates: {
     canonical: '/',
@@ -29,9 +29,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Vyop — Smartphone Barcode POS, Voice AI Billing & Kirana App",
+    title: "Vyop — Free GST Billing Software, Voice Invoicing & Barcode POS App",
     description:
-      "Turn your phone into a mall barcode scanner. Voice-powered GST billing, 10 ways to add items, zero-commission customer storefront, and digital udhar khata.",
+      "Free GST billing software & fast voice invoicing app for Indian shopkeepers. Smartphone barcode POS, 10 ways to add items, zero-commission online store & digital ledger.",
     url: 'https://vyop.in',
     siteName: 'Vyop',
     images: [
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Vyop — AI Accountant & Smartphone Barcode POS',
+        alt: 'Vyop — Free GST Billing Software & Smartphone Barcode POS',
       },
     ],
     locale: 'en_US',
@@ -47,26 +47,41 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Vyop — Smartphone Barcode POS & Voice AI Billing App",
-    description: "Turn your smartphone into a supermarket barcode scanner & AI accountant.",
+    title: "Vyop — Free GST Billing Software & Voice Invoicing App",
+    description: "Smart GST billing software and fast voice invoicing app for retail stores & kirana shops. Try free!",
     images: ['/og-image.png'],
     creator: '@vyop_ai',
   },
   keywords: [
+    "free GST billing software India",
+    "voice invoicing app for shopkeepers",
     "smartphone barcode scanner POS",
-    "voice AI billing software India",
-    "best billing app for retail Kirana clothing restaurant",
+    "billing software in Bangalore",
+    "billing software in Surat",
+    "billing software Mumbai",
+    "billing software dealers in Bangalore",
+    "free billing app download",
+    "retail kirana billing software",
+    "thermal printer billing app",
     "zero commission online store builder",
-    "10 ways to add inventory items",
     "restaurant KOT billing app",
     "clothing store barcode tag printer",
     "pharmacy batch expiry billing software",
-    "hardware store voice billing app",
     "Tally alternative mobile phone",
-    "Khatabook alternative voice AI",
     "Vyapar alternative free billing app",
+    "Khatabook alternative voice AI",
     "Vyop AI Accountant",
   ],
+  appLinks: {
+    android: {
+      package: 'com.vyop.app',
+      app_name: 'Vyop',
+      url: 'https://play.google.com/store/apps/details?id=com.vyop.app',
+    },
+  },
+  other: {
+    'google-play-app': 'app-id=com.vyop.app',
+  },
   robots: {
     index: true,
     follow: true,

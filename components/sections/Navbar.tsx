@@ -7,9 +7,9 @@ import Link from "next/link";
 
 const navLinks = [
   { label: "Features", href: "/#features" },
+  { label: "Solutions", href: "/#solutions" },
+  { label: "GST Calculator", href: "/tools/gst-calculator" },
   { label: "Pricing", href: "/#pricing" },
-  { label: "Internship", href: "/internship" },
-  { label: "Work With Us", href: "/work-with-us" },
   { label: "FAQ", href: "/#faq" },
   { label: "Blog", href: "/blog" },
 ];

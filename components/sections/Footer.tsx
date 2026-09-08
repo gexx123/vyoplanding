@@ -2,11 +2,13 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { cities } from "@/lib/cityData";
+import { industries } from "@/lib/industryData";
 
 const footerLinks = {
   Company: ["About Us", "Work With Us", "Internship", "Careers", "Blog"],
-  "Free Tools": ["Free Barcode Generator", "Software Comparison Hub", "Smartphone POS", "0% Commission Store"],
-  Alternatives: ["Vyop vs Khatabook", "Vyop vs Vyapar", "Hindi Landing Page"],
+  "Free Tools": ["Free GST Calculator", "Free Barcode Generator", "Software Comparison Hub", "Smartphone POS", "0% Commission Store"],
+  Alternatives: ["Vyop vs Tally", "Vyop vs MyBillBook", "Vyop vs Khatabook", "Vyop vs Vyapar", "Hindi Landing Page"],
   "Top Cities": ["Jaipur", "Mumbai", "Delhi", "Surat", "Bangalore"],
   Support: ["Verify Certificate", "Help Center", "Contact Us", "WhatsApp Chat", "Community"],
 };
@@ -17,10 +19,13 @@ const linkPaths: Record<string, string> = {
   "Internship": "/internship",
   "Careers": "/careers",
   "Blog": "/blog",
+  "Free GST Calculator": "/tools/gst-calculator",
   "Free Barcode Generator": "/tools/barcode-generator",
   "Software Comparison Hub": "/compare",
   "Smartphone POS": "/features/barcode-scanner",
   "0% Commission Store": "/features/online-storefront",
+  "Vyop vs Tally": "/vyop-vs-tally",
+  "Vyop vs MyBillBook": "/vyop-vs-mybillbook",
   "Vyop vs Khatabook": "/vyop-vs-khatabook",
   "Vyop vs Vyapar": "/vyop-vs-vyapar",
   "Hindi Landing Page": "/hi",
@@ -202,6 +207,52 @@ export default function Footer() {
               </ul>
             </div>
           ))}
+        </div>
+
+        {/* Industry Solutions Directory */}
+        <div className="pt-8 pb-6 border-t border-[var(--border-subtle)]">
+          <div className="flex items-center justify-between mb-3">
+            <span
+              className="text-xs font-bold uppercase tracking-wider text-[var(--text-secondary)]"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              Retail Billing Software by Industry
+            </span>
+          </div>
+          <div className="flex flex-wrap gap-x-4 gap-y-2 text-xs text-[var(--text-muted)]">
+            {industries.map((ind) => (
+              <Link
+                key={ind.slug}
+                href={`/solutions/${ind.slug}`}
+                className="hover:text-[var(--brand-primary)] transition-colors"
+              >
+                {ind.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        {/* City Hubs Directory */}
+        <div className="pt-8 pb-6 border-t border-[var(--border-subtle)]">
+          <div className="flex items-center justify-between mb-3">
+            <span
+              className="text-xs font-bold uppercase tracking-wider text-[var(--text-secondary)]"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              Free GST Billing Software Across Indian Cities
+            </span>
+          </div>
+          <div className="flex flex-wrap gap-x-4 gap-y-2 text-xs text-[var(--text-muted)]">
+            {cities.map((city) => (
+              <Link
+                key={city.slug}
+                href={`/billing-software/${city.slug}`}
+                className="hover:text-[var(--brand-primary)] transition-colors"
+              >
+                Billing Software in {city.name}
+              </Link>
+            ))}
+          </div>
         </div>
 
         {/* Bottom bar */}

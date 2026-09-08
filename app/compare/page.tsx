@@ -29,15 +29,15 @@ const comparisons = [
     slug: "tally",
     title: "Vyop vs Tally Prime",
     badge: "No Keyboard",
-    summary: "Tally requires accounting training. Vyop works by speaking in Hindi or scanning barcodes.",
-    link: "/vyop-vs-vyapar",
+    summary: "Tally requires accounting training and a PC. Vyop works on your phone by speaking in Hindi or scanning barcodes.",
+    link: "/vyop-vs-tally",
   },
   {
     slug: "mybillbook",
     title: "Vyop vs MyBillBook",
     badge: "0% Commission Store",
     summary: "Vyop offers 10 ways to add items and a 0% commission online storefront with Spin-The-Wheel rewards.",
-    link: "/vyop-vs-khatabook",
+    link: "/vyop-vs-mybillbook",
   },
 ];
 

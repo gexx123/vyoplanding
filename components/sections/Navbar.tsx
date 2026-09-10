@@ -6,9 +6,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 const navLinks = [
+  { label: "Smart Billing", href: "/smart-billing-software" },
   { label: "POS App", href: "/pos-app" },
-  { label: "Features", href: "/#features" },
-  { label: "Solutions", href: "/#solutions" },
+  { label: "Shop Types", href: "/solutions" },
   { label: "Compare", href: "/compare" },
   { label: "Free Tools", href: "/tools" },
   { label: "Pricing", href: "/#pricing" },

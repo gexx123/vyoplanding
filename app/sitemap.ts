@@ -42,6 +42,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${baseUrl}/tools/gstin-validator`, priority: 0.95, changeFrequency: 'weekly' },
     { url: `${baseUrl}/compare`, priority: 0.95, changeFrequency: 'weekly' },
     { url: `${baseUrl}/pos-app`, priority: 1.0, changeFrequency: 'weekly' },
+    { url: `${baseUrl}/smart-billing-software`, priority: 0.95, changeFrequency: 'weekly' },
+    { url: `${baseUrl}/solutions`, priority: 0.9, changeFrequency: 'weekly' },
     { url: `${baseUrl}/best-billing-software-india`, priority: 0.95, changeFrequency: 'weekly' },
     { url: `${baseUrl}/best-pos-software-india`, priority: 0.95, changeFrequency: 'weekly' },
     { url: `${baseUrl}/vyop-vs-tally`, priority: 0.9, changeFrequency: 'weekly' },

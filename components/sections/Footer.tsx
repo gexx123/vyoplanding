@@ -19,6 +19,7 @@ const footerLinks = {
     "Free Barcode Generator",
     "HSN Code Finder",
     "Free POS App",
+    "Smart Billing Software",
   ],
   Alternatives: [
     "Vyop vs Tally",
@@ -49,6 +50,7 @@ const linkPaths: Record<string, string> = {
   "Careers": "/careers",
   "Blog": "/blog",
   "Free POS App": "/pos-app",
+  "Smart Billing Software": "/smart-billing-software",
   "All Free Tools": "/tools",
   "Free Invoice Generator": "/tools/invoice-generator",
   "Free GST Calculator": "/tools/gst-calculator",
@@ -261,12 +263,13 @@ export default function Footer() {
         {/* Industry Solutions Directory */}
         <div className="pt-8 pb-6 border-t border-[var(--border-subtle)]">
           <div className="flex items-center justify-between mb-3">
-            <span
-              className="text-xs font-bold uppercase tracking-wider text-[var(--text-secondary)]"
+            <Link
+              href="/solutions"
+              className="text-xs font-bold uppercase tracking-wider text-[var(--text-secondary)] hover:text-[var(--brand-primary)] transition-colors"
               style={{ fontFamily: "var(--font-display)" }}
             >
-              Retail Billing Software by Industry
-            </span>
+              Retail Billing Software by Industry (All 22 Trades) →
+            </Link>
           </div>
           <div className="flex flex-wrap gap-x-4 gap-y-2 text-xs text-[var(--text-muted)]">
             {industries.map((ind) => (

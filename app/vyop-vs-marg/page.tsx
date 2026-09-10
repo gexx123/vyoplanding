@@ -6,17 +6,17 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Vyop vs Marg ERP 9+ | Best Free Mobile Alternative to Marg Software",
   description:
-    "Compare Vyop vs Marg ERP 9+. Marg software costs ₹9,000-₹25,000/year, requires Windows PCs, dongles, and weeks of training. Vyop is 100% free with smartphone camera barcode scanning and Hindi voice AI billing.",
+    "Compare Vyop vs Marg ERP 9+. Marg software costs ₹9,000-₹25,000/year, requires Windows PCs, dongles, and weeks of training. Vyop runs on your smartphone with camera barcode scanning and Hindi voice AI billing, starting free with ₹999/yr Pro cloud sync.",
   alternates: { canonical: "/vyop-vs-marg" },
   openGraph: {
     title: "Vyop vs Marg ERP 9+ | Free Mobile Alternative",
-    description: "Why retailers and chemists are switching from Marg ERP to Vyop: ₹0 cost, zero PC requirement, smartphone barcode POS, and Hindi voice billing.",
+    description: "Why retailers and chemists are switching from Marg ERP to Vyop: ₹999/yr pricing (save ₹20,000+), zero PC requirement, smartphone barcode POS, and Hindi voice billing.",
     url: "https://vyop.in/vyop-vs-marg",
   },
 };
 
 const comparison = [
-  { feature: "Base Price", vyop: "₹0 (100% Free Forever)", competitor: "₹8,991 – ₹25,200/year + GST", better: "vyop" },
+  { feature: "Base Price", vyop: "Free to Start / ₹999/yr Pro", competitor: "₹8,991 – ₹25,200/year + GST", better: "vyop" },
   { feature: "Hardware Required", vyop: "Your Existing Smartphone", competitor: "Desktop PC + Hardware Dongle", better: "vyop" },
   { feature: "Billing Speed", vyop: "5 Seconds (Voice AI or Camera Scan)", competitor: "Keyboard Shortcut Dependent", better: "vyop" },
   { feature: "Smartphone Camera Barcode POS", vyop: "✅ Built-in (Free)", competitor: "❌ Needs ₹3,000+ Barcode Gun", better: "vyop" },
@@ -31,8 +31,8 @@ const comparison = [
 ];
 
 const faqs = [
-  { question: "How does Vyop compare to Marg ERP 9+ for pharmacy and retail stores?", answer: "Marg ERP is a 30-year-old desktop software requiring expensive Windows computers, hardware license dongles, and paid annual maintenance contracts (AMC). Vyop is modern, 100% free, and runs on any Android phone. You can scan medicine and grocery barcodes with your phone camera, speak bills in Hindi or English, and send instant WhatsApp invoices with UPI QR codes." },
-  { question: "Is Vyop really 100% free compared to Marg ERP?", answer: "Yes. Marg Basic Edition starts at ₹8,991 + 18% GST and goes up to ₹25,200+ per year with recurring AMC charges. Vyop has zero license fees, zero monthly renewals, and zero hidden charges for its entire feature set." },
+  { question: "How does Vyop compare to Marg ERP 9+ for pharmacy and retail stores?", answer: "Marg ERP is desktop software requiring expensive Windows computers, hardware dongles, and paid AMC contracts. Vyop is modern and runs on any Android phone starting free. You can scan medicine and grocery barcodes with your phone camera, speak bills in Hindi or English, and enjoy full cloud sync Pro for just ₹999/year." },
+  { question: "How does Vyop's price compare to Marg ERP?", answer: "Marg Basic starts at ₹8,991 + GST and goes up to ₹25,200/year with recurring AMC fees. Vyop offers a free offline tier, and its Pro cloud plan is just ₹999/year (less than ₹2.7/day), saving you ₹20,000+ every single year." },
   { question: "Can I manage batch numbers and expiry dates like in Marg?", answer: "Yes! Vyop supports batch tracking, manufacturing dates, expiry date alerts, and HSN codes, making it perfect for pharmacies, FMCG distributors, grocery stores, and cosmetics shops." },
   { question: "Do I need to buy a computer or barcode scanner to replace Marg?", answer: "No! Vyop turns your smartphone camera into a supermarket-grade barcode scanner and supports wireless Bluetooth thermal printers (₹1,500). You save over ₹25,000 on PC hardware and barcode scanners." },
 ];
@@ -52,7 +52,7 @@ export default function VyopVsMargPage() {
           </h1>
           <p className="text-xl text-[var(--text-secondary)] max-w-2xl mx-auto">
             Marg ERP is complex, desktop-locked, and charges hefty annual AMC fees.{" "}
-            <strong className="text-gray-900">Vyop gives you faster billing on your mobile phone with Voice AI and smartphone camera barcode scanning — 100% free forever.</strong>
+            <strong className="text-gray-900">Vyop gives you faster billing on your mobile phone with Voice AI and smartphone camera barcode scanning — free to start with ₹999/yr Pro cloud sync.</strong>
           </p>
         </div>
 
@@ -66,9 +66,9 @@ export default function VyopVsMargPage() {
             </p>
           </div>
           <div className="p-8 rounded-3xl bg-gradient-to-br from-amber-500 to-amber-600 text-white shadow-lg relative">
-            <span className="absolute top-4 right-4 px-3 py-1 bg-white/20 text-white rounded-full text-xs font-bold">100% Free Forever</span>
+            <span className="absolute top-4 right-4 px-3 py-1 bg-white/20 text-white rounded-full text-xs font-bold">Lowest in India</span>
             <h3 className="text-xl font-bold mb-2">Vyop POS</h3>
-            <div className="text-3xl font-extrabold mb-4">₹0 / Lifetime</div>
+            <div className="text-3xl font-extrabold mb-4">Free / ₹999/yr Pro</div>
             <p className="text-sm text-white/90 leading-relaxed">
               Runs on any Android phone. Voice AI in Hindi/English, smartphone camera barcode scanner, batch & expiry tracking, automated WhatsApp bills, and 0% commission online storefront.
             </p>
@@ -119,7 +119,7 @@ export default function VyopVsMargPage() {
         <div className="text-center p-12 rounded-3xl bg-amber-50 border border-amber-200">
           <h2 className="text-3xl font-extrabold mb-4 font-display">Ready to Switch from Marg to Vyop?</h2>
           <p className="text-gray-600 mb-6 max-w-xl mx-auto">
-            Join thousands of retail shopkeepers and chemists who have switched to India's fastest, 100% free voice billing app.
+            Join thousands of retail shopkeepers and chemists who have switched to India's fastest voice billing app. Free to start.
           </p>
           <a
             href="https://play.google.com/store/apps/details?id=com.vyop.app"

@@ -113,7 +113,7 @@ const faqCategories = [
       },
       {
         q: "Is Vyop free to use for small shopkeepers?",
-        a: "Yes! Vyop is completely free to download and use for basic billing, inventory, and online storefront creation on Android smartphones.",
+        a: "Yes! Vyop is free to download and start for basic billing, inventory, and online storefront creation on Android smartphones. Full multi-device cloud backup and unlimited sync is available with Vyop Pro for just ₹999/year (less than ₹2.7/day).",
       },
     ],
   },

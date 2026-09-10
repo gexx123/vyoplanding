@@ -6,17 +6,17 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Vyop vs POSist (Restroworks) | Best Free Restaurant POS Alternative",
   description:
-    "Compare Vyop vs POSist (Restroworks). POSist costs ₹15,000-₹40,000/year per restaurant outlet with heavy setup fees. Vyop provides 100% free restaurant POS with Voice KOT, table management, QR menu ordering, and UPI billing.",
+    "Compare Vyop vs POSist (Restroworks). POSist costs ₹15,000-₹40,000/year per restaurant outlet with heavy setup fees. Vyop provides modern restaurant POS with Voice KOT, table management, and QR ordering, starting free with ₹999/yr Pro cloud sync.",
   alternates: { canonical: "/vyop-vs-posist" },
   openGraph: {
     title: "Vyop vs POSist | Free Restaurant Billing & KOT POS Alternative",
-    description: "Save ₹30,000+ per outlet. Vyop gives cafes and restaurants voice KOT generation, table management, and QR ordering for ₹0.",
+    description: "Save ₹30,000+ per outlet. Vyop gives cafes and restaurants voice KOT generation, table management, and QR ordering starting free with ₹999/yr Pro.",
     url: "https://vyop.in/vyop-vs-posist",
   },
 };
 
 const comparison = [
-  { feature: "Annual Cost Per Outlet", vyop: "₹0 (100% Free Forever)", competitor: "₹15,000 – ₹40,000+ / year", better: "vyop" },
+  { feature: "Annual Cost Per Outlet", vyop: "Free to Start / ₹999/yr Pro", competitor: "₹15,000 – ₹40,000+ / year", better: "vyop" },
   { feature: "Implementation & Setup Fee", vyop: "₹0 (Start in 2 Minutes)", competitor: "₹5,000 – ₹10,000 Setup Fee", better: "vyop" },
   { feature: "Hardware Required", vyop: "Any Android Smartphone / Tablet", competitor: "Dedicated POS Terminal / PC", better: "vyop" },
   { feature: "Kitchen Order Ticket (KOT)", vyop: "✅ Voice KOT + Bluetooth Print", competitor: "✅ Thermal / KDS Screen", better: "tie" },
@@ -31,10 +31,10 @@ const comparison = [
 ];
 
 const faqs = [
-  { question: "Why should a cafe or restaurant choose Vyop over POSist?", answer: "POSist (Restroworks) is designed for large corporate multi-chain enterprises and charges ₹15,000 to ₹40,000+ per outlet every single year, plus hefty implementation fees. For cafes, bakeries, cloud kitchens, and standalone restaurants, this is a massive drain on profits. Vyop delivers table management, voice KOT generation, QR digital menu, and thermal printing on your smartphone for ₹0." },
+  { question: "Why should a cafe or restaurant choose Vyop over POSist?", answer: "POSist (Restroworks) is designed for large corporate multi-chain enterprises and charges ₹15,000 to ₹40,000+ per outlet every single year, plus hefty implementation fees. For cafes, bakeries, cloud kitchens, and standalone restaurants, this is a massive drain on profits. Vyop delivers table management, voice KOT generation, QR digital menu, and thermal printing on your smartphone starting free, with Pro cloud sync at just ₹999/year (saving ₹30,000+)." },
   { question: "Can Vyop print KOT tickets to the kitchen wirelessly?", answer: "Yes! Vyop connects directly to any affordable Bluetooth or Wi-Fi thermal receipt printer (₹1,500). Waiters or counter staff can punch or speak orders on their phone, and the KOT immediately prints in the kitchen." },
   { question: "How does Voice KOT work on Vyop?", answer: "Instead of searching through dense menu categories during rush hours, your captain or cashier taps the Voice Orb and says: 'Table 4: Do masala dosa, do filter coffee'. The order is instantly assigned to Table 4 and sent to the kitchen." },
-  { question: "Does Vyop charge commissions on online orders or QR menu scans?", answer: "Zero commission! Unlike third-party aggregators or enterprise POS add-ons, your Vyop storefront and QR table ordering is 100% free with 0% commission. Customers pay via UPI directly to your bank account." },
+  { question: "Does Vyop charge commissions on online orders or QR menu scans?", answer: "Zero commission! Unlike third-party aggregators or enterprise POS add-ons, your Vyop storefront and QR table ordering is included with 0% commission. Customers pay via UPI directly to your bank account." },
 ];
 
 export default function VyopVsPosistPage() {
@@ -52,7 +52,7 @@ export default function VyopVsPosistPage() {
           </h1>
           <p className="text-xl text-[var(--text-secondary)] max-w-2xl mx-auto">
             Stop paying ₹30,000+ per outlet for enterprise restaurant software.{" "}
-            <strong className="text-gray-900">Vyop gives cafes, restaurants, and cloud kitchens voice KOT, table billing, and QR menus — 100% free forever.</strong>
+            <strong className="text-gray-900">Vyop gives cafes, restaurants, and cloud kitchens voice KOT, table billing, and QR menus — free to start with ₹999/yr Pro cloud sync.</strong>
           </p>
         </div>
 
@@ -66,9 +66,9 @@ export default function VyopVsPosistPage() {
             </p>
           </div>
           <div className="p-8 rounded-3xl bg-gradient-to-br from-amber-500 to-amber-600 text-white shadow-lg relative">
-            <span className="absolute top-4 right-4 px-3 py-1 bg-white/20 text-white rounded-full text-xs font-bold">100% Free Forever</span>
+            <span className="absolute top-4 right-4 px-3 py-1 bg-white/20 text-white rounded-full text-xs font-bold">Lowest in India</span>
             <h3 className="text-xl font-bold mb-2">Vyop POS</h3>
-            <div className="text-3xl font-extrabold mb-4">₹0 / Lifetime</div>
+            <div className="text-3xl font-extrabold mb-4">Free / ₹999/yr Pro</div>
             <p className="text-sm text-white/90 leading-relaxed">
               Built for speed. Runs on any phone or tablet. Voice KOT, table management, 0% commission QR menu, offline capability, and 1-tap WhatsApp bills with UPI QR.
             </p>
@@ -117,9 +117,9 @@ export default function VyopVsPosistPage() {
 
         {/* Bottom CTA */}
         <div className="text-center p-12 rounded-3xl bg-amber-50 border border-amber-200">
-          <h2 className="text-3xl font-extrabold mb-4 font-display">Run Your Restaurant Without Software Subscriptions</h2>
+          <h2 className="text-3xl font-extrabold mb-4 font-display">Run Your Restaurant With Modern Voice POS</h2>
           <p className="text-gray-600 mb-6 max-w-xl mx-auto">
-            Save ₹30,000+ per year. Enjoy lightning-fast voice KOT and table management for ₹0.
+            Save ₹30,000+ per year. Enjoy lightning-fast voice KOT and table management — free to start with ₹999/yr Pro cloud sync.
           </p>
           <a
             href="https://play.google.com/store/apps/details?id=com.vyop.app"

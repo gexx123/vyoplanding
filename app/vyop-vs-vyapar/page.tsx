@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 };
 
 const comparisonData = [
+  { feature: "Annual Pricing", vyop: "Free to Start / ₹999/yr Pro (Save 75%+)", vyapar: "₹3,999 – ₹5,999/year", better: "vyop" },
   { feature: "Billing Speed & Method", vyop: "Ultra-Fast (Voice AI + Camera Barcode POS)", vyapar: "Manual (Keyboard/Touch)", better: "vyop" },
   { feature: "Smartphone Barcode Scanner", vyop: "Built-in Camera Scanner & Barcode Generator", vyapar: "Requires External Hardware Scanner", better: "vyop" },
   { feature: "Ways to Add Products", vyop: "10 Instant Ways (AI, Invoice, Barcode, Voice)", vyapar: "Manual Form Entry", better: "vyop" },
@@ -83,7 +84,7 @@ export default function ComparisonPage() {
             href="https://vyop.shop" 
             className="inline-flex items-center px-10 py-5 rounded-2xl bg-[var(--brand-secondary)] text-white font-bold text-xl hover:scale-[1.02] transition-all shadow-[var(--shadow-gold)]"
           >
-            Switch to AI Billing
+            Switch to AI Billing (Free to Start)
           </Link>
         </div>
       </section>
@@ -109,6 +110,14 @@ export default function ComparisonPage() {
                 "acceptedAnswer": {
                   "@type": "Answer",
                   "text": "Yes, Vyop fully supports GST billing, just like Vyapar. The difference is that with Vyop, you can generate GST bills using just your voice."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How does Vyop's pricing compare to Vyapar?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Vyop is free to download and start, with full cloud sync Pro available at just ₹999/year. Vyapar starts around ₹3,999 to ₹5,999 per year, meaning Vyop saves you up to 75% or more every year."
                 }
               }
             ]

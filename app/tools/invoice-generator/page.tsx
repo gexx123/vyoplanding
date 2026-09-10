@@ -385,7 +385,7 @@ Thank you for shopping with us!`;
             Create This Bill in 5 Seconds Just by Speaking!
           </h2>
           <p className="text-white/90 max-w-xl mx-auto mb-6 text-sm md:text-base leading-relaxed">
-            Vyop POS turns your smartphone camera into a mall-grade barcode scanner and lets you speak bills in Hindi or English (e.g. &apos;Do refined tel, ek cheeni&apos;). 100% Free Forever.
+            Vyop POS turns your smartphone camera into a mall-grade barcode scanner and lets you speak bills in Hindi or English (e.g. &apos;Do refined tel, ek cheeni&apos;). Free to start with ₹999/yr Pro cloud sync.
           </p>
           <a
             href="https://play.google.com/store/apps/details?id=com.vyop.app"

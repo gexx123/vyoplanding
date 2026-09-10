@@ -29,7 +29,7 @@ export const industries: IndustryData[] = [
     name: "Kirana & Grocery Stores",
     tagline: "Speed Through Rush Hours with Smartphone Barcode & Voice Billing",
     metaTitle: "Best Billing Software for Kirana & Grocery Shops | Free POS App - Vyop",
-    metaDescription: "100% Free GST billing software for Kirana & grocery stores in India. Scan barcodes with your smartphone camera, speak bills in Hindi, and track udhar khata with automatic WhatsApp reminders.",
+    metaDescription: "Best GST billing software for Kirana & grocery stores in India. Scan barcodes with your smartphone camera, speak bills in Hindi, and track udhar khata with automatic WhatsApp reminders.",
     badge: "For Kirana & General Stores",
     icon: "🛒",
     heroHighlight: "Kirana & Grocery Shops",

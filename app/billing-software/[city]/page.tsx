@@ -17,14 +17,14 @@ export async function generateMetadata({ params }: { params: Promise<{ city: str
   if (!city) return {};
 
   return {
-    title: `Free GST Billing Software in ${city.name} — Download & Instant Setup | Vyop`,
-    description: `Looking for billing software in ${city.name}? Vyop is a 100% free voice-powered GST billing & barcode POS app for ${city.hubFocus} shops in ${city.state}. Skip expensive dealer fees!`,
+    title: `Best GST Billing Software in ${city.name} — Free to Start | Vyop`,
+    description: `Looking for billing software in ${city.name}? Vyop is a voice-powered GST billing & barcode POS app for ${city.hubFocus} shops in ${city.state}. Free to start, lowest ₹999/yr Pro cloud plan.`,
     alternates: {
       canonical: `/billing-software/${city.slug}`,
     },
     openGraph: {
-      title: `Free GST Billing Software in ${city.name} | Vyop`,
-      description: `Free voice-powered GST billing, barcode POS & khata app for ${city.name} businesses. Skip dealer fees and download on mobile.`,
+      title: `Best GST Billing Software in ${city.name} | Vyop`,
+      description: `Voice-powered GST billing, barcode POS & khata app for ${city.name} businesses. Skip dealer fees, start free on mobile with ₹999/yr Pro cloud sync.`,
       url: `https://vyop.in/billing-software/${city.slug}`,
     },
   };
@@ -115,7 +115,7 @@ export default async function CityLandingPage({ params }: { params: Promise<{ ci
             </h2>
             <p className="text-lg text-[var(--text-secondary)]">
               Traditional ERP & billing software dealers in {city.name} charge ₹10,000 to ₹25,000 for complex desktop installations and annual maintenance fees. 
-              <span className="font-semibold text-gray-900"> Vyop gives you a supermarket-grade POS in your pocket for ₹0.</span>
+              <span className="font-semibold text-gray-900"> Vyop gives you a supermarket-grade POS in your pocket — free to start with ₹999/yr Pro cloud sync.</span>
             </p>
           </div>
 
@@ -158,7 +158,7 @@ export default async function CityLandingPage({ params }: { params: Promise<{ ci
               <ul className="space-y-3.5 text-[var(--text-secondary)] text-sm md:text-base">
                 <li className="flex items-start gap-2.5">
                   <span className="text-emerald-600 font-bold mt-0.5">✓</span>
-                  <span><strong>100% Free to download</strong> — no dealer markup or commission</span>
+                  <span><strong>Free to download & start</strong> — no dealer markup or commission</span>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <span className="text-emerald-600 font-bold mt-0.5">✓</span>

@@ -17,6 +17,12 @@ export const metadata: Metadata = {
 
 const myBillBookComparison = [
   {
+    feature: "Pricing & Annual Cost",
+    vyop: "Free to Start / ₹999/yr Pro (Save ₹2,500+)",
+    mybillbook: "₹3,499 – ₹7,499/year",
+    better: "vyop",
+  },
+  {
     feature: "Ways to Add Items",
     vyop: "10 Instant Ways (Barcode, Voice, AI Invoice, Image, Menu)",
     mybillbook: "1–2 Ways (Manual typing or Excel bulk upload)",
@@ -67,9 +73,9 @@ const faqs = [
       "While myBillBook requires manual typing to search items and create bills, Vyop uses voice AI and your phone's camera as a supermarket barcode scanner. You can create bills in 5 seconds without typing.",
   },
   {
-    question: "Is Vyop free to use compared to myBillBook?",
+    question: "How does Vyop's pricing compare to myBillBook?",
     answer:
-      "Yes! Vyop is completely free to download from Google Play Store for daily billing, barcode scanning, inventory, and online storefront creation.",
+      "Vyop is free to download and use for offline billing and barcode scanning. For full multi-device cloud backup, Vyop Pro is only ₹999/year (less than ₹2.7/day) — saving you thousands compared to myBillBook's ₹3,499 to ₹7,499/year plans.",
   },
   {
     question: "How do the 10 ways to add items compare?",

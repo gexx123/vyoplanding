@@ -92,9 +92,9 @@ const tools = [
     title: "Vyop POS: Complete Mobile App",
     badge: "Free Mobile POS",
     icon: "📱",
-    description: "All of these tools built into one app. Point your phone camera at barcodes, speak bills in Hindi or English, and manage inventory for ₹0.",
+    description: "All of these tools built into one app. Point your phone camera at barcodes, speak bills in Hindi or English, and manage inventory starting free.",
     link: "/pos-app",
-    features: ["Voice AI in Hindi", "Camera Barcode POS", "0% Commission Store", "100% Free Forever"],
+    features: ["Voice AI in Hindi", "Camera Barcode POS", "0% Commission Store", "Free to Start"],
   },
 ];
 

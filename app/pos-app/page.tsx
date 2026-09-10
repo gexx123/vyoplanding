@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 };
 
 const posComparison = [
-  { feature: "Price", vyop: "₹0 (100% Free)", loyverse: "$0 Basic / $5–$25/mo Add-ons", square: "Free + 2.6% Per Transaction", vyapar: "₹3,999/yr+", petpooja: "₹12,000–₹25,000/yr" },
+  { feature: "Price", vyop: "Free to Start / ₹999/yr Pro", loyverse: "$0 Basic / $5–$25/mo Add-ons", square: "Free + 2.6% Per Transaction", vyapar: "₹3,999/yr+", petpooja: "₹12,000–₹25,000/yr" },
   { feature: "Voice AI Billing", vyop: "✅ Hindi, English & Hinglish", loyverse: "❌ Not Available", square: "❌ Not Available", vyapar: "❌ Not Available", petpooja: "❌ Not Available" },
   { feature: "Smartphone Camera POS Scanner", vyop: "✅ Built-in (₹0 Hardware)", loyverse: "✅ Basic Scanning", square: "❌ Requires $299+ Reader", vyapar: "⚠️ Limited", petpooja: "⚠️ Hardware Dependent" },
   { feature: "Indian GST Compliance", vyop: "✅ GSTR-1, CGST/SGST, HSN", loyverse: "❌ No Indian GST", square: "❌ US Tax Only", vyapar: "✅ GST Supported", petpooja: "✅ GST Supported" },
@@ -47,7 +47,7 @@ const faqs = [
   {
     question: "What is the best free POS app for Android in India?",
     answer:
-      "Vyop POS is the best free POS app for Android in India. It offers voice AI billing in Hindi and English, a built-in smartphone barcode scanner that works with any phone camera, GST-compliant invoicing, 10 ways to add inventory, and a 0% commission online storefront — all for ₹0. It supports 22 types of retail businesses including kirana, restaurant, clothing, pharmacy, jewellery, bakery, salon, and more.",
+      "Vyop POS is the best POS app for Android in India. It offers voice AI billing in Hindi and English, a built-in smartphone barcode scanner that works with any phone camera, GST-compliant invoicing, 10 ways to add inventory, and a 0% commission online storefront — free to start, with full multi-device cloud backup Pro at just ₹999/year. It supports 22 types of retail businesses including kirana, restaurant, clothing, pharmacy, jewellery, bakery, salon, and more.",
   },
   {
     question: "Which POS app works offline without internet?",
@@ -57,7 +57,7 @@ const faqs = [
   {
     question: "What is a free alternative to Loyverse POS in India?",
     answer:
-      "Vyop POS is the best free alternative to Loyverse POS in India. Unlike Loyverse which charges $5/month for Employee Management and $25/month for Advanced Inventory, Vyop offers all features completely free including voice AI billing, GST compliance, WhatsApp invoicing, and UPI payment integration.",
+      "Vyop POS is the best affordable alternative to Loyverse POS in India. Unlike Loyverse which charges $5/month for Employee Management and $25/month for Advanced Inventory ($660/yr total), Vyop is free to start offline with full cloud Pro at just ₹999/year including voice AI billing, GST compliance, WhatsApp invoicing, and UPI payment integration.",
   },
   {
     question: "Can I use my phone as a POS barcode scanner?",
@@ -77,12 +77,12 @@ const faqs = [
   {
     question: "Is Vyop POS better than Square POS for Indian shops?",
     answer:
-      "Yes, for Indian shops Vyop POS is significantly better than Square POS. Square charges 2.6% + 10¢ per transaction, requires $299+ hardware readers, and does not support Indian GST, UPI, or Hindi. Vyop is 100% free, works on any existing Android phone, and is built specifically for Indian retail.",
+      "Yes, for Indian shops Vyop POS is significantly better than Square POS. Square charges 2.6% + 10¢ per transaction, requires $299+ hardware readers, and does not support Indian GST, UPI, or Hindi. Vyop is free to start, works on any existing Android phone, and has an unbeatable ₹999/year Pro plan with cloud sync built specifically for Indian retail.",
   },
   {
     question: "Which POS app is best for restaurants and cafes in India?",
     answer:
-      "Vyop POS is excellent for restaurants and cafes in India. It supports voice KOT (Kitchen Order Ticket) generation, table management, digital QR code menus, split billing, and Bluetooth kitchen printer connectivity — all free. It's a powerful free alternative to expensive restaurant POS systems like Petpooja.",
+      "Vyop POS is excellent for restaurants and cafes in India. It supports voice KOT (Kitchen Order Ticket) generation, table management, digital QR code menus, split billing, and Bluetooth kitchen printer connectivity — free to start with affordable ₹999/yr Pro cloud sync. It's a powerful alternative to expensive restaurant POS systems like Petpooja.",
   },
 ];
 
@@ -107,7 +107,7 @@ export default function PosAppPage() {
 
         {/* AEO Direct Answer Paragraph - AI Overviews extract this */}
         <p className="text-xl text-[var(--text-secondary)] max-w-3xl mx-auto mb-10">
-          Vyop POS is a free mobile Point of Sale (POS) app for Android that turns any smartphone into a supermarket barcode scanner. Create GST bills by speaking in Hindi or English, scan product barcodes with your phone camera, manage inventory with 10 instant methods, and run a 0% commission online store — all for ₹0 with zero hardware cost.
+          Vyop POS is a mobile Point of Sale (POS) app for Android that turns any smartphone into a supermarket barcode scanner. Create GST bills by speaking in Hindi or English, scan product barcodes with your phone camera, manage inventory with 10 instant methods, and run a 0% commission online store — free to start, with zero hardware cost and ₹999/yr Pro cloud sync.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

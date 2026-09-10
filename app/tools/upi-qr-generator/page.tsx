@@ -205,7 +205,7 @@ export default function UpiQrGeneratorPage() {
             Print Dynamic UPI QR on Every Bill with Vyop POS!
           </h2>
           <p className="text-white/90 max-w-xl mx-auto mb-6 text-sm md:text-base leading-relaxed">
-            With static standees, customers have to type the amount manually and sometimes make mistakes. Vyop POS automatically embeds a dynamic UPI QR code on the customer&apos;s thermal receipt with the exact bill amount. Fast, error-free, and 100% free!
+            With static standees, customers have to type the amount manually and sometimes make mistakes. Vyop POS automatically embeds a dynamic UPI QR code on the customer&apos;s thermal receipt with the exact bill amount. Fast, error-free, and free to start with ₹999/yr Pro cloud sync!
           </p>
           <a
             href="https://play.google.com/store/apps/details?id=com.vyop.app"

@@ -350,7 +350,7 @@ export default function DiscountCalculatorPage() {
             Automate Discounts & Run Spin-The-Wheel Offers with Vyop!
           </h2>
           <p className="text-gray-600 max-w-xl mx-auto mb-6 text-sm leading-relaxed">
-            Vyop POS lets you create customized store discounts, instant item-wise markdowns, and interactive customer Spin-The-Wheel games on your online store to boost sales. 100% Free Forever.
+            Vyop POS lets you create customized store discounts, instant item-wise markdowns, and interactive customer Spin-The-Wheel games on your online store to boost sales. Free to start with ₹999/yr Pro cloud sync.
           </p>
           <a
             href="https://play.google.com/store/apps/details?id=com.vyop.app"

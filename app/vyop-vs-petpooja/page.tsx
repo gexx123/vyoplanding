@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 const comparison = [
-  { feature: "Pricing", vyop: "₹0 (100% Free)", petpooja: "₹12,000 – ₹25,000/year + Setup Fee" },
+  { feature: "Pricing", vyop: "Free to Start / ₹999/yr Pro", petpooja: "₹12,000 – ₹25,000/year + Setup Fee" },
   { feature: "Contract Lock-in", vyop: "No Contract. Cancel Anytime.", petpooja: "12-Month Minimum Lock-in" },
   { feature: "Hardware Required", vyop: "Any Android Phone or Tablet", petpooja: "Dedicated POS Terminal Required" },
   { feature: "Voice KOT Generation", vyop: "✅ Speak Orders ('2 Butter Naan, 1 Dal')", petpooja: "❌ Manual Touch/Tap Only" },
@@ -26,8 +26,8 @@ const comparison = [
 ];
 
 const faqs = [
-  { question: "Is Petpooja free for restaurants?", answer: "No. Petpooja charges ₹12,000–₹25,000 per year with a mandatory 12-month lock-in contract, plus a one-time setup fee. Vyop is 100% free with no contracts, no setup fees, and no hidden charges." },
-  { question: "Can Vyop replace Petpooja for a small restaurant or cafe?", answer: "Yes! For small to medium restaurants, cafes, dhabas, cloud kitchens, and fast food outlets, Vyop provides voice KOT generation, table management, QR digital menus, split billing, and thermal kitchen printing — all for ₹0." },
+  { question: "Is Petpooja free for restaurants?", answer: "No. Petpooja charges ₹12,000–₹25,000 per year with a mandatory 12-month lock-in contract, plus setup fees. Vyop allows you to start completely free, with full cloud sync Pro at just ₹999/year — saving you up to ₹24,000 every single year." },
+  { question: "Can Vyop replace Petpooja for a small restaurant or cafe?", answer: "Yes! For small to medium restaurants, cafes, dhabas, cloud kitchens, and fast food outlets, Vyop provides voice KOT generation, table management, QR digital menus, split billing, and thermal kitchen printing — free to start, with ₹999/yr Pro cloud sync." },
   { question: "Does Vyop support Kitchen Order Tickets (KOT)?", answer: "Yes! Speak the order naturally ('Table 4: Two Butter Chicken, Three Garlic Naan') and Vyop generates a formatted KOT that automatically prints on your kitchen Bluetooth thermal printer." },
   { question: "Can I use Vyop for non-restaurant businesses too?", answer: "Yes! Unlike Petpooja which is restaurant-only, Vyop supports 22 types of businesses including kirana stores, clothing shops, pharmacies, jewellery stores, salons, supermarkets, hotels, and more." },
 ];
@@ -43,7 +43,7 @@ export default function VyopVsPetpoojaPage() {
             Vyop vs <span className="gradient-text">Petpooja</span>
           </h1>
           <p className="text-xl text-[var(--text-secondary)] max-w-2xl mx-auto">
-            Petpooja locks you into expensive annual contracts. <strong className="text-gray-900">Vyop gives you voice KOT, table management, and QR menus — all free, no lock-in.</strong>
+            Petpooja locks you into expensive annual contracts. <strong className="text-gray-900">Vyop gives you voice KOT, table management, and QR menus — free to start with ₹999/yr Pro cloud sync.</strong>
           </p>
         </div>
 
@@ -56,8 +56,8 @@ export default function VyopVsPetpoojaPage() {
           <div className="p-8 rounded-3xl bg-gradient-to-br from-amber-500 to-amber-600 text-white shadow-lg relative">
             <span className="absolute top-4 right-4 px-3 py-1 bg-white/20 text-white rounded-full text-xs font-bold">No Lock-in</span>
             <h3 className="text-xl font-bold mb-2">Vyop POS</h3>
-            <div className="text-3xl font-extrabold mb-4">₹0 (Free Forever)</div>
-            <p className="text-sm text-white/90">Voice KOT, table management, QR menus, split billing, thermal printing — all on your Android phone for ₹0. Works for 22 shop types.</p>
+            <div className="text-3xl font-extrabold mb-4">Free / ₹999/yr Pro</div>
+            <p className="text-sm text-white/90">Voice KOT, table management, QR menus, split billing, thermal printing — all on your Android phone starting free. Works for 22 shop types.</p>
           </div>
         </div>
 

@@ -319,7 +319,7 @@ In Words: ${words}
             Never Count Cash Manually Again!
           </h2>
           <p className="text-gray-600 max-w-xl mx-auto mb-6 text-sm leading-relaxed">
-            Vyop POS automatically reconciles cash payments, UPI QR transactions, customer udhar (credit), and card payments on your phone with zero manual ledger math. 100% Free Forever.
+            Vyop POS automatically reconciles cash payments, UPI QR transactions, customer udhar (credit), and card payments on your phone with zero manual ledger math. Free to start with ₹999/yr Pro cloud sync.
           </p>
           <a
             href="https://play.google.com/store/apps/details?id=com.vyop.app"

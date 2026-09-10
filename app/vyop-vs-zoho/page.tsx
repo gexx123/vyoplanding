@@ -4,19 +4,19 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Vyop vs Zoho Books & Invoice | Best Free Retail POS Alternative in India",
+  title: "Vyop vs Zoho Books & Invoice | Best Affordable Retail POS Alternative in India",
   description:
-    "Compare Vyop vs Zoho Books & Invoice. Zoho is built for B2B desk accounting and lacks camera barcode POS, Hindi voice billing, and counter speed. Vyop is 100% free with Voice AI and 10 ways to add items.",
+    "Compare Vyop vs Zoho Books & Invoice. Zoho is built for B2B desk accounting and lacks camera barcode POS, Hindi voice billing, and counter speed. Vyop provides fast retail counter POS with Voice AI, starting free with ₹999/yr Pro cloud sync.",
   alternates: { canonical: "/vyop-vs-zoho" },
   openGraph: {
-    title: "Vyop vs Zoho Books | Free Retail POS Alternative",
-    description: "Why retail shopkeepers choose Vyop over Zoho: retail counter speed, smartphone barcode scanner, Hindi voice billing, and ₹0 lifetime pricing.",
+    title: "Vyop vs Zoho Books | Retail POS Alternative",
+    description: "Why retail shopkeepers choose Vyop over Zoho: retail counter speed, smartphone barcode scanner, Hindi voice billing, and lowest ₹999/yr pricing (under ₹3/day).",
     url: "https://vyop.in/vyop-vs-zoho",
   },
 };
 
 const comparison = [
-  { feature: "Base Price", vyop: "₹0 (100% Free Forever)", competitor: "Free tier limited / ₹8,999+ per year", better: "vyop" },
+  { feature: "Base Price", vyop: "Free to Start / ₹999/yr Pro", competitor: "Free tier limited / ₹8,999+ per year", better: "vyop" },
   { feature: "Retail Counter Speed", vyop: "⚡ 5-Second Checkout", competitor: "Slow Desk Form Filling", better: "vyop" },
   { feature: "Smartphone Camera Barcode Scanner", vyop: "✅ Built-in (Scan with Camera)", competitor: "❌ Not Available for Retail Counter", better: "vyop" },
   { feature: "Voice AI Billing (Hindi/English)", vyop: "✅ Natural Voice Recognition", competitor: "❌ Not Available", better: "vyop" },
@@ -33,7 +33,7 @@ const comparison = [
 const faqs = [
   { question: "Why is Vyop better than Zoho Books for retail shopkeepers?", answer: "Zoho Books is designed for corporate desk accounting, B2B invoicing, and service agencies. It is too slow and complicated for a busy retail counter. Vyop is built for fast retail queues: you can scan barcodes using your phone camera, speak bills in Hindi or English, and print thermal receipts in 5 seconds." },
   { question: "Can Zoho Books work without internet at my shop?", answer: "No. Zoho Books is entirely cloud-based and requires a steady internet connection to create invoices. Vyop functions 100% offline, allowing you to bill customers even during internet cuts or power outages, automatically syncing when reconnected." },
-  { question: "Is Zoho Invoice really free?", answer: "Zoho Invoice offers a free tier, but it has strict limits on client portals, lacks retail barcode scanning, doesn't support thermal receipt printers, and requires Zoho's paid ecosystem (Zoho Commerce, Zoho Inventory, Zoho Books) as soon as your business scales. Vyop is 100% free with all retail POS features included forever." },
+  { question: "Is Zoho Invoice really free?", answer: "Zoho Invoice offers a free tier, but it has strict limits on client portals, lacks retail barcode scanning, doesn't support thermal receipt printers, and requires Zoho's paid ecosystem ($24/mo+) as soon as your business scales. Vyop lets you start free offline, with complete Pro cloud sync at just ₹999/year (less than ₹2.7/day)." },
   { question: "Does Zoho Books support Hindi voice AI billing?", answer: "No. Zoho does not have voice billing technology. Vyop features India's first Voice AI Orb that understands natural spoken Hindi and English (e.g., 'Do jeans aur teen t-shirt'), calculating taxes and generating the bill automatically." },
 ];
 
@@ -52,7 +52,7 @@ export default function VyopVsZohoPage() {
           </h1>
           <p className="text-xl text-[var(--text-secondary)] max-w-2xl mx-auto">
             Zoho is built for corporate B2B desks, not fast retail counters.{" "}
-            <strong className="text-gray-900">Vyop gives retail shopkeepers 5-second counter billing, smartphone camera barcode scanning, and Hindi voice AI — 100% free.</strong>
+            <strong className="text-gray-900">Vyop gives retail shopkeepers 5-second counter billing, smartphone camera barcode scanning, and Hindi voice AI — starting free with ₹999/yr Pro cloud sync.</strong>
           </p>
         </div>
 
@@ -66,9 +66,9 @@ export default function VyopVsZohoPage() {
             </p>
           </div>
           <div className="p-8 rounded-3xl bg-gradient-to-br from-amber-500 to-amber-600 text-white shadow-lg relative">
-            <span className="absolute top-4 right-4 px-3 py-1 bg-white/20 text-white rounded-full text-xs font-bold">100% Free Forever</span>
+            <span className="absolute top-4 right-4 px-3 py-1 bg-white/20 text-white rounded-full text-xs font-bold">Lowest in India</span>
             <h3 className="text-xl font-bold mb-2">Vyop POS</h3>
-            <div className="text-3xl font-extrabold mb-4">₹0 / Lifetime</div>
+            <div className="text-3xl font-extrabold mb-4">Free / ₹999/yr Pro</div>
             <p className="text-sm text-white/90 leading-relaxed">
               Built for retail queues. Camera barcode POS, Hindi voice billing, 100% offline mode, 2-inch/3-inch thermal printing, and 0% commission online customer storefront.
             </p>
@@ -119,7 +119,7 @@ export default function VyopVsZohoPage() {
         <div className="text-center p-12 rounded-3xl bg-amber-50 border border-amber-200">
           <h2 className="text-3xl font-extrabold mb-4 font-display">Experience Speed at Your Retail Counter</h2>
           <p className="text-gray-600 mb-6 max-w-xl mx-auto">
-            Upgrade your retail shop to fast smartphone camera scanning and voice billing for ₹0.
+            Upgrade your retail shop to fast smartphone camera scanning and voice billing — free to start with ₹999/yr Pro cloud sync.
           </p>
           <a
             href="https://play.google.com/store/apps/details?id=com.vyop.app"

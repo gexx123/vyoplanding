@@ -224,7 +224,7 @@ export default function GstinValidatorPage() {
             Never Manually Verify a GSTIN Again!
           </h2>
           <p className="text-white/90 max-w-xl mx-auto mb-6 text-sm md:text-base leading-relaxed">
-            When you enter a customer or vendor GSTIN in Vyop POS, the app instantly verifies the number, calculates intra/inter-state tax splits (CGST/SGST vs IGST), and creates compliant tax invoices in 5 seconds. 100% Free Forever.
+            When you enter a customer or vendor GSTIN in Vyop POS, the app instantly verifies the number, calculates intra/inter-state tax splits (CGST/SGST vs IGST), and creates compliant tax invoices in 5 seconds. Free to start with ₹999/yr Pro cloud sync.
           </p>
           <a
             href="https://play.google.com/store/apps/details?id=com.vyop.app"

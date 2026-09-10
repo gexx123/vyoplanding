@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 };
 
 const comparisonData = [
+  { feature: "Full POS & Cloud Sync", vyop: "Free to Start / ₹999/yr Pro", khatabook: "Free Basic / ₹2,999/yr Premium", better: "vyop" },
   { feature: "Billing Method", vyop: "Voice AI + Camera POS Scanner", khatabook: "Manual Typing", better: "vyop" },
   { feature: "Smartphone Barcode Scanner", vyop: "Built-in (Scan & Create Barcodes)", khatabook: "Not Supported", better: "vyop" },
   { feature: "Ways to Add Items", vyop: "10 Instant Ways (AI, Invoice, Barcode, Voice)", khatabook: "1 Manual Way", better: "vyop" },
@@ -85,7 +86,7 @@ export default function ComparisonPage() {
             href="https://vyop.shop" 
             className="inline-flex items-center px-10 py-5 rounded-2xl bg-[var(--brand-secondary)] text-white font-bold text-xl hover:scale-[1.02] transition-all shadow-[var(--shadow-gold)]"
           >
-            Switch to Vyop for Free
+            Switch to Vyop (Free to Start)
           </Link>
         </div>
       </section>
@@ -102,7 +103,7 @@ export default function ComparisonPage() {
                 "name": "Is Vyop free vs Khatabook?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Yes, both Vyop and Khatabook offer free basic plans for tracking credit (udhar khata). However, Vyop includes voice-powered billing in its free tier."
+                  "text": "Both Vyop and Khatabook offer free basic plans. For full retail barcode billing and multi-device cloud sync, Vyop Pro is just ₹999/year compared to Khatabook's ₹2,999/year premium tier."
                 }
               },
               {

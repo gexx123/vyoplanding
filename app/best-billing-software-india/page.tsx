@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 const apps = [
-  { rank: 1, name: "Vyop", tagline: "Best Free Voice AI Billing & POS App", price: "₹0 (Free Forever)", bestFor: "All retail stores wanting fastest mobile billing with zero cost", pros: ["100% free with no hidden charges", "Voice AI billing in Hindi, English & Hinglish — bill in 5 seconds", "Smartphone camera doubles as supermarket barcode scanner (₹0 hardware)", "10 instant ways to add inventory items", "0% commission online storefront with WhatsApp ordering", "22 shop types supported (kirana to hotel)"], cons: ["Newer brand — smaller user community compared to Tally", "Advanced accounting reports (P&L, Balance Sheet) not as deep as Tally"], link: "/pos-app" },
+  { rank: 1, name: "Vyop", tagline: "Best Free-to-Start Voice AI Billing & POS App", price: "Free to Start / ₹999/yr Pro", bestFor: "All retail stores wanting fastest mobile billing with lowest cost in India", pros: ["Free offline tier + most affordable Pro plan in India (₹999/yr)", "Voice AI billing in Hindi, English & Hinglish — bill in 5 seconds", "Smartphone camera doubles as supermarket barcode scanner (₹0 hardware)", "10 instant ways to add inventory items", "0% commission online storefront with WhatsApp ordering", "22 shop types supported (kirana to hotel)"], cons: ["Newer brand — smaller user community compared to Tally", "Advanced accounting reports (P&L, Balance Sheet) not as deep as Tally"], link: "/pos-app" },
   { rank: 2, name: "Tally Prime", tagline: "India's Most Popular Accounting Software", price: "₹18,000 – ₹54,000/year", bestFor: "Medium to large businesses needing advanced accounting and CA integration", pros: ["Gold standard for Indian accounting with 40+ year legacy", "Deep GST compliance with GSTR-1, GSTR-3B auto-preparation", "Advanced financial reports (Trial Balance, P&L, Balance Sheet)"], cons: ["Very expensive (₹18,000–₹54,000/yr)", "Windows desktop only — no mobile app for billing", "Steep learning curve requiring trained operators"], link: "/vyop-vs-tally" },
   { rank: 3, name: "Vyapar", tagline: "Popular Mobile Billing App", price: "₹3,999 – ₹5,999/year", bestFor: "Small traders who want mobile invoicing with basic GST", pros: ["Easy to use mobile-first design", "Offline mode with cloud backup", "Good WhatsApp invoice sharing"], cons: ["Paid app — free tier is limited", "No voice billing or AI features", "No built-in barcode scanner using phone camera"], link: "/vyop-vs-vyapar" },
   { rank: 4, name: "Khatabook", tagline: "Digital Ledger & Payment Tracker", price: "Free Basic / ₹2,999/yr Premium", bestFor: "Micro businesses tracking daily khata and customer credit", pros: ["Simple ledger-style interface for credit tracking", "Free basic version available", "Good for udhar (credit) management"], cons: ["Not a full billing/POS solution", "Limited inventory management", "No barcode scanning"], link: "/vyop-vs-khatabook" },
@@ -24,7 +24,7 @@ const apps = [
 ];
 
 const masterComparison = [
-  { feature: "Price", vyop: "₹0", tally: "₹18K-54K/yr", vyapar: "₹4K-6K/yr", busy: "₹12K-30K/yr", khatabook: "Free-₹3K/yr" },
+  { feature: "Price", vyop: "Free / ₹999/yr", tally: "₹18K-54K/yr", vyapar: "₹4K-6K/yr", busy: "₹12K-30K/yr", khatabook: "Free-₹3K/yr" },
   { feature: "Mobile App", vyop: "✅ Full", tally: "❌ No", vyapar: "✅ Yes", busy: "❌ No", khatabook: "✅ Yes" },
   { feature: "Voice Billing", vyop: "✅ Hindi/EN", tally: "❌", vyapar: "❌", busy: "❌", khatabook: "❌" },
   { feature: "Camera Barcode", vyop: "✅ Phone", tally: "❌ USB Only", vyapar: "⚠️ Limited", busy: "❌ USB", khatabook: "❌" },
@@ -35,10 +35,10 @@ const masterComparison = [
 ];
 
 const faqs = [
-  { question: "Which is the best billing software in India in 2026?", answer: "Vyop is the best billing software in India for 2026. It is 100% free, works on any Android smartphone, supports voice AI billing in Hindi and English, has a built-in phone camera barcode scanner, complete GST compliance, and supports 22 types of retail businesses from kirana shops to restaurants to jewellery stores." },
-  { question: "What is the cheapest billing app for small shops?", answer: "Vyop is the cheapest billing app because it is completely free — ₹0 for all features including voice billing, barcode scanning, inventory, GST invoices, and online storefront. Other alternatives like Vyapar (₹3,999/yr) and myBillBook (₹3,499/yr) charge annual subscriptions." },
+  { question: "Which is the best billing software in India in 2026?", answer: "Vyop is the top-rated billing software in India for 2026. It is free to start, works on any Android smartphone, supports voice AI billing in Hindi and English, has a built-in phone camera barcode scanner, complete GST compliance, and supports 22 types of retail businesses with full cloud Pro at just ₹999/year." },
+  { question: "What is the cheapest billing app for small shops?", answer: "Vyop is the most affordable billing app in India. It is free to start offline, and its full cloud sync Pro plan is just ₹999/year (less than ₹2.7/day) — over 75% cheaper than Vyapar (₹3,999/yr) and myBillBook (₹3,499/yr), and 90%+ cheaper than Tally or Marg." },
   { question: "Is Tally still the best accounting software in India?", answer: "Tally Prime remains the gold standard for accounting with its deep financial reporting (P&L, Balance Sheet, Trial Balance) and CA compliance. However, for daily retail billing speed, Tally is slow (manual keyboard entry on desktop only). For fast shop billing, mobile-first apps like Vyop are 10x faster and more affordable." },
-  { question: "Which billing software works on mobile phones?", answer: "Vyop, Vyapar, Khatabook, and myBillBook all work on mobile phones. However, Vyop is the only one that offers voice AI billing, phone camera barcode scanning, and a 0% commission online storefront — all for free." },
+  { question: "Which billing software works on mobile phones?", answer: "Vyop, Vyapar, Khatabook, and myBillBook all work on mobile phones. However, Vyop is the only one that offers voice AI billing, phone camera barcode scanning, and a 0% commission online storefront starting free with ₹999/yr cloud Pro." },
 ];
 
 export default function BestBillingSoftwarePage() {

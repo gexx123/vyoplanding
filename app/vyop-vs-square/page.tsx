@@ -5,13 +5,13 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Vyop vs Square POS | Best Free POS Alternative for India",
-  description: "Compare Vyop vs Square POS. Square charges 2.6% per transaction and requires $299+ hardware. Vyop is 100% free with Indian GST, UPI, Hindi voice billing & smartphone barcode POS.",
+  description: "Compare Vyop vs Square POS. Square charges 2.6% per transaction and requires $299+ hardware. Vyop is free to start with Indian GST, UPI, Hindi voice billing & ₹999/yr Pro cloud sync.",
   alternates: { canonical: "/vyop-vs-square" },
   openGraph: { title: "Vyop vs Square POS | Free Indian POS Alternative", url: "https://vyop.in/vyop-vs-square" },
 };
 
 const comparison = [
-  { feature: "Pricing", vyop: "₹0 (100% Free)", square: "Free App + 2.6% + 10¢ Per Transaction" },
+  { feature: "Pricing", vyop: "Free to Start / ₹999/yr Pro", square: "Free App + 2.6% + 10¢ Per Transaction" },
   { feature: "Transaction Fees", vyop: "₹0 (Zero Transaction Fee)", square: "2.6% + 10¢ per swipe/tap/dip" },
   { feature: "Hardware Required", vyop: "Any Android Phone (₹0 extra)", square: "$299+ Card Reader + $799+ Terminal" },
   { feature: "Indian GST Support", vyop: "✅ Full CGST/SGST/IGST/HSN", square: "❌ US Sales Tax Only" },
@@ -53,8 +53,8 @@ export default function VyopVsSquarePage() {
           <div className="p-8 rounded-3xl bg-gradient-to-br from-amber-500 to-amber-600 text-white shadow-lg relative">
             <span className="absolute top-4 right-4 px-3 py-1 bg-white/20 text-white rounded-full text-xs font-bold">Made for India</span>
             <h3 className="text-xl font-bold mb-2">Vyop POS</h3>
-            <div className="text-3xl font-extrabold mb-4">₹0 + ₹0 Hardware + ₹0 Fees</div>
-            <p className="text-sm text-white/90">Free voice AI billing, phone camera barcode scanner, Indian GST, UPI QR payments, and WhatsApp invoices.</p>
+            <div className="text-3xl font-extrabold mb-4">Free / ₹999/yr Pro</div>
+            <p className="text-sm text-white/90">Free voice AI billing, phone camera barcode scanner, Indian GST, 0% fee UPI QR payments, and WhatsApp invoices.</p>
           </div>
         </div>
 

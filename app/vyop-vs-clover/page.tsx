@@ -6,18 +6,18 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Vyop vs Clover POS | Best Free Indian POS Alternative to Clover",
   description:
-    "Compare Vyop vs Clover POS. Clover requires $599-$1,799 proprietary hardware plus $14.95-$84.95/month software subscriptions and lacks Indian GST, Hindi voice AI & UPI. Vyop is 100% free on Android with voice AI.",
+    "Compare Vyop vs Clover POS. Clover requires $599-$1,799 proprietary hardware plus $14.95-$84.95/month software subscriptions and lacks Indian GST, Hindi voice AI & UPI. Vyop offers Android POS with voice AI, starting free with ₹999/yr Pro cloud sync.",
   alternates: { canonical: "/vyop-vs-clover" },
   openGraph: {
     title: "Vyop vs Clover POS | Free Mobile Alternative in India",
-    description: "Looking for a Clover POS alternative in India? Vyop offers smartphone camera barcode POS, Hindi voice billing, and Indian GST for ₹0.",
+    description: "Looking for a Clover POS alternative in India? Vyop offers smartphone camera barcode POS, Hindi voice billing, Indian GST, and ₹999/yr Pro cloud sync.",
     url: "https://vyop.in/vyop-vs-clover",
   },
 };
 
 const comparison = [
   { feature: "Hardware Cost", vyop: "₹0 (Use Your Android Phone)", competitor: "$599 – $1,799 (₹50,000 – ₹1,50,000)", better: "vyop" },
-  { feature: "Monthly Software Fee", vyop: "₹0 Free Forever", competitor: "$14.95 – $84.95 / month (₹15,000 – ₹85,000/yr)", better: "vyop" },
+  { feature: "Monthly Software Fee", vyop: "Free to Start / ₹999/yr Pro", competitor: "$14.95 – $84.95 / month (₹15,000 – ₹85,000/yr)", better: "vyop" },
   { feature: "Transaction Fee / Commission", vyop: "0% on UPI QR & Cash", competitor: "2.3% + 10¢ per transaction", better: "vyop" },
   { feature: "Indian GST (CGST/SGST/IGST)", vyop: "✅ Full Native Compliance", competitor: "❌ US Sales Tax Only (No Indian GST)", better: "vyop" },
   { feature: "UPI QR Code Payments", vyop: "✅ Auto Dynamic UPI QR", competitor: "❌ No Indian UPI Integration", better: "vyop" },
@@ -31,8 +31,8 @@ const comparison = [
 ];
 
 const faqs = [
-  { question: "Can Clover POS be used in India?", answer: "Not practically. Clover is built for US, Canadian, and European payment processors. It does not integrate with Indian UPI (Google Pay, PhonePe, Paytm), cannot calculate Indian CGST/SGST, and requires importing expensive proprietary terminals ($599+) that have no local warranty in India. Vyop is built specifically for Indian retail and runs on any standard Android phone for ₹0." },
-  { question: "How much does Clover POS cost compared to Vyop?", answer: "Clover costs between $599 and $1,799 (₹50,000 to ₹1,50,000) for hardware, plus $14.95 to $84.95 per month (₹15,000 to ₹85,000/year) in software fees, plus a 2.3% + 10¢ fee on every card swipe. Vyop costs ₹0 for lifetime software, runs on your existing phone, and charges 0% fees on UPI payments." },
+  { question: "Can Clover POS be used in India?", answer: "Not practically. Clover is built for US, Canadian, and European payment processors. It does not integrate with Indian UPI (Google Pay, PhonePe, Paytm), cannot calculate Indian CGST/SGST, and requires importing expensive proprietary terminals ($599+) that have no local warranty in India. Vyop is built specifically for Indian retail and runs on any standard Android phone — free to start with ₹999/yr Pro cloud sync." },
+  { question: "How much does Clover POS cost compared to Vyop?", answer: "Clover costs between $599 and $1,799 (₹50,000 to ₹1,50,000) for hardware, plus $14.95 to $84.95 per month (₹15,000 to ₹85,000/year) in software fees, plus a 2.3% + 10¢ fee on every card swipe. Vyop runs on your existing phone starting free, charges 0% fees on UPI payments, and offers full Pro cloud sync for just ₹999/year." },
   { question: "How does Vyop's smartphone camera scanner compare to Clover's hardware?", answer: "Vyop turns your existing smartphone camera into an AI-powered barcode scanner that reads manufacturer barcodes in under 0.2 seconds. You get the same fast supermarket checkout experience without purchasing a ₹50,000 terminal." },
   { question: "Does Clover support voice-activated billing?", answer: "No. Clover relies on touchscreens and physical barcode scanners. Vyop is the only POS featuring natural Voice AI billing in Hindi, Hinglish, and English, letting you speak item names and quantities to generate bills in 5 seconds." },
 ];
@@ -52,7 +52,7 @@ export default function VyopVsCloverPage() {
           </h1>
           <p className="text-xl text-[var(--text-secondary)] max-w-2xl mx-auto">
             Clover is a massive global brand, but expensive and incompatible with Indian retail.{" "}
-            <strong className="text-gray-900">Vyop gives you enterprise POS features, camera barcode scanning, and Hindi voice AI — 100% free on your mobile phone.</strong>
+            <strong className="text-gray-900">Vyop gives you enterprise POS features, camera barcode scanning, and Hindi voice AI — free to start with ₹999/yr Pro cloud sync on your mobile phone.</strong>
           </p>
         </div>
 
@@ -66,9 +66,9 @@ export default function VyopVsCloverPage() {
             </p>
           </div>
           <div className="p-8 rounded-3xl bg-gradient-to-br from-amber-500 to-amber-600 text-white shadow-lg relative">
-            <span className="absolute top-4 right-4 px-3 py-1 bg-white/20 text-white rounded-full text-xs font-bold">100% Free Forever</span>
+            <span className="absolute top-4 right-4 px-3 py-1 bg-white/20 text-white rounded-full text-xs font-bold">Lowest in India</span>
             <h3 className="text-xl font-bold mb-2">Vyop POS</h3>
-            <div className="text-3xl font-extrabold mb-4">₹0 / Lifetime</div>
+            <div className="text-3xl font-extrabold mb-4">Free / ₹999/yr Pro</div>
             <p className="text-sm text-white/90 leading-relaxed">
               Runs on your existing Android phone. Zero hardware fees, 0% UPI transaction fees, native Indian GST compliance, Hindi voice AI, and 0% commission online storefront.
             </p>
@@ -119,7 +119,7 @@ export default function VyopVsCloverPage() {
         <div className="text-center p-12 rounded-3xl bg-amber-50 border border-amber-200">
           <h2 className="text-3xl font-extrabold mb-4 font-display">Get Enterprise POS Speed on Your Phone</h2>
           <p className="text-gray-600 mb-6 max-w-xl mx-auto">
-            Why spend ₹1,00,000 on imported POS hardware? Vyop gives you mall-grade POS features for ₹0.
+            Why spend ₹1,00,000 on imported POS hardware? Vyop gives you mall-grade POS features on your phone — free to start with ₹999/yr Pro cloud sync.
           </p>
           <a
             href="https://play.google.com/store/apps/details?id=com.vyop.app"

@@ -14,8 +14,8 @@ const comparisons = [
   {
     slug: "vyop-vs-loyverse",
     title: "Vyop vs Loyverse POS",
-    badge: "100% Free vs Paid Add-ons",
-    summary: "Loyverse charges $5-$25/mo per add-on without Indian GST or UPI. Vyop gives you Voice AI, GST, and inventory 100% free.",
+    badge: "₹999/yr vs $660/yr Add-ons",
+    summary: "Loyverse charges $5-$25/mo per add-on without Indian GST or UPI. Vyop gives you Voice AI, GST, and cloud sync starting free.",
     link: "/vyop-vs-loyverse",
   },
   {
@@ -28,15 +28,15 @@ const comparisons = [
   {
     slug: "vyop-vs-petpooja",
     title: "Vyop vs Petpooja",
-    badge: "Free vs ₹15,000/yr",
-    summary: "Petpooja locks restaurants into expensive annual subscriptions. Vyop offers voice KOT, table billing, and online ordering for ₹0.",
+    badge: "₹999/yr vs ₹15,000/yr",
+    summary: "Petpooja locks restaurants into expensive annual subscriptions. Vyop offers voice KOT, table billing, and online ordering starting free.",
     link: "/vyop-vs-petpooja",
   },
   {
     slug: "vyop-vs-marg",
     title: "Vyop vs Marg ERP 9+",
     badge: "Zero PC vs ₹15,000 Dongle",
-    summary: "Marg requires dedicated Windows PCs, hardware dongles, and AMC fees. Vyop gives you mobile camera barcode scanning for ₹0.",
+    summary: "Marg requires dedicated Windows PCs, hardware dongles, and AMC fees. Vyop gives you mobile camera barcode scanning on any smartphone.",
     link: "/vyop-vs-marg",
   },
   {
@@ -64,28 +64,28 @@ const comparisons = [
     slug: "vyop-vs-swipe",
     title: "Vyop vs Swipe Billing",
     badge: "Voice AI vs Paid Tier",
-    summary: "Swipe charges ₹1,299-₹3,999/yr for premium features. Vyop includes Voice AI in Hindi, camera POS, and clean invoices for ₹0.",
+    summary: "Swipe charges ₹1,299-₹3,999/yr for premium features. Vyop includes Voice AI in Hindi, camera POS, and clean invoices starting free.",
     link: "/vyop-vs-swipe",
   },
   {
     slug: "vyop-vs-posist",
     title: "Vyop vs POSist (Restroworks)",
-    badge: "Free vs ₹30,000/yr Outlet",
-    summary: "POSist charges enterprise fees per outlet. Vyop gives cafes and restaurants voice KOT, table management, and QR ordering for ₹0.",
+    badge: "₹999/yr vs ₹30,000/yr Outlet",
+    summary: "POSist charges enterprise fees per outlet. Vyop gives cafes and restaurants voice KOT, table management, and QR ordering starting free.",
     link: "/vyop-vs-posist",
   },
   {
     slug: "vyop-vs-clover",
     title: "Vyop vs Clover POS",
-    badge: "Indian GST & ₹0 vs $599+",
-    summary: "Clover requires imported $599+ hardware and monthly fees without Indian GST or UPI. Vyop runs 100% free on Android.",
+    badge: "Made for India vs $599+",
+    summary: "Clover requires imported $599+ hardware and monthly fees without Indian GST or UPI. Vyop runs directly on your Android phone.",
     link: "/vyop-vs-clover",
   },
   {
     slug: "vyop-vs-shopify",
     title: "Vyop vs Shopify POS",
     badge: "0% Commission vs $39-$89/mo",
-    summary: "Shopify charges recurring USD fees and transaction cuts. Vyop gives you both a camera POS and a 0% commission online store for ₹0.",
+    summary: "Shopify charges recurring USD fees and transaction cuts. Vyop gives you both a camera POS and a 0% commission online store starting free.",
     link: "/vyop-vs-shopify",
   },
   {
@@ -139,7 +139,7 @@ export default function CompareHubPage() {
             Vyop vs <span className="gradient-text">Top POS & Billing Apps</span>
           </h1>
           <p className="text-lg text-[var(--text-secondary)]">
-            Compare Vyop against global and Indian POS software. See why camera barcode scanning, voice AI in Hindi, and ₹0 lifetime pricing makes Vyop the smarter choice for retail shops.
+            Compare Vyop against global and Indian POS software. See why camera barcode scanning, voice AI in Hindi, and ₹999/yr Pro cloud sync make Vyop the smarter choice for retail shops.
           </p>
 
           <div className="mt-6 flex flex-wrap justify-center gap-3">
@@ -216,7 +216,7 @@ export default function CompareHubPage() {
             <tbody className="divide-y divide-gray-100 text-sm">
               <tr>
                 <td className="py-4 px-4 font-semibold text-gray-900">Base Price</td>
-                <td className="py-4 px-4 font-bold text-green-700 bg-amber-50/30">₹0 Free Forever</td>
+                <td className="py-4 px-4 font-bold text-green-700 bg-amber-50/30">Free / ₹999/yr Pro</td>
                 <td className="py-4 px-4 text-gray-600">$5-$25/mo add-ons</td>
                 <td className="py-4 px-4 text-gray-600">2.6% + 10¢ fee</td>
                 <td className="py-4 px-4 text-gray-600">₹12,000-₹25,000/yr</td>

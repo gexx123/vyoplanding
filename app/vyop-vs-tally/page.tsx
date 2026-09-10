@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 const tallyComparison = [
   {
     feature: "Pricing & Annual License",
-    vyop: "100% Free to Download & Use",
+    vyop: "Free to Start / ₹999/yr Pro (Save ₹17,000+)",
     tally: "₹18,000+ GST/yr (Single User) / ₹54,000+ (Multi-user)",
     better: "vyop",
   },
@@ -121,9 +121,9 @@ export default function VyopVsTallyPage() {
               Shopkeeper Favourite
             </span>
             <h3 className="text-xl font-bold mb-2">Vyop AI</h3>
-            <div className="text-3xl font-extrabold mb-4">₹0 (100% Free)</div>
+            <div className="text-3xl font-extrabold mb-4">Free / ₹999/yr Pro</div>
             <p className="text-sm text-white/90 leading-relaxed">
-              Works on both Android smartphones and any Desktop PC/Laptop browser. Create bills by speaking in Hindi or English, scan barcodes, and sync everywhere for ₹0.
+              Works on both Android smartphones and any Desktop PC/Laptop browser. Create bills by speaking in Hindi or English, scan barcodes, and sync everywhere starting free with ₹999/yr cloud Pro.
             </p>
           </div>
         </div>

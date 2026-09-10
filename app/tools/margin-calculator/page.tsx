@@ -234,7 +234,7 @@ export default function ProfitMarginCalculatorPage() {
             Track Real-Time Margins on Every Item with Vyop POS
           </h2>
           <p className="text-gray-600 max-w-xl mx-auto mb-6 text-sm leading-relaxed">
-            Vyop automatically tracks cost prices, selling prices, and category profit margins on your phone. See daily net profit reports with zero math. 100% Free Forever.
+            Vyop automatically tracks cost prices, selling prices, and category profit margins on your phone. See daily net profit reports with zero math. Free to start with ₹999/yr Pro cloud sync.
           </p>
           <a
             href="https://play.google.com/store/apps/details?id=com.vyop.app"

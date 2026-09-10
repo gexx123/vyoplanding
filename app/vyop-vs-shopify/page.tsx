@@ -6,17 +6,17 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Vyop vs Shopify POS | Best Free Retail & Online Storefront Alternative in India",
   description:
-    "Compare Vyop vs Shopify POS. Shopify charges $39-$89/month plus transaction fees and lacks Indian GST, Hindi voice billing & offline counter speed. Vyop provides 100% free POS and a 0% commission online storefront with Voice AI.",
+    "Compare Vyop vs Shopify POS. Shopify charges $39-$89/month plus transaction fees and lacks Indian GST, Hindi voice billing & offline counter speed. Vyop provides affordable POS and a 0% commission online storefront with Voice AI starting free with ₹999/yr Pro cloud sync.",
   alternates: { canonical: "/vyop-vs-shopify" },
   openGraph: {
     title: "Vyop vs Shopify POS | Free Retail & Online Store Alternative",
-    description: "Why Indian retailers choose Vyop over Shopify: ₹0 monthly subscription, 0% commission online storefront, smartphone camera barcode POS, and Hindi voice AI.",
+    description: "Why Indian retailers choose Vyop over Shopify: ₹999/yr pricing (save ₹50,000+), 0% commission online storefront, smartphone camera barcode POS, and Hindi voice AI.",
     url: "https://vyop.in/vyop-vs-shopify",
   },
 };
 
 const comparison = [
-  { feature: "Monthly Subscription Fee", vyop: "₹0 (100% Free Forever)", competitor: "$39 – $89 / month (₹38,000 – ₹88,000/yr)", better: "vyop" },
+  { feature: "Subscription Fee", vyop: "Free to Start / ₹999/yr Pro", competitor: "$39 – $89 / month (₹38,000 – ₹88,000/yr)", better: "vyop" },
   { feature: "Online Store Commission", vyop: "0% Commission", competitor: "Shopify Transaction Fees (0.5% – 2%)", better: "vyop" },
   { feature: "Voice AI Billing (Hindi/English)", vyop: "✅ Speak to Bill in 5 Seconds", competitor: "❌ Not Available", better: "vyop" },
   { feature: "Smartphone Camera Barcode POS", vyop: "✅ Built-in Instant Camera POS", competitor: "Requires Separate Hardware Scanner", better: "vyop" },
@@ -31,7 +31,7 @@ const comparison = [
 ];
 
 const faqs = [
-  { question: "Why is Vyop a better choice than Shopify POS for Indian retailers?", answer: "Shopify charges minimum $39/month (₹3,200/mo) for the basic plan, and $89/month per location for Shopify POS Pro. Adding payment gateway fees, third-party GST plugins, and currency conversion makes it cost over ₹80,000 to ₹1,50,000 every year. Vyop gives you both an in-store camera barcode POS and a 0% commission online storefront (with customer spin-wheel rewards) 100% free forever." },
+  { question: "Why is Vyop a better choice than Shopify POS for Indian retailers?", answer: "Shopify charges minimum $39/month (₹3,200/mo) for the basic plan, and $89/month per location for Shopify POS Pro. Adding payment gateway fees, third-party GST plugins, and currency conversion makes it cost over ₹80,000 to ₹1,50,000 every year. Vyop gives you both an in-store camera barcode POS and a 0% commission online storefront (with customer spin-wheel rewards) starting free, with complete Pro cloud sync at just ₹999/year — saving you ₹50,000+ annually." },
   { question: "Does Vyop include an online store like Shopify?", answer: "Yes! Every Vyop user gets their own dedicated online storefront link (e.g., vyop.shop/yourbusiness) where customers can browse your product catalog, spin the reward wheel for discount coupons, and place orders directly on WhatsApp with zero commission fees." },
   { question: "Can Shopify POS handle fast counter billing with voice?", answer: "No. Shopify POS has no voice AI capabilities. To create an order, cashiers must manually tap through iPad screens or search text fields. Vyop allows shopkeepers to speak naturally in Hindi or English (e.g., 'Teen shirt size L aur do jeans') to generate bills in 5 seconds." },
   { question: "How does payment collection compare between Vyop and Shopify?", answer: "Shopify charges 0.5% to 2% transaction fees unless you use their proprietary gateway, plus standard Indian gateway charges. Vyop generates dynamic UPI QR codes directly on invoices, depositing 100% of customer payments directly into your bank account with 0% commission." },
@@ -52,7 +52,7 @@ export default function VyopVsShopifyPage() {
           </h1>
           <p className="text-xl text-[var(--text-secondary)] max-w-2xl mx-auto">
             Shopify costs ₹50,000+ every year in SaaS subscriptions, transaction fees, and plugin costs.{" "}
-            <strong className="text-gray-900">Vyop gives you a smartphone camera POS and a 0% commission online customer storefront with Voice AI — 100% free forever.</strong>
+            <strong className="text-gray-900">Vyop gives you a smartphone camera POS and a 0% commission online customer storefront with Voice AI — free to start with ₹999/yr Pro cloud sync.</strong>
           </p>
         </div>
 
@@ -66,9 +66,9 @@ export default function VyopVsShopifyPage() {
             </p>
           </div>
           <div className="p-8 rounded-3xl bg-gradient-to-br from-amber-500 to-amber-600 text-white shadow-lg relative">
-            <span className="absolute top-4 right-4 px-3 py-1 bg-white/20 text-white rounded-full text-xs font-bold">100% Free Forever</span>
+            <span className="absolute top-4 right-4 px-3 py-1 bg-white/20 text-white rounded-full text-xs font-bold">Lowest in India</span>
             <h3 className="text-xl font-bold mb-2">Vyop POS</h3>
-            <div className="text-3xl font-extrabold mb-4">₹0 / Lifetime</div>
+            <div className="text-3xl font-extrabold mb-4">Free / ₹999/yr Pro</div>
             <p className="text-sm text-white/90 leading-relaxed">
               0% commission online storefront + smartphone camera barcode POS. Voice AI in Hindi/English, 10 inventory methods, Indian GST, dynamic UPI QR, and Spin-The-Wheel rewards.
             </p>
@@ -117,9 +117,9 @@ export default function VyopVsShopifyPage() {
 
         {/* Bottom CTA */}
         <div className="text-center p-12 rounded-3xl bg-amber-50 border border-amber-200">
-          <h2 className="text-3xl font-extrabold mb-4 font-display">Get Your Store & POS Free Today</h2>
+          <h2 className="text-3xl font-extrabold mb-4 font-display">Get Your Store & POS Started Today</h2>
           <p className="text-gray-600 mb-6 max-w-xl mx-auto">
-            Sell in your shop with camera barcode POS, and sell online with your own 0% commission storefront. ₹0 forever.
+            Sell in your shop with camera barcode POS, and sell online with your own 0% commission storefront — free to start with ₹999/yr Pro cloud sync.
           </p>
           <a
             href="https://play.google.com/store/apps/details?id=com.vyop.app"

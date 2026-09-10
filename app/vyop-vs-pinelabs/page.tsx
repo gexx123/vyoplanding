@@ -6,11 +6,11 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Vyop vs Pine Labs POS | Free Mobile POS Alternative (No Monthly Rental)",
   description:
-    "Compare Vyop vs Pine Labs POS machine. Pine Labs charges ₹500-₹1,200/month machine rental plus transaction MDR fees. Vyop gives you mobile POS, camera barcode scanning, and direct 0% MDR UPI QR payments for ₹0 forever.",
+    "Compare Vyop vs Pine Labs POS machine. Pine Labs charges ₹500-₹1,200/month machine rental plus transaction MDR fees. Vyop gives you mobile POS, camera barcode scanning, and direct 0% MDR UPI QR payments starting free with ₹999/yr Pro cloud sync.",
   alternates: { canonical: "/vyop-vs-pinelabs" },
   openGraph: {
     title: "Vyop vs Pine Labs POS | Zero Monthly Rental POS",
-    description: "Stop paying ₹500-₹1,200/mo for POS hardware rentals. Switch to Vyop: 100% free smartphone POS with 0% MDR UPI payments and camera barcode scanning.",
+    description: "Stop paying ₹500-₹1,200/mo for POS hardware rentals. Switch to Vyop: smartphone POS with 0% MDR UPI payments, camera barcode scanning, and ₹999/yr Pro cloud sync.",
     url: "https://vyop.in/vyop-vs-pinelabs",
   },
 };
@@ -31,7 +31,7 @@ const comparison = [
 ];
 
 const faqs = [
-  { question: "Why switch from a Pine Labs POS machine to Vyop?", answer: "Pine Labs charges ongoing monthly rentals of ₹500 to ₹1,200 per machine, plus transaction MDR fees on card swipes and security deposits. If the machine breaks, repair charges and downtime hurt your business. Vyop runs directly on your smartphone for ₹0 with zero monthly rentals, zero contracts, and 0% MDR on UPI QR payments." },
+  { question: "Why switch from a Pine Labs POS machine to Vyop?", answer: "Pine Labs charges ongoing monthly rentals of ₹500 to ₹1,200 per machine, plus transaction MDR fees on card swipes and security deposits. If the machine breaks, repair charges and downtime hurt your business. Vyop runs directly on your smartphone with zero monthly machine rentals, zero contracts, 0% MDR on UPI QR payments, and just ₹999/year for full Pro cloud sync." },
   { question: "How does payment collection work on Vyop without a card swipe machine?", answer: "Over 85% of retail transactions in India now happen via UPI (Google Pay, PhonePe, Paytm). Vyop automatically prints and displays a dynamic UPI QR code on every bill. Customers scan with their phone and pay directly into your bank account with 0% transaction commission." },
   { question: "Can Vyop scan barcodes as fast as a Pine Labs POS machine?", answer: "Yes! Vyop uses your smartphone's high-definition camera with AI focus, scanning product barcodes in less than 0.2 seconds — faster than many handheld terminal cameras. You can also connect any wireless Bluetooth barcode scanner if desired." },
   { question: "What if my shop loses internet connection?", answer: "Vyop works 100% offline. You can continue scanning items, creating bills, and printing receipts even when the network is completely down. All transaction data automatically syncs to the cloud once connection is restored." },
@@ -52,7 +52,7 @@ export default function VyopVsPineLabsPage() {
           </h1>
           <p className="text-xl text-[var(--text-secondary)] max-w-2xl mx-auto">
             Stop paying ₹500 to ₹1,200 every month just to rent a POS machine.{" "}
-            <strong className="text-gray-900">Vyop turns your smartphone into a high-speed barcode POS with direct UPI payments and voice billing — 100% free forever.</strong>
+            <strong className="text-gray-900">Vyop turns your smartphone into a high-speed barcode POS with direct UPI payments and voice billing — free to start with ₹999/yr Pro cloud sync.</strong>
           </p>
         </div>
 
@@ -68,7 +68,7 @@ export default function VyopVsPineLabsPage() {
           <div className="p-8 rounded-3xl bg-gradient-to-br from-amber-500 to-amber-600 text-white shadow-lg relative">
             <span className="absolute top-4 right-4 px-3 py-1 bg-white/20 text-white rounded-full text-xs font-bold">Zero Monthly Rental</span>
             <h3 className="text-xl font-bold mb-2">Vyop POS</h3>
-            <div className="text-3xl font-extrabold mb-4">₹0 / Lifetime</div>
+            <div className="text-3xl font-extrabold mb-4">Free / ₹999/yr Pro</div>
             <p className="text-sm text-white/90 leading-relaxed">
               Use your existing phone. Zero machine rental, 0% MDR on UPI QR payments, smartphone camera barcode scanning, Hindi voice billing, and free online storefront.
             </p>

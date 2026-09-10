@@ -5,13 +5,13 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Vyop vs Busy Accounting | Free Mobile Alternative to Busy Software",
-  description: "Compare Vyop vs Busy Accounting Software. Busy costs ₹12,000-₹30,000/yr and runs only on Windows desktop. Vyop is free on smartphone and desktop with voice AI billing and barcode POS.",
+  description: "Compare Vyop vs Busy Accounting Software. Busy costs ₹12,000-₹30,000/yr and runs only on Windows desktop. Vyop is free to start on smartphone and desktop with voice AI billing and ₹999/yr Pro cloud sync.",
   alternates: { canonical: "/vyop-vs-busy" },
   openGraph: { title: "Vyop vs Busy Accounting | Free Mobile Alternative", url: "https://vyop.in/vyop-vs-busy" },
 };
 
 const comparison = [
-  { feature: "Pricing", vyop: "₹0 (100% Free)", busy: "₹12,000 – ₹30,000/year" },
+  { feature: "Pricing", vyop: "Free to Start / ₹999/yr Pro", busy: "₹12,000 – ₹30,000/year" },
   { feature: "Platform", vyop: "Android Phone + Web (Any Device)", busy: "Windows Desktop Only" },
   { feature: "Mobile App", vyop: "✅ Full-Featured Android App", busy: "❌ No Mobile App" },
   { feature: "Billing Speed", vyop: "5 Seconds (Voice AI / Barcode Scan)", busy: "2-3 Minutes (Manual Keyboard)" },
@@ -26,9 +26,9 @@ const comparison = [
 ];
 
 const faqs = [
-  { question: "Is Vyop a replacement for Busy Accounting?", answer: "For small and medium retail shops that need fast billing, inventory, and customer management, yes. If you primarily need enterprise-level accounting with trial balance, P&L, and balance sheet for your CA, Busy has deeper accounting features. But for daily retail billing speed and convenience, Vyop is 10x faster and completely free." },
+  { question: "Is Vyop a replacement for Busy Accounting?", answer: "For small and medium retail shops that need fast billing, inventory, and customer management, yes. If you primarily need enterprise-level accounting with trial balance, P&L, and balance sheet for your CA, Busy has deeper accounting features. But for daily retail billing speed and convenience, Vyop is 10x faster and starts completely free with ₹999/yr Pro cloud sync." },
   { question: "Does Busy work on mobile phones?", answer: "No. Busy Accounting is a Windows-only desktop software. It does not have a mobile app. Vyop works on any Android smartphone and also has a web app that works on any desktop browser." },
-  { question: "Why is Busy so expensive?", answer: "Busy charges ₹12,000-₹30,000/year for a single-user license, with multi-user licenses costing even more. It also requires a dedicated Windows PC. Vyop offers all retail billing features completely free on your existing smartphone." },
+  { question: "Why is Busy so expensive?", answer: "Busy charges ₹12,000-₹30,000/year for a single-user license, with multi-user licenses costing even more. It also requires a dedicated Windows PC. Vyop offers free offline billing and an unbeatable ₹999/year Pro plan with cloud sync on your existing smartphone." },
 ];
 
 export default function VyopVsBusyPage() {
@@ -55,8 +55,8 @@ export default function VyopVsBusyPage() {
           <div className="p-8 rounded-3xl bg-gradient-to-br from-amber-500 to-amber-600 text-white shadow-lg relative">
             <span className="absolute top-4 right-4 px-3 py-1 bg-white/20 text-white rounded-full text-xs font-bold">Shopkeeper Favourite</span>
             <h3 className="text-xl font-bold mb-2">Vyop POS</h3>
-            <div className="text-3xl font-extrabold mb-4">₹0 (100% Free)</div>
-            <p className="text-sm text-white/90">Works on Android phones + any desktop browser. Voice billing, barcode scan, GST invoices, and cloud sync — all free.</p>
+            <div className="text-3xl font-extrabold mb-4">Free / ₹999/yr Pro</div>
+            <p className="text-sm text-white/90">Works on Android phones + any desktop browser. Voice billing, barcode scan, GST invoices, and cloud sync — free to start.</p>
           </div>
         </div>
 

@@ -4,19 +4,19 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Vyop vs Swipe Billing App | Best 100% Free GST Billing Alternative",
+  title: "Vyop vs Swipe Billing App | Best Affordable GST Billing Alternative",
   description:
-    "Compare Vyop vs Swipe Billing (getswipe.in). Swipe charges ₹1,299-₹3,999/year for premium plans and lacks Voice AI, camera barcode POS, and interactive storefronts. Vyop is 100% free with Voice AI and 10 ways to add items.",
+    "Compare Vyop vs Swipe Billing (getswipe.in). Swipe charges ₹1,299-₹3,999/year. Vyop offers free offline billing and ₹999/yr Pro cloud sync with Voice AI and 10 ways to add items.",
   alternates: { canonical: "/vyop-vs-swipe" },
   openGraph: {
     title: "Vyop vs Swipe Billing | Free GST Billing App Alternative",
-    description: "Looking for a free Swipe alternative? Vyop provides voice AI billing, smartphone camera POS, and 0% commission storefront with ₹0 subscription fees.",
+    description: "Looking for a modern Swipe alternative? Vyop provides voice AI billing, smartphone camera POS, and 0% commission storefront with lowest ₹999/yr pricing.",
     url: "https://vyop.in/vyop-vs-swipe",
   },
 };
 
 const comparison = [
-  { feature: "Base Price & Subscription", vyop: "₹0 (100% Free Forever)", competitor: "Free tier limited / ₹1,299 – ₹3,999/year", better: "vyop" },
+  { feature: "Base Price & Subscription", vyop: "Free to Start / ₹999/yr Pro", competitor: "Free tier limited / ₹1,299 – ₹3,999/year", better: "vyop" },
   { feature: "Voice AI Billing (Hindi/English)", vyop: "✅ Speak to Bill in 5 Seconds", competitor: "❌ Not Available", better: "vyop" },
   { feature: "Smartphone Camera Barcode Scanner", vyop: "✅ Built-in Instant Camera POS", competitor: "Basic or External Hardware Required", better: "vyop" },
   { feature: "Ways to Add Inventory Items", vyop: "10 Instant Methods (AI, Voice, Camera, Master)", competitor: "Standard Form & Excel Import", better: "vyop" },
@@ -31,8 +31,8 @@ const comparison = [
 ];
 
 const faqs = [
-  { question: "Why is Vyop a better alternative to Swipe Billing?", answer: "While Swipe is good for basic desktop invoicing, it charges ₹1,299 to ₹3,999/year to unlock essential features like custom invoice themes, multiple users, and watermark removal. Furthermore, Swipe does not have Voice AI billing or smartphone camera live barcode scanning. Vyop is 100% free with no watermarks, Voice AI in Hindi/English, and 10 ways to add inventory items." },
-  { question: "Does Vyop charge any renewal or hidden fees?", answer: "No. Vyop has zero license fees, zero yearly renewals, and zero hidden costs. All billing, inventory, barcode scanning, WhatsApp receipts, and online storefront features are 100% free forever." },
+  { question: "Why is Vyop a better alternative to Swipe Billing?", answer: "While Swipe is good for basic desktop invoicing, it charges ₹1,299 to ₹3,999/year to unlock essential features like custom invoice themes, multiple users, and watermark removal. Furthermore, Swipe does not have Voice AI billing or smartphone camera live barcode scanning. Vyop offers a generous free tier and an affordable ₹999/yr Pro plan with Voice AI in Hindi/English, and 10 ways to add inventory items." },
+  { question: "How does Vyop's pricing compare to Swipe?", answer: "Vyop lets you start completely free. For complete multi-device cloud backup and sync, Vyop Pro is just ₹999/year (less than ₹2.7/day) — saving you thousands compared to Swipe's ₹3,999/year subscription." },
   { question: "Can I import my existing product list from Swipe into Vyop?", answer: "Yes! Vyop supports 1-click Excel and CSV inventory import. You can export your product catalog from Swipe and upload it directly into Vyop in under 30 seconds." },
   { question: "How does Vyop's Voice AI work compared to typing on Swipe?", answer: "Instead of typing product names on a keyboard or searching dropdowns, you simply speak naturally into the Vyop app in Hindi or English (e.g., 'Do kilo besan aur ek mustard oil'). The AI instantly detects the item, calculates the price with GST, and prepares the bill in 5 seconds." },
 ];
@@ -52,7 +52,7 @@ export default function VyopVsSwipePage() {
           </h1>
           <p className="text-xl text-[var(--text-secondary)] max-w-2xl mx-auto">
             Swipe charges annual subscription fees to remove watermarks and unlock features.{" "}
-            <strong className="text-gray-900">Vyop gives you Voice AI in Hindi, camera barcode POS, and 10 ways to add items — 100% free forever.</strong>
+            <strong className="text-gray-900">Vyop gives you Voice AI in Hindi, camera barcode POS, and 10 ways to add items — free to start with ₹999/yr Pro cloud sync.</strong>
           </p>
         </div>
 
@@ -66,9 +66,9 @@ export default function VyopVsSwipePage() {
             </p>
           </div>
           <div className="p-8 rounded-3xl bg-gradient-to-br from-amber-500 to-amber-600 text-white shadow-lg relative">
-            <span className="absolute top-4 right-4 px-3 py-1 bg-white/20 text-white rounded-full text-xs font-bold">100% Free Forever</span>
+            <span className="absolute top-4 right-4 px-3 py-1 bg-white/20 text-white rounded-full text-xs font-bold">Lowest in India</span>
             <h3 className="text-xl font-bold mb-2">Vyop POS</h3>
-            <div className="text-3xl font-extrabold mb-4">₹0 / Lifetime</div>
+            <div className="text-3xl font-extrabold mb-4">Free / ₹999/yr Pro</div>
             <p className="text-sm text-white/90 leading-relaxed">
               Clean professional invoices with zero watermark. Voice AI in Hindi/English, smartphone camera barcode scanner, 10 inventory methods, and 0% commission online store.
             </p>
@@ -119,7 +119,7 @@ export default function VyopVsSwipePage() {
         <div className="text-center p-12 rounded-3xl bg-amber-50 border border-amber-200">
           <h2 className="text-3xl font-extrabold mb-4 font-display">Upgrade to India's #1 Voice Billing App</h2>
           <p className="text-gray-600 mb-6 max-w-xl mx-auto">
-            Join thousands of smart retailers who bill 10x faster with voice and camera barcodes. 100% free.
+            Join thousands of smart retailers who bill 10x faster with voice and camera barcodes. Free to start.
           </p>
           <a
             href="https://play.google.com/store/apps/details?id=com.vyop.app"

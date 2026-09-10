@@ -39,8 +39,19 @@ export const metadata: Metadata = {
     "barcode scan karke bill banane wala app",
     "bina computer ke billing software",
     "thermal printer billing app",
-    "kirana dukan billing software",
-    "garment shop billing software",
+    "Kirana dukan billing software",
+    "Grocery shop billing app",
+    "Kapde ki dukan ka billing software",
+    "Garment shop billing app",
+    "Medical store billing software",
+    "Chemist billing app",
+    "Restaurant / Cafe / Dhaba billing software",
+    "Mobile shop billing software",
+    "Hardware & sanitary shop billing software",
+    "Mithai dukan / Bakery billing software",
+    "Footwear / Joote ki dukan ka billing software",
+    "Automobile spare parts billing software",
+    "Stationery shop billing app",
     "retail billing software india",
     "free billing software for retail shop",
     "best billing app for small shopkeeper",
@@ -239,6 +250,10 @@ const faqs = [
   {
     q: "Which types of retail shops can use Vyop?",
     a: "Vyop supports 22+ retail and service categories, including Kirana & Grocery, Clothing & Garments, Footwear, Pharmacy & Medical, Restaurants & Cafes, Mobile & Electronics, Hardware & Sanitary, Sweet Shops & Bakeries, Automobile Spares, Dairy, Fruits & Vegetables, Stationery, Salons, Jewellery, and more.",
+  },
+  {
+    q: "Does Vyop have dedicated features for Kirana, Garment, Medical, Restaurant, and Mobile shops?",
+    a: "Yes! Vyop is tailored specifically for each trade: Kirana shops get loose kg weight conversion and FMCG barcode scanning ('Kirana dukan billing software' / 'Grocery shop billing app'); Garment stores get size/color barcode sticker printing ('Kapde ki dukan ka billing software' / 'Garment shop billing app'); Medical stores get batch number and expiry date warnings ('Medical store billing software' / 'Chemist billing app'); Restaurants and Dhabas get voice KOT generation ('Restaurant / Cafe / Dhaba billing software'); and Mobile shops get IMEI tracking ('Mobile shop billing software'). Hardware, Mithai/Bakery, Footwear, Automobile spares, and Stationery shops also have customized workflows.",
   },
 ];
 
@@ -512,6 +527,53 @@ export default function SmartBillingSoftwarePage() {
               </div>
             </Link>
           ))}
+        </div>
+
+        {/* Popular Shop Searches / Dukan Category Wise Search Chips */}
+        <div className="mt-16 p-8 md:p-10 bg-amber-50/70 rounded-3xl border border-amber-200/80">
+          <div className="text-center max-w-3xl mx-auto mb-8">
+            <span className="text-amber-800 bg-amber-100 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-2 inline-block">
+              दुकान के अनुसार खोजें • Top Category Searches
+            </span>
+            <h3 className="text-2xl md:text-3xl font-extrabold font-display text-gray-900">
+              Popular Shop Billing Searches in India
+            </h3>
+            <p className="text-gray-600 text-sm mt-2">
+              Indian dukandars search these exact terms for their business — Vyop is customized for every single trade:
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            {[
+              { query: "Kirana dukan billing software", alt: "Grocery shop billing app", slug: "kirana-grocery", icon: "🛒" },
+              { query: "Kapde ki dukan ka billing software", alt: "Garment shop billing app", slug: "clothing-apparel", icon: "👗" },
+              { query: "Medical store billing software", alt: "Chemist billing app", slug: "pharmacy-chemist", icon: "💊" },
+              { query: "Restaurant / Cafe / Dhaba billing software", alt: "Fast food KOT billing app", slug: "restaurant-cafe", icon: "🍽️" },
+              { query: "Mobile shop billing software", alt: "Electronics IMEI tracking POS", slug: "electronics-mobile", icon: "📱" },
+              { query: "Hardware & sanitary shop billing software", alt: "Paint & electricals billing app", slug: "hardware-sanitary", icon: "🔧" },
+              { query: "Mithai dukan / Bakery billing software", alt: "Sweet shop weighing scale POS", slug: "bakery-sweet-shop", icon: "🍰" },
+              { query: "Footwear / Joote ki dukan ka billing software", alt: "Shoe store barcode app", slug: "clothing-apparel", icon: "👟" },
+              { query: "Automobile spare parts billing software", alt: "Auto garage repair billing", slug: "auto-parts", icon: "🚗" },
+              { query: "Stationery shop billing app", alt: "Book store GST billing software", slug: "stationery-bookshop", icon: "📚" },
+            ].map((item, idx) => (
+              <Link
+                key={idx}
+                href={`/solutions/${item.slug}`}
+                className="flex items-center gap-3 p-3.5 rounded-2xl bg-white border border-gray-200 hover:border-amber-500 hover:bg-amber-50/60 shadow-sm transition-all group"
+              >
+                <span className="text-2xl p-2 rounded-xl bg-amber-50/80">{item.icon}</span>
+                <div className="flex-1 min-w-0">
+                  <span className="text-xs md:text-sm font-bold text-gray-900 group-hover:text-amber-800 transition-colors block truncate">
+                    &quot;{item.query}&quot;
+                  </span>
+                  <span className="text-[11px] text-gray-500 block truncate">
+                    / &quot;{item.alt}&quot;
+                  </span>
+                </div>
+                <span className="text-xs text-amber-600 font-bold group-hover:translate-x-0.5 transition-transform">→</span>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 

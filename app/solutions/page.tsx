@@ -29,37 +29,55 @@ export const metadata: Metadata = {
     "shop billing software",
     "dukan billing app",
     "retail billing software by industry",
-    "kirana store billing software",
-    "garment shop billing app",
-    "medical store billing software",
-    "restaurant pos billing app",
-    "mobile shop billing software",
-    "hardware shop billing app",
-    "sweet shop billing software",
-    "footwear shop billing app",
+    "Kirana dukan billing software",
+    "Grocery shop billing app",
+    "Kapde ki dukan ka billing software",
+    "Garment shop billing app",
+    "Medical store billing software",
+    "Chemist billing app",
+    "Restaurant / Cafe / Dhaba billing software",
+    "Mobile shop billing software",
+    "Hardware & sanitary shop billing software",
+    "Mithai dukan / Bakery billing software",
+    "Footwear / Joote ki dukan ka billing software",
+    "Automobile spare parts billing software",
+    "Stationery shop billing app",
   ],
+};
+
+const tradeSearchQueries: Record<string, string> = {
+  "kirana-grocery": '"Kirana dukan billing software" / "Grocery shop billing app"',
+  "clothing-apparel": '"Kapde ki dukan ka billing software" / "Garment shop billing app"',
+  "pharmacy-chemist": '"Medical store billing software" / "Chemist billing app"',
+  "restaurant-cafe": '"Restaurant / Cafe / Dhaba billing software"',
+  "electronics-mobile": '"Mobile shop billing software"',
+  "hardware-sanitary": '"Hardware & sanitary shop billing software"',
+  "bakery-sweet-shop": '"Mithai dukan / Bakery billing software"',
+  "auto-parts": '"Automobile spare parts billing software"',
+  "stationery-bookshop": '"Stationery shop billing app"',
+  "sports-fitness": '"Footwear / Joote ki dukan ka billing software"',
 };
 
 const industryCategories = [
   {
-    category: "Grocery, Daily Essentials & FMCG",
-    slugs: ["kirana-grocery", "general-provision", "fruits-vegetables", "dairy-milk", "meat-fish"],
+    category: "Grocery, Supermarket & Daily Essentials",
+    slugs: ["kirana-grocery", "supermarket-departmental", "general-variety", "fruits-vegetables", "dairy-milk", "paan-tobacco", "meat-fish"],
   },
   {
-    category: "Fashion, Apparel & Lifestyle",
-    slugs: ["clothing-apparel", "footwear-shoes", "tailoring-boutique", "jewellery-gold", "optical-eyewear"],
+    category: "Fashion, Garments, Footwear & Lifestyle",
+    slugs: ["clothing-apparel", "sports-fitness", "tailoring-boutique", "jewellery-watch", "optical-eyewear"],
   },
   {
     category: "Food, Dining & Hospitality",
-    slugs: ["restaurant-cafe", "sweet-bakery", "hotel-lodge"],
+    slugs: ["restaurant-cafe", "bakery-sweet-shop", "hotel-lodge"],
   },
   {
-    category: "Electronics, Hardware & Spares",
-    slugs: ["electronics-mobile", "hardware-sanitary", "automobile-spare-parts"],
+    category: "Electronics, Hardware & Automobiles",
+    slugs: ["electronics-mobile", "hardware-sanitary", "auto-parts", "tiles-marble"],
   },
   {
-    category: "Health, Personal Care & Services",
-    slugs: ["pharmacy-chemist", "salon-spa", "stationery-books", "gift-toys", "pet-store", "wholesale-distribution"],
+    category: "Health, Care, Toys & Services",
+    slugs: ["pharmacy-chemist", "salon-beauty", "stationery-bookshop", "toy-shop", "gift-handicraft", "pet-shop", "wholesale-distribution"],
   },
 ];
 
@@ -133,6 +151,13 @@ export default function SolutionsIndexPage() {
                       <h3 className="text-xl font-bold text-gray-900 group-hover:text-amber-700 transition-colors mb-2">
                         {ind.name}
                       </h3>
+
+                      {tradeSearchQueries[ind.slug] && (
+                        <div className="mb-3 px-3 py-1.5 rounded-xl bg-amber-50 border border-amber-200/70 text-[11px] font-semibold text-amber-900 flex items-center gap-1.5">
+                          <span className="text-xs">🔍</span>
+                          <span className="truncate">{tradeSearchQueries[ind.slug]}</span>
+                        </div>
+                      )}
 
                       <p className="text-gray-600 text-sm line-clamp-2 mb-6 leading-relaxed">
                         {ind.subheadline}

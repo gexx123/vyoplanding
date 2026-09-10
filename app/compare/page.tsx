@@ -271,6 +271,45 @@ export default function CompareHubPage() {
             </tbody>
           </table>
         </div>
+
+        {/* Cross-linking to Smart Billing & Solutions */}
+        <div className="mt-16 grid md:grid-cols-2 gap-6">
+          <div className="p-8 rounded-3xl bg-gradient-to-br from-amber-500/10 via-orange-500/5 to-transparent border border-amber-200/60">
+            <span className="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-bold uppercase tracking-wider mb-3">
+              Supermarket POS in Your Pocket
+            </span>
+            <h4 className="text-xl font-bold text-gray-900 mb-2" style={{ fontFamily: "var(--font-display)" }}>
+              Smart Billing Software & Barcode POS
+            </h4>
+            <p className="text-gray-600 text-sm mb-4">
+              Replace ₹25,000 legacy hardware. Discover how smartphone camera barcode scanning and Hindi Voice AI speed up your checkout counter.
+            </p>
+            <Link
+              href="/smart-billing-software"
+              className="inline-flex items-center gap-1.5 font-bold text-amber-600 hover:text-amber-700 text-sm"
+            >
+              Explore Smart Billing Features →
+            </Link>
+          </div>
+
+          <div className="p-8 rounded-3xl bg-gradient-to-br from-blue-500/10 via-indigo-500/5 to-transparent border border-blue-200/60">
+            <span className="inline-block px-3 py-1 rounded-full bg-blue-100 text-blue-900 text-xs font-bold uppercase tracking-wider mb-3">
+              Industry Tailored
+            </span>
+            <h4 className="text-xl font-bold text-gray-900 mb-2" style={{ fontFamily: "var(--font-display)" }}>
+              Shop Billing by Business Type (22+ Trades)
+            </h4>
+            <p className="text-gray-600 text-sm mb-4">
+              Specific billing workflows for Kirana, Garment, Chemist, Cafe, Hardware, Footwear, Mithai, Auto Parts & more.
+            </p>
+            <Link
+              href="/solutions"
+              className="inline-flex items-center gap-1.5 font-bold text-blue-600 hover:text-blue-700 text-sm"
+            >
+              Browse 22+ Shop Categories →
+            </Link>
+          </div>
+        </div>
       </section>
 
       <Footer />

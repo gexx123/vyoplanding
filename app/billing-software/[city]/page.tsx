@@ -4,6 +4,7 @@ import Link from "next/link";
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
 import { cities } from "@/lib/cityData";
+import { industries } from "@/lib/industryData";
 
 export async function generateStaticParams() {
   return cities.map((city) => ({
@@ -208,6 +209,90 @@ export default async function CityLandingPage({ params }: { params: Promise<{ ci
               <p className="text-[var(--text-secondary)]">
                 Never run out of stock in your {city.hubFocus} store. Low-stock alerts notify you before shelves are empty.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Smart Billing & Trade Solutions Cross-Linking */}
+      <section className="py-20 bg-gray-50/70 border-t border-gray-200/60">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="bg-gradient-to-br from-amber-500/10 via-orange-500/5 to-transparent p-8 md:p-10 rounded-3xl border border-amber-200/50 mb-14 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div>
+              <span className="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-bold uppercase tracking-wider mb-2">
+                Smartphone Barcode POS & Voice Invoicing
+              </span>
+              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2" style={{ fontFamily: "var(--font-display)" }}>
+                Smart Billing Software for {city.name} Retailers
+              </h3>
+              <p className="text-gray-600 max-w-2xl text-sm md:text-base">
+                Discover how Vyop replaces expensive desktop POS machines with phone camera barcode scanning, Hindi Voice AI, Bluetooth thermal receipt printing, and your shop&apos;s personal online store.
+              </p>
+            </div>
+            <Link
+              href="/smart-billing-software"
+              className="whitespace-nowrap px-8 py-4 rounded-2xl bg-amber-500 hover:bg-amber-600 text-white font-bold text-base transition-all shadow-md hover:shadow-lg"
+            >
+              Explore Smart Billing →
+            </Link>
+          </div>
+
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+            <div>
+              <h3 className="text-2xl md:text-3xl font-bold text-gray-900" style={{ fontFamily: "var(--font-display)" }}>
+                Billing Solutions by Business Type in {city.name}
+              </h3>
+              <p className="text-gray-600 text-sm md:text-base mt-1">
+                Customized for 22+ retail and wholesale trades across {city.state}
+              </p>
+            </div>
+            <Link
+              href="/solutions"
+              className="text-amber-600 hover:text-amber-700 font-bold text-sm inline-flex items-center gap-1 self-start md:self-auto"
+            >
+              View All 22+ Shop Categories →
+            </Link>
+          </div>
+
+          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+            {industries.slice(0, 4).map((ind) => (
+              <Link
+                key={ind.slug}
+                href={`/solutions/${ind.slug}`}
+                className="bg-white p-6 rounded-2xl border border-gray-200/80 hover:border-amber-400 hover:shadow-md transition-all group"
+              >
+                <div className="text-3xl mb-3">{ind.icon}</div>
+                <h4 className="font-bold text-gray-900 group-hover:text-amber-700 text-base mb-1">
+                  {ind.name}
+                </h4>
+                <p className="text-xs text-gray-500 line-clamp-2">
+                  {ind.subheadline}
+                </p>
+                <span className="text-xs font-semibold text-amber-600 mt-3 inline-block">
+                  View {ind.name} POS →
+                </span>
+              </Link>
+            ))}
+          </div>
+
+          {/* Cross-City Linking Network */}
+          <div className="pt-10 border-t border-gray-200">
+            <h4 className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-4">
+              Vyop Billing Software in Other Commercial Hubs
+            </h4>
+            <div className="flex flex-wrap gap-2">
+              {cities
+                .filter((c) => c.slug !== city.slug)
+                .slice(0, 12)
+                .map((otherCity) => (
+                  <Link
+                    key={otherCity.slug}
+                    href={`/billing-software/${otherCity.slug}`}
+                    className="px-3.5 py-1.5 rounded-full bg-white border border-gray-200 text-xs font-medium text-gray-600 hover:border-amber-400 hover:text-amber-700 hover:bg-amber-50/50 transition-all"
+                  >
+                    Billing Software in {otherCity.name}
+                  </Link>
+                ))}
             </div>
           </div>
         </div>

@@ -822,4 +822,65 @@ export const industries: IndustryData[] = [
       { question: "Can I create banquet event invoices?", answer: "Yes! Create event packages with hall rental, per-plate catering, decoration, DJ, and service charges. Track advance deposits and generate final GST invoices." },
     ],
   },
+  {
+    slug: "footwear-shoes",
+    name: "Footwear & Shoe Stores",
+    tagline: "Shoe Size Matrix (UK/India 4-11), Barcode Box Labels & Brand Tracking",
+    metaTitle: "Footwear & Joote Ki Dukan Ka Billing Software | Shoe Shop POS - Vyop",
+    metaDescription: "Best footwear and joote ki dukan billing software in India. Shoe size & color matrix, custom barcode box stickers, GST invoices, and fast smartphone camera POS billing.",
+    badge: "For Shoe Shops & Footwear Retail",
+    icon: "👟",
+    heroHighlight: "Footwear & Shoe Stores",
+    subheadline: "Manage shoe sizes (UK/India 4-11), colors, and brands without mess. Scan shoe box barcodes with your phone camera, print custom size labels, and bill customers in 5 seconds.",
+    painPoints: [
+      {
+        oldWay: "Digging through dozens of stacked shoe boxes to find the right size and MRP",
+        vyopWay: "Scan any shoe box barcode with your smartphone camera to instantly verify available sizes, colors, and prices in stock",
+      },
+      {
+        oldWay: "Losing track of individual left/right pairs or missing size numbers in running articles",
+        vyopWay: "Clean size-run matrix showing exact quantities for sizes 5, 6, 7, 8, 9, 10, 11 so you reorder missing sizes on time",
+      },
+      {
+        oldWay: "Handwritten receipts with no exchange policy or style reference during customer returns",
+        vyopWay: "Professional WhatsApp bills with article number, size, and 7-day exchange barcode printed directly",
+      },
+    ],
+    features: [
+      {
+        title: "Shoe Size & Variant Matrix",
+        description: "Organize inventory by article code, UK/India size numbers (4 to 12), color, and brand (sports, formal, casual, sandals).",
+        icon: "👞",
+      },
+      {
+        title: "Box Barcode Label Printing",
+        description: "Generate and print custom barcode stickers for local and unbranded shoe boxes with size, article name, and MRP.",
+        icon: "🏷️",
+      },
+      {
+        title: "Fast Camera Barcode Billing",
+        description: "Scan shoe boxes in 0.1 second using your smartphone camera during festival rush hours.",
+        icon: "📱",
+      },
+      {
+        title: "WhatsApp Exchange Invoices",
+        description: "Send digital thermal bills to customer WhatsApp with return/exchange policies and UPI payment QR.",
+        icon: "💬",
+      },
+    ],
+    faqs: [
+      {
+        question: "Can I manage UK and Indian shoe sizes in Vyop?",
+        answer: "Yes! You can set up standard UK/India shoe sizes (e.g. 4, 5, 6, 7, 8, 9, 10, 11) for men, women, and kids under a single article code.",
+      },
+      {
+        question: "Can I print barcode labels for shoe boxes?",
+        answer: "Yes, Vyop includes a free barcode generator and sticker printer that connects with standard 2-inch and 3-inch thermal printers.",
+      },
+      {
+        question: "Does Vyop calculate footwear GST slabs correctly?",
+        answer: "Yes, Vyop automatically calculates footwear GST rates according to Indian GST slabs (under ₹1,000 and above ₹1,000) automatically.",
+      },
+    ],
+  },
 ];

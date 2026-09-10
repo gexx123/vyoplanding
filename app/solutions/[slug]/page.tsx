@@ -256,6 +256,78 @@ export default async function IndustrySolutionPage({
         </div>
       </section>
 
+      {/* Smart POS & Trade Cross-Linking Section */}
+      <section className="py-16 bg-white border-b border-gray-100">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="bg-gradient-to-br from-amber-500/10 via-orange-500/5 to-transparent p-8 md:p-10 rounded-3xl border border-amber-200/50 mb-12 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div>
+              <span className="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-bold uppercase tracking-wider mb-2">
+                Smartphone Barcode POS & Voice Invoicing
+              </span>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2" style={{ fontFamily: "var(--font-display)" }}>
+                Why Buy a ₹25,000 Billing Machine?
+              </h3>
+              <p className="text-gray-600 max-w-xl text-sm md:text-base">
+                See how Vyop turns your existing smartphone into a supermarket-grade barcode billing counter with Bluetooth thermal printing, WhatsApp khata, and your personal online storefront.
+              </p>
+            </div>
+            <Link
+              href="/smart-billing-software"
+              className="whitespace-nowrap px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-white font-bold text-base transition-all shadow-md hover:shadow-lg"
+            >
+              Explore Smart Billing →
+            </Link>
+          </div>
+
+          <div className="flex items-center justify-between mb-8">
+            <div>
+              <h3 className="text-2xl font-bold text-gray-900" style={{ fontFamily: "var(--font-display)" }}>
+                Explore Other Retail Solutions
+              </h3>
+              <p className="text-gray-500 text-sm mt-1">
+                Customized billing, inventory & POS workflows for 22+ retail business types
+              </p>
+            </div>
+            <Link
+              href="/solutions"
+              className="text-amber-600 hover:text-amber-700 font-bold text-sm hidden sm:inline-flex items-center gap-1"
+            >
+              View All 22+ Categories →
+            </Link>
+          </div>
+
+          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
+            {industries
+              .filter((ind) => ind.slug !== industry.slug)
+              .slice(0, 4)
+              .map((other) => (
+                <Link
+                  key={other.slug}
+                  href={`/solutions/${other.slug}`}
+                  className="p-5 rounded-2xl bg-gray-50 hover:bg-amber-50/60 border border-gray-200/60 hover:border-amber-300 transition-all group"
+                >
+                  <div className="text-3xl mb-3">{other.icon}</div>
+                  <h4 className="font-bold text-gray-900 group-hover:text-amber-700 text-sm mb-1 line-clamp-1">
+                    {other.name}
+                  </h4>
+                  <p className="text-xs text-gray-500 line-clamp-2">
+                    {other.subheadline}
+                  </p>
+                </Link>
+              ))}
+          </div>
+
+          <div className="text-center mt-6 sm:hidden">
+            <Link
+              href="/solutions"
+              className="text-amber-600 font-bold text-sm inline-flex items-center gap-1"
+            >
+              View All 22+ Categories →
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-6">

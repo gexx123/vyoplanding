@@ -55,7 +55,7 @@ const tradeSearchQueries: Record<string, string> = {
   "bakery-sweet-shop": '"Mithai dukan / Bakery billing software"',
   "auto-parts": '"Automobile spare parts billing software"',
   "stationery-bookshop": '"Stationery shop billing app"',
-  "sports-fitness": '"Footwear / Joote ki dukan ka billing software"',
+  "footwear-shoes": '"Footwear / Joote ki dukan ka billing software"',
 };
 
 const industryCategories = [
@@ -65,7 +65,7 @@ const industryCategories = [
   },
   {
     category: "Fashion, Garments, Footwear & Lifestyle",
-    slugs: ["clothing-apparel", "sports-fitness", "tailoring-boutique", "jewellery-watch", "optical-eyewear"],
+    slugs: ["clothing-apparel", "footwear-shoes", "sports-fitness", "tailoring-boutique", "jewellery-watch", "optical-eyewear"],
   },
   {
     category: "Food, Dining & Hospitality",

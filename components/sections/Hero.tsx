@@ -45,11 +45,7 @@ export default function Hero() {
         <div
           className="text-center lg:text-left flex flex-col items-center lg:items-start pt-24 pb-12 lg:py-0 w-full lg:w-1/2 px-6 sm:px-12 lg:px-12 xl:px-16 z-20"
         >
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-50 border border-amber-200/80 text-amber-800 text-xs md:text-sm font-semibold mb-6">
-            <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
-            Supermarket Barcode POS Scanner + AI Accountant
-          </div>
+
 
           {/* H1 */}
           <h1

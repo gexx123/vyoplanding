@@ -1,5 +1,6 @@
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
+import CityHubsSection from "@/components/sections/CityHubsSection";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { industries } from "@/lib/industryData";
@@ -609,6 +610,12 @@ export default function SmartBillingSoftwarePage() {
           </div>
         </div>
       </section>
+
+      {/* City Hubs Cross-Links */}
+      <CityHubsSection
+        title="Smart Billing Software Across India"
+        subtitle="Shopkeepers in 65+ cities use Vyop to replace expensive desktop billing machines with mobile smart billing. Find how Vyop works for businesses in your city."
+      />
 
       {/* Section 6: Bottom CTA */}
       <section className="py-20 px-6 max-w-5xl mx-auto text-center">

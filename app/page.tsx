@@ -13,6 +13,7 @@ const Testimonials = dynamic(() => import("@/components/sections/Testimonials"))
 const AEOKnowledgeHub = dynamic(() => import("@/components/sections/AEOKnowledgeHub"));
 const FAQ = dynamic(() => import("@/components/sections/FAQ"));
 const Pricing = dynamic(() => import("@/components/sections/Pricing"));
+const CityHubsSection = dynamic(() => import("@/components/sections/CityHubsSection"));
 const Blog = dynamic(() => import("@/components/sections/Blog"));
 const Footer = dynamic(() => import("@/components/sections/Footer"));
 
@@ -256,6 +257,7 @@ export default function Home() {
       <BenefitsMarquee />
       <Blog />
       <Pricing />
+      <CityHubsSection />
       <Testimonials />
       <AEOKnowledgeHub />
       <FAQ />

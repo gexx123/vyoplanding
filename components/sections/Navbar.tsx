@@ -1,12 +1,21 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
+const billingDropdownCities = [
+  { name: "Bangalore", slug: "bangalore" },
+  { name: "Surat", slug: "surat" },
+  { name: "Mumbai", slug: "mumbai" },
+  { name: "Delhi", slug: "delhi" },
+  { name: "Ahmedabad", slug: "ahmedabad" },
+  { name: "Jaipur", slug: "jaipur" },
+];
+
 const navLinks = [
-  { label: "Smart Billing", href: "/smart-billing-software" },
+  { label: "Smart Billing", href: "/smart-billing-software", hasDropdown: true },
   { label: "POS App", href: "/pos-app" },
   { label: "Shop Types", href: "/solutions" },
   { label: "Compare", href: "/compare" },
@@ -19,6 +28,10 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [billingDropdownOpen, setBillingDropdownOpen] = useState(false);
+  const [mobileBillingExpanded, setMobileBillingExpanded] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const dropdownTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
@@ -93,20 +106,100 @@ export default function Navbar() {
 
         {/* Desktop Nav Links */}
         <div className="hidden lg:flex items-center gap-7">
-          {navLinks.map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              onClick={(e) => handleNavClick(e, link.href)}
-              className="transition-colors duration-200 hover:text-[var(--brand-primary)] text-[14px] font-medium"
-              style={{
-                fontFamily: "var(--font-body)",
-                color: "var(--text-secondary)",
-              }}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            if (link.hasDropdown) {
+              return (
+                <div
+                  key={link.label}
+                  className="relative"
+                  ref={dropdownRef}
+                  onMouseEnter={() => {
+                    if (dropdownTimeoutRef.current) clearTimeout(dropdownTimeoutRef.current);
+                    setBillingDropdownOpen(true);
+                  }}
+                  onMouseLeave={() => {
+                    dropdownTimeoutRef.current = setTimeout(() => setBillingDropdownOpen(false), 200);
+                  }}
+                >
+                  <Link
+                    href={link.href}
+                    className="transition-colors duration-200 hover:text-[var(--brand-primary)] text-[14px] font-medium inline-flex items-center gap-1"
+                    style={{
+                      fontFamily: "var(--font-body)",
+                      color: "var(--text-secondary)",
+                    }}
+                  >
+                    {link.label}
+                    <svg className={`w-3 h-3 transition-transform ${billingDropdownOpen ? 'rotate-180' : ''}`} viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M3 4.5l3 3 3-3" />
+                    </svg>
+                  </Link>
+
+                  <AnimatePresence>
+                    {billingDropdownOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 8 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 8 }}
+                        transition={{ duration: 0.15 }}
+                        className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[280px] bg-white rounded-2xl border border-gray-200 shadow-xl p-4 z-50"
+                      >
+                        <Link
+                          href="/smart-billing-software"
+                          className="flex items-center gap-3 p-3 rounded-xl hover:bg-amber-50 transition-colors mb-1"
+                        >
+                          <span className="text-lg">⚡</span>
+                          <div>
+                            <div className="text-sm font-bold text-gray-900">Smart Billing</div>
+                            <div className="text-[11px] text-gray-500">Voice AI & barcode POS</div>
+                          </div>
+                        </Link>
+                        <Link
+                          href="/billing-software"
+                          className="flex items-center gap-3 p-3 rounded-xl hover:bg-blue-50 transition-colors mb-2"
+                        >
+                          <span className="text-lg">📍</span>
+                          <div>
+                            <div className="text-sm font-bold text-gray-900">Billing by City</div>
+                            <div className="text-[11px] text-gray-500">65+ Indian commercial hubs</div>
+                          </div>
+                        </Link>
+                        <div className="border-t border-gray-100 pt-2 mt-1">
+                          <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider px-3 mb-1.5">Top Cities</div>
+                          <div className="grid grid-cols-2 gap-1">
+                            {billingDropdownCities.map((city) => (
+                              <Link
+                                key={city.slug}
+                                href={`/billing-software/${city.slug}`}
+                                className="px-3 py-1.5 rounded-lg text-xs text-gray-600 hover:text-amber-700 hover:bg-amber-50 transition-colors font-medium"
+                              >
+                                {city.name}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              );
+            }
+
+            return (
+              <Link
+                key={link.label}
+                href={link.href}
+                onClick={(e) => handleNavClick(e, link.href)}
+                className="transition-colors duration-200 hover:text-[var(--brand-primary)] text-[14px] font-medium"
+                style={{
+                  fontFamily: "var(--font-body)",
+                  color: "var(--text-secondary)",
+                }}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
         </div>
 
         {/* Desktop Actions */}
@@ -175,20 +268,61 @@ export default function Navbar() {
             }}
           >
             <div className="px-6 py-6 flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.label}
-                  href={link.href}
-                  onClick={(e) => handleNavClick(e, link.href)}
-                  className="text-base font-medium transition-colors duration-200"
-                  style={{
-                    fontFamily: "var(--font-body)",
-                    color: "var(--text-secondary)",
-                  }}
-                >
-                  {link.label}
-                </Link>
-              ))}
+              {navLinks.map((link) => {
+                if (link.hasDropdown) {
+                  return (
+                    <div key={link.label}>
+                      <button
+                        onClick={() => setMobileBillingExpanded(!mobileBillingExpanded)}
+                        className="flex items-center justify-between w-full text-base font-medium transition-colors duration-200"
+                        style={{
+                          fontFamily: "var(--font-body)",
+                          color: "var(--text-secondary)",
+                        }}
+                      >
+                        {link.label}
+                        <svg className={`w-4 h-4 transition-transform ${mobileBillingExpanded ? 'rotate-180' : ''}`} viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="2">
+                          <path d="M3 4.5l3 3 3-3" />
+                        </svg>
+                      </button>
+                      {mobileBillingExpanded && (
+                        <div className="mt-2 ml-2 flex flex-col gap-2 border-l-2 border-amber-200 pl-4">
+                          <Link href="/smart-billing-software" onClick={() => setMobileOpen(false)} className="text-sm text-gray-600 hover:text-amber-700 font-medium">
+                            ⚡ Smart Billing Software
+                          </Link>
+                          <Link href="/billing-software" onClick={() => setMobileOpen(false)} className="text-sm text-gray-600 hover:text-amber-700 font-medium">
+                            📍 Billing Software by City
+                          </Link>
+                          {billingDropdownCities.map((city) => (
+                            <Link
+                              key={city.slug}
+                              href={`/billing-software/${city.slug}`}
+                              onClick={() => setMobileOpen(false)}
+                              className="text-sm text-gray-500 hover:text-amber-700"
+                            >
+                              {city.name}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  );
+                }
+                return (
+                  <Link
+                    key={link.label}
+                    href={link.href}
+                    onClick={(e) => handleNavClick(e, link.href)}
+                    className="text-base font-medium transition-colors duration-200"
+                    style={{
+                      fontFamily: "var(--font-body)",
+                      color: "var(--text-secondary)",
+                    }}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              })}
 
               <Link
                 href="/internship#verify"

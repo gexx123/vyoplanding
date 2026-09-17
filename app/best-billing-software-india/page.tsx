@@ -1,5 +1,6 @@
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
+import CityHubsSection from "@/components/sections/CityHubsSection";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -105,6 +106,12 @@ export default function BestBillingSoftwarePage() {
           <div className="space-y-5">{faqs.map((faq, idx) => (<div key={idx} className="p-6 rounded-2xl bg-white border border-gray-100 shadow-sm"><h3 className="font-bold text-gray-900 mb-2 text-lg">{faq.question}</h3><p className="text-gray-600 leading-relaxed text-sm md:text-base">{faq.answer}</p></div>))}</div>
         </div>
       </section>
+
+      {/* City Hubs Cross-Links */}
+      <CityHubsSection
+        title="Top-Rated Billing Software in Every Commercial Hub"
+        subtitle="Find why retail shopkeepers across India's top wholesale and retail markets choose Vyop over traditional desktop software."
+      />
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.question, acceptedAnswer: { "@type": "Answer", text: f.answer } })) }) }} />
       <Footer />

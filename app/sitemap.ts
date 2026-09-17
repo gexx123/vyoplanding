@@ -28,6 +28,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }
 
   const staticPages = [
+    { url: `${baseUrl}/billing-software`, priority: 0.95, changeFrequency: 'weekly' },
     { url: `${baseUrl}/blog`, priority: 0.8, changeFrequency: 'daily' },
     { url: `${baseUrl}/billing`, priority: 0.9, changeFrequency: 'daily' },
     { url: `${baseUrl}/tools`, priority: 0.95, changeFrequency: 'weekly' },
@@ -79,14 +80,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ].map(page => ({
     ...page,
     url: page.url,
-    lastModified: page.lastModified || new Date(),
+    lastModified: page.lastModified || new Date('2026-09-18'),
     changeFrequency: page.changeFrequency as any,
   }));
 
   return [
     {
       url: baseUrl,
-      lastModified: new Date(),
+      lastModified: new Date('2026-09-18'),
       changeFrequency: 'daily',
       priority: 1.0,
     },
@@ -94,15 +95,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...blogUrls,
     ...industries.map((ind) => ({
       url: `${baseUrl}/solutions/${ind.slug}`,
-      lastModified: new Date(),
+      lastModified: new Date('2026-09-18'),
       changeFrequency: 'weekly' as any,
       priority: 0.9,
     })),
     ...cities.map((city) => ({
       url: `${baseUrl}/billing-software/${city.slug}`,
-      lastModified: new Date(),
+      lastModified: new Date('2026-09-18'),
       changeFrequency: 'weekly' as any,
-      priority: 0.8,
+      priority: 0.85,
     })),
   ];
 }

@@ -1,5 +1,6 @@
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
+import CityHubsSection from "@/components/sections/CityHubsSection";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -260,6 +261,12 @@ export default function PosAppPage() {
           </div>
         </div>
       </section>
+
+      {/* City Hubs Cross-Links */}
+      <CityHubsSection
+        title="Free POS App for Retailers Across India"
+        subtitle="Whether you run a kirana in Bangalore, a garment shop in Surat, or an electronics store in Delhi, Vyop turns any smartphone into a supermarket barcode POS counter."
+      />
 
       {/* JSON-LD Schema */}
       <script

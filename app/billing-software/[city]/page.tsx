@@ -18,14 +18,24 @@ export async function generateMetadata({ params }: { params: Promise<{ city: str
   if (!city) return {};
 
   return {
-    title: `Best GST Billing Software in ${city.name} — Free to Start | Vyop`,
-    description: `Looking for billing software in ${city.name}? Vyop is a voice-powered GST billing & barcode POS app for ${city.hubFocus} shops in ${city.state}. Free to start, lowest ₹999/yr Pro cloud plan.`,
+    title: `Best Billing & Accounting Software in ${city.name} (No Dealer Needed) | Vyop`,
+    description: `Looking for billing & accounting software or dealers in ${city.name}? Skip ₹15,000+ dealer fees. Vyop is a free mobile barcode POS & GST invoice app with ₹999/yr cloud sync for ${city.name} shops.`,
+    keywords: [
+      `billing software in ${city.name}`,
+      `billing software dealers in ${city.name}`,
+      `accounting software in ${city.name}`,
+      `gst billing software in ${city.name}`,
+      `pos billing app ${city.name}`,
+      `retail billing software ${city.name}`,
+      `kirana billing app ${city.name}`,
+      `thermal printer billing app ${city.name}`,
+    ],
     alternates: {
       canonical: `/billing-software/${city.slug}`,
     },
     openGraph: {
-      title: `Best GST Billing Software in ${city.name} | Vyop`,
-      description: `Voice-powered GST billing, barcode POS & khata app for ${city.name} businesses. Skip dealer fees, start free on mobile with ₹999/yr Pro cloud sync.`,
+      title: `Best Billing & Accounting Software in ${city.name} (No Dealer Needed) | Vyop`,
+      description: `Voice-powered GST billing, barcode POS & accounting khata for ${city.name} businesses. Skip dealer fees, start free on mobile with ₹999/yr Pro cloud sync.`,
       url: `https://vyop.in/billing-software/${city.slug}`,
     },
   };
@@ -45,18 +55,27 @@ export default async function CityLandingPage({ params }: { params: Promise<{ ci
 
       {/* Hero Section */}
       <section className="pt-40 pb-20 px-6 max-w-5xl mx-auto text-center">
+        {/* Breadcrumb Navigation */}
+        <nav aria-label="Breadcrumb" className="mb-6 flex justify-center items-center gap-2 text-xs md:text-sm text-[var(--text-muted)] flex-wrap">
+          <Link href="/" className="hover:text-[var(--brand-primary)] transition-colors">Home</Link>
+          <span>/</span>
+          <Link href="/billing-software" className="hover:text-[var(--brand-primary)] transition-colors">Billing Software</Link>
+          <span>/</span>
+          <span className="text-[var(--text-primary)] font-semibold">{city.name}</span>
+        </nav>
+
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--brand-glow)] text-[var(--brand-primary)] text-sm font-bold mb-6">
           <span className="text-lg">📍</span> Proudly serving {city.name}, {city.state}
         </div>
         
         <h1 className="text-4xl md:text-6xl font-extrabold mb-6" style={{ fontFamily: "var(--font-display)" }}>
-          Free GST Billing Software for <br className="hidden md:block" />
-          <span className="gradient-text">{city.name} Businesses</span>
+          Best Billing & Accounting Software in <br className="hidden md:block" />
+          <span className="gradient-text">{city.name}, {city.state}</span>
         </h1>
         
         <p className="text-xl text-[var(--text-secondary)] max-w-3xl mx-auto mb-10">
-          Whether you run a kirana store, textile shop, or wholesale business in {city.name}&apos;s bustling {city.hubFocus} markets, Vyop is the ultimate voice-powered AI accountant. 
-          Create GST bills, scan barcodes on phone, and track udhar khata instantly—just by speaking.
+          Whether you run a retail shop, kirana store, or wholesale business in {city.name}&apos;s bustling {city.hubFocus} markets, Vyop is your all-in-one AI accountant and barcode POS. 
+          Generate GST invoices, scan barcodes on your smartphone, and track udhar khata instantly—zero computer or local dealer required.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -115,8 +134,8 @@ export default async function CityLandingPage({ params }: { params: Promise<{ ci
               Looking for Billing Software Dealers in {city.name}?
             </h2>
             <p className="text-lg text-[var(--text-secondary)]">
-              Traditional ERP & billing software dealers in {city.name} charge ₹10,000 to ₹25,000 for complex desktop installations and annual maintenance fees. 
-              <span className="font-semibold text-gray-900"> Vyop gives you a supermarket-grade POS in your pocket — free to start with ₹999/yr Pro cloud sync.</span>
+              Traditional ERP & billing software dealers in {city.name} charge ₹10,000 to ₹25,000 for complex desktop installations, barcode guns, and annual maintenance fees. 
+              <span className="font-semibold text-gray-900"> Vyop gives you complete supermarket-grade POS & accounting right in your pocket — free to start with ₹999/yr Pro cloud sync.</span>
             </p>
           </div>
 
@@ -174,6 +193,56 @@ export default async function CityLandingPage({ params }: { params: Promise<{ ci
                   <span>Voice AI billing in Hindi & English — create bills in 5 seconds</span>
                 </li>
               </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Unique Local Market Insights — Critical for SEO differentiation */}
+      <section className="py-20 bg-white border-t border-gray-100">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <span className="inline-block px-4 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-bold uppercase tracking-wider mb-3">
+              Local Market Intelligence
+            </span>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4" style={{ fontFamily: "var(--font-display)" }}>
+              Retail &amp; Wholesale Markets in {city.name}
+            </h2>
+          </div>
+
+          <div className="bg-gradient-to-br from-gray-50 to-white p-8 md:p-10 rounded-3xl border border-gray-200/80 shadow-sm mb-10">
+            <p className="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
+              {city.localMarketInfo}
+            </p>
+
+            <div className="flex flex-wrap gap-2.5">
+              <span className="text-xs font-bold text-gray-500 uppercase tracking-wider self-center mr-1">Key Markets:</span>
+              {city.famousMarkets.map((market) => (
+                <span
+                  key={market}
+                  className="px-3.5 py-1.5 rounded-full bg-white border border-gray-200 text-sm font-medium text-gray-800 shadow-sm"
+                >
+                  📍 {market}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className="grid sm:grid-cols-3 gap-6">
+            <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm text-center">
+              <div className="text-3xl mb-2">📊</div>
+              <h3 className="font-bold text-gray-900 text-sm mb-1">Complete GST Accounting</h3>
+              <p className="text-xs text-gray-500">GSTR-1, GSTR-3B reports, HSN mapping, and e-way bill support for {city.name} businesses</p>
+            </div>
+            <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm text-center">
+              <div className="text-3xl mb-2">🏪</div>
+              <h3 className="font-bold text-gray-900 text-sm mb-1">{city.hubFocus.charAt(0).toUpperCase() + city.hubFocus.slice(1)} Ready</h3>
+              <p className="text-xs text-gray-500">Inventory workflows tailored for {city.name}&apos;s dominant {city.hubFocus} retail sector</p>
+            </div>
+            <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm text-center">
+              <div className="text-3xl mb-2">🔗</div>
+              <h3 className="font-bold text-gray-900 text-sm mb-1">Local Printer Support</h3>
+              <p className="text-xs text-gray-500">Works with all Bluetooth thermal printers available at computer shops in {city.name}</p>
             </div>
           </div>
         </div>
@@ -298,40 +367,104 @@ export default async function CityLandingPage({ params }: { params: Promise<{ ci
         </div>
       </section>
 
-      {/* FAQ Schema */}
+      {/* Structured Data: SoftwareApplication, Breadcrumbs, FAQ */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": [
-              {
-                "@type": "Question",
-                "name": `Is Vyop billing software available in ${city.name}?`,
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": `Yes! Vyop is a cloud-based mobile app available for all retail and wholesale businesses in ${city.name} and across ${city.state}. You can download it directly from Google Play Store.`
+          __html: JSON.stringify([
+            {
+              "@context": "https://schema.org",
+              "@type": "SoftwareApplication",
+              "name": `Vyop Billing & Accounting Software - ${city.name}`,
+              "operatingSystem": "Android, iOS, Web, Windows",
+              "applicationCategory": "BusinessApplication",
+              "applicationSubCategory": "Point of Sale & Invoicing",
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.8",
+                "ratingCount": "1240",
+                "bestRating": "5",
+                "worstRating": "1"
+              },
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "INR",
+                "description": "Free starter plan with ₹999/year Pro cloud sync"
+              },
+              "areaServed": {
+                "@type": "City",
+                "name": city.name,
+                "containedInPlace": {
+                  "@type": "AdministrativeArea",
+                  "name": city.state
                 }
               },
-              {
-                "@type": "Question",
-                "name": `Where can I find billing software dealers in ${city.name}?`,
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": `You do not need a physical dealer or distributor in ${city.name}! Traditional dealers charge ₹15,000+ for setup. Vyop installs free on any Android smartphone in under 30 seconds with 24/7 online support.`
+              "description": `Free GST billing, voice invoicing, smartphone barcode POS, and udhar khata accounting software for retail & wholesale businesses in ${city.name}, ${city.state}.`
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://vyop.in"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Billing Software",
+                  "item": "https://vyop.in/billing-software"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": city.name,
+                  "item": `https://vyop.in/billing-software/${city.slug}`
                 }
-              },
-              {
-                "@type": "Question",
-                "name": `Can Vyop handle GST billing and thermal receipt printing in ${city.name}?`,
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Absolutely. Vyop supports both GST and non-GST billing, wireless 2-inch and 3-inch Bluetooth thermal printers, and instant WhatsApp bill sharing."
+              ]
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": `Where can I find billing software dealers in ${city.name}?`,
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": `You do not need a physical dealer or distributor in ${city.name}! Traditional billing software dealers charge ₹12,000 to ₹25,000 for PC installation and yearly AMC. Vyop is a cloud-based mobile POS and accounting app that installs on your smartphone in under 30 seconds for free, backed by 24/7 direct WhatsApp and video onboarding.`
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": `Is Vyop suitable for accounting and GST filing in ${city.name}?`,
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": `Yes. Vyop handles complete business accounting in ${city.name}, including sales invoices, purchase records, expense tracking, party-wise digital udhar khata with WhatsApp payment links, and GSTR-1 & GSTR-3B tax report generation.`
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": `What hardware do I need for billing in ${city.name}?`,
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": `Zero specialized hardware required. Your smartphone camera acts as a high-speed barcode scanner. Vyop connects wirelessly via Bluetooth to standard 2-inch and 3-inch thermal receipt printers available in ${city.name}, or you can share digital bills directly via WhatsApp.`
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": `Does Vyop work offline in ${city.name} if internet goes down?`,
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": `Yes, Vyop works 100% offline. You can scan barcodes, generate bills, and record transactions even without an internet connection in your shop. All data syncs automatically to the cloud once you are back online.`
+                  }
                 }
-              }
-            ]
-          })
+              ]
+            }
+          ])
         }}
       />
 

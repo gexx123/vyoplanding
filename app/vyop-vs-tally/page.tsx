@@ -41,6 +41,12 @@ const tallyComparison = [
     better: "vyop",
   },
   {
+    feature: "Scan Unbarcoded Products (AI Vision)",
+    vyop: "Built-in AI Vision — snap photo of loose goods to bill in 0.2s",
+    tally: "Not available (Requires manual ledger lookup & typing)",
+    better: "vyop",
+  },
+  {
     feature: "Accounting Learning Curve",
     vyop: "Zero — Any shop helper can use it in 2 minutes",
     tally: "High — Requires accounting training & voucher understanding",

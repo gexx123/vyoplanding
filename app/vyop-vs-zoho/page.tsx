@@ -19,6 +19,7 @@ const comparison = [
   { feature: "Base Price", vyop: "Free to Start / ₹999/yr Pro", competitor: "Free tier limited / ₹8,999+ per year", better: "vyop" },
   { feature: "Retail Counter Speed", vyop: "⚡ 5-Second Checkout", competitor: "Slow Desk Form Filling", better: "vyop" },
   { feature: "Smartphone Camera Barcode Scanner", vyop: "✅ Built-in (Scan with Camera)", competitor: "❌ Not Available for Retail Counter", better: "vyop" },
+  { feature: "Scan Unbarcoded Products (AI Vision)", vyop: "✅ Built-in AI Vision (Snap loose goods to bill in 0.2s)", competitor: "❌ Not Available", better: "vyop" },
   { feature: "Voice AI Billing (Hindi/English)", vyop: "✅ Natural Voice Recognition", competitor: "❌ Not Available", better: "vyop" },
   { feature: "Offline Billing (No Internet)", vyop: "✅ Works 100% Offline", competitor: "❌ Requires Active Internet Connection", better: "vyop" },
   { feature: "Indian GST & Dynamic UPI QR", vyop: "✅ Auto CGST/SGST + UPI QR on Bills", competitor: "✅ GST Invoices (Payment Gateway fee extra)", better: "vyop" },

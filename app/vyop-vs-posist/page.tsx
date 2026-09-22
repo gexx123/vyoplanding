@@ -21,6 +21,8 @@ const comparison = [
   { feature: "Hardware Required", vyop: "Any Android Smartphone / Tablet", competitor: "Dedicated POS Terminal / PC", better: "vyop" },
   { feature: "Kitchen Order Ticket (KOT)", vyop: "✅ Voice KOT + Bluetooth Print", competitor: "✅ Thermal / KDS Screen", better: "tie" },
   { feature: "Voice AI KOT Billing", vyop: "✅ Speak: '2 Butter Naan, 1 Paneer'", competitor: "❌ Not Available", better: "vyop" },
+  { feature: "AI Visual Bakery & Food Scanner", vyop: "✅ Snap photo to bill unbarcoded items in 0.2s", competitor: "❌ Not Available (Touch screen only)", better: "vyop" },
+  { feature: "Smartphone Camera Barcode Scanner", vyop: "✅ Built-in Phone Camera Barcode POS (0.05s)", competitor: "❌ Requires External Hardware Scanner", better: "vyop" },
   { feature: "Table Management & Running Tabs", vyop: "✅ Included Free", competitor: "✅ Included in Enterprise Tier", better: "tie" },
   { feature: "QR Code Table Menu Ordering", vyop: "✅ Free 0% Commission Storefront", competitor: "Paid Add-on Module", better: "vyop" },
   { feature: "Split Billing & Item Discounts", vyop: "✅ One-Tap Split & Custom Discount", competitor: "✅ Standard Support", better: "tie" },

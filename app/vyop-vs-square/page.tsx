@@ -14,6 +14,7 @@ const comparison = [
   { feature: "Pricing", vyop: "Free to Start / ₹999/yr Pro", square: "Free App + 2.6% + 10¢ Per Transaction" },
   { feature: "Transaction Fees", vyop: "₹0 (Zero Transaction Fee)", square: "2.6% + 10¢ per swipe/tap/dip" },
   { feature: "Hardware Required", vyop: "Any Android Phone (₹0 extra)", square: "$299+ Card Reader + $799+ Terminal" },
+  { feature: "AI Barcode & Product Scanner", vyop: "✅ Phone camera scans barcodes & unbarcoded items with AI", square: "❌ Requires Square hardware scanner" },
   { feature: "Indian GST Support", vyop: "✅ Full CGST/SGST/IGST/HSN", square: "❌ US Sales Tax Only" },
   { feature: "UPI & India Payments", vyop: "✅ UPI QR, Google Pay, PhonePe", square: "❌ Card-Only (US/EU Systems)" },
   { feature: "Voice AI Billing", vyop: "✅ Hindi, English & Hinglish", square: "❌ Not Available" },

@@ -14,6 +14,7 @@ const comparisonData = [
   { feature: "Full POS & Cloud Sync", vyop: "Free to Start / ₹999/yr Pro", khatabook: "Free Basic / ₹2,999/yr Premium", better: "vyop" },
   { feature: "Billing Method", vyop: "Voice AI + Camera POS Scanner", khatabook: "Manual Typing", better: "vyop" },
   { feature: "Smartphone Barcode Scanner", vyop: "Built-in (Scan & Create Barcodes)", khatabook: "Not Supported", better: "vyop" },
+  { feature: "Scan Unbarcoded Products (AI Vision)", vyop: "Built-in AI Vision (Snap loose goods to bill in 0.2s)", khatabook: "Not Supported", better: "vyop" },
   { feature: "Ways to Add Items", vyop: "10 Instant Ways (AI, Invoice, Barcode, Voice)", khatabook: "1 Manual Way", better: "vyop" },
   { feature: "Direct Online Storefront", vyop: "0% Commission Link + Spin Wheel", khatabook: "Basic Ledger Link", better: "vyop" },
   { feature: "Time to Create Bill", vyop: "~5-10 Seconds", khatabook: "~2 Minutes", better: "vyop" },

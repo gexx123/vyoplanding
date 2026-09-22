@@ -18,7 +18,8 @@ export const metadata: Metadata = {
 const comparison = [
   { feature: "Base Price & Subscription", vyop: "Free to Start / ₹999/yr Pro", competitor: "Free tier limited / ₹1,299 – ₹3,999/year", better: "vyop" },
   { feature: "Voice AI Billing (Hindi/English)", vyop: "✅ Speak to Bill in 5 Seconds", competitor: "❌ Not Available", better: "vyop" },
-  { feature: "Smartphone Camera Barcode Scanner", vyop: "✅ Built-in Instant Camera POS", competitor: "Basic or External Hardware Required", better: "vyop" },
+  { feature: "Smartphone Camera Barcode Scanner", vyop: "✅ Built-in 60 FPS Camera POS", competitor: "Basic or External Hardware Required", better: "vyop" },
+  { feature: "Scan Unbarcoded Products (AI Vision)", vyop: "✅ Built-in AI Vision (Snap photo of loose goods to bill in 0.2s)", competitor: "❌ Not Available (Forces manual typing)", better: "vyop" },
   { feature: "Ways to Add Inventory Items", vyop: "10 Instant Methods (AI, Voice, Camera, Master)", competitor: "Standard Form & Excel Import", better: "vyop" },
   { feature: "Customer Online Storefront", vyop: "✅ Free Store + Spin-The-Wheel Game", competitor: "Basic E-commerce Store Link", better: "vyop" },
   { feature: "WhatsApp Invoicing & UPI QR", vyop: "✅ 1-Tap Direct WhatsApp Bills", competitor: "✅ Supported (Branded in Paid Tier)", better: "vyop" },

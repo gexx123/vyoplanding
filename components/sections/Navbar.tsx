@@ -156,12 +156,22 @@ export default function Navbar() {
                         </Link>
                         <Link
                           href="/billing-software"
-                          className="flex items-center gap-3 p-3 rounded-xl hover:bg-blue-50 transition-colors mb-2"
+                          className="flex items-center gap-3 p-3 rounded-xl hover:bg-blue-50 transition-colors mb-1"
                         >
                           <span className="text-lg">📍</span>
                           <div>
                             <div className="text-sm font-bold text-gray-900">Billing by City</div>
                             <div className="text-[11px] text-gray-500">65+ Indian commercial hubs</div>
+                          </div>
+                        </Link>
+                        <Link
+                          href="/features/barcode-scanner"
+                          className="flex items-center gap-3 p-3 rounded-xl hover:bg-emerald-50 transition-colors mb-2"
+                        >
+                          <span className="text-lg">📷</span>
+                          <div>
+                            <div className="text-sm font-bold text-gray-900">AI Barcode Scanner</div>
+                            <div className="text-[11px] text-gray-500">Turn phone into supermarket POS</div>
                           </div>
                         </Link>
                         <div className="border-t border-gray-100 pt-2 mt-1">
@@ -292,6 +302,9 @@ export default function Navbar() {
                           </Link>
                           <Link href="/billing-software" onClick={() => setMobileOpen(false)} className="text-sm text-gray-600 hover:text-amber-700 font-medium">
                             📍 Billing Software by City
+                          </Link>
+                          <Link href="/features/barcode-scanner" onClick={() => setMobileOpen(false)} className="text-sm text-gray-600 hover:text-amber-700 font-medium">
+                            📷 AI Barcode & Product Scanner
                           </Link>
                           {billingDropdownCities.map((city) => (
                             <Link

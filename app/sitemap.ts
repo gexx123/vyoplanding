@@ -64,6 +64,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${baseUrl}/vyop-vs-clover`, priority: 0.9, changeFrequency: 'weekly' },
     { url: `${baseUrl}/vyop-vs-shopify`, priority: 0.9, changeFrequency: 'weekly' },
     { url: `${baseUrl}/features/barcode-scanner`, priority: 0.95, changeFrequency: 'weekly' },
+    { url: `${baseUrl}/barcode-scanner`, priority: 1.0, changeFrequency: 'weekly' },
+    { url: `${baseUrl}/barcode-scanner/mobile-barcode-scanner`, priority: 0.95, changeFrequency: 'weekly' },
+    { url: `${baseUrl}/barcode-scanner/barcode-scanner-for-billing`, priority: 0.95, changeFrequency: 'weekly' },
     { url: `${baseUrl}/features/online-storefront`, priority: 0.95, changeFrequency: 'weekly' },
     { url: `${baseUrl}/features/ten-ways-to-add-items`, priority: 0.95, changeFrequency: 'weekly' },
     { url: `${baseUrl}/hi`, priority: 0.9, changeFrequency: 'daily' },
@@ -80,14 +83,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ].map(page => ({
     ...page,
     url: page.url,
-    lastModified: page.lastModified || new Date('2026-09-18'),
+    lastModified: page.lastModified || new Date('2026-09-22'),
     changeFrequency: page.changeFrequency as any,
   }));
 
   return [
     {
       url: baseUrl,
-      lastModified: new Date('2026-09-18'),
+      lastModified: new Date('2026-09-22'),
       changeFrequency: 'daily',
       priority: 1.0,
     },
@@ -95,13 +98,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...blogUrls,
     ...industries.map((ind) => ({
       url: `${baseUrl}/solutions/${ind.slug}`,
-      lastModified: new Date('2026-09-18'),
+      lastModified: new Date('2026-09-22'),
       changeFrequency: 'weekly' as any,
       priority: 0.9,
     })),
     ...cities.map((city) => ({
       url: `${baseUrl}/billing-software/${city.slug}`,
-      lastModified: new Date('2026-09-18'),
+      lastModified: new Date('2026-09-22'),
       changeFrequency: 'weekly' as any,
       priority: 0.85,
     })),

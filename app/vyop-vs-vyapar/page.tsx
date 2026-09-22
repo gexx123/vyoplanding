@@ -14,6 +14,7 @@ const comparisonData = [
   { feature: "Annual Pricing", vyop: "Free to Start / ₹999/yr Pro (Save 75%+)", vyapar: "₹3,999 – ₹5,999/year", better: "vyop" },
   { feature: "Billing Speed & Method", vyop: "Ultra-Fast (Voice AI + Camera Barcode POS)", vyapar: "Manual (Keyboard/Touch)", better: "vyop" },
   { feature: "Smartphone Barcode Scanner", vyop: "Built-in Camera Scanner & Barcode Generator", vyapar: "Requires External Hardware Scanner", better: "vyop" },
+  { feature: "Scan Unbarcoded Products (AI Vision)", vyop: "Built-in AI Vision (Snap photo of loose item to bill in 0.2s)", vyapar: "Not Supported (Requires manual typing)", better: "vyop" },
   { feature: "Ways to Add Products", vyop: "10 Instant Ways (AI, Invoice, Barcode, Voice)", vyapar: "Manual Form Entry", better: "vyop" },
   { feature: "Direct Online Storefront", vyop: "0% Commission Link + Spin Wheel Rewards", vyapar: "Basic Catalog PDF Link", better: "vyop" },
   { feature: "Ease of Use", vyop: "Extremely Simple (Speak or Scan)", vyapar: "Requires Learning & Setup", better: "vyop" },

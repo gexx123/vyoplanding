@@ -161,6 +161,12 @@ export default function CompareHubPage() {
             >
               10 Best POS Systems Guide
             </Link>
+            <Link
+              href="/features/barcode-scanner"
+              className="inline-flex items-center px-4 py-2 rounded-full text-xs font-bold border border-amber-300 bg-amber-50 text-amber-900 hover:bg-amber-100 transition-colors"
+            >
+              ⚡ AI Barcode & Product Scanner
+            </Link>
           </div>
         </div>
 
@@ -224,13 +230,31 @@ export default function CompareHubPage() {
                 <td className="py-4 px-4 text-gray-600">₹22,500+ GST</td>
               </tr>
               <tr>
-                <td className="py-4 px-4 font-semibold text-gray-900">Smartphone Camera Barcode POS</td>
-                <td className="py-4 px-4 font-bold text-green-700 bg-amber-50/30">Built-in (Free)</td>
+                <td className="py-4 px-4 font-semibold text-gray-900">Smartphone Camera Barcode POS (0.05s)</td>
+                <td className="py-4 px-4 font-bold text-green-700 bg-amber-50/30">Built-in 60 FPS (Free)</td>
                 <td className="py-4 px-4 text-gray-600">Basic</td>
                 <td className="py-4 px-4 text-gray-600">Hardware reader req.</td>
                 <td className="py-4 px-4 text-gray-600">Hardware gun req.</td>
                 <td className="py-4 px-4 text-gray-600">External gun req.</td>
                 <td className="py-4 px-4 text-gray-600">External gun req.</td>
+              </tr>
+              <tr>
+                <td className="py-4 px-4 font-semibold text-gray-900">Scan Unbarcoded Products (AI Vision)</td>
+                <td className="py-4 px-4 font-bold text-green-700 bg-amber-50/30">Built-in (Snap photo to bill with AI)</td>
+                <td className="py-4 px-4 text-red-500">No (Manual typing)</td>
+                <td className="py-4 px-4 text-red-500">No (Manual typing)</td>
+                <td className="py-4 px-4 text-red-500">No (Manual typing)</td>
+                <td className="py-4 px-4 text-red-500">No (Manual typing)</td>
+                <td className="py-4 px-4 text-red-500">No (Manual typing)</td>
+              </tr>
+              <tr>
+                <td className="py-4 px-4 font-semibold text-gray-900">Custom Barcode Sticker Label Printing</td>
+                <td className="py-4 px-4 font-bold text-green-700 bg-amber-50/30">Built-in (Bluetooth 58/80mm)</td>
+                <td className="py-4 px-4 text-gray-600">Paid add-on</td>
+                <td className="py-4 px-4 text-gray-600">External printer only</td>
+                <td className="py-4 px-4 text-gray-600">Restricted KOT only</td>
+                <td className="py-4 px-4 text-gray-600">Paid desktop tier</td>
+                <td className="py-4 px-4 text-gray-600">Requires 3rd party tool</td>
               </tr>
               <tr>
                 <td className="py-4 px-4 font-semibold text-gray-900">Voice AI Billing (Hindi/English)</td>

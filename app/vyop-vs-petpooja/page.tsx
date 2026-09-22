@@ -15,6 +15,8 @@ const comparison = [
   { feature: "Contract Lock-in", vyop: "No Contract. Cancel Anytime.", petpooja: "12-Month Minimum Lock-in" },
   { feature: "Hardware Required", vyop: "Any Android Phone or Tablet", petpooja: "Dedicated POS Terminal Required" },
   { feature: "Voice KOT Generation", vyop: "✅ Speak Orders ('2 Butter Naan, 1 Dal')", petpooja: "❌ Manual Touch/Tap Only" },
+  { feature: "AI Visual Bakery & Item Scanner", vyop: "✅ Point phone camera at sweets/food to bill in 0.2s", petpooja: "❌ Manual Screen Tap Only" },
+  { feature: "Smartphone Camera Barcode Scanner", vyop: "✅ Built-in Phone Camera Barcode POS (0.05s)", petpooja: "❌ Requires External USB Scanner" },
   { feature: "Table Management", vyop: "✅ Visual Table Status", petpooja: "✅ Advanced Table Management" },
   { feature: "QR Code Digital Menu", vyop: "✅ Free QR Table Menus", petpooja: "✅ Digital Menu (Paid Add-on)" },
   { feature: "Online Ordering (Direct)", vyop: "✅ 0% Commission Own Store", petpooja: "⚠️ Aggregator Integrations (Zomato/Swiggy)" },

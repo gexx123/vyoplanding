@@ -41,6 +41,12 @@ const myBillBookComparison = [
     better: "vyop",
   },
   {
+    feature: "Scan Unbarcoded Products (AI Vision)",
+    vyop: "Point camera at any loose item or packaging to recognize & bill with AI (Zero typing)",
+    mybillbook: "Not supported (Forces slow manual keyboard search)",
+    better: "vyop",
+  },
+  {
     feature: "Customer Online Storefront",
     vyop: "0% Commission live store link with Spin-the-Wheel rewards",
     mybillbook: "Standard catalog with limited marketing features",

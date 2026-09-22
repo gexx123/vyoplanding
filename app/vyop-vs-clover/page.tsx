@@ -23,6 +23,7 @@ const comparison = [
   { feature: "UPI QR Code Payments", vyop: "✅ Auto Dynamic UPI QR", competitor: "❌ No Indian UPI Integration", better: "vyop" },
   { feature: "Voice AI Billing", vyop: "✅ Hindi, English & Hinglish", competitor: "❌ Not Available", better: "vyop" },
   { feature: "Smartphone Camera Barcode POS", vyop: "✅ Built-in Instant Camera POS", competitor: "❌ Requires Proprietary Scanner", better: "vyop" },
+  { feature: "Scan Unbarcoded Products (AI Vision)", vyop: "✅ Built-in AI Vision (Snap loose goods to bill in 0.2s)", competitor: "❌ Not Available", better: "vyop" },
   { feature: "Ways to Add Products", vyop: "10 Instant Methods", competitor: "1 Standard Web Dashboard", better: "vyop" },
   { feature: "WhatsApp Digital Invoicing", vyop: "✅ 1-Tap Direct WhatsApp Bills", competitor: "Email & SMS (US Carriers)", better: "vyop" },
   { feature: "Offline Billing Capability", vyop: "✅ 100% Offline (Auto Sync)", competitor: "Limited Offline Mode", better: "vyop" },

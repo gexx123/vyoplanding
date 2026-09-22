@@ -26,6 +26,8 @@ const comparison = [
   { feature: "UPI QR Code Payments", vyop: "✅ Built-in UPI QR", loyverse: "❌ No UPI Support", better: "vyop" },
   { feature: "WhatsApp Invoicing", vyop: "✅ 1-Tap WhatsApp Bills", loyverse: "❌ Not Available", better: "vyop" },
   { feature: "Ways to Add Products", vyop: "10 Instant Methods", loyverse: "1 Manual Entry", better: "vyop" },
+  { feature: "Scan Unbarcoded Products (AI Vision)", vyop: "✅ Built-in AI Vision (Snap photo to bill in 0.2s)", loyverse: "❌ Not Available", better: "vyop" },
+  { feature: "Smartphone Camera Barcode Scanner", vyop: "✅ Built-in 60 FPS Phone Camera Barcode POS", loyverse: "Basic Barcode Scan Only", better: "vyop" },
   { feature: "0% Commission Online Store", vyop: "✅ Live Storefront + Spin Wheel", loyverse: "❌ Not Available", better: "vyop" },
   { feature: "Offline Mode", vyop: "✅ Full Offline + Auto Sync", loyverse: "✅ Offline Mode", better: "tie" },
   { feature: "Supported Languages", vyop: "Hindi, English, Hinglish", loyverse: "English Only", better: "vyop" },

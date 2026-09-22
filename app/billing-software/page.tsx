@@ -99,10 +99,10 @@ export default function BillingSoftwareDirectoryPage() {
 
           <div className="grid sm:grid-cols-3 gap-6 text-left">
             <div className="bg-white p-6 rounded-2xl border border-gray-200/80 shadow-sm">
-              <div className="text-3xl mb-3">📱</div>
-              <h3 className="font-bold text-gray-900 text-lg mb-2">Zero Extra Hardware</h3>
+              <div className="text-3xl mb-3">📷</div>
+              <h3 className="font-bold text-gray-900 text-lg mb-2">Phone Barcode & AI Scanner</h3>
               <p className="text-sm text-[var(--text-secondary)]">
-                Use your existing Android phone. No need to purchase desktop PCs, UPS backups, or external barcode guns.
+                Turn your smartphone camera into a supermarket barcode scanner. Scan barcodes or snap photos of unbarcoded items to bill at mall speeds.
               </p>
             </div>
             <div className="bg-white p-6 rounded-2xl border border-gray-200/80 shadow-sm">

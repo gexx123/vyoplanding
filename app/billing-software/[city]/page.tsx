@@ -29,6 +29,9 @@ export async function generateMetadata({ params }: { params: Promise<{ city: str
       `retail billing software ${city.name}`,
       `kirana billing app ${city.name}`,
       `thermal printer billing app ${city.name}`,
+      `barcode scanner billing app ${city.name}`,
+      `mobile barcode scanner for shop ${city.name}`,
+      `turn phone into barcode scanner ${city.name}`,
     ],
     alternates: {
       canonical: `/billing-software/${city.slug}`,
@@ -182,7 +185,7 @@ export default async function CityLandingPage({ params }: { params: Promise<{ ci
                 </li>
                 <li className="flex items-start gap-2.5">
                   <span className="text-emerald-600 font-bold mt-0.5">✓</span>
-                  <span>Works on any Android phone — camera acts as supermarket barcode POS</span>
+                  <span><strong>AI Mobile Barcode POS:</strong> Point phone camera to scan barcodes or snap photos of loose unbarcoded items</span>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <span className="text-emerald-600 font-bold mt-0.5">✓</span>
@@ -298,12 +301,20 @@ export default async function CityLandingPage({ params }: { params: Promise<{ ci
                 Discover how Vyop replaces expensive desktop POS machines with phone camera barcode scanning, Hindi Voice AI, Bluetooth thermal receipt printing, and your shop&apos;s personal online store.
               </p>
             </div>
-            <Link
-              href="/smart-billing-software"
-              className="whitespace-nowrap px-8 py-4 rounded-2xl bg-amber-500 hover:bg-amber-600 text-white font-bold text-base transition-all shadow-md hover:shadow-lg"
-            >
-              Explore Smart Billing →
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <Link
+                href="/barcode-scanner"
+                className="whitespace-nowrap px-6 py-3.5 rounded-2xl bg-black hover:bg-gray-800 text-white font-bold text-sm transition-all shadow-md text-center"
+              >
+                Mobile Barcode Scanner →
+              </Link>
+              <Link
+                href="/smart-billing-software"
+                className="whitespace-nowrap px-6 py-3.5 rounded-2xl bg-amber-500 hover:bg-amber-600 text-white font-bold text-sm transition-all shadow-md hover:shadow-lg text-center"
+              >
+                Explore Smart Billing →
+              </Link>
+            </div>
           </div>
 
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">

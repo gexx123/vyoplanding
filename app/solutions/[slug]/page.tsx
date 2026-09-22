@@ -26,6 +26,13 @@ export async function generateMetadata({
     alternates: {
       canonical: `/solutions/${industry.slug}`,
     },
+    keywords: [
+      `${industry.name.toLowerCase()} billing software`,
+      `${industry.name.toLowerCase()} pos app`,
+      `${industry.name.toLowerCase()} barcode scanner`,
+      "phone camera barcode scanner",
+      "mobile barcode billing app",
+    ],
     openGraph: {
       title: industry.metaTitle,
       description: industry.metaDescription,
@@ -271,12 +278,20 @@ export default async function IndustrySolutionPage({
                 See how Vyop turns your existing smartphone into a supermarket-grade barcode billing counter with Bluetooth thermal printing, WhatsApp khata, and your personal online storefront.
               </p>
             </div>
-            <Link
-              href="/smart-billing-software"
-              className="whitespace-nowrap px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-white font-bold text-base transition-all shadow-md hover:shadow-lg"
-            >
-              Explore Smart Billing →
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <Link
+                href="/barcode-scanner"
+                className="whitespace-nowrap px-6 py-3.5 rounded-xl bg-black hover:bg-gray-800 text-white font-bold text-sm transition-all shadow-md text-center"
+              >
+                Mobile Barcode Scanner →
+              </Link>
+              <Link
+                href="/smart-billing-software"
+                className="whitespace-nowrap px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-white font-bold text-sm transition-all shadow-md hover:shadow-lg text-center"
+              >
+                Explore Smart Billing →
+              </Link>
+            </div>
           </div>
 
           <div className="flex items-center justify-between mb-8">

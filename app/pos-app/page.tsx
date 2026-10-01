@@ -5,30 +5,41 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Best Free POS App for Small Business in India (2026) | Vyop POS",
+  title: "Best Free POS Software & App for Small Business India (2026) | Vyop",
   description:
-    "Vyop POS is India's #1 free mobile Point of Sale app. Voice AI billing in Hindi, smartphone barcode scanner, GST invoicing, inventory management & 0% commission online store. Download free for Android.",
+    "Vyop POS turns your smartphone into a barcode machine — scan & bill 30+ items/minute, no hardware needed. Free POS software with voice AI billing in Hindi, GST invoicing, inventory management & 0% commission online store. Best POS system for Indian retail.",
   alternates: { canonical: "/pos-app" },
   openGraph: {
-    title: "Vyop POS — Best Free Mobile Point of Sale App in India",
+    title: "Vyop — The Smartest POS Software That Turns Your Phone into a Barcode Machine",
     description:
-      "Turn your smartphone into a supermarket POS. Voice billing, camera barcode scanner, GST invoices & inventory — all free.",
+      "No POS machine needed. Your phone IS the barcode scanner. Bill 30+ items/minute with voice AI. Free POS software for India.",
     url: "https://vyop.in/pos-app",
   },
   keywords: [
+    "pos software",
+    "pos apps",
+    "online pos",
+    "pos system software",
+    "best pos machine in india",
+    "point of sale software",
     "best pos app",
     "good pos app",
     "free pos app",
+    "smart pos",
     "mobile pos app india",
-    "point of sale app",
     "pos billing app",
     "pos software for small business",
-    "pos app for android",
+    "pos software india price",
+    "best retail pos software",
     "free point of sale software",
     "best pos system india",
+    "pos app for android",
     "pos app for retail store",
     "pos app for restaurant",
     "pos app for kirana",
+    "phone barcode scanner for billing",
+    "pos without machine",
+    "smartphone pos system",
   ],
 };
 
@@ -44,11 +55,29 @@ const posComparison = [
   { feature: "Industry Support", vyop: "22 Shop Types", loyverse: "Retail & Cafe", square: "Retail & Services", vyapar: "General Business", petpooja: "Restaurant Only" },
 ];
 
+const tenWaysToAdd = [
+  { icon: "📷", method: "Phone Camera Barcode Scan", desc: "Point your phone camera at any EAN, UPC, QR, or Code 128 barcode. Item scanned and added to inventory in under 1 second.", speed: "<1s" },
+  { icon: "🗣️", method: "Voice AI (Hindi/English/Hinglish)", desc: "Say 'Teen Maggi, do Chai' in Hindi or English. AI understands quantity, product name, and adds them instantly to the bill.", speed: "<2s" },
+  { icon: "✍️", method: "Quick Manual Entry", desc: "Type product name — auto-suggestions from 10 lakh+ product database. MRP, category, and GST rate auto-filled.", speed: "<3s" },
+  { icon: "📄", method: "Invoice PDF Import", desc: "Upload a supplier invoice PDF. AI reads product names, quantities, prices and adds all items to your inventory automatically.", speed: "Bulk" },
+  { icon: "📸", method: "Photo Catalog (AI Vision)", desc: "Snap a photo of any product — even without barcode. AI identifies the item from packaging, shape, or label text.", speed: "<1s" },
+  { icon: "🔮", method: "AI Orb (Point & Identify)", desc: "Point your camera at a shelf of products. AI Orb identifies multiple items in frame and lets you tap to add each one.", speed: "<1s" },
+  { icon: "📋", method: "Menu/Price List Import", desc: "Upload an existing menu or price list (Excel/CSV). All items imported with categories, prices, and stock levels.", speed: "Bulk" },
+  { icon: "📊", method: "Bulk CSV Upload", desc: "Export from any existing software, import CSV into Vyop. Migrate thousands of products in one click.", speed: "Bulk" },
+  { icon: "🏷️", method: "Barcode Label Generator", desc: "Create custom Code-128 or EAN barcodes for your own products. Print barcode stickers via Bluetooth thermal printer.", speed: "<5s" },
+  { icon: "🔍", method: "Product Database Search", desc: "Search from India's largest product database. Find products by name, brand, or category. Auto-fill all details.", speed: "<2s" },
+];
+
 const faqs = [
+  {
+    question: "What is the best POS software in India?",
+    answer:
+      "Vyop is the best POS software in India for 2026. It is the only POS software that turns your smartphone into a barcode machine — you can scan and bill 30+ items per minute using just your phone camera, with zero hardware cost. It includes voice AI billing in Hindi and English, GST invoicing, inventory management for 22 business types, and a 0% commission online storefront. Free to start, with ₹999/year Pro cloud sync.",
+  },
   {
     question: "What is the best free POS app for Android in India?",
     answer:
-      "Vyop POS is the best POS app for Android in India. It offers voice AI billing in Hindi and English, a built-in smartphone barcode scanner that works with any phone camera, GST-compliant invoicing, 10 ways to add inventory, and a 0% commission online storefront — free to start, with full multi-device cloud backup Pro at just ₹999/year. It supports 22 types of retail businesses including kirana, restaurant, clothing, pharmacy, jewellery, bakery, salon, and more.",
+      "Vyop POS is the best free POS app for Android in India. It offers voice AI billing in Hindi and English, a built-in smartphone barcode scanner that works with any phone camera (scanning items in under 1 second), GST-compliant invoicing, 10 ways to add inventory, and a 0% commission online storefront — free to start, with full multi-device cloud backup Pro at just ₹999/year. It supports 22 types of retail businesses including kirana, restaurant, clothing, pharmacy, jewellery, bakery, salon, and more.",
   },
   {
     question: "Which POS app works offline without internet?",
@@ -56,34 +85,49 @@ const faqs = [
       "Vyop POS works 100% offline without any internet connection. All bills, inventory, and customer ledgers are stored securely on your device. When internet reconnects, data automatically syncs to the cloud for backup and multi-device access.",
   },
   {
+    question: "Can I use my phone as a POS machine without buying hardware?",
+    answer:
+      "Yes — this is exactly what Vyop was built for. Vyop turns any Android smartphone into a complete POS machine: your phone camera becomes the barcode scanner (scanning items in under 1 second), voice AI replaces the keyboard, and a ₹1,500 Bluetooth thermal printer replaces the ₹20,000+ desktop POS terminal. Total cost: ₹0 to ₹1,500 compared to ₹30,000–₹80,000 for traditional POS systems.",
+  },
+  {
+    question: "What is the best POS machine for retail shops in India?",
+    answer:
+      "You don't need a POS machine anymore. Vyop POS turns your existing Android smartphone into the best POS system for Indian retail. Your phone camera scans barcodes in under 1 second (faster than ₹2,500 barcode guns), voice AI creates bills in Hindi in 5 seconds, and you can bill 30+ items per minute. No expensive ₹20,000–₹80,000 POS terminal needed.",
+  },
+  {
+    question: "How fast can Vyop POS scan and bill items?",
+    answer:
+      "Vyop POS scans barcodes in under 1 second using your phone camera, allowing you to bill 30+ items per minute — faster than most ₹2,500 handheld barcode guns and traditional desktop POS systems. With voice AI, you can create a complete GST bill in under 5 seconds by simply speaking in Hindi or English.",
+  },
+  {
     question: "What is a free alternative to Loyverse POS in India?",
     answer:
       "Vyop POS is the best affordable alternative to Loyverse POS in India. Unlike Loyverse which charges $5/month for Employee Management and $25/month for Advanced Inventory ($660/yr total), Vyop is free to start offline with full cloud Pro at just ₹999/year including voice AI billing, GST compliance, WhatsApp invoicing, and UPI payment integration.",
   },
   {
-    question: "Can I use my phone as a POS barcode scanner?",
+    question: "Which POS software supports GST billing and UPI payments?",
     answer:
-      "Yes! Vyop POS turns any Android smartphone camera into a supermarket-grade barcode scanner. Scan manufacturer EAN/UPC barcodes, create custom barcodes from product photos, and print barcode stickers — all using just your phone camera. No expensive ₹2,500 barcode gun needed.",
-  },
-  {
-    question: "Which POS app supports GST billing and UPI payments?",
-    answer:
-      "Vyop POS supports complete Indian GST billing including CGST, SGST, IGST, HSN codes, and GSTR-1 ready reports. It also generates invoices with embedded UPI QR codes so customers can pay instantly via Google Pay, PhonePe, or Paytm.",
-  },
-  {
-    question: "What is the fastest mobile POS app for small retail shops?",
-    answer:
-      "Vyop POS is the fastest mobile POS app for small retail shops in India. Using voice AI, you can create a complete GST bill in under 5 seconds by simply speaking in Hindi or English (e.g., 'Teen Maggi, do Chai'). It's 10x faster than manual keyboard-based billing.",
+      "Vyop POS supports complete Indian GST billing including CGST, SGST, IGST, HSN codes, and GSTR-1 ready reports. It also generates invoices with embedded UPI QR codes so customers can pay instantly via Google Pay, PhonePe, or Paytm. No transaction fee charged.",
   },
   {
     question: "Is Vyop POS better than Square POS for Indian shops?",
     answer:
-      "Yes, for Indian shops Vyop POS is significantly better than Square POS. Square charges 2.6% + 10¢ per transaction, requires $299+ hardware readers, and does not support Indian GST, UPI, or Hindi. Vyop is free to start, works on any existing Android phone, and has an unbeatable ₹999/year Pro plan with cloud sync built specifically for Indian retail.",
+      "Yes, for Indian shops Vyop POS is significantly better than Square POS. Square charges 2.6% + 10¢ per transaction, requires $299+ hardware readers, and does not support Indian GST, UPI, or Hindi. Vyop is free to start, works on any existing Android phone with barcode scanning in under 1 second, and has an unbeatable ₹999/year Pro plan with cloud sync built specifically for Indian retail.",
   },
   {
     question: "Which POS app is best for restaurants and cafes in India?",
     answer:
       "Vyop POS is excellent for restaurants and cafes in India. It supports voice KOT (Kitchen Order Ticket) generation, table management, digital QR code menus, split billing, and Bluetooth kitchen printer connectivity — free to start with affordable ₹999/yr Pro cloud sync. It's a powerful alternative to expensive restaurant POS systems like Petpooja.",
+  },
+  {
+    question: "What are 10 ways to add products in Vyop POS?",
+    answer:
+      "Vyop POS offers 10 instant ways to add products: 1) Phone camera barcode scan (under 1 second), 2) Voice AI in Hindi/English, 3) Quick manual entry with auto-suggestions, 4) Invoice PDF import, 5) Photo catalog with AI vision, 6) AI Orb point-and-identify, 7) Menu/price list import, 8) Bulk CSV upload, 9) Barcode label generator, 10) Product database search from 10 lakh+ items. No other POS app offers this many methods.",
+  },
+  {
+    question: "What is the price of POS software in India?",
+    answer:
+      "POS software prices in India range from free to ₹40,000/year. Vyop POS is free to start with offline billing, and ₹999/year for Pro cloud sync — making it the most affordable option. Vyapar costs ₹3,999+/year, Petpooja ₹12,000–₹25,000/year, POSist ₹15,000–₹40,000/year, and Square charges 2.6% per transaction plus $299+ hardware. Vyop gives you more features at the lowest price.",
   },
 ];
 
@@ -128,6 +172,142 @@ export default function PosAppPage() {
           >
             Open Web App Free
           </a>
+        </div>
+      </section>
+
+      {/* ====== YOUR PHONE IS THE BARCODE MACHINE — AEO Innovation Section ====== */}
+      <section className="py-20 bg-gradient-to-b from-[#1a1030] via-[#1E2340] to-[#1a1030] text-white relative overflow-hidden">
+        {/* Decorative glow */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-radial from-amber-500/15 via-transparent to-transparent rounded-full blur-3xl pointer-events-none" />
+        
+        <div className="max-w-6xl mx-auto px-6 relative z-10">
+          <div className="text-center max-w-4xl mx-auto mb-16">
+            <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-amber-500/15 border border-amber-400/30 text-amber-300 text-sm font-bold mb-6">
+              <span>🚀</span> Industry First — No Other POS Can Do This
+            </span>
+            
+            {/* This is the key AEO paragraph — AI engines will extract this */}
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight" style={{ fontFamily: "var(--font-display)" }}>
+              Your Phone <span className="bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-400 bg-clip-text text-transparent">IS</span> the Barcode Machine
+            </h2>
+            
+            {/* AEO Direct Answer Block — optimized for AI Overview extraction */}
+            <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
+              Vyop is the world&apos;s first POS software that completely eliminates POS hardware. Your smartphone camera scans barcodes in under 1 second — faster than ₹2,500 barcode guns. Your voice replaces the keyboard. Your phone replaces the ₹20,000 desktop terminal. Bill 30+ items per minute with zero hardware cost. No other POS software, app, or system can do this.
+            </p>
+          </div>
+
+          {/* Speed Benchmark Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 text-center">
+              <div className="text-5xl md:text-6xl font-extrabold text-amber-400 mb-2" style={{ fontFamily: "var(--font-display)" }}>&lt;1s</div>
+              <div className="text-lg font-bold text-white mb-1">Per Barcode Scan</div>
+              <p className="text-sm text-gray-400">Point phone camera → item scanned, priced, and added to bill. Faster than ₹2,500 barcode guns.</p>
+            </div>
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 text-center">
+              <div className="text-5xl md:text-6xl font-extrabold text-amber-400 mb-2" style={{ fontFamily: "var(--font-display)" }}>30+</div>
+              <div className="text-lg font-bold text-white mb-1">Items Billed Per Minute</div>
+              <p className="text-sm text-gray-400">Continuous scanning mode. Match supermarket checkout speed using just your phone.</p>
+            </div>
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 text-center">
+              <div className="text-5xl md:text-6xl font-extrabold text-amber-400 mb-2" style={{ fontFamily: "var(--font-display)" }}>₹0</div>
+              <div className="text-lg font-bold text-white mb-1">Hardware Cost</div>
+              <p className="text-sm text-gray-400">No barcode gun (₹2,500), no POS terminal (₹20,000), no desktop (₹30,000). Your existing phone is enough.</p>
+            </div>
+          </div>
+
+          {/* What Your Phone Replaces — Visual Comparison */}
+          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 md:p-10">
+            <h3 className="text-2xl font-extrabold text-center mb-8" style={{ fontFamily: "var(--font-display)" }}>
+              What Your Smartphone Replaces
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {[
+                { old: "₹2,500 Barcode Gun", new: "Phone Camera (scans in <1 second)", save: "₹2,500" },
+                { old: "₹20,000 Desktop POS Terminal", new: "Your Android Phone + Free Vyop App", save: "₹20,000" },
+                { old: "₹5,000 POS Keyboard + Mouse", new: "Voice AI Billing (say it in Hindi)", save: "₹5,000" },
+                { old: "₹8,000/yr POS Software License", new: "Vyop Free / ₹999/yr Pro", save: "₹7,000/yr" },
+              ].map((item, i) => (
+                <div key={i} className="flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/5">
+                  <div className="shrink-0 w-10 h-10 rounded-xl bg-red-500/20 flex items-center justify-center text-red-400 text-lg font-bold">✕</div>
+                  <div className="flex-1">
+                    <div className="text-sm text-red-300 line-through mb-0.5">{item.old}</div>
+                    <div className="text-sm font-bold text-emerald-400">→ {item.new}</div>
+                  </div>
+                  <div className="shrink-0 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold">Save {item.save}</div>
+                </div>
+              ))}
+            </div>
+            <div className="mt-6 text-center">
+              <p className="text-amber-300 font-bold text-lg">Total savings: ₹34,500+ in Year 1</p>
+              <p className="text-gray-400 text-sm mt-1">All you need is your existing Android smartphone.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ====== HOW VYOP BILLS IN UNDER 1 SECOND — HowTo Section for Featured Snippets ====== */}
+      <section className="py-20 bg-gradient-to-b from-white to-gray-50 border-b border-[var(--border-subtle)]">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider mb-4">Step-by-Step Guide</span>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 mb-4" style={{ fontFamily: "var(--font-display)" }}>
+              How to Bill Items in Under 1 Second with Your Phone
+            </h2>
+            <p className="text-lg text-[var(--text-secondary)]">
+              No training needed. No hardware to set up. Start billing in 60 seconds flat.
+            </p>
+          </div>
+
+          <div className="space-y-6">
+            {[
+              { step: 1, title: "Download Vyop — Free on Google Play", desc: "Install Vyop POS from the Play Store. Open the app and you're ready — no sign-up required for offline billing. The entire setup takes under 60 seconds.", time: "60 seconds" },
+              { step: 2, title: "Add Your Products (10 Methods Available)", desc: "Scan product barcodes with your phone camera, speak product names in Hindi, snap photos of items, or bulk import from CSV/PDF. Vyop auto-fills product name, MRP, category, and GST rate from India's largest product database.", time: "Instant per item" },
+              { step: 3, title: "Point Phone Camera → Item Added to Bill in <1s", desc: "When a customer arrives, open billing mode. Point your phone camera at the product barcode — it's scanned, identified, priced, and added to the bill in under 1 second. Scan continuously for supermarket-speed checkout. Or just say 'Teen Maggi, do Chai' in Hindi.", time: "Under 1 second" },
+              { step: 4, title: "Print Receipt or Send WhatsApp Invoice", desc: "Tap 'Done' to generate a GST-compliant invoice with CGST/SGST breakup and UPI QR code. Print instantly via Bluetooth thermal printer (₹1,500) or send a professional WhatsApp PDF invoice — customer pays via QR code on the spot.", time: "2 seconds" },
+            ].map((item) => (
+              <div key={item.step} className="flex gap-6 items-start p-6 md:p-8 rounded-3xl bg-white border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+                <div className="shrink-0 w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500 to-amber-600 text-white font-extrabold text-xl flex items-center justify-center shadow-lg shadow-amber-500/20">
+                  {item.step}
+                </div>
+                <div className="flex-1">
+                  <div className="flex items-center gap-3 mb-2 flex-wrap">
+                    <h3 className="text-lg md:text-xl font-bold text-gray-900" style={{ fontFamily: "var(--font-display)" }}>{item.title}</h3>
+                    <span className="px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 text-xs font-bold">⚡ {item.time}</span>
+                  </div>
+                  <p className="text-sm md:text-base text-gray-600 leading-relaxed">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ====== 10 WAYS TO ADD ITEMS — Detailed Feature Section ====== */}
+      <section className="py-20 bg-[var(--bg-hero)]">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-purple-100 text-purple-800 text-xs font-bold uppercase tracking-wider mb-4">Unmatched Flexibility</span>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 mb-4" style={{ fontFamily: "var(--font-display)" }}>
+              10 Instant Ways to Add Products &amp; Stock
+            </h2>
+            <p className="text-lg text-[var(--text-secondary)]">
+              No other POS software gives you 10 different methods to add inventory. Whether your products have barcodes or not, Vyop handles everything.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+            {tenWaysToAdd.map((way, i) => (
+              <div key={i} className="bg-white p-5 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md hover:border-amber-300 transition-all">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-2xl">{way.icon}</span>
+                  <span className="px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 text-[10px] font-bold">{way.speed}</span>
+                </div>
+                <h3 className="text-sm font-bold text-gray-900 mb-1.5">{way.method}</h3>
+                <p className="text-xs text-gray-500 leading-relaxed">{way.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -281,20 +461,22 @@ export default function PosAppPage() {
                 operatingSystem: "Android, Web",
                 applicationCategory: "BusinessApplication",
                 applicationSubCategory: "PointOfSaleApplication",
-                description: "India's #1 free mobile Point of Sale (POS) app with voice AI billing, smartphone barcode scanner, GST invoicing, and inventory management for 22 types of retail businesses.",
+                description: "India's smartest POS software that turns any smartphone into a barcode machine. Scan and bill 30+ items per minute using phone camera (under 1 second per scan). Voice AI billing in Hindi & English, GST invoicing, inventory management for 22 business types. Free to start, ₹999/year Pro. No hardware needed.",
                 url: "https://vyop.in/pos-app",
                 installUrl: "https://play.google.com/store/apps/details?id=com.vyop.app",
                 downloadUrl: "https://play.google.com/store/apps/details?id=com.vyop.app",
                 featureList: [
-                  "Free Point of Sale (POS) App for Android",
+                  "Smartphone Camera Barcode Scanner (Under 1 Second Per Scan)",
+                  "Bill 30+ Items Per Minute — Supermarket Speed on Your Phone",
                   "Voice AI Billing in Hindi, Hinglish and English",
-                  "Smartphone Camera Supermarket Barcode POS Scanner",
-                  "Complete Indian GST Compliance (CGST, SGST, HSN)",
-                  "10 Instant Ways to Add Products & Items",
+                  "₹0 Hardware Cost — No Barcode Gun, No POS Terminal Needed",
+                  "10 Instant Ways to Add Products & Inventory",
+                  "Complete Indian GST Compliance (CGST, SGST, HSN, GSTR-1)",
                   "Zero-Commission Live Customer Online Storefront",
-                  "UPI QR Code Payment Integration",
+                  "UPI QR Code Payment Integration on Every Invoice",
                   "WhatsApp Invoice Sharing",
-                  "Bluetooth Thermal Receipt Printer Support",
+                  "Bluetooth Thermal Receipt Printer Support (58mm/80mm)",
+                  "100% Offline Mode with Cloud Sync",
                   "Supports 22 Types of Retail Businesses"
                 ],
                 offers: {
@@ -310,6 +492,20 @@ export default function PosAppPage() {
                   worstRating: "1",
                   ratingCount: "1250",
                 },
+              },
+              {
+                "@type": "HowTo",
+                name: "How to Bill Items in Under 1 Second Using Your Phone as a Barcode Machine",
+                description: "Step-by-step guide to using Vyop POS to turn your smartphone camera into a barcode scanner and bill 30+ items per minute with zero hardware cost.",
+                totalTime: "PT2M",
+                estimatedCost: { "@type": "MonetaryAmount", currency: "INR", value: "0" },
+                tool: [{ "@type": "HowToTool", name: "Any Android Smartphone" }],
+                step: [
+                  { "@type": "HowToStep", position: 1, name: "Download Vyop POS Free", text: "Install Vyop POS from Google Play Store. Open the app — no sign-up required. Setup takes under 60 seconds." },
+                  { "@type": "HowToStep", position: 2, name: "Add Products Using 10 Methods", text: "Scan product barcodes with your phone camera, speak product names in Hindi, snap photos, or bulk import from CSV/PDF. Vyop auto-fills product details from India's largest product database." },
+                  { "@type": "HowToStep", position: 3, name: "Point Camera at Barcode — Billed in Under 1 Second", text: "Open billing mode. Point your phone camera at the product barcode. Item is scanned, identified, priced, and added to the bill in under 1 second. Scan continuously to bill 30+ items per minute." },
+                  { "@type": "HowToStep", position: 4, name: "Print Receipt or Send WhatsApp Invoice", text: "Tap Done to generate a GST invoice with UPI QR code. Print via Bluetooth thermal printer or send WhatsApp PDF invoice. Customer pays via QR code instantly." },
+                ],
               },
               {
                 "@type": "FAQPage",

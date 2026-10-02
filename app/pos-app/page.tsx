@@ -342,23 +342,26 @@ export default function PosAppPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { icon: "🗣️", title: "Voice AI POS Billing", desc: "Speak in Hindi or English to create bills in 5 seconds. No typing, no keyboard, no training needed.", tag: "Only Vyop" },
-              { icon: "📱", title: "₹0 Smartphone Camera POS", desc: "Your phone camera IS the barcode scanner. No ₹2,500 barcode gun or ₹20,000 desktop required.", tag: "₹0 Hardware" },
-              { icon: "🇮🇳", title: "Full Indian GST Support", desc: "CGST, SGST, IGST, HSN codes, GSTR-1 summaries, and UPI QR payments — built for Indian tax compliance.", tag: "GST Ready" },
-              { icon: "⚡", title: "10 Ways to Add Items", desc: "Scan barcode, voice, image, invoice PDF, manual, AI Orb, photo catalog, menu import, and more.", tag: "10-in-1" },
-              { icon: "🛍️", title: "0% Commission Online Store", desc: "Launch a live customer storefront in 60 seconds. Share via WhatsApp. Zero delivery platform commission.", tag: "Keep 100%" },
-              { icon: "🏪", title: "22 Shop Types Supported", desc: "Kirana, restaurant, clothing, pharmacy, jewellery, bakery, salon, supermarket, hotel, auto parts, and 12 more.", tag: "Universal" },
+              { icon: "🗣️", title: "Voice AI POS Billing", desc: "Speak in Hindi or English to create bills in 5 seconds. No typing, no keyboard, no training needed.", tag: "Only Vyop", href: "/pos-app" },
+              { icon: "📱", title: "₹0 Smartphone Camera POS", desc: "Your phone camera IS the barcode scanner. No ₹2,500 barcode gun or ₹20,000 desktop required.", tag: "₹0 Hardware", href: "/barcode-scanner" },
+              { icon: "🇮🇳", title: "Full Indian GST Support", desc: "CGST, SGST, IGST, HSN codes, GSTR-1 summaries, and UPI QR payments — built for Indian tax compliance.", tag: "GST Ready", href: "/smart-billing-software" },
+              { icon: "⚡", title: "10 Ways to Add Items", desc: "Scan barcode, voice, image, invoice PDF, manual, AI Orb, photo catalog, menu import, and more.", tag: "10-in-1", href: "/features/ten-ways-to-add-items" },
+              { icon: "🛍️", title: "0% Commission Online Store", desc: "Launch a live customer storefront in 60 seconds. Share via WhatsApp. Zero delivery platform commission.", tag: "Keep 100%", href: "/features/online-storefront" },
+              { icon: "🏪", title: "22 Shop Types Supported", desc: "Kirana, restaurant, clothing, pharmacy, jewellery, bakery, salon, supermarket, hotel, auto parts, and 12 more.", tag: "Universal", href: "/solutions" },
             ].map((card, i) => (
-              <div key={i} className="bg-[#FAF7F0] p-7 rounded-3xl border border-amber-200/60 shadow-sm flex flex-col justify-between">
+              <Link key={i} href={card.href} className="group bg-[#FAF7F0] hover:bg-amber-50/70 transition-all p-7 rounded-3xl border border-amber-200/60 shadow-sm flex flex-col justify-between hover:shadow-md">
                 <div>
                   <div className="flex items-center justify-between mb-4">
                     <span className="text-3xl">{card.icon}</span>
                     <span className="px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-bold">{card.tag}</span>
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-2" style={{ fontFamily: "var(--font-display)" }}>{card.title}</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">{card.desc}</p>
+                  <h3 className="text-lg font-bold text-gray-900 group-hover:text-amber-800 transition-colors mb-2" style={{ fontFamily: "var(--font-display)" }}>{card.title}</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed mb-3">{card.desc}</p>
                 </div>
-              </div>
+                <span className="text-xs font-bold text-amber-700 group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
+                  Learn More →
+                </span>
+              </Link>
             ))}
           </div>
         </div>

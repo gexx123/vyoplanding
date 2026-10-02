@@ -9,6 +9,10 @@ const footerLinks = {
   Company: ["About Us", "Work With Us", "Internship", "Careers", "Blog"],
   "Free Tools": [
     "All Free Tools",
+    "Online Storefront (0%)",
+    "Mobile Barcode Scanner",
+    "Free POS App",
+    "Smart Billing Software",
     "Free Invoice Generator",
     "Free GST Calculator",
     "Cash Counter & Tally",
@@ -18,8 +22,6 @@ const footerLinks = {
     "GSTIN Validator",
     "Free Barcode Generator",
     "HSN Code Finder",
-    "Free POS App",
-    "Smart Billing Software",
   ],
   Alternatives: [
     "Vyop vs Tally",
@@ -51,6 +53,8 @@ const linkPaths: Record<string, string> = {
   "Blog": "/blog",
   "Free POS App": "/pos-app",
   "Smart Billing Software": "/smart-billing-software",
+  "Online Storefront (0%)": "/features/online-storefront",
+  "Mobile Barcode Scanner": "/barcode-scanner",
   "All Free Tools": "/tools",
   "Free Invoice Generator": "/tools/invoice-generator",
   "Free GST Calculator": "/tools/gst-calculator",

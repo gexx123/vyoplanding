@@ -15,17 +15,26 @@ export const metadata: Metadata = {
   },
 };
 
+import { staticBlogs } from '@/lib/staticBlogs';
+
 async function getBlogs() {
+  let firestoreBlogs: any[] = [];
   try {
     const blogsRef = collection(db, 'blogs');
     const q = query(blogsRef, orderBy('date', 'desc'));
     const snapshot = await getDocs(q);
     const allBlogs = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-    return allBlogs.filter((blog: any) => blog.status !== 'Draft');
+    firestoreBlogs = allBlogs.filter((blog: any) => blog.status !== 'Draft');
   } catch (error) {
     console.error("Error fetching blogs from Firestore:", error);
-    return [];
   }
+
+  // Merge with staticBlogs, avoiding duplicates by slug
+  const existingSlugs = new Set(firestoreBlogs.map((b) => b.slug));
+  const remainingStatic = staticBlogs.filter((b) => !existingSlugs.has(b.slug) && b.status !== 'Draft');
+
+  const combined = [...firestoreBlogs, ...remainingStatic];
+  return combined.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
 
 function calculateReadingTime(content: string) {

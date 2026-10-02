@@ -8,6 +8,8 @@ import Image from 'next/image';
 import ShareButtons from '@/components/blog/ShareButtons';
 import BlogViewTracker from '@/components/blog/BlogViewTracker';
 
+import { staticBlogs } from '@/lib/staticBlogs';
+
 export const dynamic = 'force-dynamic';
 
 async function getBlog(slug: string) {
@@ -16,20 +18,26 @@ async function getBlog(slug: string) {
     const q = query(blogsRef, where('slug', '==', slug), limit(1));
     const snapshot = await getDocs(q);
     
-    if (snapshot.empty) {
-      const docRef = doc(db, 'blogs', slug);
-      const docSnap = await getDoc(docRef);
-      if (docSnap.exists()) {
-         return { id: docSnap.id, ...docSnap.data() } as any;
-      }
-      return null;
+    if (!snapshot.empty) {
+      return { id: snapshot.docs[0].id, ...snapshot.docs[0].data() } as any;
     }
-    
-    return { id: snapshot.docs[0].id, ...snapshot.docs[0].data() } as any;
+
+    const docRef = doc(db, 'blogs', slug);
+    const docSnap = await getDoc(docRef);
+    if (docSnap.exists()) {
+      return { id: docSnap.id, ...docSnap.data() } as any;
+    }
   } catch (error) {
     console.error("Error fetching blog from Firestore:", error);
-    return null;
   }
+
+  // Fallback to built-in static blogs
+  const staticMatch = staticBlogs.find((b) => b.slug === slug);
+  if (staticMatch) {
+    return { id: staticMatch.slug, ...staticMatch };
+  }
+
+  return null;
 }
 
 function calculateReadingTime(content: string) {

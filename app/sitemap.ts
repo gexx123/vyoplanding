@@ -4,6 +4,8 @@ import { collection, getDocs, query, where } from 'firebase/firestore';
 import { cities } from '@/lib/cityData';
 import { industries } from '@/lib/industryData';
 
+import { staticBlogs } from '@/lib/staticBlogs';
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://vyop.in';
   
@@ -14,17 +16,38 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const q = query(blogsRef, where('status', '==', 'Published'));
     const snapshot = await getDocs(q);
     
+    const existingSlugs = new Set<string>();
     blogUrls = snapshot.docs.map((doc: any) => {
       const post = doc.data();
+      const slug = post.slug || doc.id;
+      existingSlugs.add(slug);
       return {
-        url: `${baseUrl}/blog/${post.slug || doc.id}`,
+        url: `${baseUrl}/blog/${slug}`,
         lastModified: new Date(post.date || Date.now()),
         changeFrequency: 'weekly',
-        priority: 0.7,
+        priority: 0.8,
       };
     });
+
+    // Merge static fallback blogs not already in firestore
+    for (const sb of staticBlogs) {
+      if (!existingSlugs.has(sb.slug)) {
+        blogUrls.push({
+          url: `${baseUrl}/blog/${sb.slug}`,
+          lastModified: new Date(sb.date || '2026-10-02'),
+          changeFrequency: 'weekly',
+          priority: 0.85,
+        });
+      }
+    }
   } catch (error) {
-    console.error('Sitemap blog fetch error:', error);
+    console.error('Sitemap blog fetch error, using static fallback:', error);
+    blogUrls = staticBlogs.map(sb => ({
+      url: `${baseUrl}/blog/${sb.slug}`,
+      lastModified: new Date(sb.date || '2026-10-02'),
+      changeFrequency: 'weekly',
+      priority: 0.85,
+    }));
   }
 
   const staticPages = [
@@ -67,7 +90,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${baseUrl}/barcode-scanner`, priority: 1.0, changeFrequency: 'weekly' },
     { url: `${baseUrl}/barcode-scanner/mobile-barcode-scanner`, priority: 0.95, changeFrequency: 'weekly' },
     { url: `${baseUrl}/barcode-scanner/barcode-scanner-for-billing`, priority: 0.95, changeFrequency: 'weekly' },
-    { url: `${baseUrl}/features/online-storefront`, priority: 0.95, changeFrequency: 'weekly' },
+    { url: `${baseUrl}/features/online-storefront`, priority: 0.98, changeFrequency: 'daily', lastModified: new Date('2026-10-02') },
     { url: `${baseUrl}/features/ten-ways-to-add-items`, priority: 0.95, changeFrequency: 'weekly' },
     { url: `${baseUrl}/hi`, priority: 0.9, changeFrequency: 'daily' },
     { url: `${baseUrl}/about`, priority: 0.8, changeFrequency: 'monthly' },

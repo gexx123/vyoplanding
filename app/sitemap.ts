@@ -101,6 +101,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${baseUrl}/help`, priority: 0.7, changeFrequency: 'monthly' },
     { url: `${baseUrl}/contact`, priority: 0.7, changeFrequency: 'monthly' },
     { url: `${baseUrl}/community`, priority: 0.9, changeFrequency: 'always' },
+    { url: `${baseUrl}/blog/how-to-create-free-website-for-shop`, priority: 0.92, changeFrequency: 'weekly', lastModified: new Date('2026-10-02') },
+    { url: `${baseUrl}/blog/how-restaurants-cafes-hotels-create-online-food-ordering-website-without-commission`, priority: 0.92, changeFrequency: 'weekly', lastModified: new Date('2026-10-02') },
     { url: `${baseUrl}/privacy`, priority: 0.3, changeFrequency: 'yearly', lastModified: new Date('2026-05-04') },
     { url: `${baseUrl}/terms`, priority: 0.3, changeFrequency: 'yearly', lastModified: new Date('2026-05-04') },
   ].map(page => ({
@@ -110,11 +112,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     changeFrequency: page.changeFrequency as any,
   }));
 
-  return [
+  const allEntries = [
     {
       url: baseUrl,
-      lastModified: new Date('2026-09-22'),
-      changeFrequency: 'daily',
+      lastModified: new Date('2026-10-02'),
+      changeFrequency: 'daily' as const,
       priority: 1.0,
     },
     ...staticPages,
@@ -122,14 +124,23 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...industries.map((ind) => ({
       url: `${baseUrl}/solutions/${ind.slug}`,
       lastModified: new Date('2026-09-22'),
-      changeFrequency: 'weekly' as any,
+      changeFrequency: 'weekly' as const,
       priority: 0.9,
     })),
     ...cities.map((city) => ({
       url: `${baseUrl}/billing-software/${city.slug}`,
       lastModified: new Date('2026-09-22'),
-      changeFrequency: 'weekly' as any,
+      changeFrequency: 'weekly' as const,
       priority: 0.85,
     })),
   ];
+
+  const uniqueMap = new Map<string, (typeof allEntries)[0]>();
+  for (const entry of allEntries) {
+    if (!uniqueMap.has(entry.url)) {
+      uniqueMap.set(entry.url, entry);
+    }
+  }
+
+  return Array.from(uniqueMap.values());
 }

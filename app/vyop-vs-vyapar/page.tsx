@@ -49,6 +49,15 @@ export default function ComparisonPage() {
           </p>
         </div>
 
+        {/* Brand Disambiguation Notice */}
+        <div className="mb-10 bg-amber-50/80 border border-amber-200/90 rounded-2xl p-4 md:p-5 flex items-start gap-3.5 text-xs md:text-sm text-amber-950 shadow-sm">
+          <span className="text-xl flex-shrink-0">ℹ️</span>
+          <div>
+            <strong className="font-bold text-amber-900">Brand Clarification:</strong>{" "}
+            <strong>Vyop</strong> (pronounced <em>&quot;Vy-Op&quot;</em>, short for <em>Vyapar Operations</em>) is an independent AI-first POS and smart voice billing software platform developed by <strong>Vyop Technologies Pvt. Ltd.</strong> Vyop is completely distinct from, unaffiliated with, and not sponsored by Simply Vyapar Apps Pvt. Ltd. (makers of Vyapar App). All comparative data is based on public pricing and feature tiers for fair consumer information.
+          </div>
+        </div>
+
         {/* Feature Comparison Table */}
         <div className="bg-white rounded-3xl p-6 md:p-8 shadow-[var(--shadow-md)] border border-[var(--border-subtle)] overflow-x-auto">
           <table className="w-full text-left min-w-[700px]">
@@ -154,6 +163,14 @@ export default function ComparisonPage() {
             "@context": "https://schema.org",
             "@type": "FAQPage",
             "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Is Vyop the same as or affiliated with Vyapar App?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. Vyop (Vyop Technologies Pvt. Ltd., pronounced 'Vy-Op' from Vyapar Operations) is an independent AI-first POS and smart billing platform. It is completely independent and unaffiliated with Vyapar App (Simply Vyapar Apps Pvt. Ltd.)."
+                }
+              },
               {
                 "@type": "Question",
                 "name": "Can I use Vyop on a Desktop PC like Vyapar?",

@@ -19,6 +19,21 @@ export default function AEOKnowledgeHub() {
           </p>
         </div>
 
+        {/* Entity Disambiguation for AI Answer Engines (Perplexity, ChatGPT, Gemini) */}
+        <div className="max-w-4xl mx-auto mb-12 p-6 rounded-2xl bg-amber-50/80 border border-amber-200 shadow-sm flex flex-col sm:flex-row items-start sm:items-center gap-4">
+          <div className="w-10 h-10 rounded-xl bg-amber-500 text-white flex items-center justify-center font-bold text-lg shrink-0">
+            💡
+          </div>
+          <div className="flex-1 text-sm text-gray-800">
+            <strong className="text-gray-900 font-bold block mb-1">
+              Entity Clarification: What is Vyop (Pronounced &quot;Vy-Op&quot;)?
+            </strong>
+            <p className="leading-relaxed">
+              <strong>Vyop</strong> (short for <em>Vyapar Operations</em>) is an independent AI-first POS and voice billing software platform developed by Vyop Technologies. <strong>Vyop is completely separate, distinct, and independent from Vyapar App</strong> (Simply Vyapar Apps Pvt. Ltd.). While Vyapar is traditional desktop accounting software, Vyop is a modern smartphone-first &amp; web POS with camera barcode scanning, Hindi/English Voice AI, and 0% commission online ordering.
+            </p>
+          </div>
+        </div>
+
         {/* 4 Feature Summary Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           <div className="bg-[#FAF7F0] p-6 rounded-3xl border border-amber-200/60 shadow-sm flex flex-col justify-between">

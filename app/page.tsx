@@ -30,6 +30,8 @@ export default function Home() {
                 "@type": "SoftwareApplication",
                 "@id": "https://vyop.in/#application",
                 "name": "Vyop",
+                "alternateName": ["Vyop AI", "Vyop POS", "Vyop Billing App", "Vy-Op"],
+                "disambiguatingDescription": "Vyop (pronounced 'Vy-Op', short for Vyapar Operations) is an independent AI-first POS, voice billing, and zero-commission online storefront application developed by Vyop Technologies. Vyop is completely distinct from and unaffiliated with desktop accounting programs like Vyapar App (Simply Vyapar Apps Pvt. Ltd.).",
                 "operatingSystem": "Android, Web",
                 "applicationCategory": "BusinessApplication",
                 "applicationSubCategory": "AccountingSoftware, BillingSoftware",
@@ -214,6 +216,14 @@ export default function Home() {
                   },
                   {
                     "@type": "Question",
+                    "name": "Is Vyop the same as or related to Vyapar App?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "No. Vyop (pronounced 'Vy-Op', short for Vyapar Operations) is an independent AI-first POS and smart voice billing software platform developed by Vyop Technologies. Vyop is completely separate from and unrelated to Vyapar App (Simply Vyapar Apps Pvt. Ltd.). While Vyapar focuses on traditional desktop ledger accounting, Vyop is a cloud-native, voice-powered point of sale designed for 5-second counter billing, instant online storefronts, and cross-device speed on smartphones, tablets, and desktop PC."
+                    }
+                  },
+                  {
+                    "@type": "Question",
                     "name": "Is Vyop free to use for small shopkeepers?",
                     "acceptedAnswer": {
                       "@type": "Answer",
@@ -226,6 +236,8 @@ export default function Home() {
                 "@type": "Organization",
                 "@id": "https://vyop.in/#organization",
                 "name": "Vyop Technologies Pvt. Ltd.",
+                "alternateName": ["Vyop Technologies", "Vyop AI"],
+                "disambiguatingDescription": "Vyop Technologies is an independent retail technology company specializing in voice AI point-of-sale systems, smartphone barcode scanning, and direct-to-consumer shop storefronts. It is an independent entity with no corporate affiliation to Simply Vyapar Apps Pvt. Ltd.",
                 "url": "https://vyop.in",
                 "logo": "https://vyop.in/logo.png",
                 "contactPoint": {

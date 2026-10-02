@@ -1,5 +1,6 @@
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
+import ComparisonDisclaimer from "@/components/legal/ComparisonDisclaimer";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -136,6 +137,13 @@ export default function ComparisonPage() {
             </a>
           </div>
         </div>
+
+        {/* Legal Disclaimer */}
+        <ComparisonDisclaimer
+          competitorName="Vyapar"
+          companyName="Simply Vyapar Apps Pvt. Ltd."
+          lastUpdated="October 2026"
+        />
       </section>
 
       {/* Structured Schema */}

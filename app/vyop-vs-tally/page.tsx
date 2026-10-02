@@ -1,5 +1,6 @@
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
+import ComparisonDisclaimer from "@/components/legal/ComparisonDisclaimer";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -206,6 +207,13 @@ export default function VyopVsTallyPage() {
             ))}
           </div>
         </div>
+
+        {/* Legal Disclaimer */}
+        <ComparisonDisclaimer
+          competitorName="Tally Prime"
+          companyName="Tally Solutions Pvt. Ltd."
+          lastUpdated="October 2026"
+        />
       </section>
 
       {/* JSON-LD FAQ */}

@@ -1,5 +1,6 @@
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
+import ComparisonDisclaimer from "@/components/legal/ComparisonDisclaimer";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -137,6 +138,12 @@ export default function VyopVsLoyversePage() {
         <div className="mt-12 text-center">
           <Link href="/compare" className="text-sm font-bold text-amber-700 hover:text-amber-800 underline">View All Software Comparisons →</Link>
         </div>
+
+        {/* Legal Disclaimer */}
+        <ComparisonDisclaimer
+          competitorName="Loyverse POS"
+          lastUpdated="October 2026"
+        />
       </section>
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.question, acceptedAnswer: { "@type": "Answer", text: f.answer } })) }) }} />

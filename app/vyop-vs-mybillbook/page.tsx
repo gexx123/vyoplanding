@@ -1,5 +1,6 @@
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
+import ComparisonDisclaimer from "@/components/legal/ComparisonDisclaimer";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -184,6 +185,13 @@ export default function VyopVsMyBillBookPage() {
             ))}
           </div>
         </div>
+
+        {/* Legal Disclaimer */}
+        <ComparisonDisclaimer
+          competitorName="myBillBook"
+          companyName="FloBiz"
+          lastUpdated="October 2026"
+        />
       </section>
 
       {/* JSON-LD FAQ */}

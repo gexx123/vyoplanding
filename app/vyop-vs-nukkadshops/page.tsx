@@ -1,5 +1,6 @@
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
+import ComparisonDisclaimer from "@/components/legal/ComparisonDisclaimer";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -131,6 +132,12 @@ export default function VyopVsNukkadShopsPage() {
             Download Vyop Free on Google Play →
           </a>
         </div>
+
+        {/* Legal Disclaimer */}
+        <ComparisonDisclaimer
+          competitorName="Nukkad Shops"
+          lastUpdated="October 2026"
+        />
       </section>
 
       {/* JSON-LD Schemas */}

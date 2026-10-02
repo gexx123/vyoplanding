@@ -1,5 +1,6 @@
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
+import ComparisonDisclaimer from "@/components/legal/ComparisonDisclaimer";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -131,6 +132,13 @@ export default function VyopVsPineLabsPage() {
             Download Vyop Free on Google Play →
           </a>
         </div>
+
+        {/* Legal Disclaimer */}
+        <ComparisonDisclaimer
+          competitorName="Pine Labs POS"
+          companyName="Pine Labs Pvt. Ltd."
+          lastUpdated="October 2026"
+        />
       </section>
 
       {/* JSON-LD Schemas */}

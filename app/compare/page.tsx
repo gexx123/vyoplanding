@@ -1,5 +1,6 @@
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
+import ComparisonDisclaimer from "@/components/legal/ComparisonDisclaimer";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -295,6 +296,9 @@ export default function CompareHubPage() {
             </tbody>
           </table>
         </div>
+
+        {/* Legal Disclaimer */}
+        <ComparisonDisclaimer lastUpdated="October 2026" />
 
         {/* Cross-linking to Smart Billing & Solutions */}
         <div className="mt-16 grid md:grid-cols-2 gap-6">

@@ -1,5 +1,6 @@
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
+import ComparisonDisclaimer from "@/components/legal/ComparisonDisclaimer";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -90,6 +91,13 @@ export default function ComparisonPage() {
             Switch to Vyop (Free to Start)
           </Link>
         </div>
+
+        {/* Legal Disclaimer */}
+        <ComparisonDisclaimer
+          competitorName="Khatabook"
+          companyName="Kyte Technologies Inc."
+          lastUpdated="October 2026"
+        />
       </section>
 
       <script

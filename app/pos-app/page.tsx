@@ -5,19 +5,22 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Best Free POS Software & App for Small Business India (2026) | Vyop",
+  title: "Best POS Software & App for Mobile & Desktop PC India (2026) | Vyop",
   description:
-    "Vyop POS turns your smartphone into a barcode machine — scan & bill 30+ items/minute, no hardware needed. Free POS software with voice AI billing in Hindi, GST invoicing, inventory management & 0% commission online store. Best POS system for Indian retail.",
+    "Vyop is India's smartest cross-platform POS & CA-grade accounting software for Android & Desktop PC (vyop.shop). Turns phone into barcode scanner (<1s scan, 30+ items/min), full PC counter billing, voice AI in Hindi, GSTR-1/3B tax reports & 0% fee online store.",
   alternates: { canonical: "/pos-app" },
   openGraph: {
-    title: "Vyop — The Smartest POS Software That Turns Your Phone into a Barcode Machine",
+    title: "Vyop — The Smartest POS Software for Desktop PC & Mobile Barcode Machine",
     description:
-      "No POS machine needed. Your phone IS the barcode scanner. Bill 30+ items/minute with voice AI. Free POS software for India.",
+      "Run your checkout on Desktop PC (vyop.shop) or smartphone. Phone camera scans in <1s. Voice AI billing, CA-grade GST accounting, 30+ items/min. Free to start.",
     url: "https://vyop.in/pos-app",
   },
   keywords: [
     "pos software",
     "pos apps",
+    "desktop pos software",
+    "pos software for pc",
+    "pos software for desktop",
     "online pos",
     "pos system software",
     "best pos machine in india",
@@ -40,17 +43,21 @@ export const metadata: Metadata = {
     "phone barcode scanner for billing",
     "pos without machine",
     "smartphone pos system",
+    "gst accounting software",
+    "gstr 1 billing software",
+    "ca tax reporting software",
   ],
 };
 
 const posComparison = [
   { feature: "Price", vyop: "Free to Start / ₹999/yr Pro", loyverse: "$0 Basic / $5–$25/mo Add-ons", square: "Free + 2.6% Per Transaction", vyapar: "₹3,999/yr+", petpooja: "₹12,000–₹25,000/yr" },
+  { feature: "Desktop PC & Web Support", vyop: "✅ Full Desktop PC Web (vyop.shop)", loyverse: "⚠️ Web Dashboard Only", square: "⚠️ Limited Web Terminal", vyapar: "✅ Desktop Software (.exe)", petpooja: "⚠️ POS Terminal Only" },
   { feature: "Voice AI Billing", vyop: "✅ Hindi, English & Hinglish", loyverse: "❌ Not Available", square: "❌ Not Available", vyapar: "❌ Not Available", petpooja: "❌ Not Available" },
-  { feature: "Smartphone Camera POS Scanner", vyop: "✅ Built-in (₹0 Hardware)", loyverse: "✅ Basic Scanning", square: "❌ Requires $299+ Reader", vyapar: "⚠️ Limited", petpooja: "⚠️ Hardware Dependent" },
-  { feature: "Indian GST Compliance", vyop: "✅ GSTR-1, CGST/SGST, HSN", loyverse: "❌ No Indian GST", square: "❌ US Tax Only", vyapar: "✅ GST Supported", petpooja: "✅ GST Supported" },
-  { feature: "UPI & WhatsApp Billing", vyop: "✅ UPI QR + WhatsApp Bills", loyverse: "❌ No UPI/WhatsApp", square: "❌ No UPI Support", vyapar: "✅ WhatsApp Bills", petpooja: "⚠️ Limited" },
+  { feature: "Smartphone Camera POS Scanner", vyop: "✅ Built-in (<1s Scan, 30+/min)", loyverse: "✅ Basic Scanning", square: "❌ Requires $299+ Reader", vyapar: "⚠️ Limited", petpooja: "⚠️ Hardware Dependent" },
+  { feature: "CA-Grade Accounting & Reports", vyop: "✅ GSTR-1, GSTR-3B, P&L, Ledgers", loyverse: "❌ No Indian GST", square: "❌ US Tax Only", vyapar: "✅ GST & Basic Reports", petpooja: "⚠️ Restaurant Tax Only" },
+  { feature: "Party Udhar Khata & WhatsApp", vyop: "✅ Automatic WhatsApp Reminders", loyverse: "❌ Not Available", square: "❌ Not Available", vyapar: "✅ WhatsApp Bills", petpooja: "⚠️ Limited" },
   { feature: "Online Storefront", vyop: "✅ 0% Commission Live Store", loyverse: "❌ Not Available", square: "✅ With Transaction Fee", vyapar: "❌ Not Available", petpooja: "❌ Not Available" },
-  { feature: "Offline Mode", vyop: "✅ Full Offline + Cloud Sync", loyverse: "✅ Offline Mode", square: "⚠️ Limited Offline", vyapar: "✅ Offline Mode", petpooja: "⚠️ Cloud-Dependent" },
+  { feature: "Offline & Multi-Device Sync", vyop: "✅ 100% Offline + Instant Cloud", loyverse: "✅ Offline Mode", square: "⚠️ Limited Offline", vyapar: "✅ Offline Mode", petpooja: "⚠️ Cloud-Dependent" },
   { feature: "Ways to Add Items", vyop: "10 Instant Methods", loyverse: "Manual Entry Only", square: "Manual + Import", vyapar: "Manual Form", petpooja: "Manual + POS" },
   { feature: "Industry Support", vyop: "22 Shop Types", loyverse: "Retail & Cafe", square: "Retail & Services", vyapar: "General Business", petpooja: "Restaurant Only" },
 ];
@@ -72,7 +79,17 @@ const faqs = [
   {
     question: "What is the best POS software in India?",
     answer:
-      "Vyop is the best POS software in India for 2026. It is the only POS software that turns your smartphone into a barcode machine — you can scan and bill 30+ items per minute using just your phone camera, with zero hardware cost. It includes voice AI billing in Hindi and English, GST invoicing, inventory management for 22 business types, and a 0% commission online storefront. Free to start, with ₹999/year Pro cloud sync.",
+      "Vyop is the best POS software in India for 2026. It is the only POS software that runs seamlessly across both Android smartphones and Desktop PC/laptops (via vyop.shop). It turns your phone into a high-speed barcode machine (scans in <1s, bills 30+ items/min) with zero hardware cost, while offering a full desktop counter checkout, voice AI billing in Hindi & English, CA-grade GST tax filing (GSTR-1, GSTR-3B, P&L), and a 0% commission online store. Free to start, with ₹999/year Pro cloud sync.",
+  },
+  {
+    question: "Can I use Vyop POS on a Desktop PC or Laptop?",
+    answer:
+      "Yes! Vyop offers a full-featured Desktop web app at vyop.shop that syncs in real-time with your Android mobile app. You can use your PC or laptop at the main billing counter with standard keyboard shortcuts, USB barcode guns, and thermal printers, while your staff use smartphones for barcode scanning on the sales floor. All data syncs instantly between desktop and mobile.",
+  },
+  {
+    question: "Does Vyop POS support CA tax reporting and accounting?",
+    answer:
+      "Yes. Vyop provides CA-grade accounting and GST tax reporting: one-click GSTR-1 and GSTR-3B reports (Excel & JSON export), real-time Profit & Loss (P&L) statements, balance sheet summaries, customer & supplier party ledgers (udhar khata) with automated WhatsApp payment reminders, and expense categorization. CAs and tax accountants can directly use Vyop's exported reports for monthly filing.",
   },
   {
     question: "What is the best free POS app for Android in India?",
@@ -82,7 +99,7 @@ const faqs = [
   {
     question: "Which POS app works offline without internet?",
     answer:
-      "Vyop POS works 100% offline without any internet connection. All bills, inventory, and customer ledgers are stored securely on your device. When internet reconnects, data automatically syncs to the cloud for backup and multi-device access.",
+      "Vyop POS works 100% offline without any internet connection. All bills, inventory, and customer ledgers are stored securely on your device. When internet reconnects, data automatically syncs to the cloud for backup and multi-device access across mobile and desktop.",
   },
   {
     question: "Can I use my phone as a POS machine without buying hardware?",
@@ -92,7 +109,7 @@ const faqs = [
   {
     question: "What is the best POS machine for retail shops in India?",
     answer:
-      "You don't need a POS machine anymore. Vyop POS turns your existing Android smartphone into the best POS system for Indian retail. Your phone camera scans barcodes in under 1 second (faster than ₹2,500 barcode guns), voice AI creates bills in Hindi in 5 seconds, and you can bill 30+ items per minute. No expensive ₹20,000–₹80,000 POS terminal needed.",
+      "You don't need a bulky POS machine anymore. Vyop POS turns your existing Android smartphone into the best POS system for Indian retail. Your phone camera scans barcodes in under 1 second (faster than ₹2,500 barcode guns), voice AI creates bills in Hindi in 5 seconds, and you can bill 30+ items per minute. For counter checkout, simply log in to vyop.shop on any PC or laptop.",
   },
   {
     question: "How fast can Vyop POS scan and bill items?",
@@ -110,9 +127,9 @@ const faqs = [
       "Vyop POS supports complete Indian GST billing including CGST, SGST, IGST, HSN codes, and GSTR-1 ready reports. It also generates invoices with embedded UPI QR codes so customers can pay instantly via Google Pay, PhonePe, or Paytm. No transaction fee charged.",
   },
   {
-    question: "Is Vyop POS better than Square POS for Indian shops?",
+    question: "Is Vyop POS better than Vyapar and Square for Indian shops?",
     answer:
-      "Yes, for Indian shops Vyop POS is significantly better than Square POS. Square charges 2.6% + 10¢ per transaction, requires $299+ hardware readers, and does not support Indian GST, UPI, or Hindi. Vyop is free to start, works on any existing Android phone with barcode scanning in under 1 second, and has an unbeatable ₹999/year Pro plan with cloud sync built specifically for Indian retail.",
+      "Yes. Compared to Vyapar (₹3,999+/year), Vyop offers camera barcode scanning in <1 second, voice AI billing in Hindi, an online store, and seamless Desktop PC + Mobile sync for just ₹999/year (75% savings). Square charges 2.6% + 10¢ per transaction, requires $299+ hardware readers, and has no Indian GST or UPI support.",
   },
   {
     question: "Which POS app is best for restaurants and cafes in India?",
@@ -127,7 +144,7 @@ const faqs = [
   {
     question: "What is the price of POS software in India?",
     answer:
-      "POS software prices in India range from free to ₹40,000/year. Vyop POS is free to start with offline billing, and ₹999/year for Pro cloud sync — making it the most affordable option. Vyapar costs ₹3,999+/year, Petpooja ₹12,000–₹25,000/year, POSist ₹15,000–₹40,000/year, and Square charges 2.6% per transaction plus $299+ hardware. Vyop gives you more features at the lowest price.",
+      "POS software prices in India range from free to ₹40,000/year. Vyop POS is free to start with offline billing, and ₹999/year for Pro cloud sync across Desktop & Mobile — making it the most affordable option. Vyapar costs ₹3,999+/year, Petpooja ₹12,000–₹25,000/year, POSist ₹15,000–₹40,000/year, and Square charges 2.6% per transaction plus $299+ hardware. Vyop gives you more features at the lowest price.",
   },
 ];
 
@@ -139,20 +156,20 @@ export default function PosAppPage() {
       {/* Hero Section */}
       <section className="pt-40 pb-20 px-6 max-w-5xl mx-auto text-center">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--brand-glow)] text-[var(--brand-primary)] text-sm font-bold mb-6">
-          <span>📱</span> #1 Free Mobile Point of Sale App
+          <span>💻📱</span> #1 Smart POS for Mobile &amp; Desktop PC
         </div>
 
         <h1
           className="text-4xl md:text-6xl font-extrabold mb-6"
           style={{ fontFamily: "var(--font-display)" }}
         >
-          Vyop POS — India&apos;s Best{" "}
-          <span className="gradient-text">Free Mobile POS App</span>
+          Vyop POS — India&apos;s Smartest{" "}
+          <span className="gradient-text">Mobile &amp; Desktop POS</span>
         </h1>
 
         {/* AEO Direct Answer Paragraph - AI Overviews extract this */}
         <p className="text-xl text-[var(--text-secondary)] max-w-3xl mx-auto mb-10">
-          Vyop POS is a mobile Point of Sale (POS) app for Android that turns any smartphone into a supermarket barcode scanner. Create GST bills by speaking in Hindi or English, scan product barcodes with your phone camera, manage inventory with 10 instant methods, and run a 0% commission online store — free to start, with zero hardware cost and ₹999/yr Pro cloud sync.
+          Vyop POS is the smartest cross-platform Point of Sale (POS) and CA-grade accounting software for Indian retail, running seamlessly across Android smartphones and Desktop PC/laptops (vyop.shop). It turns any mobile phone into a supermarket barcode scanner (&lt;1s scan, 30+ items/min) while providing full desktop counter billing with CA-ready GSTR-1 &amp; GSTR-3B tax filing, P&amp;L reports, party udhar ledgers, voice AI in Hindi, and a 0% fee online store — free to start, with ₹999/yr Pro cloud sync.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -170,7 +187,7 @@ export default function PosAppPage() {
             rel="noopener noreferrer"
             className="w-full sm:w-auto px-10 py-5 rounded-2xl bg-white border border-[var(--border-medium)] text-[var(--text-secondary)] font-bold text-xl hover:bg-gray-50 transition-all inline-flex items-center justify-center"
           >
-            Open Web App Free
+            Launch Desktop POS (vyop.shop)
           </a>
         </div>
       </section>
@@ -347,6 +364,158 @@ export default function PosAppPage() {
         </div>
       </section>
 
+      {/* ====== DESKTOP PC + MOBILE DUAL SETUP — For Established Retail Counters ====== */}
+      <section className="py-20 bg-gradient-to-b from-[#0F172A] via-[#1E293B] to-[#0F172A] text-white relative overflow-hidden">
+        <div className="absolute top-0 right-1/4 w-[600px] h-[300px] bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
+        
+        <div className="max-w-6xl mx-auto px-6 relative z-10">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-blue-500/15 border border-blue-400/30 text-blue-300 text-sm font-bold mb-6">
+              <span>💻 + 📱</span> Unified Multi-Device Ecosystem
+            </span>
+            <h2 className="text-3xl md:text-5xl font-extrabold mb-6 leading-tight" style={{ fontFamily: "var(--font-display)" }}>
+              Full Desktop PC Setup at Counter <br className="hidden md:inline" />
+              <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-400 bg-clip-text text-transparent">
+                + Mobile Barcode Scanner on Floor
+              </span>
+            </h2>
+            <p className="text-lg text-gray-300 leading-relaxed">
+              Don&apos;t choose between a traditional desktop counter and a mobile POS. With Vyop, you get both in seamless real-time sync. Log in to <strong className="text-white">vyop.shop</strong> on any Windows PC, Mac, or laptop for high-speed counter checkout, while floor staff scan barcodes with Android smartphones.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <div className="p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm">
+              <div className="text-4xl mb-4">🖥️</div>
+              <h3 className="text-xl font-bold mb-3 text-white" style={{ fontFamily: "var(--font-display)" }}>
+                Main Cashier Counter (PC / Mac)
+              </h3>
+              <p className="text-sm text-gray-300 leading-relaxed mb-4">
+                Open <strong className="text-cyan-300">vyop.shop</strong> in Chrome or Edge. Full keyboard shortcuts, large screen billing, cash drawer triggers, and standard USB/Bluetooth thermal printer support. Zero software installation needed.
+              </p>
+              <span className="inline-block px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 text-xs font-semibold">
+                Windows • macOS • ChromeOS • Linux
+              </span>
+            </div>
+
+            <div className="p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm">
+              <div className="text-4xl mb-4">📱</div>
+              <h3 className="text-xl font-bold mb-3 text-white" style={{ fontFamily: "var(--font-display)" }}>
+                Roving Floor Staff (Android App)
+              </h3>
+              <p className="text-sm text-gray-300 leading-relaxed mb-4">
+                Staff walk aisles, scan barcodes with phone cameras in under 1 second, check live stock, create hold bills, or bill customers directly on the sales floor during rush hours.
+              </p>
+              <span className="inline-block px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-semibold">
+                Android 8.0+ • Phone &amp; Tablet
+              </span>
+            </div>
+
+            <div className="p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm">
+              <div className="text-4xl mb-4">⚡</div>
+              <h3 className="text-xl font-bold mb-3 text-white" style={{ fontFamily: "var(--font-display)" }}>
+                Instant Cloud Sync &amp; Multi-Counter
+              </h3>
+              <p className="text-sm text-gray-300 leading-relaxed mb-4">
+                Every bill generated on desktop immediately deducts inventory on the mobile app. Multi-counter support allows multiple cashiers and mobile scanners to operate simultaneously without stock clashes.
+              </p>
+              <span className="inline-block px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-semibold">
+                Real-Time Cloud Sync • Offline Resilient
+              </span>
+            </div>
+          </div>
+
+          <div className="bg-gradient-to-r from-blue-900/40 via-cyan-900/30 to-blue-900/40 border border-blue-500/30 rounded-3xl p-6 md:p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div>
+              <h4 className="text-lg font-bold text-white mb-1">Want to test the Desktop POS right now?</h4>
+              <p className="text-sm text-gray-300">No download required. Runs directly in your browser with full POS features.</p>
+            </div>
+            <a
+              href="https://vyop.shop"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="shrink-0 px-8 py-4 rounded-xl bg-cyan-400 hover:bg-cyan-300 text-slate-950 font-bold text-base transition-all"
+            >
+              Open vyop.shop on Desktop →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ====== CA-GRADE ACCOUNTING & GST TAX REPORTING ====== */}
+      <section className="py-20 bg-white border-b border-[var(--border-subtle)]">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-emerald-100 border border-emerald-300 text-emerald-800 text-sm font-bold mb-4">
+              <span>📊</span> CA-Ready Financial Intelligence
+            </span>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 mb-4" style={{ fontFamily: "var(--font-display)" }}>
+              CA-Grade GST Accounting &amp; Financial Reports
+            </h2>
+            <p className="text-lg text-[var(--text-secondary)]">
+              Vyop is not just a fast POS — it is a complete financial accounting engine. Generate government-compliant GST returns, audit-ready P&amp;L reports, and automate customer udhar ledgers without hiring an expensive accountant.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <div className="p-6 rounded-2xl bg-gray-50 border border-gray-200">
+              <div className="text-3xl mb-3">📑</div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2" style={{ fontFamily: "var(--font-display)" }}>
+                GSTR-1 &amp; GSTR-3B Ready
+              </h3>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                One-click export of B2B invoices, B2C large/small tables, HSN summaries, and credit notes. Formatted precisely for your CA to upload directly to the GST portal.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-gray-50 border border-gray-200">
+              <div className="text-3xl mb-3">📈</div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2" style={{ fontFamily: "var(--font-display)" }}>
+                Real-Time Profit &amp; Loss (P&amp;L)
+              </h3>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Track gross margins per product category, daily net profit, cost of goods sold (COGS), and live inventory valuation so you always know your exact store profitability.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-gray-50 border border-gray-200">
+              <div className="text-3xl mb-3">🤝</div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2" style={{ fontFamily: "var(--font-display)" }}>
+                Party Ledgers &amp; Udhar Khata
+              </h3>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Full customer &amp; supplier ledger with automatic credit limits, outstanding balances, payment reminders via WhatsApp, and instant UPI collection links.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-gray-50 border border-gray-200">
+              <div className="text-3xl mb-3">💵</div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2" style={{ fontFamily: "var(--font-display)" }}>
+                Expense Tracking &amp; Daybook
+              </h3>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Log shop rent, electricity, staff wages, supplier payouts, and petty cash. Reconcile your cash drawer, bank transfers, and UPI settlements in one daily daybook.
+              </p>
+            </div>
+          </div>
+
+          <div className="p-6 rounded-2xl bg-amber-50 border border-amber-200 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <span className="text-2xl">💡</span>
+              <p className="text-sm text-amber-900 font-medium">
+                <strong>Why CAs love Vyop:</strong> Invoices automatically follow CGST/SGST/IGST tax slabs with verified HSN codes, eliminating manual data entry mistakes during monthly tax filing.
+              </p>
+            </div>
+            <Link
+              href="/tools/gst-calculator"
+              className="shrink-0 text-sm font-bold text-amber-800 hover:text-amber-900 underline"
+            >
+              Explore Free GST Tools →
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Master Comparison Table */}
       <section className="py-20 bg-[var(--bg-surface)]">
         <div className="max-w-6xl mx-auto px-6">
@@ -458,25 +627,27 @@ export default function PosAppPage() {
               {
                 "@type": "SoftwareApplication",
                 name: "Vyop POS",
-                operatingSystem: "Android, Web",
+                operatingSystem: "Android, Windows, macOS, ChromeOS, Web",
                 applicationCategory: "BusinessApplication",
                 applicationSubCategory: "PointOfSaleApplication",
-                description: "India's smartest POS software that turns any smartphone into a barcode machine. Scan and bill 30+ items per minute using phone camera (under 1 second per scan). Voice AI billing in Hindi & English, GST invoicing, inventory management for 22 business types. Free to start, ₹999/year Pro. No hardware needed.",
+                description: "India's smartest cross-platform POS & CA-grade accounting software for Android and Desktop PC (vyop.shop). Turns smartphones into barcode scanners (<1s scan, 30+ items/min) while offering a full desktop counter checkout, voice AI billing in Hindi, GSTR-1/3B tax reports, P&L statements, party ledgers, and 0% commission online store. Free to start, ₹999/year Pro.",
                 url: "https://vyop.in/pos-app",
                 installUrl: "https://play.google.com/store/apps/details?id=com.vyop.app",
                 downloadUrl: "https://play.google.com/store/apps/details?id=com.vyop.app",
                 featureList: [
+                  "Full Desktop PC Web App (vyop.shop) for Main Cashier Counters",
                   "Smartphone Camera Barcode Scanner (Under 1 Second Per Scan)",
-                  "Bill 30+ Items Per Minute — Supermarket Speed on Your Phone",
+                  "Bill 30+ Items Per Minute — Supermarket Speed on Phone & Desktop",
+                  "CA-Grade Tax Accounting: GSTR-1 & GSTR-3B Ready Reports",
+                  "Real-Time Profit & Loss (P&L) and Balance Sheet Tracking",
+                  "Party Ledgers & Udhar Khata with Automated WhatsApp Reminders",
                   "Voice AI Billing in Hindi, Hinglish and English",
-                  "₹0 Hardware Cost — No Barcode Gun, No POS Terminal Needed",
+                  "₹0 Hardware Cost — No Barcode Gun, No Expensive POS Terminal Needed",
                   "10 Instant Ways to Add Products & Inventory",
-                  "Complete Indian GST Compliance (CGST, SGST, HSN, GSTR-1)",
                   "Zero-Commission Live Customer Online Storefront",
                   "UPI QR Code Payment Integration on Every Invoice",
-                  "WhatsApp Invoice Sharing",
-                  "Bluetooth Thermal Receipt Printer Support (58mm/80mm)",
-                  "100% Offline Mode with Cloud Sync",
+                  "WhatsApp Invoice Sharing & Bluetooth Thermal Receipt Printing",
+                  "100% Offline Mode with Real-Time Multi-Device Cloud Sync",
                   "Supports 22 Types of Retail Businesses"
                 ],
                 offers: {

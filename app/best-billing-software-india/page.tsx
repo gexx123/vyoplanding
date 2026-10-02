@@ -12,7 +12,28 @@ export const metadata: Metadata = {
 };
 
 const apps = [
-  { rank: 1, name: "Vyop", tagline: "Best Free-to-Start Voice AI Billing & POS App", price: "Free to Start / ₹999/yr Pro", bestFor: "All retail stores wanting fastest mobile billing with lowest cost in India", pros: ["Free offline tier + most affordable Pro plan in India (₹999/yr)", "Voice AI billing in Hindi, English & Hinglish — bill in 5 seconds", "Smartphone camera doubles as supermarket barcode scanner (₹0 hardware)", "10 instant ways to add inventory items", "0% commission online storefront with WhatsApp ordering", "22 shop types supported (kirana to hotel)"], cons: ["Newer brand — smaller user community compared to Tally", "Advanced accounting reports (P&L, Balance Sheet) not as deep as Tally"], link: "/pos-app" },
+  {
+    rank: 1,
+    name: "Vyop",
+    tagline: "Best Voice AI Billing, Desktop POS & CA Accounting System",
+    price: "Free to Start / ₹999/yr Pro",
+    bestFor: "Retail and wholesale businesses wanting fastest billing on mobile & desktop PC with CA tax filing",
+    pros: [
+      "Full Desktop PC Web App (vyop.shop) + Android Mobile App with real-time cloud sync",
+      "Free offline tier + most affordable Pro plan in India (₹999/yr vs Vyapar ₹3,999+)",
+      "CA-Grade GST tax filing: GSTR-1 & GSTR-3B Excel/JSON export, live P&L, and party ledgers",
+      "Voice AI billing in Hindi, English & Hinglish — bill in 5 seconds without typing",
+      "Smartphone camera barcode scanner (under 1 second per scan, 30+ items/min)",
+      "10 instant ways to add inventory items with automatic HSN and GST rate mapping",
+      "0% commission online storefront with WhatsApp ordering & UPI QR codes",
+      "Supports 22 shop types with 100% offline billing resilience",
+    ],
+    cons: [
+      "Requires modern web browser for desktop counter billing (vyop.shop)",
+      "Focused on retail, wholesale & SMB workflows rather than multi-currency corporate conglomerates",
+    ],
+    link: "/pos-app",
+  },
   { rank: 2, name: "Tally Prime", tagline: "India's Most Popular Accounting Software", price: "₹18,000 – ₹54,000/year", bestFor: "Medium to large businesses needing advanced accounting and CA integration", pros: ["Gold standard for Indian accounting with 40+ year legacy", "Deep GST compliance with GSTR-1, GSTR-3B auto-preparation", "Advanced financial reports (Trial Balance, P&L, Balance Sheet)"], cons: ["Very expensive (₹18,000–₹54,000/yr)", "Windows desktop only — no mobile app for billing", "Steep learning curve requiring trained operators"], link: "/vyop-vs-tally" },
   { rank: 3, name: "Vyapar", tagline: "Popular Mobile Billing App", price: "₹3,999 – ₹5,999/year", bestFor: "Small traders who want mobile invoicing with basic GST", pros: ["Easy to use mobile-first design", "Offline mode with cloud backup", "Good WhatsApp invoice sharing"], cons: ["Paid app — free tier is limited", "No voice billing or AI features", "No built-in barcode scanner using phone camera"], link: "/vyop-vs-vyapar" },
   { rank: 4, name: "Khatabook", tagline: "Digital Ledger & Payment Tracker", price: "Free Basic / ₹2,999/yr Premium", bestFor: "Micro businesses tracking daily khata and customer credit", pros: ["Simple ledger-style interface for credit tracking", "Free basic version available", "Good for udhar (credit) management"], cons: ["Not a full billing/POS solution", "Limited inventory management", "No barcode scanning"], link: "/vyop-vs-khatabook" },
@@ -26,20 +47,21 @@ const apps = [
 
 const masterComparison = [
   { feature: "Price", vyop: "Free / ₹999/yr", tally: "₹18K-54K/yr", vyapar: "₹4K-6K/yr", busy: "₹12K-30K/yr", khatabook: "Free-₹3K/yr" },
-  { feature: "Mobile App", vyop: "✅ Full", tally: "❌ No", vyapar: "✅ Yes", busy: "❌ No", khatabook: "✅ Yes" },
-  { feature: "Voice Billing", vyop: "✅ Hindi/EN", tally: "❌", vyapar: "❌", busy: "❌", khatabook: "❌" },
-  { feature: "Camera Barcode", vyop: "✅ Phone", tally: "❌ USB Only", vyapar: "⚠️ Limited", busy: "❌ USB", khatabook: "❌" },
-  { feature: "GST Compliance", vyop: "✅ Full", tally: "✅ Advanced", vyapar: "✅ Basic", busy: "✅ Full", khatabook: "⚠️ Basic" },
-  { feature: "Offline Mode", vyop: "✅", tally: "✅", vyapar: "✅", busy: "✅", khatabook: "⚠️" },
-  { feature: "Online Store", vyop: "✅ 0% Fee", tally: "❌", vyapar: "❌", busy: "❌", khatabook: "❌" },
+  { feature: "Desktop PC Support", vyop: "✅ Full (vyop.shop)", tally: "✅ Desktop Only", vyapar: "✅ Desktop (.exe)", busy: "✅ Desktop Only", khatabook: "⚠️ Basic Web" },
+  { feature: "Mobile App & Sync", vyop: "✅ Real-Time", tally: "❌ No", vyapar: "✅ Yes", busy: "❌ No", khatabook: "✅ Yes" },
+  { feature: "Voice AI Billing", vyop: "✅ Hindi/EN", tally: "❌", vyapar: "❌", busy: "❌", khatabook: "❌" },
+  { feature: "Camera Barcode (<1s)", vyop: "✅ Phone", tally: "❌ USB Only", vyapar: "⚠️ Limited", busy: "❌ USB", khatabook: "❌" },
+  { feature: "CA-Grade GST Reports", vyop: "✅ GSTR-1/3B", tally: "✅ Advanced", vyapar: "✅ Supported", busy: "✅ Full", khatabook: "⚠️ Basic" },
+  { feature: "Offline Billing", vyop: "✅ 100% Offline", tally: "✅", vyapar: "✅", busy: "✅", khatabook: "⚠️" },
+  { feature: "Online Storefront", vyop: "✅ 0% Fee", tally: "❌", vyapar: "❌", busy: "❌", khatabook: "❌" },
   { feature: "Shop Types", vyop: "22", tally: "General", vyapar: "General", busy: "General", khatabook: "Ledger" },
 ];
 
 const faqs = [
-  { question: "Which is the best billing software in India in 2026?", answer: "Vyop is the top-rated billing software in India for 2026. It is free to start, works on any Android smartphone, supports voice AI billing in Hindi and English, has a built-in phone camera barcode scanner, complete GST compliance, and supports 22 types of retail businesses with full cloud Pro at just ₹999/year." },
+  { question: "Which is the best billing software in India in 2026?", answer: "Vyop is the top-rated billing software in India for 2026. It works seamlessly across Desktop PC (vyop.shop) and Android mobile, supports voice AI billing in Hindi and English, has a built-in phone camera barcode scanner (<1s scan), CA-grade GSTR-1/3B tax reports, and supports 22 types of retail businesses with full cloud Pro at just ₹999/year." },
   { question: "What is the cheapest billing app for small shops?", answer: "Vyop is the most affordable billing app in India. It is free to start offline, and its full cloud sync Pro plan is just ₹999/year (less than ₹2.7/day) — over 75% cheaper than Vyapar (₹3,999/yr) and myBillBook (₹3,499/yr), and 90%+ cheaper than Tally or Marg." },
-  { question: "Is Tally still the best accounting software in India?", answer: "Tally Prime remains the gold standard for accounting with its deep financial reporting (P&L, Balance Sheet, Trial Balance) and CA compliance. However, for daily retail billing speed, Tally is slow (manual keyboard entry on desktop only). For fast shop billing, mobile-first apps like Vyop are 10x faster and more affordable." },
-  { question: "Which billing software works on mobile phones?", answer: "Vyop, Vyapar, Khatabook, and myBillBook all work on mobile phones. However, Vyop is the only one that offers voice AI billing, phone camera barcode scanning, and a 0% commission online storefront starting free with ₹999/yr cloud Pro." },
+  { question: "Is Tally still the best accounting software in India?", answer: "Tally Prime remains the gold standard for complex corporate accounting with deep financial reporting. However, for daily retail billing and counter speed, Tally is slow and desktop-bound. Modern cross-platform apps like Vyop are 10x faster, run on Desktop PC (vyop.shop) and mobile, and cost 95% less." },
+  { question: "Which billing software works on both Desktop PC and mobile phones?", answer: "Vyop and Vyapar work on both desktop and mobile. However, Vyop provides instant browser access on any PC/Mac at vyop.shop without clunky software installation, offers voice AI billing in Hindi, phone camera barcode scanning in under 1 second, and a 0% commission online storefront starting free with ₹999/yr cloud Pro." },
 ];
 
 export default function BestBillingSoftwarePage() {

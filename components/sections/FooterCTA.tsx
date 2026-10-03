@@ -76,9 +76,9 @@ export default function FooterCTA() {
           className="flex justify-center mb-8"
         >
           <div
-            className="w-16 h-16 rounded-2xl flex items-center justify-center bg-white shadow-lg"
+            className="w-16 h-16 rounded-2xl flex items-center justify-center bg-white shadow-lg overflow-hidden p-2"
           >
-            <span style={{ fontSize: "32px", color: "var(--brand-primary)", fontWeight: "bold", fontFamily: "sans-serif" }}>व्</span>
+            <img src="/logo.svg" alt="Vyop Logo" className="w-full h-full object-contain rounded-xl" />
           </div>
         </motion.div>
 

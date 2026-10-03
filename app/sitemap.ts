@@ -90,7 +90,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${baseUrl}/barcode-scanner`, priority: 1.0, changeFrequency: 'weekly' },
     { url: `${baseUrl}/barcode-scanner/mobile-barcode-scanner`, priority: 0.95, changeFrequency: 'weekly' },
     { url: `${baseUrl}/barcode-scanner/barcode-scanner-for-billing`, priority: 0.95, changeFrequency: 'weekly' },
-    { url: `${baseUrl}/features/online-storefront`, priority: 0.98, changeFrequency: 'daily', lastModified: new Date('2026-10-02') },
+    { url: `${baseUrl}/features/online-storefront`, priority: 0.98, changeFrequency: 'daily', lastModified: new Date() },
     { url: `${baseUrl}/features/ten-ways-to-add-items`, priority: 0.95, changeFrequency: 'weekly' },
     { url: `${baseUrl}/hi`, priority: 0.9, changeFrequency: 'daily' },
     { url: `${baseUrl}/about`, priority: 0.8, changeFrequency: 'monthly' },

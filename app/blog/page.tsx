@@ -19,19 +19,34 @@ import { staticBlogs } from '@/lib/staticBlogs';
 
 async function getBlogs() {
   let firestoreBlogs: any[] = [];
+  const realViewsBySlug = new Map<string, number>();
+
   try {
     const blogsRef = collection(db, 'blogs');
     const q = query(blogsRef, orderBy('date', 'desc'));
     const snapshot = await getDocs(q);
     const allBlogs = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
     firestoreBlogs = allBlogs.filter((blog: any) => blog.status !== 'Draft');
+
+    // Also populate real views map from all documents
+    snapshot.docs.forEach(doc => {
+      const data = doc.data();
+      if (data.slug && typeof data.views === 'number') {
+        realViewsBySlug.set(data.slug, data.views);
+      }
+    });
   } catch (error) {
     console.error("Error fetching blogs from Firestore:", error);
   }
 
-  // Merge with staticBlogs, avoiding duplicates by slug
+  // Merge with staticBlogs, avoiding duplicates by slug and populating real views
   const existingSlugs = new Set(firestoreBlogs.map((b) => b.slug));
-  const remainingStatic = staticBlogs.filter((b) => !existingSlugs.has(b.slug) && b.status !== 'Draft');
+  const remainingStatic = staticBlogs
+    .filter((b) => !existingSlugs.has(b.slug) && b.status !== 'Draft')
+    .map((b) => ({
+      ...b,
+      views: realViewsBySlug.get(b.slug) ?? 0,
+    }));
 
   const combined = [...firestoreBlogs, ...remainingStatic];
   return combined.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
@@ -76,7 +91,7 @@ export default async function BlogIndex() {
               const views = blog.views || 0;
               
               return (
-                <Link href={`/blog/${blog.slug}`} key={blog.id} className="group h-full">
+                <Link href={`/blog/${blog.slug}`} key={blog.id || blog.slug} className="group h-full">
                   <article className="bg-white h-full rounded-[32px] overflow-hidden shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col">
                     {blog.image ? (
                       <div className="w-full h-48 bg-gray-100 overflow-hidden relative">

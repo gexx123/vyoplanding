@@ -6,6 +6,8 @@ import Link from "next/link";
 import { useRef } from "react";
 import SectionLabel from "@/components/ui/SectionLabel";
 
+import { Store } from "lucide-react";
+
 const fadeUpVariants = {
   hidden: { opacity: 0, y: 32 },
   visible: {
@@ -21,6 +23,37 @@ const staggerContainer = {
     transition: { staggerChildren: 0.15, delayChildren: 0.1 },
   },
 };
+
+const BUILT_FOR_CHIPS = [
+  { name: "Kirana", icon: "🛒", href: "/solutions/kirana-grocery" },
+  { name: "Vegetable", icon: "🥬", href: "/solutions/kirana-grocery" },
+  { name: "Restaurant KOT", icon: "🍽️", href: "/solutions/restaurant-cafe" },
+  { name: "Clothing", icon: "👗", href: "/solutions/clothing-apparel" },
+  { name: "Pharmacy", icon: "💊", href: "/solutions/pharmacy-chemist" },
+  { name: "Hardware", icon: "🔧", href: "/solutions/hardware-sanitary" },
+  { name: "Electronics", icon: "📺", href: "/solutions/electronics-mobile" },
+  { name: "Stationery", icon: "📚", href: "/solutions/stationery-bookshop" },
+  { name: "Footwear", icon: "👟", href: "/solutions/footwear-shoes" },
+  { name: "Electrical", icon: "💡", href: "/solutions/hardware-sanitary" },
+  { name: "Cosmetics", icon: "💄", href: "/solutions/salon-beauty" },
+  { name: "Salon", icon: "✂️", href: "/solutions/salon-beauty" },
+  { name: "Auto Parts", icon: "⚙️", href: "/solutions/auto-parts" },
+  { name: "Bike Dealership", icon: "🏍️", href: "/solutions/auto-parts" },
+  { name: "Car Dealership", icon: "🚗", href: "/solutions/auto-parts" },
+  { name: "Hotel", icon: "🏨", href: "/solutions/hotel-lodge" },
+  { name: "Jewellery", icon: "💍", href: "/solutions/jewellery-watch" },
+  { name: "Dairy", icon: "🥛", href: "/solutions/dairy-milk" },
+  { name: "Bakery", icon: "🥐", href: "/solutions/bakery-sweet-shop" },
+  { name: "Mobile Shop", icon: "📱", href: "/solutions/electronics-mobile" },
+  { name: "Supermarket", icon: "🏪", href: "/solutions/supermarket-departmental" },
+  { name: "Optical", icon: "👓", href: "/solutions/optical-eyewear" },
+  { name: "Pet Shop", icon: "🐾", href: "/solutions/pet-shop" },
+  { name: "Paan Shop", icon: "🍃", href: "/solutions/paan-tobacco" },
+  { name: "Gift Shop", icon: "🎁", href: "/solutions/gift-handicraft" },
+  { name: "Tiles & Marble", icon: "🏗️", href: "/solutions/tiles-marble" },
+  { name: "Toy Shop", icon: "🧸", href: "/solutions/toy-shop" },
+  { name: "Other", icon: "🏢", href: "/solutions/general-variety" },
+];
 
 export default function Hero() {
   const { scrollYProgress } = useScroll();
@@ -89,14 +122,14 @@ export default function Hero() {
           {/* CTA buttons */}
           <motion.div
             variants={fadeUpVariants}
-            className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto px-4 sm:px-0"
+            className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3.5 w-full sm:w-auto px-4 sm:px-0"
           >
             {/* Desktop: Get Started Button */}
             <a
               href="https://vyop.shop/"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden md:inline-flex items-center justify-center px-8 py-4 rounded-[14px] text-white font-semibold transition-all duration-200 hover:-translate-y-0.5"
+              className="hidden md:inline-flex items-center justify-center px-7 py-4 rounded-[14px] text-white font-semibold transition-all duration-200 hover:-translate-y-0.5"
               style={{
                 background: "var(--gradient-brand)",
                 fontFamily: "var(--font-display)",
@@ -112,7 +145,7 @@ export default function Hero() {
               href="https://play.google.com/store/apps/details?id=com.vyop.app"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex md:hidden items-center justify-center gap-2.5 px-8 py-3.5 rounded-[14px] bg-black text-white transition-all duration-200 hover:-translate-y-0.5 w-full sm:w-auto"
+              className="inline-flex md:hidden items-center justify-center gap-2.5 px-7 py-3.5 rounded-[14px] bg-black text-white transition-all duration-200 hover:-translate-y-0.5 w-full sm:w-auto"
               style={{
                 boxShadow: "0 4px 14px rgba(0,0,0,0.15)",
               }}
@@ -133,9 +166,28 @@ export default function Hero() {
               </div>
             </a>
 
+            {/* Create Online Website for Your Store Button */}
+            <Link
+              href="/features/online-storefront"
+              id="hero-create-store-btn"
+              className="inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-[14px] font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 shadow-md hover:shadow-lg group"
+              style={{
+                background: "linear-gradient(135deg, #2563EB 0%, #4F46E5 50%, #7C3AED 100%)",
+                fontFamily: "var(--font-display)",
+                fontSize: "15px",
+                boxShadow: "0 4px 16px rgba(79, 70, 229, 0.35)",
+              }}
+            >
+              <span className="flex items-center justify-center w-6 h-6 rounded-full bg-white/20 text-white group-hover:scale-110 transition-transform">
+                <Store className="w-3.5 h-3.5" />
+              </span>
+              <span>Create Online Website for Your Store</span>
+            </Link>
+
+            {/* Watch Demo */}
             <a
               href="#demo"
-              className="inline-flex items-center justify-center px-8 py-4 rounded-[14px] font-medium transition-all duration-200 hover:border-[var(--border-medium)]"
+              className="inline-flex items-center justify-center px-7 py-4 rounded-[14px] font-medium transition-all duration-200 hover:border-[var(--border-medium)]"
               style={{
                 background: "var(--bg-base)",
                 border: "1px solid var(--border-medium)",
@@ -152,39 +204,19 @@ export default function Hero() {
           {/* Quick industry links */}
           <motion.div
             variants={fadeUpVariants}
-            className="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-2 text-xs text-gray-500"
+            className="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-2 text-xs text-gray-500 max-w-2xl"
           >
-            <span className="font-semibold text-gray-700">Built for:</span>
-            <Link
-              href="/solutions/kirana-grocery"
-              className="px-3 py-1 rounded-full bg-amber-50/80 border border-amber-200/80 text-amber-900 hover:bg-amber-100 transition-colors font-medium"
-            >
-              🛒 Kirana
-            </Link>
-            <Link
-              href="/solutions/restaurant-cafe"
-              className="px-3 py-1 rounded-full bg-amber-50/80 border border-amber-200/80 text-amber-900 hover:bg-amber-100 transition-colors font-medium"
-            >
-              🍽️ Restaurant KOT
-            </Link>
-            <Link
-              href="/solutions/clothing-apparel"
-              className="px-3 py-1 rounded-full bg-amber-50/80 border border-amber-200/80 text-amber-900 hover:bg-amber-100 transition-colors font-medium"
-            >
-              👗 Clothing
-            </Link>
-            <Link
-              href="/solutions/pharmacy-chemist"
-              className="px-3 py-1 rounded-full bg-amber-50/80 border border-amber-200/80 text-amber-900 hover:bg-amber-100 transition-colors font-medium"
-            >
-              💊 Pharmacy
-            </Link>
-            <Link
-              href="/solutions/hardware-sanitary"
-              className="px-3 py-1 rounded-full bg-amber-50/80 border border-amber-200/80 text-amber-900 hover:bg-amber-100 transition-colors font-medium"
-            >
-              🔧 Hardware
-            </Link>
+            <span className="font-semibold text-gray-700 mr-1">Built for:</span>
+            {BUILT_FOR_CHIPS.map((chip) => (
+              <Link
+                key={chip.name}
+                href={chip.href}
+                className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-50/80 border border-amber-200/80 text-amber-900 hover:bg-amber-100 hover:border-amber-300 transition-all font-medium whitespace-nowrap shadow-2xs"
+              >
+                <span>{chip.icon}</span>
+                <span>{chip.name}</span>
+              </Link>
+            ))}
           </motion.div>
         </div>
       </motion.div>

@@ -17,9 +17,14 @@ export default function LaunchAnnouncement() {
         
         if (!hasVisited) {
           const res = await fetch("/api/stats/visitors", { method: "POST" });
-          const data = await res.json();
-          if (data.count) {
-            localStorage.setItem("vyop_visited", "true");
+          if (res.ok) {
+            const contentType = res.headers.get("content-type");
+            if (contentType && contentType.includes("application/json")) {
+              const data = await res.json();
+              if (data?.count) {
+                localStorage.setItem("vyop_visited", "true");
+              }
+            }
           }
         }
       } catch (err) {

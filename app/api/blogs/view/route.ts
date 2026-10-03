@@ -1,31 +1,34 @@
 import { NextResponse } from 'next/server';
 import { db } from '@/lib/firebase';
-import { doc, updateDoc, increment, getDoc, collection, query, where, getDocs } from 'firebase/firestore';
+import { doc, increment, getDoc, collection, query, where, getDocs, setDoc } from 'firebase/firestore';
 
 export async function POST(req: Request) {
   try {
     const { id, slug } = await req.json();
-    
-    let docId = id;
-    
-    // If we only have slug, find the doc ID
-    if (!docId && slug) {
-      const q = query(collection(db, 'blogs'), where('slug', '==', slug));
+    const target = slug || id;
+    if (!target) return NextResponse.json({ error: "No ID or slug provided" }, { status: 400 });
+
+    let blogRef;
+
+    if (id && id !== slug) {
+      blogRef = doc(db, 'blogs', id);
+    } else {
+      const q = query(collection(db, 'blogs'), where('slug', '==', target));
       const snap = await getDocs(q);
       if (!snap.empty) {
-        docId = snap.docs[0].id;
+        blogRef = doc(db, 'blogs', snap.docs[0].id);
+      } else {
+        blogRef = doc(db, 'blogs', target);
       }
     }
-    
-    if (!docId) return NextResponse.json({ error: "No ID or slug provided" }, { status: 400 });
 
-    const blogRef = doc(db, 'blogs', docId);
-    await updateDoc(blogRef, {
-      views: increment(1)
-    });
+    await setDoc(blogRef, {
+      slug: target,
+      views: increment(1),
+    }, { merge: true });
 
     const updated = await getDoc(blogRef);
-    return NextResponse.json({ views: updated.data()?.views || 0 });
+    return NextResponse.json({ views: updated.data()?.views || 1 });
   } catch (error) {
     console.error("Error incrementing blog views:", error);
     return NextResponse.json({ error: "Failed to increment views" }, { status: 500 });

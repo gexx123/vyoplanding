@@ -22,9 +22,16 @@ export default function Blog() {
 
   useEffect(() => {
     fetch("/api/blogs")
-      .then((res) => res.json())
+      .then(async (res) => {
+        if (!res.ok) return [];
+        const contentType = res.headers.get("content-type");
+        if (contentType && contentType.includes("application/json")) {
+          return res.json();
+        }
+        return [];
+      })
       .then((data) => {
-        setPosts(data);
+        setPosts(Array.isArray(data) ? data : []);
         setLoading(false);
       })
       .catch((err) => {

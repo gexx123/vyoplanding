@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
 import Link from "next/link";
+import InteractiveStorefrontDemo from "@/components/storefront/InteractiveStorefrontDemo";
+import ShopTypeSelectorSection from "@/components/storefront/ShopTypeSelectorSection";
+import CommissionSavingsCalculator from "@/components/storefront/CommissionSavingsCalculator";
 import {
   ShoppingBag,
   Share2,
@@ -23,12 +26,22 @@ import {
   Wrench,
   Pill,
   Check,
+  Star,
+  Gift,
+  Lock,
+  Flame,
+  Eye,
+  Layers,
+  Gem,
+  BookOpen,
+  Car,
+  Scissors,
 } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Create Free Online Ordering Website for Any Shop, Restaurant & Hotel (0% Commission) | Vyop",
   description:
-    "Launch a 0% commission online ordering website for your restaurant, hotel, retail shop, cafe, bakery, or store in 60 seconds. Table QR code menus, room service ordering, WhatsApp catalog, direct UPI payments, and zero aggregator cuts.",
+    "Launch a 0% commission online ordering website for your restaurant, hotel, retail shop, cafe, bakery, or store in 30 seconds. Table QR code menus, room service ordering, WhatsApp catalog, direct UPI payments, and zero aggregator cuts.",
   alternates: {
     canonical: "/features/online-storefront",
   },
@@ -40,41 +53,103 @@ export const metadata: Metadata = {
     type: "website",
   },
   keywords: [
-    // Real User English High-Intent Searches
-    "how to create website for my shop",
+    // 1. Kirana, Supermarket & FMCG High-Intent Searches
+    "free online store for kirana shop",
+    "kirana dukan ki online website kaise banaye",
+    "grocery shop website maker free",
+    "kirana store delivery website 0 commission",
+    "apni rashan dukan ko online kaise kare",
+    "supermarket billing software with customer ordering website",
+    "grocery home delivery whatsapp link generator",
+    "dukan ka saman online kaise beche",
+    "blinkit zepto competitor for local kirana",
+    "online grocery store maker with direct upi payment",
+    
+    // 2. Restaurant, Cafe, Dhaba & Cloud Kitchen Searches
     "how to create online ordering website for restaurant free",
-    "free online store builder india",
+    "restaurant ki website kaise banaye free me",
+    "restaurant qr code digital menu and table ordering app",
+    "restaurant table qr code ordering menu maker",
+    "cafe digital menu card with photos and prices",
+    "cloud kitchen online ordering website with kot printer",
+    "0 commission food ordering website for restaurants",
+    "swiggy zomato alternative 0 commission",
+    "swiggy zomato commission bachane ka tarika",
+    "swiggy zomato commission calculator",
+    "dhaba food delivery website 0 percent commission",
+    "scan qr code to order food software free",
     "hotel room service qr menu software",
     "table qr code ordering system india",
-    "0 commission food ordering website",
-    "swiggy zomato alternative 0 commission",
-    "how to take direct orders on whatsapp for shop",
-    "free dukaan alternative without monthly fee",
-    "free bikayi alternative for whatsapp catalog",
-    "shopify alternative for small indian shop",
+    "qr code menu card generator for restaurant",
+    
+    // 3. Clothing, Boutique, Garments & Fashion Retail
     "clothing boutique online store builder",
+    "kapde ki dukan ka online store kaise banaye",
+    "clothing boutique catalog with sizes and colors",
+    "saree showroom online website maker free",
+    "footwear shoe shop digital catalogue whatsapp",
+    "fashion boutique online ordering website india",
+    "garment shop barcode billing with online website",
+    "boutique customer order tracking app",
+    "online store with size and color variant support",
+    
+    // 4. Bakery, Cake Shop & Sweet Shop (Mithai)
     "sweet shop bakery cake booking website",
-    "mobile electronics store digital catalog link",
+    "bakery cake advance booking website online",
+    "mithai dukan cake order website kaise banaye",
+    "custom birthday cake flavor and weight ordering link",
+    "mithai dukan digital catalog for diwali rakhi rush",
+    
+    // 5. Medical Store, Chemist & Pharmacy
     "medical store prescription online ordering",
-    "direct upi payment online store india",
-    "scan qr code to order food software free",
-    "cafe digital menu card with photos",
-    "online ordering website for dhaba and fast food",
-    "how to sell online from my retail shop free",
-    // Real User Hinglish & Indian Colloquial Searches
+    "medical store prescription upload website",
+    "chemist shop medicine online delivery website",
+    "pharmacy billing software with customer website",
+    "dawakhana online medicine order whatsapp link",
+    
+    // 6. Mobile, Electronics, Hardware & Electrical
+    "mobile electronics store digital catalog link",
+    "mobile accessories online catalog maker",
+    "electronics shop online product showcase link",
+    "hardware sanitary electrical store price list website",
+    "cctv and computer shop digital catalog generator",
+    "hardware shop contractor quotation website",
+    
+    // 7. Jewellery, Stationery, Gift & Auto Spares
+    "jewellery shop digital catalog with gold rate",
+    "stationery and gift shop online ordering link",
+    "auto parts car bike spares digital catalog maker",
+    "book store school booklist online order link",
+    "pet shop online pet food delivery website",
+    "salon and spa digital appointment service menu",
+    
+    // 8. General Indian Shopkeeper Intent & Hinglish Queries
+    "how to create website for my shop",
     "apni dukan ki website kaise banaye",
     "dukan ka online store kaise banaye",
-    "restaurant ki website kaise banaye",
-    "restaurant me qr code se order kaise kare",
-    "swiggy zomato commission se kaise bache",
-    "hotel me room service qr code kaise lagaye",
-    "kapde ki dukan ka catalog online kaise banaye",
-    "mithai dukan cake order website kaise banaye",
+    "dukan ki website banane ka sabse aasan tarika",
     "bina computer mobile se dukan ki website kaise banaye",
     "bina coding shop website kaise banaye",
     "free me online store kaise banaye mobile se",
-    "dukan ka whatsapp catalog link kaise banaye",
+    "how to create online store in 30 seconds",
+    "how to sell online from my retail shop free",
+    "how to take direct orders on whatsapp for shop",
+    "dukan ka whatsapp catalog link kaise banaye free",
+    "dukan ka delivery order lene wala app",
+    "free whatsapp catalogue maker with direct checkout",
+    "online store with cash on delivery and direct upi",
+    "free shop website with cash on delivery",
+    "free dukaan alternative without monthly fee",
+    "free bikayi alternative for whatsapp catalog",
+    "shopify alternative for small indian shop",
+    "vyapar alternative with live online storefront",
+    "billing software with free online store",
+    "pos machine with online store link generator",
     "online bill aur order lene wali website",
+    "0 commission online ordering system for local shops",
+    "free online store builder india",
+    "local retail shop home delivery ordering website",
+    "how to get orders on whatsapp from local society",
   ],
 };
 
@@ -159,6 +234,46 @@ const businessTypes = [
     bgLight: "bg-green-50/70 border-green-200/70",
     highlights: ["Camera Barcode Lookup", "Neighborhood 15-Min Delivery", "Direct UPI Payment QR"],
   },
+  {
+    icon: Gem,
+    title: "Jewellery, Gold & Luxury Gifts",
+    tagline: "Live Gold Rate & High-Res Catalog",
+    desc: "Showcase gold, silver, and diamond designs with live daily rate updates. Allow customers to browse rings, necklaces, and bridal sets with direct WhatsApp booking inquiries.",
+    badge: "Jewellery & Luxury",
+    color: "from-amber-400 to-yellow-500",
+    bgLight: "bg-amber-50/70 border-amber-200/70",
+    highlights: ["Daily Gold Rate Integration", "High-Resolution Design Gallery", "Direct WhatsApp VIP Inquiries"],
+  },
+  {
+    icon: BookOpen,
+    title: "Stationery, Bookstores & Toys",
+    tagline: "School Booklists & Hamper Orders",
+    desc: "Upload class-wise school book sets, art supplies, and board games. Parents order complete school stationery kits and birthday gifts with 1 tap on WhatsApp.",
+    badge: "Books & Stationery",
+    color: "from-indigo-600 to-violet-600",
+    bgLight: "bg-indigo-50/70 border-indigo-200/70",
+    highlights: ["Class-wise Booklist Bundles", "Art & Office Supply Packs", "Instant WhatsApp Society Delivery"],
+  },
+  {
+    icon: Car,
+    title: "Auto Parts, Bike Spares & Garages",
+    tagline: "Vehicle Spares & Service Estimates",
+    desc: "Categorize spare parts by vehicle brand and model (Maruti, Hyundai, Hero, Honda). Mechanics and vehicle owners order parts or request service estimates directly.",
+    badge: "Automotive Spares",
+    color: "from-red-600 to-rose-700",
+    bgLight: "bg-red-50/70 border-red-200/70",
+    highlights: ["Brand & Model Part Search", "Mechanic WhatsApp Estimates", "Fast Local Delivery Dispatch"],
+  },
+  {
+    icon: Scissors,
+    title: "Salons, Spas & Pet Care",
+    tagline: "Service Menus & Pet Food Delivery",
+    desc: "Display haircut, spa, and beauty service menus with pricing, or sell premium pet food, treats, and accessories with home delivery to nearby pet parents.",
+    badge: "Salons & Services",
+    color: "from-teal-600 to-cyan-700",
+    bgLight: "bg-teal-50/70 border-teal-200/70",
+    highlights: ["Digital Service Price List", "Bulk Pet Food Subscriptions", "Direct WhatsApp Booking"],
+  },
 ];
 
 const storeSteps = [
@@ -190,84 +305,122 @@ const storeSteps = [
 
 const storefrontComparison = [
   {
-    feature: "Commission Fee",
+    feature: "Setup & Monthly Cost",
+    vyop: "₹0 Free to Start / ₹999/yr Pro",
+    shopify: "₹1,500 – ₹3,000/month",
+    vyapar: "Paid Gold Plan only (no web store)",
+    aggregators: "₹1,000+ onboarding + hidden cuts",
+  },
+  {
+    feature: "Commission per Order",
     vyop: "0% (Keep 100% of your earnings)",
-    foodAggregators: "18% – 30% on every order",
-    quickCommerce: "20% – 28% margin cut",
-    customWeb: "High dev fees + gateway cuts",
+    shopify: "0% – 2% transaction fee",
+    vyapar: "0% (basic PDF link only)",
+    aggregators: "20% – 35% commission cut",
   },
   {
-    feature: "Monthly & Setup Cost",
-    vyop: "Free to Start / ₹999/yr Pro",
-    foodAggregators: "₹1,000+ onboarding + hidden fees",
-    quickCommerce: "Mandatory warehouse listing",
-    customWeb: "₹25,000–₹50,000 + ₹2,000/mo",
+    feature: "Payment Gateway Deductions",
+    vyop: "₹0 (Direct UPI to your Bank / COD)",
+    shopify: "2% – 3% MDR + 18% GST tax",
+    vyapar: "N/A (No online checkout)",
+    aggregators: "Included in 30% aggregator cut",
   },
   {
-    feature: "Menu & Inventory Sync",
-    vyop: "Automatic (Synced with Counter POS)",
-    foodAggregators: "Manual menu toggling",
-    quickCommerce: "Separate stock allocation",
-    customWeb: "Manual double-entry data work",
+    feature: "Live POS Bill Sync",
+    vyop: "Yes (Voice Orb / 1-Tap Bill Creation)",
+    shopify: "Requires expensive third-party plugins",
+    vyapar: "Manual double-entry data work",
+    aggregators: "Separate partner merchant tablet app",
   },
   {
-    feature: "Customer Ownership",
-    vyop: "100% Yours (Direct phone & WhatsApp)",
-    foodAggregators: "Customer number masked & hidden",
-    quickCommerce: "Zero customer contact access",
-    customWeb: "Yours, but complex to manage",
+    feature: "Customer Gamification (Spin Wheel)",
+    vyop: "Included (Built-in Spin Wheel & Coupons)",
+    shopify: "Paid App ($10–$25/month extra)",
+    vyapar: "Not Available",
+    aggregators: "Not Available",
   },
   {
-    feature: "Payment Settlement",
-    vyop: "Instant UPI directly to your bank account",
-    foodAggregators: "7 to 15-day delayed payout batches",
-    quickCommerce: "Bi-weekly accounting payouts",
-    customWeb: "2-3 business day gateway hold",
+    feature: "Customer Star Ratings & Reviews",
+    vyop: "Included (Built-in Verified Reviews)",
+    shopify: "Paid App ($15/month extra)",
+    vyapar: "Not Available",
+    aggregators: "Locked inside aggregator app",
   },
   {
-    feature: "Table / Room QR Ordering",
-    vyop: "Included (Table QR & Room Service)",
-    foodAggregators: "Expensive add-on dine-in module",
-    quickCommerce: "Not available",
-    customWeb: "Requires custom app development",
+    feature: "Product Variants (Size/Weight)",
+    vyop: "Yes (Multi-pack, 500g vs 1kg, S/M/L)",
+    shopify: "Yes",
+    vyapar: "Limited basic variants",
+    aggregators: "Limited options",
+  },
+  {
+    feature: "Customer Phone & Data Ownership",
+    vyop: "100% Yours (Direct WhatsApp & Phone)",
+    shopify: "Yes (Owned by you)",
+    vyapar: "Yes",
+    aggregators: "Hidden & Masked (Aggregator owns customer)",
+  },
+  {
+    feature: "Real-Time POS Voice Order Alert",
+    vyop: "Yes (Pre-staged Bill in 1 Tap)",
+    shopify: "No",
+    vyapar: "No",
+    aggregators: "No",
+  },
+  {
+    feature: "Table QR Dine-in & Room Service",
+    vyop: "Included (Kitchen KOT & Room QR)",
+    shopify: "Requires custom development",
+    vyapar: "Not Available",
+    aggregators: "Dineout / Zomato Gold extra fee",
   },
 ];
 
 const faqs = [
   {
-    question: "Apni dukan ki website mobile se kaise banaye? (Can I build it on phone without coding?)",
+    question: "Do I need a domain name, SSL, or hosting to launch my Vyop online store?",
     answer:
-      "Yes, completely! You don't need a computer, laptop, or any coding knowledge. Simply download the free Vyop POS app on your Android smartphone, add your shop items or restaurant dishes by speaking in Hindi/English or scanning barcodes, and tap 'Online Storefront'. Your custom live ordering website is generated instantly in 60 seconds.",
+      "No, absolutely zero technical headaches or extra expenses. Your custom online store runs instantly on Vyop's ultra-fast cloud network (vyop.shop/order?token=...). You get a secure, branded mobile PWA with your shop logo, product photos, categories, variants, and a downloadable high-resolution 300DPI QR code ready to print in 60 seconds.",
   },
   {
-    question: "Swiggy Zomato commission se kaise bache? (How can restaurants save 30% commission?)",
+    question: "How do customers pay, and why is Vyop's 0% payment gateway fee a major advantage?",
     answer:
-      "Vyop gives restaurants, cafes, dhabas, and cloud kitchens their own direct online ordering website with 0% commission. You share your direct menu link (vyop.shop/@yourrestaurant) on WhatsApp and Google Maps. Customers order directly, payments go straight to your personal UPI QR, and orders print on your kitchen KOT. A restaurant doing ₹3 Lakhs monthly saves ₹75,000 every single month in aggregator commissions.",
+      "Standard payment gateways (Razorpay, Paytm, Cashfree) deduct 2% to 3% + 18% GST on every single customer order. Vyop's 0% commission model lets you keep 100% of your earnings: customers pay via your own direct UPI QR code (Google Pay, PhonePe, Paytm, BHIM), Cash on Delivery (COD), or In-Store Pickup. Money arrives in your bank account instantly with zero gateway hold.",
   },
   {
-    question: "Restaurant me Table QR code se order kaise kare? (How does Dine-in Table QR work?)",
+    question: "Does store inventory auto-sync between the physical counter POS and the online store?",
     answer:
-      "Vyop provides custom printable QR codes for each dining table (Table 1, Table 2, Table 3, etc.). Customers scan the QR code with their phone camera, browse your full food menu with photos, and place their order. The order automatically routes to your kitchen thermal printer (Kitchen Order Ticket / KOT) with the exact table number without needing a waiter.",
+      "Yes! With Vyop's 1-Click Catalogue Sync, your entire inventory, pricing, and available stock levels update automatically. When an item sells out at your physical counter, your online storefront updates in real-time so customers cannot order out-of-stock items. No manual double entry required.",
   },
   {
-    question: "Hotel me room service QR code kaise lagaye? (How does in-room dining work?)",
+    question: "Delivery management — who arranges deliveries and do I handle it myself?",
     answer:
-      "Hotels and homestays can place a custom QR stand in each guest room (e.g., Room 101, Room 204). Guests scan the QR to order breakfast, dinner, or room amenities directly from their smartphone. The order alert pings both the front desk and the kitchen with the guest room number, and can be collected via UPI or added to the guest checkout folio.",
+      "You own 100% of your customer relationships. The store collects the customer's delivery address, phone number, and delivery notes. You fulfill orders locally using your store staff, local delivery services (Dunzo, Porter), or customer in-store pickup — saving the massive 25%–35% cut taken by delivery aggregator apps like Swiggy, Zomato, or Blinkit.",
   },
   {
-    question: "Is Vyop a free alternative to Dukaan, Bikayi, and Shopify?",
+    question: "Are there any limits on products, customer visits, or order volume?",
     answer:
-      "Yes! Platforms like Dukaan, Bikayi, and Shopify charge high monthly subscription fees (₹1,500–₹3,000/month) and take extra payment gateway commissions. Vyop Storefront is free to start, charges 0% commission on orders, and connects directly to your counter billing POS so your in-store stock and online store remain perfectly synchronized.",
+      "Zero limits. You can upload unlimited products, create unlimited size and weight variants, receive unlimited customer visits, and process unlimited orders without paying a single rupee in commission.",
   },
   {
-    question: "How do I take orders on WhatsApp with direct UPI payment?",
+    question: "Can I use this for both a restaurant (Table QR) and a retail shop (Home Delivery)?",
     answer:
-      "When customers browse your Vyop store link on their phone, they add items to their cart and tap 'Checkout'. The complete order details (items, quantity, delivery address, total amount) are sent directly to your shop's WhatsApp. Payment goes straight to your personal UPI QR code (Google Pay, PhonePe, Paytm, BHIM) with zero delay and 0% deductions.",
+      "Yes! Vyop supports both modes seamlessly. For restaurants, cafes, and hotels, it generates Table QR codes and Room Service QR stands that route orders directly to your kitchen thermal printer (KOT). For kirana, clothing, electronics, and pharmacy stores, it functions as a 24/7 digital catalog with home delivery and WhatsApp ordering.",
   },
   {
-    question: "Can clothing boutiques and retail shops manage size and color variants?",
+    question: "How does the built-in Spin-the-Wheel discount reward game work?",
     answer:
-      "Absolutely. For apparel and footwear boutiques, Vyop supports size (S, M, L, XL, XXL) and color variants with photo galleries. For electronics and mobile shops, it manages warranty and accessories. For hardware, it handles loose units (meters, kg, pieces). Everything updates in real time as items sell at the counter.",
+      "Vyop includes an interactive Spin-The-Wheel gamification engine with anti-abuse device persistence. When customers visit your store link, they can spin to win promotional coupon codes (e.g., ₹50 OFF, 10% discount, free delivery). This delights first-time buyers and increases repeat order conversion by up to 3x.",
+  },
+  {
+    question: "Is Vyop's online store compliant with the Indian DPDP Act (Data Protection)?",
+    answer:
+      "Yes! Vyop includes built-in DPDP Act (Digital Personal Data Protection Act) consent checkboxes. When customers place orders, they provide explicit opt-in consent for local order fulfillment, ensuring enterprise-grade legal compliance for your business.",
+  },
+  {
+    question: "How do clothing boutiques and retail shops manage size and color variants?",
+    answer:
+      "For apparel and footwear boutiques, Vyop supports size (S, M, L, XL, XXL) and color variants with photo galleries. For grocery, it supports weight variants (500g, 1kg, 5kg). For electronics, it manages warranty and accessories. Everything updates in real time as items sell at the counter.",
   },
   {
     question: "Do customers need to download an application to order from my store?",
@@ -275,93 +428,205 @@ const faqs = [
       "No app download is required for your customers. Your store link opens instantly in any mobile browser (Chrome, Safari, Firefox). Customers can browse your catalog, spin the reward wheel, and place orders in under 30 seconds.",
   },
   {
-    question: "What is the Spin-the-Wheel discount reward feature?",
+    question: "Can I collect payments via Cash on Delivery (COD) and my own UPI QR code?",
     answer:
-      "Vyop Storefront includes an interactive Spin-The-Wheel game that delights customers when they open your store link. You can configure custom discounts (e.g., 5% off, free dessert, ₹50 discount) that customers spin to win, dramatically increasing order completion rates and repeat purchases.",
+      "Yes! Customers can choose between instant direct UPI payment (scanning your personal Google Pay, PhonePe, or Paytm QR) or Cash on Delivery (COD). You collect 100% of the money directly when you deliver orders to their doorstep. No third-party gateway deductions, and zero settlement delays.",
+  },
+  {
+    question: "How does Vyop compare to food and delivery aggregators like Swiggy, Zomato, and Blinkit?",
+    answer:
+      "Aggregators charge 20% to 35% commission on every single order, mask your customers' phone numbers so you never build repeat loyalty, and withhold your money for days. With Vyop Storefront, you pay 0% platform commission, receive direct orders on your POS screen or WhatsApp, collect money instantly, and own 100% of your customer contact numbers.",
+  },
+  {
+    question: "Do I need a computer or barcode machine, or can I launch from an Android smartphone?",
+    answer:
+      "You can launch and manage your entire online store from any Android smartphone using the Vyop app, or from any desktop PC browser at vyop.shop. You can add items in 30 seconds by simply speaking in Hindi or English (Voice AI) or scanning product barcodes with your phone camera.",
+  },
+  {
+    question: "How do I print Table QR stands and Storefront QR banners for my shop?",
+    answer:
+      "In 1 tap, Vyop generates print-ready 300 DPI high-resolution QR codes formatted for table acrylic stands, hotel room bedside cards, and storefront counter standees. Customers point their phone camera at the QR code and your digital menu opens instantly without downloading any app.",
   },
 ];
 
 export default function OnlineStorefrontFeaturePage() {
   return (
-    <main className="bg-white min-h-screen">
+    <main className="bg-white min-h-screen w-full overflow-x-clip">
       <Navbar />
 
-      {/* Hero Header */}
-      <section className="pt-40 pb-20 px-6 bg-gradient-to-b from-amber-50/70 via-white to-gray-50/50 text-center relative overflow-hidden">
+      {/* ====== 1. SHOP TYPE SELECTOR (FIRST SECTION) ====== */}
+      <ShopTypeSelectorSection />
+
+      {/* ====== 2. INTERACTIVE LIVE DEMO SIMULATOR (APP VIEW) ====== */}
+      <section id="demo" className="py-6 sm:py-8 bg-white border-b border-gray-100 w-full overflow-x-clip">
+        <InteractiveStorefrontDemo />
+      </section>
+
+      {/* ====== 3. CREATE A LIVE ONLINE STORE SECTION (BELOW DEMO) ====== */}
+      <section className="py-12 sm:py-20 px-3 sm:px-6 bg-gradient-to-b from-white via-amber-50/40 to-white text-center relative overflow-hidden border-b border-gray-100 w-full">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-radial from-amber-200/50 via-transparent to-transparent rounded-full blur-3xl pointer-events-none" />
 
-        <div className="max-w-5xl mx-auto relative z-10">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-100 border border-amber-200 text-amber-900 text-xs md:text-sm font-bold uppercase tracking-wider mb-6 flex-wrap justify-center">
-            <span>🚀</span> 0% Commission • Live in 60 Seconds • WhatsApp &amp; Table QR Ready
-          </div>
-
-          <h1
-            className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-gray-900 mb-6 leading-tight"
+        <div className="max-w-5xl mx-auto relative z-10 w-full">
+          <h2
+            className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-gray-900 mb-4 sm:mb-6 leading-tight px-1"
             style={{ fontFamily: "var(--font-display)" }}
           >
-            Create a Live Online Store for Any{" "}
-            <span className="gradient-text">Shop, Restaurant or Hotel</span>
-          </h1>
+            Create a Live Online Store Website for Your Shop{" "}
+            <span className="gradient-text">in Seconds</span>
+          </h2>
 
-          {/* AEO Direct Answer Paragraph for Search Engines & AI Overviews */}
-          <p className="text-lg md:text-xl text-gray-700 mb-8 max-w-3xl mx-auto leading-relaxed font-body">
-            Whether you run a restaurant, cafe, hotel, clothing boutique, bakery, electronics shop, pharmacy, or grocery store, Vyop Storefront turns your counter inventory and menu into a live, mobile-friendly online ordering website in under 60 seconds. Dine-in QR ordering, room service, takeaway, WhatsApp catalogs, direct UPI payments, and <strong>0% commission</strong>.
+          {/* AEO Direct Answer Paragraph */}
+          <p className="text-base sm:text-lg md:text-xl text-gray-700 mb-8 sm:mb-10 max-w-3xl mx-auto leading-relaxed font-body px-1">
+            Vyop turns your shop inventory into a live online ordering website with <strong>0% platform fee</strong>. Customers browse your products and pay you directly via <strong>UPI or Cash on Delivery (COD)</strong> as you deliver orders.
           </p>
 
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-12">
+          {/* 3-Step Store Creation List Flow */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5 sm:gap-6 max-w-4xl mx-auto mb-8 sm:mb-10 text-left w-full">
+            {/* Step 1 */}
+            <div className="p-5 sm:p-6 rounded-3xl bg-white border border-amber-200/90 shadow-md hover:shadow-lg transition-all relative overflow-hidden group">
+              <div className="flex items-center justify-between mb-3 sm:mb-4">
+                <span className="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-amber-500 text-slate-950 font-black text-base sm:text-lg flex items-center justify-center shadow-xs">
+                  1
+                </span>
+                <span className="px-3 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-black uppercase tracking-wider">
+                  ⚡ ~30 Secs
+                </span>
+              </div>
+              <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-1.5 sm:mb-2">
+                Add Items via Our Fastest Adding Stock Ways
+              </h3>
+              <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                Add stock in 30 seconds using Hindi/English voice AI, phone camera barcode scanning, or 1-tap supermarket catalog presets.
+              </p>
+            </div>
+
+            {/* Step 2 */}
+            <div className="p-5 sm:p-6 rounded-3xl bg-white border border-amber-200/90 shadow-md hover:shadow-lg transition-all relative overflow-hidden group">
+              <div className="flex items-center justify-between mb-3 sm:mb-4">
+                <span className="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-amber-500 text-slate-950 font-black text-base sm:text-lg flex items-center justify-center shadow-xs">
+                  2
+                </span>
+                <span className="px-3 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-black uppercase tracking-wider">
+                  ⏱️ 1 Sec
+                </span>
+              </div>
+              <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-1.5 sm:mb-2">
+                Click on "Create Online Store"
+              </h3>
+              <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                Just 1 tap inside Vyop. In literally 1 second, your mobile-friendly ordering website and printable table QR menus are live.
+              </p>
+            </div>
+
+            {/* Step 3 */}
+            <div className="p-5 sm:p-6 rounded-3xl bg-gradient-to-br from-white to-emerald-50/50 border border-emerald-300/80 shadow-md hover:shadow-lg transition-all relative overflow-hidden group">
+              <div className="flex items-center justify-between mb-3 sm:mb-4">
+                <span className="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-emerald-500 text-white font-black text-base sm:text-lg flex items-center justify-center shadow-xs">
+                  3
+                </span>
+                <span className="px-3 py-1 rounded-full bg-emerald-100 text-emerald-900 text-xs font-black uppercase tracking-wider">
+                  🎉 Ready to Share!
+                </span>
+              </div>
+              <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-1.5 sm:mb-2">
+                Your Online Store is Ready to Share
+              </h3>
+              <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                Share your live link on WhatsApp, post to Instagram stories, or print table QR standees. Start receiving direct orders immediately.
+              </p>
+            </div>
+          </div>
+
+          {/* User Clarification Box: 0% Platform Fee, 30s Setup & Direct User Payment (UPI / Cash on Delivery) */}
+          <div className="max-w-4xl mx-auto mb-8 sm:mb-10 p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-amber-50 via-white to-amber-50/60 border-2 border-amber-300 text-slate-900 flex flex-col sm:flex-row items-center justify-between gap-3.5 sm:gap-4 text-left shadow-xs w-full">
+            <div className="flex items-start gap-3.5 sm:gap-4">
+              <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-amber-500 text-slate-950 flex items-center justify-center text-xl sm:text-2xl shrink-0 font-bold mt-0.5 shadow-xs">
+                💵
+              </div>
+              <div>
+                <h4 className="font-extrabold text-sm sm:text-base text-gray-900 flex items-center gap-1.5 sm:gap-2 flex-wrap">
+                  <span>0% Platform Fee</span>
+                  <span className="text-gray-300">•</span>
+                  <span>30-Second Setup Time</span>
+                  <span className="text-gray-300">•</span>
+                  <span className="text-emerald-700">100% Direct Payment</span>
+                </h4>
+                <p className="text-xs sm:text-sm text-gray-700 leading-relaxed mt-1">
+                  Vyop charges <strong>0% platform commission</strong>. Customer payment is collected directly by you — collect via your own <strong>direct UPI QR or Cash on Delivery (COD)</strong> as you deliver orders to your customers. Zero aggregator cut, zero payment gateway withholding.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4 mb-10 sm:mb-12 w-full max-w-md sm:max-w-none mx-auto">
             <a
               href="https://vyop.shop"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto px-8 py-4 rounded-xl bg-amber-500 hover:bg-amber-600 text-white font-bold text-lg shadow-lg shadow-amber-500/30 transition-all flex items-center justify-center gap-2 hover:scale-[1.02]"
+              className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl bg-amber-500 hover:bg-amber-600 text-white font-bold text-base sm:text-lg shadow-lg shadow-amber-500/30 transition-all flex items-center justify-center gap-2 hover:scale-[1.02] text-center"
             >
               <span>Launch Free Store Now</span>
-              <ArrowRight className="w-5 h-5" />
+              <ArrowRight className="w-5 h-5 shrink-0" />
             </a>
             <Link
               href="/pos-app"
-              className="w-full sm:w-auto px-8 py-4 rounded-xl bg-gray-100 hover:bg-gray-200 text-gray-900 font-bold text-lg transition-all flex items-center justify-center gap-2"
+              className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl bg-gray-100 hover:bg-gray-200 text-gray-900 font-bold text-base sm:text-lg transition-all flex items-center justify-center gap-2 text-center"
             >
               <span>Explore POS &amp; KOT Features</span>
             </Link>
           </div>
 
           {/* Key Metric Highlights */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
-            <div className="p-4 rounded-2xl bg-white border border-gray-200 shadow-sm">
-              <div className="text-2xl md:text-3xl font-extrabold text-emerald-600">0%</div>
-              <div className="text-xs md:text-sm text-gray-600 font-medium">Platform Commission</div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-4 max-w-4xl mx-auto w-full">
+            <div className="p-3 sm:p-4 rounded-2xl bg-white border border-gray-200 shadow-sm flex flex-col justify-between">
+              <div className="text-xl sm:text-2xl md:text-3xl font-extrabold text-emerald-600">0%</div>
+              <div>
+                <div className="text-xs sm:text-sm text-gray-900 font-bold mt-1">Platform Fee</div>
+                <div className="text-[10px] sm:text-[11px] text-gray-500 font-medium mt-0.5">Zero Commissions</div>
+              </div>
             </div>
-            <div className="p-4 rounded-2xl bg-white border border-gray-200 shadow-sm">
-              <div className="text-2xl md:text-3xl font-extrabold text-amber-600">60 Sec</div>
-              <div className="text-xs md:text-sm text-gray-600 font-medium">Instant Setup Time</div>
+            <div className="p-3 sm:p-4 rounded-2xl bg-white border border-gray-200 shadow-sm flex flex-col justify-between">
+              <div className="text-xl sm:text-2xl md:text-3xl font-extrabold text-amber-600">30 Sec</div>
+              <div>
+                <div className="text-xs sm:text-sm text-gray-900 font-bold mt-1">Setup Time</div>
+                <div className="text-[10px] sm:text-[11px] text-gray-500 font-medium mt-0.5">Fastest in India</div>
+              </div>
             </div>
-            <div className="p-4 rounded-2xl bg-white border border-gray-200 shadow-sm">
-              <div className="text-2xl md:text-3xl font-extrabold text-blue-600">Table &amp; Room</div>
-              <div className="text-xs md:text-sm text-gray-600 font-medium">QR Dine-in Ordering</div>
+            <div className="p-3 sm:p-4 rounded-2xl bg-white border border-gray-200 shadow-sm flex flex-col justify-between">
+              <div className="text-sm sm:text-lg md:text-2xl font-black text-blue-600 leading-snug">Direct UPI &amp; Cash</div>
+              <div>
+                <div className="text-xs sm:text-sm text-gray-900 font-bold mt-1">100% to You</div>
+                <div className="text-[10px] sm:text-[11px] text-gray-500 font-medium mt-0.5">Collect on Delivery</div>
+              </div>
             </div>
-            <div className="p-4 rounded-2xl bg-white border border-gray-200 shadow-sm">
-              <div className="text-2xl md:text-3xl font-extrabold text-purple-600">Instant UPI</div>
-              <div className="text-xs md:text-sm text-gray-600 font-medium">Direct Bank Settlement</div>
+            <div className="p-3 sm:p-4 rounded-2xl bg-white border border-gray-200 shadow-sm flex flex-col justify-between">
+              <div className="text-sm sm:text-lg md:text-2xl font-black text-purple-600 leading-snug">Table &amp; WhatsApp</div>
+              <div>
+                <div className="text-xs sm:text-sm text-gray-900 font-bold mt-1">Direct Orders</div>
+                <div className="text-[10px] sm:text-[11px] text-gray-500 font-medium mt-0.5">Print QR or Link</div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
+      {/* ====== INTERACTIVE 0% COMMISSION PROFIT SAVINGS CALCULATOR ====== */}
+      <CommissionSavingsCalculator />
+
       {/* ====== MULTI-INDUSTRY SHOWCASE ====== */}
       <section className="py-20 px-6 max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="inline-block px-4 py-1.5 rounded-full bg-amber-100 text-amber-800 text-xs font-bold uppercase tracking-wider mb-4">
-            Built for Every Business
+            Built for Every Indian Shopkeeper
           </span>
           <h2
             className="text-3xl md:text-5xl font-extrabold text-gray-900 mb-4"
             style={{ fontFamily: "var(--font-display)" }}
           >
-            How Different Businesses Grow with Vyop Storefront
+            How Any Shopkeeper Can Create Their Online Store in 30 Seconds
           </h2>
           <p className="text-lg text-[var(--text-secondary)]">
-            Tailor-made features for food service, hotels, fashion boutiques, bakeries, medical stores, and retail shops.
+            Whether you sell groceries, restaurant food, clothes, medicines, cakes, spare parts, hardware, or jewelry — Vyop turns your physical shop into a 24/7 online ordering machine.
           </p>
         </div>
 
@@ -413,123 +678,244 @@ export default function OnlineStorefrontFeaturePage() {
         </div>
       </section>
 
-      {/* ====== CORE FEATURES GRID ====== */}
-      <section className="py-20 px-6 max-w-6xl mx-auto border-t border-gray-100">
+      {/* ====== HOW DELIVERIES, CASH & PAYMENT WORK ====== */}
+      <section className="py-20 px-6 bg-gradient-to-b from-gray-50/70 via-white to-amber-50/20 border-t border-gray-100">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-amber-100 text-amber-800 text-xs font-bold uppercase tracking-wider mb-4">
+              Zero Middleman Interference
+            </span>
+            <h2
+              className="text-3xl md:text-5xl font-extrabold text-gray-900 mb-4"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              How Deliveries, Payments &amp; Customer Data Work
+            </h2>
+            <p className="text-lg text-[var(--text-secondary)]">
+              No delivery company taking 30% of your earnings. No payment gateway locking your money. You are in 100% control of your shop.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Pillar 1 */}
+            <div className="p-8 rounded-3xl bg-white border border-gray-200/90 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+              <div>
+                <div className="w-14 h-14 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center mb-6 text-2xl font-bold">
+                  🛵
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3" style={{ fontFamily: "var(--font-display)" }}>
+                  1. Flexible Local Delivery &amp; Pickup
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                  Deliver to your neighborhood society using your own shop staff, allow direct customer in-store pickup, or use on-demand local bike couriers (Porter, Dunzo, Rapido).
+                </p>
+              </div>
+              <div className="pt-4 border-t border-gray-100 text-xs font-bold text-amber-800 flex items-center gap-1.5">
+                <Check className="w-4 h-4 text-emerald-600 shrink-0" />
+                <span>Save 25–35% food &amp; grocery delivery cuts</span>
+              </div>
+            </div>
+
+            {/* Pillar 2 */}
+            <div className="p-8 rounded-3xl bg-white border border-gray-200/90 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+              <div>
+                <div className="w-14 h-14 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center mb-6 text-2xl font-bold">
+                  💵
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3" style={{ fontFamily: "var(--font-display)" }}>
+                  2. Collect Direct UPI &amp; Cash (COD)
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                  Customers pay straight to your personal PhonePe, Google Pay, or Paytm UPI QR code, or hand over cash on delivery. 100% of the money goes directly into your pocket.
+                </p>
+              </div>
+              <div className="pt-4 border-t border-gray-100 text-xs font-bold text-emerald-800 flex items-center gap-1.5">
+                <Check className="w-4 h-4 text-emerald-600 shrink-0" />
+                <span>0% Gateway MDR fee • 0 settlement delay</span>
+              </div>
+            </div>
+
+            {/* Pillar 3 */}
+            <div className="p-8 rounded-3xl bg-white border border-gray-200/90 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+              <div>
+                <div className="w-14 h-14 rounded-2xl bg-blue-100 text-blue-700 flex items-center justify-center mb-6 text-2xl font-bold">
+                  📱
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3" style={{ fontFamily: "var(--font-display)" }}>
+                  3. You Own 100% of Customer Phone Data
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                  Unlike food aggregator apps that mask customer numbers behind virtual proxies, you get genuine names, delivery addresses, and WhatsApp numbers for repeat orders.
+                </p>
+              </div>
+              <div className="pt-4 border-t border-gray-100 text-xs font-bold text-blue-800 flex items-center gap-1.5">
+                <Check className="w-4 h-4 text-emerald-600 shrink-0" />
+                <span>Send WhatsApp festival offers &amp; discounts</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ====== CORE FEATURES GRID (CODEBASE REALITY) ====== */}
+      <section className="py-20 px-6 max-w-7xl mx-auto border-t border-gray-100">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="inline-block px-4 py-1.5 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider mb-4">
-            Zero Platform Fees
+            Everything Included in Your 30-Second Storefront
           </span>
           <h2
             className="text-3xl md:text-5xl font-extrabold text-gray-900 mb-4"
             style={{ fontFamily: "var(--font-display)" }}
           >
-            Everything You Need to Sell Online
+            Not Just a Flat List — A Full Mobile-First PWA
           </h2>
           <p className="text-lg text-[var(--text-secondary)]">
-            Stop losing 25–30% of your hard-earned revenue to delivery aggregators and expensive web development agencies.
+            Explore the advanced retail architecture running inside Vyop&apos;s customer ordering engine today.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="p-8 rounded-3xl bg-[#FAF7F0] border border-amber-200/60 shadow-sm flex flex-col justify-between">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* Feature 1 */}
+          <div className="p-6 rounded-3xl bg-white border border-gray-200/80 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
             <div>
-              <div className="w-12 h-12 rounded-2xl bg-amber-500 text-white flex items-center justify-center mb-6">
-                <QrCode className="w-6 h-6" />
+              <div className="w-12 h-12 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center mb-5 text-xl font-bold">
+                📱
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3" style={{ fontFamily: "var(--font-display)" }}>
-                Table &amp; Room QR Ordering
+              <h3 className="text-lg font-bold text-gray-900 mb-2" style={{ fontFamily: "var(--font-display)" }}>
+                Amazon-Style Product Detail Modal
               </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Generate printable QR stands for dining tables and hotel rooms. Guests scan to view digital menus and place orders without waiting for staff.
+              <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
+                Tap any product to open an image slider, % OFF discount badge, and variant selector (500g vs 1kg, S vs M vs L) with differential pricing.
               </p>
             </div>
-            <div className="mt-6 pt-4 border-t border-amber-200/60 text-xs font-bold text-amber-800">
-              Kitchen KOT &amp; Room Folio Integration
+            <div className="mt-5 pt-3 border-t border-gray-100 text-xs font-bold text-amber-700">
+              Variant matrix &amp; gallery thumbnails
             </div>
           </div>
 
-          <div className="p-8 rounded-3xl bg-[#FAF7F0] border border-amber-200/60 shadow-sm flex flex-col justify-between">
+          {/* Feature 2 */}
+          <div className="p-6 rounded-3xl bg-white border border-gray-200/80 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
             <div>
-              <div className="w-12 h-12 rounded-2xl bg-emerald-600 text-white flex items-center justify-center mb-6">
-                <Percent className="w-6 h-6" />
+              <div className="w-12 h-12 rounded-2xl bg-purple-100 text-purple-600 flex items-center justify-center mb-5 text-xl font-bold">
+                🎁
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3" style={{ fontFamily: "var(--font-display)" }}>
-                0% Commission Forever
+              <h3 className="text-lg font-bold text-gray-900 mb-2" style={{ fontFamily: "var(--font-display)" }}>
+                Spin-The-Wheel &amp; Offer Banners
               </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Unlike Swiggy, Zomato, and Blinkit who take 18% to 30% per order, Vyop charges 0% commission. You keep 100% of your food &amp; product margins.
+              <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
+                Interactive Spin-The-Wheel game with anti-abuse persistence. Boost conversions with flat discounts, % off, and free delivery coupon codes.
               </p>
             </div>
-            <div className="mt-6 pt-4 border-t border-amber-200/60 text-xs font-bold text-emerald-800">
-              Save ₹15,000–₹50,000 every month
-            </div>
-          </div>
-
-          <div className="p-8 rounded-3xl bg-[#FAF7F0] border border-amber-200/60 shadow-sm flex flex-col justify-between">
-            <div>
-              <div className="w-12 h-12 rounded-2xl bg-blue-600 text-white flex items-center justify-center mb-6">
-                <Zap className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3" style={{ fontFamily: "var(--font-display)" }}>
-                Live In-Store Inventory Sync
-              </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Never sell an item that is out of stock. When a dish or product sells at your counter POS, your online store stock updates automatically in real time.
-              </p>
-            </div>
-            <div className="mt-6 pt-4 border-t border-amber-200/60 text-xs font-bold text-blue-800">
-              Zero manual inventory duplication
-            </div>
-          </div>
-
-          <div className="p-8 rounded-3xl bg-[#FAF7F0] border border-amber-200/60 shadow-sm flex flex-col justify-between">
-            <div>
-              <div className="w-12 h-12 rounded-2xl bg-purple-600 text-white flex items-center justify-center mb-6">
-                <Smartphone className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3" style={{ fontFamily: "var(--font-display)" }}>
-                Direct UPI QR Payments
-              </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Customer payments route directly to your personal UPI QR code (PhonePe, Google Pay, Paytm, BHIM). Money arrives in your bank instantly with zero gateway hold.
-              </p>
-            </div>
-            <div className="mt-6 pt-4 border-t border-amber-200/60 text-xs font-bold text-purple-800">
-              Instant bank settlement
-            </div>
-          </div>
-
-          <div className="p-8 rounded-3xl bg-[#FAF7F0] border border-amber-200/60 shadow-sm flex flex-col justify-between">
-            <div>
-              <div className="w-12 h-12 rounded-2xl bg-green-600 text-white flex items-center justify-center mb-6">
-                <MessageCircle className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3" style={{ fontFamily: "var(--font-display)" }}>
-                Instant WhatsApp Ordering
-              </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Customers browse your catalog on mobile, add items to cart, and send completed orders with items &amp; address directly to your WhatsApp.
-              </p>
-            </div>
-            <div className="mt-6 pt-4 border-t border-amber-200/60 text-xs font-bold text-green-800">
-              1-click WhatsApp order confirmation
-            </div>
-          </div>
-
-          <div className="p-8 rounded-3xl bg-[#FAF7F0] border border-amber-200/60 shadow-sm flex flex-col justify-between">
-            <div>
-              <div className="w-12 h-12 rounded-2xl bg-amber-500 text-white flex items-center justify-center mb-6">
-                <Sparkles className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3" style={{ fontFamily: "var(--font-display)" }}>
-                Spin-The-Wheel Rewards
-              </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Boost repeat orders with gamified Spin-The-Wheel discounts, festive offer banners, and custom combo deals that delight buyers.
-              </p>
-            </div>
-            <div className="mt-6 pt-4 border-t border-amber-200/60 text-xs font-bold text-amber-800">
+            <div className="mt-5 pt-3 border-t border-gray-100 text-xs font-bold text-purple-700">
               Up to 3x higher customer repeat orders
+            </div>
+          </div>
+
+          {/* Feature 3 */}
+          <div className="p-6 rounded-3xl bg-white border border-gray-200/80 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+            <div>
+              <div className="w-12 h-12 rounded-2xl bg-green-100 text-green-600 flex items-center justify-center mb-5 text-xl font-bold">
+                💬
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2" style={{ fontFamily: "var(--font-display)" }}>
+                Dual Checkout (Cloud POS + WhatsApp)
+              </h3>
+              <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
+                Customers choose: push a silent Direct Cloud Order to your POS screen or generate a formatted WhatsApp cart message in 1 tap.
+              </p>
+            </div>
+            <div className="mt-5 pt-3 border-t border-gray-100 text-xs font-bold text-green-700">
+              Zero friction for all customer ages
+            </div>
+          </div>
+
+          {/* Feature 4 */}
+          <div className="p-6 rounded-3xl bg-white border border-gray-200/80 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+            <div>
+              <div className="w-12 h-12 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center mb-5 text-xl font-bold">
+                🛡️
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2" style={{ fontFamily: "var(--font-display)" }}>
+                DPDP Act Compliant Architecture
+              </h3>
+              <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
+                Explicit opt-in consent checkboxes for customer name, phone, and delivery address in strict compliance with Indian data privacy regulations.
+              </p>
+            </div>
+            <div className="mt-5 pt-3 border-t border-gray-100 text-xs font-bold text-blue-700">
+              Enterprise-grade legal safety
+            </div>
+          </div>
+
+          {/* Feature 5 */}
+          <div className="p-6 rounded-3xl bg-white border border-gray-200/80 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+            <div>
+              <div className="w-12 h-12 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center mb-5 text-xl font-bold">
+                ⚡
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2" style={{ fontFamily: "var(--font-display)" }}>
+                Real-Time Voice Orb POS Staging
+              </h3>
+              <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
+                Incoming online orders trigger a pulsing sound alert on your POS dashboard. Tap once to open the Voice Orb with items pre-staged for instant billing.
+              </p>
+            </div>
+            <div className="mt-5 pt-3 border-t border-gray-100 text-xs font-bold text-amber-700">
+              Zero manual re-typing into billing
+            </div>
+          </div>
+
+          {/* Feature 6 */}
+          <div className="p-6 rounded-3xl bg-white border border-gray-200/80 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+            <div>
+              <div className="w-12 h-12 rounded-2xl bg-yellow-100 text-yellow-700 flex items-center justify-center mb-5 text-xl font-bold">
+                ⭐
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2" style={{ fontFamily: "var(--font-display)" }}>
+                Customer Star Ratings &amp; Reviews
+              </h3>
+              <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
+                End-customers submit 5-star ratings and verified text reviews directly on products. Local social proof displays right on your public store link.
+              </p>
+            </div>
+            <div className="mt-5 pt-3 border-t border-gray-100 text-xs font-bold text-yellow-700">
+              Builds neighborhood credibility
+            </div>
+          </div>
+
+          {/* Feature 7 */}
+          <div className="p-6 rounded-3xl bg-white border border-gray-200/80 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+            <div>
+              <div className="w-12 h-12 rounded-2xl bg-rose-100 text-rose-600 flex items-center justify-center mb-5 text-xl font-bold">
+                🔗
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2" style={{ fontFamily: "var(--font-display)" }}>
+                Deep-Linking for WhatsApp Deals
+              </h3>
+              <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
+                Share URLs like <code className="text-xs bg-gray-100 px-1 py-0.5 rounded">/order?token=...&amp;item=123</code> directly to specific deals on WhatsApp status and Instagram stories.
+              </p>
+            </div>
+            <div className="mt-5 pt-3 border-t border-gray-100 text-xs font-bold text-rose-700">
+              High-converting direct item promotion
+            </div>
+          </div>
+
+          {/* Feature 8 */}
+          <div className="p-6 rounded-3xl bg-white border border-gray-200/80 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+            <div>
+              <div className="w-12 h-12 rounded-2xl bg-indigo-100 text-indigo-600 flex items-center justify-center mb-5 text-xl font-bold">
+                📊
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2" style={{ fontFamily: "var(--font-display)" }}>
+                Live Order Tracking &amp; Analytics
+              </h3>
+              <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
+                Customers track live order status (New ➔ Accepted ➔ Preparing ➔ Out for Delivery). Merchants track catalogue views, orders, and total revenue.
+              </p>
+            </div>
+            <div className="mt-5 pt-3 border-t border-gray-100 text-xs font-bold text-indigo-700">
+              Full transparency on mobile browser
             </div>
           </div>
         </div>
@@ -546,7 +932,7 @@ export default function OnlineStorefrontFeaturePage() {
               className="text-3xl md:text-5xl font-extrabold text-gray-900 mb-4"
               style={{ fontFamily: "var(--font-display)" }}
             >
-              How to Launch Your Online Store or Menu in 60 Seconds
+              How to Launch Your Online Store or Menu in 30 Seconds
             </h2>
             <p className="text-lg text-[var(--text-secondary)]">
               No developer needed. If you know how to send a WhatsApp message, you can run a professional online store.
@@ -585,14 +971,17 @@ export default function OnlineStorefrontFeaturePage() {
       {/* ====== COMPARISON TABLE ====== */}
       <section className="py-20 px-6 max-w-6xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-14">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-amber-100 text-amber-800 text-xs font-bold uppercase tracking-wider mb-4">
+            Zero-Tax Head-to-Head Comparison
+          </span>
           <h2
             className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4"
             style={{ fontFamily: "var(--font-display)" }}
           >
-            Vyop Storefront vs Aggregators vs Custom Website
+            Vyop Online Store vs Shopify / Dukaan vs Vyapar vs Zomato
           </h2>
           <p className="text-lg text-[var(--text-secondary)]">
-            Compare why hotels, restaurants, bakeries, and retail stores across India choose Vyop.
+            Compare setup fees, commissions, gateway deductions, and live billing synchronization side-by-side.
           </p>
         </div>
 
@@ -602,16 +991,16 @@ export default function OnlineStorefrontFeaturePage() {
               <tr className="border-b-2 border-gray-100 bg-gray-50/50">
                 <th className="py-4 px-4 text-sm font-bold text-gray-700">Feature</th>
                 <th className="py-4 px-4 text-sm font-bold text-amber-700 bg-amber-50/60">
-                  Vyop Storefront
+                  Vyop Online Store
                 </th>
                 <th className="py-4 px-4 text-sm font-bold text-gray-600">
-                  Food Aggregators (Zomato / Swiggy)
+                  Shopify / Dukaan
                 </th>
                 <th className="py-4 px-4 text-sm font-bold text-gray-600">
-                  Quick Commerce (Blinkit / Zepto)
+                  Vyapar POS
                 </th>
                 <th className="py-4 px-4 text-sm font-bold text-gray-600">
-                  Custom Website (Shopify / Agency)
+                  Zomato / Swiggy
                 </th>
               </tr>
             </thead>
@@ -620,9 +1009,9 @@ export default function OnlineStorefrontFeaturePage() {
                 <tr key={idx} className="hover:bg-amber-50/20 transition-colors">
                   <td className="py-4 px-4 font-semibold text-gray-900">{row.feature}</td>
                   <td className="py-4 px-4 font-bold text-emerald-700 bg-amber-50/20">{row.vyop}</td>
-                  <td className="py-4 px-4 text-gray-600">{row.foodAggregators}</td>
-                  <td className="py-4 px-4 text-gray-600">{row.quickCommerce}</td>
-                  <td className="py-4 px-4 text-gray-600">{row.customWeb}</td>
+                  <td className="py-4 px-4 text-gray-600">{row.shopify}</td>
+                  <td className="py-4 px-4 text-gray-600">{row.vyapar}</td>
+                  <td className="py-4 px-4 text-gray-600">{row.aggregators}</td>
                 </tr>
               ))}
             </tbody>
@@ -695,7 +1084,7 @@ export default function OnlineStorefrontFeaturePage() {
                 applicationCategory: "BusinessApplication",
                 applicationSubCategory: "ECommerceApplication",
                 description:
-                  "Free 0% commission online store, table QR menu, and website builder for Indian restaurants, cafes, hotels, clothing boutiques, bakeries, and retail shops. Create a live WhatsApp catalog link in 60 seconds with instant UPI payment and real-time inventory synchronization.",
+                  "Free 0% commission online store, table QR menu, and website builder for Indian restaurants, cafes, hotels, clothing boutiques, bakeries, and retail shops. Create a live WhatsApp catalog link in 30 seconds with instant UPI payment, Cash on Delivery (COD), and real-time inventory synchronization.",
                 url: "https://vyop.in/features/online-storefront",
                 offers: {
                   "@type": "Offer",
@@ -705,23 +1094,27 @@ export default function OnlineStorefrontFeaturePage() {
                 },
                 featureList: [
                   "0% Commission Online Storefront for Shops & Restaurants",
+                  "Amazon-Style Product Detail Modal & Variant Selector (500g vs 1kg, S/M/L)",
+                  "Spin-The-Wheel Gamified Customer Discount Rewards & Offer Banners",
+                  "Dual Checkout: Direct Cloud Order to POS Voice Orb + 1-Tap WhatsApp",
+                  "Indian DPDP Act Compliant Privacy Architecture",
+                  "Real-Time Voice Orb POS Staging with Audible Order Alert",
+                  "Customer Star Ratings & Verified Text Reviews on Products",
+                  "Deep-Linking for Direct WhatsApp Product Deals",
                   "Table QR Code Dine-in Ordering System for Restaurants & Cafes",
                   "Hotel Room Service QR Code Digital Menu Ordering",
-                  "60-Second Instant Live Store Link Generation",
-                  "Direct WhatsApp Ordering & Customer Communication",
-                  "Instant UPI QR Code Payment (PhonePe, GPay, Paytm)",
+                  "30-Second Instant Live Store Link Generation with Printable Standee",
+                  "Instant UPI QR Code Payment & Cash on Delivery (COD) with Zero Gateway Deductions",
                   "Automatic Real-Time Sync with In-Store POS Inventory & Kitchen KOT",
-                  "Spin-The-Wheel Gamified Customer Discount Rewards",
-                  "Size & Color Variant Support for Clothing & Boutiques",
                   "Prescription Upload for Medical Stores & Pharmacies",
                 ],
               },
               {
                 "@type": "HowTo",
-                name: "How to Create a Free Online Store or Restaurant Menu in 60 Seconds",
+                name: "How to Create a Free Online Store or Restaurant Menu in 30 Seconds",
                 description:
                   "Step-by-step guide to launching a zero-commission online ordering website for your restaurant, hotel, or retail shop using Vyop.",
-                totalTime: "PT1M",
+                totalTime: "PT30S",
                 estimatedCost: { "@type": "MonetaryAmount", currency: "INR", value: "0" },
                 step: storeSteps.map((s) => ({
                   "@type": "HowToStep",

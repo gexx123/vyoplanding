@@ -132,8 +132,15 @@ export default function WorkWithUsPage() {
         body: JSON.stringify(formData),
       });
 
+      if (!res.ok) {
+        let errorText = "Failed to submit application";
+        try {
+          const errData = await res.json();
+          errorText = errData.error || errorText;
+        } catch (_) {}
+        throw new Error(errorText);
+      }
       const data = await res.json();
-      if (!res.ok) throw new Error(data.error || "Failed to submit application");
 
       setStatus("success");
     } catch (err: any) {

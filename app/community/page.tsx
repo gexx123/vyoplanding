@@ -20,9 +20,14 @@ export default function Community() {
   const fetchMessages = async () => {
     try {
       const res = await fetch("/api/community");
-      const data = await res.json();
-      if (data.messages) {
-        setMessages(data.messages);
+      if (res.ok) {
+        const contentType = res.headers.get("content-type");
+        if (contentType && contentType.includes("application/json")) {
+          const data = await res.json();
+          if (data.messages) {
+            setMessages(data.messages);
+          }
+        }
       }
     } catch (error) {
       console.error("Failed to fetch messages", error);

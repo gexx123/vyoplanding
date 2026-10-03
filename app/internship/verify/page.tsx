@@ -48,9 +48,14 @@ function VerifyContent() {
 
     try {
       const res = await fetch(`/api/verify-intern?id=${encodeURIComponent(clean)}`);
-      const data = await res.json();
+      let data: any = {};
+      if (res.ok) {
+        try {
+          data = await res.json();
+        } catch (_) {}
+      }
 
-      if (res.ok && data.verified && data.intern) {
+      if (res.ok && data?.verified && data?.intern) {
         setIntern(data.intern);
       } else {
         // Check local database
@@ -58,7 +63,7 @@ function VerifyContent() {
         if (local) {
           setIntern(local);
         } else {
-          setError(data.message || `No certificate record found for "${clean}".`);
+          setError(data?.message || `No certificate record found for "${clean}".`);
         }
       }
     } catch (err) {

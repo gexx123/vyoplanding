@@ -177,12 +177,15 @@ export default function InternshipPage() {
 
     try {
       const res = await fetch(`/api/verify-intern?id=${encodeURIComponent(query)}`);
-      const data = await res.json();
-
-      if (res.ok && data.verified && data.intern) {
-        setVerificationResult(data.intern);
+      if (res.ok) {
+        const data = await res.json();
+        if (data.verified && data.intern) {
+          setVerificationResult(data.intern);
+        } else {
+          setVerificationError(data.message || `No verified certificate found for "${query}".`);
+        }
       } else {
-        setVerificationError(data.message || `No verified certificate found for "${query}".`);
+        setVerificationError(`No verified certificate found for "${query}".`);
       }
     } catch (err) {
       console.error(err);
@@ -222,8 +225,15 @@ export default function InternshipPage() {
         body: JSON.stringify(formData),
       });
 
+      if (!res.ok) {
+        let errorText = "Failed to submit application";
+        try {
+          const errData = await res.json();
+          errorText = errData.error || errorText;
+        } catch (_) {}
+        throw new Error(errorText);
+      }
       const data = await res.json();
-      if (!res.ok) throw new Error(data.error || "Failed to submit application");
 
       setAppStatus("success");
     } catch (err: any) {

@@ -196,9 +196,9 @@ export default function AdminDashboardPage() {
 
       // Fetch actual public IP
       fetch("https://api.ipify.org?format=json")
-        .then((r) => r.json())
-        .then((d) => {
-          if (d.ip) setClientIp(d.ip);
+        .then((r) => (r.ok ? r.json() : ({} as any)))
+        .then((d: any) => {
+          if (d?.ip) setClientIp(d.ip);
         })
         .catch(() => {
           setClientIp("103.246.194.22");
@@ -206,9 +206,9 @@ export default function AdminDashboardPage() {
 
       // Try fetching location
       fetch("https://ipapi.co/json/")
-        .then((r) => r.json())
-        .then((d) => {
-          if (d.city && d.country_name) {
+        .then((r) => (r.ok ? r.json() : ({} as any)))
+        .then((d: any) => {
+          if (d?.city && d?.country_name) {
             setClientLocation(`${d.city}, ${d.country_name}`);
           }
         })
@@ -420,8 +420,11 @@ export default function AdminDashboardPage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newCert),
       });
+      if (!res.ok) {
+        throw new Error("Failed to issue certificate");
+      }
       const data = await res.json();
-      if (res.ok && data.certificate) {
+      if (data.certificate) {
         // Find matching applicant in leads and update status to Hired
         const matchingLead = leads.find(
           (l) =>

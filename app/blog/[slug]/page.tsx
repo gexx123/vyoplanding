@@ -31,10 +31,25 @@ async function getBlog(slug: string) {
     console.error("Error fetching blog from Firestore:", error);
   }
 
-  // Fallback to built-in static blogs
+  // Fallback to built-in static blogs, attaching real view count from Firestore
   const staticMatch = staticBlogs.find((b) => b.slug === slug);
   if (staticMatch) {
-    return { id: staticMatch.slug, ...staticMatch };
+    let realViews = 0;
+    try {
+      const docSnap = await getDoc(doc(db, 'blogs', slug));
+      if (docSnap.exists()) {
+        realViews = docSnap.data()?.views || 0;
+      } else {
+        const q = query(collection(db, 'blogs'), where('slug', '==', slug), limit(1));
+        const snap = await getDocs(q);
+        if (!snap.empty) {
+          realViews = snap.docs[0].data()?.views || 0;
+        }
+      }
+    } catch (e) {
+      console.error("Error reading blog views from Firestore:", e);
+    }
+    return { ...staticMatch, id: slug, views: realViews };
   }
 
   return null;

@@ -13,46 +13,42 @@ import { staticBlogs } from '@/lib/staticBlogs';
 export const dynamic = 'force-dynamic';
 
 async function getBlog(slug: string) {
+  let firestoreBlog: any = null;
   try {
     const blogsRef = collection(db, 'blogs');
     const q = query(blogsRef, where('slug', '==', slug), limit(1));
     const snapshot = await getDocs(q);
     
     if (!snapshot.empty) {
-      return { id: snapshot.docs[0].id, ...snapshot.docs[0].data() } as any;
-    }
-
-    const docRef = doc(db, 'blogs', slug);
-    const docSnap = await getDoc(docRef);
-    if (docSnap.exists()) {
-      return { id: docSnap.id, ...docSnap.data() } as any;
+      firestoreBlog = { id: snapshot.docs[0].id, ...snapshot.docs[0].data() };
+    } else {
+      const docRef = doc(db, 'blogs', slug);
+      const docSnap = await getDoc(docRef);
+      if (docSnap.exists()) {
+        firestoreBlog = { id: docSnap.id, ...docSnap.data() };
+      }
     }
   } catch (error) {
     console.error("Error fetching blog from Firestore:", error);
   }
 
+  // If a full Firestore blog with content exists, return it
+  if (firestoreBlog && firestoreBlog.content) {
+    return firestoreBlog;
+  }
+
   // Fallback to built-in static blogs, attaching real view count from Firestore
   const staticMatch = staticBlogs.find((b) => b.slug === slug);
   if (staticMatch) {
-    let realViews = 0;
-    try {
-      const docSnap = await getDoc(doc(db, 'blogs', slug));
-      if (docSnap.exists()) {
-        realViews = docSnap.data()?.views || 0;
-      } else {
-        const q = query(collection(db, 'blogs'), where('slug', '==', slug), limit(1));
-        const snap = await getDocs(q);
-        if (!snap.empty) {
-          realViews = snap.docs[0].data()?.views || 0;
-        }
-      }
-    } catch (e) {
-      console.error("Error reading blog views from Firestore:", e);
-    }
-    return { ...staticMatch, id: slug, views: realViews };
+    const realViews = typeof firestoreBlog?.views === 'number' ? firestoreBlog.views : 0;
+    return {
+      ...staticMatch,
+      id: firestoreBlog?.id || slug,
+      views: realViews,
+    };
   }
 
-  return null;
+  return firestoreBlog && firestoreBlog.title ? firestoreBlog : null;
 }
 
 function calculateReadingTime(content: string) {
@@ -230,7 +226,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
 
         <div 
           className="prose prose-lg md:prose-xl max-w-none prose-headings:font-display prose-headings:font-bold prose-a:text-[var(--brand-primary)] prose-img:rounded-2xl"
-          dangerouslySetInnerHTML={{ __html: blog.content || blog.excerpt }}
+          dangerouslySetInnerHTML={{ __html: blog.content || blog.excerpt || '' }}
         />
 
         <ShareButtons url={`https://vyop.in/blog/${blog.slug}`} title={blog.title} />

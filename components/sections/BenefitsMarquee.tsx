@@ -1,25 +1,25 @@
 "use client";
 
 const row1Pills = [
+  { icon: "📱", label: "Phone Barcode Scanner" },
   { icon: "🎤", label: "Voice Billing" },
+  { icon: "📷", label: "AI Scanner for Unbarcoded Goods" },
   { icon: "📦", label: "Auto Inventory" },
-  { icon: "🧾", label: "GST Bill in 1 Click" },
+  { icon: "🧾", label: "GST & Non-GST Billing" },
   { icon: "📊", label: "Daily Reports" },
   { icon: "💬", label: "Multilingual Support" },
-  { icon: "🔔", label: "UPI Payment Alert" },
-  { icon: "📱", label: "Works Offline" },
-  { icon: "⚡", label: "Instant Bill Share on WhatsApp" },
+  { icon: "⚡", label: "Instant WhatsApp Invoicing" },
 ];
 
 const row2Pills = [
-  { icon: "📒", label: "Ledger / Credit Tracker" },
-  { icon: "🏪", label: "Multi-Shop Support" },
-  { icon: "🔒", label: "AES-256 Encrypted" },
-  { icon: "📞", label: "Customer Reminder Call" },
-  { icon: "💡", label: "Smart Suggestions" },
-  { icon: "🌐", label: "7 Indian Languages" },
-  { icon: "📈", label: "Monthly P&L" },
-  { icon: "🖨️", label: "Bluetooth Printer" },
+  { icon: "📒", label: "Digital Khata & Udhar Ledger" },
+  { icon: "🏪", label: "0% Commission Online Store" },
+  { icon: "🔔", label: "Automated WhatsApp Payment Reminders" },
+  { icon: "🖨️", label: "Bluetooth Thermal Printer" },
+  { icon: "📱", label: "Works 100% Offline" },
+  { icon: "🎡", label: "Spin-The-Wheel Customer Rewards" },
+  { icon: "📈", label: "Monthly Profit & Loss" },
+  { icon: "🔒", label: "Secure Cloud Backup" },
 ];
 
 function MarqueePill({ icon, label }: { icon: string; label: string }) {

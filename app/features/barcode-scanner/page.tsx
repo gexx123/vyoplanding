@@ -111,7 +111,7 @@ export default function BarcodeScannerFeaturePage() {
           {/* Eyebrow Pill */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-100/80 border border-amber-200 text-amber-900 text-xs font-bold uppercase tracking-wider mb-6">
             <Flame className="w-4 h-4 text-amber-600" />
-            <span>World&apos;s 1st AI Product & Mobile Barcode POS</span>
+            <span>AI Product Scanner &amp; Mobile Barcode POS</span>
           </div>
 
           {/* Main H1 */}

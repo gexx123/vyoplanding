@@ -17,9 +17,9 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Vyop — Free GST Billing Software, Voice Invoicing & Barcode POS App",
+  title: "Vyop: Barcode Scan & Bill — Barcode Scanner, Billing & Khata App",
   description:
-    "Free GST billing software & fast voice invoicing app for retail stores, kirana & wholesale in India. Barcode POS scanner, inventory, thermal printing & ledger. Get started free!",
+    "Vyop: Barcode Scan & Bill is India's smartphone barcode POS, voice billing & digital khata app. Turn your phone into a barcode scanner, let AI handle unbarcoded items, manage ledger & online store.",
   metadataBase: new URL('https://vyop.in'),
   alternates: {
     canonical: '/',
@@ -29,17 +29,17 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Vyop — Free GST Billing Software, Voice Invoicing & Barcode POS App",
+    title: "Vyop: Barcode Scan & Bill — Barcode Scanner, Billing & Khata App",
     description:
-      "Free GST billing software & fast voice invoicing app for Indian shopkeepers. Smartphone barcode POS, 10 ways to add items, zero-commission online store & digital ledger.",
+      "Turn your phone into a barcode scanner. Smartphone barcode POS, voice billing, digital khata, and zero-commission online store for retail shops.",
     url: 'https://vyop.in',
-    siteName: 'Vyop',
+    siteName: 'Vyop: Barcode Scan & Bill',
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Vyop — Free GST Billing Software & Smartphone Barcode POS',
+        alt: 'Vyop: Barcode Scan & Bill — Smartphone Barcode POS & Khata App',
       },
     ],
     locale: 'en_US',
@@ -47,12 +47,17 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Vyop — Free GST Billing Software & Voice Invoicing App",
-    description: "Smart GST billing software and fast voice invoicing app for retail stores & kirana shops. Try free!",
+    title: "Vyop: Barcode Scan & Bill — Barcode Scanner & Khata App",
+    description: "Turn your phone into a barcode scanner. No barcode? AI handles it. Fast billing & digital khata for retail shops.",
     images: ['/og-image.png'],
     creator: '@vyop_ai',
   },
   keywords: [
+    "barcode and khata app",
+    "khata app",
+    "udhar khata app",
+    "digital khata app",
+    "barcode billing and khata app",
     "free GST billing software India",
     "voice invoicing app for shopkeepers",
     "smartphone barcode scanner POS",
@@ -79,12 +84,12 @@ export const metadata: Metadata = {
     "Tally alternative mobile phone",
     "Vyapar alternative free billing app",
     "Khatabook alternative voice AI",
-    "Vyop AI Accountant",
+    "Vyop: Barcode Scan & Bill",
   ],
   appLinks: {
     android: {
       package: 'com.vyop.app',
-      app_name: 'Vyop',
+      app_name: 'Vyop: Barcode Scan & Bill',
       url: 'https://play.google.com/store/apps/details?id=com.vyop.app',
     },
   },

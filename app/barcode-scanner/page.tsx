@@ -375,7 +375,7 @@ export default function BarcodeScannerLandingPage() {
               from the photo and adds it to your bill instantly.
             </p>
             <span className="text-xs font-bold text-purple-700 bg-purple-50 px-2.5 py-1 rounded-full border border-purple-200">
-              🤖 World&apos;s First AI Product Scanner
+              🤖 Instant AI Camera Scanner for Unbarcoded Goods
             </span>
           </div>
 

@@ -278,7 +278,7 @@ export default function InternshipPage() {
           </h1>
 
           <p className="text-lg md:text-xl text-[var(--text-secondary)] max-w-3xl mx-auto mb-10 leading-relaxed font-normal">
-            Join the core fellowship program building India's voice-powered AI accountant and smartphone POS.
+            Join the core fellowship program building voice-powered billing, phone barcode scanning, and digital khata solutions for Indian retail.
             Get hands-on product ownership, letter of recommendation from the founder, stipend, and
             official cryptographic certificate verification.
           </p>

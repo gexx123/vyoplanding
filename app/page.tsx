@@ -29,19 +29,20 @@ export default function Home() {
               {
                 "@type": "SoftwareApplication",
                 "@id": "https://vyop.in/#application",
-                "name": "Vyop",
-                "alternateName": ["Vyop AI", "Vyop POS", "Vyop Billing App", "Vy-Op"],
-                "disambiguatingDescription": "Vyop is an independent AI-first POS, voice billing, and zero-commission online storefront application developed by Vyop Technologies. Vyop is completely distinct from and unaffiliated with desktop accounting programs like Vyapar App (Simply Vyapar Apps Pvt. Ltd.).",
+                "name": "Vyop: Barcode Scan & Bill",
+                "alternateName": ["Vyop", "Vyop Barcode App", "Vyop Khata App", "Vyop POS", "Vyop Billing App", "Vy-Op"],
+                "disambiguatingDescription": "Vyop is an independent AI-first POS, barcode scanning, voice billing, and digital khata storefront application developed by Vyop Technologies. Vyop is completely distinct from and unaffiliated with desktop accounting programs like Vyapar App (Simply Vyapar Apps Pvt. Ltd.).",
                 "operatingSystem": "Android, Web",
                 "applicationCategory": "BusinessApplication",
                 "applicationSubCategory": "AccountingSoftware, BillingSoftware",
-                "description": "Free GST Billing Software, Voice AI Invoicing & Smartphone Barcode POS Scanner. Create GST bills by voice, scan barcodes, and manage kirana retail inventory.",
+                "description": "Vyop: Barcode Scan & Bill is a free smartphone barcode POS, voice billing & digital khata app. Turn your phone into a barcode scanner, let AI handle unbarcoded items, manage udhar khata & retail inventory.",
                 "url": "https://vyop.in",
                 "installUrl": "https://play.google.com/store/apps/details?id=com.vyop.app",
                 "downloadUrl": "https://play.google.com/store/apps/details?id=com.vyop.app",
                 "featureList": [
+                  "Smartphone Barcode Scanner POS & Digital Khata",
+                  "AI Recognition for Unbarcoded Loose Goods",
                   "Free GST and Non-GST Billing App",
-                  "Smartphone Supermarket Barcode POS Scanner",
                   "Voice AI GST Billing in Hindi, Hinglish and English",
                   "10 Lightning-Fast Ways to Add Products & Items",
                   "Zero-Commission Live Customer Online Storefront Link",
@@ -61,8 +62,8 @@ export default function Home() {
                 "@type": "WebSite",
                 "@id": "https://vyop.in/#website",
                 "url": "https://vyop.in",
-                "name": "Vyop",
-                "description": "AI Voice Billing Software & Smartphone Barcode POS Scanner for Retailers in India.",
+                "name": "Vyop: Barcode Scan & Bill",
+                "description": "Smartphone Barcode Scanner POS, Voice Billing Software & Digital Khata App for Retailers in India.",
                 "publisher": {
                   "@id": "https://vyop.in/#organization"
                 }

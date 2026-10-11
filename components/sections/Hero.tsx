@@ -88,20 +88,17 @@ export default function Hero() {
             }}
           >
             <span
-              className="text-2xl md:text-3xl lg:text-4xl"
-              style={{
-                color: "var(--text-primary)",
-              }}
+              className="text-2xl md:text-3xl lg:text-4xl text-amber-600 font-bold"
             >
-              Vyop
+              Vyop: Barcode Scan &amp; Bill
             </span>
             <span
               className="gradient-text leading-[1.1] text-4xl md:text-5xl lg:text-6xl"
             >
-              World&apos;s First AI&nbsp;Accountant
+              Turn Your Phone into a Barcode Scanner
             </span>
             <span className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 tracking-normal mt-1">
-              &amp; Turn Your Phone Into a Barcode Scanner
+              No Barcode? AI Handles It With a Snap.
             </span>
           </h1>
 
@@ -112,11 +109,11 @@ export default function Hero() {
             style={{
               fontFamily: "var(--font-body)",
               color: "var(--text-secondary)",
-              maxWidth: "580px",
+              maxWidth: "600px",
               lineHeight: 1.7,
             }}
           >
-            The intelligent accounting app that understands your voice, scans barcodes using your phone camera like a supermarket POS scanner, and launches your 0% commission online storefront in 60 seconds.
+            Smart barcode POS, voice billing, and digital khata for retail shops. Scan packaged items, let AI recognize unbarcoded goods, speak bills in Hindi or English, and launch a 0% commission online store.
           </motion.p>
 
           {/* CTA buttons */}
@@ -230,7 +227,7 @@ export default function Hero() {
           {/* Image */}
           <Image 
             src="/hero-image.webp" 
-            alt="Vyop AI Accountant App Dashboard showing voice-powered billing and inventory" 
+            alt="Vyop: Barcode Scan & Bill App Dashboard showing phone barcode scanning, billing and khata" 
             fill
             priority
             sizes="(max-width: 1024px) 1vw, 50vw"

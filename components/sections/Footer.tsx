@@ -184,7 +184,7 @@ export default function Footer() {
                 lineHeight: 1.6,
               }}
             >
-              The voice of retail in India
+              Smartphone Barcode POS, Voice Billing &amp; Digital Khata for Indian Retail
             </p>
             {/* Social icons */}
             <div className="flex gap-2.5">

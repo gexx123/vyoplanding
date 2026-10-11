@@ -12,7 +12,7 @@ export default function About() {
             About Vyop
           </h1>
           <p className="text-xl text-[var(--text-secondary)] max-w-2xl mx-auto">
-            We are building the first AI accountant that actually understands how Indian shopkeepers work.
+            We are building a smartphone-first barcode scanning, voice billing, and digital khata app that actually understands how Indian shopkeepers work.
           </p>
         </div>
 
@@ -41,7 +41,7 @@ export default function About() {
           <div className="bg-white p-8 rounded-2xl border border-[var(--border-subtle)] shadow-sm my-10 border-l-4 border-l-[var(--brand-primary)]">
             <h3 className="mt-0">Our Mission</h3>
             <p className="mb-0">
-              To give every shop owner in India the power of a dedicated CA and a fast billing clerk, combined into a single AI assistant that lives in their pocket.
+              To give every shop owner in India the speed of a supermarket barcode POS and the simplicity of a digital khata, right from their smartphone.
             </p>
           </div>
 

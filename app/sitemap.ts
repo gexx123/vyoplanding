@@ -51,6 +51,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }
 
   const staticPages = [
+    { url: `${baseUrl}/global-pos`, priority: 0.98, changeFrequency: 'weekly', lastModified: new Date() },
     { url: `${baseUrl}/billing-software`, priority: 0.95, changeFrequency: 'weekly' },
     { url: `${baseUrl}/blog`, priority: 0.8, changeFrequency: 'daily' },
     { url: `${baseUrl}/billing`, priority: 0.9, changeFrequency: 'daily' },
@@ -108,14 +109,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ].map(page => ({
     ...page,
     url: page.url,
-    lastModified: page.lastModified || new Date('2026-09-22'),
+    lastModified: page.lastModified || new Date(),
     changeFrequency: page.changeFrequency as any,
   }));
 
   const allEntries = [
     {
       url: baseUrl,
-      lastModified: new Date('2026-10-02'),
+      lastModified: new Date(),
       changeFrequency: 'daily' as const,
       priority: 1.0,
     },

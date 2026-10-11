@@ -25,6 +25,15 @@ const nextConfig: NextConfig = {
     formats: ["image/avif", "image/webp"],
     minimumCacheTTL: 60,
   },
+  async redirects() {
+    return [
+      {
+        source: "/blog/vyop-is-live-indias-first-ai-billing-and-accountant-app",
+        destination: "/blog",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

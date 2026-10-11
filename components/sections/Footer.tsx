@@ -6,8 +6,17 @@ import { cities } from "@/lib/cityData";
 import { industries } from "@/lib/industryData";
 
 const footerLinks = {
-  Company: ["About Us", "Work With Us", "Internship", "Careers", "Blog"],
+  Company: [
+    "About Us",
+    "Work With Us",
+    "Internship",
+    "Careers",
+    "Blog",
+    "Shop Website Guide",
+    "Restaurant Ordering Guide",
+  ],
   "Free Tools": [
+    "Global POS (Worldwide)",
     "All Free Tools",
     "Online Storefront (0%)",
     "Mobile Barcode Scanner",
@@ -51,6 +60,9 @@ const linkPaths: Record<string, string> = {
   "Internship": "/internship",
   "Careers": "/careers",
   "Blog": "/blog",
+  "Shop Website Guide": "/blog/how-to-create-free-website-for-shop",
+  "Restaurant Ordering Guide": "/blog/how-restaurants-cafes-hotels-create-online-food-ordering-website-without-commission",
+  "Global POS (Worldwide)": "/global-pos",
   "Free POS App": "/pos-app",
   "Smart Billing Software": "/smart-billing-software",
   "Online Storefront (0%)": "/features/online-storefront",

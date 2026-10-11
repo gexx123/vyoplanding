@@ -88,11 +88,6 @@ export default function Hero() {
             }}
           >
             <span
-              className="text-2xl md:text-3xl lg:text-4xl text-amber-600 font-bold"
-            >
-              Vyop: Barcode Scan &amp; Bill
-            </span>
-            <span
               className="gradient-text leading-[1.1] text-4xl md:text-5xl lg:text-6xl"
             >
               Turn Your Phone into a Barcode Scanner
@@ -113,7 +108,7 @@ export default function Hero() {
               lineHeight: 1.7,
             }}
           >
-            Smart barcode POS, voice billing, and digital khata for retail shops. Scan packaged items, let AI recognize unbarcoded goods, speak bills in Hindi or English, and launch a 0% commission online store.
+            Smart barcode POS, mobile inventory scanner, and digital ledger for retail businesses worldwide. Scan packaged items, let AI recognize unbarcoded goods, bill in any currency ($, €, £, AED, ₹), and launch a 0% commission online store.
           </motion.p>
 
           {/* CTA buttons */}
@@ -227,7 +222,7 @@ export default function Hero() {
           {/* Image */}
           <Image 
             src="/hero-image.webp" 
-            alt="Vyop: Barcode Scan & Bill App Dashboard showing phone barcode scanning, billing and khata" 
+            alt="Vyop POS: Barcode Scan & Bill App Dashboard showing phone barcode scanning, billing and khata" 
             fill
             priority
             sizes="(max-width: 1024px) 1vw, 50vw"

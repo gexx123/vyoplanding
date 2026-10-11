@@ -24,16 +24,16 @@ import {
 
 export const metadata: Metadata = {
   title:
-    "Barcode Scanner App for Mobile | Turn Phone into Barcode Scanner Free – Vyop",
+    "Free Barcode Scanner App for Mobile [Turn Phone into POS Scanner] — Vyop POS",
   description:
-    "Download the best free barcode scanner app for Android & iPhone. Turn your phone camera into a supermarket barcode scanner. Scan products, generate bills, print receipts. No hardware needed. Works offline.",
+    "Turn your smartphone camera into a supermarket barcode scanner & mobile POS. Scan 1D/2D barcodes, print receipts via Bluetooth thermal printer, track stock. 100% Free, 0% fees, works offline.",
   alternates: { canonical: "/barcode-scanner" },
   openGraph: {
-    title: "Best Barcode Scanner App for Mobile – Turn Phone into POS | Vyop",
+    title: "Free Barcode Scanner App for Mobile [Turn Phone into POS Scanner] — Vyop POS",
     description:
-      "Turn any phone into a supermarket barcode scanner & billing machine. Scan barcodes, snap unbarcoded products with AI, and bill at mall speed. 100% free.",
+      "Turn any phone into a supermarket barcode scanner & billing machine. Scan barcodes, snap unbarcoded products with AI, print thermal receipts. 100% free.",
     url: "https://vyop.in/barcode-scanner",
-    siteName: "Vyop",
+    siteName: "Vyop POS: Barcode Scan & Bill",
     images: [
       {
         url: "/og-image.png",

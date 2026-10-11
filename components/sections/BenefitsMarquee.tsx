@@ -2,24 +2,24 @@
 
 const row1Pills = [
   { icon: "📱", label: "Phone Barcode Scanner" },
-  { icon: "🎤", label: "Voice Billing" },
+  { icon: "🌍", label: "Multi-Currency ($, €, £, AED, ₹)" },
   { icon: "📷", label: "AI Scanner for Unbarcoded Goods" },
-  { icon: "📦", label: "Auto Inventory" },
-  { icon: "🧾", label: "GST & Non-GST Billing" },
-  { icon: "📊", label: "Daily Reports" },
-  { icon: "💬", label: "Multilingual Support" },
-  { icon: "⚡", label: "Instant WhatsApp Invoicing" },
+  { icon: "🧾", label: "VAT, GST & Sales Tax Compliant" },
+  { icon: "📦", label: "Auto Inventory Tracking" },
+  { icon: "🎤", label: "Voice Billing & POS" },
+  { icon: "📊", label: "Real-Time Profit Reports" },
+  { icon: "⚡", label: "Instant Digital Receipts & Invoicing" },
 ];
 
 const row2Pills = [
-  { icon: "📒", label: "Digital Khata & Udhar Ledger" },
+  { icon: "🌐", label: "Worldwide Offline POS" },
+  { icon: "📒", label: "Digital Ledger & Credit Tracker" },
   { icon: "🏪", label: "0% Commission Online Store" },
-  { icon: "🔔", label: "Automated WhatsApp Payment Reminders" },
-  { icon: "🖨️", label: "Bluetooth Thermal Printer" },
-  { icon: "📱", label: "Works 100% Offline" },
+  { icon: "🔔", label: "Automated Payment Reminders" },
+  { icon: "🖨️", label: "Bluetooth Thermal Printer Support" },
   { icon: "🎡", label: "Spin-The-Wheel Customer Rewards" },
-  { icon: "📈", label: "Monthly Profit & Loss" },
-  { icon: "🔒", label: "Secure Cloud Backup" },
+  { icon: "📈", label: "Daily & Monthly Sales Analytics" },
+  { icon: "🔒", label: "Secure Multi-Device Cloud Backup" },
 ];
 
 function MarqueePill({ icon, label }: { icon: string; label: string }) {

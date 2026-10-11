@@ -8,7 +8,7 @@ import Footer from '@/components/sections/Footer';
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'Blog | Vyop: Barcode Scan & Bill — Retail Billing & Khata Insights',
+  title: 'Blog | Vyop POS: Barcode Scan & Bill — Retail Billing & Khata Insights',
   description: 'Read the latest updates, tips, and guides from Vyop, the smart barcode POS, voice billing, and digital khata app.',
   alternates: {
     canonical: 'https://vyop.in/blog',

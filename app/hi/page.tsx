@@ -4,9 +4,9 @@ import Hero from "@/components/sections/Hero";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Vyop: Barcode Scan & Bill — बारकोड स्कैनर, बिलिंग और खाता ऐप | GST और उधार",
+  title: "Vyop POS: Barcode Scan & Bill — बारकोड स्कैनर, बिलिंग और खाता ऐप | GST और उधार",
   description: "Vyop ऐप: अपने फोन को बारकोड स्कैनर बनाएं, बोलकर बिल बनाएं और डिजिटल उधार खाता मैनेज करें। किराना और रीटेल दुकानों के लिए फ्री ऐप।",
-  keywords: ["बारकोड स्कैनर ऐप", "उधार खाता ऐप", "बिल बनाने वाला ऐप", "किराना बिलिंग सॉफ्टवेयर", "barcode scanner app hindi", "khata app hindi", "vyop barcode scan and bill"],
+  keywords: ["बारकोड स्कैनर ऐप", "उधार खाता ऐप", "बिल बनाने वाला ऐप", "किराना बिलिंग सॉफ्टवेयर", "barcode scanner app hindi", "khata app hindi", "vyop pos barcode scan and bill"],
 };
 
 export default function HindiLandingPage() {
@@ -18,7 +18,7 @@ export default function HindiLandingPage() {
       <section className="pt-40 pb-20 px-6 text-center">
         <div className="max-w-4xl mx-auto">
           <span className="inline-block px-4 py-1.5 rounded-full bg-[var(--brand-glow)] text-[var(--brand-primary)] text-sm font-bold mb-6">
-            Vyop: Barcode Scan &amp; Bill 📱
+            Vyop POS: Barcode Scan &amp; Bill 📱
           </span>
           <h1 className="text-4xl md:text-6xl font-extrabold mb-8 leading-tight" style={{ fontFamily: "var(--font-display)" }}>
             फोन को बनाएं <span className="gradient-text">बारकोड स्कैनर</span>, बोलकर बनाएं बिल

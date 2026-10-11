@@ -29,32 +29,35 @@ export default function Home() {
               {
                 "@type": "SoftwareApplication",
                 "@id": "https://vyop.in/#application",
-                "name": "Vyop: Barcode Scan & Bill",
-                "alternateName": ["Vyop", "Vyop Barcode App", "Vyop Khata App", "Vyop POS", "Vyop Billing App", "Vy-Op"],
-                "disambiguatingDescription": "Vyop is an independent AI-first POS, barcode scanning, voice billing, and digital khata storefront application developed by Vyop Technologies. Vyop is completely distinct from and unaffiliated with desktop accounting programs like Vyapar App (Simply Vyapar Apps Pvt. Ltd.).",
-                "operatingSystem": "Android, Web",
+                "name": "Vyop POS: Barcode Scan & Bill",
+                "alternateName": ["Vyop", "Vyop POS", "Vyop Barcode App", "Vyop Khata App", "Vyop Billing App", "Vy-Op"],
+                "disambiguatingDescription": "Vyop is an independent AI-first POS, barcode scanning, multi-currency billing, and digital storefront application developed by Vyop Technologies. Vyop is completely distinct from and unaffiliated with desktop accounting programs like Vyapar App (Simply Vyapar Apps Pvt. Ltd.).",
+                "operatingSystem": "Android, iOS, Web",
                 "applicationCategory": "BusinessApplication",
-                "applicationSubCategory": "AccountingSoftware, BillingSoftware",
-                "description": "Vyop: Barcode Scan & Bill is a free smartphone barcode POS, voice billing & digital khata app. Turn your phone into a barcode scanner, let AI handle unbarcoded items, manage udhar khata & retail inventory.",
+                "applicationSubCategory": "PointOfSale, AccountingSoftware, BillingSoftware",
+                "description": "Vyop POS: Barcode Scan & Bill is a free smartphone barcode POS, mobile inventory scanner & digital ledger app for retail businesses worldwide. Turn any phone into a barcode scanner, accept multi-currency payments (USD, EUR, GBP, AED, INR), and manage live online storefronts.",
                 "url": "https://vyop.in",
                 "installUrl": "https://play.google.com/store/apps/details?id=com.vyop.app",
                 "downloadUrl": "https://play.google.com/store/apps/details?id=com.vyop.app",
+                "countriesSupported": ["US", "GB", "CA", "AU", "AE", "SG", "PH", "MY", "ZA", "IN"],
                 "featureList": [
-                  "Smartphone Barcode Scanner POS & Digital Khata",
+                  "Smartphone Barcode Scanner POS & Digital Ledger",
                   "AI Recognition for Unbarcoded Loose Goods",
-                  "Free GST and Non-GST Billing App",
-                  "Voice AI GST Billing in Hindi, Hinglish and English",
+                  "Multi-Currency Billing (USD, EUR, GBP, AED, INR)",
+                  "Global Tax Support (Sales Tax, VAT, GST & Tax-Free)",
+                  "Free GST, VAT and Non-GST Billing App",
+                  "Voice AI Billing in Multiple Languages",
                   "10 Lightning-Fast Ways to Add Products & Items",
                   "Zero-Commission Live Customer Online Storefront Link",
                   "Custom Discount Banners & Spin-The-Wheel Customer Rewards",
-                  "Voice Expense Logging & Automated Udhar Khata Reminders",
+                  "Voice Expense Logging & Automated Payment Reminders",
                   "Barcode Label Printing & Low Stock Alerts",
                   "Thermal Printer & Bluetooth Bill Printing Support"
                 ],
                 "offers": {
                   "@type": "Offer",
                   "price": "0",
-                  "priceCurrency": "INR",
+                  "priceCurrency": "USD",
                   "availability": "https://schema.org/InStock"
                 }
               },
@@ -62,8 +65,8 @@ export default function Home() {
                 "@type": "WebSite",
                 "@id": "https://vyop.in/#website",
                 "url": "https://vyop.in",
-                "name": "Vyop: Barcode Scan & Bill",
-                "description": "Smartphone Barcode Scanner POS, Voice Billing Software & Digital Khata App for Retailers in India.",
+                "name": "Vyop POS: Barcode Scan & Bill",
+                "description": "Free Smartphone Barcode Scanner POS, Multi-Currency Billing Software & Digital Ledger App for Retailers Worldwide.",
                 "publisher": {
                   "@id": "https://vyop.in/#organization"
                 }

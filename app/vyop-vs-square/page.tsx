@@ -5,10 +5,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Vyop vs Square POS | Best Free POS Alternative for India",
-  description: "Compare Vyop vs Square POS. Square charges card transaction fees and requires proprietary card hardware. Vyop is free to start with Indian GST, UPI, Hindi voice billing & ₹999/yr Pro cloud sync.",
+  title: "Vyop vs Square POS [0% Transaction Fees & Free Mobile Scanner] — Vyop POS",
+  description: "Compare Vyop vs Square POS. Square charges 2.6% + 10¢ card processing fees and requires expensive terminal hardware. Vyop transforms any smartphone into a barcode scanner POS with 0% transaction fees and multi-currency billing worldwide.",
   alternates: { canonical: "/vyop-vs-square" },
-  openGraph: { title: "Vyop vs Square POS | Free Indian POS Alternative", url: "https://vyop.in/vyop-vs-square" },
+  openGraph: { title: "Vyop vs Square POS [0% Transaction Fees & Free Mobile Scanner] — Vyop POS", url: "https://vyop.in/vyop-vs-square", siteName: "Vyop POS: Barcode Scan & Bill" },
 };
 
 const comparison = [

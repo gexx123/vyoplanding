@@ -5,14 +5,15 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Vyop vs Clover POS | Best Free Indian POS Alternative to Clover",
+  title: "Vyop vs Clover POS [Zero Hardware Fees & Free Mobile Scanner] — Vyop POS",
   description:
-    "Compare Vyop vs Clover POS. Clover requires $599-$1,799 proprietary hardware plus monthly software subscriptions and lacks native Indian GST, Hindi voice AI & UPI. Vyop offers Android POS with voice AI, starting free with ₹999/yr Pro cloud sync.",
+    "Compare Vyop vs Clover POS. Clover requires $599-$1,799 proprietary hardware plus monthly software subscriptions. Vyop turns any smartphone into an instant barcode POS with 0% transaction fees and multi-currency billing.",
   alternates: { canonical: "/vyop-vs-clover" },
   openGraph: {
-    title: "Vyop vs Clover POS | Free Mobile Alternative in India",
-    description: "Looking for a Clover POS alternative in India? Vyop offers smartphone camera barcode POS, Hindi voice billing, Indian GST, and ₹999/yr Pro cloud sync.",
+    title: "Vyop vs Clover POS [Zero Hardware Fees & Free Mobile Scanner] — Vyop POS",
+    description: "Looking for a Clover POS alternative? Vyop offers smartphone camera barcode scanning, loose-item AI recognition, and multi-currency billing with zero hardware fees.",
     url: "https://vyop.in/vyop-vs-clover",
+    siteName: "Vyop POS: Barcode Scan & Bill",
   },
 };
 

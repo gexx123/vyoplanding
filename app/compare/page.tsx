@@ -5,10 +5,15 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Compare Vyop vs Tally, Khatabook & Vyapar | Best Mobile POS App",
-  description: "Compare Vyop against Tally Prime, Khatabook, Vyapar, and MyBillBook. See why Vyop's voice AI and smartphone camera barcode POS is chosen by Indian retail shopkeepers.",
+  title: "Compare POS Systems [Square, Loyverse, Clover, Shopify & Vyapar] — Vyop POS",
+  description: "Compare Vyop POS against Square, Loyverse, Clover, Shopify POS, Tally Prime, and Vyapar. Discover the best free mobile POS system, smartphone barcode scanner, and 0% fee online store for retail businesses worldwide.",
   alternates: { canonical: '/compare' },
-  openGraph: { url: 'https://vyop.in/compare' }
+  openGraph: { 
+    title: "Compare POS Systems [Square, Loyverse, Clover, Shopify & Vyapar] — Vyop POS",
+    description: "Compare features, pricing, and hardware requirements across top point-of-sale systems and billing apps.",
+    url: 'https://vyop.in/compare',
+    siteName: 'Vyop POS: Barcode Scan & Bill',
+  }
 };
 
 const comparisons = [

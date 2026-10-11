@@ -5,14 +5,15 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Vyop vs Loyverse POS | Best Free Mobile POS Alternative in India",
+  title: "Vyop vs Loyverse POS [Free Advanced Inventory & Staff Tools] — Vyop POS",
   description:
-    "Compare Vyop vs Loyverse POS. Loyverse charges for inventory and employee add-ons and lacks native Indian GST, Hindi voice billing & UPI. Vyop offers free offline billing and ₹999/yr Pro cloud sync with voice AI and smartphone barcode POS.",
+    "Compare Vyop vs Loyverse POS. Loyverse charges $360+/year for advanced inventory and employee add-ons. Vyop offers free phone barcode scanning, loose-item AI recognition, multi-currency support, and 0% online storefront.",
   alternates: { canonical: "/vyop-vs-loyverse" },
   openGraph: {
-    title: "Vyop vs Loyverse POS | Free Indian POS Alternative",
-    description: "Why Indian shopkeepers choose Vyop over Loyverse: ₹999/yr pricing vs $360+/yr Loyverse add-ons, Hindi voice AI, GST compliance & UPI support.",
+    title: "Vyop vs Loyverse POS [Free Advanced Inventory & Staff Tools] — Vyop POS",
+    description: "Compare Vyop vs Loyverse POS: Avoid $360+/yr Loyverse add-on fees. Free smartphone barcode scanner, AI item detection, and multi-currency billing worldwide.",
     url: "https://vyop.in/vyop-vs-loyverse",
+    siteName: "Vyop POS: Barcode Scan & Bill",
   },
 };
 

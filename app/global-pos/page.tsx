@@ -65,6 +65,10 @@ const REGIONS = [
     description:
       "Replace expensive Square readers and Clover terminals. Bill in USD ($) and CAD ($), configure state and provincial sales tax, and print 58mm/80mm thermal receipts without card processing lock-in.",
     features: ["Custom Sales Tax", "USD & CAD Support", "Digital SMS & Web Receipts", "0% Transaction Platform Cuts"],
+    links: [
+      { name: "United States POS", slug: "united-states" },
+      { name: "Canada POS", slug: "canada" },
+    ],
   },
   {
     flag: "🇬🇧 🇪🇺",
@@ -72,6 +76,9 @@ const REGIONS = [
     description:
       "Fully compliant VAT invoice generation in GBP (£) and EUR (€). Run mobile food trucks, boutique retail, or specialty grocery stores with fast camera barcode scanning and offline inventory sync.",
     features: ["Standard & Reduced VAT Rates", "GBP & EUR Multi-Currency", "Bluetooth ESC/POS Printing", "Offline Checkout"],
+    links: [
+      { name: "United Kingdom POS", slug: "united-kingdom" },
+    ],
   },
   {
     flag: "🇦🇪 🇸🇦",
@@ -79,6 +86,10 @@ const REGIONS = [
     description:
       "Built for retail souks, supermarkets, and fashion boutiques in Dubai, Abu Dhabi, and Riyadh. Generate 5% VAT compliant tax invoices in AED and SAR with instant bilingual product cataloging.",
     features: ["5% GCC VAT Invoices", "AED & SAR Currency", "Instant Photo AI Catalog", "Direct WhatsApp Bills"],
+    links: [
+      { name: "UAE & Dubai POS", slug: "uae" },
+      { name: "Saudi Arabia POS", slug: "saudi-arabia" },
+    ],
   },
   {
     flag: "🇦🇺 🇳🇿",
@@ -86,6 +97,9 @@ const REGIONS = [
     description:
       "Avoid hefty terminal rental fees. Point your phone camera to scan EAN/UPC barcodes, issue 10% GST compliant tax receipts in AUD/NZD, and launch a zero-commission online store catalog.",
     features: ["10% GST Compliant", "AUD & NZD Support", "Inventory Stock Alerts", "Zero Monthly Terminal Fees"],
+    links: [
+      { name: "Australia POS", slug: "australia" },
+    ],
   },
   {
     flag: "🇵🇭 🇲🇾 🇸🇬",
@@ -93,6 +107,11 @@ const REGIONS = [
     description:
       "Designed for sari-sari stores, night market vendors, and cafes across the Philippines, Malaysia, and Singapore. Manage credit ledgers (utang), QR payments, and quick barcode sales.",
     features: ["PHP, MYR, SGD Currencies", "Digital Credit Book (Utang/Baki)", "Instant WhatsApp Orders", "Works 100% Offline"],
+    links: [
+      { name: "Philippines POS", slug: "philippines" },
+      { name: "Singapore POS", slug: "singapore" },
+      { name: "Malaysia POS", slug: "malaysia" },
+    ],
   },
   {
     flag: "🇿🇦 🇳🇬 🇰🇪",
@@ -100,6 +119,11 @@ const REGIONS = [
     description:
       "Ultra-lightweight mobile POS that runs seamlessly on budget smartphones without constant internet. Track customer balances, issue instant digital receipts, and avoid hardware costs.",
     features: ["ZAR, NGN, KES Support", "100% Offline Architecture", "Low-Data Bandwidth", "Automated Debt Reminders"],
+    links: [
+      { name: "South Africa POS", slug: "south-africa" },
+      { name: "Nigeria POS", slug: "nigeria" },
+      { name: "Kenya POS", slug: "kenya" },
+    ],
   },
 ];
 
@@ -266,6 +290,21 @@ export default function GlobalPOSPage() {
                     </div>
                   ))}
                 </div>
+
+                {r.links && r.links.length > 0 && (
+                  <div className="mt-4 pt-3 border-t border-gray-100 flex flex-wrap gap-2">
+                    {r.links.map((link) => (
+                      <Link
+                        key={link.slug}
+                        href={`/global-pos/${link.slug}`}
+                        className="inline-flex items-center gap-1 text-xs font-bold text-amber-800 hover:text-amber-900 bg-amber-50 hover:bg-amber-100 px-2.5 py-1 rounded-lg transition-colors"
+                      >
+                        <span>{link.name}</span>
+                        <span>→</span>
+                      </Link>
+                    ))}
+                  </div>
+                )}
               </div>
             ))}
           </div>

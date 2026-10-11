@@ -3,6 +3,7 @@ import { db } from '@/lib/firebase';
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import { cities } from '@/lib/cityData';
 import { industries } from '@/lib/industryData';
+import { countries } from '@/lib/countryData';
 
 import { staticBlogs } from '@/lib/staticBlogs';
 
@@ -133,6 +134,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date('2026-09-22'),
       changeFrequency: 'weekly' as const,
       priority: 0.85,
+    })),
+    ...countries.map((country) => ({
+      url: `${baseUrl}/global-pos/${country.slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.95,
     })),
   ];
 

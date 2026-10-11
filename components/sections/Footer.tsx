@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { cities } from "@/lib/cityData";
 import { industries } from "@/lib/industryData";
+import { countries } from "@/lib/countryData";
 
 const footerLinks = {
   Company: [
@@ -295,6 +296,31 @@ export default function Footer() {
                 className="hover:text-[var(--brand-primary)] transition-colors"
               >
                 {ind.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        {/* Global Country Hubs Directory */}
+        <div className="pt-8 pb-6 border-t border-[var(--border-subtle)]">
+          <div className="flex items-center justify-between mb-3">
+            <Link
+              href="/global-pos"
+              className="text-xs font-bold uppercase tracking-wider text-[var(--text-secondary)] hover:text-[var(--brand-primary)] transition-colors"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              Free Mobile POS &amp; Barcode Scanner by Country (Worldwide) →
+            </Link>
+          </div>
+          <div className="flex flex-wrap gap-x-4 gap-y-2 text-xs text-[var(--text-muted)]">
+            {countries.map((country) => (
+              <Link
+                key={country.slug}
+                href={`/global-pos/${country.slug}`}
+                className="hover:text-[var(--brand-primary)] transition-colors inline-flex items-center gap-1.5"
+              >
+                <span>{country.flag}</span>
+                <span>POS in {country.name}</span>
               </Link>
             ))}
           </div>

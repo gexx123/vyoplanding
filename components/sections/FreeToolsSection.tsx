@@ -84,7 +84,7 @@ export default function FreeToolsSection() {
                 Vyop vs Tally, Vyapar &amp; More
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed mb-6">
-                Compare Vyop against Tally Prime, Vyapar, and myBillBook. See why voice AI and phone camera barcode POS is 10x faster for retail.
+                Compare Vyop against Tally Prime, Vyapar, and myBillBook. See how voice AI and phone camera barcode POS streamline checkout speed for retail counters.
               </p>
             </div>
 

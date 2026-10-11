@@ -105,7 +105,7 @@ const useCases = [
   {
     icon: "🛒",
     title: "Kirana & Grocery Stores",
-    desc: "Scan packaged goods barcodes in 0.05s. Snap photos of loose dal, rice, sugar. Instant thermal bill printing.",
+    desc: "Scan packaged goods barcodes rapidly. Snap photos of loose dal, rice, sugar. Instant thermal bill printing.",
     link: "/solutions/kirana-grocery",
   },
   {
@@ -117,7 +117,7 @@ const useCases = [
   {
     icon: "🧁",
     title: "Bakery & Sweet Shops",
-    desc: "Mithai has no barcode. Point phone camera at sweet boxes — AI identifies the item visually in 200ms.",
+    desc: "Mithai has no barcode. Point phone camera at sweet boxes — AI identifies the item visually using on-device AI.",
     link: "/solutions/bakery-sweet-shop",
   },
   {
@@ -155,7 +155,7 @@ const useCases = [
 const faqs = [
   {
     q: "Can I really turn my phone into a barcode scanner for billing?",
-    a: "Yes! Vyop transforms your phone camera into a professional-grade barcode scanner. Just point your phone at any barcode — EAN, UPC, QR, Code 128, Data Matrix — and it scans in 0.05 seconds. No external hardware or laser gun required. Your phone becomes a complete barcode scanner and POS machine.",
+    a: "Yes! Vyop transforms your phone camera into a professional-grade barcode scanner. Just point your phone at any barcode — EAN, UPC, QR, Code 128, Data Matrix — and it scans instantly. No external hardware or laser gun required. Your phone becomes a complete barcode scanner and POS machine.",
   },
   {
     q: "Does the barcode scanner work without internet?",
@@ -163,7 +163,7 @@ const faqs = [
   },
   {
     q: "Can I scan products that don't have a barcode?",
-    a: "This is Vyop's biggest advantage over every other barcode scanner app. Over 50% of retail products in India (mithai, loose grains, custom garments, hardware items) have no barcode. Vyop lets you simply point your phone camera at ANY product — the AI recognizes it from the product photo, packaging text, or shape and adds it to your bill in under 0.5 seconds. No typing needed.",
+    a: "This is Vyop's biggest advantage over every other barcode scanner app. Over 50% of retail products in India (mithai, loose grains, custom garments, hardware items) have no barcode. Vyop lets you simply point your phone camera at ANY product — the AI recognizes it from the product photo, packaging text, or shape and adds it to your bill instantly. No typing needed.",
   },
   {
     q: "Is this barcode scanner really free?",
@@ -183,7 +183,7 @@ const faqs = [
   },
   {
     q: "Can I use this for supermarket-style checkout billing?",
-    a: "Absolutely! Vyop's barcode scanner gives you supermarket checkout speed on your phone. Continuous 60 FPS scanning means you can scan multiple products back-to-back just like a cashier at Big Bazaar or D-Mart. Items are automatically added to the bill, quantities update, and you print a thermal receipt — all from your phone.",
+    a: "Absolutely! Vyop's barcode scanner gives you fast checkout speed on your phone. Continuous scanning means you can scan multiple products back-to-back without tapping Done between items. Products are automatically added to the bill, quantities update, and you print a thermal receipt — all from your phone.",
   },
   {
     q: "Does it work on budget Android phones?",
@@ -191,14 +191,14 @@ const faqs = [
   },
   {
     q: "How to scan barcode and bill from phone? (Step by step)",
-    a: "Step 1: Download Vyop free from Google Play Store. Step 2: Add your products by scanning their barcodes or snapping photos. Step 3: When a customer comes, open billing mode and point your phone camera at products — they are instantly added to the bill. Step 4: Tap 'Print' to send a thermal receipt via Bluetooth or share a WhatsApp invoice. Total time: under 10 seconds per bill.",
+    a: "Step 1: Download Vyop free from Google Play Store. Step 2: Add your products by scanning their barcodes or snapping photos. Step 3: When a customer comes, open billing mode and point your phone camera at products — they are instantly added to the bill. Step 4: Tap 'Print' to send a thermal receipt via Bluetooth or share a WhatsApp invoice.",
   },
 ];
 
 const comparisonPoints = [
   {
     feature: "Scan Standard Barcodes (EAN, UPC, QR)",
-    vyop: "✓ 0.05s Camera Scan (All Formats)",
+    vyop: "✓ Instant Camera Scan (All Formats)",
     others: "✓ Basic Scan",
   },
   {
@@ -248,7 +248,7 @@ export default function BarcodeScannerLandingPage() {
         <div className="max-w-5xl mx-auto">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-100/80 border border-amber-200 text-amber-900 text-xs font-bold uppercase tracking-wider mb-6">
             <Scan className="w-4 h-4 text-amber-600" />
-            <span>#1 Barcode Scanner App for Shop Billing</span>
+            <span>Smart Barcode Scanner App for Shop Billing</span>
           </div>
 
           <h1
@@ -295,8 +295,8 @@ export default function BarcodeScannerLandingPage() {
             <div className="p-3.5 rounded-2xl bg-[#FDFCF7] border border-amber-100 flex items-center gap-3">
               <span className="text-xl">⚡</span>
               <div>
-                <div className="text-xs font-bold text-gray-900">0.05s Barcode Scan</div>
-                <div className="text-[11px] text-gray-500">Instant camera decode</div>
+                <div className="text-xs font-bold text-gray-900">Instant Barcode Scan</div>
+                <div className="text-[11px] text-gray-500">Fast camera decode</div>
               </div>
             </div>
             <div className="p-3.5 rounded-2xl bg-[#FDFCF7] border border-amber-100 flex items-center gap-3">
@@ -350,7 +350,7 @@ export default function BarcodeScannerLandingPage() {
             </h3>
             <p className="text-gray-600 text-sm leading-relaxed mb-3">
               Point your phone camera at any barcode — EAN-13, UPC, QR Code,
-              Code 128, Data Matrix. Decoded in 0.05 seconds. Supports all 11+
+              Code 128, Data Matrix. Decoded instantly. Supports all 11+
               international barcode formats used in Indian retail.
             </p>
             <span className="text-xs font-bold text-amber-700 bg-amber-50 px-2.5 py-1 rounded-full border border-amber-200">
@@ -566,7 +566,7 @@ export default function BarcodeScannerLandingPage() {
             <Scan className="w-8 h-8 text-amber-600 mb-4" />
             <h3 className="text-base font-bold text-gray-900 mb-2">Barcode Scanner</h3>
             <p className="text-xs text-gray-600 leading-relaxed">
-              Scan all barcode formats with your phone camera. 0.05 second decode speed.
+              Scan all barcode formats with your phone camera with fast camera autofocus.
             </p>
           </div>
           <div className="p-6 rounded-2xl bg-white border border-gray-200 shadow-sm">
@@ -727,11 +727,6 @@ export default function BarcodeScannerLandingPage() {
                 priceCurrency: "INR",
                 description: "100% Free barcode scanner with ₹999/year Pro cloud sync",
               },
-              aggregateRating: {
-                "@type": "AggregateRating",
-                ratingValue: "4.9",
-                reviewCount: "1280",
-              },
             },
             {
               "@context": "https://schema.org",
@@ -756,7 +751,7 @@ export default function BarcodeScannerLandingPage() {
                   "@type": "HowToStep",
                   position: 3,
                   name: "Scan Products at Checkout to Generate Bill",
-                  text: "Open billing mode. Point phone camera at products. Barcodes and items are scanned in 0.05s and added to the bill automatically. Print thermal receipt via Bluetooth or share WhatsApp invoice.",
+                  text: "Open billing mode. Point phone camera at products. Barcodes and items are scanned and added to the bill automatically. Print thermal receipt via Bluetooth or share WhatsApp invoice.",
                 },
               ],
             },

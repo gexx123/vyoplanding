@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ city: str
 
   return {
     title: `Best Billing Software in ${city.name} (2026) — PC & Mobile | Vyop`,
-    description: `Skip ₹15,000+ billing software dealers in ${city.name}. Vyop works on Desktop PC (vyop.shop) & turns your phone into a barcode machine (<1s scan, 30+ items/min). Voice AI, CA-grade GST reports, udhar khata. Free to start, ₹999/yr Pro. Used in ${city.famousMarkets[0]} & ${city.famousMarkets[1]}.`,
+    description: `Skip ₹15,000+ billing software dealers in ${city.name}. Vyop works on Desktop PC (vyop.shop) & turns your phone into a barcode machine. Voice AI, CA-grade GST reports, udhar khata. Free to start, ₹999/yr Pro. Used in ${city.famousMarkets[0]} & ${city.famousMarkets[1]}.`,
     keywords: [
       `billing software in ${city.name}`,
       `billing software dealers in ${city.name}`,
@@ -50,7 +50,7 @@ export async function generateMetadata({ params }: { params: Promise<{ city: str
     },
     openGraph: {
       title: `Best Billing Software in ${city.name} — Desktop PC & Mobile Barcode Machine | Vyop`,
-      description: `No dealer needed. Full counter billing on Desktop PC (vyop.shop) + phone barcode scanner (<1s scan, 30+ items/min). Free billing & CA accounting software for ${city.name} shops.`,
+      description: `No dealer needed. Full counter billing on Desktop PC (vyop.shop) + phone barcode scanner. Free billing & CA accounting software for ${city.name} shops.`,
       url: `https://vyop.in/billing-software/${city.slug}`,
     },
   };
@@ -90,7 +90,7 @@ export default async function CityLandingPage({ params }: { params: Promise<{ ci
         
         {/* AEO Direct Answer Block — AI engines extract this */}
         <p className="text-xl text-[var(--text-secondary)] max-w-3xl mx-auto mb-4">
-          Vyop is the best billing &amp; accounting software in {city.name} — operating across Desktop PC (vyop.shop) for counter checkout and Android smartphones for supermarket-speed barcode scanning (&lt;1s scan, 30+ items/min). 
+          Vyop is the best billing &amp; accounting software in {city.name} — operating across Desktop PC (vyop.shop) for counter checkout and Android smartphones for agile barcode scanning with continuous multi-item flow. 
           No ₹15,000+ dealer fees, no expensive hardware, no barcode gun needed. 
           Enjoy CA-grade GST tax filing (GSTR-1, GSTR-3B) and start billing in your {city.hubFocus} shop within 60 seconds.
         </p>
@@ -208,7 +208,7 @@ export default async function CityLandingPage({ params }: { params: Promise<{ ci
                 </li>
                 <li className="flex items-start gap-2.5">
                   <span className="text-emerald-600 font-bold mt-0.5">✓</span>
-                  <span><strong>AI Mobile Barcode POS:</strong> Point phone camera to scan barcodes in &lt;1s or snap photos of loose unbarcoded items</span>
+                  <span><strong>AI Mobile Barcode POS:</strong> Point phone camera to scan barcodes instantly or snap photos of loose unbarcoded items</span>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <span className="text-emerald-600 font-bold mt-0.5">✓</span>
@@ -239,14 +239,14 @@ export default async function CityLandingPage({ params }: { params: Promise<{ ci
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
             <div className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
-              <div className="text-4xl md:text-5xl font-extrabold text-amber-400 mb-2" style={{ fontFamily: "var(--font-display)" }}>&lt;1s</div>
+              <div className="text-4xl md:text-5xl font-extrabold text-amber-400 mb-2" style={{ fontFamily: "var(--font-display)" }}>Instant</div>
               <div className="text-base font-bold text-white mb-1">Per Barcode Scan</div>
-              <p className="text-xs text-gray-400">Phone camera scans barcodes faster than ₹2,500 barcode guns</p>
+              <p className="text-xs text-gray-400">Phone camera scans barcodes directly without external hardware</p>
             </div>
             <div className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
-              <div className="text-4xl md:text-5xl font-extrabold text-amber-400 mb-2" style={{ fontFamily: "var(--font-display)" }}>30+</div>
-              <div className="text-base font-bold text-white mb-1">Items/Minute</div>
-              <p className="text-xs text-gray-400">Supermarket checkout speed at your {city.name} shop counter</p>
+              <div className="text-4xl md:text-5xl font-extrabold text-amber-400 mb-2" style={{ fontFamily: "var(--font-display)" }}>Multi-Item</div>
+              <div className="text-base font-bold text-white mb-1">Continuous Scan</div>
+              <p className="text-xs text-gray-400">High-speed checkout queue clearance at your {city.name} shop counter</p>
             </div>
             <div className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
               <div className="text-4xl md:text-5xl font-extrabold text-amber-400 mb-2" style={{ fontFamily: "var(--font-display)" }}>₹0</div>
@@ -258,7 +258,7 @@ export default async function CityLandingPage({ params }: { params: Promise<{ ci
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {[
               { old: `₹15,000+ ${city.name} Dealer Installation`, vyop: "Free App Download (60 seconds)", save: "₹15,000" },
-              { old: "₹2,500 Barcode Gun", vyop: "Phone Camera (<1s barcode scan)", save: "₹2,500" },
+              { old: "₹2,500 Barcode Gun", vyop: "Phone Camera Barcode Scanning", save: "₹2,500" },
               { old: "₹20,000 Desktop Computer + UPS", vyop: "Your Existing Android Phone", save: "₹20,000" },
               { old: "₹5,000/yr Dealer AMC Fees", vyop: "Free / ₹999/yr Pro Cloud", save: "₹4,000/yr" },
             ].map((item, i) => (
@@ -464,13 +464,6 @@ export default async function CityLandingPage({ params }: { params: Promise<{ ci
               "operatingSystem": "Android, iOS, Web, Windows",
               "applicationCategory": "BusinessApplication",
               "applicationSubCategory": "Point of Sale & Invoicing",
-              "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "4.8",
-                "ratingCount": "1240",
-                "bestRating": "5",
-                "worstRating": "1"
-              },
               "offers": {
                 "@type": "Offer",
                 "price": "0",
@@ -520,7 +513,7 @@ export default async function CityLandingPage({ params }: { params: Promise<{ ci
                   "name": `What is the best billing software in ${city.name}?`,
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": `Vyop is the best billing software in ${city.name} for 2026. It turns your smartphone into a barcode machine — scanning items in under 1 second and billing 30+ items per minute. It includes voice AI billing in Hindi and English, complete GST invoicing (CGST, SGST, HSN), digital udhar khata with WhatsApp reminders, and inventory management. Free to start, ₹999/year Pro cloud sync. No dealer visit or desktop computer needed.`
+                    "text": `Vyop is a leading billing software in ${city.name} for 2026. It turns your smartphone into a barcode machine with continuous multi-item scanning. It includes voice AI billing in Hindi and English, complete GST invoicing (CGST, SGST, HSN), digital udhar khata with WhatsApp reminders, and inventory management. Free to start, ₹999/year Pro cloud sync. No dealer visit or desktop computer needed.`
                   }
                 },
                 {
@@ -528,7 +521,7 @@ export default async function CityLandingPage({ params }: { params: Promise<{ ci
                   "name": `Where can I find billing software dealers in ${city.name}?`,
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": `You do not need a physical dealer or distributor in ${city.name}! Traditional billing software dealers in ${city.name} charge ₹12,000 to ₹25,000 for PC installation, barcode gun, and yearly AMC. Vyop is a cloud-based mobile POS and accounting app that installs on your smartphone in under 60 seconds for free. Your phone camera becomes the barcode scanner (under 1 second per scan), voice AI replaces the keyboard, and you save ₹34,500+ compared to dealer setups.`
+                    "text": `You do not need a physical dealer or distributor in ${city.name}! Traditional billing software dealers in ${city.name} charge ₹12,000 to ₹25,000 for PC installation, barcode gun, and yearly AMC. Vyop is a cloud-based mobile POS and accounting app that installs on your smartphone in under 60 seconds for free. Your phone camera becomes the barcode scanner with fast camera autofocus, voice AI replaces the keyboard, and you save ₹34,500+ compared to dealer setups.`
                   }
                 },
                 {
@@ -536,7 +529,7 @@ export default async function CityLandingPage({ params }: { params: Promise<{ ci
                   "name": `What is the price of billing software in ${city.name}?`,
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": `Billing software prices in ${city.name} vary: Local dealer installations cost ₹12,000–₹25,000 upfront + ₹3,000–₹5,000/year AMC. Tally costs ₹18,000–₹54,000. Vyop POS is free to start with offline billing, and ₹999/year for Pro cloud sync — making it the most affordable billing software option for ${city.name} retailers, with more features including phone barcode scanning and voice AI billing.`
+                    "text": `Billing software prices in ${city.name} vary: Local dealer installations cost ₹12,000–₹25,000 upfront + ₹3,000–₹5,000/year AMC. Tally Prime Silver costs ₹22,500 + GST perpetual (with ₹7,500/year TSS renewal). Vyop POS is free to start with offline billing, and ₹999/year for Pro cloud sync — making it an affordable option for ${city.name} retailers, with phone barcode scanning and voice AI billing.`
                   }
                 },
                 {
@@ -552,7 +545,7 @@ export default async function CityLandingPage({ params }: { params: Promise<{ ci
                   "name": `Can I use my phone as billing machine in ${city.name}?`,
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": `Yes! Vyop turns any Android smartphone into a complete billing machine. Your phone camera scans barcodes in under 1 second (faster than ₹2,500 barcode guns), voice AI creates bills in Hindi in 5 seconds, and you can bill 30+ items per minute. Connect a ₹1,500 Bluetooth thermal printer for receipts. Total cost: ₹0 to ₹1,500 compared to ₹30,000–₹80,000 for traditional POS setups from ${city.name} dealers.`
+                    "text": `Yes! Vyop turns any Android smartphone into a complete billing machine. Your phone camera scans barcodes rapidly with continuous scanning, voice AI creates bills in Hindi or English, and you can connect a thermal receipt printer wirelessly. Total setup cost is a fraction of the ₹30,000–₹80,000 required for traditional POS setups from ${city.name} dealers.`
                   }
                 },
                 {
@@ -560,7 +553,7 @@ export default async function CityLandingPage({ params }: { params: Promise<{ ci
                   "name": `What hardware do I need for billing in ${city.name}?`,
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": `Zero specialized hardware required. Your smartphone camera acts as a high-speed barcode scanner (under 1 second per scan, 30+ items per minute). Vyop connects wirelessly via Bluetooth to standard 2-inch and 3-inch thermal receipt printers available at computer shops in ${city.name} for ₹1,500, or you can share digital bills directly via WhatsApp. No desktop computer, barcode gun, or UPS needed.`
+                    "text": `Zero specialized hardware required. Your smartphone camera acts as a high-speed barcode scanner with continuous multi-item scanning. Vyop connects wirelessly via Bluetooth to standard 2-inch and 3-inch thermal receipt printers available at computer shops in ${city.name} for ₹1,500, or you can share digital bills directly via WhatsApp. No desktop computer, barcode gun, or UPS needed.`
                   }
                 },
                 {
@@ -576,7 +569,7 @@ export default async function CityLandingPage({ params }: { params: Promise<{ ci
                   "name": `Which billing software is best for kirana stores in ${city.name}?`,
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": `Vyop POS is the best billing software for kirana stores in ${city.name}. It supports barcode scanning with phone camera (under 1 second), voice billing in Hindi ('Teen Maggi, do Chai'), weight-based billing for loose items (dal, rice, sugar), digital udhar khata with WhatsApp reminders, low-stock alerts, and UPI QR code payments — all free to start. It's specifically designed for the fast-paced kirana retail environment.`
+                    "text": `Vyop POS is designed for kirana stores in ${city.name}. It supports barcode scanning with phone camera continuous autofocus, voice billing in Hindi ('Teen Maggi, do Chai'), weight-based billing for loose items (dal, rice, sugar), digital udhar khata with WhatsApp reminders, low-stock alerts, and UPI QR code payments — all free to start.`
                   }
                 }
               ]

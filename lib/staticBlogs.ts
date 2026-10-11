@@ -123,8 +123,8 @@ export const staticBlogs: StaticBlogPost[] = [
         <li><strong>One-Tap Ready Supermarket Catalogs:</strong> Choose from 21+ pre-built Indian business templates (Kirana, Restaurant, Boutique, Bakery, Dairy, Electronics, Hardware, Pharmacy, etc.).</li>
       </ul>
 
-      <h3>Step 2: Tap "Create Online Store" (1 Second)</h3>
-      <p>Inside your Vyop dashboard, click the <strong>"Online Store"</strong> button. That's it. In literally 1 second, your live cloud storefront link is generated: <code>vyop.shop/order?token=...</code>.</p>
+      <h3>Step 2: Tap "Create Online Store" (Instant Link)</h3>
+      <p>Inside your Vyop dashboard, click the <strong>"Online Store"</strong> button. That's it. Your live cloud storefront link is generated immediately: <code>vyop.shop/order?token=...</code>.</p>
       <p>Your store automatically receives a branded mobile web app (PWA), high-resolution photo gallery, category filter tabs, interactive search bar, and direct checkout.</p>
 
       <h3>Step 3: Share Your Live Storefront &amp; Print Counter Standees</h3>
@@ -181,7 +181,7 @@ export const staticBlogs: StaticBlogPost[] = [
       <p>Customer aapke personal UPI QR code (Google Pay, PhonePe, Paytm, BHIM) ko scan karke direct aapke bank account me paise bhejta hai, ya Cash on Delivery (COD) choose karta hai. Beech me koi payment gateway 2%–3% commission nahi kaat-ta.</p>
 
       <h3>4. Kya customer ko order karne ke liye koi app download karni padegi?</h3>
-      <p>Nahi! Aapka store link customer ke mobile browser (Chrome, Safari, WhatsApp web) me bina kisi app download ke 1 second me load ho jata hai. Wo seedha item select karke 30 second me order place kar sakte hain.</p>
+      <p>Nahi! Aapka store link customer ke mobile browser (Chrome, Safari, WhatsApp web) me bina kisi app download ke turant load ho jata hai. Wo seedha item select karke aasaani se order place kar sakte hain.</p>
 
       <h2>Start Your 0% Commission Online Store Today</h2>
       <p>Thousands of Indian shopkeepers, cafes, and retailers are taking back control of their neighborhood customers. Don't let aggregators take 30% of your hard-earned margins or let complex software slow you down.</p>
@@ -236,7 +236,7 @@ export const staticBlogs: StaticBlogPost[] = [
       <h3>Pillar 1: Dine-in Table QR Ordering (Scan ➔ Order ➔ Kitchen KOT)</h3>
       <p>Place sleek, high-resolution acrylic QR stands on every table (Table 1, Table 2, Table 3...):</p>
       <ul>
-        <li><strong>No App Download Required:</strong> Diners open their native phone camera (iOS or Android), scan the table QR stand, and your appetizing digital food menu opens in 1 second.</li>
+        <li><strong>No App Download Required:</strong> Diners open their native phone camera (iOS or Android), scan the table QR stand, and your appetizing digital food menu opens instantly.</li>
         <li><strong>Rich Food Photos &amp; Customizations:</strong> Showcase high-res food images, portion sizes (Half vs Full), spice levels (Mild, Medium, Spicy), and add-on sides (extra butter, raita).</li>
         <li><strong>Direct Thermal Kitchen Order Ticket (KOT):</strong> The moment the diner confirms their order, your thermal printer in the kitchen prints a physical Kitchen Order Ticket (KOT) with the exact table number and special cooking notes. No waiter needs to sprint back and forth to write paper slips.</li>
       </ul>

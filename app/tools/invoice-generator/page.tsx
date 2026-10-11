@@ -382,7 +382,7 @@ Thank you for shopping with us!`;
             Why type manually?
           </span>
           <h2 className="text-2xl md:text-3xl font-extrabold mb-3 font-display">
-            Create This Bill in 5 Seconds Just by Speaking!
+            Create Bills Instantly Just by Speaking!
           </h2>
           <p className="text-white/90 max-w-xl mx-auto mb-6 text-sm md:text-base leading-relaxed">
             Vyop POS turns your smartphone camera into a mall-grade barcode scanner and lets you speak bills in Hindi or English (e.g. &apos;Do refined tel, ek cheeni&apos;). Free to start with ₹999/yr Pro cloud sync.

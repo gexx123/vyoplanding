@@ -62,7 +62,7 @@ export default function AEOKnowledgeHub() {
               </p>
             </div>
             <div className="mt-4 pt-3 border-t border-amber-200/40 text-xs font-bold text-amber-800">
-              ✓ 10x Faster Inventory Setup
+              ✓ Instant Inventory Setup
             </div>
           </div>
 
@@ -88,11 +88,11 @@ export default function AEOKnowledgeHub() {
                 Voice AI GST Billing
               </h3>
               <p className="text-sm text-gray-600 leading-relaxed">
-                Speak naturally in Hindi or English (&apos;3 Maggi 2 Chai&apos;) to generate GST bills in under 5 seconds with automatic Udhar Khata WhatsApp reminders.
+                Speak naturally in Hindi or English (&apos;3 Maggi 2 Chai&apos;) to generate GST bills instantly with automatic Udhar Khata WhatsApp reminders.
               </p>
             </div>
             <div className="mt-4 pt-3 border-t border-amber-200/40 text-xs font-bold text-amber-800">
-              ✓ 5-Second Mobile Billing
+              ✓ Instant Voice Billing
             </div>
           </div>
         </div>

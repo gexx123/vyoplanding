@@ -20,7 +20,7 @@ export default function BarcodeScannerShowcase() {
         >
           <Scan className="w-4 h-4 text-amber-600" />
           <span>Supermarket Barcode Scan</span>
-          <span className="hidden md:inline-block px-2 py-0.5 rounded-full text-[10px] bg-amber-100 text-amber-800 font-extrabold">0.05s</span>
+          <span className="hidden md:inline-block px-2 py-0.5 rounded-full text-[10px] bg-amber-100 text-amber-800 font-extrabold">Instant</span>
         </button>
 
         <button
@@ -68,7 +68,7 @@ export default function BarcodeScannerShowcase() {
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
                 <p className="text-xs sm:text-sm text-gray-700">
-                  <strong>Continuous Multi-Item Scan:</strong> Scan 10 items in 15 seconds without tapping "Done" between scans.
+                  <strong>Continuous Multi-Item Scan:</strong> Rapid multi-item scanning mode without tapping "Done" between items.
                 </p>
               </div>
               <div className="flex items-start gap-3">
@@ -93,7 +93,7 @@ export default function BarcodeScannerShowcase() {
                 <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
                 <span className="text-xs font-mono text-emerald-400 font-bold uppercase tracking-wider">🟢 Camera Scanner Active</span>
               </div>
-              <span className="text-[11px] font-mono text-gray-400">FPS: 60 | Latency: 12ms</span>
+              <span className="text-[11px] font-mono text-gray-400">Mode: Auto-Detect | Ready</span>
             </div>
 
             {/* Viewfinder Graphic */}
@@ -157,7 +157,7 @@ export default function BarcodeScannerShowcase() {
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-purple-600 shrink-0 mt-0.5" />
                 <p className="text-xs sm:text-sm text-gray-700">
-                  <strong>Instant Visual Recognition:</strong> Proprietary AI matches product appearance, colors, and shape in &lt;200ms.
+                  <strong>Instant Visual Recognition:</strong> Proprietary AI matches product appearance, colors, and shape instantly.
                 </p>
               </div>
               <div className="flex items-start gap-3">

@@ -182,7 +182,7 @@ export default function BarcodeScannerForBillingPage() {
             <div className="p-3.5 rounded-2xl bg-[#F7FDFA] border border-emerald-100 flex items-center gap-3">
               <span className="text-xl">⚡</span>
               <div>
-                <div className="text-xs font-bold text-gray-900">5-Second Billing</div>
+                <div className="text-xs font-bold text-gray-900">Instant Billing</div>
                 <div className="text-[11px] text-gray-500">Scan → Bill → Print</div>
               </div>
             </div>
@@ -257,7 +257,7 @@ export default function BarcodeScannerForBillingPage() {
           <div className="p-6 rounded-2xl bg-white border border-gray-200 shadow-sm">
             <Scan className="w-8 h-8 text-amber-600 mb-4" />
             <h3 className="text-base font-bold text-gray-900 mb-2">High-Speed Barcode Scan</h3>
-            <p className="text-xs text-gray-600">0.05s decode. All formats: EAN, UPC, QR, Code 128, Data Matrix.</p>
+            <p className="text-xs text-gray-600">Fast camera autofocus. All formats: EAN, UPC, QR, Code 128, Data Matrix.</p>
           </div>
           <div className="p-6 rounded-2xl bg-white border border-gray-200 shadow-sm">
             <Camera className="w-8 h-8 text-purple-600 mb-4" />
@@ -389,7 +389,6 @@ export default function BarcodeScannerForBillingPage() {
               applicationCategory: "BusinessApplication",
               description: "Best barcode scanner for billing. Scan product barcodes from phone camera, generate GST bills instantly, print thermal receipts. Complete barcode billing software for Indian shops. Free.",
               offers: { "@type": "Offer", price: "0", priceCurrency: "INR" },
-              aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", reviewCount: "1280" },
             },
             {
               "@context": "https://schema.org",

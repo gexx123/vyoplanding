@@ -33,11 +33,11 @@ export const industries: IndustryData[] = [
     badge: "For Kirana & General Stores",
     icon: "🛒",
     heroHighlight: "Kirana & Grocery Shops",
-    subheadline: "Tired of writing paper bills or typing items while long queues wait? Turn your phone into a mall-grade barcode scanner and create bills in 5 seconds just by speaking.",
+    subheadline: "Tired of writing paper bills or typing items while long queues wait? Turn your phone into a mall-grade barcode scanner and create bills instantly just by speaking.",
     painPoints: [
       {
         oldWay: "Writing bills manually in paper bahi-khata while 5 customers wait in the evening rush",
-        vyopWay: "Point smartphone camera at product barcodes or speak '2 Sugar, 1 Tata Tea' to bill in 5 seconds",
+        vyopWay: "Point smartphone camera at product barcodes or speak '2 Sugar, 1 Tata Tea' to bill without delay",
       },
       {
         oldWay: "Uncollected udhar (credit) balances forgotten in notebooks without proof",
@@ -277,11 +277,11 @@ export const industries: IndustryData[] = [
     badge: "For Hardware, Paints & Electricals",
     icon: "🔧",
     heroHighlight: "Hardware & Electrical Stores",
-    subheadline: "Selling thousands of unbarcoded screws, pipes, wires, and sanitary fittings? Use voice dimensions like '10 meter 2.5mm wire' and image search to bill 10x faster.",
+    subheadline: "Selling thousands of unbarcoded screws, pipes, wires, and sanitary fittings? Use voice dimensions like '10 meter 2.5mm wire' and image search to bill with speed and accuracy.",
     painPoints: [
       {
         oldWay: "Typing complex hardware specs like '1/2 inch brass ball valve' while plumbers wait",
-        vyopWay: "Speak 'Do piece aada inch brass valve' into Vyop AI to generate the bill in 3 seconds",
+        vyopWay: "Speak 'Do piece aada inch brass valve' into Vyop AI to generate the bill instantly",
       },
       {
         oldWay: "Contractors taking supplies on credit and disputing monthly totals",
@@ -346,7 +346,7 @@ export const industries: IndustryData[] = [
       },
       {
         oldWay: "Unbranded mobile covers, tempered glass, and cables scattered without prices",
-        vyopWay: "Print custom barcode price stickers and bill accessories in 2 seconds like a retail chain",
+        vyopWay: "Print custom barcode price stickers and bill accessories rapidly like a retail chain",
       },
       {
         oldWay: "Customers losing paper receipts and demanding free warranty repairs months later",
@@ -482,7 +482,7 @@ export const industries: IndustryData[] = [
     heroHighlight: "Salon & Beauty Parlours",
     subheadline: "Bill haircuts, facials, and beauty services in seconds. Track staff commissions, manage walk-in queues, sell beauty products at checkout, and build customer loyalty with automated reminders.",
     painPoints: [
-      { oldWay: "Manually writing service bills on carbon copy pads while customers wait at the counter", vyopWay: "Select services from your digital menu, add products, apply discount — bill is ready to print or WhatsApp in 10 seconds" },
+      { oldWay: "Manually writing service bills on carbon copy pads while customers wait at the counter", vyopWay: "Select services from your digital menu, add products, apply discount — bill is ready to print or WhatsApp immediately" },
       { oldWay: "Calculating individual staff commissions manually at the end of every month", vyopWay: "Assign each service to a staff member. Vyop auto-calculates daily, weekly, and monthly commission reports" },
       { oldWay: "Customers forgetting to come back for their next haircut or facial appointment", vyopWay: "Automated WhatsApp reminders sent to customers based on their last visit (e.g., 'Hi! It's been 30 days since your last haircut')" },
     ],
@@ -536,7 +536,7 @@ export const industries: IndustryData[] = [
     heroHighlight: "Optical & Eyewear Shops",
     subheadline: "Store customer eye prescriptions digitally, scan frame barcodes for instant billing, track lens stock by power and type, and print invoices with complete prescription details.",
     painPoints: [
-      { oldWay: "Searching through paper prescription files to find a returning customer's eye power", vyopWay: "Digital customer profiles store prescription history. Pull up any customer's SPH, CYL, AXIS, and ADD in 2 seconds." },
+      { oldWay: "Searching through paper prescription files to find a returning customer's eye power", vyopWay: "Digital customer profiles store prescription history. Pull up any customer's SPH, CYL, AXIS, and ADD instantly." },
       { oldWay: "Hundreds of frame models with no price tags causing billing delays", vyopWay: "Print barcode stickers for every frame. Scan at checkout for instant model, brand, and price lookup." },
       { oldWay: "Complex invoices with frame cost + lens cost + coating charges confusing customers", vyopWay: "Itemized invoices breaking down frame, lens type, coating, and fitting charges with clear GST" },
     ],
@@ -669,9 +669,9 @@ export const industries: IndustryData[] = [
     badge: "For Paan & Tobacco Shops",
     icon: "🍃",
     heroHighlight: "Paan & Tobacco Stores",
-    subheadline: "Bill paan, cigarettes, soft drinks, and snacks in under 3 seconds. Track loose item inventory, manage high-volume small cash transactions, and see your daily earnings instantly.",
+    subheadline: "Bill paan, cigarettes, soft drinks, and snacks rapidly. Track loose item inventory, manage high-volume small cash transactions, and see your daily earnings instantly.",
     painPoints: [
-      { oldWay: "No record of hundreds of ₹10-₹50 cash transactions throughout the day", vyopWay: "Quick-tap billing for frequent items. Just tap the item icon on your screen — bill is generated in 1 second." },
+      { oldWay: "No record of hundreds of ₹10-₹50 cash transactions throughout the day", vyopWay: "Quick-tap billing for frequent items. Just tap the item icon on your screen — bill is generated instantly." },
       { oldWay: "Losing track of loose cigarette and gutka packets sold from cartons", vyopWay: "Track loose unit sales. Vyop auto-deducts from carton inventory when you sell individual sticks or pouches." },
       { oldWay: "No idea of actual daily profit after a long day of small transactions", vyopWay: "Real-time daily sales dashboard showing total revenue, cost of goods, and net profit at any point of the day" },
     ],
@@ -682,7 +682,7 @@ export const industries: IndustryData[] = [
       { title: "Frequent Customer Tab", description: "Track regular customers who buy on daily credit. Send weekly WhatsApp payment summaries.", icon: "📒" },
     ],
     faqs: [
-      { question: "Can Vyop handle very fast small cash transactions?", answer: "Yes! Set up a quick-tap grid with your top items. One tap on 'Gold Flake Kings' or 'Thumbs Up 200ml' generates an instant bill in 1 second." },
+      { question: "Can Vyop handle very fast small cash transactions?", answer: "Yes! Set up a quick-tap grid with your top items. One tap on 'Gold Flake Kings' or 'Thumbs Up 200ml' generates a complete bill instantly." },
       { question: "How does loose item tracking work for cigarettes?", answer: "When you add a carton of 10 packs, Vyop knows each pack has 20 sticks. Sell single sticks and Vyop auto-deducts from your carton inventory." },
       { question: "Can I see my daily profit in real-time?", answer: "Yes, the dashboard shows live daily revenue, cost of goods sold, and net profit. Perfect for checking earnings at any point during the day." },
     ],
@@ -831,7 +831,7 @@ export const industries: IndustryData[] = [
     badge: "For Shoe Shops & Footwear Retail",
     icon: "👟",
     heroHighlight: "Footwear & Shoe Stores",
-    subheadline: "Manage shoe sizes (UK/India 4-11), colors, and brands without mess. Scan shoe box barcodes with your phone camera, print custom size labels, and bill customers in 5 seconds.",
+    subheadline: "Manage shoe sizes (UK/India 4-11), colors, and brands without mess. Scan shoe box barcodes with your phone camera, print custom size labels, and bill customers rapidly.",
     painPoints: [
       {
         oldWay: "Digging through dozens of stacked shoe boxes to find the right size and MRP",
@@ -859,7 +859,7 @@ export const industries: IndustryData[] = [
       },
       {
         title: "Fast Camera Barcode Billing",
-        description: "Scan shoe boxes in 0.1 second using your smartphone camera during festival rush hours.",
+        description: "Scan shoe boxes instantly using your smartphone camera during festival rush hours.",
         icon: "📱",
       },
       {

@@ -21,7 +21,7 @@ import {
 export const metadata: Metadata = {
   title: "Turn Your Phone into an AI Barcode Scanner & POS | Vyop App",
   description:
-    "Transform any smartphone camera into a supermarket barcode POS scanner. Scan barcodes or snap unbarcoded items with AI to bill in 0.5s. No ₹5,000 laser gun needed. 100% Free.",
+    "Transform any smartphone camera into a supermarket barcode POS scanner. Scan barcodes or snap unbarcoded items with AI for instant billing. No ₹5,000 laser gun needed. 100% Free.",
   alternates: { canonical: "/features/barcode-scanner" },
   openGraph: {
     title: "Turn Your Phone into an AI Barcode Scanner & POS | Vyop",
@@ -64,11 +64,11 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "Can I really use my normal smartphone as a supermarket barcode scanner?",
-    a: "Yes, 100%. Vyop's proprietary scanning engine uses your phone's native hardware video stream. It decodes standard barcodes (EAN-13, UPC, Code 128, QR) in less than 50 milliseconds from up to 3 feet away. You do not need to spend ₹3,000–₹8,000 on external USB or Bluetooth barcode laser guns.",
+    a: "Yes, 100%. Vyop's proprietary scanning engine uses your phone's native hardware video stream. It decodes standard barcodes (EAN-13, UPC, Code 128, QR) rapidly with continuous auto-focus. You do not need to spend ₹3,000–₹8,000 on external USB or Bluetooth barcode laser guns.",
   },
   {
     q: "How does Vyop scan products that don't have a barcode?",
-    a: "This is Vyop's game-changing superpower: over 50% of retail items in India (fresh bakery mithai, loose grains, fruits, garments, hardware screws) don't have standard factory barcodes. In Vyop, you simply snap a photo to register the item once with AI. When billing, just point your phone camera at the item — Vyop's proprietary AI instantly recognizes the product and adds it to the bill in 250 milliseconds with zero manual typing.",
+    a: "This is Vyop's game-changing superpower: over 50% of retail items in India (fresh bakery mithai, loose grains, fruits, garments, hardware screws) don't have standard factory barcodes. In Vyop, you simply snap a photo to register the item once with AI. When billing, just point your phone camera at the item — Vyop's proprietary AI instantly recognizes the product and adds it to the bill directly with zero manual typing.",
   },
   {
     q: "Does the mobile barcode scanner work offline without internet?",
@@ -80,11 +80,11 @@ const faqs = [
   },
   {
     q: "Which phones are compatible with Vyop's barcode scanner?",
-    a: "Any Android phone running Android 8.0 or higher, as well as iPhones (iOS) and desktop webcams. Even budget Android smartphones costing under ₹8,000 scan barcodes in milliseconds with crystal-clear accuracy.",
+    a: "Any Android phone running Android 8.0 or higher, as well as iPhones (iOS) and desktop webcams. Even budget Android smartphones costing under ₹8,000 scan barcodes smoothly with crystal-clear accuracy.",
   },
   {
-    q: "How is Vyop different from Tally, Vyapar, and MyBillBook for barcode billing?",
-    a: "Traditional software like Tally, Marg, and Vyapar was designed for desktop computers and requires an external USB barcode gun. If an item has no barcode, your cashier must stop and type on a keyboard. Vyop is built for your smartphone: it turns your phone camera into a supermarket barcode scanner AND adds AI visual recognition for unbarcoded items so you never type during rush hour.",
+    q: "How is Vyop different from traditional software for barcode billing?",
+    a: "While traditional accounting programs often rely on desktop keyboard entry or external USB barcode scanners at dedicated cashier desks, Vyop is built mobile-first. It utilizes your smartphone camera for rapid continuous scanning and incorporates AI visual recognition for loose items, allowing flexible billing on both mobile phone and desktop browser without dedicated hardware.",
   },
 ];
 
@@ -128,7 +128,7 @@ export default function BarcodeScannerFeaturePage() {
 
           {/* Subtitle */}
           <p className="text-lg sm:text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed font-body">
-            Why spend ₹5,000 on a barcode laser gun or ₹35,000 on a billing machine? Point your mobile camera at any barcode to bill at mall speeds — or <strong>snap a photo of any unbarcoded product</strong>. Vyop&apos;s multi-source AI identifies it and bills it in 0.5 seconds.
+            Why spend ₹5,000 on a barcode laser gun or ₹35,000 on a billing machine? Point your mobile camera at any barcode to bill at mall speeds — or <strong>snap a photo of any unbarcoded product</strong>. Vyop&apos;s multi-source AI identifies it and adds it to the bill instantly.
           </p>
 
           {/* Action CTAs */}
@@ -157,8 +157,8 @@ export default function BarcodeScannerFeaturePage() {
             <div className="p-3.5 rounded-2xl bg-[#FDFCF7] border border-amber-100 flex items-center gap-3">
               <span className="text-xl">⚡</span>
               <div>
-                <div className="text-xs font-bold text-gray-900">0.05s Camera Scan</div>
-                <div className="text-[11px] text-gray-500">60 FPS native stream</div>
+                <div className="text-xs font-bold text-gray-900">Instant Camera Scan</div>
+                <div className="text-[11px] text-gray-500">Continuous camera stream</div>
               </div>
             </div>
             <div className="p-3.5 rounded-2xl bg-[#FDFCF7] border border-amber-100 flex items-center gap-3">
@@ -257,7 +257,7 @@ export default function BarcodeScannerFeaturePage() {
               </li>
               <li className="flex items-start gap-2.5">
                 <span className="text-emerald-600 font-bold shrink-0">✓</span>
-                <span><strong>Scans Unbarcoded Products:</strong> Snap a photo to add. Point your phone camera during billing — AI visual matching identifies the item in 200ms.</span>
+                <span><strong>Scans Unbarcoded Products:</strong> Snap a photo to add. Point your phone camera during billing — AI visual matching identifies the item instantly.</span>
               </li>
               <li className="flex items-start gap-2.5">
                 <span className="text-emerald-600 font-bold shrink-0">✓</span>
@@ -265,7 +265,7 @@ export default function BarcodeScannerFeaturePage() {
               </li>
               <li className="flex items-start gap-2.5">
                 <span className="text-emerald-600 font-bold shrink-0">✓</span>
-                <span><strong>5-Second Customer Checkout:</strong> Aim camera, items auto-add to bill, 1-tap Bluetooth thermal print or WhatsApp invoice.</span>
+                <span><strong>Rapid Customer Checkout:</strong> Aim camera, items auto-add to bill, 1-tap Bluetooth thermal print or WhatsApp invoice.</span>
               </li>
             </ul>
           </div>
@@ -313,10 +313,10 @@ export default function BarcodeScannerFeaturePage() {
                 Point Phone Camera to Bill
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                Customer brings items to the counter. Open Vyop and point your phone camera. Scans barcodes or detects product packaging in 0.05 seconds. Quantities and discounts update automatically.
+                Customer brings items to the counter. Open Vyop and point your phone camera. Scans barcodes or detects product packaging instantly. Quantities and discounts update automatically.
               </p>
               <span className="text-xs font-bold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">
-                ⚡ Continuous 60 FPS Scan
+                ⚡ Continuous Multi-Item Scan
               </span>
             </div>
 
@@ -471,7 +471,7 @@ export default function BarcodeScannerFeaturePage() {
               Kirana & Supermarkets
             </h3>
             <p className="text-xs text-gray-600 leading-relaxed">
-              Scan packaged groceries at 0.05s, or snap photos of loose dal, rice, sugar, and dry fruits. Instant Bluetooth thermal bill printing.
+              Scan packaged groceries rapidly, or snap photos of loose dal, rice, sugar, and dry fruits. Instant Bluetooth thermal bill printing.
             </p>
           </Link>
 
@@ -497,7 +497,7 @@ export default function BarcodeScannerFeaturePage() {
               Bakery & Mithai Shops
             </h3>
             <p className="text-xs text-gray-600 leading-relaxed">
-              Mithai doesn&apos;t have barcodes. Point your phone camera at sweet boxes or pastries — Vyop AI detects the item visually in 200ms.
+              Mithai doesn&apos;t have barcodes. Point your phone camera at sweet boxes or pastries — Vyop AI detects the item visually and prepares the bill.
             </p>
           </Link>
 
@@ -611,17 +611,12 @@ export default function BarcodeScannerFeaturePage() {
               "operatingSystem": "Android, iOS, Web, Windows",
               "applicationCategory": "BusinessApplication",
               "description":
-                "Turn any smartphone into a supermarket barcode POS scanner. Features hardware-accelerated 0.05s camera barcode decoding, world-first AI visual scanning for unbarcoded products, Bluetooth thermal sticker printing, and offline GST billing.",
+                "Turn any smartphone into a supermarket barcode POS scanner. Features hardware-accelerated camera barcode decoding, AI visual scanning for unbarcoded products, Bluetooth thermal sticker printing, and offline GST billing.",
               "offers": {
                 "@type": "Offer",
                 "price": "0",
                 "priceCurrency": "INR",
                 "description": "100% Free basic mobile scanner with ₹999/year Pro cloud sync",
-              },
-              "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "4.9",
-                "reviewCount": "1280",
               },
             },
             {
@@ -647,7 +642,7 @@ export default function BarcodeScannerFeaturePage() {
                   "@type": "HowToStep",
                   "position": 3,
                   "name": "Point Camera During Billing for Instant Checkout",
-                  "text": "Open billing mode on your phone. Aim camera at items or barcodes to add them to the bill in 0.05 seconds, then print thermal receipts via Bluetooth.",
+                  "text": "Open billing mode on your phone. Aim camera at items or barcodes to add them to the bill instantly, then print thermal receipts via Bluetooth.",
                 },
               ],
             },

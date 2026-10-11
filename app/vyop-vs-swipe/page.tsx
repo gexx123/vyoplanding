@@ -122,9 +122,9 @@ export default function VyopVsSwipePage() {
 
         {/* Bottom CTA */}
         <div className="text-center p-12 rounded-3xl bg-amber-50 border border-amber-200">
-          <h2 className="text-3xl font-extrabold mb-4 font-display">Upgrade to India's #1 Voice Billing App</h2>
+          <h2 className="text-3xl font-extrabold mb-4 font-display">Upgrade to Smart Voice Billing</h2>
           <p className="text-gray-600 mb-6 max-w-xl mx-auto">
-            Join thousands of smart retailers who bill 10x faster with voice and camera barcodes. Free to start.
+            Join smart retailers who accelerate counter checkout with voice and smartphone camera barcodes. Free to start.
           </p>
           <a
             href="https://play.google.com/store/apps/details?id=com.vyop.app"

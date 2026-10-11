@@ -55,30 +55,7 @@ export default function Home() {
                   "price": "0",
                   "priceCurrency": "INR",
                   "availability": "https://schema.org/InStock"
-                },
-                "aggregateRating": {
-                  "@type": "AggregateRating",
-                  "ratingValue": "4.9",
-                  "bestRating": "5",
-                  "worstRating": "1",
-                  "ratingCount": "1250"
-                },
-                "review": [
-                  {
-                    "@type": "Review",
-                    "author": { "@type": "Person", "name": "Rajesh Gupta" },
-                    "datePublished": "2026-05-01",
-                    "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" },
-                    "reviewBody": "Pehle bill likhne mein 2-3 minute lagte the, ab 10 second mein ho jaata hai bolke ya scan karke."
-                  },
-                  {
-                    "@type": "Review",
-                    "author": { "@type": "Person", "name": "Suresh Yadav" },
-                    "datePublished": "2026-05-10",
-                    "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" },
-                    "reviewBody": "Barcode scan karke bill ban jaata hai aur customer ko zero commission link bhej deta hoon."
-                  }
-                ]
+                }
               },
               {
                 "@type": "WebSite",
@@ -123,7 +100,7 @@ export default function Home() {
                     "name": "Can Hardware, Electrical & Sanitary stores use Vyop for fast billing?",
                     "acceptedAnswer": {
                       "@type": "Answer",
-                      "text": "Yes! Hardware and electrical shops handle thousands of loose items. Vyop's voice search ('1/2 inch PVC pipe 10 meters') and instant image search make finding items 10x faster than typing."
+                      "text": "Yes! Hardware and electrical shops handle thousands of loose items. Vyop's voice search ('1/2 inch PVC pipe 10 meters') and instant image search make finding items significantly faster than searching by typing manually."
                     }
                   },
                   {
@@ -171,7 +148,7 @@ export default function Home() {
                     "name": "How to create GST and non-GST bills on mobile by voice command in Hindi or English?",
                     "acceptedAnswer": {
                       "@type": "Answer",
-                      "text": "Simply speak into Vyop's AI Orb in Hindi, English, or Hinglish (e.g., 'Teen Maggi aur do Chai' or '2 Men Shirts XL'). Vyop's voice AI generates accurate GST and non-GST bills in under 5 seconds."
+                      "text": "Simply speak into Vyop's AI Orb in Hindi, English, or Hinglish (e.g., 'Teen Maggi aur do Chai' or '2 Men Shirts XL'). Vyop's voice AI generates accurate GST and non-GST bills directly on your screen ready to print or share."
                     }
                   },
                   {
@@ -211,7 +188,7 @@ export default function Home() {
                     "name": "Is Vyop better and faster than Tally, Khatabook, or Vyapar?",
                     "acceptedAnswer": {
                       "@type": "Answer",
-                      "text": "Yes! Unlike traditional software (Tally, Vyapar) that requires computers and manual typing, Vyop operates via voice AI and smartphone barcode scanning, creating bills 10x faster with zero learning curve."
+                      "text": "Vyop is built mobile-first around natural voice recognition and instant smartphone camera barcode scanning. Instead of navigating multi-level accounting ledgers or typing item codes manually, store owners can speak or scan to add products, accelerating checkout counter speed with an intuitive interface."
                     }
                   },
                   {

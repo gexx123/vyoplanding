@@ -211,7 +211,7 @@ export default function FreeBarcodeGeneratorPage() {
             </div>
             <div className="p-4 rounded-2xl bg-gray-50 border border-gray-100">
               <h4 className="font-bold text-gray-900 mb-2">3. Scan with Vyop</h4>
-              <p>Use the free Vyop smartphone app to scan these barcode stickers instantly for lightning-fast 5-second customer billing.</p>
+              <p>Use the free Vyop smartphone app to scan these barcode stickers instantly for rapid customer billing.</p>
             </div>
           </div>
         </div>

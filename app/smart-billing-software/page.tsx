@@ -4,16 +4,17 @@ import CityHubsSection from "@/components/sections/CityHubsSection";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { industries } from "@/lib/industryData";
+import ComparisonDisclaimer from "@/components/legal/ComparisonDisclaimer";
 
 export const metadata: Metadata = {
   title: "Smart Billing Software & POS App for Retail Shops in India (2026) | Vyop",
   description:
-    "India's #1 smart billing software & dukaan POS app. Turn any Android phone into a high-speed billing counter. Voice AI in Hindi, phone camera barcode scanner, Bluetooth thermal printing, WhatsApp bills & udhari khata. Free to start, ₹999/yr Pro.",
+    "Smart billing software & dukaan POS app for Indian retail shops. Turn any Android phone into a high-speed billing counter. Voice AI in Hindi, phone camera barcode scanner, Bluetooth thermal printing, WhatsApp bills & udhari khata. Free to start, ₹999/yr Pro.",
   alternates: { canonical: "/smart-billing-software" },
   openGraph: {
     title: "Smart Billing Software & POS App for Retail Shops | Vyop",
     description:
-      "Why buy a ₹25,000 billing machine? Create bills in 5 seconds on your phone with Voice AI, camera barcode scanner, Bluetooth thermal printer & WhatsApp udhari reminders.",
+      "Why buy a ₹25,000 billing machine? Create bills directly on your phone with Voice AI, camera barcode scanner, Bluetooth thermal printer & WhatsApp udhari reminders.",
     url: "https://vyop.in/smart-billing-software",
     siteName: "Vyop",
     images: [
@@ -124,8 +125,8 @@ const naturalSearchPoints = [
 const smartSuperpowers = [
   {
     icon: "🎙️",
-    title: "Voice AI Billing (5-Second Rush Hour Speed)",
-    desc: "Shaam ke rush hour mein jab counter par 10 grahak khade ho, to typing ka time nahi hota. Bas Voice Orb dabayein aur boliye: 'Do bread, aadha kilo cheeni, ek Dettol'. Bill 5 second mein ready!",
+    title: "Voice AI Billing (Rush Hour Counter Flow)",
+    desc: "Shaam ke rush hour mein jab counter par 10 grahak khade ho, to typing ka time nahi hota. Bas Voice Orb dabayein aur boliye: 'Do bread, aadha kilo cheeni, ek Dettol'. Bill bina typing ke turant ready!",
     badge: "Exclusive to Vyop",
   },
   {
@@ -175,15 +176,15 @@ const comparisonTable = [
   },
   {
     feature: "Counter Billing Speed",
-    vyop: "⚡ 5 Seconds (Voice AI + Camera Scan)",
-    machine: "⚠️ 30-60 Seconds (Touch keypad)",
-    legacy: "🐢 1-2 Minutes (Manual keyboard typing)",
+    vyop: "⚡ Rapid (Voice AI + Camera Scan)",
+    machine: "⚠️ Slow (Keypad item code entry)",
+    legacy: "🐢 Slower (Manual typing or ledger lookup)",
   },
   {
-    feature: "Barcode Scanner Included",
-    vyop: "✅ Yes (Built-in phone camera AI)",
-    machine: "❌ Expensive external scanner",
-    legacy: "❌ Extra ₹2,500 USB barcode gun",
+    feature: "Camera Barcode Scanning",
+    vyop: "✅ Included (Smartphone camera AI)",
+    machine: "❌ Dedicated scanner required",
+    legacy: "⚠️ Often requires external USB scanner",
   },
   {
     feature: "Printer Support",
@@ -222,11 +223,11 @@ const faqs = [
   },
   {
     q: "How does phone camera barcode scanning work during busy hours?",
-    a: "Vyop's camera barcode scanner is built with an ultra-fast AI engine that auto-focuses on standard 1D and 2D manufacturer barcodes in under 0.2 seconds. It works effortlessly even on shiny plastic wrappers, crumpled packets, and curved bottles.",
+    a: "Vyop's camera barcode scanner is built with an ultra-fast AI engine that auto-focuses on standard 1D and 2D manufacturer barcodes smoothly. It works effortlessly even on shiny plastic wrappers, crumpled packets, and curved bottles.",
   },
   {
     q: "Can I connect a small Bluetooth thermal printer to print receipts?",
-    a: "Yes! Vyop connects in one tap to any standard 58mm (2-inch) or 80mm (3-inch) portable Bluetooth thermal printer (costing around ₹1,500 on Amazon). Invoices print in 1 second with your shop name, address, GSTIN, and direct UPI payment QR code.",
+    a: "Yes! Vyop connects in one tap to any standard 58mm (2-inch) or 80mm (3-inch) portable Bluetooth thermal printer (costing around ₹1,500 on Amazon). Invoices print rapidly with your shop name, address, GSTIN, and direct UPI payment QR code.",
   },
   {
     q: "Does Vyop work without internet during power cuts or network issues?",
@@ -334,10 +335,10 @@ export default function SmartBillingSoftwarePage() {
               <p className="text-gray-300 text-sm md:text-base leading-relaxed mb-6">
                 When 10 customers wait in evening queues, traditional keyboard entry takes 2 minutes per bill. 
                 With Vyop, tap the Voice Orb or aim your smartphone camera at product barcodes. 
-                Your bill prints in <strong>5 seconds flat</strong>.
+                Your bill generates and prints in moments without manual keyboard entry.
               </p>
               <div className="flex items-center gap-4 text-xs text-gray-400">
-                <span>⚡ 5-Sec Billing</span>
+                <span>⚡ Voice AI Billing</span>
                 <span>•</span>
                 <span>📱 No Computer Needed</span>
                 <span>•</span>
@@ -487,6 +488,10 @@ export default function SmartBillingSoftwarePage() {
               </tbody>
             </table>
           </div>
+
+          <div className="mt-6">
+            <ComparisonDisclaimer lastUpdated="October 2026" />
+          </div>
         </div>
       </section>
 
@@ -624,7 +629,7 @@ export default function SmartBillingSoftwarePage() {
             Upgrade Your Shop to Smart Billing Today
           </h2>
           <p className="text-amber-100 text-base md:text-xl max-w-2xl mx-auto mb-8 font-medium">
-            Join thousands of modern dukandars across India. Bill in 5 seconds, cut hardware costs to ₹0, and recover your udhari faster.
+            Join thousands of modern dukandars across India. Bill faster with voice AI, cut hardware costs to ₹0, and recover your udhari faster.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
@@ -665,11 +670,6 @@ export default function SmartBillingSoftwarePage() {
                 "price": "0",
                 "priceCurrency": "INR",
                 "description": "Free basic tier with ₹999/year Pro cloud sync",
-              },
-              "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "4.9",
-                "reviewCount": "1280",
               },
             },
             {

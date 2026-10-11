@@ -107,7 +107,7 @@ export default function BillingSoftwareDirectoryPage() {
             </div>
             <div className="bg-white p-6 rounded-2xl border border-gray-200/80 shadow-sm">
               <div className="text-3xl mb-3">⚡</div>
-              <h3 className="font-bold text-gray-900 text-lg mb-2">5-Second Voice Billing</h3>
+              <h3 className="font-bold text-gray-900 text-lg mb-2">Instant Voice Billing</h3>
               <p className="text-sm text-[var(--text-secondary)]">
                 Speak items in Hindi or English (e.g., &quot;2 kilo sugar, 1 Fortune oil&quot;) to create complete GST receipts instantly during rush hours.
               </p>

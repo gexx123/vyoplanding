@@ -236,7 +236,7 @@ Calculated with Vyop Free GST Tool (https://vyop.in/tools/gst-calculator)`;
                 Tired of Manual Math?
               </div>
               <p className="text-xs text-white/95 mb-3 leading-relaxed">
-                Speak items in Hindi or English — Vyop auto-calculates GST and prints bills in 5 seconds.
+                Speak items in Hindi or English — Vyop auto-calculates GST and generates bills instantly.
               </p>
               <a
                 href="https://play.google.com/store/apps/details?id=com.vyop.app"

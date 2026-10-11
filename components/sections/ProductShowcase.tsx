@@ -75,7 +75,7 @@ export default function ProductShowcase() {
               }}
             >
               Bill banao bolke, GST automatically calculate hoga, aur customer
-              ko WhatsApp pe bhej do — sirf 3 seconds mein.
+              ko WhatsApp pe bhej do — turant aur aasaani se.
             </p>
 
             {/* Tab switcher */}

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
+import ComparisonDisclaimer from "@/components/legal/ComparisonDisclaimer";
 import Link from "next/link";
 import InteractiveStorefrontDemo from "@/components/storefront/InteractiveStorefrontDemo";
 import ShopTypeSelectorSection from "@/components/storefront/ShopTypeSelectorSection";
@@ -308,28 +309,28 @@ const storefrontComparison = [
     feature: "Setup & Monthly Cost",
     vyop: "₹0 Free to Start / ₹999/yr Pro",
     shopify: "₹1,500 – ₹3,000/month",
-    vyapar: "Paid Gold Plan only (no web store)",
-    aggregators: "₹1,000+ onboarding + hidden cuts",
+    vyapar: "Included in Vyapar subscription (myvyapar.shop)",
+    aggregators: "₹1,000+ onboarding + platform cuts",
   },
   {
     feature: "Commission per Order",
     vyop: "0% (Keep 100% of your earnings)",
     shopify: "0% – 2% transaction fee",
-    vyapar: "0% (basic PDF link only)",
+    vyapar: "0% (direct catalogue ordering)",
     aggregators: "20% – 35% commission cut",
   },
   {
     feature: "Payment Gateway Deductions",
     vyop: "₹0 (Direct UPI to your Bank / COD)",
     shopify: "2% – 3% MDR + 18% GST tax",
-    vyapar: "N/A (No online checkout)",
-    aggregators: "Included in 30% aggregator cut",
+    vyapar: "Direct UPI / Cash payment",
+    aggregators: "Included in aggregator cut",
   },
   {
     feature: "Live POS Bill Sync",
     vyop: "Yes (Voice Orb / 1-Tap Bill Creation)",
-    shopify: "Requires expensive third-party plugins",
-    vyapar: "Manual double-entry data work",
+    shopify: "Requires third-party sync plugins",
+    vyapar: "Syncs directly into Vyapar software",
     aggregators: "Separate partner merchant tablet app",
   },
   {
@@ -1161,6 +1162,8 @@ export default function OnlineStorefrontFeaturePage() {
           }),
         }}
       />
+
+      <ComparisonDisclaimer lastUpdated="October 2026" />
 
       <Footer />
     </main>

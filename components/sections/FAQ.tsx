@@ -63,7 +63,7 @@ const faqCategories = [
       },
       {
         q: "How to create GST & non-GST bills by voice command in Hindi or English?",
-        a: "Simply speak into Vyop's AI Orb in Hindi, English, or Hinglish (e.g., 'Teen Maggi aur do Chai' or '2 Men Shirts XL'). Vyop's voice AI generates accurate GST and non-GST bills in under 5 seconds.",
+        a: "Simply speak into Vyop's AI Orb in Hindi, English, or Hinglish (e.g., 'Teen Maggi aur do Chai' or '2 Men Shirts XL'). Vyop's voice AI instantly generates accurate GST and non-GST bills directly on your screen.",
       },
       {
         q: "How to import stock automatically from paper bills and supplier invoices?",

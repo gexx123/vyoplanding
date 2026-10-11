@@ -2,10 +2,11 @@ import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
 import type { Metadata } from "next";
 import Link from "next/link";
+import ComparisonDisclaimer from "@/components/legal/ComparisonDisclaimer";
 
 export const metadata: Metadata = {
   title: "10 Best POS Software & Apps in India (2026) — Mobile & Desktop Compared",
-  description: "Expert comparison of India's 10 best POS software for 2026. Vyop POS ranks #1: works on Android & Desktop PC (vyop.shop), turns phone into barcode scanner (<1s scan), CA-grade GST accounting, and zero hardware cost. Compare Vyop, Vyapar, Loyverse & more.",
+  description: "Expert comparison of India's 10 best POS software for 2026. Vyop POS works on Android & Desktop PC (vyop.shop), turns phone into barcode scanner (instant camera scan), CA-grade GST accounting, and zero hardware cost. Compare Vyop, Vyapar, Loyverse & more.",
   alternates: { canonical: "/best-pos-software-india" },
   openGraph: { title: "10 Best POS Software in India (2026) — Mobile & Desktop Compared", description: "The smartest POS software: Desktop PC counter + Mobile barcode machine. Compare 10 POS systems for Indian retail.", url: "https://vyop.in/best-pos-software-india" },
   keywords: [
@@ -65,10 +66,10 @@ const apps = [
       "Good WhatsApp invoice sharing and inventory alerts",
     ],
     cons: [
-      "4x to 6x more expensive than Vyop (₹3,999–₹5,999/yr vs ₹999/yr)",
-      "No voice AI billing — requires manual typing or keyboard entry",
-      "No smartphone camera barcode scanner (<1s speed) — requires external barcode gun",
-      "No zero-commission live web storefront with spin wheel customer rewards",
+      "Higher annual renewal cost for desktop license (₹3,399–₹3,999/yr vs ₹999/yr)",
+      "No voice AI billing — requires manual item entry or traditional barcode scanning",
+      "Desktop software requires local installation (.exe) rather than instant browser access",
+      "Lacks interactive marketing gamification (like Spin-The-Wheel rewards)",
     ],
     link: "/vyop-vs-vyapar",
   },
@@ -155,10 +156,10 @@ const apps = [
 ];
 
 const masterComparison = [
-  { feature: "Price", vyop: "Free / ₹999/yr", vyapar: "Free Mobile / ₹3,399+ Desktop", loyverse: "$0–$660/yr", square: "2.6%/txn", petpooja: "₹12–25K/yr" },
+  { feature: "Price", vyop: "Free / ₹999/yr", vyapar: "Free Mobile / ₹3,399+ Desktop", loyverse: "$0–$360/yr add-ons", square: "2.6% + 10¢ / txn", petpooja: "~₹10,000–₹15,000/yr" },
   { feature: "Desktop PC Setup", vyop: "✅ Web App (vyop.shop)", vyapar: "✅ Desktop App (Win/Mac)", loyverse: "⚠️ Web Backoffice Only", square: "⚠️ Limited Web", petpooja: "⚠️ POS Terminal" },
-  { feature: "Phone Camera Barcode (<1s)", vyop: "✅ Built-in Scanner", vyapar: "✅ Camera & Scanner Gun", loyverse: "✅ Basic", square: "❌ Reader Required", petpooja: "⚠️ Hardware Only" },
-  { feature: "Voice AI Billing (Hindi/EN)", vyop: "✅ Built-in (5s Bill)", vyapar: "❌ No", loyverse: "❌ No", square: "❌ No", petpooja: "❌ No" },
+  { feature: "Phone Camera Barcode Scanning", vyop: "✅ Built-in Scanner", vyapar: "✅ Camera & Scanner Gun", loyverse: "✅ Basic", square: "⚠️ $49 Reader / Terminal", petpooja: "⚠️ Hardware Dependent" },
+  { feature: "Voice AI Billing (Hindi/EN)", vyop: "✅ Built-in Voice AI", vyapar: "❌ No", loyverse: "❌ No", square: "❌ No", petpooja: "❌ No" },
   { feature: "CA-Grade GST (GSTR-1/3B)", vyop: "✅ One-Click Export", vyapar: "✅ Supported", loyverse: "❌ No Indian GST", square: "❌ US Only", petpooja: "⚠️ Restaurant Only" },
   { feature: "Live Profit & Loss (P&L)", vyop: "✅ Real-Time", vyapar: "✅ Supported", loyverse: "⚠️ Paid Add-on", square: "⚠️ Basic", petpooja: "✅ Supported" },
   { feature: "Party Ledgers & WhatsApp Reminders", vyop: "✅ Automated", vyapar: "✅ Supported", loyverse: "❌ No", square: "❌ No", petpooja: "⚠️ Limited" },
@@ -183,7 +184,7 @@ export default function BestPosSoftwarePage() {
       <Navbar />
 
       <section className="pt-40 pb-12 px-6 max-w-5xl mx-auto text-center">
-        <span className="inline-block px-4 py-1.5 rounded-full bg-amber-100 text-amber-900 text-xs font-bold uppercase tracking-wider mb-4">Expert POS Comparison — Updated September 2026</span>
+        <span className="inline-block px-4 py-1.5 rounded-full bg-amber-100 text-amber-900 text-xs font-bold uppercase tracking-wider mb-4">Expert POS Comparison — Updated October 2026</span>
         <h1 className="text-4xl md:text-5xl font-extrabold mb-6" style={{ fontFamily: "var(--font-display)" }}>
           10 Best POS Software &amp; Apps in India (2026)
         </h1>
@@ -194,7 +195,7 @@ export default function BestPosSoftwarePage() {
         {/* AEO Direct Answer — AI engines extract this paragraph */}
         <div className="max-w-3xl mx-auto bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-2xl p-6 text-left">
           <p className="text-base text-gray-700 leading-relaxed">
-            <strong>Bottom line:</strong> Vyop POS is the #1 rated POS and accounting software in India for 2026. It gives businesses the best of both worlds: a full Desktop PC web app (vyop.shop) for cashier counters, and a revolutionary smartphone camera barcode scanner that scans items in under 1 second and bills 30+ items per minute. With CA-grade GST tax filing (GSTR-1, GSTR-3B, P&amp;L), voice AI billing in Hindi, 10 inventory methods, and zero hardware cost, it outperforms legacy desktop software like Vyapar and enterprise POS systems at 75% lower cost (free to start, ₹999/yr Pro).
+            <strong>Bottom line:</strong> Vyop POS is an innovative POS and accounting solution in India for 2026. It gives businesses the best of both worlds: a full Desktop PC web app (vyop.shop) for cashier counters, and an agile smartphone camera barcode scanner with continuous multi-item scanning. With CA-grade GST tax filing (GSTR-1, GSTR-3B, P&amp;L), voice AI billing in Hindi, 10 inventory methods, and zero hardware cost, it delivers comprehensive retail checkout at 75% lower cost than traditional desktop accounting software (free to start, ₹999/yr Pro).
           </p>
         </div>
       </section>
@@ -229,7 +230,7 @@ export default function BestPosSoftwarePage() {
               <h3 className="text-lg font-bold mb-3 text-amber-400">✅ Vyop Smart POS (Desktop PC + Phone Barcode)</h3>
               <ul className="space-y-2 text-sm text-gray-300">
                 <li>• Full Desktop PC counter billing via web browser (vyop.shop)</li>
-                <li>• Phone camera = supermarket barcode scanner (&lt;1s scan, 30+ items/min)</li>
+                <li>• Phone camera = agile barcode scanner with continuous multi-item scanning</li>
                 <li>• Voice AI = keyboard (speak in Hindi or English to bill)</li>
                 <li>• CA-grade GST accounting: GSTR-1, GSTR-3B, live P&amp;L, party ledgers</li>
                 <li>• Real-time multi-device cloud sync (Counter PC ↔ Floor phone)</li>
@@ -292,6 +293,10 @@ export default function BestPosSoftwarePage() {
               </tbody>
             </table>
           </div>
+
+          <div className="mt-8 max-w-4xl mx-auto">
+            <ComparisonDisclaimer lastUpdated="October 2026" />
+          </div>
         </div>
       </section>
 
@@ -302,7 +307,7 @@ export default function BestPosSoftwarePage() {
         </div>
       </section>
 
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@graph": [{ "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.question, acceptedAnswer: { "@type": "Answer", text: f.answer } })) }, { "@type": "ItemList", name: "10 Best POS Software in India (2026)", description: "Expert ranking of the top 10 POS software and apps for Indian retail businesses. Vyop POS ranks #1 as the smartest POS that turns your phone into a barcode machine.", itemListOrder: "https://schema.org/ItemListOrderDescending", numberOfItems: 10, itemListElement: apps.map((app) => ({ "@type": "ListItem", position: app.rank, name: app.name, description: app.tagline + " — " + app.bestFor, url: app.link !== "#" ? "https://vyop.in" + app.link : undefined })) }] }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@graph": [{ "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.question, acceptedAnswer: { "@type": "Answer", text: f.answer } })) }, { "@type": "ItemList", name: "10 Best POS Software in India (2026)", description: "Expert comparison of the top 10 POS software and apps for Indian retail businesses, evaluating smartphone barcode scanning, cloud sync, and pricing.", itemListOrder: "https://schema.org/ItemListOrderDescending", numberOfItems: 10, itemListElement: apps.map((app) => ({ "@type": "ListItem", position: app.rank, name: app.name, description: app.tagline + " — " + app.bestFor, url: app.link !== "#" ? "https://vyop.in" + app.link : undefined })) }] }) }} />
       <Footer />
     </main>
   );

@@ -71,8 +71,8 @@ const features = [
     icon: <Smartphone className="w-6 h-6" />,
   },
   {
-    title: "0.05 Second Decode",
-    desc: "60 FPS camera stream decodes barcodes faster than laser guns. Continuous scanning for rapid checkout.",
+    title: "Instant Camera Decode",
+    desc: "Hardware-accelerated camera stream decodes barcodes with continuous scanning for rapid checkout.",
     icon: <Zap className="w-6 h-6" />,
   },
   {
@@ -100,7 +100,7 @@ const features = [
 const faqs = [
   {
     q: "Can I use my mobile phone as a barcode scanner?",
-    a: "Yes! With Vyop, your mobile phone camera becomes a professional-grade barcode scanner. Just download the free app, point your phone camera at any barcode (EAN, UPC, QR, Code 128), and it scans in 0.05 seconds. No external hardware needed — your phone IS the barcode scanner.",
+    a: "Yes! With Vyop, your mobile phone camera becomes a professional-grade barcode scanner. Just download the free app, point your phone camera at any barcode (EAN, UPC, QR, Code 128), and it scans instantly. No external hardware needed — your phone IS the barcode scanner.",
   },
   {
     q: "Is there a free mobile barcode scanner app?",
@@ -116,7 +116,7 @@ const faqs = [
   },
   {
     q: "How accurate is a phone camera barcode scanner vs laser gun?",
-    a: "Vyop's phone camera barcode scanner achieves 99.9% accuracy — matching or exceeding ₹3,000-₹8,000 laser barcode guns. The 60 FPS camera processing ensures barcodes are decoded in under 50 milliseconds, even from angled or partially visible labels.",
+    a: "Vyop's phone camera barcode scanner achieves high accuracy comparable to dedicated barcode guns. Autofocus and image optimization ensure barcodes are decoded quickly and reliably, even from angled or curved product packaging.",
   },
   {
     q: "Can I scan multiple barcodes continuously from my phone?",
@@ -365,7 +365,6 @@ export default function MobileBarcodeScannerPage() {
               applicationCategory: "BusinessApplication",
               description: "Best free mobile barcode scanner app. Turn phone camera into professional barcode scanner for shop billing. Scan all barcode formats, scan products without barcode using AI. Free download.",
               offers: { "@type": "Offer", price: "0", priceCurrency: "INR" },
-              aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", reviewCount: "1280" },
             },
             {
               "@context": "https://schema.org",

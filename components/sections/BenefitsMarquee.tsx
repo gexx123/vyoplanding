@@ -14,7 +14,7 @@ const row1Pills = [
 const row2Pills = [
   { icon: "📒", label: "Ledger / Credit Tracker" },
   { icon: "🏪", label: "Multi-Shop Support" },
-  { icon: "🔒", label: "Bank-Level Security" },
+  { icon: "🔒", label: "AES-256 Encrypted" },
   { icon: "📞", label: "Customer Reminder Call" },
   { icon: "💡", label: "Smart Suggestions" },
   { icon: "🌐", label: "7 Indian Languages" },

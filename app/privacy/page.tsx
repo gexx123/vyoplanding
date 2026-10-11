@@ -17,17 +17,16 @@ We take your privacy extremely seriously. Your business data is protected by AES
 
 Your data is encrypted directly on your device before it is ever transmitted to our servers
 Vyop has zero access to your unencrypted business data — we cannot read, share, or analyze your inventory or customer records
-Encryption keys are derived and stored only on your device — they are never sent to or stored on our servers
+Encryption keys are derived client-side on your device from your Master Password using PBKDF2 (100,000 iterations). Your Master Password is never transmitted to or stored on our servers. When restoring your account on a replacement device, entering your Master Password re-derives your key locally to decrypt your cloud backup
 The App is completely free of malware, spyware, and backdoor access
 Important exception — Voice Feature: When you use the voice billing feature, your voice input is temporarily transmitted to a third-party AI transcription service (Groq) to convert speech to text. This voice data is transmitted unencrypted over a secure TLS connection and is not covered by the device-side E2E encryption model described above. Raw audio is not stored after transcription. See Section 8 for full details.
 
 ⚠️
 Local Storage & Data Loss Warning
-Your data is primarily saved locally on your device first before being synced to the cloud. If your phone is lost, stolen, damaged, reset to factory settings, or if you delete the App before your data has synced:
-
-Unsynced data will be permanently and irrecoverably lost
-Because your data is encrypted with keys stored only on your device, Vyop has absolutely no ability to recover unsynced data — not through technical means, and not through customer support
-We strongly recommend keeping the App installed, maintaining an active internet connection for background sync, and regularly exporting your data using the in-app export feature.
+Vyop operates with a Local-First architecture:
+• Local-First & Offline Storage: Vyop allows you to create bills and manage store operations offline. Offline records reside securely on your device.
+• Encrypted Cloud Sync: When connected to the internet, synchronized records are securely backed up to our cloud database in encrypted format. Entering your Master Password upon logging into a replacement device re-derives your encryption key and restores your synced records.
+• Unsynced Data Notice: If a device is lost, damaged, or uninstalled before local offline records have been synced to the cloud, those unsynced local records cannot be recovered. Regular local data exports (Excel / PDF / JSON) are always supported and encouraged.
 
 3. Information We Collect
 Because of our encryption model, we only have access to a limited subset of your data. Here is a clear breakdown:
@@ -181,8 +180,14 @@ We may update this policy from time to time. Changes will be posted with an upda
 
 17. Contact Us
 Email: vyop4shop@gmail.com
+Website: https://vyop.in
 
-Website: https://vyop.in`;
+18. Statutory Grievance Redressal Officer
+In accordance with Rule 3(2) of the Information Technology (Intermediary Guidelines and Digital Media Ethics Code) Rules, 2021, and the Consumer Protection (E-Commerce) Rules, 2020, the details of the designated Grievance Officer are:
+• Designation: Grievance Officer, Vyop Technologies
+• Email: vyop4shop@gmail.com
+• Address: Jaipur, Rajasthan, India
+• Turnaround Time: Grievances are acknowledged within 48 hours and resolved within 30 days from receipt.`;
 
 export default function PrivacyPolicy() {
   return (

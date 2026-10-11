@@ -10,7 +10,7 @@ interface CityHubsSectionProps {
 
 export default function CityHubsSection({
   title = "Free Billing Software in Your City",
-  subtitle = "Skip ₹15,000+ dealer fees. Download Vyop directly on your smartphone and start billing in 30 seconds — trusted by shopkeepers in 65+ Indian commercial hubs.",
+  subtitle = "Skip ₹15,000+ dealer fees. Download Vyop directly on your smartphone and start billing in 30 seconds — tailored for retail shopkeepers across major Indian commercial hubs.",
 }: CityHubsSectionProps = {}) {
   const topCities = cities.filter((c) => TOP_CITIES.includes(c.slug));
   const otherCities = cities.filter((c) => !TOP_CITIES.includes(c.slug)).slice(0, 12);
@@ -76,7 +76,7 @@ export default function CityHubsSection({
             href="/billing-software"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-[var(--brand-primary)] text-white font-bold text-base hover:scale-[1.02] transition-all shadow-md hover:shadow-lg"
           >
-            View All 65+ Cities
+            Explore All Cities
             <span>→</span>
           </Link>
         </div>

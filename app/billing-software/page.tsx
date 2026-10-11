@@ -8,14 +8,14 @@ import { industries } from "@/lib/industryData";
 export const metadata: Metadata = {
   title: "Best GST Billing Software by City in India (2026) | Vyop",
   description:
-    "Find the best free GST billing software, smartphone barcode POS, and voice accounting app across Indian cities. Active in Bangalore, Surat, Mumbai, Delhi, Jaipur, and 65+ commercial hubs. No dealer fees!",
+    "Find the best free GST billing software, smartphone barcode POS, and voice accounting app across Indian cities. Optimized for retail businesses across Bangalore, Surat, Mumbai, Delhi, Jaipur, and major commercial hubs. No dealer fees!",
   alternates: {
     canonical: "/billing-software",
   },
   openGraph: {
     title: "Best GST Billing Software by City in India | Vyop",
     description:
-      "Explore free GST billing software & smartphone barcode POS tailored for retail shops across Bangalore, Surat, Mumbai, and 65+ Indian cities.",
+      "Explore free GST billing software & smartphone barcode POS tailored for retail shops across Bangalore, Surat, Mumbai, and major Indian cities.",
     url: "https://vyop.in/billing-software",
   },
   keywords: [
@@ -55,13 +55,13 @@ export default function BillingSoftwareDirectoryPage() {
         </h1>
 
         <p className="text-xl text-[var(--text-secondary)] max-w-3xl mx-auto mb-8">
-          Skip ₹15,000+ computer setups and local dealer commissions. Vyop gives retail shops, kiranas, and wholesale distributors in 65+ cities mall-grade smartphone barcode scanning, Hindi voice invoicing, and digital udhar khata.
+          Skip ₹15,000+ computer setups and local dealer commissions. Vyop gives retail shops, kiranas, and wholesale distributors across commercial hubs with mall-grade smartphone barcode scanning, Hindi voice invoicing, and digital udhar khata.
         </p>
 
         {/* Quick Value Metrics */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto mb-12">
           <div className="bg-white/80 p-4 rounded-2xl border border-[var(--border-subtle)] shadow-sm">
-            <div className="text-2xl font-extrabold text-[var(--brand-primary)]">65+</div>
+            <div className="text-2xl font-extrabold text-[var(--brand-primary)]">Pan-India</div>
             <div className="text-xs text-[var(--text-secondary)] font-medium mt-0.5">Commercial Hubs</div>
           </div>
           <div className="bg-white/80 p-4 rounded-2xl border border-[var(--border-subtle)] shadow-sm">

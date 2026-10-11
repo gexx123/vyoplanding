@@ -12,17 +12,16 @@ export const metadata: Metadata = {
 };
 
 const comparisonData = [
-  { feature: "Full POS & Cloud Sync", vyop: "Free to Start / ₹999/yr Pro", khatabook: "Free Basic / ₹2,999/yr Premium", better: "vyop" },
-  { feature: "Billing Method", vyop: "Voice AI + Camera POS Scanner", khatabook: "Manual Typing", better: "vyop" },
-  { feature: "Smartphone Barcode Scanner", vyop: "Built-in (Scan & Create Barcodes)", khatabook: "Not Supported", better: "vyop" },
-  { feature: "Scan Unbarcoded Products (AI Vision)", vyop: "Built-in AI Vision (Snap loose goods to bill in 0.2s)", khatabook: "Not Supported", better: "vyop" },
-  { feature: "Ways to Add Items", vyop: "10 Instant Ways (AI, Invoice, Barcode, Voice)", khatabook: "1 Manual Way", better: "vyop" },
-  { feature: "Direct Online Storefront", vyop: "0% Commission Link + Spin Wheel", khatabook: "Basic Ledger Link", better: "vyop" },
-  { feature: "Time to Create Bill", vyop: "~5-10 Seconds", khatabook: "~2 Minutes", better: "vyop" },
-  { feature: "Learning Curve", vyop: "Zero (Speak or Scan)", khatabook: "Medium (Requires typing)", better: "vyop" },
-  { feature: "Inventory Management", vyop: "Auto stock deduction & Barcode Print", khatabook: "Manual text tracking", better: "vyop" },
-  { feature: "Digital Ledger (Khata)", vyop: "Built-in Auto Reminders", khatabook: "Built-in", better: "draw" },
-  { feature: "Multi-lingual Support", vyop: "Hindi, English, Hinglish & Regional", khatabook: "Multiple Languages", better: "draw" },
+  { feature: "Pricing & Cloud Backup", vyop: "Free to Start / ₹999/yr Pro", khatabook: "Free Basic / Premium Subscription", better: "vyop" },
+  { feature: "Primary Input Workflow", vyop: "Voice AI (Hindi/EN) + Phone Camera Barcode", khatabook: "Keypad Entry & Product Search", better: "vyop" },
+  { feature: "Smartphone Barcode POS", vyop: "Optimized Built-in Camera Barcode Scanner", khatabook: "In-App Product Search", better: "vyop" },
+  { feature: "Scan Unbarcoded Products (AI Vision)", vyop: "Built-in AI Visual Recognition", khatabook: "Not Supported", better: "vyop" },
+  { feature: "Catalog Addition Options", vyop: "Voice, Camera Barcode, CSV, AI Snap", khatabook: "Manual Entry & Catalog Import", better: "vyop" },
+  { feature: "Online Customer Ordering", vyop: "0% Commission Web Store + WhatsApp Orders", khatabook: "Digital Storefront Link", better: "draw" },
+  { feature: "Counter Checkout Focus", vyop: "High-Speed Retail Counter POS", khatabook: "Digital Khata & Ledger Management", better: "vyop" },
+  { feature: "Inventory Tracking", vyop: "Live Stock Deduction & Low-Stock Alerts", khatabook: "Item Master & Stock Tracking", better: "draw" },
+  { feature: "Digital Ledger (Khata)", vyop: "Built-in Automated Payment Reminders", khatabook: "Comprehensive Customer Khata & Reminders", better: "draw" },
+  { feature: "Multilingual Support", vyop: "Hindi, English, Hinglish & Regional", khatabook: "Multiple Indian Languages", better: "draw" },
 ];
 
 export default function ComparisonPage() {

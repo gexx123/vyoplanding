@@ -125,7 +125,7 @@ export default function InternshipPage() {
         "employmentType": ["INTERN"],
         "hiringOrganization": {
           "@type": "Organization",
-          "name": "Vyop Technologies Private Limited",
+          "name": "Vyop Technologies",
           "sameAs": "https://vyop.in",
           "logo": "https://vyop.in/logo.png"
         },
@@ -149,7 +149,7 @@ export default function InternshipPage() {
         "employmentType": ["INTERN"],
         "hiringOrganization": {
           "@type": "Organization",
-          "name": "Vyop Technologies Private Limited",
+          "name": "Vyop Technologies",
           "sameAs": "https://vyop.in",
           "logo": "https://vyop.in/logo.png"
         },

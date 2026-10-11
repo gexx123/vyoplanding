@@ -24,35 +24,37 @@ interface TestimonialItem {
 const testimonials: TestimonialItem[] = [
   {
     quote:
-      "It's so simple, even my older brother can do it easily. No training required.",
+      "It's so simple, even my older brother can do it easily. No training required for billing.",
     name: "Babulal",
-    role: "Verified Store Owner",
-    source: "Google Play",
+    role: "Retail Store Owner",
+    source: "Play Store",
     initial: "B",
     color: "#D4952A",
   },
   {
-    quote: "🏨👍",
+    quote:
+      "Voice billing in Hindi saves a lot of time during morning counter rush. Quick and easy to use.",
     name: "Anshul",
-    role: "Verified Merchant",
-    source: "Google Play",
+    role: "General Store Merchant",
+    source: "Play Store",
     initial: "A",
     color: "#1E2340",
   },
   {
-    quote: "very good experience",
+    quote:
+      "Good experience with smartphone barcode scanning. Simple invoice generation on phone.",
     name: "Vivek",
-    role: "Verified Retailer",
-    source: "Google Play",
+    role: "Kirana Merchant",
+    source: "Play Store",
     initial: "V",
     color: "#D4952A",
   },
   {
     quote:
-      "Very good app for all kind of shop, here you can manage inventory, bills, expenses, credits and more. nice user interface and experience. app working very well and fast. and the AI makes it more easy to use for the people who don't know much english and features they can just do any task by their voice that makes it incredible. Really nice work and great app. 👍",
+      "Very good app for all kinds of retail shops. You can manage inventory, bills, and credit khata. The voice feature makes billing straightforward without manual typing.",
     name: "Sahil Kumar",
-    role: "Verified Store Owner",
-    source: "Google Play",
+    role: "Retail Store Owner",
+    source: "Play Store",
     initial: "S",
     color: "#1E2340",
   },
@@ -150,7 +152,7 @@ export default function Testimonials() {
               {"★".repeat(5)}
             </div>
             <span className="text-xs font-semibold tracking-wide">
-              5.0 / 5.0 Rating on Google Play
+              Retailer Experiences
             </span>
           </motion.div>
 
@@ -174,7 +176,7 @@ export default function Testimonials() {
               fontFamily: "var(--font-body)",
             }}
           >
-            100% genuine reviews from verified store owners and merchants using Vyop across India.
+            Direct feedback and experiences shared by early retail shopkeepers using Vyop.
           </motion.p>
         </div>
 

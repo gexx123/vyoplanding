@@ -105,19 +105,19 @@ const faqCategories = [
       },
       {
         q: "Does Vyop work offline without internet connection?",
-        a: "Yes! Vyop works 100% offline. All bills and ledgers are saved securely on your device and automatically sync to the cloud when internet reconnects.",
+        a: "Yes! Vyop is built local-first and operates 100% offline. All bills and customer records are saved directly to your device storage. For Vyop Pro users, data automatically synchronizes to the cloud whenever an internet connection is available.",
       },
       {
         q: "Is Vyop the same as or related to Vyapar App?",
-        a: "No. Vyop (pronounced 'Vy-Op', short for Vyapar Operations) is an independent AI-first POS and smart voice billing software developed by Vyop Technologies. Vyop is completely distinct and unaffiliated with Simply Vyapar Apps Pvt. Ltd. (makers of Vyapar App). While traditional desktop accounting apps like Vyapar rely on manual typing, Vyop is a cloud-native POS built for instant 5-second voice billing, supermarket camera barcode scanning, and free 0% commission online storefronts across smartphones, tablets, and desktop PC.",
+        a: "No. Vyop is an independent AI-first POS and smart voice billing software developed by Vyop Technologies. Vyop is completely distinct and unaffiliated with Simply Vyapar Apps Pvt. Ltd. (makers of Vyapar App). Vyop is designed specifically for fast retail counter checkout with bilingual voice AI, smartphone camera barcode scanning, and direct WhatsApp customer ordering across mobile and desktop browser (vyop.shop).",
       },
       {
-        q: "Is Vyop better and faster than Tally, Khatabook, or Vyapar?",
-        a: "Yes! Unlike traditional software (Tally, Vyapar) that requires computers and manual typing, Vyop operates via voice AI and smartphone barcode scanning, creating bills 10x faster with zero learning curve.",
+        q: "How does Vyop differ from traditional accounting tools?",
+        a: "While traditional accounting programs are built for comprehensive back-office ledger entry, Vyop is optimized for retail counter speed. Shopkeepers can generate bills by speaking in Hindi or English, scan item barcodes directly using their phone camera, and manage counter sales on any browser without dedicated hardware.",
       },
       {
         q: "Is Vyop free to use for small shopkeepers?",
-        a: "Yes! Vyop is free to download and start for basic billing, inventory, and online storefront creation on Android smartphones. Full multi-device cloud backup and unlimited sync is available with Vyop Pro for just ₹999/year (less than ₹2.7/day).",
+        a: "Yes! Vyop is free to download and use for local offline billing, barcode scanning, and basic inventory on Android. Cloud synchronization and multi-device backup are available with Vyop Pro for ₹999/year.",
       },
     ],
   },

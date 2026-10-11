@@ -44,25 +44,25 @@ export default function WorkWithUsPage() {
 
   const salesRoles = [
     {
-      title: "Field Sales Specialist (Merchant Onboarding)",
-      payout: "₹35,000 - ₹80,000 / month (Base + High Commissions)",
-      type: "Full-Time / Part-Time • Your City",
-      desc: "Visit local retail markets, kirana stores, garment shops, and supermarkets. Demonstrate the smartphone barcode POS & voice billing to shop owners and onboard them to Vyop.",
-      perks: "Instant payout per active merchant + recurring monthly commission bonuses + marketing collateral provided.",
+      title: "Field Sales Partner (Merchant Onboarding)",
+      payout: "₹300 - ₹500 per Verified Pro Activation",
+      type: "Direct Channel Partner • Your City",
+      desc: "Visit local retail markets, kirana stores, garment shops, and supermarkets. Demonstrate the smartphone barcode POS & voice billing to shop owners and help them activate their digital catalog.",
+      perks: "Direct single-tier commission per paid merchant subscription + marketing kits & demo app provided.",
     },
     {
-      title: "City Sales Partner & Team Lead",
-      payout: "₹60,000 - ₹1,20,000+ / month (Revenue Share + Team Bonus)",
-      type: "Leadership • Major Cities (Jaipur, Mumbai, Delhi, Surat, Bangalore, Pune)",
-      desc: "Lead and manage merchant acquisition in your district or city. Build and mentor a team of ground sales representatives to capture local retail markets.",
-      perks: "Exclusive city territory rights + higher commission slabs + direct founder access.",
+      title: "District Business Development Partner",
+      payout: "Fixed Retainer + Activation Incentives",
+      type: "Regional Growth • Commercial Hubs",
+      desc: "Coordinate merchant onboarding across local trade associations, market complexes, and wholesale mandis. Support retail shopkeeper groups in digital adoption.",
+      perks: "Designated territory coordination + dedicated technical onboarding support + quarterly performance awards.",
     },
     {
-      title: "Student Campus & Part-Time Sales Ambassador",
-      payout: "₹15,000 - ₹40,000 / month (Flexible Hours)",
-      type: "Flexible • Perfect for College Students",
-      desc: "Onboard shops around your college, hometown, or neighborhood during your free hours. Gain real B2B sales experience while earning handsome incentives.",
-      perks: "Flexible working hours + Certificate of Sales Excellence + Letter of Recommendation.",
+      title: "Student Campus Ambassador",
+      payout: "Per-Shop Referral Incentive",
+      type: "Flexible Hours • College Students",
+      desc: "Introduce local neighborhood stores and small businesses to digital billing and smart inventory management during your flexible hours.",
+      perks: "Certificate of Sales Excellence + Letter of Recommendation + Real-world B2B outreach experience.",
     },
   ];
 
@@ -157,7 +157,7 @@ export default function WorkWithUsPage() {
       {
         "@type": "JobPosting",
         "title": "Field Sales Specialist - Retail Merchant Acquisition",
-        "description": "<p>Join Vyop as a Field Sales Specialist. Onboard retail Kirana stores, grocery shops, and cloth merchants to India's first voice AI billing and smartphone POS app. Earn ₹35,000 to ₹80,000+ monthly with base incentives and high per-shop activation commissions.</p>",
+        "description": "<p>Join Vyop as a Field Sales Partner. Onboard retail Kirana stores, grocery shops, and cloth merchants to Vyop voice AI billing and smartphone POS. Earn direct per-shop commissions on verified merchant subscriptions with marketing kits and demo app support.</p>",
         "identifier": {
           "@type": "PropertyValue",
           "name": "Vyop Technologies",
@@ -168,7 +168,7 @@ export default function WorkWithUsPage() {
         "employmentType": ["FULL_TIME", "PART_TIME", "CONTRACTOR"],
         "hiringOrganization": {
           "@type": "Organization",
-          "name": "Vyop Technologies Private Limited",
+          "name": "Vyop Technologies",
           "sameAs": "https://vyop.in",
           "logo": "https://vyop.in/logo.png"
         },
@@ -206,7 +206,7 @@ export default function WorkWithUsPage() {
         "employmentType": ["FULL_TIME"],
         "hiringOrganization": {
           "@type": "Organization",
-          "name": "Vyop Technologies Private Limited",
+          "name": "Vyop Technologies",
           "sameAs": "https://vyop.in",
           "logo": "https://vyop.in/logo.png"
         },
@@ -304,9 +304,9 @@ export default function WorkWithUsPage() {
               <div className="w-12 h-12 rounded-2xl bg-amber-100 flex items-center justify-center text-[var(--brand-primary)] mb-4">
                 <TrendingUp size={24} />
               </div>
-              <h3 className="font-bold text-gray-900 text-lg mb-2">Uncapped Daily Commissions</h3>
+              <h3 className="font-bold text-gray-900 text-lg mb-2">Direct Per-Shop Commission</h3>
               <p className="text-sm text-gray-600 leading-relaxed">
-                Earn lucrative instant commissions on every active shop you onboard, plus recurring lifetime bonuses as merchants renew subscriptions.
+                Earn a transparent direct commission of ₹300 to ₹500 for each verified merchant who subscribes to Vyop Pro through your referral.
               </p>
             </div>
 
@@ -314,9 +314,9 @@ export default function WorkWithUsPage() {
               <div className="w-12 h-12 rounded-2xl bg-blue-100 flex items-center justify-center text-blue-600 mb-4">
                 <Zap size={24} />
               </div>
-              <h3 className="font-bold text-gray-900 text-lg mb-2">Free Sales Demo Kit & Training</h3>
+              <h3 className="font-bold text-gray-900 text-lg mb-2">Sales Demo Kit & Collateral</h3>
               <p className="text-sm text-gray-600 leading-relaxed">
-                Get full sales scripts in Hindi & English, merchant pitch decks, barcode standees, and a ready-to-demo merchant app on your phone.
+                Get full sales scripts in Hindi & English, merchant pitch decks, barcode standee samples, and a ready-to-demo merchant app on your phone.
               </p>
             </div>
 
@@ -324,36 +324,53 @@ export default function WorkWithUsPage() {
               <div className="w-12 h-12 rounded-2xl bg-emerald-100 flex items-center justify-center text-emerald-600 mb-4">
                 <BadgeCheck size={24} />
               </div>
-              <h3 className="font-bold text-gray-900 text-lg mb-2">Exclusive Territory Rights</h3>
+              <h3 className="font-bold text-gray-900 text-lg mb-2">Single-Tier Transparency</h3>
               <p className="text-sm text-gray-600 leading-relaxed">
-                High performers can become City & District Franchise Leads with exclusive area distribution rights and overrides on sub-agents.
+                Dedicated territory coordination with direct 1:1 attribution. Zero multi-level recruitment or downstream distribution layers.
               </p>
             </div>
           </div>
 
-          {/* Sales Earnings Formula Card */}
-          <div className="p-8 rounded-3xl bg-gradient-to-br from-amber-500 via-amber-600 to-yellow-600 text-white shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
+          {/* Sales Earnings Structure Card */}
+          <div className="p-8 rounded-3xl bg-gradient-to-br from-amber-500 via-amber-600 to-yellow-600 text-white shadow-xl flex flex-col md:flex-row items-center justify-between gap-6 mb-8">
             <div>
               <div className="text-xs uppercase tracking-widest text-amber-100 font-bold mb-1">
-                Estimated Monthly Earnings
+                Direct Commission Model
               </div>
               <h3 className="text-2xl sm:text-3xl font-black">
-                Onboard 4 to 6 Shops Daily → Earn ₹45,000 to ₹90,000+/Month
+                Earn ₹300 to ₹500 per Verified Pro Shop Activation
               </h3>
               <p className="text-amber-100 text-sm mt-1 max-w-xl">
-                Average shop onboarding takes just 5 minutes. No technical background required!
+                Earnings are based strictly on genuine, paid merchant software subscriptions. Weekly bank transfers upon subscription verification.
               </p>
             </div>
 
             <a
-              href="https://wa.me/919649059592?text=Hi%2C%20I%20want%20to%20join%20Vyop%20as%20a%20Sales%20Partner%20%2F%20Merchant%20Acquisition%20Specialist"
+              href="https://wa.me/919649059592?text=Hi%2C%20I%20want%20to%20inquire%20about%20becoming%20a%20Vyop%20Sales%20Partner"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-4 rounded-2xl bg-white text-gray-900 font-black text-sm hover:scale-105 transition-all shadow-lg flex items-center gap-2 whitespace-nowrap cursor-pointer"
             >
               <PhoneCall size={18} className="text-emerald-600" />
-              Chat on WhatsApp Directly
+              Inquire on WhatsApp
             </a>
+          </div>
+
+          {/* Partner Compliance & Ethics Notice */}
+          <div className="p-6 rounded-2xl bg-gray-50 border border-gray-200 text-xs text-gray-600 space-y-2">
+            <div className="font-bold text-gray-800 text-sm flex items-center gap-2">
+              <ShieldCheck size={16} className="text-emerald-600" />
+              Partner Compliance & Fair Sales Guidelines
+            </div>
+            <p>
+              • <strong>Strictly Single-Tier:</strong> All incentives are paid directly on verified software subscriptions. Vyop does not operate multi-level marketing (MLM), pyramid structures, or referral fee overrides on sub-agents.
+            </p>
+            <p>
+              • <strong>No Cash Collections:</strong> Partners are strictly unauthorized to collect cash from merchants. Merchants must pay directly through the app or official digital payment channels against an authorized GST invoice.
+            </p>
+            <p>
+              • <strong>Statutory Compliance & TDS:</strong> Partner payouts require a signed agreement, PAN verification, and direct bank transfer. TDS under Section 194H of the Income-tax Act, 1961 is deducted where applicable.
+            </p>
           </div>
         </div>
       </section>

@@ -614,7 +614,7 @@ export default function SmartBillingSoftwarePage() {
       {/* City Hubs Cross-Links */}
       <CityHubsSection
         title="Smart Billing Software Across India"
-        subtitle="Shopkeepers in 65+ cities use Vyop to replace expensive desktop billing machines with mobile smart billing. Find how Vyop works for businesses in your city."
+        subtitle="Shopkeepers and retailers use Vyop to replace expensive desktop billing machines with mobile smart billing. Find how Vyop works for businesses in your city."
       />
 
       {/* Section 6: Bottom CTA */}

@@ -3617,7 +3617,7 @@
                 "height": 16
               },
               "snippet": "<p class=\"text-xs font-medium\" style=\"color:var(--text-muted);font-family:var(--font-body)\">",
-              "nodeLabel": "© 2026 Vyop Technologies Pvt. Ltd. All rights reserved.",
+              "nodeLabel": "© 2026 Vyop Technologies All rights reserved.",
               "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 2.63 (foreground color: #9a9ab0, background color: #fafafa, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
             },
             "subItems": {

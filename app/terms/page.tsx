@@ -8,7 +8,7 @@ Last updated: June 5, 2026
 1. Acceptance of Terms
 By downloading, installing, accessing, or using the Vyop application ("App"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree with any part of these Terms, you must immediately discontinue use of the App.
 
-These Terms constitute a legally binding agreement between you ("User") and Vyop ("we," "our," or "us").
+These Terms constitute a legally binding agreement between you ("User") and Vyop Technologies ("we," "our," or "us").
 
 2. Eligibility
 You must be at least 18 years old and capable of entering into a legally binding agreement to use this App. By using the App, you represent and warrant that you meet this requirement.
@@ -37,13 +37,16 @@ Vyop will not be liable for any loss resulting from unauthorized use of your acc
 5. Local-First Storage — Data Loss Risk and Backup Responsibility
 Please read this section carefully. It directly affects your business data.
 
-Vyop uses a Local-First architecture. Your data is stored primarily on your device before being synced to the cloud.
+Vyop uses a Local-First architecture.
+• Local-First Offline Operations: Your business data is stored securely on your local device to enable full offline billing and operations without dependence on internet connectivity.
+• Encrypted Cloud Sync & Backup: Synchronized business records are backed up to our secure cloud servers in encrypted format. Authenticating your account and providing your Master Password on a replacement device restores your synced records.
+• Unsynced Records: Any local records that have not completed cloud synchronization prior to app uninstallation, device loss, damage, or factory reset cannot be recovered by Vyop. Free and unrestricted local data export (Excel / PDF / JSON) is provided within the App at all times.
 
 5.1 Risk of Data Loss
 You acknowledge and agree that:
 
-If you uninstall or delete the App, all locally stored data that has not been synced will be permanently and irrecoverably lost
-If your device is lost, stolen, damaged, reset, or replaced, any unsynced local data may be permanently and irrecoverably lost
+If you uninstall or delete the App prior to cloud synchronization, all unsynced locally stored data will be permanently lost
+If your device is lost, stolen, damaged, reset, or replaced without active cloud sync, any unsynced local data cannot be recovered
 If your device storage becomes corrupted or full, locally stored data may be lost
 Vyop does not guarantee the recovery of locally stored data that has not been successfully synchronized to the cloud
 5.2 Your Backup Responsibility
@@ -181,8 +184,14 @@ These Terms, together with our Privacy Policy, constitute the entire agreement b
 If you have questions about these Terms of Service, please contact us at:
 
 Email: vyop4shop@gmail.com
+Website: https://vyop.in
 
-Website: https://vyop.in`;
+23. Statutory Grievance Redressal Officer
+In accordance with Rule 3(2) of the Information Technology (Intermediary Guidelines and Digital Media Ethics Code) Rules, 2021, and the Consumer Protection (E-Commerce) Rules, 2020, user grievances may be addressed to:
+• Designation: Grievance Officer, Vyop Technologies
+• Email: vyop4shop@gmail.com
+• Address: Jaipur, Rajasthan, India
+• Turnaround Time: Grievances will be acknowledged within 48 hours and resolved within 30 days from receipt.`;
 
 export default function TermsOfService() {
   return (

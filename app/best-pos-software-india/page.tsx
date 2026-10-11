@@ -155,21 +155,21 @@ const apps = [
 ];
 
 const masterComparison = [
-  { feature: "Price", vyop: "Free / ₹999/yr", vyapar: "₹3,999–₹5,999/yr", loyverse: "$0–$660/yr", square: "2.6%/txn", petpooja: "₹12–25K/yr" },
-  { feature: "Desktop PC Setup", vyop: "✅ Web App (vyop.shop)", vyapar: "✅ Desktop (.exe)", loyverse: "⚠️ Web Backoffice Only", square: "⚠️ Limited Web", petpooja: "⚠️ POS Terminal" },
-  { feature: "Phone Camera Barcode (<1s)", vyop: "✅ Built-in Scanner", vyapar: "⚠️ Limited", loyverse: "✅ Basic", square: "❌ Reader Required", petpooja: "⚠️ Hardware Only" },
+  { feature: "Price", vyop: "Free / ₹999/yr", vyapar: "Free Mobile / ₹3,399+ Desktop", loyverse: "$0–$660/yr", square: "2.6%/txn", petpooja: "₹12–25K/yr" },
+  { feature: "Desktop PC Setup", vyop: "✅ Web App (vyop.shop)", vyapar: "✅ Desktop App (Win/Mac)", loyverse: "⚠️ Web Backoffice Only", square: "⚠️ Limited Web", petpooja: "⚠️ POS Terminal" },
+  { feature: "Phone Camera Barcode (<1s)", vyop: "✅ Built-in Scanner", vyapar: "✅ Camera & Scanner Gun", loyverse: "✅ Basic", square: "❌ Reader Required", petpooja: "⚠️ Hardware Only" },
   { feature: "Voice AI Billing (Hindi/EN)", vyop: "✅ Built-in (5s Bill)", vyapar: "❌ No", loyverse: "❌ No", square: "❌ No", petpooja: "❌ No" },
   { feature: "CA-Grade GST (GSTR-1/3B)", vyop: "✅ One-Click Export", vyapar: "✅ Supported", loyverse: "❌ No Indian GST", square: "❌ US Only", petpooja: "⚠️ Restaurant Only" },
   { feature: "Live Profit & Loss (P&L)", vyop: "✅ Real-Time", vyapar: "✅ Supported", loyverse: "⚠️ Paid Add-on", square: "⚠️ Basic", petpooja: "✅ Supported" },
   { feature: "Party Ledgers & WhatsApp Reminders", vyop: "✅ Automated", vyapar: "✅ Supported", loyverse: "❌ No", square: "❌ No", petpooja: "⚠️ Limited" },
-  { feature: "Zero-Commission Online Store", vyop: "✅ Included Free", vyapar: "❌ PDF Catalog", loyverse: "❌ No", square: "✅ Card Fees Apply", petpooja: "❌ No" },
-  { feature: "Hardware Required", vyop: "₹0 (Phone / PC)", vyapar: "PC + Barcode Gun", loyverse: "Tablet + Stand", square: "$299+ Terminal", petpooja: "Dedicated POS Box" },
+  { feature: "Zero-Commission Online Store", vyop: "✅ Included Free", vyapar: "✅ Online Store", loyverse: "❌ No", square: "✅ Card Fees Apply", petpooja: "❌ No" },
+  { feature: "Hardware Required", vyop: "₹0 (Phone / PC)", vyapar: "Phone / PC", loyverse: "Tablet + Stand", square: "$299+ Terminal", petpooja: "Dedicated POS Box" },
 ];
 
 const faqs = [
   { question: "What is the best POS software for small businesses in India?", answer: "Vyop POS is the best POS software for small businesses in India in 2026. It offers a complete dual setup: a full Desktop PC web app (vyop.shop) for counter checkout, and a smartphone camera barcode scanner that scans items in under 1 second and bills 30+ items per minute with zero hardware cost. It supports voice AI billing in Hindi and English, CA-grade GSTR-1/3B tax reports, P&L statements, and a 0% commission online storefront. Free to start, with ₹999/year Pro cloud sync." },
   { question: "Can I use Vyop POS on a Desktop PC or Laptop?", answer: "Yes! Simply open vyop.shop in your web browser on any Windows PC, Mac, or laptop. You get a full desktop billing screen with keyboard shortcuts, barcode scanner gun support, and thermal printer compatibility. All data syncs in real-time with the Vyop Android app on your phone." },
-  { question: "How does Vyop compare to Vyapar?", answer: "Vyapar charges ₹3,999–₹5,999/year and requires manual keyboard typing or external barcode guns. Vyop costs just ₹999/year (75% less), works on both Desktop PC (vyop.shop) and Android, turns any phone camera into an instant barcode machine (<1s scan speed), includes voice AI billing in Hindi, and provides CA-ready GST reports (GSTR-1, GSTR-3B) with 0% commission online store." },
+  { question: "How does Vyop compare to Vyapar?", answer: "While Vyapar is an established native desktop and mobile bookkeeping solution with desktop plans starting around ₹3,399/year, Vyop offers a browser-based web POS (vyop.shop) alongside its Android app for ₹999/year Pro. Vyop emphasizes bilingual Voice AI billing, high-speed phone camera barcode scanning, and direct WhatsApp customer ordering." },
   { question: "What is the best free-to-start POS app?", answer: "Vyop POS is the best value POS app. You can start completely free for offline billing, and full multi-device cloud backup Pro across Mobile and Desktop is just ₹999/year (less than ₹2.7/day) — compared to Vyapar (₹3,999/yr), Loyverse ($660/yr), or Petpooja (₹12,000–₹25,000/yr)." },
   { question: "Which POS system is best for restaurants in India?", answer: "For small to medium restaurants, cafes, and dhabas, Vyop POS is the best affordable option with voice KOT generation, table management, and QR menus — free to start with ₹999/yr Pro cloud sync. For large restaurant chains needing aggregator integration (Swiggy/Zomato), Petpooja is a strong paid option starting at ₹12,000/year." },
   { question: "Do I need expensive hardware for POS?", answer: "No. Modern smart POS software like Vyop works on any existing Android smartphone or Desktop PC/laptop. Your phone camera scans barcodes in under 1 second (faster than ₹2,500 barcode guns), and you can connect a ₹1,500 Bluetooth thermal printer for receipts. Total cost: ₹0 to ₹1,500 vs ₹20,000–₹50,000 for traditional desktop POS setups." },

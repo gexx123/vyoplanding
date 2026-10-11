@@ -16,19 +16,18 @@ export const metadata: Metadata = {
 };
 
 const comparisonData = [
-  { feature: "Annual License Cost", vyop: "Free to Start / ₹999/yr Pro (Save 75%+)", vyapar: "₹3,999 – ₹5,999/year", better: "vyop" },
-  { feature: "Desktop PC Setup", vyop: "Full Web App (vyop.shop) — Windows, Mac, ChromeOS", vyapar: "Windows .exe Installer Only", better: "vyop" },
-  { feature: "Mobile & Counter Dual Sync", vyop: "Real-Time Cloud Sync (PC Counter ↔ Floor Phone)", vyapar: "Local DB with Cloud Sync Add-on", better: "vyop" },
-  { feature: "Billing Speed & Input Method", vyop: "Under 1s Barcode Scan + Voice AI in Hindi/English", vyapar: "Manual Keyboard / Touch Typing", better: "vyop" },
-  { feature: "Smartphone Camera Barcode POS", vyop: "Built-in Camera Scanner (<1s Scan, 30+/min)", vyapar: "Requires External ₹2,500 USB/BT Barcode Gun", better: "vyop" },
+  { feature: "Pricing & Plans", vyop: "Free to Start / ₹999/yr Pro", vyapar: "Free Basic Mobile / ₹3,399–₹3,999/yr Desktop Plan", better: "vyop" },
+  { feature: "Desktop Access", vyop: "Zero-Install Web App (vyop.shop) — Any Browser", vyapar: "Installed Native Application (Windows / Mac)", better: "vyop" },
+  { feature: "Cloud Synchronization", vyop: "Real-Time Cloud Sync (Mobile & Web Counter)", vyapar: "Multi-Device Cloud Sync Plan", better: "draw" },
   { feature: "Voice AI Billing (Hindi & Hinglish)", vyop: "Speak to Bill in 5s ('Teen Maggi, do Chai')", vyapar: "Not Available", better: "vyop" },
+  { feature: "Primary Barcode Workflow", vyop: "Optimized Smartphone Camera Scanner (<1s)", vyapar: "Phone Camera & External USB/BT Scanner Gun", better: "vyop" },
   { feature: "CA-Grade GST Tax Reports", vyop: "GSTR-1, GSTR-3B, B2B/B2C, HSN Excel & JSON Export", vyapar: "GSTR-1, GSTR-3B Reports Supported", better: "draw" },
   { feature: "Financial Reports & P&L", vyop: "Live Profit & Loss, Category Margins & Daybook", vyapar: "Profit & Loss, Balance Sheet", better: "draw" },
-  { feature: "Party Ledgers & WhatsApp Reminders", vyop: "Automatic WhatsApp Reminders with UPI Link", vyapar: "Manual WhatsApp Invoice Share", better: "vyop" },
-  { feature: "Scan Unbarcoded Items (AI Vision)", vyop: "Snap Photo of Loose Item to Bill in 0.2s", vyapar: "Not Supported (Requires Manual Search)", better: "vyop" },
-  { feature: "Ways to Add Products", vyop: "10 Instant Methods (AI, Voice, PDF, CSV, Barcode)", vyapar: "Manual Form Entry or Excel Sheet", better: "vyop" },
-  { feature: "Live Online Customer Storefront", vyop: "0% Commission Web Store + Spin Wheel Rewards", vyapar: "Basic Catalog PDF Link Only", better: "vyop" },
-  { feature: "100% Offline Mode", vyop: "Full Offline Billing + Auto Cloud Backup", vyapar: "Full Offline Billing Supported", better: "draw" },
+  { feature: "Party Ledgers & WhatsApp Reminders", vyop: "Automated WhatsApp Reminders with UPI Link", vyapar: "WhatsApp Invoice & Payment Reminders", better: "draw" },
+  { feature: "Scan Unbarcoded Items (AI Vision)", vyop: "Snap Photo of Loose Item to Bill in 0.2s", vyapar: "Not Supported", better: "vyop" },
+  { feature: "Product Catalog Addition", vyop: "Voice, Barcode, CSV, AI Photo & Manual", vyapar: "Excel Import, Barcode & Manual Form Entry", better: "vyop" },
+  { feature: "Customer Online Storefront", vyop: "0% Commission Web Store + Spin Wheel Rewards", vyapar: "Online Storefront Feature (myvyapar.shop)", better: "draw" },
+  { feature: "100% Offline Mode", vyop: "Full Offline Billing + Auto Cloud Backup (Pro)", vyapar: "Full Offline Billing Supported", better: "draw" },
 ];
 
 export default function ComparisonPage() {
@@ -45,7 +44,7 @@ export default function ComparisonPage() {
             Vyop vs <span className="gradient-text">Vyapar</span>
           </h1>
           <p className="text-xl text-[var(--text-secondary)] max-w-3xl mx-auto">
-            Vyapar pioneered desktop billing in India, but Vyop delivers the <strong>smartest cross-platform setup</strong>: full Desktop PC cashier counter at <strong className="text-gray-900">vyop.shop</strong> + smartphone barcode machine on the floor, powered by voice AI and CA-grade tax filing for 75% less.
+            Compare key features, architecture, and workflows between Vyop and Vyapar to choose the best solution for your business.
           </p>
         </div>
 
@@ -54,7 +53,7 @@ export default function ComparisonPage() {
           <span className="text-xl flex-shrink-0">ℹ️</span>
           <div>
             <strong className="font-bold text-amber-900">Brand Clarification:</strong>{" "}
-            <strong>Vyop</strong> (pronounced <em>&quot;Vy-Op&quot;</em>, short for <em>Vyapar Operations</em>) is an independent AI-first POS and smart voice billing software platform developed by <strong>Vyop Technologies Pvt. Ltd.</strong> Vyop is completely distinct from, unaffiliated with, and not sponsored by Simply Vyapar Apps Pvt. Ltd. (makers of Vyapar App). All comparative data is based on public pricing and feature tiers for fair consumer information.
+            <strong>Vyop</strong> is an independent AI-first POS and smart voice billing software platform developed by <strong>Vyop Technologies</strong>. Vyop is completely distinct from, unaffiliated with, and not sponsored by Simply Vyapar Apps Pvt. Ltd. (makers of Vyapar App). All comparative data is based on publicly available documentation and published pricing as of October 2026 for fair consumer information.
           </div>
         </div>
 
@@ -92,12 +91,12 @@ export default function ComparisonPage() {
               When to Choose Vyapar?
             </h3>
             <p className="text-[var(--text-secondary)] leading-relaxed mb-4">
-              Vyapar is suitable if your counter staff is strictly accustomed to traditional Windows-based desktop accounting (.exe) and prefers manual keyboard data entry without barcode scanning or voice AI speed.
+              Vyapar is an established solution if your business prefers installed native desktop software and comprehensive offline SME bookkeeping across desktop and mobile.
             </p>
             <ul className="text-sm text-gray-500 space-y-2">
-              <li>• Requires local Windows PC installer</li>
-              <li>• Traditional keyboard entry workflow</li>
-              <li>• Costs ₹3,999 to ₹5,999 per year</li>
+              <li>• Native desktop installer &amp; mobile app ecosystem</li>
+              <li>• Comprehensive SME bookkeeping &amp; GST ledger management</li>
+              <li>• Desktop plans starting from ₹3,399/year</li>
             </ul>
           </div>
 
@@ -168,7 +167,7 @@ export default function ComparisonPage() {
                 "name": "Is Vyop the same as or affiliated with Vyapar App?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "No. Vyop (Vyop Technologies Pvt. Ltd., pronounced 'Vy-Op' from Vyapar Operations) is an independent AI-first POS and smart billing platform. It is completely independent and unaffiliated with Vyapar App (Simply Vyapar Apps Pvt. Ltd.)."
+                  "text": "No. Vyop is an independent AI-first POS and smart voice billing software platform developed by Vyop Technologies. It is completely independent and unaffiliated with Vyapar App (Simply Vyapar Apps Pvt. Ltd.)."
                 }
               },
               {

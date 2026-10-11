@@ -161,7 +161,7 @@ export default function Navbar() {
                           <span className="text-lg">📍</span>
                           <div>
                             <div className="text-sm font-bold text-gray-900">Billing by City</div>
-                            <div className="text-[11px] text-gray-500">65+ Indian commercial hubs</div>
+                            <div className="text-[11px] text-gray-500">Major Indian commercial hubs</div>
                           </div>
                         </Link>
                         <Link

@@ -39,10 +39,10 @@ const apps = [
     bestFor: "Retailers wanting a full PC counter setup + instant mobile barcode scanning with CA-grade GST accounting at zero hardware cost",
     pros: [
       "Full Desktop PC & Laptop web app (vyop.shop) with real-time multi-device cloud sync",
-      "Scans barcodes in under 1 second using phone camera — 30+ items billed per minute",
+      "Rapid smartphone camera barcode scanning without dedicated scanner hardware",
       "CA-Grade accounting: GSTR-1 & GSTR-3B tax reports, live Profit & Loss (P&L), and party ledgers",
-      "Completely eliminates expensive POS hardware: no barcode gun, no ₹20,000 terminal needed",
-      "Voice AI billing in Hindi, English & Hinglish — create GST bills in 5 seconds by speaking",
+      "Completely eliminates expensive POS hardware: no barcode gun or specialized terminal needed",
+      "Voice AI billing in Hindi, English & Hinglish — create GST bills instantly by speaking",
       "10 instant ways to add products (barcode, voice, photo AI, PDF import, CSV, and more)",
       "0% commission online storefront with WhatsApp ordering & UPI QR codes",
       "Supports 22 business types with 100% offline billing + instant cloud backup (₹999/yr Pro)",
@@ -57,7 +57,7 @@ const apps = [
     rank: 2,
     name: "Vyapar",
     tagline: "Established Desktop & Mobile Billing Software",
-    price: "₹3,999 – ₹5,999/year",
+    price: "Free Mobile / ₹3,399+ Desktop",
     bestFor: "Traditional shops wanting standard desktop software with manual typing",
     pros: [
       "Established brand in Indian bookkeeping and GST invoicing",
@@ -163,18 +163,18 @@ const masterComparison = [
   { feature: "Live Profit & Loss (P&L)", vyop: "✅ Real-Time", vyapar: "✅ Supported", loyverse: "⚠️ Paid Add-on", square: "⚠️ Basic", petpooja: "✅ Supported" },
   { feature: "Party Ledgers & WhatsApp Reminders", vyop: "✅ Automated", vyapar: "✅ Supported", loyverse: "❌ No", square: "❌ No", petpooja: "⚠️ Limited" },
   { feature: "Zero-Commission Online Store", vyop: "✅ Included Free", vyapar: "✅ Online Store", loyverse: "❌ No", square: "✅ Card Fees Apply", petpooja: "❌ No" },
-  { feature: "Hardware Required", vyop: "₹0 (Phone / PC)", vyapar: "Phone / PC", loyverse: "Tablet + Stand", square: "$299+ Terminal", petpooja: "Dedicated POS Box" },
+  { feature: "Hardware Required", vyop: "₹0 (Phone / PC)", vyapar: "Phone / PC", loyverse: "Tablet / Phone", square: "$49+ Reader / Terminal", petpooja: "Desktop PC / Tablet" },
 ];
 
 const faqs = [
-  { question: "What is the best POS software for small businesses in India?", answer: "Vyop POS is the best POS software for small businesses in India in 2026. It offers a complete dual setup: a full Desktop PC web app (vyop.shop) for counter checkout, and a smartphone camera barcode scanner that scans items in under 1 second and bills 30+ items per minute with zero hardware cost. It supports voice AI billing in Hindi and English, CA-grade GSTR-1/3B tax reports, P&L statements, and a 0% commission online storefront. Free to start, with ₹999/year Pro cloud sync." },
+  { question: "What is the best POS software for small businesses in India?", answer: "Vyop POS is a leading smart POS software for small businesses in India in 2026. It offers a complete dual setup: a full Desktop PC web app (vyop.shop) for counter checkout, and a smartphone camera barcode scanner that scans items rapidly with zero hardware cost. It supports voice AI billing in Hindi and English, CA-grade GSTR-1/3B tax reports, P&L statements, and a 0% commission online storefront. Free to start, with ₹999/year Pro cloud sync." },
   { question: "Can I use Vyop POS on a Desktop PC or Laptop?", answer: "Yes! Simply open vyop.shop in your web browser on any Windows PC, Mac, or laptop. You get a full desktop billing screen with keyboard shortcuts, barcode scanner gun support, and thermal printer compatibility. All data syncs in real-time with the Vyop Android app on your phone." },
   { question: "How does Vyop compare to Vyapar?", answer: "While Vyapar is an established native desktop and mobile bookkeeping solution with desktop plans starting around ₹3,399/year, Vyop offers a browser-based web POS (vyop.shop) alongside its Android app for ₹999/year Pro. Vyop emphasizes bilingual Voice AI billing, high-speed phone camera barcode scanning, and direct WhatsApp customer ordering." },
-  { question: "What is the best free-to-start POS app?", answer: "Vyop POS is the best value POS app. You can start completely free for offline billing, and full multi-device cloud backup Pro across Mobile and Desktop is just ₹999/year (less than ₹2.7/day) — compared to Vyapar (₹3,999/yr), Loyverse ($660/yr), or Petpooja (₹12,000–₹25,000/yr)." },
-  { question: "Which POS system is best for restaurants in India?", answer: "For small to medium restaurants, cafes, and dhabas, Vyop POS is the best affordable option with voice KOT generation, table management, and QR menus — free to start with ₹999/yr Pro cloud sync. For large restaurant chains needing aggregator integration (Swiggy/Zomato), Petpooja is a strong paid option starting at ₹12,000/year." },
-  { question: "Do I need expensive hardware for POS?", answer: "No. Modern smart POS software like Vyop works on any existing Android smartphone or Desktop PC/laptop. Your phone camera scans barcodes in under 1 second (faster than ₹2,500 barcode guns), and you can connect a ₹1,500 Bluetooth thermal printer for receipts. Total cost: ₹0 to ₹1,500 vs ₹20,000–₹50,000 for traditional desktop POS setups." },
-  { question: "What is the fastest POS software in India?", answer: "Vyop POS is the fastest POS software in India. It scans barcodes in under 1 second using your phone camera, bills 30+ items per minute in continuous scanning mode, and can create a complete GST bill in 5 seconds using voice AI (just speak in Hindi or English). No other POS software matches this speed without expensive hardware." },
-  { question: "What is the price of POS software in India?", answer: "POS software prices in India range from free to ₹40,000/year. Vyop POS: Free / ₹999/yr Pro. NukkadShops: ₹1,999–₹4,999/yr. Vyapar: ₹3,999+/yr. Marg POS: ₹8,000–₹25,000/yr. Petpooja: ₹12,000–₹25,000/yr. POSist: ₹15,000–₹40,000/yr. Square: 2.6% per transaction + $299 hardware. Vyop gives the most features at the lowest price." },
+  { question: "What is the best free-to-start POS app?", answer: "Vyop POS is the best value POS app. You can start completely free for offline billing, and full multi-device cloud backup Pro across Mobile and Desktop is just ₹999/year (less than ₹2.7/day) — compared to Vyapar (₹3,399+/yr), Loyverse ($360+/yr add-ons), or Petpooja (~₹10,000–₹15,000/yr)." },
+  { question: "Which POS system is best for restaurants in India?", answer: "For small to medium restaurants, cafes, and dhabas, Vyop POS is a great affordable option with voice KOT generation, table management, and QR menus — free to start with ₹999/yr Pro cloud sync. For large restaurant chains needing deep aggregator integration (Swiggy/Zomato), Petpooja is a strong paid option starting around ₹10,000 to ₹15,000/year." },
+  { question: "Do I need expensive hardware for POS?", answer: "No. Modern smart POS software like Vyop works on any existing Android smartphone or Desktop PC/laptop. Your phone camera scans barcodes rapidly using smart camera autofocus, and you can connect a ₹1,500 Bluetooth thermal printer for receipts. Total cost: ₹0 to ₹1,500 vs ₹20,000–₹50,000 for traditional desktop POS setups." },
+  { question: "What is the fastest POS software in India?", answer: "Vyop POS is engineered for rapid counter checkout. It pairs phone camera barcode scanning with Hindi and English voice AI billing, enabling quick customer queue throughput without purchasing external hardware terminal machines." },
+  { question: "What is the price of POS software in India?", answer: "POS software prices in India range from free to ₹40,000/year. Vyop POS: Free / ₹999/yr Pro. NukkadShops: ₹25,000+ hardware + AMC. Vyapar: Free mobile / ₹3,399+ desktop. Marg POS: ₹8,991+ GST. Petpooja: ~₹10,000–₹15,000/yr. Restroworks: modular enterprise quotes. Square: 2.6% per transaction + $49–$299 hardware. Vyop gives the most features at the lowest price." },
 ];
 
 export default function BestPosSoftwarePage() {

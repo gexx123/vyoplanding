@@ -7,35 +7,36 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Vyop vs Pine Labs POS | Free Mobile POS Alternative (No Monthly Rental)",
   description:
-    "Compare Vyop vs Pine Labs POS machine. Pine Labs charges ₹500-₹1,200/month machine rental plus transaction MDR fees. Vyop gives you mobile POS, camera barcode scanning, and direct 0% MDR UPI QR payments starting free with ₹999/yr Pro cloud sync.",
+    "Compare Vyop vs Pine Labs POS machine. Pine Labs provides dedicated card payment EDC terminals with monthly machine rental. Vyop gives you mobile POS, camera barcode scanning, and direct 0% MDR UPI QR payments starting free with ₹999/yr Pro cloud sync.",
   alternates: { canonical: "/vyop-vs-pinelabs" },
   openGraph: {
     title: "Vyop vs Pine Labs POS | Zero Monthly Rental POS",
-    description: "Stop paying ₹500-₹1,200/mo for POS hardware rentals. Switch to Vyop: smartphone POS with 0% MDR UPI payments, camera barcode scanning, and ₹999/yr Pro cloud sync.",
+    description: "Save on POS hardware rentals. Switch to Vyop: smartphone POS with 0% MDR UPI payments, camera barcode scanning, and ₹999/yr Pro cloud sync.",
     url: "https://vyop.in/vyop-vs-pinelabs",
   },
 };
 
 const comparison = [
-  { feature: "Monthly Machine Rental", vyop: "₹0 (Zero Rental Forever)", competitor: "₹500 – ₹1,200/month", better: "vyop" },
-  { feature: "Hardware Required", vyop: "Your Own Android Smartphone", competitor: "Proprietary Pine Labs Terminal", better: "vyop" },
+  { feature: "Monthly Machine Rental", vyop: "₹0 (Zero Rental Forever)", competitor: "₹500 – ₹1,200/month Rental", better: "vyop" },
+  { feature: "Hardware Required", vyop: "Your Own Android Smartphone", competitor: "Dedicated Pine Labs Terminal", better: "vyop" },
   { feature: "UPI QR Transaction Fee (MDR)", vyop: "0% Fee (Direct Bank Deposit)", competitor: "Payment Gateway Processing Fees", better: "vyop" },
+  { feature: "Card Swipe / EMI Processing", vyop: "Via External Card Readers / QR", competitor: "Built-in Integrated Card EDC & EMI", better: "competitor" },
   { feature: "Annual Hardware Cost", vyop: "₹0 / year", competitor: "₹6,000 – ₹14,400 / year rental", better: "vyop" },
-  { feature: "Barcode Scanning", vyop: "✅ Smartphone Camera (0.05s)", competitor: "Built-in or External Scanner", better: "vyop" },
-  { feature: "Scan Unbarcoded Products (AI Vision)", vyop: "✅ Built-in AI Vision (Snap photo of loose item to bill in 0.2s)", competitor: "❌ Not Available (Fixed barcode scanner only)", better: "vyop" },
+  { feature: "Barcode Scanning", vyop: "✅ Built-in Smartphone Camera Scanner", competitor: "Built-in or External Scanner", better: "draw" },
+  { feature: "Scan Unbarcoded Products (AI Vision)", vyop: "✅ Built-in AI Visual Item Recognition", competitor: "❌ Not Available", better: "vyop" },
   { feature: "Voice AI Billing (Hindi)", vyop: "✅ Voice AI Orb (Speak Bills)", competitor: "❌ Not Available", better: "vyop" },
-  { feature: "Item Addition Methods", vyop: "10 Instant Methods", competitor: "1 Manual Inventory System", better: "vyop" },
-  { feature: "Free Online Customer Storefront", vyop: "✅ 0% Commission Store + Spin Wheel", competitor: "❌ Not Included", better: "vyop" },
-  { feature: "WhatsApp Invoicing", vyop: "✅ 1-Tap WhatsApp Receipts", competitor: "SMS Invoicing (Paid Credits)", better: "vyop" },
-  { feature: "Lock-in Contracts & Security Deposit", vyop: "None (No Contracts)", competitor: "Security Deposit + Lock-in Contract", better: "vyop" },
-  { feature: "Offline Billing Support", vyop: "✅ 100% Offline Capable", competitor: "Depends on SIM / Network Connectivity", better: "vyop" },
-  { feature: "Thermal Receipt Printing", vyop: "✅ Any Bluetooth Printer (₹1,500)", competitor: "Internal Roll (Proprietary Paper)", better: "vyop" },
+  { feature: "Item Addition Methods", vyop: "Voice, Camera Barcode, CSV, AI Snap & Manual", competitor: "App Catalog & Inventory Entry", better: "vyop" },
+  { feature: "Customer Online Storefront", vyop: "✅ 0% Commission Store + Spin Wheel", competitor: "❌ Not Included", better: "vyop" },
+  { feature: "WhatsApp Invoicing", vyop: "✅ 1-Tap WhatsApp Receipts", competitor: "SMS Invoicing Options", better: "vyop" },
+  { feature: "Commitment & Security Deposit", vyop: "None (No Contracts)", competitor: "Security Deposit + Agreement", better: "vyop" },
+  { feature: "Offline Billing Support", vyop: "✅ 100% Offline Capable", competitor: "SIM / Network Connectivity Dependent", better: "vyop" },
+  { feature: "Thermal Receipt Printing", vyop: "✅ Any Portable Bluetooth Printer", competitor: "Built-in EDC Thermal Paper Roll", better: "tie" },
 ];
 
 const faqs = [
-  { question: "Why switch from a Pine Labs POS machine to Vyop?", answer: "Pine Labs charges ongoing monthly rentals of ₹500 to ₹1,200 per machine, plus transaction MDR fees on card swipes and security deposits. If the machine breaks, repair charges and downtime hurt your business. Vyop runs directly on your smartphone with zero monthly machine rentals, zero contracts, 0% MDR on UPI QR payments, and just ₹999/year for full Pro cloud sync." },
-  { question: "How does payment collection work on Vyop without a card swipe machine?", answer: "Over 85% of retail transactions in India now happen via UPI (Google Pay, PhonePe, Paytm). Vyop automatically prints and displays a dynamic UPI QR code on every bill. Customers scan with their phone and pay directly into your bank account with 0% transaction commission." },
-  { question: "Can Vyop scan barcodes as fast as a Pine Labs POS machine?", answer: "Yes! Vyop uses your smartphone's high-definition camera with AI focus, scanning product barcodes in less than 0.2 seconds — faster than many handheld terminal cameras. You can also connect any wireless Bluetooth barcode scanner if desired." },
+  { question: "Why switch from a Pine Labs POS machine to Vyop?", answer: "Pine Labs provides specialized EDC card swipe machines and Android terminals designed for credit/debit card processing and merchant EMI, typically requiring ₹500 to ₹1,200 monthly rentals and card MDR transaction fees. For retailers whose customers predominantly pay via UPI QR and cash, Vyop eliminates hardware rental costs by transforming any smartphone into a full billing, inventory, and barcode POS starting free with ₹999/yr Pro cloud sync." },
+  { question: "How does payment collection work on Vyop without a card swipe machine?", answer: "With UPI representing the vast majority of in-store digital payments in India, Vyop automatically embeds dynamic UPI QR codes directly onto invoices and display screens. Customers scan with PhonePe, Google Pay, or Paytm and transfer money directly to your linked bank account with 0% MDR fee." },
+  { question: "Can Vyop scan barcodes smoothly with a smartphone camera?", answer: "Yes! Modern phone cameras with autofocus decode standard 1D and 2D manufacturer barcodes smoothly. Vyop's camera scanning engine allows quick counter checkout without requiring dedicated scanner guns or EDC terminal hardware." },
   { question: "What if my shop loses internet connection?", answer: "Vyop works 100% offline. You can continue scanning items, creating bills, and printing receipts even when the network is completely down. All transaction data automatically syncs to the cloud once connection is restored." },
 ];
 
@@ -53,8 +54,8 @@ export default function VyopVsPineLabsPage() {
             Vyop vs <span className="gradient-text">Pine Labs POS</span>
           </h1>
           <p className="text-xl text-[var(--text-secondary)] max-w-2xl mx-auto">
-            Stop paying ₹500 to ₹1,200 every month just to rent a POS machine.{" "}
-            <strong className="text-gray-900">Vyop turns your smartphone into a high-speed barcode POS with direct UPI payments and voice billing — free to start with ₹999/yr Pro cloud sync.</strong>
+            Avoid paying ₹500 to ₹1,200 every month for terminal hardware rentals when your store primarily runs on UPI and cash.{" "}
+            <strong className="text-gray-900">Vyop turns your smartphone into a barcode POS with direct UPI payments and voice billing — free to start with ₹999/yr Pro cloud sync.</strong>
           </p>
         </div>
 
@@ -62,9 +63,9 @@ export default function VyopVsPineLabsPage() {
         <div className="grid md:grid-cols-2 gap-6 mb-12">
           <div className="p-8 rounded-3xl bg-white border border-gray-200 shadow-sm">
             <h3 className="text-xl font-bold text-gray-900 mb-2">Pine Labs POS</h3>
-            <div className="text-3xl font-extrabold text-red-600 mb-4">₹6,000 – ₹14,400/yr</div>
+            <div className="text-3xl font-extrabold text-red-600 mb-4">₹6,000 – ₹14,400/yr Rental</div>
             <p className="text-sm text-gray-600 leading-relaxed">
-              Charges monthly machine rental (₹500-₹1,200/mo), security deposit, lock-in agreements, and transaction MDR charges. You don't own the hardware.
+              Specialized payment EDC terminal with card swipe and EMI processing. Charges monthly hardware rental (₹500–₹1,200/mo), security deposits, and card MDR fees.
             </p>
           </div>
           <div className="p-8 rounded-3xl bg-gradient-to-br from-amber-500 to-amber-600 text-white shadow-lg relative">
@@ -119,9 +120,9 @@ export default function VyopVsPineLabsPage() {
 
         {/* Bottom CTA */}
         <div className="text-center p-12 rounded-3xl bg-amber-50 border border-amber-200">
-          <h2 className="text-3xl font-extrabold mb-4 font-display">Eliminate POS Rental Fees Forever</h2>
+          <h2 className="text-3xl font-extrabold mb-4 font-display">Eliminate POS Rental Fees</h2>
           <p className="text-gray-600 mb-6 max-w-xl mx-auto">
-            Save ₹12,000+ every year. Turn your smartphone into India's fastest retail billing and barcode scanning machine.
+            Save on recurring hardware rentals. Turn your smartphone into an efficient retail billing and barcode scanning solution.
           </p>
           <a
             href="https://play.google.com/store/apps/details?id=com.vyop.app"

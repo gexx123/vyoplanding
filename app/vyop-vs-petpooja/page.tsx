@@ -12,24 +12,24 @@ export const metadata: Metadata = {
 };
 
 const comparison = [
-  { feature: "Pricing", vyop: "Free to Start / ₹999/yr Pro", petpooja: "₹12,000 – ₹25,000/year + Setup Fee" },
-  { feature: "Contract Lock-in", vyop: "No Contract. Cancel Anytime.", petpooja: "12-Month Minimum Lock-in" },
-  { feature: "Hardware Required", vyop: "Any Android Phone or Tablet", petpooja: "Dedicated POS Terminal Required" },
-  { feature: "Voice KOT Generation", vyop: "✅ Speak Orders ('2 Butter Naan, 1 Dal')", petpooja: "❌ Manual Touch/Tap Only" },
-  { feature: "AI Visual Bakery & Item Scanner", vyop: "✅ Point phone camera at sweets/food to bill in 0.2s", petpooja: "❌ Manual Screen Tap Only" },
-  { feature: "Smartphone Camera Barcode Scanner", vyop: "✅ Built-in Phone Camera Barcode POS (0.05s)", petpooja: "❌ Requires External USB Scanner" },
-  { feature: "Table Management", vyop: "✅ Visual Table Status", petpooja: "✅ Advanced Table Management" },
-  { feature: "QR Code Digital Menu", vyop: "✅ Free QR Table Menus", petpooja: "✅ Digital Menu (Paid Add-on)" },
-  { feature: "Online Ordering (Direct)", vyop: "✅ 0% Commission Own Store", petpooja: "⚠️ Aggregator Integrations (Zomato/Swiggy)" },
-  { feature: "Kitchen Printer", vyop: "✅ Bluetooth Thermal Printer", petpooja: "✅ Network Kitchen Printer" },
-  { feature: "Split Billing", vyop: "✅ Split by Items or Amount", petpooja: "✅ Split Billing" },
-  { feature: "GST Compliance", vyop: "✅ 5% / 18% Restaurant GST", petpooja: "✅ Full GST" },
-  { feature: "WhatsApp Bills", vyop: "✅ Instant WhatsApp Receipts", petpooja: "⚠️ SMS/Email Only" },
-  { feature: "Non-Restaurant Use", vyop: "✅ 22 Shop Types Supported", petpooja: "❌ Restaurant-Only" },
+  { feature: "Pricing Model", vyop: "Free to Start / ₹999/yr Pro", petpooja: "Annual Software Plans from ~₹10,000–₹15,000/yr" },
+  { feature: "Contract Terms", vyop: "No Long-Term Lock-in", petpooja: "Annual Subscription Model" },
+  { feature: "Hardware Compatibility", vyop: "Any Android Phone or Tablet", petpooja: "Windows Desktop POS Terminal / Android Tablet" },
+  { feature: "Voice KOT Generation", vyop: "✅ Speak Orders by Voice ('2 Butter Naan, 1 Dal')", petpooja: "Touchscreen KOT Interface" },
+  { feature: "AI Visual Bakery & Food Recognition", vyop: "✅ Snap item photo to bill with AI", petpooja: "Touch Menu Grid" },
+  { feature: "Smartphone Camera Barcode Scanner", vyop: "✅ Built-in Phone Camera Scanner", petpooja: "External USB/BT Barcode Scanner" },
+  { feature: "Table Management", vyop: "✅ Visual Table Layout & Billing", petpooja: "✅ Advanced Restaurant Table Management" },
+  { feature: "QR Digital Menu", vyop: "✅ Free Table QR Ordering Menu", petpooja: "✅ Digital Menu & Ordering Solutions" },
+  { feature: "Online Ordering System", vyop: "✅ 0% Commission Direct Web Store", petpooja: "✅ Third-Party Aggregator Integrations (Swiggy/Zomato)" },
+  { feature: "Kitchen Printing (KOT)", vyop: "✅ Bluetooth Thermal Printer Support", petpooja: "✅ Network / LAN Kitchen Printer Support" },
+  { feature: "Split Billing", vyop: "✅ Split by Items or Amount", petpooja: "✅ Advanced Split Invoicing" },
+  { feature: "GST Tax Compliance", vyop: "✅ 5% / 18% Restaurant GST Compliant", petpooja: "✅ Complete Restaurant GST Compliance" },
+  { feature: "WhatsApp Digital Invoices", vyop: "✅ Direct 1-Tap WhatsApp Receipts", petpooja: "SMS & WhatsApp Integrations" },
+  { feature: "Multi-Vertical Use", vyop: "22 Retail & Food Business Verticals", petpooja: "Dedicated Food & Beverage POS Focus" },
 ];
 
 const faqs = [
-  { question: "Is Petpooja free for restaurants?", answer: "No. Petpooja charges ₹12,000–₹25,000 per year with a mandatory 12-month lock-in contract, plus setup fees. Vyop allows you to start completely free, with full cloud sync Pro at just ₹999/year — saving you up to ₹24,000 every single year." },
+  { question: "Is Petpooja free for restaurants?", answer: "Petpooja plans start around ₹10,000 to ₹15,000 per year with annual software subscriptions. Vyop allows you to start completely free, with full multi-device Pro cloud sync at just ₹999/year — significantly lowering software overhead for independent food outlets." },
   { question: "Can Vyop replace Petpooja for a small restaurant or cafe?", answer: "Yes! For small to medium restaurants, cafes, dhabas, cloud kitchens, and fast food outlets, Vyop provides voice KOT generation, table management, QR digital menus, split billing, and thermal kitchen printing — free to start, with ₹999/yr Pro cloud sync." },
   { question: "Does Vyop support Kitchen Order Tickets (KOT)?", answer: "Yes! Speak the order naturally ('Table 4: Two Butter Chicken, Three Garlic Naan') and Vyop generates a formatted KOT that automatically prints on your kitchen Bluetooth thermal printer." },
   { question: "Can I use Vyop for non-restaurant businesses too?", answer: "Yes! Unlike Petpooja which is restaurant-only, Vyop supports 22 types of businesses including kirana stores, clothing shops, pharmacies, jewellery stores, salons, supermarkets, hotels, and more." },
@@ -46,15 +46,15 @@ export default function VyopVsPetpoojaPage() {
             Vyop vs <span className="gradient-text">Petpooja</span>
           </h1>
           <p className="text-xl text-[var(--text-secondary)] max-w-2xl mx-auto">
-            Petpooja locks you into expensive annual contracts. <strong className="text-gray-900">Vyop gives you voice KOT, table management, and QR menus — free to start with ₹999/yr Pro cloud sync.</strong>
+            Petpooja requires recurring annual restaurant software subscriptions. <strong className="text-gray-900">Vyop gives you voice KOT, table management, and QR menus — free to start with ₹999/yr Pro cloud sync.</strong>
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 mb-12">
           <div className="p-8 rounded-3xl bg-white border border-gray-200 shadow-sm">
             <h3 className="text-xl font-bold text-gray-900 mb-2">Petpooja</h3>
-            <div className="text-3xl font-extrabold text-red-600 mb-4">₹12,000 – ₹25,000/yr + Lock-in</div>
-            <p className="text-sm text-gray-600">12-month mandatory contract with dedicated POS hardware. Restaurant-only. Setup fee extra.</p>
+            <div className="text-3xl font-extrabold text-red-600 mb-4">From ~₹10,000–₹15,000/yr</div>
+            <p className="text-sm text-gray-600">Annual subscription software for restaurants. Compatible with desktop PCs and Android tablets.</p>
           </div>
           <div className="p-8 rounded-3xl bg-gradient-to-br from-amber-500 to-amber-600 text-white shadow-lg relative">
             <span className="absolute top-4 right-4 px-3 py-1 bg-white/20 text-white rounded-full text-xs font-bold">No Lock-in</span>
@@ -79,6 +79,9 @@ export default function VyopVsPetpoojaPage() {
               </tbody>
             </table>
           </div>
+          <p className="text-xs text-gray-400 mt-6 text-center">
+            * Comparative analysis based on publicly available documentation as of October 2026. Petpooja is a registered trademark of Prayosha Food Services Pvt. Ltd.
+          </p>
         </div>
 
         <div className="text-center bg-gray-900 text-white p-10 md:p-14 rounded-3xl mb-16">

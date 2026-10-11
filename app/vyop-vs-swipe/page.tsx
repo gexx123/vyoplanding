@@ -17,26 +17,26 @@ export const metadata: Metadata = {
 };
 
 const comparison = [
-  { feature: "Base Price & Subscription", vyop: "Free to Start / ₹999/yr Pro", competitor: "Free tier limited / ₹1,299 – ₹3,999/year", better: "vyop" },
-  { feature: "Voice AI Billing (Hindi/English)", vyop: "✅ Speak to Bill in 5 Seconds", competitor: "❌ Not Available", better: "vyop" },
-  { feature: "Smartphone Camera Barcode Scanner", vyop: "✅ Built-in 60 FPS Camera POS", competitor: "Basic or External Hardware Required", better: "vyop" },
-  { feature: "Scan Unbarcoded Products (AI Vision)", vyop: "✅ Built-in AI Vision (Snap photo of loose goods to bill in 0.2s)", competitor: "❌ Not Available (Forces manual typing)", better: "vyop" },
-  { feature: "Ways to Add Inventory Items", vyop: "10 Instant Methods (AI, Voice, Camera, Master)", competitor: "Standard Form & Excel Import", better: "vyop" },
-  { feature: "Customer Online Storefront", vyop: "✅ Free Store + Spin-The-Wheel Game", competitor: "Basic E-commerce Store Link", better: "vyop" },
-  { feature: "WhatsApp Invoicing & UPI QR", vyop: "✅ 1-Tap Direct WhatsApp Bills", competitor: "✅ Supported (Branded in Paid Tier)", better: "vyop" },
-  { feature: "Offline Billing Capability", vyop: "✅ 100% Offline (Auto Cloud Sync)", competitor: "Requires Active Internet", better: "vyop" },
-  { feature: "GST Compliance (GSTR-1, 3B)", vyop: "✅ Full Automated Tax Invoices", competitor: "✅ Full GST Compliance", better: "tie" },
-  { feature: "Thermal Receipt Printing", vyop: "✅ Wireless Bluetooth (2\" & 3\")", competitor: "Thermal & A4 Printing Supported", better: "tie" },
-  { feature: "Multi-Industry Specialization", vyop: "22 Retail & Hospitality Verticals", competitor: "General Invoicing Focus", better: "vyop" },
-  { feature: "Udhar / Credit Khata", vyop: "✅ Auto WhatsApp Reminders", competitor: "Payment Reminders Available", better: "tie" },
-  { feature: "Watermark on Invoices", vyop: "Never (Clean, Professional)", competitor: "Watermark on Free Tier", better: "vyop" },
+  { feature: "Base Price & Subscription", vyop: "Free to Start / ₹999/yr Pro", competitor: "Free tier with limits / ₹1,299 – ₹3,999/year", better: "vyop" },
+  { feature: "Voice AI Billing (Hindi/English)", vyop: "✅ Speak to Bill naturally in Hindi & English", competitor: "Not Available", better: "vyop" },
+  { feature: "Smartphone Camera Barcode Scanner", vyop: "✅ Built-in Phone Camera Barcode Scanner", competitor: "Mobile Camera Scan & External Hardware", better: "draw" },
+  { feature: "Scan Unbarcoded Products (AI Vision)", vyop: "✅ Built-in AI Visual Recognition", competitor: "Not Available", better: "vyop" },
+  { feature: "Ways to Add Inventory Items", vyop: "Voice, Camera Barcode, CSV, AI Snap & Manual", competitor: "Catalog Form & Excel Import", better: "vyop" },
+  { feature: "Customer Online Storefront", vyop: "✅ 0% Commission Store + Spin-The-Wheel Game", competitor: "Online Store Link Feature", better: "draw" },
+  { feature: "WhatsApp Invoicing & UPI QR", vyop: "✅ 1-Tap Direct WhatsApp Share with UPI QR", competitor: "✅ WhatsApp Invoice Sharing", better: "draw" },
+  { feature: "Offline Billing Capability", vyop: "✅ 100% Offline with Auto Cloud Sync (Pro)", competitor: "Cloud-First Invoicing", better: "vyop" },
+  { feature: "GST Compliance (GSTR-1, 3B)", vyop: "✅ Full Automated Tax Summaries", competitor: "✅ Full GST Compliance", better: "tie" },
+  { feature: "Thermal Receipt Printing", vyop: "✅ Wireless Bluetooth (2\" & 3\")", competitor: "Thermal & Standard Printing Supported", better: "tie" },
+  { feature: "Multi-Industry Specialization", vyop: "Retail, Food, Apparel & General Store", competitor: "General SME Invoicing", better: "draw" },
+  { feature: "Udhar / Credit Khata", vyop: "✅ Automated WhatsApp Reminders", competitor: "Payment Reminders Supported", better: "tie" },
+  { feature: "Watermark on Invoices", vyop: "Never (Clean Invoices on All Tiers)", competitor: "Watermark on Free Tier", better: "vyop" },
 ];
 
 const faqs = [
   { question: "Why is Vyop a better alternative to Swipe Billing?", answer: "While Swipe is good for basic desktop invoicing, it charges ₹1,299 to ₹3,999/year to unlock essential features like custom invoice themes, multiple users, and watermark removal. Furthermore, Swipe does not have Voice AI billing or smartphone camera live barcode scanning. Vyop offers a generous free tier and an affordable ₹999/yr Pro plan with Voice AI in Hindi/English, and 10 ways to add inventory items." },
   { question: "How does Vyop's pricing compare to Swipe?", answer: "Vyop lets you start completely free. For complete multi-device cloud backup and sync, Vyop Pro is just ₹999/year (less than ₹2.7/day) — saving you thousands compared to Swipe's ₹3,999/year subscription." },
-  { question: "Can I import my existing product list from Swipe into Vyop?", answer: "Yes! Vyop supports 1-click Excel and CSV inventory import. You can export your product catalog from Swipe and upload it directly into Vyop in under 30 seconds." },
-  { question: "How does Vyop's Voice AI work compared to typing on Swipe?", answer: "Instead of typing product names on a keyboard or searching dropdowns, you simply speak naturally into the Vyop app in Hindi or English (e.g., 'Do kilo besan aur ek mustard oil'). The AI instantly detects the item, calculates the price with GST, and prepares the bill in 5 seconds." },
+  { question: "Can I import my existing product list from Swipe into Vyop?", answer: "Yes! Vyop supports 1-click Excel and CSV inventory import. You can export your product catalog from Swipe and upload it directly into Vyop smoothly." },
+  { question: "How does Vyop's Voice AI work compared to typing on Swipe?", answer: "Instead of typing product names on a keyboard or searching dropdowns, you simply speak naturally into the Vyop app in Hindi or English (e.g., 'Do kilo besan aur ek mustard oil'). The AI instantly detects the item, calculates the price with GST, and prepares the bill directly." },
 ];
 
 export default function VyopVsSwipePage() {
@@ -100,6 +100,9 @@ export default function VyopVsSwipePage() {
               </tbody>
             </table>
           </div>
+          <p className="text-xs text-gray-400 mt-6 text-center">
+            * Comparative analysis based on publicly available documentation as of October 2026. Swipe is a registered trademark of its respective owner.
+          </p>
         </div>
 
         {/* FAQ Section */}

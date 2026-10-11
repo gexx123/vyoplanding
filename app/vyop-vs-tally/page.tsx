@@ -7,68 +7,68 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Vyop vs Tally Prime | Best Free Mobile Alternative for Shopkeepers",
   description:
-    "Looking for a free Tally alternative on mobile? Compare Vyop vs Tally Prime. See why Indian retail shopkeepers switch to Vyop for 5-second voice billing and smartphone barcode POS without expensive desktop PCs.",
+    "Looking for a free Tally alternative on mobile? Compare Vyop vs Tally Prime. See why Indian retail shopkeepers switch to Vyop for voice billing and smartphone barcode POS without expensive desktop PCs.",
   alternates: { canonical: "/vyop-vs-tally" },
   openGraph: {
     title: "Vyop vs Tally Prime | Free Mobile POS & AI Billing",
-    description: "Skip ₹18,000/yr Tally licenses. Bill on your smartphone with voice AI & barcode scanning.",
+    description: "Avoid desktop license lock-in. Bill on your smartphone with voice AI & barcode scanning.",
     url: "https://vyop.in/vyop-vs-tally",
   },
 };
 
 const tallyComparison = [
   {
-    feature: "Pricing & Annual License",
-    vyop: "Free to Start / ₹999/yr Pro (Save ₹17,000+)",
-    tally: "₹18,000+ GST/yr (Single User) / ₹54,000+ (Multi-user)",
+    feature: "Pricing & License Model",
+    vyop: "Free to Start / ₹999/yr Pro",
+    tally: "₹22,500 + GST (Silver Perpetual) / ₹7,500/yr TSS Renewal",
     better: "vyop",
   },
   {
-    feature: "Supported Devices & Platforms",
-    vyop: "Both Mobile & Desktop — Android phone + Web app on any PC/Laptop",
-    tally: "Strictly Windows Desktop PC only (No native mobile billing)",
+    feature: "Supported Platforms",
+    vyop: "Mobile & Web — Android Phone + Zero-Install Browser Web App (vyop.shop)",
+    tally: "Windows Desktop Software Installation",
     better: "vyop",
   },
   {
-    feature: "Billing Speed (Rush Hours)",
-    vyop: "5–10 Seconds (Voice command or camera scan)",
-    tally: "1–2 Minutes (Manual keyboard typing & ledger selection)",
+    feature: "Primary Billing Workflow",
+    vyop: "Voice AI (Hindi/EN) + Phone Camera Barcode Scanning",
+    tally: "Keyboard Shortcuts & Voucher Accounting",
     better: "vyop",
   },
   {
-    feature: "Barcode Scanner",
-    vyop: "Built-in (Phone camera acts as scanner)",
-    tally: "Requires buying separate ₹2,500 USB barcode gun",
+    feature: "Barcode Scanner Setup",
+    vyop: "Built-in Phone Camera Barcode Scanner (Zero Hardware Cost)",
+    tally: "Compatible with External USB/BT Barcode Scanners",
     better: "vyop",
   },
   {
     feature: "Scan Unbarcoded Products (AI Vision)",
-    vyop: "Built-in AI Vision — snap photo of loose goods to bill in 0.2s",
-    tally: "Not available (Requires manual ledger lookup & typing)",
+    vyop: "Built-in AI Vision (Visual Item Recognition)",
+    tally: "Not Supported",
     better: "vyop",
   },
   {
-    feature: "Accounting Learning Curve",
-    vyop: "Zero — Any shop helper can use it in 2 minutes",
-    tally: "High — Requires accounting training & voucher understanding",
+    feature: "Operational Learning Curve",
+    vyop: "Minimal — Designed for Quick Counter Checkout & Shop Staff",
+    tally: "Comprehensive Accounting & Voucher Knowledge Required",
     better: "vyop",
   },
   {
     feature: "WhatsApp Customer Invoices",
-    vyop: "1-Tap instant WhatsApp bill with UPI QR link",
-    tally: "Requires paid third-party add-ons or manual PDF export",
+    vyop: "1-Tap Direct WhatsApp Share with UPI QR",
+    tally: "Supported via Add-ons or PDF Export",
     better: "vyop",
   },
   {
     feature: "Direct Online Storefront",
-    vyop: "Live 0% commission web catalog with Spin-Wheel rewards",
-    tally: "Not available",
+    vyop: "0% Commission Web Catalog with WhatsApp Ordering",
+    tally: "Not Supported Natively",
     better: "vyop",
   },
   {
-    feature: "GST Tax Compliance & Reports",
-    vyop: "Automated GSTR-1, GSTR-3B friendly summaries",
-    tally: "Complete enterprise chartered accountant reports",
+    feature: "Tax Compliance & CA Audits",
+    vyop: "GSTR-1, GSTR-3B Tax Summaries & P&L Reports",
+    tally: "Deep Enterprise Accounting & Full Statutory Audit Workflows",
     better: "tally",
   },
 ];
@@ -117,9 +117,9 @@ export default function VyopVsTallyPage() {
         <div className="grid md:grid-cols-2 gap-6 mb-12">
           <div className="p-8 rounded-3xl bg-white border border-gray-200 shadow-sm">
             <h3 className="text-xl font-bold text-gray-900 mb-2">Tally Prime</h3>
-            <div className="text-3xl font-extrabold text-red-600 mb-4">₹18,000+ / yr</div>
+            <div className="text-3xl font-extrabold text-red-600 mb-4">₹22,500+ (Silver)</div>
             <p className="text-sm text-gray-600 leading-relaxed">
-              Requires a dedicated computer, UPS, separate barcode reader, and a trained accountant to type debit/credit vouchers.
+              Established accounting software for desktop PCs, comprehensive voucher ledgers, and enterprise CA compliance.
             </p>
           </div>
 
@@ -127,10 +127,10 @@ export default function VyopVsTallyPage() {
             <span className="absolute top-4 right-4 px-3 py-1 bg-white/20 text-white rounded-full text-xs font-bold">
               Shopkeeper Favourite
             </span>
-            <h3 className="text-xl font-bold mb-2">Vyop AI</h3>
+            <h3 className="text-xl font-bold mb-2">Vyop</h3>
             <div className="text-3xl font-extrabold mb-4">Free / ₹999/yr Pro</div>
             <p className="text-sm text-white/90 leading-relaxed">
-              Works on both Android smartphones and any Desktop PC/Laptop browser. Create bills by speaking in Hindi or English, scan barcodes, and sync everywhere starting free with ₹999/yr cloud Pro.
+              Mobile and web-first counter POS with phone camera barcode scanning, bilingual voice billing, and direct WhatsApp invoices.
             </p>
           </div>
         </div>
@@ -163,12 +163,15 @@ export default function VyopVsTallyPage() {
               </tbody>
             </table>
           </div>
+          <p className="text-xs text-gray-400 mt-6 text-center">
+            * Comparative analysis based on publicly available documentation as of October 2026. Tally and Tally Prime are registered trademarks of Tally Solutions Pvt. Ltd.
+          </p>
         </div>
 
         {/* CTA */}
         <div className="text-center bg-gray-900 text-white p-10 md:p-14 rounded-3xl mb-16">
           <h2 className="text-2xl md:text-4xl font-extrabold mb-4">
-            Ready to Skip the ₹18,000 Tally Bill?
+            Ready for Fast Smartphone & Web Billing?
           </h2>
           <p className="text-gray-300 max-w-xl mx-auto mb-8 text-base md:text-lg">
             Download Vyop free and turn your phone into a complete retail POS scanner in under 30 seconds.

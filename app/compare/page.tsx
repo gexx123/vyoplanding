@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Compare Vyop vs Tally, Khatabook & Vyapar | Best Mobile POS App",
-  description: "Compare Vyop against Tally Prime, Khatabook, Vyapar, and MyBillBook. See why Vyop's voice AI and smartphone barcode POS is 10x faster for Indian shopkeepers.",
+  description: "Compare Vyop against Tally Prime, Khatabook, Vyapar, and MyBillBook. See why Vyop's voice AI and smartphone camera barcode POS is chosen by Indian retail shopkeepers.",
   alternates: { canonical: '/compare' },
   openGraph: { url: 'https://vyop.in/compare' }
 };
@@ -15,50 +15,50 @@ const comparisons = [
   {
     slug: "vyop-vs-loyverse",
     title: "Vyop vs Loyverse POS",
-    badge: "₹999/yr vs $660/yr Add-ons",
-    summary: "Loyverse charges $5-$25/mo per add-on without Indian GST or UPI. Vyop gives you Voice AI, GST, and cloud sync starting free.",
+    badge: "₹999/yr vs $360+/yr Add-ons",
+    summary: "Loyverse charges for inventory and employee add-ons without native Indian GST or UPI. Vyop gives you Voice AI, GST, and cloud sync starting free.",
     link: "/vyop-vs-loyverse",
   },
   {
     slug: "vyop-vs-square",
     title: "Vyop vs Square POS",
-    badge: "Zero Fee vs 2.6% Cut",
-    summary: "Square requires costly hardware and cuts 2.6% + 10¢ per transaction without UPI. Vyop runs free on any Android phone.",
+    badge: "Zero Fee vs Card Processing Cuts",
+    summary: "Square is built for US/EU card payments and charges processing fees without Indian UPI. Vyop runs free on any Android phone.",
     link: "/vyop-vs-square",
   },
   {
     slug: "vyop-vs-petpooja",
     title: "Vyop vs Petpooja",
-    badge: "₹999/yr vs ₹15,000/yr",
-    summary: "Petpooja locks restaurants into expensive annual subscriptions. Vyop offers voice KOT, table billing, and online ordering starting free.",
+    badge: "₹999/yr vs ~₹12k/yr Plans",
+    summary: "Petpooja is a dedicated restaurant POS with annual software plans. Vyop offers agile voice KOT, table billing, and online ordering starting free.",
     link: "/vyop-vs-petpooja",
   },
   {
     slug: "vyop-vs-marg",
     title: "Vyop vs Marg ERP 9+",
-    badge: "Zero PC vs ₹15,000 Dongle",
-    summary: "Marg requires dedicated Windows PCs, hardware dongles, and AMC fees. Vyop gives you mobile camera barcode scanning on any smartphone.",
+    badge: "Mobile App vs Desktop ERP",
+    summary: "Marg ERP is designed for desktop accounting with hardware dongles. Vyop gives you mobile camera barcode scanning and voice AI on any phone.",
     link: "/vyop-vs-marg",
   },
   {
     slug: "vyop-vs-pinelabs",
     title: "Vyop vs Pine Labs POS",
-    badge: "Zero Rental vs ₹1,000/mo",
-    summary: "Pine Labs charges monthly hardware rentals and card swipe MDR cuts. Vyop turns any phone into a POS with 0% UPI fees.",
+    badge: "Zero Rental vs Terminal Fees",
+    summary: "Pine Labs provides card EDC hardware with monthly terminal rentals. Vyop turns any phone into a barcode POS with 0% MDR UPI QR payments.",
     link: "/vyop-vs-pinelabs",
   },
   {
     slug: "vyop-vs-nukkadshops",
     title: "Vyop vs Nukkad Shops",
-    badge: "Pocket Phone vs ₹35,000 Machine",
-    summary: "Nukkad Shops charges ₹25,000-₹45,000 for bulky hardware terminals. Vyop delivers mall-grade camera barcode scanning on mobile.",
+    badge: "Mobile vs Hardware Terminal",
+    summary: "Nukkad Shops provides integrated counter hardware terminals. Vyop delivers camera barcode scanning and voice AI on any smartphone.",
     link: "/vyop-vs-nukkadshops",
   },
   {
     slug: "vyop-vs-zoho",
     title: "Vyop vs Zoho Books",
     badge: "Retail Speed vs B2B Desk",
-    summary: "Zoho is built for corporate desk accounting. Vyop gives retail counters 5-second checkout, camera barcode POS, and offline mode.",
+    summary: "Zoho Books is built for corporate desk accounting. Vyop gives retail counters rapid queue checkout, camera barcode POS, and offline mode.",
     link: "/vyop-vs-zoho",
   },
   {
@@ -71,8 +71,8 @@ const comparisons = [
   {
     slug: "vyop-vs-posist",
     title: "Vyop vs POSist (Restroworks)",
-    badge: "₹999/yr vs ₹30,000/yr Outlet",
-    summary: "POSist charges enterprise fees per outlet. Vyop gives cafes and restaurants voice KOT, table management, and QR ordering starting free.",
+    badge: "₹999/yr vs Enterprise Tiers",
+    summary: "POSist (Restroworks) provides enterprise ERP for multi-chain brands. Vyop gives cafes and independent restaurants voice KOT, table management, and QR ordering starting free.",
     link: "/vyop-vs-posist",
   },
   {
@@ -85,15 +85,15 @@ const comparisons = [
   {
     slug: "vyop-vs-shopify",
     title: "Vyop vs Shopify POS",
-    badge: "0% Commission vs $39-$89/mo",
+    badge: "0% Commission vs $29-$39/mo+",
     summary: "Shopify charges recurring USD fees and transaction cuts. Vyop gives you both a camera POS and a 0% commission online store starting free.",
     link: "/vyop-vs-shopify",
   },
   {
     slug: "vyop-vs-busy",
     title: "Vyop vs Busy Accounting",
-    badge: "Mobile Speed vs Windows PC",
-    summary: "Busy costs ₹12,000+ and locks you to desktop. Vyop gives you instant camera barcode scanning & voice billing on mobile.",
+    badge: "Mobile-First vs Desktop",
+    summary: "Busy is designed for desktop bookkeeping and auditing. Vyop gives you smartphone camera barcode scanning & voice billing for front counters.",
     link: "/vyop-vs-busy",
   },
   {
@@ -106,8 +106,8 @@ const comparisons = [
   {
     slug: "vyop-vs-vyapar",
     title: "Vyop vs Vyapar",
-    badge: "Mobile Barcode Scanner",
-    summary: "Vyapar charges after trial and demands desktop typing. Vyop turns any smartphone camera into a high-speed barcode POS.",
+    badge: "Voice AI & Web Counter",
+    summary: "Vyapar provides desktop and mobile SME bookkeeping. Vyop features built-in Voice AI billing in Hindi/English and zero-install web counter access.",
     link: "/vyop-vs-vyapar",
   },
   {
@@ -224,24 +224,24 @@ export default function CompareHubPage() {
               <tr>
                 <td className="py-4 px-4 font-semibold text-gray-900">Base Price</td>
                 <td className="py-4 px-4 font-bold text-green-700 bg-amber-50/30">Free / ₹999/yr Pro</td>
-                <td className="py-4 px-4 text-gray-600">$5-$25/mo add-ons</td>
+                <td className="py-4 px-4 text-gray-600">$0 base + add-ons</td>
                 <td className="py-4 px-4 text-gray-600">2.6% + 10¢ fee</td>
-                <td className="py-4 px-4 text-gray-600">₹12,000-₹25,000/yr</td>
-                <td className="py-4 px-4 text-gray-600">₹3,000-₹6,000/yr</td>
+                <td className="py-4 px-4 text-gray-600">~₹10,000–₹15,000/yr</td>
+                <td className="py-4 px-4 text-gray-600">Free Mobile / ₹3,399+ Desktop</td>
                 <td className="py-4 px-4 text-gray-600">₹22,500+ GST</td>
               </tr>
               <tr>
-                <td className="py-4 px-4 font-semibold text-gray-900">Smartphone Camera Barcode POS (0.05s)</td>
-                <td className="py-4 px-4 font-bold text-green-700 bg-amber-50/30">Built-in 60 FPS (Free)</td>
-                <td className="py-4 px-4 text-gray-600">Basic</td>
-                <td className="py-4 px-4 text-gray-600">Hardware reader req.</td>
-                <td className="py-4 px-4 text-gray-600">Hardware gun req.</td>
-                <td className="py-4 px-4 text-gray-600">External gun req.</td>
+                <td className="py-4 px-4 font-semibold text-gray-900">Smartphone Camera Barcode Scanner</td>
+                <td className="py-4 px-4 font-bold text-green-700 bg-amber-50/30">Built-in Camera Scanner (Free)</td>
+                <td className="py-4 px-4 text-gray-600">In-App Camera / Scanner</td>
+                <td className="py-4 px-4 text-gray-600">In-App Camera / Card Reader</td>
+                <td className="py-4 px-4 text-gray-600">Hardware gun / Terminal</td>
+                <td className="py-4 px-4 text-gray-600">In-App Camera & External Gun</td>
                 <td className="py-4 px-4 text-gray-600">External gun req.</td>
               </tr>
               <tr>
                 <td className="py-4 px-4 font-semibold text-gray-900">Scan Unbarcoded Products (AI Vision)</td>
-                <td className="py-4 px-4 font-bold text-green-700 bg-amber-50/30">Built-in (Snap photo to bill with AI)</td>
+                <td className="py-4 px-4 font-bold text-green-700 bg-amber-50/30">Built-in AI Visual Recognition</td>
                 <td className="py-4 px-4 text-red-500">No (Manual typing)</td>
                 <td className="py-4 px-4 text-red-500">No (Manual typing)</td>
                 <td className="py-4 px-4 text-red-500">No (Manual typing)</td>
@@ -254,12 +254,12 @@ export default function CompareHubPage() {
                 <td className="py-4 px-4 text-gray-600">Paid add-on</td>
                 <td className="py-4 px-4 text-gray-600">External printer only</td>
                 <td className="py-4 px-4 text-gray-600">Restricted KOT only</td>
-                <td className="py-4 px-4 text-gray-600">Paid desktop tier</td>
+                <td className="py-4 px-4 text-gray-600">Supported (Desktop)</td>
                 <td className="py-4 px-4 text-gray-600">Requires 3rd party tool</td>
               </tr>
               <tr>
                 <td className="py-4 px-4 font-semibold text-gray-900">Voice AI Billing (Hindi/English)</td>
-                <td className="py-4 px-4 font-bold text-green-700 bg-amber-50/30">Yes (Instant)</td>
+                <td className="py-4 px-4 font-bold text-green-700 bg-amber-50/30">Yes (Instant Spoken Bills)</td>
                 <td className="py-4 px-4 text-red-500">No</td>
                 <td className="py-4 px-4 text-red-500">No</td>
                 <td className="py-4 px-4 text-red-500">No</td>
@@ -286,9 +286,9 @@ export default function CompareHubPage() {
               </tr>
               <tr>
                 <td className="py-4 px-4 font-semibold text-gray-900">Hardware Independence</td>
-                <td className="py-4 px-4 font-bold text-green-700 bg-amber-50/30">100% Mobile Phone</td>
+                <td className="py-4 px-4 font-bold text-green-700 bg-amber-50/30">100% Smartphone / Any Browser</td>
                 <td className="py-4 px-4 text-gray-600">Mobile/Tablet</td>
-                <td className="py-4 px-4 text-gray-600">Proprietary Terminal</td>
+                <td className="py-4 px-4 text-gray-600">Proprietary Terminal / Reader</td>
                 <td className="py-4 px-4 text-gray-600">Desktop / POS Machine</td>
                 <td className="py-4 px-4 text-gray-600">Desktop / Mobile</td>
                 <td className="py-4 px-4 text-gray-600">Desktop PC only</td>

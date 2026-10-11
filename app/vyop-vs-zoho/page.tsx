@@ -17,26 +17,26 @@ export const metadata: Metadata = {
 };
 
 const comparison = [
-  { feature: "Base Price", vyop: "Free to Start / ₹999/yr Pro", competitor: "Free tier limited / ₹8,999+ per year", better: "vyop" },
-  { feature: "Retail Counter Speed", vyop: "⚡ 5-Second Checkout", competitor: "Slow Desk Form Filling", better: "vyop" },
-  { feature: "Smartphone Camera Barcode Scanner", vyop: "✅ Built-in (Scan with Camera)", competitor: "❌ Not Available for Retail Counter", better: "vyop" },
-  { feature: "Scan Unbarcoded Products (AI Vision)", vyop: "✅ Built-in AI Vision (Snap loose goods to bill in 0.2s)", competitor: "❌ Not Available", better: "vyop" },
-  { feature: "Voice AI Billing (Hindi/English)", vyop: "✅ Natural Voice Recognition", competitor: "❌ Not Available", better: "vyop" },
-  { feature: "Offline Billing (No Internet)", vyop: "✅ Works 100% Offline", competitor: "❌ Requires Active Internet Connection", better: "vyop" },
-  { feature: "Indian GST & Dynamic UPI QR", vyop: "✅ Auto CGST/SGST + UPI QR on Bills", competitor: "✅ GST Invoices (Payment Gateway fee extra)", better: "vyop" },
-  { feature: "Ways to Add Inventory Items", vyop: "10 Instant Methods (Voice, Camera, etc.)", competitor: "1 Manual Web Form", better: "vyop" },
-  { feature: "Bluetooth Thermal Receipt Printer", vyop: "✅ 2-inch & 3-inch Wireless Support", competitor: "A4 / Letter Size Desktop Printing", better: "vyop" },
-  { feature: "Online Storefront for Customers", vyop: "✅ 0% Commission Store + Spin Wheel", competitor: "❌ Requires Paid Zoho Commerce ($24/mo+)", better: "vyop" },
-  { feature: "Digital Udhar / Khata Book", vyop: "✅ WhatsApp Reminders & UPI Collection", competitor: "Standard Accounts Receivable Report", better: "vyop" },
-  { feature: "Language Support", vyop: "Hindi, Hinglish, English", competitor: "English Only", better: "vyop" },
-  { feature: "Designed Specifically For", vyop: "Indian Retail Shops & Counters", competitor: "B2B Companies, Agencies & Consultants", better: "vyop" },
+  { feature: "Base Price", vyop: "Free to Start / ₹999/yr Pro", competitor: "Free Tier (<₹25L) / Paid from ₹8,988/yr", better: "vyop" },
+  { feature: "Primary Use Case", vyop: "High-Speed Retail Counter Checkout", competitor: "B2B Accounting & Financial Reporting", better: "draw" },
+  { feature: "Smartphone Camera Barcode Scanner", vyop: "✅ Built-in Phone Camera Barcode Scanner", competitor: "Mobile App Scan & External Scanner Hardware", better: "draw" },
+  { feature: "Scan Unbarcoded Products (AI Vision)", vyop: "✅ Built-in AI Visual Item Recognition", competitor: "Not Supported", better: "vyop" },
+  { feature: "Voice AI Billing (Hindi/English)", vyop: "✅ Natural Speech-to-Bill in Hindi & English", competitor: "Not Supported", better: "vyop" },
+  { feature: "Offline Billing (No Internet)", vyop: "✅ 100% Offline with Auto Cloud Sync (Pro)", competitor: "Cloud-First Architecture", better: "vyop" },
+  { feature: "Indian GST & Dynamic UPI QR", vyop: "✅ Auto CGST/SGST + Instant UPI QR", competitor: "✅ Comprehensive GST Invoicing & Filing", better: "draw" },
+  { feature: "Ways to Add Inventory Items", vyop: "Voice, Camera Barcode, CSV, AI Snap & Manual", competitor: "Bulk CSV Upload & Item Master Form", better: "vyop" },
+  { feature: "Bluetooth Thermal Receipt Printer", vyop: "✅ Wireless 2-inch & 3-inch Thermal Support", competitor: "Standard Document & Thermal Templates", better: "draw" },
+  { feature: "Online Storefront for Customers", vyop: "✅ 0% Commission Web Store + WhatsApp Orders", competitor: "Available via Zoho Commerce Ecosystem", better: "draw" },
+  { feature: "Customer Ledger / Khata", vyop: "✅ Automated WhatsApp Reminders & UPI Link", competitor: "Comprehensive Accounts Receivable Management", better: "draw" },
+  { feature: "Voice Accounting Language", vyop: "Hindi, Hinglish, English", competitor: "Text-Based Interface (Multilingual)", better: "vyop" },
+  { feature: "Target Market", vyop: "Retail Counters, Kirana & Local Shops", competitor: "SME, Agencies & Corporate Enterprises", better: "draw" },
 ];
 
 const faqs = [
-  { question: "Why is Vyop better than Zoho Books for retail shopkeepers?", answer: "Zoho Books is designed for corporate desk accounting, B2B invoicing, and service agencies. It is too slow and complicated for a busy retail counter. Vyop is built for fast retail queues: you can scan barcodes using your phone camera, speak bills in Hindi or English, and print thermal receipts in 5 seconds." },
+  { question: "Why is Vyop better than Zoho Books for retail shopkeepers?", answer: "Zoho Books is designed for corporate desk accounting, B2B invoicing, and service agencies. It is too slow and complicated for a busy retail counter. Vyop is built for fast retail queues: you can scan barcodes using your phone camera, speak bills in Hindi or English, and print thermal receipts directly." },
   { question: "Can Zoho Books work without internet at my shop?", answer: "No. Zoho Books is entirely cloud-based and requires a steady internet connection to create invoices. Vyop functions 100% offline, allowing you to bill customers even during internet cuts or power outages, automatically syncing when reconnected." },
-  { question: "Is Zoho Invoice really free?", answer: "Zoho Invoice offers a free tier, but it has strict limits on client portals, lacks retail barcode scanning, doesn't support thermal receipt printers, and requires Zoho's paid ecosystem ($24/mo+) as soon as your business scales. Vyop lets you start free offline, with complete Pro cloud sync at just ₹999/year (less than ₹2.7/day)." },
-  { question: "Does Zoho Books support Hindi voice AI billing?", answer: "No. Zoho does not have voice billing technology. Vyop features India's first Voice AI Orb that understands natural spoken Hindi and English (e.g., 'Do jeans aur teen t-shirt'), calculating taxes and generating the bill automatically." },
+  { question: "How does Zoho's offering compare to Vyop?", answer: "Zoho Invoice is free for basic service invoicing, but is tailored for desk-based billing rather than front-counter supermarket or retail speed. Zoho Books requires paid annual subscriptions (from ₹8,988/yr) for commercial bookkeeping. Vyop is built specifically for physical retail counters starting free offline, with complete Pro cloud sync at just ₹999/year (less than ₹2.7/day)." },
+  { question: "Does Zoho Books support Hindi voice AI billing?", answer: "No. Zoho does not have voice billing technology. Vyop features a built-in Voice AI Orb that understands natural spoken Hindi, Hinglish, and English (e.g., 'Do jeans aur teen t-shirt'), calculating taxes and generating the bill automatically." },
 ];
 
 export default function VyopVsZohoPage() {
@@ -54,7 +54,7 @@ export default function VyopVsZohoPage() {
           </h1>
           <p className="text-xl text-[var(--text-secondary)] max-w-2xl mx-auto">
             Zoho is built for corporate B2B desks, not fast retail counters.{" "}
-            <strong className="text-gray-900">Vyop gives retail shopkeepers 5-second counter billing, smartphone camera barcode scanning, and Hindi voice AI — starting free with ₹999/yr Pro cloud sync.</strong>
+            <strong className="text-gray-900">Vyop gives retail shopkeepers rapid counter billing, smartphone camera barcode scanning, and Hindi voice AI — starting free with ₹999/yr Pro cloud sync.</strong>
           </p>
         </div>
 
@@ -100,6 +100,9 @@ export default function VyopVsZohoPage() {
               </tbody>
             </table>
           </div>
+          <p className="text-xs text-gray-400 mt-6 text-center">
+            * Comparative analysis based on publicly available documentation as of October 2026. Zoho and Zoho Books are registered trademarks of Zoho Corporation Pvt. Ltd.
+          </p>
         </div>
 
         {/* FAQ Section */}

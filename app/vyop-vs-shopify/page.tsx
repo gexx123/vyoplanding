@@ -17,25 +17,25 @@ export const metadata: Metadata = {
 };
 
 const comparison = [
-  { feature: "Subscription Fee", vyop: "Free to Start / ₹999/yr Pro", competitor: "$39 – $89 / month (₹38,000 – ₹88,000/yr)", better: "vyop" },
-  { feature: "Online Store Commission", vyop: "0% Commission", competitor: "Shopify Transaction Fees (0.5% – 2%)", better: "vyop" },
-  { feature: "Voice AI Billing (Hindi/English)", vyop: "✅ Speak to Bill in 5 Seconds", competitor: "❌ Not Available", better: "vyop" },
-  { feature: "Smartphone Camera Barcode POS", vyop: "✅ Built-in Instant Camera POS (0.05s)", competitor: "Requires Separate Hardware Scanner", better: "vyop" },
-  { feature: "Scan Unbarcoded Products (AI Vision)", vyop: "✅ Built-in AI Vision (Snap loose goods to bill in 0.2s)", competitor: "❌ Not Available", better: "vyop" },
-  { feature: "Ways to Add Products", vyop: "10 Instant Methods (Voice, Camera, Master)", competitor: "Manual Web Entry / CSV", better: "vyop" },
-  { feature: "Indian GST Compliance", vyop: "✅ Full Native CGST/SGST/IGST", competitor: "Requires Third-Party Tax Apps", better: "vyop" },
-  { feature: "Direct UPI QR Payments", vyop: "✅ 0% Fee Instant Bank Deposit", competitor: "Requires Payment Gateway (2% Fee)", better: "vyop" },
-  { feature: "Customer Engagement & Rewards", vyop: "✅ Built-in Spin-The-Wheel Game", competitor: "Paid App Store Plugins ($10-$30/mo)", better: "vyop" },
-  { feature: "Offline Retail Billing", vyop: "✅ 100% Offline (Auto Sync)", competitor: "Limited Offline Mode", better: "vyop" },
-  { feature: "Supported Languages", vyop: "Hindi, English, Hinglish", competitor: "English Dashboard", better: "vyop" },
-  { feature: "WhatsApp Digital Invoices", vyop: "✅ 1-Tap Direct WhatsApp Bills", competitor: "Third-party WhatsApp Apps (Paid)", better: "vyop" },
-  { feature: "Hardware Compatibility", vyop: "Any Android Smartphone", competitor: "iPad / iOS / Costly Proprietary Hardware", better: "vyop" },
+  { feature: "Base Subscription", vyop: "Free to Start / ₹999/yr Pro", competitor: "$29 – $39/mo (Basic) / +$89/mo (POS Pro)", better: "vyop" },
+  { feature: "Online Store Transaction Fees", vyop: "0% Commission", competitor: "0.5% – 2% (unless using Shopify Payments)", better: "vyop" },
+  { feature: "Voice AI Billing (Hindi/English)", vyop: "✅ Speak to Bill naturally in Hindi & English", competitor: "Not Supported", better: "vyop" },
+  { feature: "Smartphone Camera Barcode POS", vyop: "✅ Built-in Phone Camera POS Scanner", competitor: "In-App Camera Scan & Hardware Scanners", better: "draw" },
+  { feature: "Scan Unbarcoded Products (AI Vision)", vyop: "✅ Built-in AI Visual Item Recognition", competitor: "Not Supported", better: "vyop" },
+  { feature: "Ways to Add Products", vyop: "Voice, Camera Barcode, CSV, AI Snap & Manual", competitor: "Manual Web Entry, Bulk CSV & Barcode", better: "vyop" },
+  { feature: "Indian GST Compliance", vyop: "✅ Built-in CGST/SGST/IGST Invoicing", competitor: "Configurable Taxes / 3rd-Party Tax Apps", better: "vyop" },
+  { feature: "Direct UPI QR Payments", vyop: "✅ 0% Fee Direct Bank UPI QR", competitor: "Payment Gateway Integration Required", better: "vyop" },
+  { feature: "Customer Rewards & Gamification", vyop: "✅ Built-in Spin-The-Wheel Game", competitor: "App Store Plugins Required", better: "vyop" },
+  { feature: "Offline Retail Billing", vyop: "✅ 100% Offline with Auto Cloud Sync (Pro)", competitor: "Limited Offline Mode in POS", better: "vyop" },
+  { feature: "Supported Languages", vyop: "Hindi, English, Hinglish", competitor: "English & International Dashboards", better: "draw" },
+  { feature: "WhatsApp Digital Invoices", vyop: "✅ 1-Tap Direct WhatsApp Share with UPI QR", competitor: "App Store Plugins Required", better: "vyop" },
+  { feature: "Hardware Compatibility", vyop: "Any Android Smartphone or Web Browser", competitor: "iOS (iPad/iPhone) & Android Supported", better: "draw" },
 ];
 
 const faqs = [
   { question: "Why is Vyop a better choice than Shopify POS for Indian retailers?", answer: "Shopify charges minimum $39/month (₹3,200/mo) for the basic plan, and $89/month per location for Shopify POS Pro. Adding payment gateway fees, third-party GST plugins, and currency conversion makes it cost over ₹80,000 to ₹1,50,000 every year. Vyop gives you both an in-store camera barcode POS and a 0% commission online storefront (with customer spin-wheel rewards) starting free, with complete Pro cloud sync at just ₹999/year — saving you ₹50,000+ annually." },
   { question: "Does Vyop include an online store like Shopify?", answer: "Yes! Every Vyop user gets their own dedicated online storefront link (e.g., vyop.shop/yourbusiness) where customers can browse your product catalog, spin the reward wheel for discount coupons, and place orders directly on WhatsApp with zero commission fees." },
-  { question: "Can Shopify POS handle fast counter billing with voice?", answer: "No. Shopify POS has no voice AI capabilities. To create an order, cashiers must manually tap through iPad screens or search text fields. Vyop allows shopkeepers to speak naturally in Hindi or English (e.g., 'Teen shirt size L aur do jeans') to generate bills in 5 seconds." },
+  { question: "Can Shopify POS handle fast counter billing with voice?", answer: "No. Shopify POS has no voice AI capabilities. To create an order, cashiers must manually tap through iPad screens or search text fields. Vyop allows shopkeepers to speak naturally in Hindi or English (e.g., 'Teen shirt size L aur do jeans') to generate bills instantly." },
   { question: "How does payment collection compare between Vyop and Shopify?", answer: "Shopify charges 0.5% to 2% transaction fees unless you use their proprietary gateway, plus standard Indian gateway charges. Vyop generates dynamic UPI QR codes directly on invoices, depositing 100% of customer payments directly into your bank account with 0% commission." },
 ];
 
@@ -100,6 +100,9 @@ export default function VyopVsShopifyPage() {
               </tbody>
             </table>
           </div>
+          <p className="text-xs text-gray-400 mt-6 text-center">
+            * Comparative analysis based on publicly available documentation as of October 2026. Shopify is a registered trademark of Shopify Inc.
+          </p>
         </div>
 
         {/* FAQ Section */}

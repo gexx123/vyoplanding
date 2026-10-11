@@ -6,31 +6,31 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Vyop vs Busy Accounting | Free Mobile Alternative to Busy Software",
-  description: "Compare Vyop vs Busy Accounting Software. Busy costs ₹12,000-₹30,000/yr and runs only on Windows desktop. Vyop is free to start on smartphone and desktop with voice AI billing and ₹999/yr Pro cloud sync.",
+  description: "Compare Vyop vs Busy Accounting Software. Busy is built for desktop financial bookkeeping and voucher ledgers. Vyop is free to start on smartphone and desktop with voice AI billing and ₹999/yr Pro cloud sync.",
   alternates: { canonical: "/vyop-vs-busy" },
   openGraph: { title: "Vyop vs Busy Accounting | Free Mobile Alternative", url: "https://vyop.in/vyop-vs-busy" },
 };
 
 const comparison = [
-  { feature: "Pricing", vyop: "Free to Start / ₹999/yr Pro", busy: "₹12,000 – ₹30,000/year" },
-  { feature: "Platform", vyop: "Android Phone + Web (Any Device)", busy: "Windows Desktop Only" },
-  { feature: "Mobile App", vyop: "✅ Full-Featured Android App", busy: "❌ No Mobile App" },
-  { feature: "Billing Speed", vyop: "5 Seconds (Voice AI / Barcode Scan)", busy: "2-3 Minutes (Manual Keyboard)" },
-  { feature: "Barcode Scanner", vyop: "✅ Phone Camera (0.05s)", busy: "❌ External USB Scanner Required" },
-  { feature: "Scan Unbarcoded Products", vyop: "✅ AI Visual Scanner (Snap photo to bill in 0.2s)", busy: "❌ Not Available (Manual keyboard typing)" },
-  { feature: "Voice Billing", vyop: "✅ Hindi, English & Hinglish", busy: "❌ Not Available" },
-  { feature: "Learning Curve", vyop: "Zero — Any helper can use in 2 min", busy: "High — Requires accounting knowledge" },
-  { feature: "WhatsApp Bills", vyop: "✅ 1-Tap WhatsApp Sharing", busy: "❌ Manual PDF Export" },
-  { feature: "Online Storefront", vyop: "✅ 0% Commission Live Store", busy: "❌ Not Available" },
-  { feature: "Cloud Backup", vyop: "✅ Automatic Cloud Sync", busy: "⚠️ Manual Backup to Drive" },
-  { feature: "GST Compliance", vyop: "✅ Full GST (CGST/SGST/HSN)", busy: "✅ Full GST + Advanced Accounting" },
-  { feature: "Best For", vyop: "Small-Medium Retail, Fast Billing", busy: "Medium-Large Business Accounting" },
+  { feature: "Pricing Model", vyop: "Free to Start / ₹999/yr Pro", busy: "Basic from ~₹7,200/yr / Standard ₹13,500+ Perpetual" },
+  { feature: "Primary Platform", vyop: "Android Phone + Web App (vyop.shop)", busy: "Windows Desktop Software" },
+  { feature: "Mobile Companion", vyop: "✅ Core Smartphone POS App", busy: "Mobile App for Reports & Booking" },
+  { feature: "Primary Billing Workflow", vyop: "Voice AI (Hindi/EN) + Phone Camera Barcode", busy: "Keyboard Vouchers & Shortcut Data Entry" },
+  { feature: "Barcode Scanner Setup", vyop: "✅ Built-in Phone Camera Barcode Scanner", busy: "Compatible with External USB/BT Scanners" },
+  { feature: "Scan Unbarcoded Products", vyop: "✅ Built-in AI Visual Recognition", busy: "Not Supported" },
+  { feature: "Voice Billing", vyop: "✅ Hindi, English & Hinglish", busy: "Not Supported" },
+  { feature: "Operational Learning Curve", vyop: "Minimal — Quick Counter Checkout", busy: "Accounting & Voucher Training Required" },
+  { feature: "WhatsApp Digital Invoices", vyop: "✅ 1-Tap Direct WhatsApp Bills with UPI QR", busy: "Supported via Document Sharing" },
+  { feature: "Online Storefront", vyop: "✅ 0% Commission Live Storefront", busy: "Not Native" },
+  { feature: "Cloud Backup", vyop: "✅ Automatic Cloud Sync (Pro)", busy: "Local DB with Backup Utilities" },
+  { feature: "GST Compliance & Accounting", vyop: "✅ Full GST (CGST/SGST/HSN) Summaries", busy: "✅ Advanced Multi-Location Accounting" },
+  { feature: "Target Focus", vyop: "Retail Counters, Kirana & Fast Checkout", busy: "SME & Enterprise Financial Bookkeeping" },
 ];
 
 const faqs = [
-  { question: "Is Vyop a replacement for Busy Accounting?", answer: "For small and medium retail shops that need fast billing, inventory, and customer management, yes. If you primarily need enterprise-level accounting with trial balance, P&L, and balance sheet for your CA, Busy has deeper accounting features. But for daily retail billing speed and convenience, Vyop is 10x faster and starts completely free with ₹999/yr Pro cloud sync." },
-  { question: "Does Busy work on mobile phones?", answer: "No. Busy Accounting is a Windows-only desktop software. It does not have a mobile app. Vyop works on any Android smartphone and also has a web app that works on any desktop browser." },
-  { question: "Why is Busy so expensive?", answer: "Busy charges ₹12,000-₹30,000/year for a single-user license, with multi-user licenses costing even more. It also requires a dedicated Windows PC. Vyop offers free offline billing and an unbeatable ₹999/year Pro plan with cloud sync on your existing smartphone." },
+  { question: "Is Vyop a replacement for Busy Accounting?", answer: "For small and medium retail shops that need fast counter billing, inventory, and customer management, yes. If your enterprise requires deep accounting ledgers, advanced multi-branch balance sheets, and chartered accountant auditing, Busy provides robust financial bookkeeping. For daily retail counter speed and mobile accessibility, Vyop provides instant setup starting free with ₹999/yr Pro cloud sync." },
+  { question: "Does Busy work on mobile phones?", answer: "Busy is designed primarily as desktop accounting software and offers a mobile companion app for reporting and field order booking. Vyop is built mobile-first on Android with a browser web app (vyop.shop) for front-counter cashier checkout." },
+  { question: "How does Busy's pricing compare to Vyop?", answer: "Busy editions start from ~₹7,200 for Basic plans and scale up to ₹19,800+ for multi-user setups. Vyop offers a free offline tier and an affordable ₹999/year Pro plan with cloud sync across devices." },
 ];
 
 export default function VyopVsBusyPage() {
@@ -51,8 +51,8 @@ export default function VyopVsBusyPage() {
         <div className="grid md:grid-cols-2 gap-6 mb-12">
           <div className="p-8 rounded-3xl bg-white border border-gray-200 shadow-sm">
             <h3 className="text-xl font-bold text-gray-900 mb-2">Busy Accounting</h3>
-            <div className="text-3xl font-extrabold text-red-600 mb-4">₹12,000 – ₹30,000/yr</div>
-            <p className="text-sm text-gray-600">Windows-only desktop software requiring a dedicated PC, UPS, and accounting knowledge to operate.</p>
+            <div className="text-3xl font-extrabold text-red-600 mb-4">From ~₹7,200/yr (Basic)</div>
+            <p className="text-sm text-gray-600">Established desktop accounting software with companion mobile app. Tailored for SME voucher ledgers and financial audit bookkeeping.</p>
           </div>
           <div className="p-8 rounded-3xl bg-gradient-to-br from-amber-500 to-amber-600 text-white shadow-lg relative">
             <span className="absolute top-4 right-4 px-3 py-1 bg-white/20 text-white rounded-full text-xs font-bold">Shopkeeper Favourite</span>
@@ -77,11 +77,14 @@ export default function VyopVsBusyPage() {
               </tbody>
             </table>
           </div>
+          <p className="text-xs text-gray-400 mt-6 text-center">
+            * Comparative analysis based on publicly available documentation as of October 2026. Busy is a registered trademark of Busy Infotech Pvt. Ltd.
+          </p>
         </div>
 
         <div className="text-center bg-gray-900 text-white p-10 md:p-14 rounded-3xl mb-16">
-          <h2 className="text-2xl md:text-4xl font-extrabold mb-4">Skip the ₹30,000 Busy License. Bill Free with Vyop.</h2>
-          <p className="text-gray-300 max-w-xl mx-auto mb-8">No desktop PC, no accountant needed. Just your phone.</p>
+          <h2 className="text-2xl md:text-4xl font-extrabold mb-4">Fast Mobile &amp; Web Retail POS</h2>
+          <p className="text-gray-300 max-w-xl mx-auto mb-8">Scan barcodes with your phone, speak bills by voice, and print receipts instantly.</p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a href="https://play.google.com/store/apps/details?id=com.vyop.app" target="_blank" rel="noopener noreferrer" className="px-8 py-4 rounded-xl bg-amber-500 text-white font-bold hover:bg-amber-600 transition-all shadow-md">Get on Google Play</a>
             <a href="https://vyop.shop" target="_blank" rel="noopener noreferrer" className="px-8 py-4 rounded-xl bg-white/10 text-white font-bold hover:bg-white/20 transition-all">Launch Web App</a>

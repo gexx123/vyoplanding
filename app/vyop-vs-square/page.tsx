@@ -6,23 +6,23 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Vyop vs Square POS | Best Free POS Alternative for India",
-  description: "Compare Vyop vs Square POS. Square charges 2.6% per transaction and requires $299+ hardware. Vyop is free to start with Indian GST, UPI, Hindi voice billing & ₹999/yr Pro cloud sync.",
+  description: "Compare Vyop vs Square POS. Square charges card transaction fees and requires proprietary card hardware. Vyop is free to start with Indian GST, UPI, Hindi voice billing & ₹999/yr Pro cloud sync.",
   alternates: { canonical: "/vyop-vs-square" },
   openGraph: { title: "Vyop vs Square POS | Free Indian POS Alternative", url: "https://vyop.in/vyop-vs-square" },
 };
 
 const comparison = [
-  { feature: "Pricing", vyop: "Free to Start / ₹999/yr Pro", square: "Free App + 2.6% + 10¢ Per Transaction" },
-  { feature: "Transaction Fees", vyop: "₹0 (Zero Transaction Fee)", square: "2.6% + 10¢ per swipe/tap/dip" },
-  { feature: "Hardware Required", vyop: "Any Android Phone (₹0 extra)", square: "$299+ Card Reader + $799+ Terminal" },
-  { feature: "AI Barcode & Product Scanner", vyop: "✅ Phone camera scans barcodes & unbarcoded items with AI", square: "❌ Requires Square hardware scanner" },
-  { feature: "Indian GST Support", vyop: "✅ Full CGST/SGST/IGST/HSN", square: "❌ US Sales Tax Only" },
-  { feature: "UPI & India Payments", vyop: "✅ UPI QR, Google Pay, PhonePe", square: "❌ Card-Only (US/EU Systems)" },
-  { feature: "Voice AI Billing", vyop: "✅ Hindi, English & Hinglish", square: "❌ Not Available" },
-  { feature: "WhatsApp Invoicing", vyop: "✅ 1-Tap WhatsApp Bills", square: "❌ Email/SMS Only" },
-  { feature: "Language Support", vyop: "Hindi, English, Hinglish", square: "English Only" },
-  { feature: "Online Storefront", vyop: "✅ 0% Commission", square: "✅ With Transaction Fees" },
-  { feature: "Target Market", vyop: "Indian Retail (22 Shop Types)", square: "US/EU Retail & Services" },
+  { feature: "Pricing Model", vyop: "Free to Start / ₹999/yr Pro", square: "Free App + Card Processing Fees" },
+  { feature: "Processing Fees", vyop: "₹0 Platform Fee (Direct UPI & Cash)", square: "2.6% + 10¢ per card swipe/tap" },
+  { feature: "Hardware Required", vyop: "Any Android Smartphone or Web Browser", square: "$49 Card Reader / $299+ Terminal Hardware" },
+  { feature: "Camera Barcode & AI Scanner", vyop: "✅ Phone Camera Barcode + AI Loose Item Scanner", square: "Mobile Camera Scan & Compatible Scanners" },
+  { feature: "Indian GST Compliance", vyop: "✅ Full CGST/SGST/IGST/HSN Invoices", square: "Configurable US/EU Sales Tax" },
+  { feature: "UPI & Indian Payment Support", vyop: "✅ Instant Direct UPI QR (0% Fee)", square: "International Card & Digital Wallets" },
+  { feature: "Voice AI Billing", vyop: "✅ Hindi, English & Hinglish", square: "Not Supported" },
+  { feature: "WhatsApp Invoicing", vyop: "✅ 1-Tap Direct WhatsApp Bills", square: "Email & SMS Receipts" },
+  { feature: "Language Support", vyop: "Hindi, English, Hinglish", square: "English & Select International Languages" },
+  { feature: "Online Storefront", vyop: "✅ 0% Commission Web Store", square: "Online Storefront with Transaction Fees" },
+  { feature: "Primary Geographic Focus", vyop: "India Retail & Local Shopkeepers", square: "US, UK, CA, AU, JP, EU Markets" },
 ];
 
 const faqs = [
@@ -49,8 +49,8 @@ export default function VyopVsSquarePage() {
         <div className="grid md:grid-cols-2 gap-6 mb-12">
           <div className="p-8 rounded-3xl bg-white border border-gray-200 shadow-sm">
             <h3 className="text-xl font-bold text-gray-900 mb-2">Square POS</h3>
-            <div className="text-3xl font-extrabold text-red-600 mb-4">2.6% Per Transaction + $299 Hardware</div>
-            <p className="text-sm text-gray-600">US-focused card payment POS. Requires expensive readers. No Indian GST, UPI, or Hindi support.</p>
+            <div className="text-3xl font-extrabold text-red-600 mb-4">2.6% Processing + Card Hardware</div>
+            <p className="text-sm text-gray-600">US-focused card payment POS. Requires dedicated card readers ($49–$299). No Indian GST, UPI, or Hindi support.</p>
           </div>
           <div className="p-8 rounded-3xl bg-gradient-to-br from-amber-500 to-amber-600 text-white shadow-lg relative">
             <span className="absolute top-4 right-4 px-3 py-1 bg-white/20 text-white rounded-full text-xs font-bold">Made for India</span>
@@ -75,6 +75,9 @@ export default function VyopVsSquarePage() {
               </tbody>
             </table>
           </div>
+          <p className="text-xs text-gray-400 mt-6 text-center">
+            * Comparative analysis based on publicly available documentation as of October 2026. Square is a registered trademark of Block, Inc.
+          </p>
         </div>
 
         <div className="text-center bg-gray-900 text-white p-10 md:p-14 rounded-3xl mb-16">

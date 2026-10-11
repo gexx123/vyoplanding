@@ -7,36 +7,36 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Vyop vs Nukkad Shops POS | Best Free Supermarket & Kirana POS Alternative",
   description:
-    "Compare Vyop vs Nukkad Shops. Nukkad Shops charges ₹25,000-₹45,000 for bulky touchscreen POS machines plus yearly renewal fees. Vyop turns your mobile phone into a supermarket barcode POS with voice AI, starting free with ₹999/yr Pro cloud sync.",
+    "Compare Vyop vs Nukkad Shops. Nukkad Shops provides dedicated touchscreen POS terminals with annual software AMC. Vyop turns your smartphone and web browser into a supermarket barcode POS with voice AI, starting free with ₹999/yr Pro cloud sync.",
   alternates: { canonical: "/vyop-vs-nukkadshops" },
   openGraph: {
     title: "Vyop vs Nukkad Shops | Free Mobile POS for Kirana & Retail",
-    description: "Save ₹30,000+ on bulky POS hardware. Vyop gives you mall-grade supermarket barcode scanning and voice billing on your phone starting free with ₹999/yr Pro.",
+    description: "Save on dedicated POS hardware. Vyop gives you supermarket-grade barcode scanning and voice billing on your phone starting free with ₹999/yr Pro.",
     url: "https://vyop.in/vyop-vs-nukkadshops",
   },
 };
 
 const comparison = [
-  { feature: "Hardware Upfront Cost", vyop: "₹0 (Use Your Android Phone)", competitor: "₹25,000 – ₹45,000 Hardware Cost", better: "vyop" },
-  { feature: "Annual Renewal / AMC", vyop: "Free to Start / ₹999/yr Pro", competitor: "₹4,000 – ₹8,000 / year", better: "vyop" },
-  { feature: "Counter Space Taken", vyop: "Zero (Pocket Smartphone)", competitor: "Bulky Touchscreen Counter Machine", better: "vyop" },
-  { feature: "Barcode Scanning Method", vyop: "Built-in Smartphone Camera (0.05s)", competitor: "External USB / Wireless Barcode Gun", better: "vyop" },
-  { feature: "Scan Unbarcoded Products (AI Vision)", vyop: "✅ Built-in AI Vision (Snap photo of loose goods to bill in 0.2s)", competitor: "❌ Not Available (Forces manual typing)", better: "vyop" },
+  { feature: "Hardware Upfront Cost", vyop: "₹0 (Use Your Android Phone or Browser)", competitor: "₹25,000 – ₹45,000 (Dedicated Terminal)", better: "vyop" },
+  { feature: "Annual Renewal / Software AMC", vyop: "Free to Start / ₹999/yr Pro", competitor: "₹4,000 – ₹8,000 / year", better: "vyop" },
+  { feature: "Counter Footprint", vyop: "Zero (Pocket Smartphone / Any Laptop)", competitor: "Dedicated Integrated Counter Terminal", better: "vyop" },
+  { feature: "Barcode Scanning Method", vyop: "Built-in Smartphone Camera Scanner", competitor: "Integrated or External Handheld Barcode Gun", better: "draw" },
+  { feature: "Scan Unbarcoded Products (AI Vision)", vyop: "✅ Built-in AI Visual Item Recognition", competitor: "❌ Not Available (Manual Touch Selection)", better: "vyop" },
   { feature: "Voice AI Billing (Hindi/English)", vyop: "✅ Natural Spoken Billing", competitor: "❌ Not Available", better: "vyop" },
-  { feature: "Ways to Add Products", vyop: "10 Instant Methods (AI, Camera, Master)", competitor: "1-2 Standard Methods", better: "vyop" },
-  { feature: "0% Commission Online Storefront", vyop: "✅ Free Storefront + Spin-The-Wheel", competitor: "Paid Add-on / Basic App", better: "vyop" },
-  { feature: "Digital Udhar / Khata", vyop: "✅ Auto WhatsApp Reminders", competitor: "Basic Ledger Tracking", better: "vyop" },
-  { feature: "GST Tax Invoicing & UPI QR", vyop: "✅ Automated with Dynamic UPI", competitor: "✅ Supported", better: "tie" },
-  { feature: "Thermal Receipt Printing", vyop: "✅ Wireless Bluetooth (2\"/3\")", competitor: "Built-in Thermal Printer", better: "tie" },
-  { feature: "Portability (Mobile Billing)", vyop: "✅ Walk around the shop & bill", competitor: "❌ Fixed Counter Only", better: "vyop" },
-  { feature: "Hardware Repair & Maintenance", vyop: "None (Works on any phone)", competitor: "Expensive Service & Courier Repairs", better: "vyop" },
+  { feature: "Ways to Add Products", vyop: "Voice, Camera Barcode, CSV, AI Snap & Manual", competitor: "Excel Import & Catalog Form", better: "vyop" },
+  { feature: "0% Commission Online Storefront", vyop: "✅ Free Storefront + Spin-The-Wheel", competitor: "Digital Storefront Add-on", better: "vyop" },
+  { feature: "Digital Udhar / Khata", vyop: "✅ Auto WhatsApp Reminders", competitor: "Customer Ledger Tracking", better: "vyop" },
+  { feature: "GST Tax Invoicing & UPI QR", vyop: "✅ Automated with Dynamic UPI QR", competitor: "✅ Full GST Compliance", better: "tie" },
+  { feature: "Thermal Receipt Printing", vyop: "✅ Wireless Bluetooth (2\" & 3\")", competitor: "Built-in Thermal Receipt Printer", better: "tie" },
+  { feature: "Portability (Floor / Queue Billing)", vyop: "✅ Walk around the shop & bill", competitor: "Fixed Billing Counter Terminal", better: "vyop" },
+  { feature: "Hardware Maintenance", vyop: "Works on standard consumer phones/PCs", competitor: "Dedicated Hardware Servicing & Support", better: "draw" },
 ];
 
 const faqs = [
-  { question: "Why should a kirana or supermarket choose Vyop over Nukkad Shops?", answer: "Nukkad Shops sells dedicated desktop touch terminals costing ₹25,000 to ₹45,000, plus ₹4,000 to ₹8,000 every year for software maintenance. If the screen cracks or printer jams, your billing stops. Vyop gives you the exact same supermarket barcode speed directly on your existing smartphone starting free, with complete multi-device Pro cloud sync at just ₹999/year (saving ₹30,000+)." },
-  { question: "Can a phone camera scan grocery barcodes as fast as Nukkad Shops barcode gun?", answer: "Yes! Modern smartphone cameras have high resolution and auto-focus. Vyop's optimized barcode engine reads 1D and 2D manufacturer barcodes in under 0.2 seconds, even on crumpled packets, plastic pouches, and shiny foil surfaces." },
-  { question: "What happens if I change my phone?", answer: "All your products, customer khata, stock levels, and sales history are securely backed up in the cloud. Simply log in on your new phone and resume billing in 10 seconds with zero data loss." },
-  { question: "Does Vyop provide an online ordering store like Nukkad Shops?", answer: "Yes, and Vyop's is included with 0% commission! You get your own web link (e.g., vyop.shop/yourstore) with a live product catalog, WhatsApp order placement, and an interactive Spin-The-Wheel discount game that drives repeat customer orders." },
+  { question: "Why should a kirana or supermarket choose Vyop over Nukkad Shops?", answer: "Nukkad Shops provides dedicated all-in-one desktop touch terminals costing ₹25,000 to ₹45,000, along with annual software AMC fees of ₹4,000 to ₹8,000. If your store prefers zero upfront hardware investment, Vyop runs directly on any Android smartphone and web browser (vyop.shop), offering rapid barcode scanning, voice AI billing, and Pro cloud sync at just ₹999/year." },
+  { question: "Can a phone camera scan grocery barcodes as fast as a barcode gun?", answer: "Modern smartphone cameras with autofocus and camera processing decode standard 1D/2D manufacturer barcodes rapidly. Vyop's optimized barcode engine reads barcodes on packaged items smoothly, allowing fast queue throughput without buying specialized laser guns." },
+  { question: "What happens if I change my phone?", answer: "With Vyop Pro, your products, customer ledgers, inventory stock, and sales history are backed up securely in the cloud. Simply log in on your new phone or browser and resume billing with zero data loss." },
+  { question: "Does Vyop provide an online ordering store like Nukkad Shops?", answer: "Yes, and Vyop's storefront is included with 0% commission. You get a dedicated web link (vyop.shop/yourstore) featuring a live catalog, direct WhatsApp ordering, and interactive customer spin-wheel discount rewards." },
 ];
 
 export default function VyopVsNukkadShopsPage() {
@@ -53,7 +53,7 @@ export default function VyopVsNukkadShopsPage() {
             Vyop vs <span className="gradient-text">Nukkad Shops</span>
           </h1>
           <p className="text-xl text-[var(--text-secondary)] max-w-2xl mx-auto">
-            Why spend ₹35,000 on a bulky counter machine when your phone can do it faster?{" "}
+            Avoid spending ₹35,000+ on dedicated counter machines when your smartphone can handle retail billing.{" "}
             <strong className="text-gray-900">Vyop gives supermarkets, apparel stores, and kiranas supermarket-grade barcode scanning and voice AI — free to start with ₹999/yr Pro cloud sync.</strong>
           </p>
         </div>
@@ -62,9 +62,9 @@ export default function VyopVsNukkadShopsPage() {
         <div className="grid md:grid-cols-2 gap-6 mb-12">
           <div className="p-8 rounded-3xl bg-white border border-gray-200 shadow-sm">
             <h3 className="text-xl font-bold text-gray-900 mb-2">Nukkad Shops</h3>
-            <div className="text-3xl font-extrabold text-red-600 mb-4">₹25,000 – ₹45,000</div>
+            <div className="text-3xl font-extrabold text-red-600 mb-4">₹25,000 – ₹45,000 Hardware</div>
             <p className="text-sm text-gray-600 leading-relaxed">
-              Bulky hardware machine takes up precious counter space. High upfront hardware cost plus ₹4,000-₹8,000 annual software renewal fees. Expensive hardware repairs.
+              Dedicated counter hardware terminal with built-in thermal printer and customer display. Requires initial hardware purchase plus ₹4,000–₹8,000 annual software maintenance.
             </p>
           </div>
           <div className="p-8 rounded-3xl bg-gradient-to-br from-amber-500 to-amber-600 text-white shadow-lg relative">
@@ -72,7 +72,7 @@ export default function VyopVsNukkadShopsPage() {
             <h3 className="text-xl font-bold mb-2">Vyop POS</h3>
             <div className="text-3xl font-extrabold mb-4">Free / ₹999/yr Pro</div>
             <p className="text-sm text-white/90 leading-relaxed">
-              Zero counter footprint. Use any smartphone camera as a supermarket barcode scanner, speak bills in Hindi/English, and print to any ₹1,500 Bluetooth printer.
+              Zero hardware footprint. Use your smartphone camera as a supermarket barcode scanner, speak bills in Hindi/English, and connect any portable Bluetooth printer.
             </p>
           </div>
         </div>
@@ -119,9 +119,9 @@ export default function VyopVsNukkadShopsPage() {
 
         {/* Bottom CTA */}
         <div className="text-center p-12 rounded-3xl bg-amber-50 border border-amber-200">
-          <h2 className="text-3xl font-extrabold mb-4 font-display">Save ₹35,000 on Counter Hardware Today</h2>
+          <h2 className="text-3xl font-extrabold mb-4 font-display">Save on Counter Hardware Today</h2>
           <p className="text-gray-600 mb-6 max-w-xl mx-auto">
-            Get mall-grade barcode scanning and voice AI on your smartphone without buying expensive POS hardware.
+            Get supermarket-grade barcode scanning and voice AI on your smartphone without buying dedicated POS terminal machines.
           </p>
           <a
             href="https://play.google.com/store/apps/details?id=com.vyop.app"

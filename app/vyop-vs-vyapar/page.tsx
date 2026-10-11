@@ -19,12 +19,12 @@ const comparisonData = [
   { feature: "Pricing & Plans", vyop: "Free to Start / ₹999/yr Pro", vyapar: "Free Basic Mobile / ₹3,399–₹3,999/yr Desktop Plan", better: "vyop" },
   { feature: "Desktop Access", vyop: "Zero-Install Web App (vyop.shop) — Any Browser", vyapar: "Installed Native Application (Windows / Mac)", better: "vyop" },
   { feature: "Cloud Synchronization", vyop: "Real-Time Cloud Sync (Mobile & Web Counter)", vyapar: "Multi-Device Cloud Sync Plan", better: "draw" },
-  { feature: "Voice AI Billing (Hindi & Hinglish)", vyop: "Speak to Bill in 5s ('Teen Maggi, do Chai')", vyapar: "Not Available", better: "vyop" },
-  { feature: "Primary Barcode Workflow", vyop: "Optimized Smartphone Camera Scanner (<1s)", vyapar: "Phone Camera & External USB/BT Scanner Gun", better: "vyop" },
+  { feature: "Voice AI Billing (Hindi & Hinglish)", vyop: "Speak to Bill with Voice AI ('Teen Maggi, do Chai')", vyapar: "Not Available", better: "vyop" },
+  { feature: "Primary Barcode Workflow", vyop: "Optimized Smartphone Camera Scanner", vyapar: "Phone Camera & External USB/BT Scanner Gun", better: "vyop" },
   { feature: "CA-Grade GST Tax Reports", vyop: "GSTR-1, GSTR-3B, B2B/B2C, HSN Excel & JSON Export", vyapar: "GSTR-1, GSTR-3B Reports Supported", better: "draw" },
   { feature: "Financial Reports & P&L", vyop: "Live Profit & Loss, Category Margins & Daybook", vyapar: "Profit & Loss, Balance Sheet", better: "draw" },
   { feature: "Party Ledgers & WhatsApp Reminders", vyop: "Automated WhatsApp Reminders with UPI Link", vyapar: "WhatsApp Invoice & Payment Reminders", better: "draw" },
-  { feature: "Scan Unbarcoded Items (AI Vision)", vyop: "Snap Photo of Loose Item to Bill in 0.2s", vyapar: "Not Supported", better: "vyop" },
+  { feature: "Scan Unbarcoded Items (AI Vision)", vyop: "Built-in AI Visual Item Recognition", vyapar: "Not Supported", better: "vyop" },
   { feature: "Product Catalog Addition", vyop: "Voice, Barcode, CSV, AI Photo & Manual", vyapar: "Excel Import, Barcode & Manual Form Entry", better: "vyop" },
   { feature: "Customer Online Storefront", vyop: "0% Commission Web Store + Spin Wheel Rewards", vyapar: "Online Storefront Feature (myvyapar.shop)", better: "draw" },
   { feature: "100% Offline Mode", vyop: "Full Offline Billing + Auto Cloud Backup (Pro)", vyapar: "Full Offline Billing Supported", better: "draw" },
@@ -106,14 +106,14 @@ export default function ComparisonPage() {
               The Vyop Advantage (The Smarter Choice)
             </h3>
             <p className="text-gray-700 leading-relaxed mb-4">
-              Vyop gives you the complete hybrid ecosystem: run your main counter on any PC/Mac via <strong className="text-amber-950">vyop.shop</strong>, while floor staff turn smartphones into supermarket barcode scanners (<span className="font-semibold">&lt;1s scan speed</span>).
+              Vyop gives you the complete hybrid ecosystem: run your main counter on any PC/Mac via <strong className="text-amber-950">vyop.shop</strong>, while floor staff turn smartphones into supermarket barcode scanners.
             </p>
             <ul className="text-sm text-gray-800 space-y-2">
               <li>• <strong>Full Desktop PC (vyop.shop) + Android Mobile Sync</strong></li>
               <li>• <strong>CA-Grade Tax Accounting:</strong> GSTR-1, GSTR-3B &amp; Live P&amp;L</li>
-              <li>• <strong>Voice AI Billing:</strong> Create bills in 5 seconds in Hindi/English</li>
+              <li>• <strong>Voice AI Billing:</strong> Create bills instantly in Hindi &amp; English</li>
               <li>• <strong>0% Commission Online Store:</strong> Live WhatsApp ordering</li>
-              <li>• <strong>Only ₹999/year Pro:</strong> Save over ₹3,000 to ₹5,000 every year</li>
+              <li>• <strong>Only ₹999/year Pro:</strong> Save over ₹2,000 to ₹4,000 every year</li>
             </ul>
           </div>
         </div>
@@ -191,7 +191,7 @@ export default function ComparisonPage() {
                 "name": "Why is Vyop faster than Vyapar for shop billing?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Vyop turns any smartphone camera into a barcode scanner that scans items in under 1 second (30+ items per minute) without buying an external barcode gun. It also supports voice AI billing in Hindi and English, creating GST bills in 5 seconds by simply speaking."
+                  "text": "Vyop turns any smartphone camera into a fast barcode scanner without requiring external hardware guns. It also supports voice AI billing in Hindi and English, creating GST bills quickly by simply speaking."
                 }
               },
               {
@@ -199,7 +199,7 @@ export default function ComparisonPage() {
                 "name": "How does Vyop pricing compare to Vyapar?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Vyop is free to download and start, with full cloud sync Pro available at just ₹999/year. Vyapar starts around ₹3,999 to ₹5,999 per year, meaning Vyop saves Indian shopkeepers 75% or more every year."
+                  "text": "Vyop is free to download and start, with full cloud sync Pro available at just ₹999/year. Vyapar desktop plans start around ₹3,399 to ₹3,999 per year, meaning Vyop saves Indian shopkeepers significant software overhead every year."
                 }
               }
             ]

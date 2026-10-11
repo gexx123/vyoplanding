@@ -18,51 +18,51 @@ export const metadata: Metadata = {
 
 const myBillBookComparison = [
   {
-    feature: "Pricing & Annual Cost",
-    vyop: "Free to Start / ₹999/yr Pro (Save ₹2,500+)",
-    mybillbook: "₹3,499 – ₹7,499/year",
+    feature: "Pricing & Plans",
+    vyop: "Free to Start / ₹999/yr Pro",
+    mybillbook: "Mobile from ~₹1,499/yr / Desktop from ~₹3,499/yr",
     better: "vyop",
   },
   {
-    feature: "Ways to Add Items",
-    vyop: "10 Instant Ways (Barcode, Voice, AI Invoice, Image, Menu)",
-    mybillbook: "1–2 Ways (Manual typing or Excel bulk upload)",
+    feature: "Product Addition Options",
+    vyop: "Voice, Camera Barcode, CSV, AI Snap & Manual",
+    mybillbook: "Excel Bulk Upload, Barcode & Manual Catalog Form",
     better: "vyop",
   },
   {
     feature: "Voice AI Invoicing",
     vyop: "Speak naturally in Hindi, Hinglish or English to generate bills",
-    mybillbook: "Manual search & typing required",
+    mybillbook: "Keyword Search & Touch Entry",
     better: "vyop",
   },
   {
     feature: "Smartphone Barcode Scanner",
     vyop: "Turn your phone camera into a supermarket POS scanner",
-    mybillbook: "Requires phone camera add-on or external scanner",
+    mybillbook: "Phone Camera Barcode Scan & External Scanner Support",
     better: "vyop",
   },
   {
     feature: "Scan Unbarcoded Products (AI Vision)",
-    vyop: "Point camera at any loose item or packaging to recognize & bill with AI (Zero typing)",
-    mybillbook: "Not supported (Forces slow manual keyboard search)",
+    vyop: "Built-in AI Vision (Visual Item Recognition for loose goods)",
+    mybillbook: "Not Supported",
     better: "vyop",
   },
   {
     feature: "Customer Online Storefront",
     vyop: "0% Commission live store link with Spin-the-Wheel rewards",
-    mybillbook: "Standard catalog with limited marketing features",
-    better: "vyop",
+    mybillbook: "Online Store Feature with Catalog Link",
+    better: "draw",
   },
   {
     feature: "Barcode Sticker Label Printing",
     vyop: "Generate and print custom barcodes for unbranded items free",
-    mybillbook: "Paid plan required for custom barcode generation",
-    better: "vyop",
+    mybillbook: "Barcode Generation & Label Printing Supported",
+    better: "draw",
   },
   {
     feature: "Voice Expense Logging",
-    vyop: "Just say '50 rs chai' or '500 rs auto' to log expenses",
-    mybillbook: "Manual form filling",
+    vyop: "Voice-driven expense entry in Hindi & English",
+    mybillbook: "Manual Expense Form Entry",
     better: "vyop",
   },
   {
@@ -77,7 +77,7 @@ const faqs = [
   {
     question: "Why do shopkeepers choose Vyop over myBillBook?",
     answer:
-      "While myBillBook requires manual typing to search items and create bills, Vyop uses voice AI and your phone's camera as a supermarket barcode scanner. You can create bills in 5 seconds without typing.",
+      "While myBillBook offers comprehensive mobile and desktop bookkeeping starting around ₹1,499–₹3,499/year, Vyop provides a voice-first retail counter experience. Shopkeepers can create bills by speaking in Hindi or English, scan barcodes continuously with any smartphone camera, and access a full browser POS (vyop.shop) starting free with ₹999/yr Pro cloud sync.",
   },
   {
     question: "How does Vyop's pricing compare to myBillBook?",
@@ -141,6 +141,9 @@ export default function VyopVsMyBillBookPage() {
               </tbody>
             </table>
           </div>
+          <p className="text-xs text-gray-400 mt-6 text-center">
+            * Comparative analysis based on publicly available documentation as of October 2026. myBillBook is a registered trademark of FloBiz.
+          </p>
         </div>
 
         {/* CTA */}

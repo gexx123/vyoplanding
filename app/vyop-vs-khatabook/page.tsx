@@ -76,8 +76,8 @@ export default function ComparisonPage() {
           <div className="bg-[var(--brand-glow)] p-8 rounded-3xl border border-[var(--brand-primary)]">
             <h3 className="text-2xl font-bold mb-4 text-[var(--brand-primary)]">Why Vyop wins?</h3>
             <p className="text-[var(--text-secondary)]">
-              Vyop is an <strong>AI Accountant</strong>. It doesn't just track debt; it handles your entire shop operation 
-              using your voice. It's 10x faster for billing during busy hours.
+              Vyop is a comprehensive <strong>Smart POS Platform</strong>. It doesn&apos;t just track debt; it handles your entire shop checkout and inventory operation 
+              using camera barcode scanning and natural voice. It makes counter checkout effortless during busy rush hours.
             </p>
           </div>
         </div>
@@ -119,7 +119,7 @@ export default function ComparisonPage() {
                 "name": "Which app is faster for billing?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Vyop is significantly faster because it uses AI voice recognition. You can create a bill in 10 seconds just by speaking, whereas traditional apps require manual typing."
+                  "text": "Vyop is optimized for retail speed because it combines camera barcode scanning with natural voice AI recognition. You can create a bill instantly by simply speaking into the Voice AI Orb, whereas ledger apps require manual typing and keypad navigation."
                 }
               }
             ]

@@ -17,19 +17,19 @@ export const metadata: Metadata = {
 };
 
 const comparison = [
-  { feature: "Base Price", vyop: "Free to Start / ₹999/yr Pro", competitor: "₹8,991 – ₹25,200/year + GST", better: "vyop" },
-  { feature: "Hardware Required", vyop: "Your Existing Smartphone", competitor: "Desktop PC + Hardware Dongle", better: "vyop" },
-  { feature: "Billing Speed", vyop: "5 Seconds (Voice AI or Camera Scan)", competitor: "Keyboard Shortcut Dependent", better: "vyop" },
-  { feature: "Smartphone Camera Barcode POS", vyop: "✅ Built-in 60 FPS (Free)", competitor: "❌ Needs ₹3,000+ Barcode Gun", better: "vyop" },
-  { feature: "Scan Unbarcoded Products (AI Vision)", vyop: "✅ Built-in AI Vision (Snap loose goods to bill in 0.2s)", competitor: "❌ Not Available (Requires keyboard entry)", better: "vyop" },
-  { feature: "Voice AI Billing (Hindi & Hinglish)", vyop: "✅ Speak: '2 Paracetamol, 1 Dolo'", competitor: "❌ Not Available", better: "vyop" },
-  { feature: "Indian GST & GSTR Reports", vyop: "✅ Automated (CGST, SGST, IGST)", competitor: "✅ Full GST (Complex Setup)", better: "tie" },
-  { feature: "Learning Curve", vyop: "Zero Training (Instant Setup)", competitor: "2-4 Weeks Training Needed", better: "vyop" },
-  { feature: "WhatsApp Digital Invoices", vyop: "✅ 1-Tap Direct WhatsApp Bills", competitor: "❌ Requires Paid SMS / Third-party API", better: "vyop" },
-  { feature: "Online Customer Storefront", vyop: "✅ 0% Commission Store + Spin Wheel", competitor: "❌ Not Included", better: "vyop" },
-  { feature: "Cloud Sync & Multi-Device", vyop: "✅ Real-Time Cloud + Offline", competitor: "❌ Local Database (Prone to Data Loss)", better: "vyop" },
-  { feature: "Daily Udhar (Credit) Tracking", vyop: "✅ Automated WhatsApp Reminders", competitor: "Manual Ledger Reports", better: "vyop" },
-  { feature: "Customer Support", vyop: "✅ Free WhatsApp & Phone Support", competitor: "Paid Annual Maintenance (AMC)", better: "vyop" },
+  { feature: "Base Price", vyop: "Free to Start / ₹999/yr Pro", competitor: "Basic from ₹8,991 + GST / Multi-user higher", better: "vyop" },
+  { feature: "Hardware Required", vyop: "Any Android Smartphone or Web Browser", competitor: "Windows Desktop PC + Hardware Dongle", better: "vyop" },
+  { feature: "Primary Billing Workflow", vyop: "Voice AI (Hindi/EN) + Phone Camera Barcode Scan", competitor: "Shortcut-Driven Keyboard & Fast Codes", better: "vyop" },
+  { feature: "Smartphone Camera Barcode POS", vyop: "✅ Built-in Phone Camera Scanner", competitor: "Compatible with External Barcode Scanners", better: "vyop" },
+  { feature: "Scan Unbarcoded Products (AI Vision)", vyop: "✅ Built-in AI Vision Recognition", competitor: "Not Supported", better: "vyop" },
+  { feature: "Voice AI Billing (Hindi & Hinglish)", vyop: "✅ Speak: '2 Paracetamol, 1 Dolo'", competitor: "Not Supported", better: "vyop" },
+  { feature: "Indian GST & GSTR Reports", vyop: "✅ Automated (CGST, SGST, IGST)", competitor: "✅ Advanced Pharma & Retail GST Compliance", better: "tie" },
+  { feature: "Operational Learning Curve", vyop: "Minimal (Instant Counter Setup)", competitor: "Training Required for Advanced Inventory Modules", better: "vyop" },
+  { feature: "WhatsApp Digital Invoices", vyop: "✅ 1-Tap Direct WhatsApp Share with UPI QR", competitor: "Supported via Document Sharing / SMS Gateway", better: "vyop" },
+  { feature: "Online Customer Storefront", vyop: "✅ 0% Commission Store + WhatsApp Orders", competitor: "Not Native", better: "vyop" },
+  { feature: "Cloud Sync & Multi-Device", vyop: "✅ Real-Time Cloud Sync (Pro)", competitor: "Local Desktop Database with Backup Utilities", better: "vyop" },
+  { feature: "Outstanding Balance & Udhar", vyop: "✅ Automated WhatsApp Reminders", competitor: "Detailed Accounts Receivable & Ledger Reports", better: "tie" },
+  { feature: "Customer Support", vyop: "✅ In-App & Phone Support", competitor: "Annual Maintenance Contracts (AMC) Available", better: "draw" },
 ];
 
 const faqs = [
@@ -100,6 +100,9 @@ export default function VyopVsMargPage() {
               </tbody>
             </table>
           </div>
+          <p className="text-xs text-gray-400 mt-6 text-center">
+            * Comparative analysis based on publicly available documentation as of October 2026. Marg ERP is a registered trademark of Marg Compusoft Pvt. Ltd.
+          </p>
         </div>
 
         {/* FAQ Section */}

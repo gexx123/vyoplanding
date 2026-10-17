@@ -36,6 +36,8 @@ Vyop eliminates expensive POS hardware by turning any standard Android smartphon
 - [Profit Margin & Markup Calculator](https://vyop.in/tools/margin-calculator): Calculate retail margins and selling prices.
 - [Discount Calculator](https://vyop.in/tools/discount-calculator): Percentage off, sale prices, and BOGO offers.
 - [Cash Counter & Denomination Tally](https://vyop.in/tools/cash-counter): Daily drawer cash tally slips.
+- [Smart Billing Machine App](https://vyop.in/billing-machine): Smartphone alternative to hardware billing machines.
+- [Bluetooth Thermal Printer Billing App](https://vyop.in/thermal-printer-billing-app): 58mm/80mm ESC/POS receipt printing.
 - [HSN Code Finder](https://vyop.in/tools/hsn-code-finder): Directory of 15,000+ HSN and SAC codes.
 - [GSTIN Validator](https://vyop.in/tools/gstin-validator): Check 15-digit Indian GSTIN validity.
 

@@ -112,6 +112,14 @@ export default function Home() {
                 "description": "Free Barcode Billing Software, Voice Invoicing & Mobile POS App for Retail Shops.",
                 "publisher": {
                   "@id": "https://vyop.in/#organization"
+                },
+                "potentialAction": {
+                  "@type": "SearchAction",
+                  "target": {
+                    "@type": "EntryPoint",
+                    "urlTemplate": "https://vyop.in/blog?q={search_term_string}"
+                  },
+                  "query-input": "required name=search_term_string"
                 }
               },
               {

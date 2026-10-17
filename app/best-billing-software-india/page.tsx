@@ -19,11 +19,11 @@ const apps = [
     rank: 1,
     name: "Vyop",
     tagline: "Best Voice AI Billing, Desktop POS & CA Accounting System",
-    price: "Free to Start / ₹999/yr Pro",
+    price: "Free to Start / ₹49/mo (₹999/yr Pro)",
     bestFor: "Retail and wholesale businesses wanting fast counter billing on mobile & desktop PC with CA tax filing",
     pros: [
       "Full Desktop PC Web App (vyop.shop) + Android Mobile App with real-time cloud sync",
-      "Free offline tier + most affordable Pro plan in India (₹999/yr vs desktop accounting software at ₹3,399+)",
+      "Free offline tier + most affordable Pro plan globally (₹49/mo or ₹999/yr vs desktop software at ₹3,399+)",
       "CA-Grade GST tax filing: GSTR-1 & GSTR-3B Excel/JSON export, live P&L, and party ledgers",
       "Voice AI billing in Hindi, English & Hinglish — speak items to create bills without manual typing",
       "Fast smartphone camera barcode scanner with multi-item continuous scanning",
@@ -49,7 +49,7 @@ const apps = [
 ];
 
 const masterComparison = [
-  { feature: "Price", vyop: "Free / ₹999/yr", tally: "₹22,500 perp / ₹7.5K renew", vyapar: "Free Mobile / ₹3,399+ Desktop", busy: "From ~₹7,200/yr", khatabook: "Free / ₹2,999/yr" },
+  { feature: "Price", vyop: "Free / ₹49/mo (₹999/yr)", tally: "₹22,500 perp / ₹7.5K renew", vyapar: "Free Mobile / ₹3,399+ Desktop", busy: "From ~₹7,200/yr", khatabook: "Free / ₹2,999/yr" },
   { feature: "Desktop PC Support", vyop: "✅ Full (vyop.shop)", tally: "✅ Desktop Only", vyapar: "✅ Desktop (.exe)", busy: "✅ Desktop Only", khatabook: "⚠️ Basic Web" },
   { feature: "Mobile App & Sync", vyop: "✅ Real-Time", tally: "⚠️ 3rd-Party Add-on", vyapar: "✅ Yes", busy: "⚠️ Mobile App (Add-on)", khatabook: "✅ Yes" },
   { feature: "Voice AI Billing", vyop: "✅ Hindi/EN", tally: "❌", vyapar: "❌", busy: "❌", khatabook: "❌" },

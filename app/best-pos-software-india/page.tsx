@@ -44,7 +44,7 @@ const apps = [
     rank: 1,
     name: "Vyop POS",
     tagline: "The Smartest POS — Full Desktop PC Counter + Mobile Barcode Scanner",
-    price: "Free to Start / ₹999/yr Pro",
+    price: "Free to Start / ₹49/mo (₹999/yr Pro)",
     bestFor: "Retailers wanting a full PC counter setup + instant mobile barcode scanning with CA-grade GST accounting at zero hardware cost",
     pros: [
       "Full Desktop PC & Laptop web app (vyop.shop) with real-time multi-device cloud sync",

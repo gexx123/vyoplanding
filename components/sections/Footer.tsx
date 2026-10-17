@@ -18,6 +18,8 @@ const footerLinks = {
   ],
   "Free Tools": [
     "AI Billing Software",
+    "Smart Billing Machine",
+    "Thermal Printer App",
     "Global POS (Worldwide)",
     "All Free Tools",
     "Online Storefront (0%)",
@@ -82,6 +84,8 @@ const linkPaths: Record<string, string> = {
   "Profit Margin Calculator": "/tools/margin-calculator",
   "HSN Code Finder": "/tools/hsn-code-finder",
   "AI Billing Software": "/ai-billing-software",
+  "Smart Billing Machine": "/billing-machine",
+  "Thermal Printer App": "/thermal-printer-billing-app",
   "Vyop vs Lightspeed": "/vyop-vs-lightspeed",
   "Vyop vs Zettle": "/vyop-vs-zettle",
   "Best Billing Software India": "/best-billing-software-india",

@@ -125,13 +125,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...blogUrls,
     ...industries.map((ind) => ({
       url: `${baseUrl}/solutions/${ind.slug}`,
-      lastModified: new Date('2026-09-22'),
+      lastModified: new Date(),
       changeFrequency: 'weekly' as const,
       priority: 0.9,
     })),
     ...cities.map((city) => ({
       url: `${baseUrl}/billing-software/${city.slug}`,
-      lastModified: new Date('2026-09-22'),
+      lastModified: new Date(),
       changeFrequency: 'weekly' as const,
       priority: 0.85,
     })),

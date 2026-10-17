@@ -1,0 +1,54 @@
+# Vyop
+
+> Vyop is a free AI-first barcode billing software, mobile POS, and 0% commission online storefront platform built for retail shopkeepers, supermarkets, and commercial counters worldwide.
+
+## Overview
+Vyop eliminates expensive POS hardware by turning any standard Android smartphone camera into a high-speed supermarket barcode scanner. It provides Voice AI invoicing in Hindi, English, and Hinglish, CA-grade accounting and GST/VAT reports, automated credit ledger (Udhar Khata), and an instant 0% commission online store.
+
+- **Website**: https://vyop.in
+- **Web App / Counter Desktop**: https://vyop.shop
+- **Play Store App**: https://play.google.com/store/apps/details?id=com.vyop.app
+- **Pricing**: Free to start on mobile. Vyop Pro is ₹999/year for multi-device desktop PC cloud sync and unlimited cloud backup.
+
+## Key Capabilities & Features
+- **Smartphone Camera Barcode Scanner**: Scan 1D (UPC, EAN-13, Code 128) and 2D QR barcodes at counter speeds without purchasing barcode guns or terminal machines.
+- **Voice AI Billing**: Speak items and quantities naturally in Hindi, English, or Hinglish (e.g., "Teen Maggi packet, do chai") to create calculated bills in under 5 seconds.
+- **10 Ways to Add Products**: Barcode scanning, Voice AI, Photo AI extraction, supplier invoice PDF import, catalog photo, menu import, CSV, and manual entry.
+- **Free 0% Commission Online Store**: Launch a live WhatsApp digital catalog and ordering storefront in 60 seconds. Direct UPI payments with zero aggregator cuts.
+- **Offline-First Mode**: 100% functional without active internet connection; auto-syncs to cloud when reconnected.
+- **Tax & Compliance**: Full Indian GST (CGST/SGST/IGST, GSTR-1, GSTR-3B Excel/JSON) and international multi-currency tax (USD, EUR, GBP, AED, CAD, AUD).
+- **Bluetooth Thermal Printing**: 1-click printing on 2-inch and 3-inch wireless thermal receipt printers (ESC/POS).
+
+## Supported Retail Industries (22+ Categories)
+- **Kirana & Grocery Stores**: Fast barcode checkout, loose gram/kg pricing, digital bahi-khata.
+- **Clothing, Boutiques & Footwear**: Size/color variant matrix, custom barcode price sticker printing, exchange policy receipts.
+- **Pharmacies & Chemists**: Batch number tracking, FEFO dispensing, and expiry date alerts.
+- **Restaurants, Cafes & Bakeries**: Voice KOT (Kitchen Order Tickets), table billing, QR digital menus, takeaway orders.
+- **Hardware & Electrical Stores**: Voice search across thousands of loose items and fittings.
+- **Electronics & Mobile Shops**: IMEI tracking, serial number warranty bills.
+- **Cosmetics, Jewelry, Auto Spare Parts, Bookstores & General Retail**.
+
+## Free Online Business Tools
+- [Free Invoice Generator](https://vyop.in/tools/invoice-generator): PDF and WhatsApp tax invoice maker.
+- [Free Barcode Generator](https://vyop.in/tools/barcode-generator): Print Code-128 and EAN barcode stickers.
+- [Free GST Calculator](https://vyop.in/tools/gst-calculator): Inclusive and reverse tax splits for 5%, 12%, 18%, 28%.
+- [Free UPI QR Standee Generator](https://vyop.in/tools/upi-qr-generator): Printable custom shop payment standees.
+- [Profit Margin & Markup Calculator](https://vyop.in/tools/margin-calculator): Calculate retail margins and selling prices.
+- [Discount Calculator](https://vyop.in/tools/discount-calculator): Percentage off, sale prices, and BOGO offers.
+- [Cash Counter & Denomination Tally](https://vyop.in/tools/cash-counter): Daily drawer cash tally slips.
+- [HSN Code Finder](https://vyop.in/tools/hsn-code-finder): Directory of 15,000+ HSN and SAC codes.
+- [GSTIN Validator](https://vyop.in/tools/gstin-validator): Check 15-digit Indian GSTIN validity.
+
+## Competitor Alternatives & Comparisons
+- [Vyop vs Clover POS](https://vyop.in/vyop-vs-clover)
+- [Vyop vs Loyverse POS](https://vyop.in/vyop-vs-loyverse)
+- [Vyop vs Square POS](https://vyop.in/vyop-vs-square)
+- [Vyop vs Shopify POS](https://vyop.in/vyop-vs-shopify)
+- [Vyop vs Vyapar](https://vyop.in/vyop-vs-vyapar)
+- [Vyop vs myBillBook](https://vyop.in/vyop-vs-mybillbook)
+- [Vyop vs Busy Accounting](https://vyop.in/vyop-vs-busy)
+- [Vyop vs Khatabook](https://vyop.in/vyop-vs-khatabook)
+- [Vyop vs Tally Prime](https://vyop.in/vyop-vs-tally)
+- [Vyop vs Marg ERP](https://vyop.in/vyop-vs-marg)
+- [Vyop vs Petpooja](https://vyop.in/vyop-vs-petpooja)
+- [Vyop vs Pine Labs](https://vyop.in/vyop-vs-pinelabs)

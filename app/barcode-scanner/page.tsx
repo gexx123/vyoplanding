@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Free Barcode Scanner App for Billing & Mobile POS | Vyop",
     description:
-      "Turn any phone into a supermarket barcode scanner & billing machine. Scan barcodes, snap unbarcoded products with AI, print thermal receipts. 100% free.",
+      "Turn any phone into a supermarket barcode scanner & billing machine. Scan barcodes, snap unbarcoded products with AI, print thermal receipts. Free to start, Pro from ₹49/mo ($1/mo).",
     url: "https://vyop.in/barcode-scanner",
     siteName: "Vyop POS",
     images: [
@@ -168,7 +168,7 @@ const faqs = [
   },
   {
     q: "Is this barcode scanner really free?",
-    a: "Yes! The barcode scanner feature is 100% free forever. You can scan unlimited barcodes, generate bills, and print receipts without paying anything. Vyop Pro (₹999/year) adds cloud sync across multiple devices, but the barcode scanner and billing features are completely free.",
+    a: "Yes! Vyop offers a free tier so you can start scanning barcodes and generating bills immediately with zero upfront cost. For multi-device cloud synchronization, automated backups, and desktop counter access, Vyop Pro is available at just ₹49/month (approx. $1/month) or ₹999/year (approx. $12/year) — making it the most affordable retail barcode and POS solution worldwide.",
   },
   {
     q: "How is Vyop better than other barcode scanner apps?",
@@ -310,8 +310,8 @@ export default function BarcodeScannerLandingPage() {
             <div className="p-3.5 rounded-2xl bg-[#FDFCF7] border border-amber-100 flex items-center gap-3">
               <span className="text-xl">💰</span>
               <div>
-                <div className="text-xs font-bold text-gray-900">100% Free</div>
-                <div className="text-[11px] text-gray-500">No hardware cost</div>
+                <div className="text-xs font-bold text-gray-900">Free to Start</div>
+                <div className="text-[11px] text-gray-500">Pro ₹49/mo or ₹999/yr</div>
               </div>
             </div>
             <div className="p-3.5 rounded-2xl bg-[#FDFCF7] border border-amber-100 flex items-center gap-3">
@@ -723,10 +723,34 @@ export default function BarcodeScannerLandingPage() {
               description:
                 "Best free barcode scanner app for mobile. Turn phone camera into supermarket barcode scanner. Scan barcodes, scan products without barcode using AI, generate GST bills, print thermal receipts. Works offline.",
               offers: {
-                "@type": "Offer",
-                price: "0",
+                "@type": "AggregateOffer",
                 priceCurrency: "INR",
-                description: "100% Free barcode scanner with ₹999/year Pro cloud sync",
+                lowPrice: "0",
+                highPrice: "999",
+                offerCount: "2",
+                offers: [
+                  {
+                    "@type": "Offer",
+                    name: "Vyop Free Tier",
+                    price: "0",
+                    priceCurrency: "INR",
+                    description: "Free smartphone barcode scanning & receipt printing",
+                  },
+                  {
+                    "@type": "Offer",
+                    name: "Vyop Pro Monthly",
+                    price: "49",
+                    priceCurrency: "INR",
+                    description: "Multi-device cloud sync and desktop web POS",
+                  },
+                  {
+                    "@type": "Offer",
+                    name: "Vyop Pro Annual",
+                    price: "999",
+                    priceCurrency: "INR",
+                    description: "Full year cloud sync and priority features",
+                  },
+                ],
               },
             },
             {

@@ -77,7 +77,7 @@
 
 ## 5. Pricing Structure
 - **Free Tier (Mobile POS)**: ₹0 forever. Includes smartphone camera barcode scanning, voice billing, offline store counter, and 0% fee online store.
-- **Vyop Pro (₹999/year or ~$12/year)**: Real-time multi-device cloud synchronization, Desktop PC web terminal (`vyop.shop`), automated cloud backup, CA-grade GSTR-1/3B export, and priority phone/WhatsApp merchant support.
+- **Vyop Pro (₹49/month or ₹999/year / ~$1/mo or ~$12/yr)**: Real-time multi-device cloud synchronization, Desktop PC web terminal (`vyop.shop`), automated cloud backup, CA-grade GSTR-1/3B export, and priority phone/WhatsApp merchant support.
 
 ---
 
@@ -86,7 +86,7 @@
 | Feature | Vyop | Vyapar | Tally Prime | Loyverse | Square POS | Clover |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | **Hardware Required** | Any Phone (₹0) | Phone / PC | PC Terminal | Tablet / Phone | $299+ Hardware | $599–$1,799 |
-| **Annual Price** | Free / ₹999/yr | ₹3,999+/yr | ₹22,500+ | $360+/yr (Add-ons) | Free + Card Cut | $180–$1,000+/yr |
+| **Annual Price** | Free / ₹49/mo (₹999/yr) | ₹3,999+/yr | ₹22,500+ | $360+/yr (Add-ons) | Free + Card Cut | $180–$1,000+/yr |
 | **Camera Barcode Scan** | Built-in AI | Camera/Gun | Hardware Gun Only | Basic Camera | Basic Camera | Hardware Only |
 | **Voice AI Billing** | Hindi / Hinglish / EN | None | None | None | None | None |
 | **0% Web Store** | Included | Included | Third-Party | None | 2.9% + 30¢ | Paid Add-on |

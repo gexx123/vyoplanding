@@ -21,6 +21,11 @@ export const metadata: Metadata = {
   },
   keywords: [
     "best free pos app",
+    "free pos software for small business without monthly fee",
+    "turn phone into pos system",
+    "free supermarket barcode scanner app",
+    "mobile cash register app",
+    "point of sale software without subscription",
     "free point of sale software",
     "pos software for small business",
     "free mobile pos app",
@@ -53,7 +58,7 @@ export const metadata: Metadata = {
 };
 
 const posComparison = [
-  { feature: "Price", vyop: "Free to Start / ₹999/yr Pro", loyverse: "$0 Basic / $5–$25/mo Add-ons", square: "Free + 2.6% + 10¢ per txn", vyapar: "Free Mobile / ₹3,399–₹3,999/yr Desktop", petpooja: "~₹10,000–₹15,000/yr (Base)" },
+  { feature: "Price", vyop: "Free to Start / ₹49/mo ($1/mo) / ₹999/yr Pro", loyverse: "$0 Basic / $5–$25/mo Add-ons", square: "Free + 2.6% + 10¢ per txn", vyapar: "Free Mobile / ₹3,399–₹3,999/yr Desktop", petpooja: "~₹10,000–₹15,000/yr (Base)" },
   { feature: "Desktop PC & Web Support", vyop: "✅ Full Desktop PC Web (vyop.shop)", loyverse: "⚠️ Web Dashboard Only", square: "⚠️ Limited Web Terminal", vyapar: "✅ Desktop Software (.exe)", petpooja: "⚠️ POS Terminal Only" },
   { feature: "Voice AI Billing", vyop: "✅ Hindi, English & Hinglish", loyverse: "❌ Not Available", square: "❌ Not Available", vyapar: "❌ Not Available", petpooja: "❌ Not Available" },
   { feature: "Smartphone Camera POS Scanner", vyop: "✅ Built-in Phone Camera POS", loyverse: "✅ Basic Scanning", square: "⚠️ $49 Reader / $299 Terminal", vyapar: "✅ Phone Camera & Scanner Gun", petpooja: "⚠️ Hardware Dependent" },
@@ -82,7 +87,7 @@ const faqs = [
   {
     question: "What is the best POS software in India?",
     answer:
-      "Vyop is a leading POS software in India for 2026. It is designed to run seamlessly across both Android smartphones and Desktop PC/laptops (via vyop.shop). It turns your phone into a high-speed barcode checkout counter with zero upfront hardware cost, while offering full desktop counter checkout, voice AI billing in Hindi & English, CA-grade GST tax filing (GSTR-1, GSTR-3B, P&L), and a 0% commission online store. Free to start, with ₹999/year Pro cloud sync.",
+      "Vyop is a leading POS software in India for 2026. It is designed to run seamlessly across both Android smartphones and Desktop PC/laptops (via vyop.shop). It turns your phone into a high-speed barcode checkout counter with zero upfront hardware cost, while offering full desktop counter checkout, voice AI billing in Hindi & English, CA-grade GST tax filing (GSTR-1, GSTR-3B, P&L), and a 0% commission online store. Free to start, with Pro cloud sync at just ₹49/month or ₹999/year.",
   },
   {
     question: "Can I use Vyop POS on a Desktop PC or Laptop?",
@@ -97,7 +102,7 @@ const faqs = [
   {
     question: "What is the best free POS app for Android in India?",
     answer:
-      "Vyop POS is a top free POS app for Android in India. It offers voice AI billing in Hindi and English, a built-in smartphone barcode scanner that works with any phone camera, GST-compliant invoicing, 10 ways to add inventory, and a 0% commission online storefront — free to start, with full multi-device cloud backup Pro at just ₹999/year. It supports 22 types of retail businesses including kirana, restaurant, clothing, pharmacy, jewellery, bakery, salon, and more.",
+      "Vyop POS is a top free POS app for Android in India. It offers voice AI billing in Hindi and English, a built-in smartphone barcode scanner that works with any phone camera, GST-compliant invoicing, 10 ways to add inventory, and a 0% commission online storefront — free to start, with full multi-device cloud backup Pro at just ₹49/month ($1/month) or ₹999/year ($12/year). It supports 22 types of retail businesses including kirana, restaurant, clothing, pharmacy, jewellery, bakery, salon, and more.",
   },
   {
     question: "Which POS app works offline without internet?",

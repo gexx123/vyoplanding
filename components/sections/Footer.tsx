@@ -17,6 +17,7 @@ const footerLinks = {
     "Restaurant Ordering Guide",
   ],
   "Free Tools": [
+    "AI Billing Software",
     "Global POS (Worldwide)",
     "All Free Tools",
     "Online Storefront (0%)",
@@ -34,6 +35,8 @@ const footerLinks = {
     "HSN Code Finder",
   ],
   Alternatives: [
+    "Vyop vs Lightspeed",
+    "Vyop vs Zettle",
     "Vyop vs Tally",
     "Vyop vs Loyverse",
     "Vyop vs Square POS",
@@ -78,6 +81,9 @@ const linkPaths: Record<string, string> = {
   "Free Barcode Generator": "/tools/barcode-generator",
   "Profit Margin Calculator": "/tools/margin-calculator",
   "HSN Code Finder": "/tools/hsn-code-finder",
+  "AI Billing Software": "/ai-billing-software",
+  "Vyop vs Lightspeed": "/vyop-vs-lightspeed",
+  "Vyop vs Zettle": "/vyop-vs-zettle",
   "Best Billing Software India": "/best-billing-software-india",
   "Best POS Software India": "/best-pos-software-india",
   "Vyop vs Tally": "/vyop-vs-tally",

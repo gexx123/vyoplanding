@@ -141,6 +141,11 @@ const COMPARISONS = [
     traditional: "Requires separate $80+ USB/Bluetooth laser scanner",
   },
   {
+    category: "Software Subscription Cost",
+    vyop: "Free to start | Pro from ₹49/month ($1/mo) or ₹999/year ($12/yr)",
+    traditional: "$39 to $89+/month (Lightspeed, Shopify POS Pro, Loyverse add-ons)",
+  },
+  {
     category: "Payment & Processing Fees",
     vyop: "0% Platform Cut (Keep 100% of cash, direct UPI, or custom card gateways)",
     traditional: "2.6% to 3.5% + fixed cents deducted from every transaction",
@@ -173,7 +178,7 @@ const FAQS = [
   },
   {
     q: "How does Vyop compare to Square, Clover, or Loyverse?",
-    a: "Traditional POS systems like Square and Clover lock you into expensive proprietary card terminals ($299+) and charge 2.6%+ transaction fees. Loyverse charges $300+/year for inventory add-ons. Vyop is free to start on any phone, charges 0% transaction cuts on your own payments, and includes barcode scanning, AI item detection, and an online store.",
+    a: "Traditional POS systems like Square and Clover lock you into expensive proprietary card terminals ($299+) and charge 2.6%+ transaction fees. Loyverse charges $300+/year for inventory add-ons. Vyop is free to start on any phone, charges 0% transaction cuts on your own payments, and includes barcode scanning, AI item detection, and an online store. Pro is only ₹49/month ($1/mo) or ₹999/year ($12/yr).",
   },
   {
     q: "Does Vyop support receipt printers?",

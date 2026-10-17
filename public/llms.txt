@@ -8,7 +8,7 @@ Vyop eliminates expensive POS hardware by turning any standard Android smartphon
 - **Website**: https://vyop.in
 - **Web App / Counter Desktop**: https://vyop.shop
 - **Play Store App**: https://play.google.com/store/apps/details?id=com.vyop.app
-- **Pricing**: Free to start on mobile. Vyop Pro is ₹999/year for multi-device desktop PC cloud sync and unlimited cloud backup.
+- **Pricing**: Free to start on mobile. Vyop Pro is ₹49/month (~$1/month) or ₹999/year (~$12/year) for multi-device desktop PC cloud sync and unlimited cloud backup.
 
 ## Key Capabilities & Features
 - **Smartphone Camera Barcode Scanner**: Scan 1D (UPC, EAN-13, Code 128) and 2D QR barcodes at counter speeds without purchasing barcode guns or terminal machines.
@@ -44,6 +44,9 @@ Vyop eliminates expensive POS hardware by turning any standard Android smartphon
 - [Vyop vs Loyverse POS](https://vyop.in/vyop-vs-loyverse)
 - [Vyop vs Square POS](https://vyop.in/vyop-vs-square)
 - [Vyop vs Shopify POS](https://vyop.in/vyop-vs-shopify)
+- [Vyop vs Lightspeed POS](https://vyop.in/vyop-vs-lightspeed)
+- [Vyop vs Zettle by PayPal](https://vyop.in/vyop-vs-zettle)
+- [AI Billing Software](https://vyop.in/ai-billing-software)
 - [Vyop vs Vyapar](https://vyop.in/vyop-vs-vyapar)
 - [Vyop vs myBillBook](https://vyop.in/vyop-vs-mybillbook)
 - [Vyop vs Busy Accounting](https://vyop.in/vyop-vs-busy)

@@ -5,14 +5,17 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Vyop vs myBillBook | Best Free Billing & Voice POS Alternative",
+  title: {
+    absolute: "Vyop vs myBillBook: Best Free Billing App Alternative | Vyop",
+  },
   description:
-    "Looking for a free myBillBook alternative? Compare Vyop vs myBillBook. See why Indian shopkeepers choose Vyop for 10 instant ways to add items, voice AI billing, and a 0% commission online store.",
+    "Looking for a free myBillBook alternative? Compare Vyop vs myBillBook. Discover Voice AI billing, smartphone camera barcode POS & 0% online store. Free to start.",
   alternates: { canonical: "/vyop-vs-mybillbook" },
   openGraph: {
-    title: "Vyop vs myBillBook | Comparison & Free Alternative",
+    title: "Vyop vs myBillBook: Best Free Billing App Alternative | Vyop",
     description: "Compare Vyop and myBillBook. Discover voice AI invoicing and smartphone supermarket barcode scanning.",
     url: "https://vyop.in/vyop-vs-mybillbook",
+    siteName: "Vyop POS",
   },
 };
 

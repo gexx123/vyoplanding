@@ -4,15 +4,17 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Free Retail & Business Tools [Invoice Maker, Barcode Generator, Calculators] — Vyop POS",
+  title: {
+    absolute: "Free Retail Tools: Invoice Maker, Barcode Generator | Vyop",
+  },
   description:
-    "100% free online retail & business tools: Free Invoice Generator, Barcode Label Generator, Profit Margin Calculator, Discount Calculator, Cash Counter, and Tax Calculators. Free to use with zero signup.",
+    "100% free online retail & shop tools: Free invoice maker, barcode generator, profit margin calculator, discount calculator & cash tally. Zero signup needed.",
   alternates: { canonical: "/tools" },
   openGraph: {
-    title: "Free Retail & Business Tools [Invoice Maker, Barcode Generator, Calculators] — Vyop POS",
-    description: "Free invoice maker, barcode generator, profit margin calculator, cash tally, and discount calculators for business owners.",
+    title: "Free Retail Tools: Invoice Maker, Barcode Generator | Vyop",
+    description: "Free invoice maker, barcode generator, profit margin calculator, cash tally, and discount calculators for all shopkeepers.",
     url: "https://vyop.in/tools",
-    siteName: "Vyop POS: Barcode Scan & Bill",
+    siteName: "Vyop POS",
   },
 };
 

@@ -5,14 +5,16 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Compare POS Systems [Square, Loyverse, Clover, Shopify & Vyapar] — Vyop POS",
-  description: "Compare Vyop POS against Square, Loyverse, Clover, Shopify POS, Tally Prime, and Vyapar. Discover the best free mobile POS system, smartphone barcode scanner, and 0% fee online store for retail businesses worldwide.",
+  title: {
+    absolute: "Compare Top POS Systems & Billing Software (2026) | Vyop",
+  },
+  description: "Compare Vyop against Square, Loyverse, Clover, Shopify & Vyapar. Discover the best free mobile POS, camera barcode scanner & 0% fee online store.",
   alternates: { canonical: '/compare' },
   openGraph: { 
-    title: "Compare POS Systems [Square, Loyverse, Clover, Shopify & Vyapar] — Vyop POS",
+    title: "Compare Top POS Systems & Billing Software (2026) | Vyop",
     description: "Compare features, pricing, and hardware requirements across top point-of-sale systems and billing apps.",
     url: 'https://vyop.in/compare',
-    siteName: 'Vyop POS: Barcode Scan & Bill',
+    siteName: 'Vyop POS',
   }
 };
 

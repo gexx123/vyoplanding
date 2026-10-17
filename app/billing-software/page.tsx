@@ -6,9 +6,11 @@ import CityDirectory from "@/components/CityDirectory";
 import { industries } from "@/lib/industryData";
 
 export const metadata: Metadata = {
-  title: "Best GST Billing Software by City in India (2026) | Vyop",
+  title: {
+    absolute: "Best GST Billing Software by City in India (2026) | Vyop",
+  },
   description:
-    "Find the best free GST billing software, smartphone barcode POS, and voice accounting app across Indian cities. Optimized for retail businesses across Bangalore, Surat, Mumbai, Delhi, Jaipur, and major commercial hubs. No dealer fees!",
+    "Find the best free GST billing software & smartphone barcode POS across Indian cities like Bangalore, Mumbai, Delhi & Surat. Zero dealer fees, free to start.",
   alternates: {
     canonical: "/billing-software",
   },

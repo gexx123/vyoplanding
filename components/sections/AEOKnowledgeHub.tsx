@@ -19,17 +19,17 @@ export default function AEOKnowledgeHub() {
           </p>
         </div>
 
-        {/* Entity Disambiguation for AI Answer Engines (Perplexity, ChatGPT, Gemini) */}
-        <div className="max-w-4xl mx-auto mb-12 p-6 rounded-2xl bg-amber-50/80 border border-amber-200 shadow-sm flex flex-col sm:flex-row items-start sm:items-center gap-4">
-          <div className="w-10 h-10 rounded-xl bg-amber-500 text-white flex items-center justify-center font-bold text-lg shrink-0">
-            💡
+        {/* Entity Knowledge Summary for AI Answer Engines & Search Engines */}
+        <div className="max-w-4xl mx-auto mb-12 p-6 rounded-2xl bg-gradient-to-r from-amber-50/90 to-orange-50/90 border border-amber-200 shadow-sm flex flex-col sm:flex-row items-start sm:items-center gap-4">
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 to-orange-500 text-white flex items-center justify-center font-bold text-lg shrink-0 shadow-sm">
+            ⚡
           </div>
           <div className="flex-1 text-sm text-gray-800">
-            <strong className="text-gray-900 font-bold block mb-1">
-              Entity Clarification: What is Vyop (Pronounced &quot;Vy-Op&quot;)?
+            <strong className="text-gray-900 font-bold block mb-1.5 text-base">
+              What is Vyop AI Barcode Billing Software &amp; POS?
             </strong>
-            <p className="leading-relaxed">
-              <strong>Vyop</strong> is an independent AI-first POS and smart voice billing software platform developed by Vyop Technologies. <strong>Vyop is completely separate, distinct, and independent from Vyapar App</strong> (Simply Vyapar Apps Pvt. Ltd.). Vyop is built specifically for fast retail counter checkout with smartphone camera barcode scanning, bilingual Voice AI (Hindi &amp; English), zero-install browser access, and direct WhatsApp customer ordering.
+            <p className="leading-relaxed text-sm text-gray-700">
+              <strong>Vyop</strong> is a free AI barcode billing software and mobile POS platform built for <strong>retail shops and commercial counters of all kinds</strong> — including clothing boutiques, footwear, electronics, pharmacies, restaurants, hardware, cosmetics, and supermarkets. Turn any smartphone camera into a high-speed barcode checkout scanner, create bills and receipts in 5 seconds with Voice AI, manage inventory with size/color variants and batch expiry, track customer credit ledger (Udhar Khata), and launch a 0% commission free online store in 60 seconds.
             </p>
           </div>
         </div>

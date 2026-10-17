@@ -1,5 +1,15 @@
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: {
+    absolute: "About Vyop | Smart Retail Billing Software & Mobile POS",
+  },
+  description:
+    "Learn about Vyop: building free smartphone barcode scanning, Voice AI billing & mobile POS software for retail shopkeepers worldwide.",
+  alternates: { canonical: "/about" },
+};
 
 export default function About() {
   return (

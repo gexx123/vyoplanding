@@ -5,14 +5,17 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Vyop vs Marg ERP 9+ | Best Free Mobile Alternative to Marg Software",
+  title: {
+    absolute: "Vyop vs Marg ERP: Free Mobile POS Alternative | Vyop",
+  },
   description:
-    "Compare Vyop vs Marg ERP 9+. Marg software costs ₹9,000-₹25,000/year, requires Windows PCs, dongles, and weeks of training. Vyop runs on your smartphone with camera barcode scanning and Hindi voice AI billing, starting free with ₹999/yr Pro cloud sync.",
+    "Compare Vyop vs Marg ERP. Avoid ₹9k-₹25k/yr fees & hardware dongles. Vyop gives you phone camera barcode scanning, batch expiry tracking & Voice AI. Free to start.",
   alternates: { canonical: "/vyop-vs-marg" },
   openGraph: {
-    title: "Vyop vs Marg ERP 9+ | Free Mobile Alternative",
-    description: "Why retailers and chemists are switching from Marg ERP to Vyop: ₹999/yr pricing (save ₹20,000+), zero PC requirement, smartphone barcode POS, and Hindi voice billing.",
+    title: "Vyop vs Marg ERP: Free Mobile POS Alternative | Vyop",
+    description: "Why retailers and chemists are switching from Marg ERP to Vyop: save ₹20,000+, zero PC requirement, smartphone barcode POS, and Hindi voice billing.",
     url: "https://vyop.in/vyop-vs-marg",
+    siteName: "Vyop POS",
   },
 };
 

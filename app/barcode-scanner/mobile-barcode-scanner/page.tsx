@@ -16,15 +16,16 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title:
-    "Mobile Barcode Scanner App | Phone Camera Barcode Scanner for Shop – Vyop",
+  title: {
+    absolute: "Mobile Barcode Scanner App: Turn Phone into Scanner | Vyop",
+  },
   description:
-    "Turn your mobile phone camera into a professional barcode scanner. Best mobile barcode scanner app for Android & iPhone. Scan barcodes, generate bills, manage inventory from your phone. Free download.",
+    "Turn your mobile phone camera into a supermarket barcode scanner. Scan barcodes, generate bills, and manage inventory from your phone. 100% Free download.",
   alternates: { canonical: "/barcode-scanner/mobile-barcode-scanner" },
   openGraph: {
-    title: "Mobile Barcode Scanner – Turn Any Phone into Barcode POS | Vyop",
+    title: "Mobile Barcode Scanner: Turn Any Phone into Barcode POS | Vyop",
     description:
-      "Best mobile barcode scanner app. Scan barcodes from phone camera, bill customers, print receipts. No hardware. 100% Free.",
+      "Best mobile barcode scanner app. Scan barcodes from phone camera, bill customers, print receipts. No hardware needed. 100% Free.",
     url: "https://vyop.in/barcode-scanner/mobile-barcode-scanner",
     siteName: "Vyop",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Vyop Mobile Barcode Scanner" }],

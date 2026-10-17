@@ -80,6 +80,15 @@ export default function Hero() {
         >
 
 
+          {/* Badge */}
+          <motion.div
+            variants={fadeUpVariants}
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-50 border border-amber-200/80 text-amber-800 text-xs sm:text-sm font-semibold mb-4 shadow-sm"
+          >
+            <span className="flex h-2 w-2 rounded-full bg-amber-500 animate-pulse" />
+            <span>Vyop — Free AI Barcode Billing &amp; Mobile POS</span>
+          </motion.div>
+
           {/* H1 */}
           <h1
             className="font-extrabold mb-6 tracking-tight flex flex-col gap-2 md:gap-3 w-full"
@@ -93,7 +102,7 @@ export default function Hero() {
               Turn Your Phone into a Barcode Scanner
             </span>
             <span className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 tracking-normal mt-1">
-              No Barcode? AI Handles It With a Snap.
+              AI Voice Invoicing, Barcode POS &amp; Free Online Store
             </span>
           </h1>
 
@@ -108,7 +117,7 @@ export default function Hero() {
               lineHeight: 1.7,
             }}
           >
-            Smart barcode POS, mobile inventory scanner, and digital ledger for retail businesses worldwide. Scan packaged items, let AI recognize unbarcoded goods, bill in any currency ($, €, £, AED, ₹), and launch a 0% commission online store.
+            Vyop is the free AI barcode billing &amp; mobile POS app for retail shops and businesses of every kind — from fashion and electronics to grocery, hardware, and dining. Turn your smartphone camera into a supermarket barcode scanner, create bills in seconds by voice, track stock, manage customer ledger, and launch a 0% commission free online store.
           </motion.p>
 
           {/* CTA buttons */}

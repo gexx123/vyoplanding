@@ -21,7 +21,9 @@ export async function generateMetadata({
   if (!industry) return {};
 
   return {
-    title: industry.metaTitle,
+    title: {
+      absolute: industry.metaTitle,
+    },
     description: industry.metaDescription,
     alternates: {
       canonical: `/solutions/${industry.slug}`,

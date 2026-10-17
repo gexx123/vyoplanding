@@ -6,16 +6,18 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Free Mobile POS App & Retail Software [0% Fees, Works Offline] — Vyop POS",
+  title: {
+    absolute: "Free Mobile POS App & Retail Billing Software | Vyop",
+  },
   description:
-    "Free mobile point of sale (POS) software for retail shops & small business. Turn your phone camera into a barcode checkout counter. Multi-currency ($, €, £, AED, ₹), ESC/POS thermal printing, offline billing, 0% fees.",
+    "Free mobile POS and barcode billing app for retail shops. Turn your phone camera into a supermarket barcode scanner, print thermal receipts & bill offline free.",
   alternates: { canonical: "/pos-app" },
   openGraph: {
-    title: "Free Mobile POS App & Retail Software [0% Fees, Works Offline] — Vyop POS",
+    title: "Free Mobile POS App & Retail Billing Software | Vyop POS",
     description:
       "Run checkout on Desktop PC (vyop.shop) or smartphone. Phone camera scans barcodes. Multi-currency, 0% transaction fees, offline mode, and Bluetooth receipt printing. Free to start.",
     url: "https://vyop.in/pos-app",
-    siteName: "Vyop POS: Barcode Scan & Bill",
+    siteName: "Vyop POS",
   },
   keywords: [
     "best free pos app",

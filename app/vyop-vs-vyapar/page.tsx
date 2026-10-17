@@ -5,13 +5,16 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Vyop vs Vyapar (2026 Comparison) | Best Billing & POS Software for PC & Mobile",
-  description: "Comparing Vyop and Vyapar App. Vyop offers full Desktop PC counter billing (vyop.shop) + Android phone barcode machine, voice AI in Hindi, CA-grade GSTR-1/3B tax reports & 0% fee online store for ₹999/yr (vs Vyapar ₹3,999+).",
+  title: {
+    absolute: "Vyop vs Vyapar (2026) | Billing & POS Software Compared",
+  },
+  description: "Compare Vyop vs Vyapar. Vyop provides full Desktop PC billing + smartphone barcode scanner, Voice AI & GST reports for ₹999/yr (vs Vyapar ₹3,999+). Free to start.",
   alternates: { canonical: '/vyop-vs-vyapar' },
   openGraph: {
-    title: "Vyop vs Vyapar | Smart Desktop & Mobile Billing Software Compared",
+    title: "Vyop vs Vyapar (2026) | Billing & POS Software Compared",
     description: "Full PC Counter (vyop.shop) + Phone Barcode Machine vs Traditional Desktop Software. Save 75% on licensing.",
     url: 'https://vyop.in/vyop-vs-vyapar',
+    siteName: 'Vyop POS',
   },
 };
 

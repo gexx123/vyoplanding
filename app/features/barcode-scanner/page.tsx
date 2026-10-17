@@ -19,16 +19,18 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Turn Phone into Barcode Scanner & POS [No Hardware Needed] — Vyop POS",
+  title: {
+    absolute: "Turn Phone into Barcode Scanner & POS (No Hardware) | Vyop",
+  },
   description:
-    "Transform your smartphone camera into a supermarket barcode POS scanner. Scan 1D/2D barcodes or snap unbarcoded items with AI for instant billing. No expensive laser scanner needed. 100% Free.",
+    "Transform your smartphone camera into a supermarket barcode POS scanner. Scan 1D/2D barcodes or snap loose items with AI for instant billing. 100% Free.",
   alternates: { canonical: "/features/barcode-scanner" },
   openGraph: {
-    title: "Turn Phone into Barcode Scanner & POS [No Hardware Needed] — Vyop POS",
+    title: "Turn Phone into Barcode Scanner & POS (No Hardware) | Vyop",
     description:
-      "Why buy an expensive barcode laser gun? Scan 1D/2D barcodes or snap photos of unbarcoded items to bill at mall speeds from your phone. Built-in thermal printer support. 100% Free.",
+      "Why buy an expensive barcode laser gun? Scan barcodes or snap photos of unbarcoded items to bill from your phone. Built-in thermal printer support. Free.",
     url: "https://vyop.in/features/barcode-scanner",
-    siteName: "Vyop POS: Barcode Scan & Bill",
+    siteName: "Vyop POS",
     images: [
       {
         url: "/og-image.png",

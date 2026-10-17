@@ -1,14 +1,17 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Free UPI QR Code Generator [Print Custom Shop Standee] — Vyop POS",
+  title: {
+    absolute: "Free UPI QR Code Generator: Custom Shop Standee | Vyop",
+  },
   description:
-    "Generate custom printable UPI QR code payment standees for your shop. Enter your UPI ID, business name, and optional amount to generate high-resolution QR codes compatible with GPay, PhonePe, and Paytm.",
+    "Generate custom printable UPI QR code standees for your shop counter. Compatible with PhonePe, GPay, Paytm & BHIM. Instant high-res download with 0% fee.",
   alternates: { canonical: "/tools/upi-qr-generator" },
   openGraph: {
-    title: "Free UPI QR Code Generator [Print Custom Shop Standee] — Vyop POS",
+    title: "Free UPI QR Code Generator: Custom Shop Standee | Vyop",
     description: "Generate and print custom UPI payment QR standees for your store counter. 0% fee payments with instant verification.",
     url: "https://vyop.in/tools/upi-qr-generator",
+    siteName: "Vyop POS",
   },
   keywords: [
     "upi qr code generator",

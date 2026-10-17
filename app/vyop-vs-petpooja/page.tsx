@@ -5,10 +5,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Vyop vs Petpooja | Best Free Restaurant POS Alternative in India",
-  description: "Compare Vyop vs Petpooja restaurant POS. Petpooja costs ₹12,000-₹25,000/yr with lock-in contracts. Vyop offers free voice KOT, table management, QR menus & GST billing for restaurants.",
+  title: {
+    absolute: "Vyop vs Petpooja: Free Restaurant POS Alternative | Vyop",
+  },
+  description: "Compare Vyop vs Petpooja. Avoid ₹12k-₹25k/yr contracts. Vyop provides free voice KOT, table management, digital QR menus & GST billing. Free to start.",
   alternates: { canonical: "/vyop-vs-petpooja" },
-  openGraph: { title: "Vyop vs Petpooja | Free Restaurant POS Alternative", url: "https://vyop.in/vyop-vs-petpooja" },
+  openGraph: { title: "Vyop vs Petpooja: Free Restaurant POS Alternative | Vyop", url: "https://vyop.in/vyop-vs-petpooja", siteName: "Vyop POS" },
 };
 
 const comparison = [

@@ -1,14 +1,17 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Free Invoice Generator Online [Download PDF & WhatsApp Receipt] — Vyop POS",
+  title: {
+    absolute: "Free Invoice Generator Online: PDF & WhatsApp Bills | Vyop",
+  },
   description:
-    "Free online invoice maker for small businesses and retail shops. Create professional GST and tax invoices, add custom items, download PDF or share via WhatsApp with zero watermark.",
+    "Free online invoice maker for retail shops & small businesses. Create GST tax invoices, download PDF & share via WhatsApp with zero watermark. 100% free.",
   alternates: { canonical: "/tools/invoice-generator" },
   openGraph: {
-    title: "Free Invoice Generator Online [Download PDF & WhatsApp Receipt] — Vyop POS",
+    title: "Free Invoice Generator Online: PDF & WhatsApp Bills | Vyop",
     description: "Create, print, and share professional retail tax invoices in seconds. Instant PDF download, WhatsApp sharing, and tax calculations.",
     url: "https://vyop.in/tools/invoice-generator",
+    siteName: "Vyop POS",
   },
   keywords: [
     "free invoice generator",

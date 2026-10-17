@@ -5,10 +5,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Vyop vs Busy Accounting | Free Mobile Alternative to Busy Software",
-  description: "Compare Vyop vs Busy Accounting Software. Busy is built for desktop financial bookkeeping and voucher ledgers. Vyop is free to start on smartphone and desktop with voice AI billing and ₹999/yr Pro cloud sync.",
+  title: {
+    absolute: "Vyop vs Busy Accounting: Free Mobile Alternative | Vyop",
+  },
+  description: "Compare Vyop vs Busy Accounting. Skip ₹7,200+/yr desktop license fees. Vyop offers free phone barcode scanning, Voice AI & GST reports for ₹999/yr. Free to start.",
   alternates: { canonical: "/vyop-vs-busy" },
-  openGraph: { title: "Vyop vs Busy Accounting | Free Mobile Alternative", url: "https://vyop.in/vyop-vs-busy" },
+  openGraph: { title: "Vyop vs Busy Accounting: Free Mobile Alternative | Vyop", url: "https://vyop.in/vyop-vs-busy", siteName: "Vyop POS" },
 };
 
 const comparison = [

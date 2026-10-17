@@ -1,5 +1,15 @@
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: {
+    absolute: "Contact Vyop | Support, WhatsApp & Merchant Enquiries",
+  },
+  description:
+    "Contact the Vyop team for customer support, onboarding assistance, partner enquiries, and WhatsApp billing support for retail stores.",
+  alternates: { canonical: "/contact" },
+};
 
 export default function ContactUs() {
   return (

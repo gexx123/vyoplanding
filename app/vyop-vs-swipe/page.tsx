@@ -5,14 +5,17 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Vyop vs Swipe Billing App | Best Affordable GST Billing Alternative",
+  title: {
+    absolute: "Vyop vs Swipe Billing: Free GST Billing Alternative | Vyop",
+  },
   description:
-    "Compare Vyop vs Swipe Billing (getswipe.in). Swipe charges ₹1,299-₹3,999/year. Vyop offers free offline billing and ₹999/yr Pro cloud sync with Voice AI and 10 ways to add items.",
+    "Compare Vyop vs Swipe Billing. Swipe charges ₹1,299-₹3,999/yr. Vyop offers free offline billing, phone camera barcode POS & Voice AI for ₹999/yr. Free to start.",
   alternates: { canonical: "/vyop-vs-swipe" },
   openGraph: {
-    title: "Vyop vs Swipe Billing | Free GST Billing App Alternative",
+    title: "Vyop vs Swipe Billing: Free GST Billing Alternative | Vyop",
     description: "Looking for a modern Swipe alternative? Vyop provides voice AI billing, smartphone camera POS, and 0% commission storefront with lowest ₹999/yr pricing.",
     url: "https://vyop.in/vyop-vs-swipe",
+    siteName: "Vyop POS",
   },
 };
 

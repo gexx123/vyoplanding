@@ -23,17 +23,18 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title:
-    "Free Barcode Scanner App for Mobile [Turn Phone into POS Scanner] — Vyop POS",
+  title: {
+    absolute: "Free Barcode Scanner App for Billing & Mobile POS | Vyop",
+  },
   description:
-    "Turn your smartphone camera into a supermarket barcode scanner & mobile POS. Scan 1D/2D barcodes, print receipts via Bluetooth thermal printer, track stock. 100% Free, 0% fees, works offline.",
+    "Turn your smartphone camera into a supermarket barcode scanner & mobile POS. Scan 1D/2D barcodes, print receipts with thermal printers & bill offline free.",
   alternates: { canonical: "/barcode-scanner" },
   openGraph: {
-    title: "Free Barcode Scanner App for Mobile [Turn Phone into POS Scanner] — Vyop POS",
+    title: "Free Barcode Scanner App for Billing & Mobile POS | Vyop",
     description:
       "Turn any phone into a supermarket barcode scanner & billing machine. Scan barcodes, snap unbarcoded products with AI, print thermal receipts. 100% free.",
     url: "https://vyop.in/barcode-scanner",
-    siteName: "Vyop POS: Barcode Scan & Bill",
+    siteName: "Vyop POS",
     images: [
       {
         url: "/og-image.png",

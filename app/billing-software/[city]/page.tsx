@@ -18,8 +18,10 @@ export async function generateMetadata({ params }: { params: Promise<{ city: str
   if (!city) return {};
 
   return {
-    title: `Best Billing Software in ${city.name} (2026) — PC & Mobile | Vyop`,
-    description: `Skip ₹15,000+ billing software dealers in ${city.name}. Vyop works on Desktop PC (vyop.shop) & turns your phone into a barcode machine. Voice AI, CA-grade GST reports, udhar khata. Free to start, ₹999/yr Pro. Used in ${city.famousMarkets[0]} & ${city.famousMarkets[1]}.`,
+    title: {
+      absolute: `Best Billing Software in ${city.name} (2026) | Vyop`,
+    },
+    description: `Best GST billing software & mobile barcode POS in ${city.name}. Turn phone into a barcode scanner, create fast invoices & manage inventory. Free to start.`,
     keywords: [
       `billing software in ${city.name}`,
       `billing software dealers in ${city.name}`,

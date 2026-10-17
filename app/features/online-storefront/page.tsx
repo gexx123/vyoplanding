@@ -40,9 +40,11 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Create Free Online Ordering Website for Any Shop, Restaurant & Hotel (0% Commission) | Vyop",
+  title: {
+    absolute: "Free Online Store Builder for Any Shop (0% Fees) | Vyop",
+  },
   description:
-    "Launch a 0% commission online ordering website for your restaurant, hotel, retail shop, cafe, bakery, or store in 30 seconds. Table QR code menus, room service ordering, WhatsApp catalog, direct UPI payments, and zero aggregator cuts.",
+    "Launch a 0% commission online store for your retail shop, cafe, bakery, or boutique in 30 seconds. WhatsApp catalog, QR menus, direct UPI payments & zero fees.",
   alternates: {
     canonical: "/features/online-storefront",
   },

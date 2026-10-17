@@ -5,9 +5,11 @@ import GstCalculator from "@/components/tools/GstCalculator";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Free Online GST Calculator India [5%, 12%, 18%, 28% & Reverse GST] — Vyop POS",
+  title: {
+    absolute: "Free Online GST Calculator India: All Tax Slabs | Vyop",
+  },
   description:
-    "Free and accurate GST calculator for Indian shopkeepers & accountants. Calculate inclusive & reverse GST, CGST, SGST, IGST splits for 5%, 12%, 18%, and 28% tax slabs.",
+    "Free GST calculator for shopkeepers & businesses in India. Calculate inclusive & reverse GST, CGST, SGST, IGST splits for 5%, 12%, 18% & 28% tax slabs.",
   keywords: [
     "free GST calculator India",
     "online GST calculator",
@@ -21,10 +23,10 @@ export const metadata: Metadata = {
     canonical: "/tools/gst-calculator",
   },
   openGraph: {
-    title: "Free Online GST Calculator India [5%, 12%, 18%, 28% & Reverse GST] — Vyop POS",
+    title: "Free Online GST Calculator India: All Tax Slabs | Vyop",
     description: "Calculate CGST, SGST, and Reverse GST in seconds with Vyop's free interactive tool.",
     url: "https://vyop.in/tools/gst-calculator",
-    siteName: "Vyop POS: Barcode Scan & Bill",
+    siteName: "Vyop POS",
     images: [
       {
         url: "/og-image.png",

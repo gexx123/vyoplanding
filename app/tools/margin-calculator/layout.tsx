@@ -1,14 +1,17 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Free Profit Margin Calculator [Markup & Gross Profit Formula] — Vyop POS",
+  title: {
+    absolute: "Free Profit Margin & Markup Calculator for Retail | Vyop",
+  },
   description:
-    "Free profit margin calculator for retail store owners and wholesalers. Calculate gross profit margin, markup percentage, cost of goods, and selling price instantly.",
+    "Free profit margin & markup calculator for retail shopkeepers & wholesalers. Calculate gross profit margin, markup %, cost price & selling price instantly.",
   alternates: { canonical: "/tools/margin-calculator" },
   openGraph: {
-    title: "Free Profit Margin Calculator [Markup & Gross Profit Formula] — Vyop POS",
+    title: "Free Profit Margin & Markup Calculator for Retail | Vyop",
     description: "Calculate gross profit margin, markup percentage, and profit per unit for retail products.",
     url: "https://vyop.in/tools/margin-calculator",
+    siteName: "Vyop POS",
   },
   keywords: [
     "profit margin calculator",

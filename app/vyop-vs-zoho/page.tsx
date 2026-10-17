@@ -5,14 +5,17 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Vyop vs Zoho Books & Invoice | Best Affordable Retail POS Alternative in India",
+  title: {
+    absolute: "Vyop vs Zoho Books: Free Retail POS Alternative | Vyop",
+  },
   description:
-    "Compare Vyop vs Zoho Books & Invoice. Zoho is built for B2B desk accounting and lacks camera barcode POS, Hindi voice billing, and counter speed. Vyop provides fast retail counter POS with Voice AI, starting free with ₹999/yr Pro cloud sync.",
+    "Compare Vyop vs Zoho Books. Zoho is built for B2B desk accounting. Vyop provides fast retail counter POS with Voice AI & smartphone barcode scanner for ₹999/yr.",
   alternates: { canonical: "/vyop-vs-zoho" },
   openGraph: {
-    title: "Vyop vs Zoho Books | Retail POS Alternative",
+    title: "Vyop vs Zoho Books: Free Retail POS Alternative | Vyop",
     description: "Why retail shopkeepers choose Vyop over Zoho: retail counter speed, smartphone barcode scanner, Hindi voice billing, and lowest ₹999/yr pricing (under ₹3/day).",
     url: "https://vyop.in/vyop-vs-zoho",
+    siteName: "Vyop POS",
   },
 };
 

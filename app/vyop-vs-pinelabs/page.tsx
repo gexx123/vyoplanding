@@ -5,14 +5,17 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Vyop vs Pine Labs POS | Free Mobile POS Alternative (No Monthly Rental)",
+  title: {
+    absolute: "Vyop vs Pine Labs POS: Zero Monthly Machine Rental | Vyop",
+  },
   description:
-    "Compare Vyop vs Pine Labs POS machine. Pine Labs provides dedicated card payment EDC terminals with monthly machine rental. Vyop gives you mobile POS, camera barcode scanning, and direct 0% MDR UPI QR payments starting free with ₹999/yr Pro cloud sync.",
+    "Compare Vyop vs Pine Labs. Save ₹500-₹1,200/mo in terminal rentals. Vyop turns any phone into a barcode POS with 0% MDR UPI payments. Free to start.",
   alternates: { canonical: "/vyop-vs-pinelabs" },
   openGraph: {
-    title: "Vyop vs Pine Labs POS | Zero Monthly Rental POS",
+    title: "Vyop vs Pine Labs POS: Zero Monthly Machine Rental | Vyop",
     description: "Save on POS hardware rentals. Switch to Vyop: smartphone POS with 0% MDR UPI payments, camera barcode scanning, and ₹999/yr Pro cloud sync.",
     url: "https://vyop.in/vyop-vs-pinelabs",
+    siteName: "Vyop POS",
   },
 };
 

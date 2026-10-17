@@ -6,14 +6,17 @@ import FAQ from "@/components/sections/FAQ";
 import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "10 Ways to Add Products & Inventory — Vyop Retail App",
+  title: {
+    absolute: "10 Ways to Add Products & Inventory: POS App | Vyop",
+  },
   description:
-    "Discover the 10 lightning-fast ways to add items to your bill or Kirana inventory using barcode scanning, AI invoice extraction, voice orb prompts, and photo recognition.",
+    "Add items to bills & inventory with 10 fast methods: camera barcode scanning, Voice AI, photo recognition, supplier invoice PDF import & CSV. Free to start.",
   keywords: [
-    "10 ways to add items kirana",
+    "10 ways to add items",
     "fastest retail inventory app",
     "ai invoice scanner app",
     "voice inventory management",
+    "barcode product addition",
   ],
 };
 

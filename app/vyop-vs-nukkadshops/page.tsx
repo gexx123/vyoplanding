@@ -5,14 +5,17 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Vyop vs Nukkad Shops POS | Best Free Supermarket & Kirana POS Alternative",
+  title: {
+    absolute: "Vyop vs Nukkad Shops: Free Retail POS Alternative | Vyop",
+  },
   description:
-    "Compare Vyop vs Nukkad Shops. Nukkad Shops provides dedicated touchscreen POS terminals with annual software AMC. Vyop turns your smartphone and web browser into a supermarket barcode POS with voice AI, starting free with ₹999/yr Pro cloud sync.",
+    "Compare Vyop vs Nukkad Shops. Save ₹25k-₹45k in dedicated POS terminal hardware. Vyop turns any phone into a supermarket barcode scanner POS. Free to start.",
   alternates: { canonical: "/vyop-vs-nukkadshops" },
   openGraph: {
-    title: "Vyop vs Nukkad Shops | Free Mobile POS for Kirana & Retail",
+    title: "Vyop vs Nukkad Shops: Free Retail POS Alternative | Vyop",
     description: "Save on dedicated POS hardware. Vyop gives you supermarket-grade barcode scanning and voice billing on your phone starting free with ₹999/yr Pro.",
     url: "https://vyop.in/vyop-vs-nukkadshops",
+    siteName: "Vyop POS",
   },
 };
 

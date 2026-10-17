@@ -5,15 +5,17 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Vyop vs Shopify POS [0% Commission Store & Free Mobile POS] — Vyop POS",
+  title: {
+    absolute: "Vyop vs Shopify POS: Free 0% Fee Store & POS App | Vyop",
+  },
   description:
-    "Compare Vyop vs Shopify POS. Shopify charges $39-$89/month plus transaction cuts. Vyop provides a free smartphone barcode POS, loose-item AI recognition, and a 0% commission online storefront with multi-currency checkout.",
+    "Compare Vyop vs Shopify POS. Avoid $39-$89/mo fees. Vyop gives you free smartphone barcode POS, AI loose-item billing & 0% fee online store with zero hardware.",
   alternates: { canonical: "/vyop-vs-shopify" },
   openGraph: {
-    title: "Vyop vs Shopify POS [0% Commission Store & Free Mobile POS] — Vyop POS",
+    title: "Vyop vs Shopify POS: Free 0% Fee Store & POS App | Vyop",
     description: "Compare Vyop vs Shopify POS: Avoid $39-$89/month subscriptions and platform fees. Smartphone barcode POS, multi-currency support, and 0% commission live store link.",
     url: "https://vyop.in/vyop-vs-shopify",
-    siteName: "Vyop POS: Barcode Scan & Bill",
+    siteName: "Vyop POS",
   },
 };
 

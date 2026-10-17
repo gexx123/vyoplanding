@@ -1,14 +1,17 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Free Discount Calculator [Percentage Off & Sale Price] — Vyop POS",
+  title: {
+    absolute: "Free Discount Calculator: Percentage Off & Sale Price | Vyop",
+  },
   description:
-    "Free discount calculator for shoppers and retail store owners. Calculate percentage off, sale price, stacked discounts, and Buy-One-Get-One (BOGO) offers instantly.",
+    "Free discount calculator for retail shops & shoppers. Calculate percentage off, final sale price, stacked discounts & Buy-One-Get-One (BOGO) deals instantly.",
   alternates: { canonical: "/tools/discount-calculator" },
   openGraph: {
-    title: "Free Discount Calculator [Percentage Off & Sale Price] — Vyop POS",
+    title: "Free Discount Calculator: Percentage Off & Sale Price | Vyop",
     description: "Quickly calculate percentage discounts, final sale prices, and multiple stacked discounts for retail promotions.",
     url: "https://vyop.in/tools/discount-calculator",
+    siteName: "Vyop POS",
   },
   keywords: [
     "discount calculator",

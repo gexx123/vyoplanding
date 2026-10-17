@@ -5,10 +5,18 @@ import Link from "next/link";
 import ComparisonDisclaimer from "@/components/legal/ComparisonDisclaimer";
 
 export const metadata: Metadata = {
-  title: "10 Best POS Software & Apps in India (2026) — Mobile & Desktop Compared",
-  description: "Expert comparison of India's 10 best POS software for 2026. Vyop POS works on Android & Desktop PC (vyop.shop), turns phone into barcode scanner (instant camera scan), CA-grade GST accounting, and zero hardware cost. Compare Vyop, Vyapar, Loyverse & more.",
+  title: {
+    absolute: "10 Best POS Software in India (2026) | Mobile & PC Compared",
+  },
+  description:
+    "Compare India's 10 best POS software for 2026. Vyop offers phone camera barcode scanning, desktop PC billing, GST tax reports & zero hardware cost. Free to start.",
   alternates: { canonical: "/best-pos-software-india" },
-  openGraph: { title: "10 Best POS Software in India (2026) — Mobile & Desktop Compared", description: "The smartest POS software: Desktop PC counter + Mobile barcode machine. Compare 10 POS systems for Indian retail.", url: "https://vyop.in/best-pos-software-india" },
+  openGraph: {
+    title: "10 Best POS Software in India (2026) | Mobile & PC Compared",
+    description: "The smartest POS software: Desktop PC counter + Mobile barcode machine. Compare 10 POS systems for retail.",
+    url: "https://vyop.in/best-pos-software-india",
+    siteName: "Vyop POS",
+  },
   keywords: [
     "best pos software",
     "pos software",

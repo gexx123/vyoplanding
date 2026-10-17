@@ -1,6 +1,43 @@
+import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import Navbar from "@/components/sections/Navbar";
 import Hero from "@/components/sections/Hero";
+
+export const metadata: Metadata = {
+  title: {
+    absolute: "Vyop: Free AI Barcode Billing Software & Mobile POS App",
+  },
+  description:
+    "Vyop is a free AI barcode billing software & POS app for all retail shops. Turn your phone into a barcode scanner, create fast bills & launch a free store.",
+  alternates: {
+    canonical: "https://vyop.in",
+  },
+  openGraph: {
+    title: "Vyop: Free AI Barcode Billing Software & Mobile POS App",
+    description:
+      "Free smartphone barcode POS, AI voice billing, instant bills and receipts, digital ledger & 0% commission free online store.",
+    url: "https://vyop.in",
+    siteName: "Vyop POS",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Vyop Free AI Barcode Billing Software & Mobile POS App",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Vyop: Free AI Barcode Billing Software & Mobile POS App",
+    description:
+      "Turn your phone into a barcode scanner. Free AI mobile POS, instant bills and receipts, and 0% commission free online store.",
+    images: ["/og-image.png"],
+    creator: "@vyop_ai",
+  },
+};
 
 // Lazy load below-the-fold components to improve performance
 const StickyFeatureSection = dynamic(() => import("@/components/sections/StickyFeatureSection"));
@@ -29,22 +66,19 @@ export default function Home() {
               {
                 "@type": "SoftwareApplication",
                 "@id": "https://vyop.in/#application",
-                "name": "Vyop POS: Barcode Scan & Bill",
+                "name": "Vyop: Free AI Barcode Billing Software & Mobile POS",
                 "alternateName": ["Vyop", "Vyop POS", "Vyop Barcode App", "Vyop Khata App", "Vyop Billing App", "Vy-Op"],
-                "disambiguatingDescription": "Vyop is an independent AI-first POS, barcode scanning, multi-currency billing, and digital storefront application developed by Vyop Technologies. Vyop is completely distinct from and unaffiliated with desktop accounting programs like Vyapar App (Simply Vyapar Apps Pvt. Ltd.).",
                 "operatingSystem": "Android, iOS, Web",
                 "applicationCategory": "BusinessApplication",
                 "applicationSubCategory": "PointOfSale, AccountingSoftware, BillingSoftware",
-                "description": "Vyop POS: Barcode Scan & Bill is a free smartphone barcode POS, mobile inventory scanner & digital ledger app for retail businesses worldwide. Turn any phone into a barcode scanner, accept multi-currency payments (USD, EUR, GBP, AED, INR), and manage live online storefronts.",
+                "description": "Vyop is a free AI barcode billing software and mobile POS platform for retail shops and businesses of all kinds — from fashion, electronics, and pharmacies to hardware, restaurants, and grocery. Turn your smartphone camera into a supermarket barcode scanner, create instant bills and receipts with Voice AI, manage inventory, track customer ledger, and launch a free online store.",
                 "url": "https://vyop.in",
                 "installUrl": "https://play.google.com/store/apps/details?id=com.vyop.app",
                 "downloadUrl": "https://play.google.com/store/apps/details?id=com.vyop.app",
-                "countriesSupported": ["US", "GB", "CA", "AU", "AE", "SG", "PH", "MY", "ZA", "IN"],
+                "countriesSupported": ["IN", "US", "GB", "CA", "AU", "AE", "SG", "PH", "MY", "ZA"],
                 "featureList": [
                   "Smartphone Barcode Scanner POS & Digital Ledger",
                   "AI Recognition for Unbarcoded Loose Goods",
-                  "Multi-Currency Billing (USD, EUR, GBP, AED, INR)",
-                  "Global Tax Support (Sales Tax, VAT, GST & Tax-Free)",
                   "Free GST, VAT and Non-GST Billing App",
                   "Voice AI Billing in Multiple Languages",
                   "10 Lightning-Fast Ways to Add Products & Items",
@@ -52,12 +86,13 @@ export default function Home() {
                   "Custom Discount Banners & Spin-The-Wheel Customer Rewards",
                   "Voice Expense Logging & Automated Payment Reminders",
                   "Barcode Label Printing & Low Stock Alerts",
-                  "Thermal Printer & Bluetooth Bill Printing Support"
+                  "Thermal Printer & Bluetooth Bill Printing Support",
+                  "Multi-Currency Billing (USD, EUR, GBP, AED, INR)"
                 ],
                 "offers": {
                   "@type": "Offer",
                   "price": "0",
-                  "priceCurrency": "USD",
+                  "priceCurrency": "INR",
                   "availability": "https://schema.org/InStock"
                 }
               },
@@ -65,8 +100,8 @@ export default function Home() {
                 "@type": "WebSite",
                 "@id": "https://vyop.in/#website",
                 "url": "https://vyop.in",
-                "name": "Vyop POS: Barcode Scan & Bill",
-                "description": "Free Smartphone Barcode Scanner POS, Multi-Currency Billing Software & Digital Ledger App for Retailers Worldwide.",
+                "name": "Vyop",
+                "description": "Free Barcode Billing Software, Voice Invoicing & Mobile POS App for Retail Shops.",
                 "publisher": {
                   "@id": "https://vyop.in/#organization"
                 }
@@ -197,10 +232,10 @@ export default function Home() {
                   },
                   {
                     "@type": "Question",
-                    "name": "Is Vyop the same as or related to Vyapar App?",
+                    "name": "What is Vyop and which types of retail shops can use it?",
                     "acceptedAnswer": {
                       "@type": "Answer",
-                      "text": "No. Vyop is an independent AI-first POS and smart voice billing software platform developed by Vyop Technologies. Vyop is completely separate from and unrelated to Vyapar App (Simply Vyapar Apps Pvt. Ltd.). Vyop is designed for fast counter checkout with bilingual voice billing, smartphone camera barcode scanning, zero-install browser access, and direct WhatsApp customer ordering."
+                      "text": "Vyop is a free AI barcode billing software and mobile POS designed for all retail shops and commercial counters — including clothing boutiques, footwear, electronics, chemist pharmacies, restaurants, hardware, and grocery. It turns your smartphone into a supermarket barcode scanner, generates bills in 5 seconds by voice, manages size/color variants and batch expiry, tracks Udhar Khata, and launches a free 0% commission online store."
                     }
                   },
                   {
@@ -217,8 +252,8 @@ export default function Home() {
                 "@type": "Organization",
                 "@id": "https://vyop.in/#organization",
                 "name": "Vyop Technologies",
-                "alternateName": ["Vyop Technologies", "Vyop AI"],
-                "disambiguatingDescription": "Vyop Technologies is an independent retail technology company specializing in voice AI point-of-sale systems, smartphone barcode scanning, and direct-to-consumer shop storefronts. It is an independent entity with no corporate affiliation to Simply Vyapar Apps Pvt. Ltd.",
+                "alternateName": ["Vyop Technologies", "Vyop AI", "Vyop POS"],
+                "description": "Vyop Technologies is a retail software company providing AI voice billing, mobile barcode POS, and smart inventory solutions for retail businesses worldwide.",
                 "url": "https://vyop.in",
                 "logo": "https://vyop.in/logo.png",
                 "contactPoint": {

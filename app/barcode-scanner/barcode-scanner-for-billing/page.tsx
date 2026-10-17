@@ -18,15 +18,16 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title:
-    "Barcode Scanner for Billing | Scan Barcode & Create Bill from Phone – Vyop",
+  title: {
+    absolute: "Barcode Scanner for Billing: Scan & Bill from Phone | Vyop",
+  },
   description:
-    "Best barcode scanner for billing. Scan product barcodes from phone camera and create GST bills instantly. Barcode billing software for shops, retail stores, kirana. Free app. No hardware.",
+    "Best barcode scanner for billing. Scan barcodes with phone camera and create GST bills instantly. Barcode billing software for retail shops of all kinds. Free.",
   alternates: { canonical: "/barcode-scanner/barcode-scanner-for-billing" },
   openGraph: {
-    title: "Barcode Scanner for Billing – Scan & Bill from Phone | Vyop",
+    title: "Barcode Scanner for Billing: Scan & Bill from Phone | Vyop",
     description:
-      "Scan barcodes with phone camera and generate bills instantly. Complete barcode billing software for Indian shops. Free.",
+      "Scan barcodes with phone camera and generate bills instantly. Barcode billing software for retail shops of all kinds. Free app.",
     url: "https://vyop.in/barcode-scanner/barcode-scanner-for-billing",
     siteName: "Vyop",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Vyop Barcode Scanner for Billing" }],

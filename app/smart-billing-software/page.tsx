@@ -7,9 +7,11 @@ import { industries } from "@/lib/industryData";
 import ComparisonDisclaimer from "@/components/legal/ComparisonDisclaimer";
 
 export const metadata: Metadata = {
-  title: "Smart Billing Software & POS App for Retail Shops in India (2026) | Vyop",
+  title: {
+    absolute: "Smart Billing Software & POS App for Retail Shops | Vyop",
+  },
   description:
-    "Smart billing software & dukaan POS app for Indian retail shops. Turn any Android phone into a high-speed billing counter. Voice AI in Hindi, phone camera barcode scanner, Bluetooth thermal printing, WhatsApp bills & udhari khata. Free to start, ₹999/yr Pro.",
+    "Smart billing software & POS app for retail shops. Turn phone into a barcode scanner, create voice bills & print receipts with zero hardware. Free to start.",
   alternates: { canonical: "/smart-billing-software" },
   openGraph: {
     title: "Smart Billing Software & POS App for Retail Shops | Vyop",

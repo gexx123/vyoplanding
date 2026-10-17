@@ -5,14 +5,17 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Vyop vs POSist (Restroworks) | Best Free Restaurant POS Alternative",
+  title: {
+    absolute: "Vyop vs POSist: Free Restaurant POS & Voice KOT | Vyop",
+  },
   description:
-    "Compare Vyop vs POSist (Restroworks). Restroworks is an enterprise restaurant ERP with modular annual pricing. Vyop provides modern restaurant POS with Voice KOT, table management, and QR ordering, starting free with ₹999/yr Pro cloud sync.",
+    "Compare Vyop vs POSist (Restroworks). Skip enterprise fees. Vyop provides free voice KOT, table management, digital QR menus & GST billing. Free to start.",
   alternates: { canonical: "/vyop-vs-posist" },
   openGraph: {
-    title: "Vyop vs POSist | Free Restaurant Billing & KOT POS Alternative",
+    title: "Vyop vs POSist: Free Restaurant POS & Voice KOT | Vyop",
     description: "Compare Vyop and POSist. Vyop gives cafes and independent restaurants voice KOT generation, table management, and QR ordering starting free with ₹999/yr Pro.",
     url: "https://vyop.in/vyop-vs-posist",
+    siteName: "Vyop POS",
   },
 };
 

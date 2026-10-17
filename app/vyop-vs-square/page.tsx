@@ -5,10 +5,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Vyop vs Square POS [0% Transaction Fees & Free Mobile Scanner] — Vyop POS",
-  description: "Compare Vyop vs Square POS. Square charges 2.6% + 10¢ card processing fees and requires expensive terminal hardware. Vyop transforms any smartphone into a barcode scanner POS with 0% transaction fees and multi-currency billing worldwide.",
+  title: {
+    absolute: "Vyop vs Square POS: 0% Fee Mobile POS Alternative | Vyop",
+  },
+  description: "Compare Vyop vs Square POS. Square takes 2.6% + 10¢ per card swipe. Vyop turns any phone into a barcode POS with 0% fees & multi-currency billing worldwide.",
   alternates: { canonical: "/vyop-vs-square" },
-  openGraph: { title: "Vyop vs Square POS [0% Transaction Fees & Free Mobile Scanner] — Vyop POS", url: "https://vyop.in/vyop-vs-square", siteName: "Vyop POS: Barcode Scan & Bill" },
+  openGraph: { title: "Vyop vs Square POS: 0% Fee Mobile POS Alternative | Vyop", url: "https://vyop.in/vyop-vs-square", siteName: "Vyop POS" },
 };
 
 const comparison = [

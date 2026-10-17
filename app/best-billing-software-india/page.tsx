@@ -6,10 +6,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "10 Best Billing Software & Apps in India (2026) — Free & Paid Compared",
-  description: "Comprehensive comparison of the 10 best billing software in India for 2026. Compare Vyop, Tally, Vyapar, Khatabook, myBillBook, Busy, Marg, Zoho Invoice, Hitech BillSoft & GoGSTBill by features, pricing & GST support.",
+  title: {
+    absolute: "10 Best Billing Software in India (2026) | Free & Paid",
+  },
+  description: "Comprehensive comparison of the 10 best billing software in India for 2026. Compare Vyop, Tally, Vyapar, Khatabook, myBillBook & Busy by features, pricing & GST.",
   alternates: { canonical: "/best-billing-software-india" },
-  openGraph: { title: "10 Best Billing Software in India (2026)", description: "Expert comparison of billing apps for Indian businesses.", url: "https://vyop.in/best-billing-software-india" },
+  openGraph: { title: "10 Best Billing Software in India (2026)", description: "Expert comparison of billing apps for Indian businesses.", url: "https://vyop.in/best-billing-software-india", siteName: "Vyop POS" },
 };
 
 const apps = [

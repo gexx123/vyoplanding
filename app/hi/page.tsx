@@ -4,9 +4,11 @@ import Hero from "@/components/sections/Hero";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Vyop POS: Barcode Scan & Bill — बारकोड स्कैनर, बिलिंग और खाता ऐप | GST और उधार",
-  description: "Vyop ऐप: अपने फोन को बारकोड स्कैनर बनाएं, बोलकर बिल बनाएं और डिजिटल उधार खाता मैनेज करें। किराना और रीटेल दुकानों के लिए फ्री ऐप।",
-  keywords: ["बारकोड स्कैनर ऐप", "उधार खाता ऐप", "बिल बनाने वाला ऐप", "किराना बिलिंग सॉफ्टवेयर", "barcode scanner app hindi", "khata app hindi", "vyop pos barcode scan and bill"],
+  title: {
+    absolute: "Vyop: फ्री बारकोड स्कैनर, बिलिंग और खाता ऐप | POS",
+  },
+  description: "Vyop ऐप: फोन को बारकोड स्कैनर बनाएं, बोलकर बिल बनाएं और डिजिटल उधार खाता मैनेज करें। किराना, गारमेंट्स और सभी रीटेल दुकानों के लिए 100% फ्री ऐप।",
+  keywords: ["बारकोड स्कैनर ऐप", "उधार खाता ऐप", "बिल बनाने वाला ऐप", "दुकान बिलिंग सॉफ्टवेयर", "barcode scanner app hindi", "khata app hindi", "vyop pos"],
 };
 
 export default function HindiLandingPage() {

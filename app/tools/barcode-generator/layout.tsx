@@ -1,14 +1,17 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Free Barcode Generator Online [Print Code-128 & EAN Stickers] — Vyop POS",
+  title: {
+    absolute: "Free Barcode Generator Online: Print Labels & Stickers | Vyop",
+  },
   description:
-    "Generate and print custom product barcode stickers online for free. Supports Code 128, EAN-13, and retail product tags. 100% Free, no watermark, instant thermal print.",
+    "Generate & print custom product barcode stickers online for free. Supports Code-128 & EAN-13 price tags with product name & MRP. No watermark.",
   alternates: { canonical: "/tools/barcode-generator" },
   openGraph: {
-    title: "Free Barcode Generator Online [Print Code-128 & EAN Stickers] — Vyop POS",
+    title: "Free Barcode Generator Online: Print Labels & Stickers | Vyop",
     description: "Generate and print custom product barcode labels in seconds. Code 128 and retail barcode tags with price and product name.",
     url: "https://vyop.in/tools/barcode-generator",
+    siteName: "Vyop POS",
   },
   keywords: [
     "free barcode generator",

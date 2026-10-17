@@ -36,8 +36,10 @@ export async function generateMetadata({
   if (!country) return {};
 
   return {
-    title: `Free Mobile POS & Barcode Scanner in ${country.name} [0% Fees, Works Offline] — Vyop POS`,
-    description: `Best free mobile POS software and barcode scanner app in ${country.name}. Bill in ${country.currency}, configure ${country.taxName}, and print thermal receipts with 0% platform fees. ${country.hardwareSavings} vs ${country.competitors}.`,
+    title: {
+      absolute: `Free Mobile POS & Barcode Scanner in ${country.name} | Vyop`,
+    },
+    description: `Best free mobile POS & barcode scanner in ${country.name}. Bill in ${country.currency}, configure ${country.taxName}, and print receipts with 0% platform fees.`,
     alternates: {
       canonical: `/global-pos/${country.slug}`,
     },
@@ -58,10 +60,10 @@ export async function generateMetadata({
       `Bluetooth thermal printer POS ${country.name}`,
     ],
     openGraph: {
-      title: `Free Mobile POS & Barcode Scanner in ${country.name} [0% Fees] — Vyop POS`,
+      title: `Free Mobile POS & Barcode Scanner in ${country.name} | Vyop POS`,
       description: `Turn any phone into a supermarket barcode scanner POS in ${country.name}. Bill in ${country.currency}, compliant with ${country.taxName}. 100% Free on Android & Web.`,
       url: `https://vyop.in/global-pos/${country.slug}`,
-      siteName: "Vyop POS: Barcode Scan & Bill",
+      siteName: "Vyop POS",
       images: [
         {
           url: "/og-image.png",

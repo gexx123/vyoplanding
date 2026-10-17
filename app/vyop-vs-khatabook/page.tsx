@@ -5,10 +5,17 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Vyop vs Khatabook | Why Voice AI is Better for Kirana Stores",
-  description: "Comparing Vyop and Khatabook. See why Vyop's voice-first AI billing is faster and easier for small retail businesses in India than traditional typing apps.",
+  title: {
+    absolute: "Vyop vs Khatabook: Voice AI & POS for Retail Shops | Vyop",
+  },
+  description: "Compare Vyop vs Khatabook. Discover why Vyop's voice AI billing, smartphone camera barcode POS, and 0% commission online store outperform manual typing apps.",
   alternates: { canonical: '/vyop-vs-khatabook' },
-  openGraph: { url: 'https://vyop.in/vyop-vs-khatabook' }
+  openGraph: { 
+    title: "Vyop vs Khatabook: Voice AI & POS for Retail Shops | Vyop",
+    description: "Compare Vyop vs Khatabook for retail shops. Voice billing, barcode POS & free online store.",
+    url: 'https://vyop.in/vyop-vs-khatabook',
+    siteName: 'Vyop POS',
+  }
 };
 
 const comparisonData = [

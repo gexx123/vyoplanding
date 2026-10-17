@@ -1,14 +1,17 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Free GSTIN Validator [Check & Verify 15-Digit GST Number] — Vyop POS",
+  title: {
+    absolute: "Free GSTIN Validator: Verify 15-Digit GST Number | Vyop",
+  },
   description:
-    "Verify and validate any Indian 15-digit GSTIN number online for free. Check state codes, PAN format, and checksum integrity instantly.",
+    "Verify & validate any Indian 15-digit GSTIN number online for free. Check state codes, PAN format & checksum integrity instantly without captcha.",
   alternates: { canonical: "/tools/gstin-validator" },
   openGraph: {
-    title: "Free GSTIN Validator [Check & Verify 15-Digit GST Number] — Vyop POS",
+    title: "Free GSTIN Validator: Verify 15-Digit GST Number | Vyop",
     description: "Check GST number format, state code, and PAN verification in seconds.",
     url: "https://vyop.in/tools/gstin-validator",
+    siteName: "Vyop POS",
   },
   keywords: [
     "gstin validator",

@@ -5,15 +5,17 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Vyop vs Loyverse POS [Free Advanced Inventory & Staff Tools] — Vyop POS",
+  title: {
+    absolute: "Vyop vs Loyverse POS: Best Free POS Alternative | Vyop",
+  },
   description:
-    "Compare Vyop vs Loyverse POS. Loyverse charges $360+/year for advanced inventory and employee add-ons. Vyop offers free phone barcode scanning, loose-item AI recognition, multi-currency support, and 0% online storefront.",
+    "Compare Vyop vs Loyverse POS. Avoid $360+/yr add-on fees. Vyop provides free phone camera barcode scanning, multi-currency billing & 0% online store.",
   alternates: { canonical: "/vyop-vs-loyverse" },
   openGraph: {
-    title: "Vyop vs Loyverse POS [Free Advanced Inventory & Staff Tools] — Vyop POS",
+    title: "Vyop vs Loyverse POS: Best Free POS Alternative | Vyop",
     description: "Compare Vyop vs Loyverse POS: Avoid $360+/yr Loyverse add-on fees. Free smartphone barcode scanner, AI item detection, and multi-currency billing worldwide.",
     url: "https://vyop.in/vyop-vs-loyverse",
-    siteName: "Vyop POS: Barcode Scan & Bill",
+    siteName: "Vyop POS",
   },
 };
 

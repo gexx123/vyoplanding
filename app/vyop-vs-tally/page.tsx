@@ -5,14 +5,17 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Vyop vs Tally Prime | Best Free Mobile Alternative for Shopkeepers",
+  title: {
+    absolute: "Vyop vs Tally Prime: Free Mobile POS Alternative | Vyop",
+  },
   description:
-    "Looking for a free Tally alternative on mobile? Compare Vyop vs Tally Prime. See why Indian retail shopkeepers switch to Vyop for voice billing and smartphone barcode POS without expensive desktop PCs.",
+    "Looking for a free Tally alternative? Compare Vyop vs Tally Prime. Free phone barcode scanning, Voice AI billing & GST reports without a ₹22k+ desktop PC license.",
   alternates: { canonical: "/vyop-vs-tally" },
   openGraph: {
-    title: "Vyop vs Tally Prime | Free Mobile POS & AI Billing",
+    title: "Vyop vs Tally Prime: Free Mobile POS Alternative | Vyop",
     description: "Avoid desktop license lock-in. Bill on your smartphone with voice AI & barcode scanning.",
     url: "https://vyop.in/vyop-vs-tally",
+    siteName: "Vyop POS",
   },
 };
 

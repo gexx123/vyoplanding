@@ -5,16 +5,18 @@ import Link from "next/link";
 import { industries } from "@/lib/industryData";
 
 export const metadata: Metadata = {
-  title: "Shop Billing Software by Business Type (22+ Retail Categories) | Vyop",
+  title: {
+    absolute: "Shop Billing Software by Business Type (22+ Shops) | Vyop",
+  },
   description:
-    "Explore tailor-made retail billing software and POS apps for your exact shop type: Kirana, Clothing, Restaurants, Chemists, Hardware, Mobile shops & 16+ more. Smartphone barcode scan, Voice AI & WhatsApp bills.",
+    "Tailored retail billing software & POS for 22+ shop types: Kirana, Clothing, Pharmacy, Electronics & Cafes. Phone barcode scanner, Voice AI & WhatsApp bills.",
   alternates: { canonical: "/solutions" },
   openGraph: {
     title: "Shop Billing Software for 22+ Retail Trades | Vyop",
     description:
       "Find the perfect billing app for your shop. Custom features for Kirana, Garments, Cafes, Medical Stores, Hardware, Electronics & more.",
     url: "https://vyop.in/solutions",
-    siteName: "Vyop",
+    siteName: "Vyop POS",
     images: [
       {
         url: "/og-image.png",

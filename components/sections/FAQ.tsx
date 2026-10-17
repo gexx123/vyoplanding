@@ -108,8 +108,8 @@ const faqCategories = [
         a: "Yes! Vyop is built local-first and operates 100% offline. All bills and customer records are saved directly to your device storage. For Vyop Pro users, data automatically synchronizes to the cloud whenever an internet connection is available.",
       },
       {
-        q: "Is Vyop the same as or related to Vyapar App?",
-        a: "No. Vyop is an independent AI-first POS and smart voice billing software developed by Vyop Technologies. Vyop is completely distinct and unaffiliated with Simply Vyapar Apps Pvt. Ltd. (makers of Vyapar App). Vyop is designed specifically for fast retail counter checkout with bilingual voice AI, smartphone camera barcode scanning, and direct WhatsApp customer ordering across mobile and desktop browser (vyop.shop).",
+        q: "What is Vyop and which types of retail shops can use it?",
+        a: "Vyop is a free AI barcode billing software and mobile POS designed for all kinds of retail shops and commercial counters — including clothing boutiques, footwear, electronics, pharmacies, restaurants, cafes, grocery, hardware, and cosmetics. It turns your smartphone camera into a supermarket barcode scanner, generates bills in 5 seconds by voice, tracks stock with size/color variants and batch expiry, manages customer Udhar Khata, and launches a 0% commission free online store in 60 seconds.",
       },
       {
         q: "How does Vyop differ from traditional accounting tools?",

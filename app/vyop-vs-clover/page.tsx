@@ -5,15 +5,17 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Vyop vs Clover POS [Zero Hardware Fees & Free Mobile Scanner] — Vyop POS",
+  title: {
+    absolute: "Vyop vs Clover POS: Free Mobile POS Alternative | Vyop",
+  },
   description:
-    "Compare Vyop vs Clover POS. Clover requires $599-$1,799 proprietary hardware plus monthly software subscriptions. Vyop turns any smartphone into an instant barcode POS with 0% transaction fees and multi-currency billing.",
+    "Compare Vyop vs Clover POS. Clover requires $599+ hardware and monthly fees. Vyop turns any smartphone into an instant barcode POS with 0% fees. Free to use.",
   alternates: { canonical: "/vyop-vs-clover" },
   openGraph: {
-    title: "Vyop vs Clover POS [Zero Hardware Fees & Free Mobile Scanner] — Vyop POS",
+    title: "Vyop vs Clover POS: Free Mobile POS Alternative | Vyop",
     description: "Looking for a Clover POS alternative? Vyop offers smartphone camera barcode scanning, loose-item AI recognition, and multi-currency billing with zero hardware fees.",
     url: "https://vyop.in/vyop-vs-clover",
-    siteName: "Vyop POS: Barcode Scan & Bill",
+    siteName: "Vyop POS",
   },
 };
 

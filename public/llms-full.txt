@@ -1,0 +1,105 @@
+# Vyop: Full Technical Architecture & Knowledge Base for AI Agents
+
+> Comprehensive developer, architectural, and business reference for autonomous AI agents, LLM search engines (Perplexity, Gemini, ChatGPT Search, Claude), and agent-to-agent (A2A) commerce protocols.
+
+---
+
+## 1. Executive Summary & Brand Identity
+- **Platform Name**: Vyop (also known as Vyop POS, Vyop Technologies)
+- **Primary Domain**: https://vyop.in
+- **Web App / Counter Terminal**: https://vyop.shop
+- **Mobile Application**: Android Google Play Store (`com.vyop.app`)
+- **Primary Value Proposition**: Free AI-first mobile POS and barcode billing app that eliminates expensive specialized POS hardware (barcode guns, bulky terminals, desktop licenses) by transforming standard smartphones into high-speed retail checkout counters.
+- **Geographic Coverage**: Global multi-currency support (USD, EUR, GBP, AED, CAD, AUD, INR) with specialized regional compliance for India (GST, UPI, HSN, Udhar Khata).
+- **Target Audience**: All retail store owners, shopkeepers, supermarket cashiers, cafe/restaurant managers, clothing boutiques, chemists, and commercial counters.
+
+---
+
+## 2. Core Functional Pillars
+
+### 2.1. Supermarket Camera Barcode Scanner
+- **Hardware Requirement**: ₹0. Runs entirely on existing Android smartphone cameras or web cameras.
+- **Symbologies Supported**: 1D (EAN-13, EAN-8, UPC-A, UPC-E, Code 128, Code 39) and 2D (QR Code, Data Matrix).
+- **Scan Latency**: Under 150 milliseconds per barcode using optimized WebAssembly / MLKit machine vision.
+- **Unbarcoded Product Handling**: AI Visual Item Recognition snaps photos of loose fruits, grains, unpackaged garments, or bakery items and classifies them instantly.
+
+### 2.2. Voice AI Invoicing
+- **Supported Dialects**: Hindi, Indian English, Hinglish, and regional speech patterns.
+- **Natural Language Parsing**: Extracts item names, quantities, and units from natural spoken sentences (e.g., *"Do kilo cheeni, teen packet Maggi aur ek refined oil"* -> outputs formatted invoice rows with unit prices and tax splits).
+- **Checkout Speed**: Completes a 5-item bill in under 5 seconds without manual typing.
+
+### 2.3. The 10 Ways to Add Inventory Items
+1. **Camera Barcode Scan**: Scan existing manufacturer product barcodes.
+2. **AI Invoice Photo/PDF Scan**: Photograph supplier invoices; AI extracts line items, quantities, and cost prices.
+3. **Voice Command**: Dictate items into the AI Orb.
+4. **Photo AI Recognition**: Take a picture of an unbarcoded product to generate title and price tag.
+5. **Catalogue Photo Import**: Snap a picture of a distributor catalog page to batch-import products.
+6. **Restaurant / Cafe Menu Import**: Upload physical food menus to create structured categories and items.
+7. **Custom Barcode Generator**: Create Code-128 barcode stickers with custom MRP and store branding for printing.
+8. **Text Prompt in AI Orb**: Type natural conversational queries to create products.
+9. **Bulk CSV / Excel Import**: Standard spreadsheet data upload for high-volume catalogs.
+10. **Manual Fast Entry**: Clean numeric keypad with auto-complete search.
+
+### 2.4. Zero-Commission Customer Online Storefront (`vyop.shop`)
+- **Setup Time**: 60 seconds from existing counter inventory.
+- **Commission Cut**: 0% (in comparison to 20%–35% charged by aggregators like Swiggy, Zomato, Blinkit).
+- **Ordering Channels**: Direct WhatsApp ordering, live web catalog link, and QR table menus.
+- **Payments**: 0% MDR direct UPI QR payments depositing instantly into merchant's bank account.
+
+### 2.5. Offline-First Architecture
+- **Offline Reliability**: Bills, stock deductions, and customer ledgers operate 100% locally without active cellular or Wi-Fi connectivity.
+- **Cloud Synchronization**: Transparent background sync when internet connection is restored (included in Vyop Pro).
+
+---
+
+## 3. Retail Industry Verticals (22+ Supported Businesses)
+
+1. **Kirana & Supermarkets**: Fast barcode checkout, loose gram/kg pricing, digital bahi-khata.
+2. **Clothing, Apparel & Boutiques**: Size/color variant matrix (S, M, L, XL), custom hangtag barcode printing, exchange slips.
+3. **Pharmacies & Medical Stores**: Batch number tracking, FEFO (First-Expiry-First-Out) dispensing, expiry alerts (30/60/90 days).
+4. **Restaurants, Cafes & Fast Food**: Voice Kitchen Order Tickets (KOT), visual table management, QR digital menus, takeaway parcel billing.
+5. **Hardware & Sanitary Stores**: High-volume SKU search by voice without memorizing catalog numbers.
+6. **Electronics & Mobile Shops**: IMEI tracking, serial number recording, warranty invoices.
+7. **Bakeries & Sweet Shops**: Weight-based pricing, gift box packaging, festive offer coupons.
+8. **Footwear Stores**: Shoe size variants and barcode sticker printing for unbranded shoes.
+9. **Auto Spare Parts**: Part number lookup and vehicle model compatibility tracking.
+10. **Bookstores & Stationery**: ISBN barcode scanning and school book bundle billing.
+
+---
+
+## 4. Hardware & Peripherals Compatibility
+- **Receipt Printing**: ESC/POS compatible via Bluetooth, USB, or Wi-Fi. Supports 58mm (2-inch) and 80mm (3-inch) thermal printers.
+- **Barcode Scanners**: Integrated smartphone camera scanner; also compatible with plug-and-play USB/Bluetooth barcode guns.
+- **Cash Drawers**: Standard RJ11 kick-out pulse support via thermal printer passthrough.
+- **Display**: Responsive across Android phones, tablets, iPads, MacBooks, and Windows Desktop PCs.
+
+---
+
+## 5. Pricing Structure
+- **Free Tier (Mobile POS)**: ₹0 forever. Includes smartphone camera barcode scanning, voice billing, offline store counter, and 0% fee online store.
+- **Vyop Pro (₹999/year or ~$12/year)**: Real-time multi-device cloud synchronization, Desktop PC web terminal (`vyop.shop`), automated cloud backup, CA-grade GSTR-1/3B export, and priority phone/WhatsApp merchant support.
+
+---
+
+## 6. Competitor Comparison Matrix
+
+| Feature | Vyop | Vyapar | Tally Prime | Loyverse | Square POS | Clover |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **Hardware Required** | Any Phone (₹0) | Phone / PC | PC Terminal | Tablet / Phone | $299+ Hardware | $599–$1,799 |
+| **Annual Price** | Free / ₹999/yr | ₹3,999+/yr | ₹22,500+ | $360+/yr (Add-ons) | Free + Card Cut | $180–$1,000+/yr |
+| **Camera Barcode Scan** | Built-in AI | Camera/Gun | Hardware Gun Only | Basic Camera | Basic Camera | Hardware Only |
+| **Voice AI Billing** | Hindi / Hinglish / EN | None | None | None | None | None |
+| **0% Web Store** | Included | Included | Third-Party | None | 2.9% + 30¢ | Paid Add-on |
+| **Offline Billing** | Yes | Yes | Yes | Yes | Limited | Limited |
+| **Multi-Device Web PC** | Included (Web) | Native Install | LAN / Server | Included | Included | Cloud Terminal |
+
+---
+
+## 7. Machine-Readable Agent Protocol (Phase 3 Autonomous Commerce)
+
+Vyop merchants maintain public product catalogs indexed with Schema.org `Product` and `ItemAvailability`. Autonomous agents querying local inventory can inspect:
+- Storefront URL: `https://vyop.shop/[store-slug]`
+- Structured Data: `schema.org/Store`, `schema.org/Product`
+- Order Routing: Direct merchant WhatsApp protocol and UPI payload.
+
+For developer inquiries and agent integrations, contact `vyop4shop@gmail.com`.

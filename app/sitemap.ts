@@ -89,6 +89,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${baseUrl}/ai-billing-software`, priority: 0.98, changeFrequency: 'daily', lastModified: new Date() },
     { url: `${baseUrl}/billing-machine`, priority: 0.98, changeFrequency: 'daily', lastModified: new Date() },
     { url: `${baseUrl}/thermal-printer-billing-app`, priority: 0.98, changeFrequency: 'daily', lastModified: new Date() },
+    { url: `${baseUrl}/shop-management-app`, priority: 0.98, changeFrequency: 'daily', lastModified: new Date() },
     { url: `${baseUrl}/vyop-vs-clover`, priority: 0.9, changeFrequency: 'weekly' },
     { url: `${baseUrl}/vyop-vs-shopify`, priority: 0.9, changeFrequency: 'weekly' },
     { url: `${baseUrl}/vyop-vs-lightspeed`, priority: 0.9, changeFrequency: 'weekly', lastModified: new Date() },

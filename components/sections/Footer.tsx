@@ -18,6 +18,7 @@ const footerLinks = {
   ],
   "Free Tools": [
     "AI Billing Software",
+    "Shop Management App",
     "Smart Billing Machine",
     "Thermal Printer App",
     "Global POS (Worldwide)",
@@ -84,6 +85,7 @@ const linkPaths: Record<string, string> = {
   "Profit Margin Calculator": "/tools/margin-calculator",
   "HSN Code Finder": "/tools/hsn-code-finder",
   "AI Billing Software": "/ai-billing-software",
+  "Shop Management App": "/shop-management-app",
   "Smart Billing Machine": "/billing-machine",
   "Thermal Printer App": "/thermal-printer-billing-app",
   "Vyop vs Lightspeed": "/vyop-vs-lightspeed",

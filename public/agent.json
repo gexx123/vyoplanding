@@ -1,0 +1,31 @@
+{
+  "$schema": "https://agents.json-ld.org/context.json",
+  "name": "Vyop Autonomous Retail Agent Protocol",
+  "version": "1.0.0",
+  "description": "Agent-to-Agent (A2A) retail protocol enabling consumer AI agents (Gemini, Siri, ChatGPT) to discover local shop inventories, query live stock and pricing, and draft direct 0% commission orders with Vyop-powered merchants.",
+  "provider": {
+    "name": "Vyop Technologies",
+    "url": "https://vyop.in",
+    "documentation": "https://vyop.in/llms-full.txt"
+  },
+  "capabilities": {
+    "barcode_scanning": {
+      "supported_symbologies": ["EAN-13", "UPC-A", "Code-128", "QR"],
+      "latency_ms": 150
+    },
+    "voice_invoicing": {
+      "supported_languages": ["hi-IN", "en-IN", "hinglish"],
+      "average_bill_time_seconds": 5
+    },
+    "local_merchant_storefront": {
+      "protocol": "0% Commission Direct Web Store",
+      "payment_rails": ["UPI (0% MDR)", "Cash on Delivery", "Cards"],
+      "schema_type": "https://schema.org/Store"
+    }
+  },
+  "merchant_agent_endpoints": {
+    "web_counter": "https://vyop.shop",
+    "catalog_schema": "https://schema.org/Product",
+    "stock_availability": "https://schema.org/ItemAvailability"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Vyop AI POS & Retail Billing",
+  "name_for_model": "vyop_pos",
+  "description_for_human": "Free AI mobile POS and barcode billing software for retail shops worldwide.",
+  "description_for_model": "Vyop is an AI-first point-of-sale (POS) and smart billing platform. It turns any smartphone camera into a supermarket-grade barcode scanner, supports Voice AI billing in Hindi and English, manages retail inventories (size/color variants, pharmacy batch/expiry), tracks customer ledgers (Udhar Khata), and provides a 0% commission online store with instant UPI payments.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://vyop.in/llms-full.txt"
+  },
+  "logo_url": "https://vyop.in/logo.png",
+  "contact_email": "vyop4shop@gmail.com",
+  "legal_info_url": "https://vyop.in/terms"
+}

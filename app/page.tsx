@@ -97,8 +97,9 @@ export default function Home() {
                 },
                 "aggregateRating": {
                   "@type": "AggregateRating",
-                  "ratingValue": "4.8",
-                  "reviewCount": "1240",
+                  "ratingValue": "5.0",
+                  "reviewCount": "6",
+                  "ratingCount": "6",
                   "bestRating": "5",
                   "worstRating": "1"
                 }

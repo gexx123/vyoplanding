@@ -20,6 +20,20 @@ export const metadata: Metadata = {
 
 const comparisons = [
   {
+    slug: "vyop-vs-lightspeed",
+    title: "Vyop vs Lightspeed POS",
+    badge: "Free vs $89–$289/mo Plans",
+    summary: "Lightspeed locks you into expensive iPad hardware and $1,000+/yr software leases. Vyop turns any phone into an AI POS starting free, Pro ₹49/mo.",
+    link: "/vyop-vs-lightspeed",
+  },
+  {
+    slug: "vyop-vs-zettle",
+    title: "Vyop vs Zettle by PayPal",
+    badge: "0% Platform Cut vs 1.75% Fees",
+    summary: "Zettle takes 1.75% on every card transaction. Vyop gives UK & global merchants smartphone camera barcode scanning and 0% platform cuts.",
+    link: "/vyop-vs-zettle",
+  },
+  {
     slug: "vyop-vs-loyverse",
     title: "Vyop vs Loyverse POS",
     badge: "₹999/yr vs $360+/yr Add-ons",

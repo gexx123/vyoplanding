@@ -5,6 +5,8 @@ import Link from "next/link";
 import {
   Printer,
   Smartphone,
+  Scan,
+  Tag,
   Zap,
   CheckCircle2,
   Receipt,
@@ -19,15 +21,15 @@ import {
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Bluetooth Thermal Printer Billing App (58mm/80mm) | Vyop",
+    absolute: "Bluetooth Thermal Printer Billing App & Barcode POS | Vyop",
   },
   description:
-    "Connect your phone to any Bluetooth or USB thermal receipt printer (58mm/80mm ESC/POS). Print instant GST receipts, barcodes & invoices without drivers.",
+    "Turn your phone into a barcode scanner & thermal billing machine. Connect Bluetooth thermal printers (58mm/80mm), scan barcodes & print GST receipts. Free.",
   alternates: { canonical: "/thermal-printer-billing-app" },
   openGraph: {
-    title: "Bluetooth Thermal Printer Billing App (58mm/80mm) | Vyop",
+    title: "Bluetooth Thermal Printer Billing App & Barcode POS | Vyop",
     description:
-      "Print bills directly from your phone to any Bluetooth thermal printer. Works with 58mm and 80mm ESC/POS printers. Custom logo, UPI QR code & GST receipt format.",
+      "Turn your phone into a barcode scanner & thermal billing counter. Scan barcodes with camera, connect Bluetooth 58mm/80mm printers & print instant GST bills.",
     url: "https://vyop.in/thermal-printer-billing-app",
     siteName: "Vyop POS",
     images: [
@@ -35,7 +37,7 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Vyop Bluetooth Thermal Printer Billing App",
+        alt: "Vyop Bluetooth Thermal Printer Billing App & Barcode Scanner",
       },
     ],
     type: "website",
@@ -46,6 +48,11 @@ export const metadata: Metadata = {
     "thermal printer app for android",
     "bluetooth printer billing software",
     "print bill from mobile to thermal printer",
+    "phone barcode scanner with thermal printer",
+    "barcode scanner and printer app for mobile",
+    "scan barcode and print bill app",
+    "thermal printer barcode scanner app",
+    "print barcode labels from thermal printer",
     "58mm bluetooth printer app",
     "80mm thermal receipt printer software",
     "esc pos printer app",
@@ -80,6 +87,16 @@ const printerBrands = [
 
 const printerFeatures = [
   {
+    icon: Scan,
+    title: "Turn Phone into Barcode Scanner",
+    desc: "No need to buy an expensive ₹2,500 barcode scanner gun. Your phone camera scans all 1D/2D barcodes at supermarket checkout speed.",
+  },
+  {
+    icon: Tag,
+    title: "Print Barcode Stickers & Labels",
+    desc: "Generate custom Code-128 or EAN barcode price tags for unbarcoded clothes, bakery items, or loose goods and print directly to adhesive thermal rolls.",
+  },
+  {
     icon: Bluetooth,
     title: "Instant Bluetooth Pairing",
     desc: "Connect your phone to any wireless Bluetooth thermal printer in 5 seconds. No driver downloads or computer setup needed.",
@@ -113,6 +130,14 @@ const printerFeatures = [
 
 const faqs = [
   {
+    q: "Does Vyop replace a separate barcode scanner gun?",
+    a: "Yes! Vyop turns your smartphone camera into a supermarket-grade barcode scanner. You don't need to purchase a separate ₹2,500 barcode laser gun or POS machine. Simply point your phone camera at product barcodes — it beeps and adds items to the bill in real-time, ready to print to your Bluetooth thermal printer.",
+  },
+  {
+    q: "Can I generate and print barcode price stickers from my phone?",
+    a: "Yes! Vyop includes a built-in barcode label generator. You can create custom Code-128 and EAN barcode stickers with your shop name and MRP price, and print them directly to adhesive thermal label paper from your phone.",
+  },
+  {
     q: "How do I connect my Bluetooth thermal printer to Vyop?",
     a: "1) Turn on your Bluetooth thermal printer. 2) Turn on Bluetooth on your phone and pair with the printer (PIN is usually 0000 or 1234). 3) Open the Vyop app, go to Settings > Printer Settings. 4) Select your paired printer and choose 58mm or 80mm. That's it! Tap Print on any bill and your receipt prints instantly.",
   },
@@ -129,12 +154,8 @@ const faqs = [
     a: "Yes. You can switch between 58mm (standard compact roll) and 80mm (wide format) with a single tap in settings. Vyop automatically reformats columns, font sizes, and line-item spacing to fit the exact paper width perfectly.",
   },
   {
-    q: "Can I also print barcode labels and price stickers?",
-    a: "Yes! Vyop has a built-in barcode generator. You can print custom Code-128 or EAN barcode price tags and product stickers directly to your thermal printer on adhesive thermal label rolls.",
-  },
-  {
     q: "How much does Vyop Thermal Printer App cost?",
-    a: "Vyop is 100% free to start. You can connect your thermal printer, scan barcodes, and print unlimited bills without paying anything. For multi-device desktop PC cloud sync and accounting, Vyop Pro is just ₹49/month (approx. $1/mo) or ₹999/year (approx. $12/yr).",
+    a: "Vyop is 100% free to start. You can connect your thermal printer, scan barcodes with your camera, and print unlimited bills without paying anything. For multi-device desktop PC cloud sync and accounting, Vyop Pro is just ₹49/month (approx. $1/mo) or ₹999/year (approx. $12/yr).",
   },
 ];
 
@@ -148,7 +169,7 @@ export default function ThermalPrinterLandingPage() {
         <div className="max-w-5xl mx-auto">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-100/90 border border-blue-200 text-blue-900 text-xs font-bold uppercase tracking-wider mb-6">
             <Printer className="w-4 h-4 text-blue-600" />
-            <span>ESC/POS Wireless Receipt Printer Software</span>
+            <span>Phone Barcode Scanner &amp; Thermal Receipt Printer Software</span>
           </div>
 
           <h1
@@ -158,12 +179,12 @@ export default function ThermalPrinterLandingPage() {
             Bluetooth Thermal Printer{" "}
             <br className="hidden sm:inline" />
             <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
-              Billing App for Phone
+              &amp; Barcode Scanner App
             </span>
           </h1>
 
           <p className="text-lg sm:text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed font-body">
-            Connect any <strong>58mm or 80mm Bluetooth thermal printer</strong> directly to your Android smartphone or PC. Print professional GST receipts, custom logos, UPI payment QR codes, and barcode price tags in under 1 second without drivers.
+            Turn your phone into a complete checkout counter. <strong>Scan product barcodes with your phone camera</strong> and print instant GST receipts, custom logos, UPI payment QR codes, and <strong>barcode price stickers</strong> to any 58mm/80mm Bluetooth thermal printer.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-12">

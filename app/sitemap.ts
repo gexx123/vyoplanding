@@ -58,6 +58,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${baseUrl}/billing`, priority: 0.9, changeFrequency: 'daily' },
     { url: `${baseUrl}/tools`, priority: 0.95, changeFrequency: 'weekly' },
     { url: `${baseUrl}/tools/gst-calculator`, priority: 0.95, changeFrequency: 'weekly' },
+    { url: `${baseUrl}/tools/sales-tax-calculator`, priority: 0.95, changeFrequency: 'weekly' },
     { url: `${baseUrl}/tools/barcode-generator`, priority: 0.95, changeFrequency: 'weekly' },
     { url: `${baseUrl}/tools/invoice-generator`, priority: 0.95, changeFrequency: 'weekly' },
     { url: `${baseUrl}/tools/margin-calculator`, priority: 0.95, changeFrequency: 'weekly' },

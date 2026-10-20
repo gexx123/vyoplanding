@@ -1,5 +1,6 @@
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -34,6 +35,14 @@ const tools = [
     description: "Quickly calculate inclusive and reverse GST, split CGST and SGST, and compute exact tax breakdowns for any product or service.",
     link: "/tools/gst-calculator",
     features: ["Add & Remove GST", "Reverse Calculation", "All Indian Tax Slabs", "Instant Copy"],
+  },
+  {
+    title: "Global Sales Tax & VAT Calculator",
+    badge: "US, UK, CA, AU, EU",
+    icon: "🌐",
+    description: "Multi-currency tax calculator for US Sales Tax, UK/EU VAT, Canada GST/HST, and Australia GST. Inclusive and exclusive reverse calculations.",
+    link: "/tools/sales-tax-calculator",
+    features: ["US State Sales Tax", "UK & European VAT", "Canada GST/HST", "Reverse Tax Mode"],
   },
   {
     title: "Free Barcode Generator & Printer",
@@ -106,7 +115,9 @@ export default function ToolsHubPage() {
     <main className="min-h-screen bg-[var(--bg-hero)]">
       <Navbar />
 
-      <section className="pt-36 pb-20 px-6 max-w-6xl mx-auto">
+      <Breadcrumbs items={[{ label: "Free Tools", href: "/tools" }]} />
+
+      <section className="pt-24 pb-20 px-6 max-w-6xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="inline-block px-4 py-1.5 rounded-full bg-amber-100 text-amber-900 text-xs font-bold uppercase tracking-wider mb-4">
             Free Retail Utilities

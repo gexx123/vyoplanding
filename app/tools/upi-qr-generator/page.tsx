@@ -4,6 +4,8 @@ import { useState } from "react";
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
 import Link from "next/link";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import ToolDownloadCTA from "@/components/ToolDownloadCTA";
 
 export default function UpiQrGeneratorPage() {
   const [shopName, setShopName] = useState("Shree Ram General Store");
@@ -29,6 +31,11 @@ export default function UpiQrGeneratorPage() {
     <main className="min-h-screen bg-[var(--bg-hero)]">
       <div className="no-print">
         <Navbar />
+
+        <Breadcrumbs items={[
+          { label: "Free Tools", href: "/tools" },
+          { label: "UPI QR Generator", href: "/tools/upi-qr-generator" },
+        ]} />
       </div>
 
       <section className="pt-36 pb-20 px-4 md:px-6 max-w-5xl mx-auto">
@@ -219,6 +226,11 @@ export default function UpiQrGeneratorPage() {
       </section>
 
       <div className="no-print">
+        <ToolDownloadCTA
+          toolName="UPI QR Generator"
+          appFeature="accept UPI payments directly at your shop counter with instant receipts"
+        />
+
         <Footer />
       </div>
     </main>

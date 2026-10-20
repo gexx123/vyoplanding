@@ -4,6 +4,8 @@ import { useState } from "react";
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
 import Link from "next/link";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import ToolDownloadCTA from "@/components/ToolDownloadCTA";
 
 interface Denomination {
   value: number;
@@ -129,6 +131,11 @@ In Words: ${words}
     <main className="min-h-screen bg-[var(--bg-hero)]">
       <div className="no-print">
         <Navbar />
+
+        <Breadcrumbs items={[
+          { label: "Free Tools", href: "/tools" },
+          { label: "Cash Counter", href: "/tools/cash-counter" },
+        ]} />
       </div>
 
       <section className="pt-36 pb-20 px-4 md:px-6 max-w-4xl mx-auto">
@@ -333,6 +340,11 @@ In Words: ${words}
       </section>
 
       <div className="no-print">
+        <ToolDownloadCTA
+          toolName="Cash Counter"
+          appFeature="tally your cash drawer digitally at end of each day"
+        />
+
         <Footer />
       </div>
     </main>

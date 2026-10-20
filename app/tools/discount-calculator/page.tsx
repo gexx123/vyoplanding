@@ -4,6 +4,8 @@ import { useState } from "react";
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
 import Link from "next/link";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import ToolDownloadCTA from "@/components/ToolDownloadCTA";
 
 type DiscountMode = "flat" | "stacked" | "bogo";
 
@@ -51,6 +53,11 @@ export default function DiscountCalculatorPage() {
   return (
     <main className="min-h-screen bg-[var(--bg-hero)]">
       <Navbar />
+
+      <Breadcrumbs items={[
+        { label: "Free Tools", href: "/tools" },
+        { label: "Discount Calculator", href: "/tools/discount-calculator" },
+      ]} />
 
       <section className="pt-36 pb-20 px-4 md:px-6 max-w-4xl mx-auto">
         {/* Header */}
@@ -362,6 +369,11 @@ export default function DiscountCalculatorPage() {
           </a>
         </div>
       </section>
+
+      <ToolDownloadCTA
+        toolName="Discount Calculator"
+        appFeature="apply discounts, festival offers, and BOGO deals on bills instantly"
+      />
 
       <Footer />
     </main>

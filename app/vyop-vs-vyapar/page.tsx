@@ -1,6 +1,8 @@
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
 import ComparisonDisclaimer from "@/components/legal/ComparisonDisclaimer";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import ComparisonCrossLinks from "@/components/ComparisonCrossLinks";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -37,8 +39,15 @@ export default function ComparisonPage() {
   return (
     <main className="min-h-screen bg-[var(--bg-hero)]">
       <Navbar />
+
+      <Breadcrumbs
+        items={[
+          { label: "Compare", href: "/compare" },
+          { label: "Vyop vs Vyapar", href: "/vyop-vs-vyapar" },
+        ]}
+      />
       
-      <section className="pt-40 pb-20 px-6 max-w-5xl mx-auto">
+      <section className="pt-28 pb-20 px-6 max-w-5xl mx-auto">
         <div className="text-center mb-16">
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-100 text-amber-900 text-xs font-bold uppercase tracking-wider mb-4">
             Head-to-Head Comparison (2026 Edition)
@@ -148,6 +157,9 @@ export default function ComparisonPage() {
             </a>
           </div>
         </div>
+
+        {/* Cross-Link Other Competitors */}
+        <ComparisonCrossLinks currentSlug="vyop-vs-vyapar" />
 
         {/* Legal Disclaimer */}
         <ComparisonDisclaimer

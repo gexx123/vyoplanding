@@ -4,6 +4,8 @@ import { useState } from "react";
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
 import Link from "next/link";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import ToolDownloadCTA from "@/components/ToolDownloadCTA";
 
 interface InvoiceItem {
   id: string;
@@ -113,6 +115,11 @@ Thank you for shopping with us!`;
     <main className="min-h-screen bg-[var(--bg-hero)]">
       <div className="no-print">
         <Navbar />
+
+        <Breadcrumbs items={[
+          { label: "Free Tools", href: "/tools" },
+          { label: "Invoice Generator", href: "/tools/invoice-generator" },
+        ]} />
       </div>
 
       <div className="pt-36 pb-20 px-4 md:px-6 max-w-5xl mx-auto">
@@ -415,6 +422,11 @@ Thank you for shopping with us!`;
       </div>
 
       <div className="no-print">
+        <ToolDownloadCTA
+          toolName="Invoice Generator"
+          appFeature="create professional GST invoices instantly with voice commands"
+        />
+
         <Footer />
       </div>
     </main>

@@ -4,6 +4,8 @@ import { useState } from "react";
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
 import Link from "next/link";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import ToolDownloadCTA from "@/components/ToolDownloadCTA";
 
 export default function ProfitMarginCalculatorPage() {
   const [costPrice, setCostPrice] = useState<number>(100);
@@ -39,6 +41,11 @@ export default function ProfitMarginCalculatorPage() {
   return (
     <main className="min-h-screen bg-[var(--bg-hero)]">
       <Navbar />
+
+      <Breadcrumbs items={[
+        { label: "Free Tools", href: "/tools" },
+        { label: "Profit Margin Calculator", href: "/tools/margin-calculator" },
+      ]} />
 
       <section className="pt-36 pb-20 px-4 md:px-6 max-w-4xl mx-auto">
         {/* Header */}
@@ -246,6 +253,11 @@ export default function ProfitMarginCalculatorPage() {
           </a>
         </div>
       </section>
+
+      <ToolDownloadCTA
+        toolName="Margin Calculator"
+        appFeature="track profit margins on every sale with real-time P&L reports"
+      />
 
       <Footer />
     </main>

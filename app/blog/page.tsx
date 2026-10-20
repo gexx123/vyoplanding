@@ -16,6 +16,8 @@ export const metadata: Metadata = {
 };
 
 import { staticBlogs } from '@/lib/staticBlogs';
+import Breadcrumbs from '@/components/Breadcrumbs';
+import BlogDownloadCTA from '@/components/blog/BlogDownloadCTA';
 
 async function getBlogs() {
   let firestoreBlogs: any[] = [];
@@ -65,7 +67,9 @@ export default async function BlogIndex() {
     <main className="min-h-screen bg-gray-50 flex flex-col">
       <Navbar />
 
-      <div className="flex-grow max-w-7xl mx-auto w-full px-6 pt-32 pb-20">
+      <Breadcrumbs items={[{ label: "Blog", href: "/blog" }]} />
+
+      <div className="flex-grow max-w-7xl mx-auto w-full px-6 pt-24 pb-20">
         <header className="mb-16 text-center">
           <h1 
             className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[var(--text-primary)] mb-6"
@@ -153,6 +157,10 @@ export default async function BlogIndex() {
             })}
           </div>
         )}
+      </div>
+
+      <div className="max-w-7xl mx-auto w-full px-6">
+        <BlogDownloadCTA />
       </div>
 
       <Footer />

@@ -3,6 +3,8 @@ import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
 import GstCalculator from "@/components/tools/GstCalculator";
 import Link from "next/link";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import ToolDownloadCTA from "@/components/ToolDownloadCTA";
 
 export const metadata: Metadata = {
   title: {
@@ -66,6 +68,11 @@ export default function GstCalculatorPage() {
   return (
     <main className="min-h-screen bg-[var(--bg-hero)]">
       <Navbar />
+
+      <Breadcrumbs items={[
+        { label: "Free Tools", href: "/tools" },
+        { label: "GST Calculator", href: "/tools/gst-calculator" },
+      ]} />
 
       {/* Header */}
       <section className="pt-36 pb-12 px-6 max-w-5xl mx-auto text-center">
@@ -240,6 +247,11 @@ export default function GstCalculatorPage() {
             ],
           }),
         }}
+      />
+
+      <ToolDownloadCTA
+        toolName="GST Calculator"
+        appFeature="auto-calculate GST on every bill with voice commands"
       />
 
       <Footer />

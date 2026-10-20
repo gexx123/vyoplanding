@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Sora, DM_Sans } from "next/font/google";
 import "./globals.css";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
+import AppDownloadBar from "@/components/AppDownloadBar";
 
 const sora = Sora({
   variable: "--font-sora",
@@ -31,6 +33,9 @@ export const metadata: Metadata = {
       'hi': '/hi',
       'x-default': '/',
     },
+  },
+  other: {
+    'google-play-app': 'app-id=com.vyop.app',
   },
   openGraph: {
     title: "Vyop: Free AI Barcode Billing Software & Mobile POS App",
@@ -91,9 +96,6 @@ export const metadata: Metadata = {
       url: 'https://play.google.com/store/apps/details?id=com.vyop.app',
     },
   },
-  other: {
-    'google-play-app': 'app-id=com.vyop.app',
-  },
   robots: {
     index: true,
     follow: true,
@@ -127,12 +129,21 @@ export default function RootLayout({
       lang="en"
       className={`${sora.variable} ${dmSans.variable} h-full antialiased`}
     >
-      <head />
+      <head>
+        <link rel="alternate" hrefLang="en" href="https://vyop.in" />
+        <link rel="alternate" hrefLang="hi" href="https://vyop.in/hi" />
+        <link rel="alternate" hrefLang="x-default" href="https://vyop.in" />
+        <meta name="apple-itunes-app" content="app-id=com.vyop.app" />
+      </head>
       <body className="min-h-full flex flex-col">
+        <GoogleAnalytics />
         <Suspense fallback={null}>
           <ReferralTracker />
         </Suspense>
         {children}
+        <Suspense fallback={null}>
+          <AppDownloadBar />
+        </Suspense>
       </body>
     </html>
   );

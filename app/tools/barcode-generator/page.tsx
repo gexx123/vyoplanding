@@ -5,6 +5,8 @@ import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
 import { generateCode128Svg } from "@/lib/barcodeSvg";
 import Link from "next/link";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import ToolDownloadCTA from "@/components/ToolDownloadCTA";
 
 export default function FreeBarcodeGeneratorPage() {
   const [productName, setProductName] = useState("Amul Butter 100g");
@@ -60,6 +62,11 @@ export default function FreeBarcodeGeneratorPage() {
   return (
     <main className="min-h-screen bg-[var(--bg-hero)]">
       <Navbar />
+
+      <Breadcrumbs items={[
+        { label: "Free Tools", href: "/tools" },
+        { label: "Barcode Generator", href: "/tools/barcode-generator" },
+      ]} />
 
       <section className="pt-36 pb-20 px-6 max-w-6xl mx-auto">
         {/* Title */}
@@ -233,6 +240,11 @@ export default function FreeBarcodeGeneratorPage() {
             "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" }
           })
         }}
+      />
+
+      <ToolDownloadCTA
+        toolName="Barcode Generator"
+        appFeature="print barcode stickers and scan them at the billing counter"
       />
 
       <Footer />

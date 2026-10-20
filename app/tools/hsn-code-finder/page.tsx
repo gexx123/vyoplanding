@@ -4,6 +4,8 @@ import { useState } from "react";
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
 import Link from "next/link";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import ToolDownloadCTA from "@/components/ToolDownloadCTA";
 
 interface HsnRecord {
   hsn: string;
@@ -96,6 +98,11 @@ export default function HsnCodeFinderPage() {
   return (
     <main className="min-h-screen bg-[var(--bg-hero)]">
       <Navbar />
+
+      <Breadcrumbs items={[
+        { label: "Free Tools", href: "/tools" },
+        { label: "HSN Code Finder", href: "/tools/hsn-code-finder" },
+      ]} />
 
       <section className="pt-36 pb-20 px-4 md:px-6 max-w-5xl mx-auto">
         {/* Header */}
@@ -226,6 +233,11 @@ export default function HsnCodeFinderPage() {
           </a>
         </div>
       </section>
+
+      <ToolDownloadCTA
+        toolName="HSN Code Finder"
+        appFeature="auto-apply correct HSN codes and GST rates on every invoice"
+      />
 
       <Footer />
     </main>

@@ -1,6 +1,8 @@
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
 import ComparisonDisclaimer from "@/components/legal/ComparisonDisclaimer";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import ComparisonCrossLinks from "@/components/ComparisonCrossLinks";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -99,7 +101,14 @@ export default function VyopVsTallyPage() {
     <main className="min-h-screen bg-[var(--bg-hero)]">
       <Navbar />
 
-      <section className="pt-40 pb-20 px-6 max-w-5xl mx-auto">
+      <Breadcrumbs
+        items={[
+          { label: "Compare", href: "/compare" },
+          { label: "Vyop vs Tally Prime", href: "/vyop-vs-tally" },
+        ]}
+      />
+
+      <section className="pt-28 pb-20 px-6 max-w-5xl mx-auto">
         <div className="text-center mb-16">
           <span className="inline-block px-4 py-1.5 rounded-full bg-amber-100 text-amber-900 text-xs font-bold uppercase tracking-wider mb-4">
             Free Mobile Alternative
@@ -213,6 +222,9 @@ export default function VyopVsTallyPage() {
             ))}
           </div>
         </div>
+
+        {/* Cross-Link Other Competitors */}
+        <ComparisonCrossLinks currentSlug="vyop-vs-tally" />
 
         {/* Legal Disclaimer */}
         <ComparisonDisclaimer

@@ -4,6 +4,8 @@ import { useState } from "react";
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
 import Link from "next/link";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import ToolDownloadCTA from "@/components/ToolDownloadCTA";
 
 const STATE_CODES: Record<string, string> = {
   "01": "Jammu and Kashmir",
@@ -77,6 +79,11 @@ export default function GstinValidatorPage() {
   return (
     <main className="min-h-screen bg-[var(--bg-hero)]">
       <Navbar />
+
+      <Breadcrumbs items={[
+        { label: "Free Tools", href: "/tools" },
+        { label: "GSTIN Validator", href: "/tools/gstin-validator" },
+      ]} />
 
       <section className="pt-36 pb-20 px-4 md:px-6 max-w-4xl mx-auto">
         {/* Header */}
@@ -236,6 +243,11 @@ export default function GstinValidatorPage() {
           </a>
         </div>
       </section>
+
+      <ToolDownloadCTA
+        toolName="GSTIN Validator"
+        appFeature="auto-validate GST numbers when adding customers and suppliers"
+      />
 
       <Footer />
     </main>

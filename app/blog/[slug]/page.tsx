@@ -9,6 +9,9 @@ import ShareButtons from '@/components/blog/ShareButtons';
 import BlogViewTracker from '@/components/blog/BlogViewTracker';
 
 import { staticBlogs } from '@/lib/staticBlogs';
+import Breadcrumbs from '@/components/Breadcrumbs';
+import BlogDownloadCTA from '@/components/blog/BlogDownloadCTA';
+import RelatedPosts from '@/components/blog/RelatedPosts';
 
 export const dynamic = 'force-dynamic';
 
@@ -176,7 +179,14 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
       />
       <Navbar />
 
-      <article className="pt-32 pb-20 px-6 max-w-4xl mx-auto">
+      <Breadcrumbs
+        items={[
+          { label: "Blog", href: "/blog" },
+          { label: blog.title, href: `/blog/${blog.slug}` },
+        ]}
+      />
+
+      <article className="pt-24 pb-20 px-6 max-w-4xl mx-auto">
         <header className="mb-12 text-center md:text-left">
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-x-4 gap-y-2 mb-6">
             <span className="px-4 py-1.5 rounded-full bg-gray-100 text-gray-700 text-sm font-bold tracking-wide uppercase">
@@ -229,7 +239,11 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
           dangerouslySetInnerHTML={{ __html: blog.content || blog.excerpt || '' }}
         />
 
+        <BlogDownloadCTA postTitle={blog.title} />
+
         <ShareButtons url={`https://vyop.in/blog/${blog.slug}`} title={blog.title} />
+
+        <RelatedPosts currentSlug={blog.slug} />
       </article>
 
       <Footer />

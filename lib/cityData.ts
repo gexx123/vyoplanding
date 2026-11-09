@@ -117,9 +117,9 @@ export const cities: CityData[] = [
 
   // Uttar Pradesh & Bihar Trade Centers
   {
-    slug: "lucknow", name: "Lucknow", state: "Uttar Pradesh", hubFocus: "chikan embroidery and retail stores", searchVolumeHint: "High",
-    localMarketInfo: "Lucknow's Aminabad and Hazratganj are among North India's most famous shopping destinations, with Chikan embroidery artisans and retailers managing intricate piece-work inventory that requires item-level photo cataloguing. The Chowk area handles wholesale dry fruits and spices, while Gomti Nagar's modern retail corridors attract brand-conscious shoppers expecting professional invoicing. Lucknow's famous chaat and kebab restaurants need fast KOT billing during evening rushes.",
-    famousMarkets: ["Aminabad", "Hazratganj", "Chowk"],
+    slug: "lucknow", name: "Lucknow", state: "Uttar Pradesh", hubFocus: "Chikankari textiles, jewelry, retail food and wholesale FMCG", searchVolumeHint: "High",
+    localMarketInfo: "Lucknow's Aminabad and Hazratganj are North India's premier retail destinations, where Chikankari garment manufacturers, embroidery artisans, and fashion boutiques manage thousands of intricate SKUs requiring variant tracking and custom barcode printing. In Chowk and Yahiyaganj, wholesale traders handle high-volume dry fruits, spices, and FMCG where speed and party-wise Udhar Khata ledger tracking are paramount. Modern commercial hubs in Gomti Nagar, Alambagh, and Aliganj demand fast touch and camera POS for cafes, Awadhi kebab restaurants (KOT), and multi-brand electronics stores with IMEI tracking. Vyop turns any smartphone into an instant barcode counter, letting Lucknow shopkeepers bill in under 3 seconds with Hindi voice AI and zero hardware fees.",
+    famousMarkets: ["Aminabad", "Hazratganj", "Chowk", "Gomti Nagar", "Alambagh", "Yahiyaganj"],
   },
   {
     slug: "kanpur", name: "Kanpur", state: "Uttar Pradesh", hubFocus: "leather, footwear and hardware", searchVolumeHint: "High",

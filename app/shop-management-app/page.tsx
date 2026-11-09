@@ -403,8 +403,8 @@ export default function ShopManagementLandingPage() {
               aggregateRating: {
                 "@type": "AggregateRating",
                 ratingValue: "5.0",
-                reviewCount: "6",
-                ratingCount: "6",
+                reviewCount: "11",
+                ratingCount: "11",
                 bestRating: "5",
                 worstRating: "1",
               },

@@ -13,7 +13,7 @@ export default function CityHubsSection({
   subtitle = "Skip ₹15,000+ dealer fees. Download Vyop directly on your smartphone and start billing in 30 seconds — tailored for retail shopkeepers across major Indian commercial hubs.",
 }: CityHubsSectionProps = {}) {
   const topCities = cities.filter((c) => TOP_CITIES.includes(c.slug));
-  const otherCities = cities.filter((c) => !TOP_CITIES.includes(c.slug)).slice(0, 12);
+  const otherCities = cities.filter((c) => !TOP_CITIES.includes(c.slug));
 
   return (
     <section className="py-24 bg-gradient-to-b from-white to-[#FAF8F5] border-t border-[var(--border-subtle)]">
@@ -57,17 +57,22 @@ export default function CityHubsSection({
           ))}
         </div>
 
-        {/* More Cities Pills */}
-        <div className="flex flex-wrap gap-2 justify-center mb-10">
-          {otherCities.map((city) => (
-            <Link
-              key={city.slug}
-              href={`/billing-software/${city.slug}`}
-              className="px-3.5 py-1.5 rounded-full bg-white border border-gray-200 text-xs font-medium text-gray-600 hover:border-amber-400 hover:text-amber-700 hover:bg-amber-50/50 transition-all"
-            >
-              {city.name}
-            </Link>
-          ))}
+        {/* All Remaining Cities Across India */}
+        <div className="mb-10 max-w-5xl mx-auto">
+          <p className="text-xs font-bold uppercase tracking-wider text-gray-400 text-center mb-4">
+            Commercial Hubs Across North, South, West & East India
+          </p>
+          <div className="flex flex-wrap gap-2 justify-center">
+            {otherCities.map((city) => (
+              <Link
+                key={city.slug}
+                href={`/billing-software/${city.slug}`}
+                className="px-3.5 py-1.5 rounded-full bg-white border border-gray-200 text-xs font-medium text-gray-600 hover:border-amber-400 hover:text-amber-700 hover:bg-amber-50/50 transition-all"
+              >
+                {city.name}
+              </Link>
+            ))}
+          </div>
         </div>
 
         {/* View All CTA */}

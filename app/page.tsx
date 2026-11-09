@@ -77,7 +77,9 @@ export default function Home() {
                 "downloadUrl": "https://play.google.com/store/apps/details?id=com.vyop.app",
                 "countriesSupported": ["IN", "US", "GB", "CA", "AU", "AE", "SG", "PH", "MY", "ZA"],
                 "featureList": [
+                  "Scan Counter AI: Instant multi-item visual counter billing in 3 seconds",
                   "Smartphone Barcode Scanner POS & Digital Ledger",
+                  "Doodh Dairy & Milkman Delivery Management (Daily shift quota, load tracking, WhatsApp milk bills)",
                   "AI Recognition for Unbarcoded Loose Goods",
                   "Free GST, VAT and Non-GST Billing App",
                   "Voice AI Billing in Multiple Languages",
@@ -98,11 +100,83 @@ export default function Home() {
                 "aggregateRating": {
                   "@type": "AggregateRating",
                   "ratingValue": "5.0",
-                  "reviewCount": "6",
-                  "ratingCount": "6",
+                  "reviewCount": "11",
+                  "ratingCount": "11",
                   "bestRating": "5",
                   "worstRating": "1"
-                }
+                },
+                "review": [
+                  {
+                    "@type": "Review",
+                    "reviewRating": {
+                      "@type": "Rating",
+                      "ratingValue": "5",
+                      "bestRating": "5"
+                    },
+                    "author": {
+                      "@type": "Person",
+                      "name": "Faisal Qureshi"
+                    },
+                    "datePublished": "2026-10-15",
+                    "reviewBody": "With vyop I can now add items and scan bills in seconds I like the barcode and no barcode feature when a product doesn't have a barcode, it can still scan it . Vyop is making my shop run smoothly."
+                  },
+                  {
+                    "@type": "Review",
+                    "reviewRating": {
+                      "@type": "Rating",
+                      "ratingValue": "5",
+                      "bestRating": "5"
+                    },
+                    "author": {
+                      "@type": "Person",
+                      "name": "Satyanarayan Yadav"
+                    },
+                    "datePublished": "2026-11-07",
+                    "reviewBody": "Best App For Shopkeepers And Bill Generation"
+                  },
+                  {
+                    "@type": "Review",
+                    "reviewRating": {
+                      "@type": "Rating",
+                      "ratingValue": "5",
+                      "bestRating": "5"
+                    },
+                    "author": {
+                      "@type": "Person",
+                      "name": "Gaurav Dhole"
+                    },
+                    "datePublished": "2026-11-08",
+                    "reviewBody": "good app"
+                  },
+                  {
+                    "@type": "Review",
+                    "reviewRating": {
+                      "@type": "Rating",
+                      "ratingValue": "5",
+                      "bestRating": "5"
+                    },
+                    "author": {
+                      "@type": "Person",
+                      "name": "Surat ali Khan"
+                    },
+                    "datePublished": "2026-11-03",
+                    "reviewBody": "good"
+                  },
+                  {
+                    "@type": "Review",
+                    "reviewRating": {
+                      "@type": "Rating",
+                      "ratingValue": "5",
+                      "bestRating": "5"
+                    },
+                    "author": {
+                      "@type": "Person",
+                      "name": "SANDEEP BARWASIYA"
+                    },
+                    "datePublished": "2026-10-11",
+                    "reviewBody": "nice 🙂👍👍👍"
+                  }
+                ]
               },
               {
                 "@type": "WebSite",
@@ -244,6 +318,22 @@ export default function Home() {
                     "acceptedAnswer": {
                       "@type": "Answer",
                       "text": "Vyop is built mobile-first around natural voice recognition and instant smartphone camera barcode scanning. Instead of navigating multi-level accounting ledgers or typing item codes manually, store owners can speak or scan to add products, accelerating checkout counter speed with an intuitive interface."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "How does Vyop's Scan Counter create bills in 3 seconds without scanning barcodes one by one?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Vyop's Scan Counter uses Vision AI to detect all items placed on the counter at once. Instead of scanning barcodes individually, point your smartphone camera at the checkout counter — Vyop detects multiple items simultaneously with 2D bounding boxes, matches local inventory, and generates the complete bill in 3 seconds."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Can Vyop manage Doodh Dairy, Milkman route delivery, and monthly milk cards?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Yes! Vyop includes a comprehensive Milkman & Doodh Dairy delivery module. It tracks morning and evening milk quotas, manages vehicle milk loads (आज का दूध लोड), logs daily delivery exceptions via Hindi voice commands ('Ramesh ji 1 liter extra'), and auto-generates 30-day monthly milk statements for one-tap WhatsApp sharing."
                     }
                   },
                   {

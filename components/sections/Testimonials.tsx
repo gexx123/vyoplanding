@@ -24,11 +24,20 @@ interface TestimonialItem {
 const testimonials: TestimonialItem[] = [
   {
     quote:
-      "It's so simple, even my older brother can do it easily. No training required for billing.",
-    name: "Babulal",
+      "With Vyop I can now add items and scan bills in seconds. I like the barcode and no barcode feature — when a product doesn't have a barcode, it can still scan it. Vyop is making my shop run smoothly.",
+    name: "Faisal Qureshi",
     role: "Retail Store Owner",
     source: "Play Store",
-    initial: "B",
+    initial: "F",
+    color: "#0D9488",
+  },
+  {
+    quote:
+      "Best App For Shopkeepers And Bill Generation. Makes billing and invoice generation so much easier for daily shopkeeping.",
+    name: "Satyanarayan Yadav",
+    role: "Merchant & Shopkeeper",
+    source: "Play Store",
+    initial: "S",
     color: "#D4952A",
   },
   {
@@ -42,12 +51,30 @@ const testimonials: TestimonialItem[] = [
   },
   {
     quote:
-      "Good experience with smartphone barcode scanning. Simple invoice generation on phone.",
-    name: "Vivek",
-    role: "Kirana Merchant",
+      "Good app for quick mobile billing and receipt generation. Simple, reliable, and runs smoothly on Android.",
+    name: "Gaurav Dhole",
+    role: "Retail Business Owner",
     source: "Play Store",
-    initial: "V",
+    initial: "G",
+    color: "#4F46E5",
+  },
+  {
+    quote:
+      "It's so simple, even my older brother can do it easily. No training required for billing.",
+    name: "Babulal",
+    role: "Retail Store Owner",
+    source: "Play Store",
+    initial: "B",
     color: "#D4952A",
+  },
+  {
+    quote:
+      "Good billing software for retail shop counter. Great user experience and reliable daily invoicing.",
+    name: "Surat Ali Khan",
+    role: "Store Owner",
+    source: "Play Store",
+    initial: "S",
+    color: "#2563EB",
   },
   {
     quote:
@@ -58,12 +85,28 @@ const testimonials: TestimonialItem[] = [
     initial: "S",
     color: "#1E2340",
   },
+  {
+    quote:
+      "Nice app for quick barcode scanning and daily billing. Works smoothly for our shop.",
+    name: "Sandeep Barwasiya",
+    role: "Shop Owner",
+    source: "Play Store",
+    initial: "S",
+    color: "#D97706",
+  },
+  {
+    quote:
+      "Good experience with smartphone barcode scanning. Simple invoice generation on phone.",
+    name: "Vivek",
+    role: "Kirana Merchant",
+    source: "Play Store",
+    initial: "V",
+    color: "#059669",
+  },
 ];
 
-// Repeat 4 sets = 16 cards for perfectly symmetrical -50% infinite marquee
+// Repeat 2 sets = 18 cards for perfectly symmetrical -50% infinite marquee
 const allTestimonials = [
-  ...testimonials,
-  ...testimonials,
   ...testimonials,
   ...testimonials,
 ];

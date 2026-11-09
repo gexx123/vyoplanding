@@ -13,8 +13,13 @@ const features = [
     bullets: [],
     chips: [
       {
+        label: "Scan Counter",
+        description: "Place multiple items on your counter. Vyop Vision AI detects all products at once with 2D bounding boxes and bills in 3 seconds.",
+        image: "/feature-scan-counter.webp",
+      },
+      {
         label: "Scan Barcode",
-        description: "Scan any barcode or click an image of any product to turn it into a custom scannable barcode.",
+        description: "Scan any barcode continuously or turn any product photo into a custom scannable barcode.",
         image: "/feature-scan-barcode.png",
       },
       {
@@ -23,9 +28,9 @@ const features = [
         image: "/feature-add-scan.png",
       },
       {
-        label: "Add Manually",
-        description: "Enter product details, pricing, units, and custom categories manually.",
-        image: "/feature-add-chat.png",
+        label: "Voice in Orb",
+        description: "Speak product details directly into the glowing AI orb in natural Hindi or English.",
+        image: "/feature-add-speak.png",
       },
       {
         label: "Add with AI",
@@ -43,13 +48,8 @@ const features = [
         image: "/feature-print-barcode.png",
       },
       {
-        label: "Voice in Orb",
-        description: "Speak product details directly into the glowing AI orb in natural Hindi or English.",
-        image: "/feature-add-speak.png",
-      },
-      {
-        label: "Type in Orb",
-        description: "Type natural text prompts into the AI orb to add products and quantities on the fly.",
+        label: "Add Manually",
+        description: "Enter product details, pricing, units, and custom categories manually.",
         image: "/feature-add-chat.png",
       },
       {

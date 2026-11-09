@@ -434,12 +434,25 @@ export default async function CityLandingPage({ params }: { params: Promise<{ ci
           {/* Cross-City Linking Network */}
           <div className="pt-10 border-t border-gray-200">
             <h4 className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-4">
-              Vyop Billing Software in Other Commercial Hubs
+              Vyop Billing Software in Nearby Hubs &amp; Across {city.state}
             </h4>
             <div className="flex flex-wrap gap-2">
+              {/* Prioritize cities in the same state first */}
               {cities
-                .filter((c) => c.slug !== city.slug)
-                .slice(0, 12)
+                .filter((c) => c.slug !== city.slug && c.state === city.state)
+                .map((otherCity) => (
+                  <Link
+                    key={otherCity.slug}
+                    href={`/billing-software/${otherCity.slug}`}
+                    className="px-3.5 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-xs font-semibold text-amber-800 hover:border-amber-400 hover:bg-amber-100 transition-all"
+                  >
+                    Billing Software in {otherCity.name}
+                  </Link>
+                ))}
+              {/* Then link other major commercial trade hubs */}
+              {cities
+                .filter((c) => c.slug !== city.slug && c.state !== city.state)
+                .slice(0, 16)
                 .map((otherCity) => (
                   <Link
                     key={otherCity.slug}

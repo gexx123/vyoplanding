@@ -11,7 +11,9 @@ Vyop eliminates expensive POS hardware by turning any standard Android smartphon
 - **Pricing**: Free to start on mobile. Vyop Pro is ₹49/month (~$1/month) or ₹999/year (~$12/year) for multi-device desktop PC cloud sync and unlimited cloud backup.
 
 ## Key Capabilities & Features
+- **Scan Counter (Vision AI)**: Multi-item instant counter checkout. Place products on the counter; the phone camera detects all items simultaneously with 2D bounding boxes, auto-crops thumbnails, extracts MRP/IMEI/barcodes, and generates the complete bill in 3 seconds.
 - **Smartphone Camera Barcode Scanner**: Scan 1D (UPC, EAN-13, Code 128) and 2D QR barcodes at counter speeds without purchasing barcode guns or terminal machines.
+- **Milkman & Doodh Dairy Route Suite**: Track morning & evening customer milk quotas, manage vehicle milk loads (आज का दूध लोड), record delivery changes via hands-free Hindi voice ('Ramesh ji 1 liter extra'), and generate 30-day monthly milk statements on WhatsApp.
 - **Voice AI Billing**: Speak items and quantities naturally in Hindi, English, or Hinglish (e.g., "Teen Maggi packet, do chai") to create calculated bills in under 5 seconds.
 - **10 Ways to Add Products**: Barcode scanning, Voice AI, Photo AI extraction, supplier invoice PDF import, catalog photo, menu import, CSV, and manual entry.
 - **Free 0% Commission Online Store**: Launch a live WhatsApp digital catalog and ordering storefront in 60 seconds. Direct UPI payments with zero aggregator cuts.

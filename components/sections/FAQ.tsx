@@ -46,6 +46,10 @@ const faqCategories = [
         q: "Can Hardware, Electrical & Pharmacy shops use Vyop?",
         a: "Yes! Hardware shops use voice search ('1/2 inch PVC pipe') for thousands of loose items. Pharmacies can scan medicine barcodes, track batch numbers, monitor expiry dates, and issue compliant GST bills.",
       },
+      {
+        q: "Can Vyop manage Doodh Dairy, daily milk delivery routes & monthly bills?",
+        a: "Yes! Vyop features a dedicated Doodh Dairy & Milkman delivery suite. Manage morning and evening customer milk quotas (Cow/Buffalo milk), log vehicle milk loads (आज का दूध लोड), record delivery exceptions hands-free via Hindi voice ('Ramesh ji 1 liter extra'), and send 30-day WhatsApp monthly milk cards in one tap.",
+      },
     ],
   },
   {
@@ -53,6 +57,10 @@ const faqCategories = [
     icon: "⚡",
     badge: "Smart Billing",
     faqs: [
+      {
+        q: "How does the Scan Counter feature create bills in 3 seconds?",
+        a: "Vyop's Scan Counter uses Vision AI to scan multiple items on your counter all at once. Point your phone camera at the checkout counter — Vyop detects all products simultaneously with 2D bounding boxes, matches local inventory, auto-crops thumbnails, and prepares the bill in 3 seconds.",
+      },
       {
         q: "Can I turn my smartphone into a supermarket-grade barcode scanner?",
         a: "Yes! Vyop turns any smartphone camera into a supermarket-grade barcode scanner. It scans manufacturer barcodes (EAN/UPC), creates custom barcodes from product photos, and prints barcode stickers.",

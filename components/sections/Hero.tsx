@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
 import SectionLabel from "@/components/ui/SectionLabel";
+import { useIsIOS } from "@/lib/useIsIOS";
 
 import { Store } from "lucide-react";
 
@@ -56,6 +57,7 @@ const BUILT_FOR_CHIPS = [
 ];
 
 export default function Hero() {
+  const isIOS = useIsIOS();
   const { scrollYProgress } = useScroll();
 
   // Fade out and scale down as user scrolls
@@ -141,31 +143,43 @@ export default function Hero() {
               Get Started
             </a>
 
-            {/* Mobile: Google Play Badge */}
-            <a
-              href="https://play.google.com/store/apps/details?id=com.vyop.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex md:hidden items-center justify-center gap-2.5 px-7 py-3.5 rounded-[14px] bg-black text-white transition-all duration-200 hover:-translate-y-0.5 w-full sm:w-auto"
-              style={{
-                boxShadow: "0 4px 14px rgba(0,0,0,0.15)",
-              }}
-            >
-              <svg width="22" height="24" viewBox="0 0 22 24" fill="none">
-                <path d="M1 1l10 11L1 23V1z" fill="#4285F4" stroke="#4285F4" strokeWidth="0.5" />
-                <path d="M1 1l14 8-4 4L1 1z" fill="#34A853" />
-                <path d="M1 23l10-12 4 4-14 8z" fill="#EA4335" />
-                <path d="M15 9l5 3-5 3-4-3 4-3z" fill="#FBBC05" />
-              </svg>
-              <div className="text-left flex flex-col justify-center">
-                <div className="text-[10px] leading-[1.1] font-medium" style={{ color: "rgba(255,255,255,0.8)", fontFamily: "var(--font-body)", letterSpacing: "0.5px" }}>
-                  GET IT ON
+            {/* Mobile: iOS "Get Started — Open Your Shop" vs Android Google Play Badge */}
+            {isIOS ? (
+              <a
+                href="https://vyop.shop/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex md:hidden items-center justify-center gap-2.5 px-7 py-3.5 rounded-[14px] text-white font-semibold transition-all duration-200 hover:-translate-y-0.5 w-full sm:w-auto shadow-md"
+                style={{
+                  background: "var(--gradient-brand)",
+                  fontFamily: "var(--font-display)",
+                  fontSize: "16px",
+                  boxShadow: "var(--shadow-gold)",
+                }}
+              >
+                <Store className="w-5 h-5 flex-shrink-0" />
+                <span>Get Started — Open Your Shop</span>
+              </a>
+            ) : (
+              <a
+                href="https://play.google.com/store/apps/details?id=com.vyop.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex md:hidden items-center justify-center px-7 py-3.5 rounded-[14px] bg-black text-white transition-all duration-200 hover:-translate-y-0.5 w-full sm:w-auto"
+                style={{
+                  boxShadow: "0 4px 14px rgba(0,0,0,0.15)",
+                }}
+              >
+                <div className="text-center flex flex-col justify-center">
+                  <div className="text-[10px] leading-[1.1] font-medium" style={{ color: "rgba(255,255,255,0.8)", fontFamily: "var(--font-body)", letterSpacing: "0.5px" }}>
+                    GET IT ON
+                  </div>
+                  <div className="text-[17px] font-semibold leading-[1.1]" style={{ fontFamily: "var(--font-display)" }}>
+                    Google Play
+                  </div>
                 </div>
-                <div className="text-[17px] font-semibold leading-[1.1]" style={{ fontFamily: "var(--font-display)" }}>
-                  Google Play
-                </div>
-              </div>
-            </a>
+              </a>
+            )}
 
             {/* Create Online Website for Your Store Button */}
             <Link

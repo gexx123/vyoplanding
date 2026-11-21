@@ -363,18 +363,12 @@ export default function Navbar() {
                 href="https://play.google.com/store/apps/details?id=com.vyop.app"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-2 inline-flex items-center justify-center gap-2.5 px-6 py-3 rounded-[12px] bg-black text-white transition-all duration-200 hover:scale-[1.03] self-center w-full"
+                className="mt-2 inline-flex items-center justify-center px-6 py-3 rounded-[12px] bg-black text-white transition-all duration-200 hover:scale-[1.03] self-center w-full"
                 style={{
                   boxShadow: "0 4px 14px rgba(0,0,0,0.15)",
                 }}
               >
-                <svg width="20" height="22" viewBox="0 0 22 24" fill="none">
-                  <path d="M1 1l10 11L1 23V1z" fill="#4285F4" stroke="#4285F4" strokeWidth="0.5" />
-                  <path d="M1 1l14 8-4 4L1 1z" fill="#34A853" />
-                  <path d="M1 23l10-12 4 4-14 8z" fill="#EA4335" />
-                  <path d="M15 9l5 3-5 3-4-3 4-3z" fill="#FBBC05" />
-                </svg>
-                <div className="text-left flex flex-col justify-center">
+                <div className="text-center flex flex-col justify-center">
                   <div className="text-[9px] leading-[1.1] font-medium" style={{ color: "rgba(255,255,255,0.8)", fontFamily: "var(--font-body)", letterSpacing: "0.5px" }}>
                     GET IT ON
                   </div>

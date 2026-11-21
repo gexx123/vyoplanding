@@ -2,24 +2,38 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import { useIsIOS } from "@/lib/useIsIOS";
 
 const PLAY_STORE_URL =
   "https://play.google.com/store/apps/details?id=com.vyop.app&referrer=utm_source%3Dwebsite%26utm_medium%3Dsticky_bar";
+const IOS_STORE_URL = "https://vyop.shop/";
 
 export default function AppDownloadBar() {
   const [visible, setVisible] = useState(false);
   const [dismissed, setDismissed] = useState(true);
+  const isIOS = useIsIOS();
+
+  const targetUrl = isIOS ? IOS_STORE_URL : PLAY_STORE_URL;
+  const buttonLabel = isIOS ? "Open" : "Install";
 
   useEffect(() => {
-    // Don't show on desktop
-    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-      navigator.userAgent
-    );
+    // Check if test mode is enabled via URL query param
+    const isTestMode =
+      typeof window !== "undefined" &&
+      (window.location.search.includes("ios=true") ||
+        window.location.search.includes("platform=ios") ||
+        window.location.search.includes("mobile=true"));
+
+    // Don't show on desktop unless testing
+    const isMobile =
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      ) || isTestMode;
     if (!isMobile) return;
 
-    // Check if dismissed within last 24 hours
+    // Check if dismissed within last 24 hours (bypassed in test mode)
     const dismissedAt = localStorage.getItem("vyop_bar_dismissed");
-    if (dismissedAt && Date.now() - parseInt(dismissedAt) < 24 * 60 * 60 * 1000) {
+    if (!isTestMode && dismissedAt && Date.now() - parseInt(dismissedAt) < 24 * 60 * 60 * 1000) {
       return;
     }
 
@@ -53,6 +67,10 @@ export default function AppDownloadBar() {
     localStorage.setItem("vyop_bar_dismissed", Date.now().toString());
   };
 
+  const handleBannerClick = () => {
+    window.open(targetUrl, "_blank", "noopener,noreferrer");
+  };
+
   if (dismissed) return null;
 
   return (
@@ -70,7 +88,8 @@ export default function AppDownloadBar() {
       />
 
       <div
-        className="px-4 py-3 flex items-center gap-3"
+        onClick={handleBannerClick}
+        className="px-4 py-3 flex items-center gap-3 cursor-pointer select-none active:bg-gray-50/90 transition-colors"
         style={{
           background: "rgba(255,255,255,0.97)",
           backdropFilter: "blur(20px)",
@@ -80,7 +99,10 @@ export default function AppDownloadBar() {
       >
         {/* Close button */}
         <button
-          onClick={handleDismiss}
+          onClick={(e) => {
+            e.stopPropagation();
+            handleDismiss();
+          }}
           className="flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors"
           aria-label="Dismiss download banner"
         >
@@ -114,15 +136,18 @@ export default function AppDownloadBar() {
             className="text-xs truncate"
             style={{ color: "var(--text-secondary)" }}
           >
-            Free Barcode Billing App ⭐ 5.0
+            {isIOS ? "Free Barcode Billing & Store ⭐ 5.0" : "Free Barcode Billing App ⭐ 5.0"}
           </p>
         </div>
 
         {/* CTA Button */}
         <a
-          href={PLAY_STORE_URL}
+          href={targetUrl}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={(e) => {
+            e.stopPropagation();
+          }}
           className="flex-shrink-0 px-5 py-2 rounded-xl text-sm font-bold text-white transition-all duration-200 hover:scale-105 active:scale-95"
           style={{
             background: "var(--gradient-brand)",
@@ -130,7 +155,7 @@ export default function AppDownloadBar() {
             fontFamily: "var(--font-display)",
           }}
         >
-          Install
+          {buttonLabel}
         </a>
       </div>
     </div>

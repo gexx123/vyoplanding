@@ -60,9 +60,6 @@ export default function BlogDownloadCTA({ postTitle }: { postTitle?: string }) {
               boxShadow: "0 8px 28px rgba(245, 166, 35, 0.35)",
             }}
           >
-            <svg viewBox="0 0 24 24" className="w-6 h-6 fill-current flex-shrink-0">
-              <path d="M3.609 1.814L13.793 12 3.61 22.186a2.023 2.023 0 0 1-.61-.925V2.739c.07-.354.29-.68.609-.925zM15.207 13.414l2.766 2.766-12.87 7.424 10.104-10.19zm0-2.828L5.103.396l12.87 7.424-2.766 2.766zm1.414 1.414l3.535-2.04a1.768 1.768 0 0 1 0 3.064l-3.535-2.024z" />
-            </svg>
             <div className="text-left">
               <p className="text-[10px] uppercase font-bold tracking-wider opacity-80 leading-none">
                 Install on Google Play

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useIsIOS } from "@/lib/useIsIOS";
 
 const fadeUpVariants = {
   hidden: { opacity: 0, y: 32 },
@@ -52,6 +53,7 @@ function DecorativeQR() {
 }
 
 export default function FooterCTA() {
+  const isIOS = useIsIOS();
   return (
     <section
       id="download"
@@ -127,8 +129,13 @@ export default function FooterCTA() {
 
           {/* Mobile: App Store & Play Store Buttons */}
           <div className="flex md:hidden flex-col gap-4 w-full max-w-[280px] mx-auto">
-            {/* App Store */}
-            <a href="#" className="flex items-center gap-3 px-6 py-3.5 bg-white/10 hover:bg-white/20 border border-white/20 rounded-2xl transition-all duration-200 cursor-pointer backdrop-blur-md">
+            {/* iOS Web POS / App Store */}
+            <a
+              href="https://vyop.shop/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 px-6 py-3.5 bg-white/10 hover:bg-white/20 border border-white/20 rounded-2xl transition-all duration-200 cursor-pointer backdrop-blur-md"
+            >
             <svg
               width="24"
               height="24"
@@ -145,7 +152,7 @@ export default function FooterCTA() {
                   fontFamily: "var(--font-body)",
                 }}
               >
-                Download on the
+                {isIOS ? "Open Web POS on" : "Download on the"}
               </div>
               <div
                 className="text-sm font-semibold"
@@ -154,30 +161,19 @@ export default function FooterCTA() {
                   fontFamily: "var(--font-display)",
                 }}
               >
-                App Store
+                {isIOS ? "iPhone & iPad" : "App Store"}
               </div>
             </div>
           </a>
 
           {/* Play Store */}
-          <a href="https://play.google.com/store/apps/details?id=com.vyop.app" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 px-6 py-3.5 bg-white/10 hover:bg-white/20 border border-white/20 rounded-2xl transition-all duration-200 cursor-pointer backdrop-blur-md">
-            <svg
-              width="22"
-              height="24"
-              viewBox="0 0 22 24"
-              fill="none"
-            >
-              <path
-                d="M1 1l10 11L1 23V1z"
-                fill="#4285F4"
-                stroke="#4285F4"
-                strokeWidth="0.5"
-              />
-              <path d="M1 1l14 8-4 4L1 1z" fill="#34A853" />
-              <path d="M1 23l10-12 4 4-14 8z" fill="#EA4335" />
-              <path d="M15 9l5 3-5 3-4-3 4-3z" fill="#FBBC05" />
-            </svg>
-            <div className="text-left">
+          <a
+            href="https://play.google.com/store/apps/details?id=com.vyop.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-3 px-6 py-3.5 bg-white/10 hover:bg-white/20 border border-white/20 rounded-2xl transition-all duration-200 cursor-pointer backdrop-blur-md"
+          >
+            <div className="text-center">
               <div
                 className="text-[10px]"
                 style={{

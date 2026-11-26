@@ -35,6 +35,10 @@ async function getBlog(slug: string) {
     console.error("Error fetching blog from Firestore:", error);
   }
 
+  if (firestoreBlog?.status === 'Draft') {
+    return null;
+  }
+
   // If a full Firestore blog with content exists, return it
   if (firestoreBlog && firestoreBlog.content) {
     return firestoreBlog;

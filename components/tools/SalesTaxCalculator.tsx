@@ -107,14 +107,14 @@ const TAX_PRESETS: TaxPreset[] = [
   {
     country: "India",
     flag: "🇮🇳",
-    taxName: "GST Slabs",
+    taxName: "GST 2.0 Slabs",
     currency: "INR",
     symbol: "₹",
     rates: [
+      { label: "Zero / Nil (0%)", rate: 0 },
+      { label: "Essential / Food (5%)", rate: 5 },
       { label: "Standard (18%)", rate: 18 },
-      { label: "FMCG / Food (5%)", rate: 5 },
-      { label: "Processed Goods (12%)", rate: 12 },
-      { label: "Luxury / Auto (28%)", rate: 28 },
+      { label: "Demerit / Luxury (40%)", rate: 40 },
     ],
   },
 ];

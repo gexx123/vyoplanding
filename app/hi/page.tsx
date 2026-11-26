@@ -9,6 +9,14 @@ export const metadata = {
   },
   description: "Vyop ऐप: फोन को बारकोड स्कैनर बनाएं, बोलकर बिल बनाएं और डिजिटल उधार खाता मैनेज करें। किराना, गारमेंट्स और सभी रीटेल दुकानों के लिए 100% फ्री ऐप।",
   keywords: ["बारकोड स्कैनर ऐप", "उधार खाता ऐप", "बिल बनाने वाला ऐप", "दुकान बिलिंग सॉफ्टवेयर", "barcode scanner app hindi", "khata app hindi", "vyop pos"],
+  alternates: {
+    canonical: '/hi',
+    languages: {
+      'en': '/',
+      'hi': '/hi',
+      'x-default': '/',
+    },
+  },
 };
 
 export default function HindiLandingPage() {

@@ -41,7 +41,7 @@ export default function Breadcrumbs({ items, jsonLdOnly = false }: BreadcrumbsPr
       {!jsonLdOnly && (
         <nav
           aria-label="Breadcrumb"
-          className="max-w-7xl mx-auto px-6 pt-28 pb-2"
+          className="max-w-7xl mx-auto px-6 pt-20 pb-2"
         >
           <ol className="flex flex-wrap items-center gap-1.5 text-sm">
             {fullItems.map((item, index) => {

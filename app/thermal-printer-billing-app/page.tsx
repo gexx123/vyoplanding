@@ -412,14 +412,6 @@ export default function ThermalPrinterLandingPage() {
                   },
                 ],
               },
-              aggregateRating: {
-                "@type": "AggregateRating",
-                ratingValue: "5.0",
-                reviewCount: "11",
-                ratingCount: "11",
-                bestRating: "5",
-                worstRating: "1",
-              },
             },
             {
               "@context": "https://schema.org",

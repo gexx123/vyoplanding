@@ -104,17 +104,17 @@ export default function SalesTaxCalculatorPage() {
       />
 
       {/* Header */}
-      <section className="pt-28 pb-12 px-6 max-w-5xl mx-auto text-center">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-50 border border-amber-200/80 text-amber-800 text-xs md:text-sm font-semibold mb-6">
+      <section className="pt-4 pb-6 px-6 max-w-5xl mx-auto text-center">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-50 border border-amber-200/80 text-amber-800 text-xs md:text-sm font-semibold mb-3">
           <span>🌐</span> Multi-Currency &amp; Global Tax Rates (2026)
         </div>
         <h1
-          className="text-4xl md:text-6xl font-extrabold mb-6 text-gray-900 tracking-tight"
+          className="text-3xl md:text-5xl font-extrabold mb-3 text-gray-900 tracking-tight"
           style={{ fontFamily: "var(--font-display)" }}
         >
           Free Global Sales Tax &amp; <span className="gradient-text">VAT Calculator</span>
         </h1>
-        <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
           Calculate inclusive or reverse sales tax and VAT instantly for the US, UK, Canada, Australia, Europe, and Middle East. Accurate to 2 decimal places with copyable breakdown.
         </p>
       </section>

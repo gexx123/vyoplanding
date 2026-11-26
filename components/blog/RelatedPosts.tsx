@@ -14,7 +14,7 @@ export default function RelatedPosts({ currentSlug }: RelatedPostsProps) {
     { name: "GST Calculator", href: "/tools/gst-calculator", desc: "Calculate CGST/SGST/IGST instantly" },
     { name: "Barcode Generator", href: "/tools/barcode-generator", desc: "Generate Code 128 barcodes free" },
     { name: "Online Invoice Generator", href: "/tools/invoice-generator", desc: "Create professional GST invoices" },
-    { name: "HSN Code Finder", href: "/tools/hsn-code-finder", desc: "Search GST rates for 10,000+ goods" },
+    { name: "HSN Code Finder", href: "/tools/hsn-code-finder", desc: "Search official HSN codes & GST 2.0 rates" },
   ];
 
   return (

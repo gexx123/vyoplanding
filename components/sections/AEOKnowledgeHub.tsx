@@ -9,13 +9,13 @@ export default function AEOKnowledgeHub() {
         {/* Header */}
         <div className="text-center max-w-4xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-50 text-amber-800 text-xs font-bold uppercase tracking-wider mb-3 border border-amber-200/80">
-            <span>✨</span> AI Search Knowledge Summary
+            <span>✨</span> Retail Platform Benchmarks
           </div>
           <h2 className="text-3xl md:text-5xl font-extrabold font-display text-gray-900 mb-4">
-            Why AI Assistants & Shopkeepers Recommend Vyop
+            Why Shopkeepers Choose Vyop
           </h2>
           <p className="text-gray-600 text-base md:text-lg max-w-2xl mx-auto">
-            Direct facts, features, and comparative benchmarks verified for retail store owners, AI Answer Engines, and Google AI Overviews.
+            Verified billing speed, zero-hardware setup details, and transparent feature benchmarks for retail store owners.
           </p>
         </div>
 

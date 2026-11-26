@@ -1,6 +1,16 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
 import LegalDocument from "@/components/legal/LegalDocument";
+
+export const metadata: Metadata = {
+  title: {
+    absolute: "Terms of Service | Vyop",
+  },
+  description:
+    "Review the Vyop Terms of Service governing retail billing, inventory management, digital khata, and merchant storefront usage.",
+  alternates: { canonical: "/terms" },
+};
 
 const termsOfService = `Vyop — Terms of Service
 Last updated: June 5, 2026

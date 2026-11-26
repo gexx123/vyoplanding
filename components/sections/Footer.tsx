@@ -17,47 +17,31 @@ const footerLinks = {
     "Restaurant Ordering Guide",
   ],
   "Free Tools": [
+    "All Free Tools",
     "AI Billing Software",
     "Shop Management App",
     "Smart Billing Machine",
     "Thermal Printer App",
-    "Global POS (Worldwide)",
-    "All Free Tools",
     "Online Storefront (0%)",
     "Mobile Barcode Scanner",
     "Free POS App",
     "Smart Billing Software",
-    "Free Invoice Generator",
+    "Best Billing Software India",
+    "Best POS Software India",
     "Free GST Calculator",
+    "Free Invoice Generator",
     "Cash Counter & Tally",
-    "UPI QR Standee Generator",
-    "Profit Margin Calculator",
-    "Discount Calculator",
-    "GSTIN Validator",
-    "Free Barcode Generator",
-    "HSN Code Finder",
   ],
   Alternatives: [
-    "Vyop vs Lightspeed",
-    "Vyop vs Zettle",
-    "Vyop vs Tally",
-    "Vyop vs Loyverse",
-    "Vyop vs Square POS",
-    "Vyop vs Petpooja",
-    "Vyop vs Marg ERP",
-    "Vyop vs Pine Labs",
-    "Vyop vs Zoho Books",
-    "Vyop vs Swipe",
-    "Vyop vs Nukkad Shops",
-    "Vyop vs Shopify POS",
-    "Vyop vs Clover POS",
-    "Vyop vs POSist",
-    "Vyop vs Busy",
+    "All 18 Comparisons",
     "Vyop vs Vyapar",
+    "Vyop vs Tally",
     "Vyop vs MyBillBook",
     "Vyop vs Khatabook",
+    "Vyop vs Loyverse",
+    "Vyop vs Square POS",
   ],
-  "Top Cities": ["Jaipur", "Mumbai", "Delhi", "Surat", "Bangalore"],
+  "Top Cities": ["All 60+ Cities", "Jaipur", "Mumbai", "Delhi", "Surat", "Bangalore"],
   Support: ["Verify Certificate", "Help Center", "Contact Us", "WhatsApp Chat", "Community"],
 };
 
@@ -75,36 +59,20 @@ const linkPaths: Record<string, string> = {
   "Online Storefront (0%)": "/features/online-storefront",
   "Mobile Barcode Scanner": "/barcode-scanner",
   "All Free Tools": "/tools",
+  "All 18 Comparisons": "/compare",
+  "All 60+ Cities": "/billing-software",
   "Free Invoice Generator": "/tools/invoice-generator",
   "Free GST Calculator": "/tools/gst-calculator",
   "Cash Counter & Tally": "/tools/cash-counter",
-  "UPI QR Standee Generator": "/tools/upi-qr-generator",
-  "Discount Calculator": "/tools/discount-calculator",
-  "GSTIN Validator": "/tools/gstin-validator",
-  "Free Barcode Generator": "/tools/barcode-generator",
-  "Profit Margin Calculator": "/tools/margin-calculator",
-  "HSN Code Finder": "/tools/hsn-code-finder",
   "AI Billing Software": "/ai-billing-software",
   "Shop Management App": "/shop-management-app",
   "Smart Billing Machine": "/billing-machine",
   "Thermal Printer App": "/thermal-printer-billing-app",
-  "Vyop vs Lightspeed": "/vyop-vs-lightspeed",
-  "Vyop vs Zettle": "/vyop-vs-zettle",
   "Best Billing Software India": "/best-billing-software-india",
   "Best POS Software India": "/best-pos-software-india",
   "Vyop vs Tally": "/vyop-vs-tally",
   "Vyop vs Loyverse": "/vyop-vs-loyverse",
   "Vyop vs Square POS": "/vyop-vs-square",
-  "Vyop vs Petpooja": "/vyop-vs-petpooja",
-  "Vyop vs Marg ERP": "/vyop-vs-marg",
-  "Vyop vs Pine Labs": "/vyop-vs-pinelabs",
-  "Vyop vs Zoho Books": "/vyop-vs-zoho",
-  "Vyop vs Swipe": "/vyop-vs-swipe",
-  "Vyop vs Nukkad Shops": "/vyop-vs-nukkadshops",
-  "Vyop vs Shopify POS": "/vyop-vs-shopify",
-  "Vyop vs Clover POS": "/vyop-vs-clover",
-  "Vyop vs POSist": "/vyop-vs-posist",
-  "Vyop vs Busy": "/vyop-vs-busy",
   "Vyop vs Vyapar": "/vyop-vs-vyapar",
   "Vyop vs MyBillBook": "/vyop-vs-mybillbook",
   "Vyop vs Khatabook": "/vyop-vs-khatabook",
@@ -121,7 +89,6 @@ const linkPaths: Record<string, string> = {
   "Community": "/community",
   "Privacy Policy": "/privacy",
   "Terms of Service": "/terms",
-  "Cookie Policy": "/cookie",
 };
 
 const socialIcons = [
@@ -297,11 +264,11 @@ export default function Footer() {
               className="text-xs font-bold uppercase tracking-wider text-[var(--text-secondary)] hover:text-[var(--brand-primary)] transition-colors"
               style={{ fontFamily: "var(--font-display)" }}
             >
-              Retail Billing Software by Industry (All 22 Trades) →
+              Retail Billing Software by Industry (All 23 Trades) →
             </Link>
           </div>
           <div className="flex flex-wrap gap-x-4 gap-y-2 text-xs text-[var(--text-muted)]">
-            {industries.map((ind) => (
+            {industries.slice(0, 8).map((ind) => (
               <Link
                 key={ind.slug}
                 href={`/solutions/${ind.slug}`}
@@ -310,6 +277,12 @@ export default function Footer() {
                 {ind.name}
               </Link>
             ))}
+            <Link
+              href="/solutions"
+              className="font-semibold text-[var(--brand-primary)] hover:underline"
+            >
+              View All 23 Shop Types →
+            </Link>
           </div>
         </div>
 
@@ -325,7 +298,7 @@ export default function Footer() {
             </Link>
           </div>
           <div className="flex flex-wrap gap-x-4 gap-y-2 text-xs text-[var(--text-muted)]">
-            {countries.map((country) => (
+            {countries.slice(0, 6).map((country) => (
               <Link
                 key={country.slug}
                 href={`/global-pos/${country.slug}`}
@@ -335,21 +308,28 @@ export default function Footer() {
                 <span>POS in {country.name}</span>
               </Link>
             ))}
+            <Link
+              href="/global-pos"
+              className="font-semibold text-[var(--brand-primary)] hover:underline"
+            >
+              All 12 Countries →
+            </Link>
           </div>
         </div>
 
         {/* City Hubs Directory */}
         <div className="pt-8 pb-6 border-t border-[var(--border-subtle)]">
           <div className="flex items-center justify-between mb-3">
-            <span
-              className="text-xs font-bold uppercase tracking-wider text-[var(--text-secondary)]"
+            <Link
+              href="/billing-software"
+              className="text-xs font-bold uppercase tracking-wider text-[var(--text-secondary)] hover:text-[var(--brand-primary)] transition-colors"
               style={{ fontFamily: "var(--font-display)" }}
             >
-              Free GST Billing Software Across Indian Cities
-            </span>
+              Free GST Billing Software Across Indian Cities →
+            </Link>
           </div>
           <div className="flex flex-wrap gap-x-4 gap-y-2 text-xs text-[var(--text-muted)]">
-            {cities.map((city) => (
+            {cities.slice(0, 10).map((city) => (
               <Link
                 key={city.slug}
                 href={`/billing-software/${city.slug}`}
@@ -358,6 +338,12 @@ export default function Footer() {
                 Billing Software in {city.name}
               </Link>
             ))}
+            <Link
+              href="/billing-software"
+              className="font-semibold text-[var(--brand-primary)] hover:underline"
+            >
+              Explore All 60+ Cities →
+            </Link>
           </div>
         </div>
 

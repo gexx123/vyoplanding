@@ -1,6 +1,16 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
 import LegalDocument from "@/components/legal/LegalDocument";
+
+export const metadata: Metadata = {
+  title: {
+    absolute: "Privacy Policy | Vyop",
+  },
+  description:
+    "Read the Vyop Privacy Policy covering AES-256-GCM end-to-end encryption, device-side billing data protection, voice transcription, and user rights.",
+  alternates: { canonical: "/privacy" },
+};
 
 const privacyPolicy = `Vyop — Privacy Policy
 Last updated: June 5, 2026

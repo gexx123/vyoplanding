@@ -34,7 +34,7 @@ export default function FreeToolsSection() {
                 Free Online GST Calculator
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed mb-6">
-                Calculate inclusive &amp; reverse GST, CGST, SGST, and IGST splits for 5%, 12%, 18%, and 28% tax slabs with instant one-click copy.
+                Calculate inclusive &amp; reverse GST, CGST, SGST, and IGST splits for 0%, 5%, 18%, and 40% GST 2.0 slabs with instant one-click copy.
               </p>
             </div>
 

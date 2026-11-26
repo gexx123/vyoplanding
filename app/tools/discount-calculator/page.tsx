@@ -1,363 +1,109 @@
-"use client";
-
-import { useState } from "react";
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
-import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import ToolDownloadCTA from "@/components/ToolDownloadCTA";
+import DiscountCalculatorClient from "@/components/tools/DiscountCalculatorClient";
 
-type DiscountMode = "flat" | "stacked" | "bogo";
+const discountFaqs = [
+  {
+    question: "Why is 50% + 10% stacked discount equal to 55% off instead of 60%?",
+    answer:
+      "A stacked discount applies the second percentage to the already reduced price rather than the original MRP. On ₹1,000, a 50% markdown leaves ₹500, and an extra 10% off ₹500 deducts ₹50 — making the final price ₹450 (55% total discount).",
+  },
+  {
+    question: "How is GST applied when offering a retail discount?",
+    answer:
+      "Under Indian GST rules, GST is charged on the net transaction value after trade/bill discounts shown on the invoice, not the pre-discount MRP.",
+  },
+];
 
 export default function DiscountCalculatorPage() {
-  const [mode, setMode] = useState<DiscountMode>("flat");
-
-  // Flat mode state
-  const [originalPrice, setOriginalPrice] = useState<number>(1200);
-  const [discountPercent, setDiscountPercent] = useState<number>(25);
-
-  // Stacked mode state
-  const [firstDiscount, setFirstDiscount] = useState<number>(50);
-  const [secondDiscount, setSecondDiscount] = useState<number>(10);
-
-  // BOGO mode state
-  const [buyQty, setBuyQty] = useState<number>(2);
-  const [freeQty, setFreeQty] = useState<number>(1);
-  const [itemPrice, setItemPrice] = useState<number>(500);
-
-  // GST toggle
-  const [applyGst, setApplyGst] = useState<boolean>(false);
-  const [gstSlab, setGstSlab] = useState<number>(18);
-
-  // Flat calculations
-  const flatSavings = (originalPrice * discountPercent) / 100;
-  const flatFinalPrice = Math.max(0, originalPrice - flatSavings);
-  const flatGstAmount = applyGst ? (flatFinalPrice * gstSlab) / 100 : 0;
-  const flatTotalWithTax = flatFinalPrice + flatGstAmount;
-
-  // Stacked calculations
-  const priceAfterFirst = originalPrice * (1 - firstDiscount / 100);
-  const stackedFinalPrice = priceAfterFirst * (1 - secondDiscount / 100);
-  const stackedSavings = originalPrice - stackedFinalPrice;
-  const effectiveStackedPercent = originalPrice > 0 ? (stackedSavings / originalPrice) * 100 : 0;
-
-  // BOGO calculations
-  const totalItemsReceived = buyQty + freeQty;
-  const totalCost = buyQty * itemPrice;
-  const costPerItem = totalItemsReceived > 0 ? totalCost / totalItemsReceived : 0;
-  const bogoDiscountPercent =
-    totalItemsReceived * itemPrice > 0
-      ? ((totalItemsReceived * itemPrice - totalCost) / (totalItemsReceived * itemPrice)) * 100
-      : 0;
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        name: "Free Discount, Stacked Offer & BOGO Calculator - Vyop",
+        url: "https://vyop.in/tools/discount-calculator",
+        applicationCategory: "FinanceApplication, BusinessApplication",
+        operatingSystem: "All",
+        browserRequirements: "Requires JavaScript",
+        description:
+          "Calculate flat percentage discounts, stacked double discounts (e.g. 50% + 10%), Buy X Get Y Free deals, and post-discount GST 2.0 totals.",
+        offers: {
+          "@type": "Offer",
+          price: "0",
+          priceCurrency: "INR",
+        },
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: discountFaqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer,
+          },
+        })),
+      },
+    ],
+  };
 
   return (
     <main className="min-h-screen bg-[var(--bg-hero)]">
       <Navbar />
 
-      <Breadcrumbs items={[
-        { label: "Free Tools", href: "/tools" },
-        { label: "Discount Calculator", href: "/tools/discount-calculator" },
-      ]} />
+      <Breadcrumbs
+        items={[
+          { label: "Free Tools", href: "/tools" },
+          { label: "Discount Calculator", href: "/tools/discount-calculator" },
+        ]}
+      />
 
-      <section className="pt-36 pb-20 px-4 md:px-6 max-w-4xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-100 text-amber-900 text-xs font-bold uppercase tracking-wider mb-3">
-            <span>🏷️</span> Retail Offer & Sale Calculator
+      <section className="pt-4 pb-16 px-4 md:px-6 max-w-4xl mx-auto">
+        {/* Compact Above-the-Fold Header */}
+        <div className="text-center mb-6">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-bold uppercase tracking-wider mb-2.5">
+            <span>🏷️</span> Retail Offer &amp; Sale Calculator
           </div>
-          <h1 className="text-3xl md:text-5xl font-extrabold font-display mb-4 text-gray-900">
-            Discount & Buy-Get-Free <span className="gradient-text">Offer Calculator</span>
+          <h1 className="text-2xl md:text-4xl font-extrabold font-display mb-2 text-gray-900">
+            Discount &amp; Buy-Get-Free <span className="gradient-text">Offer Calculator</span>
           </h1>
-          <p className="text-base md:text-lg text-[var(--text-secondary)] max-w-2xl mx-auto">
-            Calculate single discount percentages, stacked sale offers (e.g. 50% + 10% off), Buy 2 Get 1 Free savings, and GST after discount.
+          <p className="text-sm md:text-base text-[var(--text-secondary)] max-w-2xl mx-auto">
+            Calculate flat % off, stacked double discounts (e.g. 50% + 10%), Buy X Get Y Free savings, and post-discount GST 2.0 tax totals.
           </p>
         </div>
 
-        {/* Mode Selector Tabs */}
-        <div className="flex rounded-2xl bg-gray-100 p-1.5 mb-8 max-w-md mx-auto">
-          <button
-            onClick={() => setMode("flat")}
-            className={`flex-1 py-2.5 rounded-xl text-xs md:text-sm font-bold transition-all ${
-              mode === "flat" ? "bg-white text-gray-900 shadow-sm" : "text-gray-600 hover:text-gray-900"
-            }`}
-          >
-            Simple % Off
-          </button>
-          <button
-            onClick={() => setMode("stacked")}
-            className={`flex-1 py-2.5 rounded-xl text-xs md:text-sm font-bold transition-all ${
-              mode === "stacked" ? "bg-white text-gray-900 shadow-sm" : "text-gray-600 hover:text-gray-900"
-            }`}
-          >
-            Double Discount (50% + 10%)
-          </button>
-          <button
-            onClick={() => setMode("bogo")}
-            className={`flex-1 py-2.5 rounded-xl text-xs md:text-sm font-bold transition-all ${
-              mode === "bogo" ? "bg-white text-gray-900 shadow-sm" : "text-gray-600 hover:text-gray-900"
-            }`}
-          >
-            Buy X Get Y Free
-          </button>
-        </div>
+        {/* Interactive Calculator */}
+        <DiscountCalculatorClient />
 
-        {/* Calculator Main Box */}
-        <div className="bg-white rounded-3xl p-6 md:p-10 shadow-lg border border-gray-200 mb-12">
-          {mode === "flat" && (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-              <div className="space-y-5">
-                <div>
-                  <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">
-                    Original Price / MRP (₹)
-                  </label>
-                  <input
-                    type="number"
-                    min="0"
-                    value={originalPrice || ""}
-                    onChange={(e) => setOriginalPrice(Number(e.target.value))}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-300 font-bold text-xl text-gray-900 focus:outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-200"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">
-                    Discount Percentage (%)
-                  </label>
-                  <div className="flex gap-2 mb-2">
-                    {[10, 20, 25, 30, 50].map((d) => (
-                      <button
-                        key={d}
-                        onClick={() => setDiscountPercent(d)}
-                        className={`flex-1 py-1.5 rounded-lg text-xs font-bold border transition-colors ${
-                          discountPercent === d ? "bg-amber-500 border-amber-500 text-white" : "border-gray-200 text-gray-700 hover:bg-gray-50"
-                        }`}
-                      >
-                        {d}%
-                      </button>
-                    ))}
-                  </div>
-                  <input
-                    type="number"
-                    min="0"
-                    max="100"
-                    value={discountPercent || ""}
-                    onChange={(e) => setDiscountPercent(Number(e.target.value))}
-                    className="w-full px-4 py-2.5 rounded-xl border border-gray-300 font-bold text-base text-gray-900 focus:outline-none focus:border-amber-500"
-                    placeholder="Custom %"
-                  />
-                </div>
-
-                <div className="pt-2 border-t border-gray-100">
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-xs font-bold text-gray-700">Add GST after Discount?</span>
-                    <input
-                      type="checkbox"
-                      checked={applyGst}
-                      onChange={(e) => setApplyGst(e.target.checked)}
-                      className="w-4 h-4 accent-amber-500 rounded cursor-pointer"
-                    />
-                  </div>
-                  {applyGst && (
-                    <div className="flex gap-2">
-                      {[5, 12, 18, 28].map((g) => (
-                        <button
-                          key={g}
-                          onClick={() => setGstSlab(g)}
-                          className={`flex-1 py-1 rounded text-xs font-bold ${
-                            gstSlab === g ? "bg-amber-500 text-white" : "bg-gray-100 text-gray-600"
-                          }`}
-                        >
-                          {g}%
-                        </button>
-                      ))}
-                    </div>
-                  )}
-                </div>
+        {/* Formulas & FAQs (SSR) */}
+        <div className="bg-white rounded-3xl p-6 md:p-8 border border-gray-200 shadow-sm mb-10 space-y-4">
+          <h2 className="text-xl font-bold font-display text-gray-900">
+            Retail Discount Formulas &amp; FAQs
+          </h2>
+          <p className="text-sm text-gray-600 leading-relaxed">
+            <strong>Single Discount:</strong> Final Price = MRP × (1 − Discount% / 100).{" "}
+            <strong>Successive / Double Discount:</strong> Effective % = d1 + d2 − (d1 × d2 / 100).
+          </p>
+          <div className="space-y-3">
+            {discountFaqs.map((faq, idx) => (
+              <div key={idx} className="p-4 rounded-2xl bg-gray-50 border border-gray-100">
+                <h3 className="font-bold text-sm text-gray-900 mb-1">{faq.question}</h3>
+                <p className="text-xs md:text-sm text-gray-600 leading-relaxed">{faq.answer}</p>
               </div>
-
-              {/* Result Box */}
-              <div className="bg-gradient-to-br from-amber-500 to-amber-600 text-white rounded-3xl p-6 md:p-8 text-center shadow-md">
-                <span className="text-xs font-bold uppercase tracking-wider text-white/80 block mb-1">Final Discounted Price</span>
-                <div className="text-4xl md:text-5xl font-extrabold font-mono mb-2">
-                  ₹{flatFinalPrice.toFixed(2)}
-                </div>
-                <div className="inline-block px-3 py-1 rounded-full bg-emerald-500 text-white text-xs font-extrabold mb-6 shadow-sm">
-                  You Save: ₹{flatSavings.toFixed(2)} ({discountPercent}% OFF)
-                </div>
-
-                {applyGst && (
-                  <div className="pt-4 border-t border-white/20 text-xs text-white/90 space-y-1">
-                    <div className="flex justify-between">
-                      <span>GST Amount ({gstSlab}%):</span>
-                      <span className="font-bold">+₹{flatGstAmount.toFixed(2)}</span>
-                    </div>
-                    <div className="flex justify-between text-base font-extrabold text-white pt-1 border-t border-white/20">
-                      <span>Total with GST:</span>
-                      <span>₹{flatTotalWithTax.toFixed(2)}</span>
-                    </div>
-                  </div>
-                )}
-              </div>
-            </div>
-          )}
-
-          {mode === "stacked" && (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-              <div className="space-y-5">
-                <div>
-                  <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">
-                    Original Price / MRP (₹)
-                  </label>
-                  <input
-                    type="number"
-                    min="0"
-                    value={originalPrice || ""}
-                    onChange={(e) => setOriginalPrice(Number(e.target.value))}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-300 font-bold text-xl text-gray-900 focus:outline-none focus:border-amber-500"
-                  />
-                </div>
-
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">
-                      Primary Discount (%)
-                    </label>
-                    <input
-                      type="number"
-                      min="0"
-                      max="100"
-                      value={firstDiscount || ""}
-                      onChange={(e) => setFirstDiscount(Number(e.target.value))}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-300 font-bold text-lg text-gray-900 focus:outline-none focus:border-amber-500"
-                      placeholder="50"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">
-                      Extra Bill Discount (%)
-                    </label>
-                    <input
-                      type="number"
-                      min="0"
-                      max="100"
-                      value={secondDiscount || ""}
-                      onChange={(e) => setSecondDiscount(Number(e.target.value))}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-300 font-bold text-lg text-gray-900 focus:outline-none focus:border-amber-500"
-                      placeholder="10"
-                    />
-                  </div>
-                </div>
-              </div>
-
-              {/* Stacked Result */}
-              <div className="bg-gradient-to-br from-amber-500 to-amber-600 text-white rounded-3xl p-6 md:p-8 text-center shadow-md">
-                <span className="text-xs font-bold uppercase tracking-wider text-white/80 block mb-1">
-                  Effective Total Discount
-                </span>
-                <div className="text-4xl md:text-5xl font-extrabold font-mono mb-2">
-                  {effectiveStackedPercent.toFixed(1)}% OFF
-                </div>
-                <p className="text-xs text-white/80 mb-4">
-                  (Not {firstDiscount + secondDiscount}%, because the extra discount applies to the already discounted price!)
-                </p>
-
-                <div className="bg-white/10 rounded-2xl p-4 text-sm space-y-2 text-left">
-                  <div className="flex justify-between">
-                    <span>Original Price:</span>
-                    <span className="font-bold">₹{originalPrice}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>After {firstDiscount}%:</span>
-                    <span className="font-bold">₹{priceAfterFirst.toFixed(2)}</span>
-                  </div>
-                  <div className="flex justify-between text-base font-extrabold pt-2 border-t border-white/20">
-                    <span>Final Amount to Pay:</span>
-                    <span className="text-amber-200">₹{stackedFinalPrice.toFixed(2)}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
-
-          {mode === "bogo" && (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-              <div className="space-y-5">
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">
-                      Buy Quantity (Pay For)
-                    </label>
-                    <input
-                      type="number"
-                      min="1"
-                      value={buyQty || ""}
-                      onChange={(e) => setBuyQty(Number(e.target.value))}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-300 font-bold text-lg text-gray-900 focus:outline-none focus:border-amber-500"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">
-                      Get Quantity (Free)
-                    </label>
-                    <input
-                      type="number"
-                      min="1"
-                      value={freeQty || ""}
-                      onChange={(e) => setFreeQty(Number(e.target.value))}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-300 font-bold text-lg text-gray-900 focus:outline-none focus:border-amber-500"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">
-                    Individual Item Price (₹)
-                  </label>
-                  <input
-                    type="number"
-                    min="0"
-                    value={itemPrice || ""}
-                    onChange={(e) => setItemPrice(Number(e.target.value))}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-300 font-bold text-xl text-gray-900 focus:outline-none focus:border-amber-500"
-                  />
-                </div>
-              </div>
-
-              {/* BOGO Result */}
-              <div className="bg-gradient-to-br from-amber-500 to-amber-600 text-white rounded-3xl p-6 md:p-8 text-center shadow-md">
-                <span className="text-xs font-bold uppercase tracking-wider text-white/80 block mb-1">
-                  Effective Discount Per Item
-                </span>
-                <div className="text-4xl md:text-5xl font-extrabold font-mono mb-2">
-                  {bogoDiscountPercent.toFixed(1)}% OFF
-                </div>
-
-                <div className="bg-white/10 rounded-2xl p-4 text-sm space-y-2 text-left mt-4">
-                  <div className="flex justify-between">
-                    <span>Total Items Taken Home:</span>
-                    <strong className="text-white">{totalItemsReceived} units</strong>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Total Bill Paid:</span>
-                    <strong className="text-white">₹{totalCost.toFixed(2)}</strong>
-                  </div>
-                  <div className="flex justify-between text-base font-extrabold pt-2 border-t border-white/20">
-                    <span>Effective Cost Per Item:</span>
-                    <span className="text-amber-200">₹{costPerItem.toFixed(2)}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
+            ))}
+          </div>
         </div>
 
         {/* CTA Banner */}
         <div className="p-8 rounded-3xl bg-white border border-gray-200 shadow-md text-center">
           <h2 className="text-2xl font-bold mb-3 font-display text-gray-900">
-            Automate Discounts & Run Spin-The-Wheel Offers with Vyop!
+            Automate Discounts &amp; Run Spin-The-Wheel Offers with Vyop
           </h2>
           <p className="text-gray-600 max-w-xl mx-auto mb-6 text-sm leading-relaxed">
-            Vyop POS lets you create customized store discounts, instant item-wise markdowns, and interactive customer Spin-The-Wheel games on your online store to boost sales. Free to start with ₹999/yr Pro cloud sync.
+            Vyop POS lets you apply item-wise discounts, festival coupon codes, and interactive Spin-The-Wheel customer rewards on your store billing counter. Free to start with ₹999/yr Pro cloud sync.
           </p>
           <a
             href="https://play.google.com/store/apps/details?id=com.vyop.app"
@@ -369,6 +115,11 @@ export default function DiscountCalculatorPage() {
           </a>
         </div>
       </section>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
 
       <ToolDownloadCTA
         toolName="Discount Calculator"

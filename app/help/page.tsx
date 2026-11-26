@@ -1,5 +1,15 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
+
+export const metadata: Metadata = {
+  title: {
+    absolute: "Help Center & Retail Billing FAQs | Vyop",
+  },
+  description:
+    "Answers to common questions about Vyop AI voice billing, Hindi/Hinglish voice commands, inventory stock entry, Udhar Khata tracking, and cloud backup.",
+  alternates: { canonical: "/help" },
+};
 
 export default function HelpCenter() {
   const faqs = [

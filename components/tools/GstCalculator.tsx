@@ -47,7 +47,7 @@ Calculated with Vyop Free GST Tool (https://vyop.in/tools/gst-calculator)`;
     setTimeout(() => setCopied(false), 2500);
   };
 
-  const presetRates = [5, 12, 18, 28];
+  const presetRates = [0, 5, 18, 40];
 
   return (
     <div className="bg-white rounded-3xl border border-[var(--border-subtle)] shadow-[var(--shadow-lg)] overflow-hidden max-w-4xl mx-auto">
@@ -161,12 +161,12 @@ Calculated with Vyop Free GST Tool (https://vyop.in/tools/gst-calculator)`;
           {/* Quick GST Slab Helper */}
           <div className="p-4 rounded-2xl bg-amber-50/70 border border-amber-200/60 text-xs text-amber-900 space-y-1">
             <div className="font-bold flex items-center gap-1.5 text-amber-800">
-              <span>💡</span> Common Slabs in India:
+              <span>💡</span> GST 2.0 Slabs in India (Post Sept 2025):
             </div>
-            <div>• <strong>5%:</strong> Household essentials, packaged food, tea, apparel &lt; ₹1,000</div>
-            <div>• <strong>12%:</strong> Processed foods, computers, apparel &gt; ₹1,000</div>
-            <div>• <strong>18%:</strong> Most retail goods, electronics, personal care, restaurants</div>
-            <div>• <strong>28%:</strong> Automobiles, luxury goods, cement, ACs & refrigerators</div>
+            <div>• <strong>0% (Nil):</strong> Fresh produce, milk, paneer, salt, life-saving drugs</div>
+            <div>• <strong>5%:</strong> Packaged food, butter/ghee, medicines, apparel &amp; footwear ≤ ₹2,500</div>
+            <div>• <strong>18%:</strong> Most retail goods, electronics, cement, AC/TV, apparel &gt; ₹2,500</div>
+            <div>• <strong>40%:</strong> Aerated cold drinks, caffeinated beverages &amp; luxury goods</div>
           </div>
         </div>
 

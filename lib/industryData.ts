@@ -198,8 +198,8 @@ export const industries: IndustryData[] = [
         answer: "Yes! Vyop includes a free barcode generator and sticker printer that connects to standard barcode label printers.",
       },
       {
-        question: "Does Vyop handle apparel GST rates (5% under ₹1,000 and 12% above ₹1,000)?",
-        answer: "Yes, Vyop automatically applies the correct GST slab based on item sale price according to Indian GST regulations.",
+        question: "Does Vyop handle apparel GST rates (5% up to ₹2,500 and 18% above ₹2,500)?",
+        answer: "Yes, Vyop automatically applies the latest GST 2.0 apparel slab based on item sale price according to Indian GST regulations.",
       },
       {
         question: "How does the Spin-the-Wheel feature work?",
@@ -817,7 +817,7 @@ export const industries: IndustryData[] = [
       { title: "Room Booking Dashboard", description: "View all rooms at a glance — occupied, vacant, housekeeping. Manage check-in, check-out, and advance bookings.", icon: "🛏️" },
       { title: "Running Room Bill", description: "Add room charges, room service, laundry, minibar, and extras to a running tab. Generate consolidated checkout bill.", icon: "🧾" },
       { title: "Banquet Event Manager", description: "Create event packages with hall rental, catering (per-plate), decoration, and service charges. Track advance deposits.", icon: "🎪" },
-      { title: "GST Hotel Tax Invoice", description: "Generate compliant hotel tax invoices with room tariff, GST (12%/18%), luxury tax breakdowns, and guest GSTIN.", icon: "📋" },
+      { title: "GST Hotel Tax Invoice", description: "Generate compliant hotel tax invoices with room tariff, GST (5% up to ₹7,500 / 18% above), extra charges breakdowns, and guest GSTIN.", icon: "📋" },
     ],
     faqs: [
       { question: "Can Vyop manage hotel room bookings and check-in/check-out?", answer: "Yes! View a real-time room dashboard. Manage walk-in and advance bookings, record guest ID, check-in/check-out times, and generate consolidated bills." },
@@ -882,7 +882,7 @@ export const industries: IndustryData[] = [
       },
       {
         question: "Does Vyop calculate footwear GST slabs correctly?",
-        answer: "Yes, Vyop automatically calculates footwear GST rates according to Indian GST slabs (under ₹1,000 and above ₹1,000) automatically.",
+        answer: "Yes, Vyop automatically calculates footwear GST rates according to Indian GST 2.0 slabs (5% up to ₹2,500 and 18% above ₹2,500 per pair) automatically.",
       },
     ],
   },

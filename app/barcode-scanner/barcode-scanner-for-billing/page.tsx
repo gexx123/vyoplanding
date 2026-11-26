@@ -113,7 +113,7 @@ const faqs = [
   },
   {
     q: "Does barcode billing work for GST invoices?",
-    a: "Yes! Vyop automatically calculates CGST, SGST, and IGST on every barcode bill. You can configure GST slabs (5%, 12%, 18%, 28%) per product. Every bill generated is a compliant GST tax invoice with your business GSTIN, HSN codes, and tax breakup.",
+    a: "Yes! Vyop automatically calculates CGST, SGST, and IGST on every barcode bill. You can configure GST 2.0 slabs (0%, 5%, 18%, 40%) per product. Every bill generated is a compliant GST tax invoice with your business GSTIN, HSN codes, and tax breakup.",
   },
   {
     q: "Can I do barcode billing for products without barcodes?",

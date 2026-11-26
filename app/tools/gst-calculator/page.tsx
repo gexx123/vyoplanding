@@ -8,10 +8,10 @@ import ToolDownloadCTA from "@/components/ToolDownloadCTA";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Free Online GST Calculator India: All Tax Slabs | Vyop",
+    absolute: "Free Online GST Calculator India (0%, 5%, 18%, 40% GST 2.0) | Vyop",
   },
   description:
-    "Free GST calculator for shopkeepers & businesses in India. Calculate inclusive & reverse GST, CGST, SGST, IGST splits for 5%, 12%, 18% & 28% tax slabs.",
+    "Free GST calculator for shopkeepers & businesses in India. Calculate inclusive & reverse GST, CGST, SGST, IGST splits for current GST 2.0 slabs (0%, 5%, 18%, 40%).",
   keywords: [
     "free GST calculator India",
     "online GST calculator",
@@ -75,23 +75,24 @@ export default function GstCalculatorPage() {
       ]} />
 
       {/* Header */}
-      <section className="pt-36 pb-12 px-6 max-w-5xl mx-auto text-center">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-50 border border-amber-200/80 text-amber-800 text-xs md:text-sm font-semibold mb-6">
-          <span>🇮🇳</span> Official Indian GST Tax Slabs (2026)
+      {/* Header */}
+      <section className="pt-4 pb-6 px-6 max-w-5xl mx-auto text-center">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-50 border border-amber-200/80 text-amber-800 text-xs md:text-sm font-semibold mb-3">
+          <span>🇮🇳</span> Indian GST 2.0 Tax Slabs (0%, 5%, 18%, 40%)
         </div>
         <h1
-          className="text-4xl md:text-6xl font-extrabold mb-6"
+          className="text-3xl md:text-5xl font-extrabold mb-3"
           style={{ fontFamily: "var(--font-display)" }}
         >
           Free Online <span className="gradient-text">GST Calculator</span>
         </h1>
-        <p className="text-lg md:text-xl text-[var(--text-secondary)] max-w-2xl mx-auto mb-8 font-body">
-          Calculate GST amount, CGST, SGST, IGST, and Reverse GST (inclusive tax) across 5%, 12%, 18%, and 28% slabs with instant one-click copy.
+        <p className="text-base md:text-lg text-[var(--text-secondary)] max-w-2xl mx-auto mb-4 font-body">
+          Calculate GST amount, CGST, SGST, IGST, and Reverse GST (inclusive tax) across current 0%, 5%, 18%, and 40% GST 2.0 slabs (plus any custom %) with instant copy.
         </p>
       </section>
 
       {/* Interactive Tool */}
-      <section className="pb-20 px-6 max-w-5xl mx-auto">
+      <section className="pb-16 px-6 max-w-5xl mx-auto">
         <GstCalculator />
       </section>
 
@@ -163,36 +164,33 @@ export default function GstCalculatorPage() {
                   <tr>
                     <td className="p-4 font-bold text-amber-700">0% (Nil)</td>
                     <td className="p-4">0% + 0%</td>
-                    <td className="p-4 text-gray-600">Fresh vegetables, milk, eggs, salt, unbranded grains</td>
+                    <td className="p-4 text-gray-600">Fresh vegetables, milk, paneer, eggs, salt, unbranded grains, select life-saving drugs</td>
                     <td className="p-4 font-mono text-xs text-gray-500">&quot;Do kilo tamatar&quot;</td>
                   </tr>
                   <tr>
                     <td className="p-4 font-bold text-amber-700">5%</td>
                     <td className="p-4">2.5% + 2.5%</td>
-                    <td className="p-4 text-gray-600">Packaged food, edible oil, tea, coffee, footwear &lt; ₹1,000</td>
-                    <td className="p-4 font-mono text-xs text-gray-500">&quot;Ek kilo Fortune tel&quot;</td>
-                  </tr>
-                  <tr>
-                    <td className="p-4 font-bold text-amber-700">12%</td>
-                    <td className="p-4">6% + 6%</td>
-                    <td className="p-4 text-gray-600">Butter, cheese, fruit juice, garments &gt; ₹1,000, computers</td>
+                    <td className="p-4 text-gray-600">Packaged food, butter, ghee, namkeen, edible oil, medicines, apparel &amp; footwear ≤ ₹2,500</td>
                     <td className="p-4 font-mono text-xs text-gray-500">&quot;Do Amul butter 500g&quot;</td>
                   </tr>
                   <tr>
                     <td className="p-4 font-bold text-amber-700">18%</td>
                     <td className="p-4">9% + 9%</td>
-                    <td className="p-4 text-gray-600">Hair oil, soap, electronics, capital goods, restaurants</td>
+                    <td className="p-4 text-gray-600">Hair oil, soap, cement, LED TVs, ACs, electronics, restaurants, apparel &amp; footwear &gt; ₹2,500</td>
                     <td className="p-4 font-mono text-xs text-gray-500">&quot;Teen Dettol soap&quot;</td>
                   </tr>
                   <tr>
-                    <td className="p-4 font-bold text-amber-700">28%</td>
-                    <td className="p-4">14% + 14%</td>
-                    <td className="p-4 text-gray-600">Air conditioners, refrigerators, cement, automobiles</td>
-                    <td className="p-4 font-mono text-xs text-gray-500">&quot;Ek LG 1.5 Ton AC&quot;</td>
+                    <td className="p-4 font-bold text-amber-700">40%</td>
+                    <td className="p-4">20% + 20%</td>
+                    <td className="p-4 text-gray-600">Aerated cold drinks, caffeinated beverages, pan masala, tobacco &amp; luxury vehicles</td>
+                    <td className="p-4 font-mono text-xs text-gray-500">&quot;Chheh Coca-Cola 2L&quot;</td>
                   </tr>
                 </tbody>
               </table>
             </div>
+            <p className="text-xs text-gray-500 mt-3 text-center">
+              Note: Under India&apos;s GST 2.0 reform (effective September 22, 2025), the former 12% and 28% tiers were consolidated into 0%, 5%, 18%, and 40%. Use the Custom rate box above if you need 12% or 28% for legacy credit notes.
+            </p>
           </div>
 
           {/* FAQs */}

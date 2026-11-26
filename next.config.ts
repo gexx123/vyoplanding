@@ -32,6 +32,11 @@ const nextConfig: NextConfig = {
         destination: "/blog",
         permanent: true,
       },
+      {
+        source: "/blog/worst-birthday-ever-but-vyop-is-here",
+        destination: "/blog",
+        permanent: true,
+      },
     ];
   },
 };

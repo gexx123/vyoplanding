@@ -3,9 +3,5 @@ export default function HiLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <html lang="hi">
-      <body>{children}</body>
-    </html>
-  );
+  return <>{children}</>;
 }

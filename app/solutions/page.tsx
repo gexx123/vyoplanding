@@ -6,13 +6,13 @@ import { industries } from "@/lib/industryData";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Shop Billing Software by Business Type (22+ Shops) | Vyop",
+    absolute: "Shop Billing Software by Business Type (23 Shops) | Vyop",
   },
   description:
-    "Tailored retail billing software & POS for 22+ shop types: Kirana, Clothing, Pharmacy, Electronics & Cafes. Phone barcode scanner, Voice AI & WhatsApp bills.",
+    "Tailored retail billing software & POS for 23 shop types: Kirana, Clothing, Pharmacy, Electronics & Cafes. Phone barcode scanner, Voice AI & WhatsApp bills.",
   alternates: { canonical: "/solutions" },
   openGraph: {
-    title: "Shop Billing Software for 22+ Retail Trades | Vyop",
+    title: "Shop Billing Software for 23 Retail Trades | Vyop",
     description:
       "Find the perfect billing app for your shop. Custom features for Kirana, Garments, Cafes, Medical Stores, Hardware, Electronics & more.",
     url: "https://vyop.in/solutions",
@@ -29,45 +29,22 @@ export const metadata: Metadata = {
   },
   keywords: [
     "shop billing software",
-    "dukan billing app",
     "retail billing software by industry",
-    "Kirana dukan billing software",
-    "Grocery shop billing app",
-    "Kapde ki dukan ka billing software",
-    "Garment shop billing app",
-    "Medical store billing software",
-    "Chemist billing app",
-    "Restaurant / Cafe / Dhaba billing software",
-    "Mobile shop billing software",
-    "Hardware & sanitary shop billing software",
-    "Mithai dukan / Bakery billing software",
-    "Footwear / Joote ki dukan ka billing software",
-    "Automobile spare parts billing software",
-    "Stationery shop billing app",
+    "kirana billing app",
+    "garment shop billing app",
+    "medical store billing software",
+    "restaurant billing software",
   ],
-};
-
-const tradeSearchQueries: Record<string, string> = {
-  "kirana-grocery": '"Kirana dukan billing software" / "Grocery shop billing app"',
-  "clothing-apparel": '"Kapde ki dukan ka billing software" / "Garment shop billing app"',
-  "pharmacy-chemist": '"Medical store billing software" / "Chemist billing app"',
-  "restaurant-cafe": '"Restaurant / Cafe / Dhaba billing software"',
-  "electronics-mobile": '"Mobile shop billing software"',
-  "hardware-sanitary": '"Hardware & sanitary shop billing software"',
-  "bakery-sweet-shop": '"Mithai dukan / Bakery billing software"',
-  "auto-parts": '"Automobile spare parts billing software"',
-  "stationery-bookshop": '"Stationery shop billing app"',
-  "footwear-shoes": '"Footwear / Joote ki dukan ka billing software"',
 };
 
 const industryCategories = [
   {
     category: "Grocery, Supermarket & Daily Essentials",
-    slugs: ["kirana-grocery", "supermarket-departmental", "general-variety", "fruits-vegetables", "dairy-milk", "paan-tobacco", "meat-fish"],
+    slugs: ["kirana-grocery", "supermarket-departmental", "general-variety", "dairy-milk", "paan-tobacco"],
   },
   {
     category: "Fashion, Garments, Footwear & Lifestyle",
-    slugs: ["clothing-apparel", "footwear-shoes", "sports-fitness", "tailoring-boutique", "jewellery-watch", "optical-eyewear"],
+    slugs: ["clothing-apparel", "footwear-shoes", "sports-fitness", "jewellery-watch", "optical-eyewear"],
   },
   {
     category: "Food, Dining & Hospitality",
@@ -79,7 +56,7 @@ const industryCategories = [
   },
   {
     category: "Health, Care, Toys & Services",
-    slugs: ["pharmacy-chemist", "salon-beauty", "stationery-bookshop", "toy-shop", "gift-handicraft", "pet-shop", "wholesale-distribution"],
+    slugs: ["pharmacy-chemist", "salon-beauty", "stationery-bookshop", "toy-shop", "gift-handicraft", "pet-shop"],
   },
 ];
 
@@ -108,9 +85,9 @@ export default function SolutionsIndexPage() {
         </p>
 
         <div className="flex flex-wrap justify-center gap-3 text-xs md:text-sm font-semibold text-gray-700">
-          <span className="px-3.5 py-1.5 rounded-full bg-white border border-gray-200 shadow-sm">✓ 22 Shop Types Supported</span>
+          <span className="px-3.5 py-1.5 rounded-full bg-white border border-gray-200 shadow-sm">✓ 23 Shop Types Supported</span>
           <span className="px-3.5 py-1.5 rounded-full bg-white border border-gray-200 shadow-sm">✓ Phone Camera Barcode Scanner</span>
-          <span className="px-3.5 py-1.5 rounded-full bg-white border border-gray-200 shadow-sm">✓ Voice AI in Hindi & English</span>
+          <span className="px-3.5 py-1.5 rounded-full bg-white border border-gray-200 shadow-sm">✓ Voice AI in Hindi &amp; English</span>
           <span className="px-3.5 py-1.5 rounded-full bg-white border border-gray-200 shadow-sm">✓ Free to Start / ₹999/yr Pro</span>
         </div>
       </section>
@@ -153,13 +130,6 @@ export default function SolutionsIndexPage() {
                       <h3 className="text-xl font-bold text-gray-900 group-hover:text-amber-700 transition-colors mb-2">
                         {ind.name}
                       </h3>
-
-                      {tradeSearchQueries[ind.slug] && (
-                        <div className="mb-3 px-3 py-1.5 rounded-xl bg-amber-50 border border-amber-200/70 text-[11px] font-semibold text-amber-900 flex items-center gap-1.5">
-                          <span className="text-xs">🔍</span>
-                          <span className="truncate">{tradeSearchQueries[ind.slug]}</span>
-                        </div>
-                      )}
 
                       <p className="text-gray-600 text-sm line-clamp-2 mb-6 leading-relaxed">
                         {ind.subheadline}

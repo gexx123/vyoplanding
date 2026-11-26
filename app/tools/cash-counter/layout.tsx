@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Free Cash Counter & Denomination Tally Calculator | Vyop",
+    absolute: "Free Cash Calculator & Cash Tally Counter Online (Notes & Coins) | Vyop",
   },
   description:
-    "Free daily cash counter & denomination calculator for cashiers, shops & bank deposits. Tally cash notes & coins instantly with printable slips.",
+    "Free online cash calculator & daily cash tally counter for notes (₹500–₹10) and coins. Instant total, grand tally in words, net sales after float & printable slip.",
   alternates: { canonical: "/tools/cash-counter" },
   openGraph: {
-    title: "Free Cash Counter & Denomination Tally Calculator | Vyop",
-    description: "Calculate daily drawer cash totals and denomination counts with instant slip generation.",
+    title: "Free Cash Calculator & Cash Tally Counter Online | Vyop",
+    description: "Count currency notes and coins fast with instant grand total, words conversion, and printable closing slip.",
     url: "https://vyop.in/tools/cash-counter",
     siteName: "Vyop POS",
   },

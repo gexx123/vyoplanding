@@ -447,8 +447,8 @@ export const staticBlogs: StaticBlogPost[] = [
       <h2>Key Features Small Retailers Need in GST Billing Software</h2>
       <p>Before choosing any billing software for your grocery store, apparel shop, hardware outlet, or pharmacy, make sure it ticks these mandatory boxes:</p>
       <ul>
-        <li><strong>Automatic Tax Calculation:</strong> Split 0%, 5%, 12%, 18%, and 28% GST brackets instantly without manual calculator formulas. (You can also try our <a href="/tools/gst-calculator"><strong>Free Online GST Calculator</strong></a>).</li>
-        <li><strong>Built-in HSN/SAC Code Finder:</strong> Quick lookup of 8-digit HSN codes for over 10,000 retail products.</li>
+        <li><strong>Automatic Tax Calculation:</strong> Split 0%, 5%, 18%, and 40% GST brackets (updated for India GST 2.0, replacing legacy 12% and 28% slabs) instantly without manual calculator formulas. (You can also try our <a href="/tools/gst-calculator"><strong>Free Online GST Calculator</strong></a>).</li>
+        <li><strong>Built-in HSN/SAC Code Finder:</strong> Quick lookup of common HSN/SAC codes and GST rates for Indian retail categories.</li>
         <li><strong>Mobile Barcode Scanning:</strong> Avoid paying ₹3,000 for a USB scanner gun by using your smartphone's built-in camera.</li>
         <li><strong>Bluetooth Thermal Printer Compatibility:</strong> Standard ESC/POS support for 58mm (2-inch) and 80mm (3-inch) portable printers.</li>
         <li><strong>WhatsApp Invoice Sharing:</strong> Send PDF receipts with embedded UPI QR codes directly to your customer's WhatsApp.</li>

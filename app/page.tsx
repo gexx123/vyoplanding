@@ -11,6 +11,11 @@ export const metadata: Metadata = {
     "Vyop is a free AI barcode billing software & POS app for all retail shops. Turn your phone into a barcode scanner, create fast bills & launch a free store.",
   alternates: {
     canonical: "https://vyop.in",
+    languages: {
+      "en": "https://vyop.in",
+      "hi": "https://vyop.in/hi",
+      "x-default": "https://vyop.in",
+    },
   },
   openGraph: {
     title: "Vyop: Free AI Barcode Billing Software & Mobile POS App",

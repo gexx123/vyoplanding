@@ -1,19 +1,8 @@
-"use client";
-
-import { useState } from "react";
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
-import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import ToolDownloadCTA from "@/components/ToolDownloadCTA";
-
-interface HsnRecord {
-  hsn: string;
-  item: string;
-  category: string;
-  rate: number;
-  description: string;
-}
+import HsnCodeFinderClient, { HsnRecord } from "@/components/tools/HsnCodeFinderClient";
 
 const HSN_DATABASE: HsnRecord[] = [
   // Grocery & Food
@@ -22,25 +11,25 @@ const HSN_DATABASE: HsnRecord[] = [
   { hsn: "0713", item: "Pulses & Dal (Toor, Moong, Chana)", category: "Grocery", rate: 5, description: "Pre-packaged and labelled dried leguminous pulses. Loose is 0%." },
   { hsn: "0401", item: "Fresh Milk & Curd (Dahi)", category: "Grocery", rate: 0, description: "Fresh pasteurized or unpasteurized milk, curd (loose/unlabelled)." },
   { hsn: "0402", item: "Milk Powder & Condensed Milk", category: "Grocery", rate: 5, description: "Concentrated milk powder, sweetened condensed milk." },
-  { hsn: "0405", item: "Butter & Ghee", category: "Grocery", rate: 12, description: "Butter, dairy spreads, pure desi ghee." },
-  { hsn: "0406", item: "Paneer & Cheese", category: "Grocery", rate: 5, description: "Pre-packaged paneer and cheese. Loose fresh paneer is 0%." },
+  { hsn: "0405", item: "Butter & Ghee", category: "Grocery", rate: 5, description: "Butter, dairy spreads, pure desi ghee (reduced from 12% to 5% under GST 2.0)." },
+  { hsn: "0406", item: "Paneer (Chena) & Cheese", category: "Grocery", rate: 0, description: "Fresh/pre-packaged chena & paneer is 0% GST; processed cheese is 5% (GST 2.0)." },
   { hsn: "1507", item: "Edible Cooking Oil (Soybean, Mustard, Sunflower)", category: "Grocery", rate: 5, description: "Vegetable edible cooking oils of all varieties." },
   { hsn: "1701", item: "Sugar & Jaggery (Gur)", category: "Grocery", rate: 5, description: "Cane or beet sugar in solid form. Jaggery is 0%." },
   { hsn: "0902", item: "Tea (Chai Patti)", category: "Grocery", rate: 5, description: "Black tea, green tea, flavoured tea leaves." },
   { hsn: "0901", item: "Coffee Beans & Ground Coffee", category: "Grocery", rate: 5, description: "Roasted coffee beans, ground coffee powder." },
   { hsn: "2501", item: "Salt (Namak)", category: "Grocery", rate: 0, description: "Common salt, iodized salt, rock salt." },
   { hsn: "0910", item: "Spices (Ginger, Turmeric, Masala)", category: "Grocery", rate: 5, description: "Haldi, jeera, dhaniya, mixed garam masala." },
-  { hsn: "1905", item: "Biscuits, Bread & Bakery Products", category: "Grocery", rate: 18, description: "Sweet biscuits, cookies, cakes. Plain loaf bread is 0%." },
-  { hsn: "2106", item: "Namkeen, Bhujia & Roasted Snacks", category: "Grocery", rate: 12, description: "Packaged namkeen, bhujia, mixtures, chivda." },
+  { hsn: "1905", item: "Biscuits, Bread & Bakery Products", category: "Grocery", rate: 5, description: "Biscuits, cookies & cakes are 5% under GST 2.0. Plain loaf bread is 0%." },
+  { hsn: "2106", item: "Namkeen, Bhujia & Roasted Snacks", category: "Grocery", rate: 5, description: "Packaged namkeen, bhujia, mixtures & chivda (5% under GST 2.0)." },
   { hsn: "1806", item: "Chocolates & Cocoa Confectionery", category: "Grocery", rate: 18, description: "Chocolate bars, toffees, cocoa spreads." },
   { hsn: "2201", item: "Packaged Drinking Water (20L Jar / Bottle)", category: "Grocery", rate: 18, description: "Mineral water, sealed water bottles & bubble jars." },
-  { hsn: "2202", item: "Carbonated Cold Drinks (Soda, Cola)", category: "Grocery", rate: 28, description: "Soft drinks, energy drinks (includes 12% compensation cess)." },
+  { hsn: "2202", item: "Carbonated Cold Drinks (Soda, Cola)", category: "Grocery", rate: 40, description: "Aerated soft drinks & caffeinated energy drinks (40% GST 2.0 rate)." },
 
   // Clothing & Footwear
-  { hsn: "6203", item: "Men's T-Shirts, Shirts & Trousers", category: "Clothing", rate: 5, description: "Cotton garments with sale value up to ₹1,000 per piece." },
-  { hsn: "6204", item: "Women's Sarees, Suits & Kurtis", category: "Clothing", rate: 5, description: "Suits, lehengas, kurtis up to ₹1,000 per piece. (Above ₹1,000 is 12%)." },
-  { hsn: "6403", item: "Footwear (Shoes, Sandals, Chappals)", category: "Clothing", rate: 12, description: "Leather & synthetic shoes, sports footwear." },
-  { hsn: "6402", item: "Rubber Hawai Chappals", category: "Clothing", rate: 12, description: "Rubber and plastic slippers with sale value below ₹1,000." },
+  { hsn: "6203", item: "Men's T-Shirts, Shirts & Trousers", category: "Clothing", rate: 5, description: "Apparel up to ₹2,500 per piece is 5% GST; above ₹2,500 is 18% (GST 2.0)." },
+  { hsn: "6204", item: "Women's Sarees, Suits & Kurtis", category: "Clothing", rate: 5, description: "Suits, lehengas, kurtis up to ₹2,500 per piece are 5%; above ₹2,500 is 18%." },
+  { hsn: "6403", item: "Footwear (Shoes, Sandals, Chappals)", category: "Clothing", rate: 5, description: "Leather & synthetic footwear up to ₹2,500 per pair is 5%; above ₹2,500 is 18%." },
+  { hsn: "6402", item: "Rubber Hawai Chappals", category: "Clothing", rate: 5, description: "Rubber and plastic slippers up to ₹2,500 per pair (5% under GST 2.0)." },
   { hsn: "5208", item: "Cotton Fabrics & Dress Materials", category: "Clothing", rate: 5, description: "Woven cotton fabric by the metre." },
 
   // Electronics & Mobile
@@ -48,180 +37,127 @@ const HSN_DATABASE: HsnRecord[] = [
   { hsn: "8504", item: "Mobile Chargers, Adapters & Power Banks", category: "Electronics", rate: 18, description: "Electrical transformers, USB phone chargers." },
   { hsn: "8518", item: "Earphones, Headphones & Bluetooth Speakers", category: "Electronics", rate: 18, description: "Wireless earbuds, neckbands, soundbars." },
   { hsn: "8471", item: "Laptops & Desktop Computers", category: "Electronics", rate: 18, description: "Automatic data processing machines, tablets." },
-  { hsn: "8528", item: "LED Televisions & Monitors", category: "Electronics", rate: 18, description: "LED TVs up to 32 inches are 18%. Above 32 inches is 28%." },
+  { hsn: "8528", item: "LED Televisions & Monitors", category: "Electronics", rate: 18, description: "LED TVs & monitors across sizes (unified at 18% under GST 2.0)." },
   { hsn: "8418", item: "Refrigerators & Deep Freezers", category: "Electronics", rate: 18, description: "Household fridges, commercial cooling display units." },
-  { hsn: "8415", item: "Air Conditioners (Split & Window AC)", category: "Electronics", rate: 28, description: "Inverter and non-inverter air conditioning machines." },
+  { hsn: "8415", item: "Air Conditioners (Split & Window AC)", category: "Electronics", rate: 18, description: "Split and window AC machines (reduced from 28% to 18% under GST 2.0)." },
 
   // Pharmacy & Medical
-  { hsn: "3004", item: "Medicines & Generic Formulations", category: "Pharmacy", rate: 12, description: "Tablets, syrups, capsules, antibiotics." },
-  { hsn: "3002", item: "Life-Saving Vaccines & Insulin", category: "Pharmacy", rate: 5, description: "Diagnostic test kits, human vaccines, insulin." },
-  { hsn: "9018", item: "Surgical Instruments, Syringes & BP Monitors", category: "Pharmacy", rate: 12, description: "Medical and surgical diagnostic apparatus." },
-  { hsn: "3005", item: "Bandages, Gauze & Cotton Dressings", category: "Pharmacy", rate: 12, description: "Adhesive surgical plasters, sterile cotton roll." },
+  { hsn: "3004", item: "Medicines & Generic Formulations", category: "Pharmacy", rate: 5, description: "Tablets, syrups, capsules, antibiotics (reduced to 5% under GST 2.0)." },
+  { hsn: "3002", item: "Life-Saving Vaccines & Insulin", category: "Pharmacy", rate: 0, description: "Notified life-saving drugs & vaccines 0%; insulin/test kits 5% (GST 2.0)." },
+  { hsn: "9018", item: "Surgical Instruments, Syringes & BP Monitors", category: "Pharmacy", rate: 5, description: "Medical, dental and surgical diagnostic instruments (5% under GST 2.0)." },
+  { hsn: "3005", item: "Bandages, Gauze & Cotton Dressings", category: "Pharmacy", rate: 5, description: "Adhesive surgical plasters, sterile bandages & cotton roll (5% under GST 2.0)." },
   { hsn: "3306", item: "Toothpaste & Dental Care", category: "Pharmacy", rate: 18, description: "Dentifrices, mouthwashes, dental floss." },
 
   // Hardware & Building
   { hsn: "7318", item: "Screws, Bolts, Nuts & Washers", category: "Hardware", rate: 18, description: "Iron and steel threaded fasteners." },
-  { hsn: "8301", item: "Padlocks, Door Locks & Keys", category: "Hardware", rate: 18, description: "Base metal locks, brass godrej-type locks." },
+  { hsn: "8301", item: "Padlocks, Door Locks & Keys", category: "Hardware", rate: 18, description: "Base metal locks, brass lever locks." },
   { hsn: "3208", item: "Paints, Enamels & Varnishes", category: "Hardware", rate: 18, description: "Synthetic enamel wall paints, distempers." },
-  { hsn: "2523", item: "Cement (Portland & Pozzolana)", category: "Hardware", rate: 28, description: "Grey cement, white cement bags." },
+  { hsn: "2523", item: "Cement (Portland & Pozzolana)", category: "Hardware", rate: 18, description: "Grey cement and white cement bags (reduced from 28% to 18% under GST 2.0)." },
   { hsn: "6907", item: "Ceramic Tiles & Marble Slabs", category: "Hardware", rate: 18, description: "Glazed vitrified floor and wall tiles." },
   { hsn: "8481", item: "Bathroom Taps, Valves & Sanitary Fittings", category: "Hardware", rate: 18, description: "Brass and chrome CP fittings, shower heads." },
 
   // Restaurant & Food Services
-  { hsn: "9963", item: "Restaurant Dine-In & Takeaway (Non-AC/AC)", category: "Food Service", rate: 5, description: "Standard standalone restaurants, cafes, cloud kitchens (without ITC)." },
-  { hsn: "9963", item: "Hotel Room Service (Room tariff ₹7,500+)", category: "Food Service", rate: 18, description: "Dining in hotels with room charges exceeding ₹7,500." },
+  { hsn: "9963", item: "Restaurant Dine-In & Takeaway (Non-AC/AC)", category: "Food Service", rate: 5, description: "Standalone restaurants, cafes & cloud kitchens (5% without ITC)." },
+  { hsn: "9963", item: "Hotel Room Service (Room tariff above ₹7,500)", category: "Food Service", rate: 18, description: "Hotel accommodation/services up to ₹7,500 are 5%; above ₹7,500 are 18%." },
 ];
 
-const CATEGORIES = ["All", "Grocery", "Clothing", "Electronics", "Pharmacy", "Hardware", "Food Service"];
+const hsnFaqs = [
+  {
+    question: "How many digits of HSN code are required on Indian GST invoices?",
+    answer:
+      "Businesses with annual turnover up to ₹5 Crore must show at least 4 digits of the HSN code on B2B invoices, while businesses with turnover above ₹5 Crore must display 6 digits across B2B and B2C tax invoices.",
+  },
+  {
+    question: "Did India GST 2.0 change HSN GST slabs for retail goods?",
+    answer:
+      "Yes. Effective September 22, 2025, India rationalized the former 12% and 28% slabs into 0%, 5%, 18%, and 40%. Items such as butter, ghee, namkeen, biscuits, medicines, and apparel/footwear up to ₹2,500 fall under 5%, while cement, ACs, and LED TVs moved to 18%, and aerated cold drinks moved to 40%.",
+  },
+];
 
 export default function HsnCodeFinderPage() {
-  const [search, setSearch] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("All");
-  const [copiedHsn, setCopiedHsn] = useState<string | null>(null);
-
-  const filtered = HSN_DATABASE.filter((rec) => {
-    const matchesCat = selectedCategory === "All" || rec.category === selectedCategory;
-    const query = search.toLowerCase();
-    const matchesSearch =
-      rec.hsn.includes(query) ||
-      rec.item.toLowerCase().includes(query) ||
-      rec.description.toLowerCase().includes(query);
-    return matchesCat && matchesSearch;
-  });
-
-  const handleCopy = (hsn: string) => {
-    navigator.clipboard.writeText(hsn);
-    setCopiedHsn(hsn);
-    setTimeout(() => setCopiedHsn(null), 2000);
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        name: "Free HSN Code Finder & GST 2.0 Rate Directory - Vyop",
+        url: "https://vyop.in/tools/hsn-code-finder",
+        applicationCategory: "FinanceApplication, BusinessApplication",
+        operatingSystem: "All",
+        browserRequirements: "Requires JavaScript",
+        description:
+          "Search common retail, grocery, clothing, pharmacy, hardware, and electronics HSN codes with updated India GST 2.0 rates (0%, 5%, 18%, 40%).",
+        offers: {
+          "@type": "Offer",
+          price: "0",
+          priceCurrency: "INR",
+        },
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: hsnFaqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer,
+          },
+        })),
+      },
+    ],
   };
 
   return (
     <main className="min-h-screen bg-[var(--bg-hero)]">
       <Navbar />
 
-      <Breadcrumbs items={[
-        { label: "Free Tools", href: "/tools" },
-        { label: "HSN Code Finder", href: "/tools/hsn-code-finder" },
-      ]} />
+      <Breadcrumbs
+        items={[
+          { label: "Free Tools", href: "/tools" },
+          { label: "HSN Code Finder", href: "/tools/hsn-code-finder" },
+        ]}
+      />
 
-      <section className="pt-36 pb-20 px-4 md:px-6 max-w-5xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-100 text-amber-900 text-xs font-bold uppercase tracking-wider mb-3">
-            <span>🔍</span> Free GST Search Tool
+      <section className="pt-4 pb-16 px-4 md:px-6 max-w-5xl mx-auto">
+        {/* Compact Above-the-Fold Header */}
+        <div className="text-center mb-6">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-bold uppercase tracking-wider mb-2.5">
+            <span>🔍</span> Free GST 2.0 HSN Search Tool
           </div>
-          <h1 className="text-3xl md:text-5xl font-extrabold font-display mb-4 text-gray-900">
-            HSN Code & GST Rate <span className="gradient-text">Finder for Retail</span>
+          <h1 className="text-2xl md:text-4xl font-extrabold font-display mb-2 text-gray-900">
+            HSN Code &amp; GST Rate <span className="gradient-text">Finder for Retail</span>
           </h1>
-          <p className="text-base md:text-lg text-[var(--text-secondary)] max-w-2xl mx-auto">
-            Search HSN codes and official GST tax slabs (0%, 5%, 12%, 18%, 28%) for thousands of retail, grocery, garment, and electronics items in India.
+          <p className="text-sm md:text-base text-[var(--text-secondary)] max-w-2xl mx-auto">
+            Look up HSN codes and updated GST 2.0 tax slabs (0%, 5%, 18%, 40%) for everyday grocery, apparel, electronics, pharmacy, and hardware goods in India.
           </p>
         </div>
 
-        {/* Search & Filter Controls */}
-        <div className="bg-white rounded-3xl p-6 md:p-8 shadow-lg border border-gray-200 mb-8">
-          <div className="relative mb-6">
-            <span className="absolute left-4 top-3.5 text-gray-400 text-lg">🔎</span>
-            <input
-              type="text"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              placeholder="Search by item name or HSN code (e.g. Atta, Mobile, Shirt, 1006)..."
-              className="w-full pl-11 pr-4 py-3.5 rounded-2xl border border-gray-300 font-semibold text-gray-900 focus:outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-200 text-base"
-            />
-          </div>
+        {/* Interactive Search & Results */}
+        <HsnCodeFinderClient records={HSN_DATABASE} />
 
-          {/* Category Filter Pills */}
-          <div className="flex flex-wrap gap-2">
-            {CATEGORIES.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setSelectedCategory(cat)}
-                className={`px-4 py-2 rounded-xl text-xs font-bold transition-all ${
-                  selectedCategory === cat
-                    ? "bg-amber-500 text-white shadow-sm"
-                    : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Results Count */}
-        <div className="flex justify-between items-center mb-4 px-2 text-xs font-bold text-gray-500 uppercase tracking-wider">
-          <span>Showing {filtered.length} matching codes</span>
-          <span>Click HSN to copy</span>
-        </div>
-
-        {/* Results Grid */}
-        <div className="space-y-3 mb-12">
-          {filtered.length > 0 ? (
-            filtered.map((item, idx) => (
-              <div
-                key={idx}
-                className="bg-white p-5 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow flex flex-col md:flex-row md:items-center justify-between gap-4"
-              >
-                <div className="flex-1">
-                  <div className="flex items-center gap-3 mb-1">
-                    <button
-                      onClick={() => handleCopy(item.hsn)}
-                      className="px-2.5 py-1 rounded-lg bg-amber-50 border border-amber-200 font-mono text-sm font-extrabold text-amber-800 hover:bg-amber-100 transition-colors"
-                      title="Click to copy HSN"
-                    >
-                      HSN: {item.hsn}
-                    </button>
-                    {copiedHsn === item.hsn && (
-                      <span className="text-xs text-emerald-600 font-bold">Copied!</span>
-                    )}
-                    <span className="text-xs font-semibold px-2 py-0.5 rounded-md bg-gray-100 text-gray-600">
-                      {item.category}
-                    </span>
-                  </div>
-                  <h3 className="text-base font-bold text-gray-900 mb-1">{item.item}</h3>
-                  <p className="text-xs text-gray-500 leading-relaxed">{item.description}</p>
-                </div>
-
-                <div className="flex items-center gap-4 border-t md:border-t-0 pt-3 md:pt-0">
-                  <div className="text-right">
-                    <span className="text-[11px] font-bold text-gray-400 uppercase tracking-wider block">GST Rate</span>
-                    <span
-                      className={`text-xl font-extrabold ${
-                        item.rate === 0
-                          ? "text-emerald-600"
-                          : item.rate <= 5
-                          ? "text-blue-600"
-                          : item.rate <= 12
-                          ? "text-amber-600"
-                          : "text-red-600"
-                      }`}
-                    >
-                      {item.rate}%
-                    </span>
-                  </div>
-                </div>
-              </div>
-            ))
-          ) : (
-            <div className="text-center py-12 bg-white rounded-3xl border border-gray-200 p-8">
-              <span className="text-4xl block mb-2">🔍</span>
-              <h3 className="text-lg font-bold text-gray-800 mb-1">No HSN codes found for &quot;{search}&quot;</h3>
-              <p className="text-sm text-gray-500">Try searching for a generic category like Rice, Cloth, or Paint.</p>
+        {/* FAQs */}
+        <div className="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-gray-200 mb-10 space-y-3">
+          <h2 className="text-xl font-bold font-display text-gray-900 mb-2">
+            HSN &amp; GST 2.0 Compliance FAQs
+          </h2>
+          {hsnFaqs.map((faq, idx) => (
+            <div key={idx} className="p-4 rounded-2xl bg-gray-50 border border-gray-100">
+              <h3 className="font-bold text-sm text-gray-900 mb-1">{faq.question}</h3>
+              <p className="text-xs md:text-sm text-gray-600 leading-relaxed">{faq.answer}</p>
             </div>
-          )}
+          ))}
         </div>
 
         {/* Direct App Upgrade Banner */}
         <div className="p-8 rounded-3xl bg-gradient-to-br from-amber-500 to-amber-600 text-white shadow-xl text-center">
           <span className="inline-block px-3.5 py-1 rounded-full bg-white/20 text-white text-xs font-bold uppercase tracking-wider mb-3">
-            Auto-Detect HSN in Vyop
+            Auto-Apply HSN in Vyop
           </span>
           <h2 className="text-2xl md:text-3xl font-extrabold mb-3 font-display">
-            Never Search for an HSN Code Again!
+            Never Look Up an HSN Code on Counter Rush
           </h2>
           <p className="text-white/90 max-w-xl mx-auto mb-6 text-sm md:text-base leading-relaxed">
-            Vyop POS includes a pre-filled master catalog of 50,000+ FMCG, pharma, and grocery products. When you point your camera at a barcode or speak an item, the HSN code and GST tax slab are applied automatically.
+            Vyop POS stores your product catalog with pre-configured HSN codes and GST slabs so scanning a barcode or speaking an item calculates tax automatically.
           </p>
           <a
             href="https://play.google.com/store/apps/details?id=com.vyop.app"
@@ -233,6 +169,11 @@ export default function HsnCodeFinderPage() {
           </a>
         </div>
       </section>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
 
       <ToolDownloadCTA
         toolName="HSN Code Finder"

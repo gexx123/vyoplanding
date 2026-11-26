@@ -8,13 +8,25 @@ import PaymentModal from "@/components/PaymentModal";
 
 export default function BillingPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedPlan, setSelectedPlan] = useState({ name: "Yearly", amount: "499" });
+  const [selectedPlan, setSelectedPlan] = useState({ name: "Yearly", amount: "999" });
 
   return (
     <main className="min-h-screen bg-[var(--bg-hero)]">
       <Navbar />
 
-      <section className="pt-40 pb-20 px-6 max-w-5xl mx-auto">
+      <section className="pt-32 pb-20 px-6 max-w-5xl mx-auto">
+        <div className="text-center max-w-3xl mx-auto mb-2">
+          <h1
+            className="text-4xl md:text-5xl font-extrabold text-[var(--text-primary)] mb-4 leading-tight"
+            style={{ fontFamily: "var(--font-display)" }}
+          >
+            Vyop POS Plans &amp; Transparent Pricing
+          </h1>
+          <p className="text-base md:text-lg text-[var(--text-secondary)]">
+            Free local mobile billing &amp; barcode POS forever. Upgrade anytime for multi-device desktop sync and encrypted cloud backup.
+          </p>
+        </div>
+
         <div className="grid md:grid-cols-3 gap-8">
           
           {/* Pricing Component & Payment Modal */}

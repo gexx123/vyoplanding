@@ -9,6 +9,7 @@ import { staticBlogs } from '@/lib/staticBlogs';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://vyop.in';
+  const defaultLastModified = new Date('2026-11-26');
   
   // Fetch blogs to include in sitemap
   let blogUrls: any[] = [];
@@ -24,7 +25,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       existingSlugs.add(slug);
       return {
         url: `${baseUrl}/blog/${slug}`,
-        lastModified: new Date(post.date || Date.now()),
+        lastModified: post.date ? new Date(post.date) : defaultLastModified,
         changeFrequency: 'weekly',
         priority: 0.8,
       };
@@ -52,7 +53,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }
 
   const staticPages = [
-    { url: `${baseUrl}/global-pos`, priority: 0.98, changeFrequency: 'weekly', lastModified: new Date() },
+    { url: `${baseUrl}/global-pos`, priority: 0.98, changeFrequency: 'weekly' },
     { url: `${baseUrl}/billing-software`, priority: 0.95, changeFrequency: 'weekly' },
     { url: `${baseUrl}/blog`, priority: 0.8, changeFrequency: 'daily' },
     { url: `${baseUrl}/billing`, priority: 0.9, changeFrequency: 'daily' },
@@ -87,19 +88,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${baseUrl}/vyop-vs-nukkadshops`, priority: 0.9, changeFrequency: 'weekly' },
     { url: `${baseUrl}/vyop-vs-swipe`, priority: 0.9, changeFrequency: 'weekly' },
     { url: `${baseUrl}/vyop-vs-posist`, priority: 0.9, changeFrequency: 'weekly' },
-    { url: `${baseUrl}/ai-billing-software`, priority: 0.98, changeFrequency: 'daily', lastModified: new Date() },
-    { url: `${baseUrl}/billing-machine`, priority: 0.98, changeFrequency: 'daily', lastModified: new Date() },
-    { url: `${baseUrl}/thermal-printer-billing-app`, priority: 0.98, changeFrequency: 'daily', lastModified: new Date() },
-    { url: `${baseUrl}/shop-management-app`, priority: 0.98, changeFrequency: 'daily', lastModified: new Date() },
+    { url: `${baseUrl}/ai-billing-software`, priority: 0.98, changeFrequency: 'daily' },
+    { url: `${baseUrl}/billing-machine`, priority: 0.98, changeFrequency: 'daily' },
+    { url: `${baseUrl}/thermal-printer-billing-app`, priority: 0.98, changeFrequency: 'daily' },
+    { url: `${baseUrl}/shop-management-app`, priority: 0.98, changeFrequency: 'daily' },
     { url: `${baseUrl}/vyop-vs-clover`, priority: 0.9, changeFrequency: 'weekly' },
     { url: `${baseUrl}/vyop-vs-shopify`, priority: 0.9, changeFrequency: 'weekly' },
-    { url: `${baseUrl}/vyop-vs-lightspeed`, priority: 0.9, changeFrequency: 'weekly', lastModified: new Date() },
-    { url: `${baseUrl}/vyop-vs-zettle`, priority: 0.9, changeFrequency: 'weekly', lastModified: new Date() },
+    { url: `${baseUrl}/vyop-vs-lightspeed`, priority: 0.9, changeFrequency: 'weekly' },
+    { url: `${baseUrl}/vyop-vs-zettle`, priority: 0.9, changeFrequency: 'weekly' },
     { url: `${baseUrl}/features/barcode-scanner`, priority: 0.95, changeFrequency: 'weekly' },
     { url: `${baseUrl}/barcode-scanner`, priority: 1.0, changeFrequency: 'weekly' },
     { url: `${baseUrl}/barcode-scanner/mobile-barcode-scanner`, priority: 0.95, changeFrequency: 'weekly' },
     { url: `${baseUrl}/barcode-scanner/barcode-scanner-for-billing`, priority: 0.95, changeFrequency: 'weekly' },
-    { url: `${baseUrl}/features/online-storefront`, priority: 0.98, changeFrequency: 'daily', lastModified: new Date() },
+    { url: `${baseUrl}/features/online-storefront`, priority: 0.98, changeFrequency: 'daily' },
     { url: `${baseUrl}/features/ten-ways-to-add-items`, priority: 0.95, changeFrequency: 'weekly' },
     { url: `${baseUrl}/hi`, priority: 0.9, changeFrequency: 'daily' },
     { url: `${baseUrl}/about`, priority: 0.8, changeFrequency: 'monthly' },
@@ -117,14 +118,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ].map(page => ({
     ...page,
     url: page.url,
-    lastModified: page.lastModified || new Date(),
+    lastModified: page.lastModified || defaultLastModified,
     changeFrequency: page.changeFrequency as any,
   }));
 
   const allEntries = [
     {
       url: baseUrl,
-      lastModified: new Date(),
+      lastModified: defaultLastModified,
       changeFrequency: 'daily' as const,
       priority: 1.0,
     },
@@ -132,19 +133,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...blogUrls,
     ...industries.map((ind) => ({
       url: `${baseUrl}/solutions/${ind.slug}`,
-      lastModified: new Date(),
+      lastModified: defaultLastModified,
       changeFrequency: 'weekly' as const,
       priority: 0.9,
     })),
     ...cities.map((city) => ({
       url: `${baseUrl}/billing-software/${city.slug}`,
-      lastModified: new Date(),
+      lastModified: defaultLastModified,
       changeFrequency: 'weekly' as const,
       priority: 0.85,
     })),
     ...countries.map((country) => ({
       url: `${baseUrl}/global-pos/${country.slug}`,
-      lastModified: new Date(),
+      lastModified: defaultLastModified,
       changeFrequency: 'weekly' as const,
       priority: 0.95,
     })),

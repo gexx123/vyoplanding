@@ -1,6 +1,14 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: {
+    absolute: "Marketer Panel | Vyop",
+  },
+  robots: { index: false, follow: false },
+};
 
 export default function MarketerPanel() {
   return (

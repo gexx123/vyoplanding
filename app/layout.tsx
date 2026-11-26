@@ -26,14 +26,6 @@ export const metadata: Metadata = {
   description:
     "Vyop is a free AI barcode billing software & POS app for all retail shops. Turn your phone into a barcode scanner, create fast bills & launch a free store.",
   metadataBase: new URL('https://vyop.in'),
-  alternates: {
-    canonical: '/',
-    languages: {
-      'en': '/',
-      'hi': '/hi',
-      'x-default': '/',
-    },
-  },
   other: {
     'google-play-app': 'app-id=com.vyop.app',
   },
@@ -130,9 +122,6 @@ export default function RootLayout({
       className={`${sora.variable} ${dmSans.variable} h-full antialiased`}
     >
       <head>
-        <link rel="alternate" hrefLang="en" href="https://vyop.in" />
-        <link rel="alternate" hrefLang="hi" href="https://vyop.in/hi" />
-        <link rel="alternate" hrefLang="x-default" href="https://vyop.in" />
         <meta name="apple-itunes-app" content="app-id=com.vyop.app" />
       </head>
       <body className="min-h-full flex flex-col">

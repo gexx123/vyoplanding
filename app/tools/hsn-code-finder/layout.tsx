@@ -5,11 +5,11 @@ export const metadata: Metadata = {
     absolute: "Free HSN Code Finder & GST Rate Search Online | Vyop",
   },
   description:
-    "Search 15,000+ HSN & SAC codes with applicable GST tax slabs (0%, 5%, 12%, 18%, 28%). Find accurate codes for retail goods, garments, pharma & electronics.",
+    "Search official HSN & SAC codes with applicable Indian GST 2.0 tax slabs (0%, 5%, 18%, 40%). Find accurate codes for retail goods, garments, pharma & electronics.",
   alternates: { canonical: "/tools/hsn-code-finder" },
   openGraph: {
     title: "Free HSN Code Finder & GST Rate Search Online | Vyop",
-    description: "Search 15,000+ HSN codes with GST rates and descriptions for invoices.",
+    description: "Search HSN codes with updated GST 2.0 rates and descriptions for invoices.",
     url: "https://vyop.in/tools/hsn-code-finder",
     siteName: "Vyop POS",
   },

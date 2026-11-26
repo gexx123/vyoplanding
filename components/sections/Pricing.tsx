@@ -23,7 +23,7 @@ export default function Pricing({ onUpgradeClick }: PricingProps) {
             style={{ fontFamily: "var(--font-display)" }}
           >
             Invest in your business <br className="hidden md:block" />
-            <span className="text-[var(--brand-primary)]">for less than ₹2 / day</span>
+            <span className="text-[var(--brand-primary)]">starting at ₹49 / month</span>
           </motion.h2>
           
           <motion.p

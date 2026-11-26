@@ -4,7 +4,7 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* ===== Vyapar Design Tokens — White & Gold Premium ===== */
+/* ===== Vyop Design Tokens — White & Gold Premium ===== */
 :root {
   /* Backgrounds — Light premium */
   --bg-base: #FFFFFF;
@@ -249,4 +249,10 @@
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--text-secondary);
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
 }

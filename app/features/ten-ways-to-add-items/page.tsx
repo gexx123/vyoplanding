@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   },
   description:
     "Add items to bills & inventory with 10 fast methods: camera barcode scanning, Voice AI, photo recognition, supplier invoice PDF import & CSV. Free to start.",
+  alternates: { canonical: "/features/ten-ways-to-add-items" },
   keywords: [
     "10 ways to add items",
     "fastest retail inventory app",

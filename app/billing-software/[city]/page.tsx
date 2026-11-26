@@ -66,6 +66,34 @@ export default async function CityLandingPage({ params }: { params: Promise<{ ci
     notFound();
   }
 
+  const marketsText = city.famousMarkets.join(", ");
+  const cityFaqs = [
+    {
+      q: `What is the best billing software in ${city.name} for ${city.hubFocus} shops?`,
+      a: `Vyop is a fast mobile and desktop billing app used by ${city.hubFocus} and retail stores across ${marketsText} in ${city.name}, ${city.state}. ${city.localMarketInfo} Your phone camera scans barcodes without buying extra hardware, while voice billing supports Hindi and English.`,
+    },
+    {
+      q: `Do I need a billing software dealer in ${city.name} to set it up?`,
+      a: `No physical dealer visit is required in ${city.name}. Traditional billing software dealers around ${city.famousMarkets[0]} and nearby markets often charge ₹12,000–₹25,000 for PC setup, scanners, and annual maintenance. Vyop installs directly on your Android phone or desktop browser (vyop.shop) in 60 seconds with 0 setup fee.`,
+    },
+    {
+      q: `What is the price of Vyop billing software in ${city.name}?`,
+      a: `Core mobile barcode billing, offline stock management, and digital udhar khata are ₹0 to start. Upgrading to Vyop Pro for multi-device desktop sync and automated cloud backup costs ₹49/month or ₹999/year — saving ${city.name} retailers ₹10,000+ per year versus desktop AMC contracts.`,
+    },
+    {
+      q: `Does Vyop handle GST 2.0 invoicing and GSTR filings in ${city.state}?`,
+      a: `Yes. Vyop supports India GST 2.0 tax slabs (0%, 5%, 18%, 40%), HSN code lookup, automatic CGST/SGST vs IGST split for intra-${city.state} and interstate buyers, and CA-ready GSTR-1 & GSTR-3B Excel/JSON exports.`,
+    },
+    {
+      q: `What hardware do shops in ${city.name} need to print bills?`,
+      a: `You only need your Android smartphone or existing Windows PC/laptop. Vyop connects over Bluetooth to standard 2-inch (58mm) and 3-inch (80mm) thermal receipt printers available in ${city.name} computer markets, and also shares itemized PDF receipts directly on WhatsApp.`,
+    },
+    {
+      q: `Does Vyop work offline in crowded markets like ${city.famousMarkets[0]}?`,
+      a: `Yes. Vyop works 100% offline inside dense market lanes in ${city.famousMarkets[0]} and across ${city.name} where mobile signal fluctuates. Bills, stock deductions, and khata entries save locally on your device and sync to cloud backup once internet returns.`,
+    },
+  ];
+
   return (
     <main className="min-h-screen bg-[var(--bg-hero)]">
       <Navbar />
@@ -399,14 +427,14 @@ export default async function CityLandingPage({ params }: { params: Promise<{ ci
                 Billing Solutions by Business Type in {city.name}
               </h3>
               <p className="text-gray-600 text-sm md:text-base mt-1">
-                Customized for 22+ retail and wholesale trades across {city.state}
+                Customized for 23 retail and wholesale trades across {city.state}
               </p>
             </div>
             <Link
               href="/solutions"
               className="text-amber-600 hover:text-amber-700 font-bold text-sm inline-flex items-center gap-1 self-start md:self-auto"
             >
-              View All 22+ Shop Categories →
+              View All 23 Shop Categories →
             </Link>
           </div>
 
@@ -462,6 +490,21 @@ export default async function CityLandingPage({ params }: { params: Promise<{ ci
                     Billing Software in {otherCity.name}
                   </Link>
                 ))}
+            </div>
+          </div>
+
+          {/* City-Specific FAQs (Matches FAQPage Schema) */}
+          <div id="faq" className="mt-16 pt-12 border-t border-gray-200">
+            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8" style={{ fontFamily: "var(--font-display)" }}>
+              Billing Software FAQs for {city.name} Shopkeepers
+            </h3>
+            <div className="grid md:grid-cols-2 gap-6">
+              {cityFaqs.map((faq, idx) => (
+                <div key={idx} className="bg-white p-6 rounded-2xl border border-gray-200/80 shadow-sm">
+                  <h4 className="font-bold text-gray-900 text-base mb-2">{faq.q}</h4>
+                  <p className="text-sm text-gray-600 leading-relaxed">{faq.a}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -522,72 +565,14 @@ export default async function CityLandingPage({ params }: { params: Promise<{ ci
             {
               "@context": "https://schema.org",
               "@type": "FAQPage",
-              "mainEntity": [
-                {
-                  "@type": "Question",
-                  "name": `What is the best billing software in ${city.name}?`,
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": `Vyop is a leading billing software in ${city.name} for 2026. It turns your smartphone into a barcode machine with continuous multi-item scanning. It includes voice AI billing in Hindi and English, complete GST invoicing (CGST, SGST, HSN), digital udhar khata with WhatsApp reminders, and inventory management. Free to start, ₹999/year Pro cloud sync. No dealer visit or desktop computer needed.`
-                  }
+              "mainEntity": cityFaqs.map((faq) => ({
+                "@type": "Question",
+                "name": faq.q,
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": faq.a,
                 },
-                {
-                  "@type": "Question",
-                  "name": `Where can I find billing software dealers in ${city.name}?`,
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": `You do not need a physical dealer or distributor in ${city.name}! Traditional billing software dealers in ${city.name} charge ₹12,000 to ₹25,000 for PC installation, barcode gun, and yearly AMC. Vyop is a cloud-based mobile POS and accounting app that installs on your smartphone in under 60 seconds for free. Your phone camera becomes the barcode scanner with fast camera autofocus, voice AI replaces the keyboard, and you save ₹34,500+ compared to dealer setups.`
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": `What is the price of billing software in ${city.name}?`,
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": `Billing software prices in ${city.name} vary: Local dealer installations cost ₹12,000–₹25,000 upfront + ₹3,000–₹5,000/year AMC. Tally Prime Silver costs ₹22,500 + GST perpetual (with ₹7,500/year TSS renewal). Vyop POS is free to start with offline billing, and ₹999/year for Pro cloud sync — making it an affordable option for ${city.name} retailers, with phone barcode scanning and voice AI billing.`
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": `Is Vyop suitable for GST billing and accounting in ${city.name}?`,
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": `Yes. Vyop handles complete GST billing and accounting in ${city.name}, including CGST/SGST/IGST auto-calculation, HSN code mapping, sales invoices, purchase records, expense tracking, party-wise digital udhar khata with WhatsApp payment links, and GSTR-1 & GSTR-3B tax report generation.`
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": `Can I use my phone as billing machine in ${city.name}?`,
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": `Yes! Vyop turns any Android smartphone into a complete billing machine. Your phone camera scans barcodes rapidly with continuous scanning, voice AI creates bills in Hindi or English, and you can connect a thermal receipt printer wirelessly. Total setup cost is a fraction of the ₹30,000–₹80,000 required for traditional POS setups from ${city.name} dealers.`
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": `What hardware do I need for billing in ${city.name}?`,
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": `Zero specialized hardware required. Your smartphone camera acts as a high-speed barcode scanner with continuous multi-item scanning. Vyop connects wirelessly via Bluetooth to standard 2-inch and 3-inch thermal receipt printers available at computer shops in ${city.name} for ₹1,500, or you can share digital bills directly via WhatsApp. No desktop computer, barcode gun, or UPS needed.`
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": `Does Vyop work offline in ${city.name} if internet goes down?`,
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": `Yes, Vyop works 100% offline. You can scan barcodes, generate GST bills, and record all transactions even without internet in your ${city.name} shop. All data syncs automatically to the cloud once you are back online. Perfect for shops in ${city.famousMarkets[0]} and other ${city.name} markets where network connectivity can be unreliable.`
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": `Which billing software is best for kirana stores in ${city.name}?`,
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": `Vyop POS is designed for kirana stores in ${city.name}. It supports barcode scanning with phone camera continuous autofocus, voice billing in Hindi ('Teen Maggi, do Chai'), weight-based billing for loose items (dal, rice, sugar), digital udhar khata with WhatsApp reminders, low-stock alerts, and UPI QR code payments — all free to start.`
-                  }
-                }
-              ]
+              })),
             },
             {
               "@context": "https://schema.org",

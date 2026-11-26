@@ -30,11 +30,11 @@ const tools = [
   },
   {
     title: "Free Online GST Calculator",
-    badge: "5%, 12%, 18%, 28%",
+    badge: "0%, 5%, 18%, 40%",
     icon: "📊",
-    description: "Quickly calculate inclusive and reverse GST, split CGST and SGST, and compute exact tax breakdowns for any product or service.",
+    description: "Quickly calculate inclusive and reverse GST, split CGST and SGST, and compute exact tax breakdowns for India's GST 2.0 slabs.",
     link: "/tools/gst-calculator",
-    features: ["Add & Remove GST", "Reverse Calculation", "All Indian Tax Slabs", "Instant Copy"],
+    features: ["Add & Remove GST", "Reverse Calculation", "GST 2.0 Tax Slabs", "Instant Copy"],
   },
   {
     title: "Global Sales Tax & VAT Calculator",
